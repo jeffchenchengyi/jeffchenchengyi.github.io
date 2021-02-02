@@ -1,19 +1,19 @@
-# Unknown Unknowns
+# ΨΦ
 
-A pursuit into maximizing the identification of the unknown unknowns of this world | Just another data science blog
+ΨΦ: A pursuit into maximizing the identification of the unknown unknowns of this world through data science
 
 ## Usage
 
 ### Building the book
 
-If you'd like to develop on and build the Unknown Unknowns book, you should:
+If you'd like to develop on and build the ΨΦ book, you should:
 
 - Clone this repository and run
 - Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
-- (Recommended) Remove the existing `Unknown Unknowns/_build/` directory
-- Run `jupyter-book build Unknown Unknowns/`
+- (Recommended) Remove the existing `ΨΦ/_build/` directory
+- Run `jupyter-book build ΨΦ/`
 
-A fully-rendered HTML version of the book will be built in `Unknown Unknowns/_build/html/`.
+A fully-rendered HTML version of the book will be built in `ΨΦ/_build/html/`.
 
 ### Hosting the book
 
@@ -22,13 +22,13 @@ The html version of the book is hosted on the `gh-pages` branch of this repo. A 
 If you wish to disable this automation, you may remove the GitHub actions workflow and build the book manually by:
 
 - Navigating to your local build; and running,
-- `ghp-import -n -p -f Unknown Unknowns/_build/html`
+- `ghp-import -n -p -f ΨΦ/_build/html`
 
 This will automatically push your build to the `gh-pages` branch. More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
 
 ## Contributors
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/jeffchenchengyi/unknown_unknowns/graphs/contributors).
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/jeffchenchengyi/ψφ/graphs/contributors).
 
 ## Credits
 
