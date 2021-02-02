@@ -24,7 +24,12 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        pip install -r ./docs/ψφ/requirements.txt
+        pip install -r ./docs/requirements.txt
+
+    # Build the Table of Contents
+    - name: Build Table of Contents
+      run: |
+        jupyter-book toc ./docs/
 
     # Build the book
     - name: Build the book
