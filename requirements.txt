@@ -91,7 +91,7 @@ latexcodec==2.0.1
 lazy-object-proxy==1.4.3
 Mako==1.1.3
 Markdown==3.3.3
-markdown-it-py==0.6.1
+markdown-it-py
 MarkupSafe==1.1.1
 matplotlib==3.0.3
 mccabe==0.6.1
@@ -111,7 +111,7 @@ nested-lookup==0.2.21
 networkx==2.5
 nose==1.3.7
 notebook==6.2.0
-numpy==1.20.0
+numpy
 oauthlib==3.1.0
 openpyxl==3.0.6
 opt-einsum==3.3.0
