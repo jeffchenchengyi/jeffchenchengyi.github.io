@@ -84,7 +84,6 @@ jupyter-client==6.1.11
 jupyter-core==4.7.0
 jupyter-sphinx==0.3.1
 jupyterlab-widgets==1.0.0
-jupytext==1.9.1
 Keras-Preprocessing==1.1.2
 kiwisolver==1.2.0
 latexcodec==2.0.1
