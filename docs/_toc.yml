@@ -1,0 +1,91 @@
+- file: intro
+
+- part: Machine-Learning
+  chapters:
+  - file: machine-learning/01-intro
+    title: Machine Learning with Probabilistic Graphical Models
+    sections:
+      - file: machine-learning/02-bln
+      - file: machine-learning/03-bglm
+      - file: machine-learning/04-gmm
+      - file: machine-learning/05-lda
+      - file: machine-learning/time-series-models/01-intro
+        sections:
+        - file: course-work/time-series-models/02-gpsp
+        - file: course-work/time-series-models/03-hmm
+
+- part: Featured Course Work & Extra-curriculars
+  chapters:
+  - file: course-work/ise-530/intro
+    title: ISE-530 Optimization Analytics
+    sections:
+      - file: course-work/ise-530/hw1
+      - file: course-work/ise-530/hw2
+      - file: course-work/ise-530/hw3
+      - file: course-work/ise-530/hw4
+      - file: course-work/ise-530/hw5
+      - file: course-work/ise-530/hw6
+      - file: course-work/ise-530/hw7
+      - file: course-work/ise-530/hw8
+      - file: course-work/ise-530/hw9
+      - file: course-work/ise-530/midterm
+      - file: course-work/ise-530/final
+      - file: course-work/ise-530/notes
+  - file: course-work/ise-537/intro
+    title: ISE-537 Financial Analytics
+    sections:
+      - file: course-work/ise-537/hw1
+      - file: course-work/ise-537/hw2_part1
+      - file: course-work/ise-537/hw2_part2
+      - file: course-work/ise-537/hw3
+      - file: course-work/ise-537/market-observations-week-1
+      - file: course-work/ise-537/market-observations-week-2
+      - file: course-work/ise-537/market-observations-week-3
+      - file: course-work/ise-537/market-observations-week-4
+      - file: course-work/ise-537/market-observations-week-5
+      - file: course-work/ise-537/paper-review-1
+      - file: course-work/ise-537/paper-review-2
+      - file: course-work/ise-537/paper-review-3
+      - file: course-work/ise-537/paper-review-4
+      - file: course-work/ise-537/paper-review-5
+      - file: course-work/ise-537/project1
+      - file: course-work/ise-537/project2
+      - file: course-work/ise-530/notes
+  - file: course-work/csci-499/intro
+    title: CSCI-499 AI for Social Good
+    sections:
+      - file: course-work/csci-499/review1
+      - file: course-work/csci-499/review2
+      - file: course-work/csci-499/review3
+      - file: course-work/csci-499/review4
+      - file: course-work/csci-499/review5
+      - file: course-work/csci-499/review6
+      - file: course-work/csci-499/review7
+      - file: course-work/csci-499/review8
+      - url: https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing
+        title: Paper Review Presentation
+      - url: https://github.com/lucashu1/education-deserts
+        title: Education Deserts Research
+  - file: course-work/cais++/intro
+    title: CAIS++
+    sections:
+      - url: https://github.com/jeffchenchengyi/jeffchenchengyi.github.io
+      title: Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+      - url: https://github.com/usc-caisplusplus/SLAB
+      title: OCR Research on Google Street View Panoramics
+  - file: course-work/udacity/intro
+    title: Udacity Data Scientist Nanodegree
+    sections:
+      - file: course-work/ise-537/hw1
+      - file: course-work/ise-537/hw2_part1
+      - file: course-work/ise-537/hw2_part2
+      - file: course-work/ise-537/hw3
+      - file: course-work/ise-537/market-observations-week-
+      - url: https://graduation.udacity.com/confirm/2LGCCKNA
+        title: Certificate
+
+- part: Reference
+  chapters:
+  - file: zbibliography # need to add z because has to be processed last
+  - url: https://github.com/jeffchenchengyi/jeffchenchengyi.github.io
+    title: GitHub Repo

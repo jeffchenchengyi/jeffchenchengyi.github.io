@@ -27,9 +27,9 @@ jobs:
         pip install -r requirements.txt
 
     # Build the Table of Contents
-    - name: Build Table of Contents
-      run: |
-        jupyter-book toc ./docs/
+    # - name: Build Table of Contents
+    #   run: |
+    #     jupyter-book toc ./docs/
 
     # Build the book
     - name: Build the book
