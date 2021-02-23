@@ -75,14 +75,11 @@
     title: CAIS++
     sections:
       - url: https://github.com/pelillian/varro
-      title: Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+        title: Evolving FPGAs for Accelerated MachineLearning on Bare Metal
       - url: https://github.com/usc-caisplusplus/SLAB
-      title: OCR Research on Google Street View Panoramics
-  - file: course-work/udacity/intro
-    title: Udacity Data Scientist Nanodegree
-    sections:
-      - url: https://graduation.udacity.com/confirm/2LGCCKNA
-        title: Certificate
+        title: OCR Research on Google Street View Panoramics
+  - url: https://graduation.udacity.com/confirm/2LGCCKNA
+    title: Certificate
 
 - part: Reference
   chapters:
