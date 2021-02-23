@@ -18,6 +18,7 @@
       - file: machine-learning/12-continuous-latent-variables
       - file: machine-learning/13-sequential-data
       - file: machine-learning/14-combining-models
+      - file: machine-learning/15-contextual-bandits
 
 - part: Featured Course Work & Extra-curriculars
   chapters:
