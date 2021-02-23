@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Approximate Inference &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/machine-learning/10-approximate-inference.html" />
+    <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Sampling Methods" href="11-sampling-methods.html" />
+    <link rel="prev" title="Mixture Models and EM" href="09-mixture-models-and-em.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/10-approximate-inference.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Approximate Inference" />
+<meta property="og:description" content="Approximate Inference  Problem Setup  Given the following setup:  I.I.D. Observed data: \mathcal{X} = \left(X^{(1)}, \cdots, X^{(D)}\right), where each X^{(i)} " />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="01-intro.html">
+   Pattern Recognition and Machine Learning
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-probability-distributions.html">
+     Probability Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03-linear-models-for-regression.html">
+     Linear Models for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-linear-models-for-classification.html">
+     Linear Models for Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-neural-networks.html">
+     Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-kernel-methods.html">
+     Kernel Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07-sparse-kernel-machines.html">
+     Sparse Kernel Machines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08-graphical-models.html">
+     Graphical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09-mixture-models-and-em.html">
+     Mixture Models and EM
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Approximate Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11-sampling-methods.html">
+     Sampling Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12-continuous-latent-variables.html">
+     Continuous Latent Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13-sequential-data.html">
+     Sequential Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14-combining-models.html">
+     Combining Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15-contextual-bandits.html">
+     Contextual Bandits
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw1.html">
+   ISE-530 Homework I: Chapters I and II of Cottle-Thapa. Due 11:59 PM Wednesday September 09
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw2.html">
+   ISE-530 Homework II: Chapters III and IV of Cottle-Thapa. Due 11:59 PM Wednesday September 23, 2020
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw3.html">
+   ISE-530 Homework III: Chapters V and VI of Cottle-Thapa.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw4.html">
+   ISE-530 Homework IV: from Cottle-Thapa.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw5.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw6.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw7.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw8.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/hw9.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/midterm.html">
+   ISE-530 Midterm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/final.html">
+   ISE 530 Optimization Methods for Analytics Final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/notes.html">
+   Linear and Non-linear Programming Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/hw1.html">
+   ISE 537: HW 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/hw2_part1.html">
+   ISE 537: HW 2 Part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/hw2_part2.html">
+   ISE 537: HW 2 Part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/hw3.html">
+   ISE 537: HW 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/market-observations-week-1.html">
+   Market Observations 1: TSLA Absurd P/E Ratio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/market-observations-week-2.html">
+   Market Observations 2: The NASDAQ Whale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/market-observations-week-3.html">
+   Market Observations 3: Dovish till 2024
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/market-observations-week-4.html">
+   Market Observations 4: The Future of EV batteries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/market-observations-week-5.html">
+   Market Observations 5: Palantir
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/paper-review-1.html">
+   ISE 537: Paper Review 1 - Value and Momentum Everywhere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/paper-review-2.html">
+   ISE 537: Paper Review 2 - Carry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/paper-review-3.html">
+   ISE 537: Paper Review 3 - Quality Minus Junk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/paper-review-4.html">
+   ISE 537: Paper Review 4 - Size Matters, if You Control Your Junk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/paper-review-5.html">
+   ISE 537: Paper Review 5 - The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/project1.html">
+   ISE 537: Project 1: Momentum Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-537/project2.html">
+   ISE-537 Project 2: Carry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/ise-530/notes.html">
+   Linear and Non-linear Programming Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review1.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review2.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review3.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review4.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review5.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review6.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review7.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/csci-499/review8.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+   Paper Review Presentation
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+   Education Deserts Research
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/pelillian/varro">
+   Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+   OCR Research on Google Street View Panoramics
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../zbibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/machine-learning/10-approximate-inference.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-setup">
+   Problem Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-1-expectation-maximization">
+   Technique 1: Expectation-Maximization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-01-gaussian-mixture-model-expectat31-online">
+     Example 01 - Gaussian Mixture Model
+     <span>
+      [Expectat31:online]
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-02-latent-dirichlet-allocation-topic-model">
+     Example 02 - Latent Dirichlet Allocation Topic Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-03-hidden-markov-model-10-5555-1162264hmmbaumw42-online">
+     Example 03 - Hidden Markov Model
+     <span>
+      [10.5555/1162264]
+     </span>
+     <span>
+      [hmmbaumw42:online]
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hmm-setup">
+       HMM Setup
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#e-step">
+       E-step
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-2-markov-chain-monte-carlo">
+   Technique 2: Markov Chain Monte Carlo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-3-mean-field-approximation-variational-inference">
+   Technique 3: Mean-field Approximation Variational Inference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-01-gaussian-mixture-model">
+     Example 01 - Gaussian Mixture Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id10">
+     Example 02 - Latent Dirichlet Allocation Topic Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-03-hidden-markov-model">
+     Example 03 - Hidden Markov Model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#technique-4-black-box-variational-inference">
+   Technique 4: Black-box Variational Inference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id11">
+     Example 01 - Gaussian Mixture Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id12">
+     Example 02 - Latent Dirichlet Allocation Topic Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id13">
+     Example 03 - Hidden Markov Model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-04-bayesian-linear-regression">
+     Example 04 - Bayesian Linear Regression
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="approximate-inference">
+<h1>Approximate Inference<a class="headerlink" href="#approximate-inference" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-setup">
+<h2>Problem Setup<a class="headerlink" href="#problem-setup" title="Permalink to this headline">¶</a></h2>
+<p>Given the following setup:</p>
+<ul class="simple">
+<li><p>I.I.D. Observed data: <span class="math notranslate nohighlight">\(\mathcal{X} = \left(X^{(1)}, \cdots, X^{(D)}\right)\)</span>, where each <span class="math notranslate nohighlight">\(X^{(i)} = (x^{(i)}_{1}, x^{(i)}_{2}, \cdots, x^{(i)}_{M})\)</span></p></li>
+<li><p>Unobserved latent data or missing values: <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span></p></li>
+<li><p>Vector of unknown parameters: <span class="math notranslate nohighlight">\(\boldsymbol {\theta }\)</span></p></li>
+<li><p>Likelihood function: <span class="math notranslate nohighlight">\(L({\boldsymbol {\theta }};\mathcal{X} ,\mathcal{Z} )=p(\mathcal{X} ,\mathcal{Z} \mid {\boldsymbol {\theta }})\)</span></p></li>
+</ul>
+<p>we have 2 tasks that are of interest:</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Find the MLE (<span class="math notranslate nohighlight">\(\boldsymbol {\theta}\)</span> is parameter) / MAP (<span class="math notranslate nohighlight">\(\boldsymbol {\theta}\)</span> is random variable) estimates of the model parameters <span class="math notranslate nohighlight">\(\boldsymbol {\theta_{\rm{max}}}\)</span> <span class="bibtex" id="id1">[Expectat45:online]</span>:</p></li>
+</ol>
+</li>
+</ul>
+<p>\begin{aligned}
+\boldsymbol {\theta_{\rm{max}}} &amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log p(\mathcal{X} \mid \boldsymbol{\theta }) \
+&amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \
+\end{aligned}</p>
+<p>where <span class="math notranslate nohighlight">\(p(\mathcal{X} \mid \boldsymbol{\theta })\)</span> is known as the <em><strong>Evidence / Marginal Likelihood / Incomplete-data Likelihood</strong></em> and <span class="math notranslate nohighlight">\(p(\mathcal{X} ,\mathcal{Z} \mid {\boldsymbol {\theta }})\)</span> is known as the <em><strong>Complete-data likelihood</strong></em>.</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id2">[SVIPartI61:online]</span>:</p></li>
+</ol>
+</li>
+</ul>
+<p>\begin{aligned}
+p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;= \frac{p(\mathcal{X}, \mathcal{Z} \mid \boldsymbol {\theta_{\rm{max}} })}{
+\sum_{z \in \mathcal{Z}} p(\mathcal{X}, \mathcal{Z} = z \mid \boldsymbol {\theta_{\rm{max}} })} \
+\end{aligned}</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that <span class="math notranslate nohighlight">\(\sum_{z \in \mathcal{Z}}\)</span> is a general summation to encompass all types of marginalization possible, i.e. can be a multidimensional summation <span class="math notranslate nohighlight">\(\sum_{z_1 \in Z_1}\sum_{z_2 \in Z_2}\cdots\sum_{z_M \in Z_M}\)</span> or integral(s) if <span class="math notranslate nohighlight">\(z\)</span> is continuous or even a mix of summation and integration over different latent variables of interest.</p>
+</div>
+<p>However, this <span class="math notranslate nohighlight">\(p(\mathcal{X} \mid \boldsymbol{\theta }) = \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\,d\mathcal{Z}\)</span> is often intractable (e.g. if <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>  is a sequence of events, so that the number of values grows exponentially with the sequence length, the exact calculation of the sum will be extremely difficult). Let’s instead try to find a lower bound for it by expanding it <span class="bibtex" id="id3">[SVIPartI61:online]</span>:</p>
+<p>\begin{aligned}
+\log p(\mathcal{X} \mid \boldsymbol{\theta })
+&amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \
+\end{aligned}</p>
+<p>Using ideas from importance sampling, assume we have another variational distribution [approximate posterior distribution to <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{X}}, {\bf \theta})\)</span>)], <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi})\)</span>, where <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi}) &gt; 0\)</span> whenever <span class="math notranslate nohighlight">\(p({\mathcal{Z}}) = \sum_{x \in \mathcal{X}} p({\mathcal{X}} = x, {\mathcal{Z}} \mid {\bf \theta}) &gt; 0\)</span>, and we rewite:</p>
+<p>\begin{aligned}
+\log p(\mathcal{X} \mid \boldsymbol{\theta })
+&amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \
+&amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \
+\end{aligned}</p>
+<p>By Jensen’s Inequality, given concave function <span class="math notranslate nohighlight">\(f(X)\)</span> (e.g. <span class="math notranslate nohighlight">\(\log\)</span>), <span class="math notranslate nohighlight">\(f\operatorname {E}\left[X\right] \geq \operatorname {E}\left[f(X)\right]\)</span> <span class="bibtex" id="id4">[Variatio28:online]</span>:</p>
+<p>\begin{aligned}
+\log p(\mathcal{X} \mid \boldsymbol{\theta })
+&amp;= \log \operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \
+&amp;\geq \operatorname {E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log\left(\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})}\right)\right] \
+&amp;= \operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) - \log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \
+&amp;= \operatorname {E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \
+&amp;= \underbrace{\underbrace{\operatorname {E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right]}<em>{\text{Expected Complete-data Log Likelihood}} + \underbrace{\operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]}</em>{\text{Entropy of Variational Dist.}}}_{\text{ELBO / Negative Variational Free Energy } \mathcal{L}(q({\mathcal{Z}}\mid {\bf \phi}))} \
+\end{aligned}</p>
+<p>Hence, we get an <em><strong>Evidence Lower Bound (ELBO)</strong></em> (also known as the <em><strong>Negative Variational Free Energy</strong></em>) on the <span class="math notranslate nohighlight">\(\log\)</span> Evidence. Instead of an inequality, we can get an exact equality of the form below by deriving the ELBO from rearranging the KL Divergence from our variational distribution (approximate posterior of latent variables) <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi})\)</span> to our actual posterior over latent variables <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})\)</span>:</p>
+<p>Derivation from <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))\)</span>:</p>
+<p>\begin{aligned}
+{\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))
+&amp;= \operatorname{E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log\left(\frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})}\right)\right] \
+&amp;= \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})\right] \
+&amp;= \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z}, {\mathcal{x}} \mid {\bf \theta})\right] + \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \
+&amp;= -\left[\operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] + \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\right] + \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \
+&amp;= -\mathcal{L}(q({\mathcal{Z} = z}\mid {\bf \phi})) + \log p({\mathcal{x}} \mid {\bf \theta}) \because \text{Expectation is over latent variables }{\mathcal{Z} = z}\text{, which is independent of }{\mathcal{x}} \
+\end{aligned}</p>
+<p>\begin{aligned}
+\therefore \log p({\mathcal{x}} \mid {\bf \theta})
+&amp;= \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) + {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) \
+\end{aligned}</p>
+<p>Since <span class="math notranslate nohighlight">\(\log p({\mathcal{x}} \mid {\bf \theta})\)</span> is a constant, maximizing our ELBO / Negative Variational Free Energy will be equivalent to minimizing the <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))\)</span> (0 when <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi}) = p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})\)</span>), making our variational approximation as close as possible to the actual posterior over latents. After this procedure, our 2 tasks will look like:</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Find the MLE (<span class="math notranslate nohighlight">\({\bf\theta}, {\bf\phi}\)</span> are parameters) / MAP (<span class="math notranslate nohighlight">\({\bf\theta}, {\bf\phi}\)</span> are random variables) estimates of the model parameters <span class="math notranslate nohighlight">\({\bf \theta_{\rm{max}}}, {\bf \phi_{\rm{max}}}\)</span> by maximizing the ELBO:</p></li>
+</ol>
+</li>
+</ul>
+<p>\begin{aligned}
+{\bf\theta_{\rm{max}}} &amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log p(\mathcal{X} \mid \boldsymbol{\theta }) \
+{\bf\theta_{\rm{max}}}, {\bf\phi_{\rm{max}}} &amp;\approx \underset{{\bf \theta}, {\bf \phi}}{\operatorname{argmax}} \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) \
+&amp;= \underset{{\bf \theta}, {\bf \phi}}{\operatorname{argmax}} \operatorname {E}_{q({\mathcal{Z}} = z \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]  \
+\end{aligned}</p>
+<p>In maximizing the ELBO, the first term, Expected Complete-data Log Likelihood, encourages the MLE / MAP estimates of the model parameters to be</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id5">[SVIPartI61:online]</span>:</p></li>
+</ol>
+</li>
+</ul>
+<p>\begin{aligned}
+p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;\approx q({\mathcal{Z}} \mid {\bf \phi}) \
+\end{aligned}</p>
+</div>
+<div class="section" id="technique-1-expectation-maximization">
+<h2>Technique 1: Expectation-Maximization<a class="headerlink" href="#technique-1-expectation-maximization" title="Permalink to this headline">¶</a></h2>
+<p>The EM algorithm seeks to find the MLE of the evidence / marginal likelihood / incomplete-data likelihood by iteratively applying these two steps <span class="bibtex" id="id6">[Expectat45:online]</span>:</p>
+<ul>
+<li><ol class="simple">
+<li><p>Expectation step (E step): Set the approximate posterior / variational distribution <span class="math notranslate nohighlight">\(q({\mathcal{Z}}\mid {\bf \phi}) = p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{t} })\)</span>, where <span class="math notranslate nohighlight">\(\bf \theta_{t}\)</span> are the previous M-step estimates of <span class="math notranslate nohighlight">\(\bf \theta\)</span>, this way the <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) = 0\)</span> and <span class="math notranslate nohighlight">\(\log p({\mathcal{x}} \mid {\bf \theta}) = \mathcal{L}(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta_{t}}))\)</span>. Our objective is then to</p></li>
+</ol>
+<ul class="simple">
+<li><p>A. Calculate the posterior over latent variables <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})\)</span> and</p></li>
+<li><p>B. Calculate <span class="math notranslate nohighlight">\(Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\)</span> (Expected Complete data Log Likelihood):</p></li>
+</ul>
+</li>
+</ul>
+<p>\begin{aligned}
+Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}) &amp;= \operatorname {E} _{p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})}\left[\log L({\boldsymbol {\theta }};\mathcal{X} ,\mathcal{Z} = z )\right], \
+&amp;= \operatorname {E} <em>{p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})}\left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \right], \
+&amp;= \sum</em>{z \in \mathcal{Z}} p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)}) \log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \
+\end{aligned}</p>
+<p>Notice that the only thing that is missing from <span class="math notranslate nohighlight">\(Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\)</span> compared to the ELBO is the entropy of the approximate posterior distribution <span class="math notranslate nohighlight">\(\operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\)</span>.</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Maximization step (M step): Find the parameters that maximize <span class="math notranslate nohighlight">\( Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\)</span>:</p></li>
+</ol>
+</li>
+</ul>
+<p>\begin{aligned}
+{\boldsymbol {\theta }}^{(t+1)} &amp;= {\underset {\boldsymbol {\theta }}{\operatorname {arg,max} }}\ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}),
+\end{aligned}</p>
+<div class="section" id="example-01-gaussian-mixture-model-expectat31-online">
+<h3>Example 01 - Gaussian Mixture Model <span class="bibtex" id="id7">[Expectat31:online]</span><a class="headerlink" href="#example-01-gaussian-mixture-model-expectat31-online" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-02-latent-dirichlet-allocation-topic-model">
+<h3>Example 02 - Latent Dirichlet Allocation Topic Model<a class="headerlink" href="#example-02-latent-dirichlet-allocation-topic-model" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-03-hidden-markov-model-10-5555-1162264hmmbaumw42-online">
+<h3>Example 03 - Hidden Markov Model <span class="bibtex" id="id8">[10.5555/1162264]</span><span class="bibtex" id="id9">[hmmbaumw42:online]</span><a class="headerlink" href="#example-03-hidden-markov-model-10-5555-1162264hmmbaumw42-online" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="hmm-setup">
+<h4>HMM Setup<a class="headerlink" href="#hmm-setup" title="Permalink to this headline">¶</a></h4>
+<p>Given the following setup:</p>
+<ul class="simple">
+<li><p>I.I.D. Observed data: <span class="math notranslate nohighlight">\(\mathcal{X} = \left(X^{(1)}, \cdots, X^{(D)}\right)\)</span>,</p>
+<ul>
+<li><p>where each <span class="math notranslate nohighlight">\(X^{(i)} = (x^{(i)}_{1}, x^{(i)}_{2}, \cdots, x^{(i)}_{T})\)</span>,</p></li>
+<li><p>where each <span class="math notranslate nohighlight">\(x^{(i)}_{t}\)</span> can take on 1 of <span class="math notranslate nohighlight">\(\left{1, 2, \cdots K \right}\)</span> values</p></li>
+</ul>
+</li>
+<li><p>Unobserved latent data or missing values: <span class="math notranslate nohighlight">\(\mathcal{Z} = \left(Z^{(1)}, \cdots, Z^{(D)}\right)\)</span>,</p>
+<ul>
+<li><p>where each <span class="math notranslate nohighlight">\(Z^{(i)} = (z^{(i)}_{1}, z^{(i)}_{2}, \cdots, z^{(i)}_{T})\)</span>,</p></li>
+<li><p>where each <span class="math notranslate nohighlight">\(z^{(i)}_{t}\)</span> can take on 1 of <span class="math notranslate nohighlight">\(\left{1, 2, \cdots N \right}\)</span> values</p></li>
+</ul>
+</li>
+<li><p>Unknown parameters: <span class="math notranslate nohighlight">\(\mathbf{\theta} = \left{A, B, \pi\right}\)</span></p>
+<ul>
+<li><p>where <span class="math notranslate nohighlight">\(\pi = (\pi_1, \pi_2, \cdots, \pi_N)\)</span> is the <span class="math notranslate nohighlight">\(1 \times N\)</span> initial state  matrix,</p>
+<ul>
+<li><p>where each <span class="math notranslate nohighlight">\(\pi_{i} = p(z_{1} = i)\)</span></p></li>
+</ul>
+</li>
+<li><p>where <span class="math notranslate nohighlight">\(A\)</span> is the <span class="math notranslate nohighlight">\(N \times N\)</span> state transmission matrix</p>
+<ul>
+<li><p>where each <span class="math notranslate nohighlight">\(A_{ij} = p(z_{t+1} = j \mid z_{t} = i)\)</span></p></li>
+</ul>
+</li>
+<li><p>where <span class="math notranslate nohighlight">\(B\)</span> is the <span class="math notranslate nohighlight">\(N \times K\)</span> state transmission matrix</p>
+<ul>
+<li><p>where each <span class="math notranslate nohighlight">\(B_{i}(j) = p(x_{t} = j \mid z_{t} = i)\)</span></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="e-step">
+<h4>E-step<a class="headerlink" href="#e-step" title="Permalink to this headline">¶</a></h4>
+<p>\begin{aligned}</p>
+<p>\end{aligned}</p>
+</div>
+</div>
+</div>
+<div class="section" id="technique-2-markov-chain-monte-carlo">
+<h2>Technique 2: Markov Chain Monte Carlo<a class="headerlink" href="#technique-2-markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="technique-3-mean-field-approximation-variational-inference">
+<h2>Technique 3: Mean-field Approximation Variational Inference<a class="headerlink" href="#technique-3-mean-field-approximation-variational-inference" title="Permalink to this headline">¶</a></h2>
+<p>\begin{aligned}
+{\rm ELBO} &amp;\equiv \mathbb{E}_{q({\bf z} \mid {\bf \phi})} \left [
+\log p({\bf x}, {\bf z} \mid {\bf \theta}) - \log q({\bf z} \mid {\bf \phi})
+\right]
+\end{aligned}</p>
+<div class="section" id="example-01-gaussian-mixture-model">
+<h3>Example 01 - Gaussian Mixture Model<a class="headerlink" href="#example-01-gaussian-mixture-model" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id10">
+<h3>Example 02 - Latent Dirichlet Allocation Topic Model<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-03-hidden-markov-model">
+<h3>Example 03 - Hidden Markov Model<a class="headerlink" href="#example-03-hidden-markov-model" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="technique-4-black-box-variational-inference">
+<h2>Technique 4: Black-box Variational Inference<a class="headerlink" href="#technique-4-black-box-variational-inference" title="Permalink to this headline">¶</a></h2>
+<p>\begin{aligned}
+{\rm ELBO} &amp;\equiv \mathbb{E}_{q({\bf z} \mid {\bf \phi})} \left [
+\log p({\bf x}, {\bf z} \mid {\bf \theta}) - \log q({\bf z} \mid {\bf \phi})
+\right]
+\end{aligned}</p>
+<div class="section" id="id11">
+<h3>Example 01 - Gaussian Mixture Model<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3>Example 02 - Latent Dirichlet Allocation Topic Model<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id13">
+<h3>Example 03 - Hidden Markov Model<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-04-bayesian-linear-regression">
+<h3>Example 04 - Bayesian Linear Regression<a class="headerlink" href="#example-04-bayesian-linear-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./machine-learning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="09-mixture-models-and-em.html" title="previous page">Mixture Models and EM</a>
+    <a class='right-next' id="next-link" href="11-sampling-methods.html" title="next page">Sampling Methods</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

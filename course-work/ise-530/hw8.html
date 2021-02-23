@@ -1,0 +1,1475 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ISE 530 Optimization for Analytics &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-530/hw8.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ISE 530 Optimization for Analytics" href="hw9.html" />
+    <link rel="prev" title="ISE 530 Optimization for Analytics" href="hw7.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-530/hw8.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="ISE 530 Optimization for Analytics" />
+<meta property="og:description" content="ISE 530 Optimization for Analytics  Homework VIII: Nonlinearly constrained optimization. Due 11:59 PM Wednesday November 11, 2020.  This is derived from Exercis" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/01-intro.html">
+   Pattern Recognition and Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     Probability Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     Linear Models for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     Linear Models for Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     Kernel Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     Sparse Kernel Machines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     Graphical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     Mixture Models and EM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     Approximate Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     Sampling Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     Continuous Latent Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     Sequential Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     Combining Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-contextual-bandits.html">
+     Contextual Bandits
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw1.html">
+   ISE-530 Homework I: Chapters I and II of Cottle-Thapa. Due 11:59 PM Wednesday September 09
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw2.html">
+   ISE-530 Homework II: Chapters III and IV of Cottle-Thapa. Due 11:59 PM Wednesday September 23, 2020
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw3.html">
+   ISE-530 Homework III: Chapters V and VI of Cottle-Thapa.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw4.html">
+   ISE-530 Homework IV: from Cottle-Thapa.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw5.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw6.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw7.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hw9.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="midterm.html">
+   ISE-530 Midterm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="final.html">
+   ISE 530 Optimization Methods for Analytics Final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes.html">
+   Linear and Non-linear Programming Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw1.html">
+   ISE 537: HW 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw2_part1.html">
+   ISE 537: HW 2 Part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw2_part2.html">
+   ISE 537: HW 2 Part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw3.html">
+   ISE 537: HW 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+   Market Observations 1: TSLA Absurd P/E Ratio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+   Market Observations 2: The NASDAQ Whale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+   Market Observations 3: Dovish till 2024
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+   Market Observations 4: The Future of EV batteries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+   Market Observations 5: Palantir
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-1.html">
+   ISE 537: Paper Review 1 - Value and Momentum Everywhere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-2.html">
+   ISE 537: Paper Review 2 - Carry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-3.html">
+   ISE 537: Paper Review 3 - Quality Minus Junk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-4.html">
+   ISE 537: Paper Review 4 - Size Matters, if You Control Your Junk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-5.html">
+   ISE 537: Paper Review 5 - The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/project1.html">
+   ISE 537: Project 1: Momentum Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/project2.html">
+   ISE-537 Project 2: Carry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notes.html">
+   Linear and Non-linear Programming Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review1.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review2.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review3.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review4.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review5.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review6.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review7.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../csci-499/review8.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+   Paper Review Presentation
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+   Education Deserts Research
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/pelillian/varro">
+   Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+   OCR Research on Google Street View Panoramics
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../zbibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-530/hw8.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ise-530-optimization-for-analytics">
+<h1>ISE 530 Optimization for Analytics<a class="headerlink" href="#ise-530-optimization-for-analytics" title="Permalink to this headline">¶</a></h1>
+<p>Homework VIII: Nonlinearly constrained optimization. Due 11:59 PM Wednesday November 11, 2020.</p>
+<ul class="simple">
+<li><p>This is derived from Exercise 11.19 in Cottle-Thapa. Define the functions <span class="math notranslate nohighlight">\(s(t)\)</span> and <span class="math notranslate nohighlight">\(c(t)\)</span> of the real variable <span class="math notranslate nohighlight">\(t\)</span>:</p></li>
+</ul>
+<p>\begin{aligned}
+s(t) =
+\begin{cases}
+t^4 \sin\frac{1}{t} &amp;\text{ if } t \not= 0 \
+0 &amp;\text{ if } t = 0 \
+\end{cases}
+,,,,
+&amp;
+,,,,
+c(t) =
+\begin{cases}
+t^4 \cos\frac{1}{t} &amp;\text{ if } t \not= 0 \
+0 &amp;\text{ if } t = 0 \
+\end{cases}
+\end{aligned}</p>
+<p>Consider the nonlinear program:</p>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;x_2 \
+\text{subject to }
+&amp;c_1(x_1, x_2) = s(x_1) − x_2 + x^2_1 \geq 0 \
+&amp;c_2(x_1, x_2) = x_2 − x^2_1 − c(x_1) \geq 0 \
+\text{and } &amp;c_3(x_1, x_2) = 1 − x^2_1 \geq 0. \
+\end{aligned}</p>
+<p>Write down the KKT conditions for the problem and show that they reduce to</p>
+<p>\begin{aligned}
+u_1 \geq 0, u2 \geq 0,
+,,,,
+&amp;\text{ and }
+,,,,
+1 + u_1 − u_2 = 0.
+\end{aligned}</p>
+<p>From a solution of the latter simplified conditions, construct a solution of the given problem?</p>
+<ul class="simple">
+<li><p>This is derived from Exercise 11.20 in Cottle-Thapa. Write down the Karush-Kuhn-Tucker conditions of the nonlinear program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;40 x_1 x_2 + 20 x_2 x_3 \
+\text{subject to }
+&amp; -\frac{1}{x_1\sqrt{x_2}} - \frac{3}{x_2x^{2/3}_3} + 5 \geq 0 \
+\text{and } &amp;x_i \geq 1, i=1,2,3. \
+\end{aligned}</p>
+<p>Find a solution along with Lagrange multipliers satisfying these conditions.</p>
+<ul class="simple">
+<li><p>Do parts (a), (b), and (c) in Exercise 11.21 in Cottle-Thapa.</p></li>
+<li><p>Consider the nonlinear program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;-x_1 - x_2 - x_1x_2 + \frac{1}{2}x^2_1 + x^2_2 \
+\text{subject to }
+&amp; x_1 + x^2_2 \leq 3 \
+&amp; x^2_1 - x_2 = 3 \
+\text{and } &amp;x_1, x_2 \geq 0. \
+\end{aligned}</p>
+<ul class="simple">
+<li><p>Write down the Karush-Kuhn-Tucker (KKT) conditions of this problem.</p></li>
+<li><p>Show that the linear independence constraint qualification holds at the point <span class="math notranslate nohighlight">\((2, 1)\)</span>. Does this point satisfy the KKT conditions?</p></li>
+<li><p>Consider a simple set in the plane consisting of points <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span> satisfying <span class="math notranslate nohighlight">\(ab = 0\)</span>. Show that the linear independence constraint qualification cannot hold at any feasible point in the set.</p></li>
+<li><p>Apply the Karush-Kuhn-Tucker conditions to locate the unique of the following convex program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;x^2_1 + x^2_2 - 4x_1 - 4x_2 \
+\text{subject to }
+&amp; x^2_1 - x_2 \leq 0 \text{ and } x_1 + x_2 \leq 2. \
+\end{aligned}</p>
+<p>Verify your solution geometrically by showing that the problem is equivalent to a closest-point problem, i.e., finding a point in the feasible region that is closest to a given point outside of the region.</p>
+<ul class="simple">
+<li><p>Consider the following nonlinear program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;e^{x^2_1 - x_2} \
+\text{subject to }
+&amp; e^{x_1} - e^{x_2} \leq 20 \text{ and } x_1 \geq 0. \
+\end{aligned}</p>
+<p>Is the objective function convex? Argue that the constraints satisfy the Slater constraint qualification. Further argue that at an optimal solution of the problem, we must have <span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} = 20\)</span>. Use the latter fact to show that the problem is equivalent to a problem in the <span class="math notranslate nohighlight">\(x_1\)</span>-variable only. Solve the problem. Verify that the solution you obtain satisfies the Karush-Kuhn-Tucker conditions of the original problem in the <span class="math notranslate nohighlight">\((x_1, x_2)\)</span>-variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport operator\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sympy import Matrix\nfrom scipy import optimize";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport operator\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sympy import Matrix\nfrom scipy import optimize";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>This is derived from Exercise 11.19 in Cottle-Thapa. Define the functions <span class="math notranslate nohighlight">\(s(t)\)</span> and <span class="math notranslate nohighlight">\(c(t)\)</span> of the real variable <span class="math notranslate nohighlight">\(t\)</span>:</p></li>
+</ul>
+<p>\begin{aligned}
+s(t) =
+\begin{cases}
+t^4 \sin\frac{1}{t} &amp;\text{ if } t \not= 0 \
+0 &amp;\text{ if } t = 0 \
+\end{cases}
+,,,,
+&amp;
+,,,,
+c(t) =
+\begin{cases}
+t^4 \cos\frac{1}{t} &amp;\text{ if } t \not= 0 \
+0 &amp;\text{ if } t = 0 \
+\end{cases}
+\end{aligned}</p>
+<p>Consider the nonlinear program:</p>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;x_2 \
+\text{subject to }
+&amp;c_1(x_1, x_2) = s(x_1) − x_2 + x^2_1 \geq 0 \
+&amp;c_2(x_1, x_2) = x_2 − x^2_1 − c(x_1) \geq 0 \
+\text{and } &amp;c_3(x_1, x_2) = 1 − x^2_1 \geq 0. \
+\end{aligned}</p>
+<p>Write down the KKT conditions for the problem and show that they reduce to</p>
+<p>\begin{aligned}
+u_1 \geq 0, u_2 \geq 0,
+,,,,
+&amp;\text{ and }
+,,,,
+1 + u_1 − u_2 = 0.
+\end{aligned}</p>
+<p>From a solution of the latter simplified conditions, construct a solution of the given problem?</p>
+<p>\begin{aligned}
+s^\prime(t) =
+\begin{cases}
+4t^3 \sin\frac{1}{t} - t^2 \cos\frac{1}{t} &amp;\text{ if } t \not= 0 \
+0 &amp;\text{ if } t = 0 \
+\end{cases}
+,,,,
+&amp;
+,,,,
+c^\prime(t) =
+\begin{cases}
+4t^3 \cos\frac{1}{t} + t^2 \sin\frac{1}{t} &amp;\text{ if } t \not= 0 \
+0 &amp;\text{ if } t = 0 \
+\end{cases}
+\end{aligned}</p>
+<p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, \mu^*_1, \mu^*_2, \mu^*_3)\)</span>:</p>
+<ol class="simple">
+<li><p>Primal Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+s(x^<em>_1) − x^</em>_2 + {(x^<em>_1)}^2 &amp;\geq 0 \
+x^</em>_2 − {x^<em>_1}^2 − c(x^</em>_1) &amp;\geq 0 \
+1 − {x^*_1}^2 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Dual Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 &amp;\geq 0 \
+\mu^</em>_2 &amp;\geq 0 \
+\mu^*_3 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Complementary Slackness</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1(s(x^</em>_1) − x^<em>_2 + {(x^</em>_1)}^2) &amp;= 0 \
+\mu^<em>_2(x^</em>_2 − {x^<em>_1}^2 − c(x^</em>_1)) &amp;= 0 \
+\mu^<em>_3(1 − {x^</em>_1}^2) &amp;= 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Stationarity</p></li>
+</ol>
+<p>\begin{aligned}
+\nabla_x \mathcal{L}(x^<em>_1, x^</em>_2, \mu^<em>_1, \mu^</em>_2, \mu^<em>_3) &amp;= 0 \
+\nabla_x \Big[x_2 - \mu^</em>_1(s(x^<em>_1) − x^</em>_2 + {(x^<em>_1)}^2) - \mu^</em>_2(x^<em>_2 − {x^</em>_1}^2 − c(x^<em>_1)) - \mu^</em>_3(1 − {x^<em>_1}^2) \Big] &amp;= 0 \
+\begin{bmatrix}
+- \mu^</em>_1s^\prime(x^<em>_1) -2x^</em>_1 + 2\mu^<em>_2x^</em>_1 + \mu^<em>_2c^\prime(x^</em>_1) + 2\mu^<em>_3x^</em>_1 \
+1 + \mu^<em>_1 - \mu^</em>_2 \
+\end{bmatrix}
+&amp;= 0 \
+\end{aligned}</p>
+<p>At Optimal solution <span class="math notranslate nohighlight">\(x^*_1 = 0, x^*_2 = 0\)</span>, our KKT conditions reduce to :</p>
+<p>\begin{aligned}
+u_1 \geq 0, u_2 \geq 0,
+,,,,
+&amp;\text{ and }
+,,,,
+1 + u_1 − u_2 = 0.
+\end{aligned}</p>
+<p>where <span class="math notranslate nohighlight">\(u_1 = \mu^*_1, u_2 = \mu^*_2\)</span> <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>This is derived from Exercise 11.20 in Cottle-Thapa. Write down the Karush-Kuhn-Tucker conditions of the nonlinear program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;40 x_1 x_2 + 20 x_2 x_3 \
+\text{subject to }
+&amp; -\frac{1}{x_1\sqrt{x_2}} - \frac{3}{x_2x^{2/3}_3} + 5 \geq 0 \
+\text{and } &amp;x_i \geq 1, i=1,2,3. \
+\end{aligned}</p>
+<p>Find a solution along with Lagrange multipliers satisfying these conditions.</p>
+<p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, x^*_3, \mu^*_1, \mu^*_2, \mu^*_3, \mu^*_4)\)</span>:</p>
+<ol class="simple">
+<li><p>Primal Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+-\frac{1}{x^<em>_1\sqrt{x^</em>_2}} - \frac{3}{x^<em>_2{x^</em>_3}^{2/3}} + 5 &amp;\geq 0 \
+x^<em>_1 - 1 &amp;\geq 0 \
+x^</em>_2 - 1 &amp;\geq 0 \
+x^*_3 - 1 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Dual Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 &amp;\geq 0 \
+\mu^</em>_2 &amp;\geq 0 \
+\mu^<em>_3 &amp;\geq 0 \
+\mu^</em>_4 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Complementary Slackness</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1(-{x^</em>_1}^{-1} {x^<em>_2}^{-0.5} -3{x^</em>_2}^{-1}{x^<em>_3}^{-2/3} + 5) &amp;= 0 \
+\mu^</em>_2(x^<em>_1 - 1) &amp;= 0 \
+\mu^</em>_3(x^<em>_2 - 1) &amp;= 0 \
+\mu^</em>_4(x^*_3 - 1) &amp;= 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Stationarity</p></li>
+</ol>
+<p>\begin{aligned}
+\nabla_{x} \mathcal{L}(x^<em>_1, x^</em>_2, x^<em>_3, \mu^</em>_1, \mu^<em>_2, \mu^</em>_3, \mu^<em><em>4)
+&amp;= 0 \
+\nabla</em>{x} 40 x^</em>_1 x^<em>_2 + 20 x^</em>_2 x^<em>_3
+- \mu^</em>_1(-{x^<em>_1}^{-1} {x^</em>_2}^{-0.5} -3{x^<em>_2}^{-1}{x^</em>_3}^{-2/3} + 5)
+- \mu^<em>_2(x^</em>_1 - 1)
+- \mu^<em>_3(x^</em>_2 - 1)
+- \mu^<em>_4(x^</em>_3 - 1)
+&amp;= 0 \
+\begin{bmatrix}
+40x^<em>_2 - \mu^</em>_1x^{-2}_1x^{-0.5}_2 - \mu^<em>_2 \
+40x^</em>_1 + 20x^<em>_3 -0.5\mu^</em>_1{x^<em>_1}^{-1}{x^</em>_2}^{-1.5} -3x^{-2}_2{x^<em>_3}^{-2/3} - \mu^</em>_3 \
+20x^<em>_2 -2\mu^</em>_1 {x^<em>_2}^{-1} {x^</em>_3}^{-5/3} - \mu^<em>_4 \
+\end{bmatrix}
+&amp;= 0 \
+\vdots \
+\mu^</em>_2 &amp;= 40x^<em>_2 - \mu^</em>_1{x^<em>_1}^{-2}{x^</em>_2}^{-0.5} \
+\mu^<em>_3 &amp;= 40x^</em>_1 + 20x^<em>_3 -0.5\mu^</em>_1{x^<em>_1}^{-1}{x^</em>_2}^{-1.5} -3{x^<em>_2}^{-2}{x^</em>_3}^{-2/3} \
+\mu^<em>_4 &amp;= 20x^</em>_2 -2\mu^<em>_1 {x^</em>_2}^{-1} {x^*_3}^{-5/3} \
+\end{aligned}</p>
+<p>Substituting Stationarity conditions into complementary slackness:</p>
+<p>\begin{aligned}
+\mu^<em>_1(-{x^</em>_1}^{-1} {x^<em>_2}^{-0.5} -3{x^</em>_2}^{-1}{x^<em>_3}^{-2/3} + 5) &amp;= 0 \
+(40x^</em>_2 - \mu^<em>_1{x^</em>_1}^{-2}{x^<em>_2}^{-0.5})(x^</em>_1 - 1) &amp;= 0 \
+(40x^<em>_1 + 20x^</em>_3 -0.5\mu^<em>_1{x^</em>_1}^{-1}{x^<em>_2}^{-1.5} -3{x^</em>_2}^{-2}{x^<em>_3}^{-2/3})(x^</em>_2 - 1) &amp;= 0 \
+(20x^<em>_2 -2\mu^</em>_1 {x^<em>_2}^{-1} {x^</em>_3}^{-5/3})(x^*_3 - 1) &amp;= 0 \
+\end{aligned}</p>
+<p>Case I: <span class="math notranslate nohighlight">\(\mu^*_1 = 0\)</span></p>
+<p>\begin{aligned}
+40x^<em>_2(x^</em>_1 - 1) &amp;= 0 \
+(40x^<em>_1 + 20x^</em>_3 - 3{x^<em>_2}^{-2}{x^</em>_3}^{-2/3})(x^<em>_2 - 1) &amp;= 0 \
+20x^</em>_2(x^*_3 - 1) &amp;= 0 \
+\end{aligned}</p>
+<p>A Solution: <span class="math notranslate nohighlight">\(x^*_1 = 1, x^*_2 = 1,  x^*_3 = 1, \mu^*_1 = 0, \mu^*_2 = 40, \mu^*_3 = 57, \mu^*_4 = 20\)</span>.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Do parts (a), (b), and (c) in Exercise 11.21 in Cottle-Thapa.</p></li>
+</ul>
+<p>Consider the optimization problem</p>
+<p>\begin{aligned}
+\text{maximize } &amp;x_1 \
+\text{subject to }
+&amp; (x_1 - 1)^3 + x_2 \leq 0 \
+&amp; x_1 \leq 0 \
+&amp; x_2 \leq 0. \
+\end{aligned}</p>
+<p>(a) Find an optimal solution for this problem. Is it unique?</p>
+<p>Convert to minimization problem</p>
+<p>\begin{aligned}
+\text{minimize } &amp;-x_1 \
+\text{subject to }
+&amp; (x_1 - 1)^3 + x_2 \leq 0 \
+&amp; x_1 \leq 0 \
+&amp; x_2 \leq 0. \
+\end{aligned}</p>
+<p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, \mu^*_1, \mu^*_2, \mu^*_3)\)</span>:</p>
+<ol class="simple">
+<li><p>Primal Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+(x^<em>_1 - 1)^3 + x^</em>_2 &amp;\leq 0 \
+x^<em>_1 &amp;\leq 0 \
+x^</em>_2 &amp;\leq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Dual Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 &amp;\geq 0 \
+\mu^</em>_2 &amp;\geq 0 \
+\mu^*_3 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Complementary Slackness</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1((x^</em>_1 - 1)^3 + x^<em>_2) &amp;= 0 \
+\mu^</em>_2(x^<em>_1) &amp;= 0 \
+\mu^</em>_3(x^*_2) &amp;= 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Stationarity</p></li>
+</ol>
+<p>\begin{aligned}
+\nabla_x \mathcal{L}(x^<em>_1, x^</em>_2, \mu^<em>_1, \mu^</em>_2, \mu^<em>_3) &amp;= 0 \
+\nabla_x \Big[ -x^</em>_1 + \mu^<em>_1((x^</em>_1 - 1)^3 + x^<em>_2) + \mu^</em>_2(x^<em>_1) + \mu^</em>_3(x^<em>_2) \Big] &amp;= 0 \
+\begin{bmatrix}
+-1 + 3\mu^</em>_1(x^<em>_1 - 1)^2 + \mu^</em>_2 \
+\mu^<em>_1 + \mu^</em>_3 \
+\end{bmatrix}
+&amp;= 0 \
+\end{aligned}</p>
+<p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = 1 - 3\mu^*_1(x^*_1 - 1)^2\)</span> and <span class="math notranslate nohighlight">\(\mu^*_3 = \mu^*_1\)</span> into the complementary slackness conditions:</p>
+<p>\begin{aligned}
+\mu^<em>_1((x^</em>_1 - 1)^3 + x^<em>_2) &amp;= 0 \
+(1 - 3\mu^</em>_1(x^<em>_1 - 1)^2)(x^</em>_1) &amp;= 0 \
+\mu^<em>_1(x^</em>_2) &amp;= 0 \
+\vdots \
+\mu^<em>_1(x^</em>_1 - 1)^3 &amp;= 0 \
+(1 - 3\mu^<em>_1(x^</em>_1 - 1)^2)(x^*_1) &amp;= 0 \
+\end{aligned}</p>
+<p>Case I: <span class="math notranslate nohighlight">\(x^*_1 = 1\)</span></p>
+<p>\begin{aligned}
+(1 - 3\mu^*_1(1 - 1)^2)(1) &amp;= 0 \
+1 &amp;= 0 \
+\end{aligned}</p>
+<p>Hence, this case is not possible and <span class="math notranslate nohighlight">\(x^*_1 \not= 1\)</span></p>
+<p>Case II: <span class="math notranslate nohighlight">\(\mu^*_1 = 0\)</span></p>
+<p>\begin{aligned}
+(1 - 3(0)(x^<em>_1 - 1)^2)(x^</em>_1) &amp;= 0 \
+\therefore x^<em>_1 &amp;= 0 \
+x^</em>_2 &amp;= 0 \because \mu^<em>_1((x^</em>_1 - 1)^3 + x^<em>_2) = 0 \
+\mu^</em>_2 &amp;= 1 \because -1 + 3\mu^<em>_1(x^</em>_1 - 1)^2 + \mu^<em>_2 = 0 \
+\mu^</em>_3 &amp;= 0 \because \mu^<em>_3 = \mu^</em>_1 \
+\end{aligned}</p>
+<p>Optimal solution: <span class="math notranslate nohighlight">\(x^*_1=0, x^*_2=0, \mu^*_1=0, \mu^*_2=1, \mu^*_3=0\)</span>, unique.</p>
+<p>(b) What is the feasible region of this problem?</p>
+<p><span class="math notranslate nohighlight">\(\Big\{x=\begin{bmatrix}x_1 \\x_2 \end{bmatrix}: \begin{bmatrix}x_1 \\x_2\end{bmatrix} \leq 0 \Big\}\)</span></p>
+<p>(c) Is the Slater condition satisfied in this case?</p>
+<p>Concavity of Constraints for Maximization problem:</p>
+<p>\begin{aligned}
+(x_1 - 1)^3 + x_2 &amp;\leq 0 \text{ is concave }\because \begin{bmatrix} 6(x_1 - 1) &amp; 0 \ 0 &amp; 0 \end{bmatrix} \preccurlyeq 0 \text{ when } x_1 \leq 0 \
+x_1 &amp;\leq 0 \text{ is affine }\
+x_2 &amp;\leq 0 \text{ is affine }\
+\end{aligned}</p>
+<p>Slater’s condition holds as when <span class="math notranslate nohighlight">\(x\)</span> is any vector <span class="math notranslate nohighlight">\(&lt; 0\)</span>.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Consider the nonlinear program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;-x_1 - x_2 - x_1x_2 + \frac{1}{2}x^2_1 + x^2_2 \
+\text{subject to }
+&amp; x_1 + x^2_2 \leq 3 \
+&amp; x^2_1 - x_2 = 3 \
+\text{and } &amp;x_1, x_2 \geq 0. \
+\end{aligned}</p>
+<ul class="simple">
+<li><p>Write down the Karush-Kuhn-Tucker (KKT) conditions of this problem.</p></li>
+</ul>
+<p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, \mu^*_1, \mu^*_2, \mu^*_3)\)</span>:</p>
+<ol class="simple">
+<li><p>Primal Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+x^<em>_1 + {x^</em>_2}^2 - 3 &amp;\leq 0 \
+{x^<em>_1}^2 - x^</em>_2 - 3 &amp;= 0 \
+-x^<em>_1 &amp;\leq 0 \
+-x^</em>_2 &amp;\leq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Dual Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 &amp;\geq 0 \
+\lambda^</em>_1 &amp;\geq 0 \
+\mu^<em>_2 &amp;\geq 0 \
+\mu^</em>_3 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Complementary Slackness</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 (x^</em>_1 + {x^<em>_2}^2 - 3) &amp;= 0 \
+\mu^</em>_2 (-x^<em>_1) &amp;= 0 \
+\mu^</em>_3 (-x^*_2) &amp;= 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Stationarity</p></li>
+</ol>
+<p>\begin{aligned}
+\nabla_x \mathcal{L}(x^<em>_1, x^</em>_2, \mu^<em>_1, \lambda^</em>_1, \mu^<em>_2, \mu^</em>_3) &amp;= 0 \
+\nabla_x \Big[ -x^<em>_1 - x^</em>_2 - x^<em>_1x^</em>_2 + \frac{1}{2}{x^<em>_1}^2 + {x^</em>_2}^2 + \mu^<em>_1 (x^</em>_1 + {x^<em>_2}^2 - 3) + \lambda^</em>_1 ({x^<em>_1}^2 - x^</em>_2 - 3) + \mu^<em>_2 (-x^</em>_1) + \mu^<em>_3 (-x^</em>_2) \Big] &amp;= 0 \
+\begin{bmatrix}
+-1 -x^<em>_2 + x^</em>_1 + \mu^<em>_1 + 2\lambda^</em>_1 x^<em>_1 - \mu^</em>_2 \
+-1 -x^<em>_1 + 2x^</em>_2 + 2\mu^<em>_1x^</em>_2 - \lambda^<em>_1 - \mu^</em>_3 \
+\end{bmatrix}
+&amp;= 0 \
+\end{aligned}</p>
+<p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = -1 -x^*_2 + x^*_1 + \mu^*_1 + 2\lambda^*_1 x^*_1\)</span> and <span class="math notranslate nohighlight">\(\mu^*_3 = -1 -x^*_1 + 2x^*_2 + 2\mu^*_1x^*_2 - \lambda^*_1\)</span> into the complementary slackness conditions:</p>
+<p>\begin{aligned}
+\mu^<em>_1 (x^</em>_1 + {x^<em>_2}^2 - 3) &amp;= 0 \
+(-1 -x^</em>_2 + x^<em>_1 + \mu^</em>_1 + 2\lambda^<em>_1 x^</em>_1) (-x^<em>_1) &amp;= 0 \
+(-1 -x^</em>_1 + 2x^<em>_2 + 2\mu^</em>_1x^<em>_2 - \lambda^</em>_1) (-x^<em>_2) &amp;= 0 \
+\vdots \
+\mu^</em>_1 (x^<em>_1 + {x^</em>_2}^2 - 3) &amp;= 0 \
+x^<em>_1 + x^</em>_1x^<em>_2 - {x^</em>_1}^2 - \mu^<em>_1x^</em>_1 - 2\lambda^<em>_1 {x^</em>_1}^2 &amp;= 0 \
+x^<em>_2 + x^</em>_1x^<em>_2 - 2{x^</em>_2}^2 - 2\mu^<em>_1{x^</em>_2}^2 + \lambda^<em>_1x^</em>_2 &amp;= 0 \
+\end{aligned}</p>
+<ul class="simple">
+<li><p>Show that the linear independence constraint qualification holds at the point <span class="math notranslate nohighlight">\((2, 1)\)</span>. Does this point satisfy the KKT conditions?</p></li>
+</ul>
+<p>Gradients of Constraints:</p>
+<p>\begin{aligned}
+\nabla_x c_1(x_1, x_2) &amp;= \nabla_x (x_1 + {x_2}^2 - 3) = \begin{bmatrix} 1 \ 2x_2 \end{bmatrix} \
+\nabla_x c_2(x_1, x_2) &amp;= \nabla_x ({x_1}^2 - x_2 - 3) = \begin{bmatrix} 2x_1 \ -1 \end{bmatrix} \
+\nabla_x c_3(x_1, x_2) &amp;= \nabla_x (-x_1) = \begin{bmatrix} -1 \ 0 \end{bmatrix} \
+\nabla_x c_4(x_1, x_2) &amp;= \nabla_x (-x_2) = \begin{bmatrix} 0 \ -1 \end{bmatrix} \
+\end{aligned}</p>
+<p>At <span class="math notranslate nohighlight">\(x_1 = 2\)</span> and <span class="math notranslate nohighlight">\(x_2 = 1\)</span>, the following are the gradients of the active constraints:</p>
+<p>\begin{aligned}
+\nabla_x c_1(x_1, x_2) &amp;= \begin{bmatrix} 1 \ 2 \end{bmatrix} \
+\nabla_x c_2(x_1, x_2) &amp;= \begin{bmatrix} 4 \ -1 \end{bmatrix} \
+\end{aligned}</p>
+<p>We see that the active constraints are linearly indepdendent, hence, Linear Independence Constraint Qualifications (LICQ) holds. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+<p>Plugging in <span class="math notranslate nohighlight">\(x_1 = 2\)</span> and <span class="math notranslate nohighlight">\(x_2 = 1\)</span> into the KKT Stationarity conditions:</p>
+<p>\begin{aligned}
+\begin{bmatrix}
+\mu^<em>_2 \
+\mu^</em>_3 \
+\end{bmatrix}
+&amp;=
+\begin{bmatrix}
+\mu^<em>_1 + 4\lambda^</em>_1 \
+-1 + 2\mu^<em>_1 - \lambda^</em>_1 \
+\end{bmatrix} \
+\end{aligned}</p>
+<p>Substituting into the Complementary slackness conditions:</p>
+<p>\begin{aligned}
+(\mu^<em>_1 + 4\lambda^</em>_1) (-2) &amp;= 0 \
+(-1 + 2\mu^<em>_1 - \lambda^</em>_1) (-1) &amp;= 0 \
+&amp;\vdots \
+-2\mu^<em>_1 - 8\lambda^</em>_1 &amp;= 0 \
+1 - 2\mu^<em>_1 + \lambda^</em>_1 &amp;= 0 \
+&amp;\vdots \
+\mu^<em>_1 &amp;= -4\lambda^</em>_1 \
+\mu^<em>_1 &amp;= 0.5 + 0.5\lambda^</em>_1 \
+&amp;\vdots \
+-4.5\lambda^<em>_1 &amp;= 0.5 \
+\lambda^</em>_1 &amp;= -\frac{1}{9} \
+\end{aligned}</p>
+<p>This indicates that the point is not dual feasible, and hence does not satisfy the KKT conditions and is hence not optimal.</p>
+<ul class="simple">
+<li><p>Consider a simple set in the plane consisting of points <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span> satisfying <span class="math notranslate nohighlight">\(ab = 0\)</span>. Show that the linear independence constraint qualification cannot hold at any feasible point in the set.</p></li>
+</ul>
+<p>If <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span> and <span class="math notranslate nohighlight">\(ab = 0\)</span>, it must mean that either <span class="math notranslate nohighlight">\(a=0\)</span> or <span class="math notranslate nohighlight">\(b=0\)</span> (cannot be both as it will be infeasible).</p>
+<p>Gradients of Constraints:</p>
+<p>\begin{aligned}
+\nabla_x c_1(x_1, x_2) &amp;= \nabla_x (x_1 + {x_2}^2 - 3) = \begin{bmatrix} 1 \ 2x_2 \end{bmatrix} = \begin{bmatrix} 1 \ 2b \end{bmatrix} \
+\nabla_x c_2(x_1, x_2) &amp;= \nabla_x ({x_1}^2 - x_2 - 3) = \begin{bmatrix} 2x_1 \ -1 \end{bmatrix} = \begin{bmatrix} 2a \ -1 \end{bmatrix} \
+\nabla_x c_3(x_1, x_2) &amp;= \nabla_x (-x_1) = \begin{bmatrix} -1 \ 0 \end{bmatrix} \
+\nabla_x c_4(x_1, x_2) &amp;= \nabla_x (-x_2) = \begin{bmatrix} 0 \ -1 \end{bmatrix} \
+\end{aligned}</p>
+<p>For <span class="math notranslate nohighlight">\((a, b)\)</span> to be feasible, we need:</p>
+<p>\begin{aligned}
+a + b^2 - 3 &amp;\leq 0 \
+a^2 - b - 3 &amp;= 0 \
+-a &amp;\leq 0 \
+-b &amp;\leq 0 \
+\end{aligned}</p>
+<p>If only <span class="math notranslate nohighlight">\(a = 0 \rightarrow b = -3\)</span>, violates our assumption that <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span>.</p>
+<p>If only <span class="math notranslate nohighlight">\(b = 0 \rightarrow a = \sqrt{3}\)</span>. However, this will mean the gradient of the active constraints will be:</p>
+<p>\begin{aligned}
+\begin{bmatrix} 2\sqrt{3} \ -1 \ \end{bmatrix} \
+\begin{bmatrix} 0 \ -1 \ \end{bmatrix} \
+\end{aligned}</p>
+<p>which are linearly independent.</p>
+<p>Unless <span class="math notranslate nohighlight">\(a = \sqrt{3}, b=0\)</span>, LICQ cannot hold, given that <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span> satisfying <span class="math notranslate nohighlight">\(ab = 0\)</span>. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Apply the Karush-Kuhn-Tucker conditions to locate the unique of the following convex program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;x^2_1 + x^2_2 - 4x_1 - 4x_2 \
+\text{subject to }
+&amp; x^2_1 - x_2 \leq 0 \text{ and } x_1 + x_2 \leq 2. \
+\end{aligned}</p>
+<p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, \mu^*_1, \mu^*_2)\)</span>:</p>
+<ol class="simple">
+<li><p>Primal Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+{x^<em>_1}^2 - x^</em>_2 \leq 0 \
+x^<em>_1 + x^</em>_2 - 2 \leq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Dual Feasibility</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 &amp;\geq 0 \
+\mu^</em>_2 &amp;\geq 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Complementary Slackness</p></li>
+</ol>
+<p>\begin{aligned}
+\mu^<em>_1 ({x^</em>_1}^2 - x^<em>_2) &amp;= 0 \
+\mu^</em>_2 (x^<em>_1 + x^</em>_2 - 2) &amp;= 0 \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Stationarity</p></li>
+</ol>
+<p>\begin{aligned}
+\nabla_x \mathcal{L}(x^<em>_1, x^</em>_2, \mu^<em>_1, \mu^</em>_2) &amp;= 0 \
+\nabla_x \Big[ {x^<em>_1}^2 + {x^</em>_2}^2 - 4x^<em>_1 - 4x^</em>_2 + \mu^<em>_1 ({x^</em>_1}^2 - x^<em>_2) + \mu^</em>_2 (x^<em>_1 + x^</em>_2 - 2) \Big] &amp;= 0 \
+\begin{bmatrix}
+2x^<em>_1 - 4 + 2\mu^</em>_1 x^<em>_1 + \mu^</em>_2 \
+2x^<em>_2 - 4 - \mu^</em>_1 + \mu^*_2 \
+\end{bmatrix}
+&amp;= 0 \
+\end{aligned}</p>
+<p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = -2x^*_2 + 4 + \mu^*_1\)</span> into <span class="math notranslate nohighlight">\(2x^*_1 - 4 + 2\mu^*_1 x^*_1 + \mu^*_2 = 0\)</span>:</p>
+<p>\begin{aligned}
+2x^<em>_1 - 4 + 2\mu^</em>_1 x^<em>_1 - 2x^</em>_2 + 4 + \mu^<em>_1 &amp;= 0 \
+\mu^</em>_1(2x^<em>_1 + 1) &amp;= -2x^</em>_1 + 2x^<em>_2 \
+\mu^</em>_1 &amp;= \frac{-2x^<em>_1 + 2x^</em>_2}{2x^*_1 + 1} ,,–,,(1) \
+\end{aligned}</p>
+<p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = -2x^*_2 + 4 + \mu^*_1\)</span> into the second complementary slackness condition <span class="math notranslate nohighlight">\(\mu^*_2 (x^*_1 + x^*_2 - 2) = 0\)</span>:</p>
+<p>\begin{aligned}
+(-2x^<em>_2 + 4 + \mu^</em>_1)(x^<em>_1 + x^</em>_2 - 2) &amp;= 0 \
+\end{aligned}</p>
+<p>Case I: <span class="math notranslate nohighlight">\(\mu^*_2 = 0 \rightarrow -2x^*_2 + 4 + \mu^*_1 = 0\)</span>, <span class="math notranslate nohighlight">\(\therefore \mu^*_1 = 2x^*_2 - 4 \,\,--\,\,(2)\)</span></p>
+<p>Substituting into first complementary slackness condition:</p>
+<p>\begin{aligned}
+\mu^<em>_1 ({x^</em>_1}^2 - x^<em>_2) &amp;= 0 \
+(2x^</em>_2 - 4) ({x^<em>_1}^2 - x^</em>_2) &amp;= 0 \
+2x^<em>_2({x^</em>_1}^2 - x^<em>_2) - 4({x^</em>_1}^2 - x^<em>_2) &amp;= 0 \
+2x^</em>_2{x^<em>_1}^2 - 2{x^</em>_2}^2 - 4{x^<em>_1}^2 + 4x^</em>_2 &amp;= 0 \
+{x^<em>_1}^2 &amp;= \frac{{x^</em>_2}^2 - 2x^<em>_2}{x^</em>_2 - 2} \
+{x^<em>_1}^2 &amp;= x^</em>_2\frac{x^<em>_2 - 2}{x^</em>_2 - 2} \
+{x^<em>_1}^2 &amp;= x^</em>_2 \
+\end{aligned}</p>
+<p>(1) = (2):</p>
+<p>\begin{aligned}
+2x^<em>_2 - 4 &amp;= \frac{-2x^</em>_1 + 2x^<em>_2}{2x^</em>_1 + 1} \
+2(x^<em>_2 - 2)(2x^</em>_1 + 1) &amp;= -2x^<em>_1 + 2x^</em>_2 \
+2({x^<em>_1}^2 - 2)(2x^</em>_1 + 1) &amp;= -2x^<em>_1 + 2{x^</em>_1}^2 \
+2({x^<em>_1}^2 - 2)(2x^</em>_1 + 1) &amp;= -2x^<em>_1 (1 - x^</em>_1) \
+4{x^<em>_1}^3 + 2{x^</em>_1}^2 - 8x^<em>_1 - 4 &amp;= -2x^</em>_1 + 2{x^<em>_1}^2 \
+4{x^</em>_1}^3 - 6x^<em>_1 - 4 &amp;= 0 \
+2{x^</em>_1}^3 - 3x^*_1 - 2 &amp;= 0 \
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">root</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mf">1.4</span><span class="p">])</span>
+<span class="n">solution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    fjac: array([[-1.]])
+     fun: -1.0658141036401503e-14
+ message: &#39;The solution converged.&#39;
+    nfev: 7
+     qtf: array([-6.60441746e-09])
+       r: array([-10.06588727])
+  status: 1
+ success: True
+       x: array([1.47568652])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.75 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 18;
+                var nbb_unformatted_code = "solution = sp.optimize.root(lambda x: 2 * (x[0] ** 3) - 3 * x[0] - 2, x0=[1.4])\nsolution";
+                var nbb_formatted_code = "solution = sp.optimize.root(lambda x: 2 * (x[0] ** 3) - 3 * x[0] - 2, x0=[1.4])\nsolution";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_2_star</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="n">μ_1_star</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_2_star</span> <span class="o">-</span> <span class="mi">4</span>
+<span class="n">μ_2_star</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Optimal Solution: x^*_1=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">solution</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">, x^*_2=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_2_star</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">, μ^*_1=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">μ_1_star</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">, μ^*_2=</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">μ_2_star</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal Solution: x^*_1=1.476, x^*_2=2.178, μ^*_1=0.355, μ^*_2=0
+time: 1.36 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 20;
+                var nbb_unformatted_code = "x_2_star = solution.x[0] ** 2\n\u03bc_1_star = 2 * x_2_star - 4\n\u03bc_2_star = 0\nprint(\n    f\"Optimal Solution: x^*_1={np.round(solution.x[0], 3)}, x^*_2={np.round(x_2_star, 3)}, \u03bc^*_1={np.round(\u03bc_1_star, 3)}, \u03bc^*_2={np.round(\u03bc_2_star, 3)}\"\n)";
+                var nbb_formatted_code = "x_2_star = solution.x[0] ** 2\n\u03bc_1_star = 2 * x_2_star - 4\n\u03bc_2_star = 0\nprint(\n    f\"Optimal Solution: x^*_1={np.round(solution.x[0], 3)}, x^*_2={np.round(x_2_star, 3)}, \u03bc^*_1={np.round(\u03bc_1_star, 3)}, \u03bc^*_2={np.round(\u03bc_2_star, 3)}\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>However, since <span class="math notranslate nohighlight">\(x_1 + x_2 \leq 2\)</span> is violated, this solution is rejected.</p>
+<p>Case II: <span class="math notranslate nohighlight">\(x^*_1 = -x^*_2 + 2 \,\,--\,\,(3)\)</span></p>
+<p>Substituting <span class="math notranslate nohighlight">\((3)\)</span> into <span class="math notranslate nohighlight">\((1)\)</span>: <span class="math notranslate nohighlight">\(\mu^*_1 = \frac{-2(-x^*_2 + 2) + 2x^*_2}{2(-x^*_2 + 2) + 1}\)</span> and into first complementary slackness condition:</p>
+<p>\begin{aligned}
+\frac{-2(-x^<em>_2 + 2) + 2x^</em>_2}{2(-x^<em>_2 + 2) + 1} ({(-x^</em>_2 + 2)}^2 - x^<em>_2) &amp;= 0 \
+\frac{2x^</em>_2 - 4 + 2x^<em>_2}{-2x^</em>_2 + 4 + 1} ({x^<em>_2}^2 - 4x^</em>_2 + 4 - x^<em>_2) &amp;= 0 \
+\frac{4x^</em>_2({x^<em>_2}^2 - 5x^</em>_2 + 4) - 4({x^<em>_2}^2 - 5x^</em>_2 + 4)}{-2x^<em>_2 + 5} &amp;= 0 \
+\frac{4x^</em>_2({x^<em>_2}^2 - 5x^</em>_2 + 4) - 4({x^<em>_2}^2 - 5x^</em>_2 + 4)}{-2x^<em>_2 + 5} &amp;= 0 \
+\frac{4(x^</em>_2 - 1)(x^<em>_2 - 4)(x^</em>_2 - 1)}{-2x^<em>_2 + 5} &amp;= 0 \
+\therefore x^</em>_2 &amp;= 1 \text{ or } x^<em>_2 = 4 \text{ Rejected as } x^</em>_1 \geq 0 \
+\end{aligned}</p>
+<p>Optimal Solution: <span class="math notranslate nohighlight">\(x^*_1 = 1, x^*_2 = 1, \mu^*_1=0, \mu^*_2 = 2 \because \mu^*_2 = -2x^*_2 + 4 + \mu^*_1\)</span></p>
+<p>Verify your solution geometrically by showing that the problem is equivalent to a closest-point problem, i.e., finding a point in the feasible region that is closest to a given point outside of the region.</p>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;x^2_1 + x^2_2 - 4x_1 - 4x_2 \
+\text{subject to }
+&amp; x^2_1 - x_2 \leq 0 \text{ and } x_1 + x_2 \leq 2. \
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">x_2_1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="n">x_1</span> <span class="o">**</span> <span class="mi">2</span>  <span class="c1"># 𝑥^2_1 − 𝑥_2 ≤ 0</span>
+<span class="n">x_2_2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x_1</span>  <span class="c1"># 𝑥_1 + 𝑥_2 ≤ 2</span>
+
+<span class="c1"># Constraints</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x^2_1 - x_2 \leq 0$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x_1 + x_2 \leq 2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Objective function</span>
+<span class="n">X_1</span><span class="p">,</span> <span class="n">X_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_1</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">f</span><span class="p">([</span><span class="n">X_1</span><span class="p">,</span> <span class="n">X_2</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X_1</span><span class="p">,</span> <span class="n">X_2</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;RdGy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+
+<span class="c1"># Optimal point</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Optimal Point: ($x^*_1 = 1, x^*_2 = 1$)&quot;</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fill feasible region</span>
+<span class="n">x_2_lb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span>
+    <span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_lb</span><span class="p">,</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">where</span><span class="o">=</span><span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">x_2_lb</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw8_55_0.png" src="../../_images/hw8_55_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.94 s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 38;
+                var nbb_unformatted_code = "f = lambda x: x[0] ** 2 + x[1] ** 2 - 4 * x[0] - 4 * x[1]\nx_1 = np.linspace(-10, 10, 1000)\nx_2_1 = lambda x_1: x_1 ** 2  # \ud835\udc65^2_1 \u2212 \ud835\udc65_2 \u2264 0\nx_2_2 = lambda x_1: 2 - x_1  # \ud835\udc65_1 + \ud835\udc65_2 \u2264 2\n\n# Constraints\nplt.plot(x_1, x_2_1(x_1), label=r\"$x^2_1 - x_2 \\leq 0$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$x_1 + x_2 \\leq 2$\")\n\n# Objective function\nX_1, X_2 = np.meshgrid(x_1, x_1)\nZ = f([X_1, X_2])\nplt.contour(X_1, X_2, Z, 100, cmap=\"RdGy\")\nplt.colorbar()\n\n# Optimal point\nplt.scatter(\n    1, 1, s=100, c=\"green\", marker=\"X\", label=r\"Optimal Point: ($x^*_1 = 1, x^*_2 = 1$)\"\n)\n\nplt.xlim((-10, 10))\nplt.ylim((-10, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\nx_2_lb = np.minimum(x_2_1(x_1), x_2_2(x_1))\nplt.fill_between(x_1, x_2_lb, x_2_2(x_1), where=x_2_2(x_1) > x_2_lb, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=\"best\", borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "f = lambda x: x[0] ** 2 + x[1] ** 2 - 4 * x[0] - 4 * x[1]\nx_1 = np.linspace(-10, 10, 1000)\nx_2_1 = lambda x_1: x_1 ** 2  # \ud835\udc65^2_1 \u2212 \ud835\udc65_2 \u2264 0\nx_2_2 = lambda x_1: 2 - x_1  # \ud835\udc65_1 + \ud835\udc65_2 \u2264 2\n\n# Constraints\nplt.plot(x_1, x_2_1(x_1), label=r\"$x^2_1 - x_2 \\leq 0$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$x_1 + x_2 \\leq 2$\")\n\n# Objective function\nX_1, X_2 = np.meshgrid(x_1, x_1)\nZ = f([X_1, X_2])\nplt.contour(X_1, X_2, Z, 100, cmap=\"RdGy\")\nplt.colorbar()\n\n# Optimal point\nplt.scatter(\n    1, 1, s=100, c=\"green\", marker=\"X\", label=r\"Optimal Point: ($x^*_1 = 1, x^*_2 = 1$)\"\n)\n\nplt.xlim((-10, 10))\nplt.ylim((-10, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\nx_2_lb = np.minimum(x_2_1(x_1), x_2_2(x_1))\nplt.fill_between(\n    x_1, x_2_lb, x_2_2(x_1), where=x_2_2(x_1) > x_2_lb, color=\"grey\", alpha=0.5\n)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=\"best\", borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>We see that the problem is essentially finding the smallest radius of the concentric rings thatmeet both constraints at a point.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Consider the following nonlinear program:</p></li>
+</ul>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;e^{x^2_1 - x_2} \
+\text{subject to }
+&amp; e^{x_1} - e^{x_2} \leq 20 \text{ and } x_1 \geq 0. \
+\end{aligned}</p>
+<p>Is the objective function convex? Argue that the constraints satisfy the Slater constraint qualification. Further argue that at an optimal solution of the problem, we must have <span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} = 20\)</span>. Use the latter fact to show that the problem is equivalent to a problem in the <span class="math notranslate nohighlight">\(x_1\)</span>-variable only. Solve the problem. Verify that the solution you obtain satisfies the Karush-Kuhn-Tucker conditions of the original problem in the <span class="math notranslate nohighlight">\((x_1, x_2)\)</span>-variables.</p>
+<p>Hessian of <span class="math notranslate nohighlight">\({x_1}^2 - x_2\)</span> is positive semi-definite, hence convex:</p>
+<p>\begin{aligned}
+\begin{bmatrix}
+2 &amp; 0 \
+0 &amp; 0 \
+\end{bmatrix}
+\end{aligned}</p>
+<p>Exponential of convex function is strictly convex, meaning our objective function is strictly convex.</p>
+<p><span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} - 20 \leq 0\)</span> is stricly convex since exponential of affine / convex functions are strictly convex, summation is a convex operation, meaning that the constraint is convex, the other constraint <span class="math notranslate nohighlight">\(-x_1 \leq 0\)</span> is simply affine.</p>
+<p>Purely by observation, we know beforehand that the infimum of <span class="math notranslate nohighlight">\(e^{-x}\)</span> is <span class="math notranslate nohighlight">\(0\)</span>. We can clearly see that since <span class="math notranslate nohighlight">\(x_2\)</span> is free, by setting <span class="math notranslate nohighlight">\(x_1 = 0\)</span>, and <span class="math notranslate nohighlight">\(x_2 = \infty\)</span>, we achieve the infimum of our objective function while satisfying the constraints.</p>
+<p>By using the equality constraint <span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} = 20 \rightarrow x_2 = \ln{(e^{x_1} - 20)}\)</span>:</p>
+<p>\begin{aligned}
+\underset{x}{\text{minimize }} &amp;-e^{x^2_1}\ln{(e^{x_1} - 20)} \
+\text{subject to } &amp;x_1 \geq 0. \
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solution</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">root</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">20</span><span class="p">),</span> <span class="n">x0</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">solution</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    fjac: array([[-1.]])
+     fun: -2.562096193561078e-09
+ message: &#39;The solution converged.&#39;
+    nfev: 31
+     qtf: array([0.00020205])
+       r: array([222715.83895117])
+  status: 1
+ success: True
+       x: array([3.04452244])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 4.22 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 39;
+                var nbb_unformatted_code = "solution = sp.optimize.root(lambda x: -np.exp(x[0]**2) * np.log(np.exp(x[0])-20), x0=[5])\nsolution";
+                var nbb_formatted_code = "solution = sp.optimize.root(\n    lambda x: -np.exp(x[0] ** 2) * np.log(np.exp(x[0]) - 20), x0=[5]\n)\nsolution";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_1_star</span> <span class="o">=</span> <span class="n">solution</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">x_2_star</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x_1_star</span><span class="p">)</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">x_1_star</span><span class="p">,</span> <span class="n">x_2_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3.0445224377234346, 2.415845301584049e-13)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.26 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 40;
+                var nbb_unformatted_code = "x_1_star = solution.x[0]\nx_2_star = np.log(np.exp(x_1_star) - 20)\nx_1_star, x_2_star";
+                var nbb_formatted_code = "x_1_star = solution.x[0]\nx_2_star = np.log(np.exp(x_1_star) - 20)\nx_1_star, x_2_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, \mu^*_1, \mu^*_2)\)</span>:</p>
+<p>Primal Feasibility:
+\begin{aligned}
+e^{x^<em>_1} - e^{x^</em>_2} - 20 &amp;\leq 0 \
+-x^*_1 &amp;\leq 0
+\end{aligned}</p>
+<p>Dual Feasibility:
+\begin{aligned}
+\mu^<em>_1 &amp;\geq 0 \
+\mu^</em>_2 &amp;\geq 0
+\end{aligned}</p>
+<p>Complementary Slackness:
+\begin{aligned}
+\mu^<em>_1(e^{x^</em>_1} - e^{x^<em>_2} - 20) &amp;= 0 \
+\mu^</em>_2(-x^*_1) &amp;= 0
+\end{aligned}</p>
+<p>Stationarity:
+\begin{aligned}
+\nabla_x \mathcal{L}(x^<em>_1, x^</em>_2, \mu^<em>_1, \mu^</em>_2) &amp;= 0 \
+\nabla_x \Big[ e^{{x^<em>_1}^2 - x^</em>_2} + \mu^<em>_1(e^{x^</em>_1} - e^{x^<em>_2} - 20) + \mu^</em>_2(-x^<em>_1) \Big] &amp;= 0 \
+\begin{bmatrix}
+2x^</em>_1e^{{x^<em>_1}^2 - x^</em>_2} + \mu^<em>_1e^{x^</em>_1} - \mu^<em>_2 \
+-e^{{x^</em>_1}^2 - x^<em>_2} - \mu^</em>_1e^{x^<em>_2} \
+\end{bmatrix}
+&amp;= 0 \
+\begin{bmatrix}
+2x^</em>_1e^{{x^<em>_1}^2 - x^</em>_2} + \mu^<em>_1e^{x^</em>_1} \
+-\frac{e^{{x^<em>_1}^2 - x^</em>_2}}{e^{x^<em>_2}} \
+\end{bmatrix}
+&amp;= \begin{bmatrix} \mu^</em>_2 \ \mu^*_1 \ \end{bmatrix} \
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">μ_1_star</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x_1_star</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x_2_star</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x_2_star</span><span class="p">)</span>
+<span class="n">μ_2_star</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_1_star</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x_1_star</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x_2_star</span><span class="p">)</span> <span class="o">+</span> <span class="n">μ_1_star</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x_1_star</span><span class="p">)</span>
+<span class="n">μ_1_star</span><span class="p">,</span> <span class="n">μ_2_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-10605.381859011817, -158136.37297846202)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.54 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 41;
+                var nbb_unformatted_code = "\u03bc_1_star = -np.exp(x_1_star**2 - x_2_star) / np.exp(x_2_star)\n\u03bc_2_star = 2*x_1_star*np.exp(x_1_star**2 - x_2_star) + \u03bc_1_star*np.exp(x_1_star)\n\u03bc_1_star, \u03bc_2_star";
+                var nbb_formatted_code = "\u03bc_1_star = -np.exp(x_1_star ** 2 - x_2_star) / np.exp(x_2_star)\n\u03bc_2_star = 2 * x_1_star * np.exp(x_1_star ** 2 - x_2_star) + \u03bc_1_star * np.exp(x_1_star)\n\u03bc_1_star, \u03bc_2_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-530"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw7.html" title="previous page">ISE 530 Optimization for Analytics</a>
+    <a class='right-next' id="next-link" href="hw9.html" title="next page">ISE 530 Optimization for Analytics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

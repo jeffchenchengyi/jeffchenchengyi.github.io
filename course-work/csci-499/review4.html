@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/csci-499/review4.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="CSCI 499: Artificial Intelligence for Social Good Research Paper Review 5" href="review5.html" />
+    <link rel="prev" title="CSCI 499: Artificial Intelligence for Social Good Research Paper Review 3" href="review3.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/csci-499/review4.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4" />
+<meta property="og:description" content="CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4  By: Chengyi (Jeff) Chen  Article: Trade-offs and efficiencies in optimal budget-const" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/01-intro.html">
+   Pattern Recognition and Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     Probability Distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     Linear Models for Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     Linear Models for Classification
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     Neural Networks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     Kernel Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     Sparse Kernel Machines
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     Graphical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     Mixture Models and EM
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     Approximate Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     Sampling Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     Continuous Latent Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     Sequential Data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     Combining Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-contextual-bandits.html">
+     Contextual Bandits
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw1.html">
+   ISE-530 Homework I: Chapters I and II of Cottle-Thapa. Due 11:59 PM Wednesday September 09
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw2.html">
+   ISE-530 Homework II: Chapters III and IV of Cottle-Thapa. Due 11:59 PM Wednesday September 23, 2020
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw3.html">
+   ISE-530 Homework III: Chapters V and VI of Cottle-Thapa.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw4.html">
+   ISE-530 Homework IV: from Cottle-Thapa.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw5.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw6.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw7.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw8.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/hw9.html">
+   ISE 530 Optimization for Analytics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/midterm.html">
+   ISE-530 Midterm
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/final.html">
+   ISE 530 Optimization Methods for Analytics Final
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/notes.html">
+   Linear and Non-linear Programming Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw1.html">
+   ISE 537: HW 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw2_part1.html">
+   ISE 537: HW 2 Part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw2_part2.html">
+   ISE 537: HW 2 Part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/hw3.html">
+   ISE 537: HW 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+   Market Observations 1: TSLA Absurd P/E Ratio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+   Market Observations 2: The NASDAQ Whale
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+   Market Observations 3: Dovish till 2024
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+   Market Observations 4: The Future of EV batteries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+   Market Observations 5: Palantir
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-1.html">
+   ISE 537: Paper Review 1 - Value and Momentum Everywhere
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-2.html">
+   ISE 537: Paper Review 2 - Carry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-3.html">
+   ISE 537: Paper Review 3 - Quality Minus Junk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-4.html">
+   ISE 537: Paper Review 4 - Size Matters, if You Control Your Junk
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/paper-review-5.html">
+   ISE 537: Paper Review 5 - The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/project1.html">
+   ISE 537: Project 1: Momentum Strategies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-537/project2.html">
+   ISE-537 Project 2: Carry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ise-530/notes.html">
+   Linear and Non-linear Programming Summary
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review1.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review2.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review3.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review5.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review6.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review7.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="review8.html">
+   CSCI 499: Artificial Intelligence for Social Good Research Paper Review 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+   Paper Review Presentation
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+   Education Deserts Research
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/pelillian/varro">
+   Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+   OCR Research on Google Street View Panoramics
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../zbibliography.html">
+   Bibliography
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/csci-499/review4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-main-problem-task-addressed-by-the-paper">
+   1. What is the main problem/task addressed by the paper?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-was-done-before-and-how-does-this-paper-improve-on-it">
+   2. What was done before, and how does this paper improve on it?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-the-one-cool-technique-idea-finding-that-was-learned-from-this-paper">
+   3. What is the one cool technique/idea/finding that was learned from this paper?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-part-of-the-paper-was-difficult-to-understand">
+   4. What part of the paper was difficult to understand?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brainstorming-ideas-what-generalization-or-extension-of-the-paper-could-be-done-or-what-are-other-applications-that-can-benefit-from-the-described-approach-what-more-could-have-been-done-in-this-application-space-that-could-leverage-ai-does-this-give-you-an-idea-about-a-possible-project-a-student-could-do">
+   5. Brainstorming ideas: What generalization or extension of the paper could be done? Or what are other applications that can benefit from the described approach? What more could have been done in this application space that could leverage AI? Does this give you an idea about a possible project a student could do?
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="csci-499-artificial-intelligence-for-social-good-research-paper-review-4">
+<h1>CSCI 499: Artificial Intelligence for Social Good Research Paper Review 4<a class="headerlink" href="#csci-499-artificial-intelligence-for-social-good-research-paper-review-4" title="Permalink to this headline">¶</a></h1>
+<p><strong>By: Chengyi (Jeff) Chen</strong></p>
+<p><strong>Article: <em><a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/cobi.12814">Trade-offs and efficiencies in optimal budget-constrained multispecies corridor networks</a></em></strong></p>
+<hr class="docutils" />
+<div class="section" id="what-is-the-main-problem-task-addressed-by-the-paper">
+<h2>1. What is the main problem/task addressed by the paper?<a class="headerlink" href="#what-is-the-main-problem-task-addressed-by-the-paper" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The research was about building a mathematical model that optimizes over a mixed-integer linear program in order to design wildlife corridors that minimize resistance cost (cumulative resistance) for the particular animal species (grizzly bears and wolverines) and financial cost (expenditure) so that we can “<em>maintain migration and prevent populations from the negative genetic and demographic impacts of becoming isolated… (and) help counteract habitat fragmentation and link isolated reserves in a connected system.</em>”.</p></li>
+</ul>
+</div>
+<div class="section" id="what-was-done-before-and-how-does-this-paper-improve-on-it">
+<h2>2. What was done before, and how does this paper improve on it?<a class="headerlink" href="#what-was-done-before-and-how-does-this-paper-improve-on-it" title="Permalink to this headline">¶</a></h2>
+<p>“<em>Most studies both for single and multiple species focus on identifying the species-optimal corridors from a biological perspective, but, except for simple post hoc financial feasibility analysis, they do not explicitly include land purchases  and economic costs. Ideally, one would use a single optimization algorithm that jointly considers both ecological and economic criteria…Connectivity modeling that uses least-resistance path or similar algorithms across GIS-based resistance surface has become a popular approach for assessing connectivity at many scales in conservation biology.</em>”</p>
+<ul class="simple">
+<li><p>Previous research has tried to identify the optimal corridors but have disregarded the financial cost that are associated with the execution of building these corridors. Hence, the research in the paper “<em>devised an optimization framework for a budgetconstrained corridor design (BCD) problem that simultaneously incorporates spatially explicit models of species-specific resistances and spatially heterogeneous economic costs of conservation actions</em>”, taking into account both the ecological cost as well as the financial cost of the corridors in order to maximize the suitability of these corridor designs.</p></li>
+</ul>
+</div>
+<div class="section" id="what-is-the-one-cool-technique-idea-finding-that-was-learned-from-this-paper">
+<h2>3. What is the one cool technique/idea/finding that was learned from this paper?<a class="headerlink" href="#what-is-the-one-cool-technique-idea-finding-that-was-learned-from-this-paper" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>I found the reduction from a raster to a graph optimization problem pretty cool. First, they “<em>represented the landscape as a raster of grid cells or pixels</em>”. Each pixel is then converted to a graph node that contains the acquisition cost, <span class="math notranslate nohighlight">\({c(v)}\)</span>, and a resistance value, <span class="math notranslate nohighlight">\({r^s(v)}\)</span>, for each species <span class="math notranslate nohighlight">\({s}\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionary of dictionaries about </span>
+<span class="c1"># the costs related to each species</span>
+<span class="c1"># for that pixel</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;grizzly&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;acquisition_cost&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> 
+            <span class="s1">&#39;resistance_cost&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;wolverine&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;acquisition_cost&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">),</span> 
+            <span class="s1">&#39;resistance_cost&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+
+<span class="c1"># Node representing a single pixel</span>
+<span class="c1"># of the raster</span>
+<span class="k">class</span> <span class="nc">Node</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> 
+                 <span class="n">curr_node</span><span class="p">,</span> 
+                 <span class="n">north_node</span><span class="p">,</span> 
+                 <span class="n">south_node</span><span class="p">,</span> 
+                 <span class="n">east_node</span><span class="p">,</span> 
+                 <span class="n">west_node</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="n">spec</span> <span class="k">for</span> <span class="n">spec</span> <span class="ow">in</span> <span class="n">curr_node</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species_cost</span> <span class="o">=</span> <span class="n">curr_node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">north_node</span> <span class="o">=</span> <span class="n">north_node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">south_node</span> <span class="o">=</span> <span class="n">south_node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">east_node</span> <span class="o">=</span> <span class="n">east_node</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">west_node</span> <span class="o">=</span> <span class="n">west_node</span>
+
+<span class="n">Node</span><span class="p">(</span><span class="o">*</span><span class="n">nodes</span><span class="p">)</span><span class="o">.</span><span class="n">species</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;grizzly&#39;, &#39;wolverine&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>After the graph is set up, we loop through the list of core-area pairs <span class="math notranslate nohighlight">\({P^s}\)</span> and “<em>create source graph node <span class="math notranslate nohighlight">\({a}\)</span>, and destination graph node <span class="math notranslate nohighlight">\({b}\)</span></em>”. The subsequent optimization is to iteratively check whether to acquire that pixel or not, which almost seems to resemble the theme of dynamic programming.</p></li>
+</ul>
+</div>
+<div class="section" id="what-part-of-the-paper-was-difficult-to-understand">
+<h2>4. What part of the paper was difficult to understand?<a class="headerlink" href="#what-part-of-the-paper-was-difficult-to-understand" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Because I still don’t have a good understanding of what exactly are ecological / wildlife corridors, it was tough for me to understand what we are really trying to optimize over, at least visually.</p></li>
+<li><p>“<em>For each evaluated species, we assumed a resistance surface and core areas were identified.</em>” - Does this mean that there was one graph for Grizzly bears and another for Wolverines? I wasn’t too sure about the point about core-area pairs, so it’ll be good to get some clarification as to how the set <span class="math notranslate nohighlight">\({P^s}\)</span> of core area pairs were created, was it by domain expertise?</p></li>
+</ul>
+</div>
+<div class="section" id="brainstorming-ideas-what-generalization-or-extension-of-the-paper-could-be-done-or-what-are-other-applications-that-can-benefit-from-the-described-approach-what-more-could-have-been-done-in-this-application-space-that-could-leverage-ai-does-this-give-you-an-idea-about-a-possible-project-a-student-could-do">
+<h2>5. Brainstorming ideas: What generalization or extension of the paper could be done? Or what are other applications that can benefit from the described approach? What more could have been done in this application space that could leverage AI? Does this give you an idea about a possible project a student could do?<a class="headerlink" href="#brainstorming-ideas-what-generalization-or-extension-of-the-paper-could-be-done-or-what-are-other-applications-that-can-benefit-from-the-described-approach-what-more-could-have-been-done-in-this-application-space-that-could-leverage-ai-does-this-give-you-an-idea-about-a-possible-project-a-student-could-do" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We could definitely transfer some of the techniques used inb this research to our own project about identifying the <span class="math notranslate nohighlight">\({k}\)</span> best future locations for universities in order to minimize the impact of education deserts on the U.S.</p></li>
+<li><p>Another application of this network optimization technique could be on finding new subway routes or in the case of Elon Musk’s Boring Company project - to figure out which direction to dig the tunnel to maximize ease of digging but at the same time, under a budget constraint.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/csci-499"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="review3.html" title="previous page">CSCI 499: Artificial Intelligence for Social Good Research Paper Review 3</a>
+    <a class='right-next' id="next-link" href="review5.html" title="next page">CSCI 499: Artificial Intelligence for Social Good Research Paper Review 5</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
