@@ -3,16 +3,21 @@
 - part: Machine-Learning
   chapters:
   - file: machine-learning/01-intro
-    title: Machine Learning with Probabilistic Graphical Models
+    title: Pattern Recognition and Machine Learning
     sections:
-      - file: machine-learning/02-bln
-      - file: machine-learning/03-bglm
-      - file: machine-learning/04-gmm
-      - file: machine-learning/05-lda
-      - file: machine-learning/time-series-models/01-intro
-        sections:
-        - file: course-work/time-series-models/02-gpsp
-        - file: course-work/time-series-models/03-hmm
+      - file: machine-learning/02-probability-distributions
+      - file: machine-learning/03-linear-models-for-regression
+      - file: machine-learning/04-linear-models-for-classification
+      - file: machine-learning/05-neural-networks
+      - file: machine-learning/06-kernel-methods
+      - file: machine-learning/07-sparse-kernel-machines
+      - file: machine-learning/08-graphical-models
+      - file: machine-learning/09-mixture-models-and-em
+      - file: machine-learning/10-approximate-inference
+      - file: machine-learning/11-sampling-methods
+      - file: machine-learning/12-continuous-latent-variables
+      - file: machine-learning/13-sequential-data
+      - file: machine-learning/14-combining-models
 
 - part: Featured Course Work & Extra-curriculars
   chapters:
@@ -69,20 +74,12 @@
   - file: course-work/cais++/intro
     title: CAIS++
     sections:
-      - url: https://github.com/jeffchenchengyi/jeffchenchengyi.github.io
+      - url: https://github.com/pelillian/varro
       title: Evolving FPGAs for Accelerated MachineLearning on Bare Metal
       - url: https://github.com/usc-caisplusplus/SLAB
       title: OCR Research on Google Street View Panoramics
-  - file: course-work/udacity/intro
-    title: Udacity Data Scientist Nanodegree
-    sections:
-      - file: course-work/ise-537/hw1
-      - file: course-work/ise-537/hw2_part1
-      - file: course-work/ise-537/hw2_part2
-      - file: course-work/ise-537/hw3
-      - file: course-work/ise-537/market-observations-week-
-      - url: https://graduation.udacity.com/confirm/2LGCCKNA
-        title: Certificate
+  - url: https://graduation.udacity.com/confirm/2LGCCKNA
+    title: Udacity Data Scientist Nanodegree Certificate
 
 - part: Reference
   chapters:
