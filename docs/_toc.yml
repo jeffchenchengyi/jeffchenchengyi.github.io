@@ -44,30 +44,36 @@
       - file: course-work/ise-537/hw2_part1
       - file: course-work/ise-537/hw2_part2
       - file: course-work/ise-537/hw3
-      - file: course-work/ise-537/market-observations-week-1
-      - file: course-work/ise-537/market-observations-week-2
-      - file: course-work/ise-537/market-observations-week-3
-      - file: course-work/ise-537/market-observations-week-4
-      - file: course-work/ise-537/market-observations-week-5
-      - file: course-work/ise-537/paper-review-1
-      - file: course-work/ise-537/paper-review-2
-      - file: course-work/ise-537/paper-review-3
-      - file: course-work/ise-537/paper-review-4
-      - file: course-work/ise-537/paper-review-5
+      - file: course-work/ise-537/market-observations
+        sections:
+          - file: course-work/ise-537/market-observations-week-1
+          - file: course-work/ise-537/market-observations-week-2
+          - file: course-work/ise-537/market-observations-week-3
+          - file: course-work/ise-537/market-observations-week-4
+          - file: course-work/ise-537/market-observations-week-5
+      - file: course-work/ise-537/paper-reviews
+        sections:
+          - file: course-work/ise-537/paper-review-1
+          - file: course-work/ise-537/paper-review-2
+          - file: course-work/ise-537/paper-review-3
+          - file: course-work/ise-537/paper-review-4
+          - file: course-work/ise-537/paper-review-5
       - file: course-work/ise-537/project1
       - file: course-work/ise-537/project2
       - file: course-work/ise-530/notes
   - file: course-work/csci-499/intro
     title: CSCI-499 AI for Social Good
     sections:
-      - file: course-work/csci-499/review1
-      - file: course-work/csci-499/review2
-      - file: course-work/csci-499/review3
-      - file: course-work/csci-499/review4
-      - file: course-work/csci-499/review5
-      - file: course-work/csci-499/review6
-      - file: course-work/csci-499/review7
-      - file: course-work/csci-499/review8
+      - file: course-work/csci-499/paper-reviews
+        sections:
+          - file: course-work/csci-499/paper-review-1
+          - file: course-work/csci-499/paper-review-2
+          - file: course-work/csci-499/paper-review-3
+          - file: course-work/csci-499/paper-review-4
+          - file: course-work/csci-499/paper-review-5
+          - file: course-work/csci-499/paper-review-6
+          - file: course-work/csci-499/paper-review-7
+          - file: course-work/csci-499/paper-review-8
       - url: https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing
         title: Paper Review Presentation
       - url: https://github.com/lucashu1/education-deserts
