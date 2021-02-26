@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Probability Distributions &#8212; ΨΦ</title>
+    <title>2. Probability Distributions &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Linear Models for Regression" href="03-linear-models-for-regression.html" />
+    <link rel="next" title="3. Linear Models for Regression" href="03-linear-models-for-regression.html" />
     <link rel="prev" title="Pattern Recognition and Machine Learning" href="01-intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/02-probability-distributions.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Probability Distributions" />
-<meta property="og:description" content="Probability Distributions  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as " />
+<meta property="og:title"       content="2. Probability Distributions" />
+<meta property="og:description" content="2. Probability Distributions  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy " />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -114,22 +114,22 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Probability Distributions
+     2. Probability Distributions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-linear-models-for-regression.html">
-     Linear Models for Regression
+     3. Linear Models for Regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-linear-models-for-classification.html">
-     Linear Models for Classification
+     4. Linear Models for Classification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-neural-networks.html">
-     Neural Networks
+     5. Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -159,7 +159,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-sampling-methods.html">
-     Sampling Methods
+     11. Sampling Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -569,6 +569,125 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#binary-variables">
+   2.1. Binary Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-beta-distribution">
+     2.1.1 The Beta distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multinomial-variables">
+   2.2. Multinomial Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-dirichlet-distribution">
+     2.2.1 The Dirichlet distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-gaussian-distribution">
+   2.3. The Gaussian distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-gaussian-distributions">
+     2.3.1 Conditional Gaussian distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#marginal-gaussian-distributions">
+     2.3.2 Marginal Gaussian distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayes-theorem-for-gaussian-variables">
+     2.3.4 Bayes’ theorem for Gaussian variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sequential-estimation">
+     2.3.5 Sequential estimation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-inference-for-the-gaussian">
+     2.3.6 Bayesian inference for the Gaussian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-s-t-distribution">
+     2.3.7 Student’s t-distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#periodic-variables">
+     2.3.8 Periodic variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixtures-of-gaussians">
+     2.3.9 Mixtures of Gaussians
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-exponential-family">
+   2.4. The Exponential Family
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximum-likelihood-and-sufficient-statistics">
+     2.4.1 Maximum likelihood and sufficient statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conjugate-priors">
+     2.4.2 Conjugate priors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#noninformative-priors">
+     2.4.3 Noninformative priors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonparametric-methods">
+   2.5. Nonparametric Methods
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kernel-density-estimators">
+     2.5.1 Kernel density estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nearest-neighbour-methods">
+     2.5.2 Nearest-neighbour methods
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +696,7 @@
               <div>
                 
   <div class="section" id="probability-distributions">
-<h1>Probability Distributions<a class="headerlink" href="#probability-distributions" title="Permalink to this headline">¶</a></h1>
+<h1>2. Probability Distributions<a class="headerlink" href="#probability-distributions" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +732,71 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="binary-variables">
+<h2>2.1. Binary Variables<a class="headerlink" href="#binary-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-beta-distribution">
+<h3>2.1.1 The Beta distribution<a class="headerlink" href="#the-beta-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="multinomial-variables">
+<h2>2.2. Multinomial Variables<a class="headerlink" href="#multinomial-variables" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-dirichlet-distribution">
+<h3>2.2.1 The Dirichlet distribution<a class="headerlink" href="#the-dirichlet-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-gaussian-distribution">
+<h2>2.3. The Gaussian distribution<a class="headerlink" href="#the-gaussian-distribution" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conditional-gaussian-distributions">
+<h3>2.3.1 Conditional Gaussian distributions<a class="headerlink" href="#conditional-gaussian-distributions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="marginal-gaussian-distributions">
+<h3>2.3.2 Marginal Gaussian distributions<a class="headerlink" href="#marginal-gaussian-distributions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bayes-theorem-for-gaussian-variables">
+<h3>2.3.4 Bayes’ theorem for Gaussian variables<a class="headerlink" href="#bayes-theorem-for-gaussian-variables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="sequential-estimation">
+<h3>2.3.5 Sequential estimation<a class="headerlink" href="#sequential-estimation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bayesian-inference-for-the-gaussian">
+<h3>2.3.6 Bayesian inference for the Gaussian<a class="headerlink" href="#bayesian-inference-for-the-gaussian" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="student-s-t-distribution">
+<h3>2.3.7 Student’s t-distribution<a class="headerlink" href="#student-s-t-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="periodic-variables">
+<h3>2.3.8 Periodic variables<a class="headerlink" href="#periodic-variables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mixtures-of-gaussians">
+<h3>2.3.9 Mixtures of Gaussians<a class="headerlink" href="#mixtures-of-gaussians" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-exponential-family">
+<h2>2.4. The Exponential Family<a class="headerlink" href="#the-exponential-family" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maximum-likelihood-and-sufficient-statistics">
+<h3>2.4.1 Maximum likelihood and sufficient statistics<a class="headerlink" href="#maximum-likelihood-and-sufficient-statistics" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="conjugate-priors">
+<h3>2.4.2 Conjugate priors<a class="headerlink" href="#conjugate-priors" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="noninformative-priors">
+<h3>2.4.3 Noninformative priors<a class="headerlink" href="#noninformative-priors" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="nonparametric-methods">
+<h2>2.5. Nonparametric Methods<a class="headerlink" href="#nonparametric-methods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kernel-density-estimators">
+<h3>2.5.1 Kernel density estimators<a class="headerlink" href="#kernel-density-estimators" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="nearest-neighbour-methods">
+<h3>2.5.2 Nearest-neighbour methods<a class="headerlink" href="#nearest-neighbour-methods" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -644,7 +828,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="01-intro.html" title="previous page">Pattern Recognition and Machine Learning</a>
-    <a class='right-next' id="next-link" href="03-linear-models-for-regression.html" title="next page">Linear Models for Regression</a>
+    <a class='right-next' id="next-link" href="03-linear-models-for-regression.html" title="next page">3. Linear Models for Regression</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

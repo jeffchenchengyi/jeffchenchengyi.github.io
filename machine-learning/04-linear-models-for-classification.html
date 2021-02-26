@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Linear Models for Classification &#8212; ΨΦ</title>
+    <title>4. Linear Models for Classification &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Neural Networks" href="05-neural-networks.html" />
-    <link rel="prev" title="Linear Models for Regression" href="03-linear-models-for-regression.html" />
+    <link rel="next" title="5. Neural Networks" href="05-neural-networks.html" />
+    <link rel="prev" title="3. Linear Models for Regression" href="03-linear-models-for-regression.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/04-linear-models-for-classification.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Linear Models for Classification" />
-<meta property="og:description" content="Linear Models for Classification  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import nu" />
+<meta property="og:title"       content="4. Linear Models for Classification" />
+<meta property="og:description" content="4. Linear Models for Classification  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -114,22 +114,22 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02-probability-distributions.html">
-     Probability Distributions
+     2. Probability Distributions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-linear-models-for-regression.html">
-     Linear Models for Regression
+     3. Linear Models for Regression
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Linear Models for Classification
+     4. Linear Models for Classification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-neural-networks.html">
-     Neural Networks
+     5. Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -159,7 +159,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-sampling-methods.html">
-     Sampling Methods
+     11. Sampling Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -569,6 +569,150 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discriminant-functions">
+   4.1. Discriminant Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#two-classes">
+     4.1.1 Two classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-classes">
+     4.1.2 Multiple classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#least-squares-for-classification">
+     4.1.3 Least squares for classification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fisher-s-linear-discriminant">
+     4.1.4 Fisher’s linear discriminant
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relation-to-least-squares">
+     4.1.5 Relation to least squares
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fisher-s-disciminant-for-multiple-classes">
+     4.1.6 Fisher’s disciminant for multiple classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-perceptron-algorithm">
+     4.1.7 The perceptron algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probabilistic-generative-models">
+   4.2. Probabilistic Generative Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-inputs">
+     4.2.1 Continuous inputs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximum-likelihood-solution">
+     4.2.2 Maximum likelihood solution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-features">
+     4.2.3 Discrete features
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exponential-family">
+     4.2.4 Exponential family
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probabilistic-discriminative-models">
+   4.3. Probabilistic Discriminative Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixed-basis-functions">
+     4.3.1 Fixed basis functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression">
+     4.3.2 Logistic regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterative-reweighted-least-squares">
+     4.3.3 Iterative reweighted least squares
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiclass-logistic-regression">
+     4.3.4 Multiclass logistic regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probit-regression">
+     4.3.5 Probit regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#canonical-link-functions">
+     4.3.6 Canonical link functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-laplace-approximation">
+   4.4. The Laplace Approximation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-comparison-and-bic">
+     4.4.1 Model comparison and BIC
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-logistic-regression">
+   4.5. Bayesian Logistic Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#laplace-approximation">
+     4.5.1 Laplace approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predictive-distribution">
+     4.5.2 Predictive distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +721,7 @@
               <div>
                 
   <div class="section" id="linear-models-for-classification">
-<h1>Linear Models for Classification<a class="headerlink" href="#linear-models-for-classification" title="Permalink to this headline">¶</a></h1>
+<h1>4. Linear Models for Classification<a class="headerlink" href="#linear-models-for-classification" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +757,86 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="discriminant-functions">
+<h2>4.1. Discriminant Functions<a class="headerlink" href="#discriminant-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="two-classes">
+<h3>4.1.1 Two classes<a class="headerlink" href="#two-classes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="multiple-classes">
+<h3>4.1.2 Multiple classes<a class="headerlink" href="#multiple-classes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="least-squares-for-classification">
+<h3>4.1.3 Least squares for classification<a class="headerlink" href="#least-squares-for-classification" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="fisher-s-linear-discriminant">
+<h3>4.1.4 Fisher’s linear discriminant<a class="headerlink" href="#fisher-s-linear-discriminant" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="relation-to-least-squares">
+<h3>4.1.5 Relation to least squares<a class="headerlink" href="#relation-to-least-squares" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="fisher-s-disciminant-for-multiple-classes">
+<h3>4.1.6 Fisher’s disciminant for multiple classes<a class="headerlink" href="#fisher-s-disciminant-for-multiple-classes" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-perceptron-algorithm">
+<h3>4.1.7 The perceptron algorithm<a class="headerlink" href="#the-perceptron-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="probabilistic-generative-models">
+<h2>4.2. Probabilistic Generative Models<a class="headerlink" href="#probabilistic-generative-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="continuous-inputs">
+<h3>4.2.1 Continuous inputs<a class="headerlink" href="#continuous-inputs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="maximum-likelihood-solution">
+<h3>4.2.2 Maximum likelihood solution<a class="headerlink" href="#maximum-likelihood-solution" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="discrete-features">
+<h3>4.2.3 Discrete features<a class="headerlink" href="#discrete-features" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="exponential-family">
+<h3>4.2.4 Exponential family<a class="headerlink" href="#exponential-family" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="probabilistic-discriminative-models">
+<h2>4.3. Probabilistic Discriminative Models<a class="headerlink" href="#probabilistic-discriminative-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fixed-basis-functions">
+<h3>4.3.1 Fixed basis functions<a class="headerlink" href="#fixed-basis-functions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="logistic-regression">
+<h3>4.3.2 Logistic regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="iterative-reweighted-least-squares">
+<h3>4.3.3 Iterative reweighted least squares<a class="headerlink" href="#iterative-reweighted-least-squares" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="multiclass-logistic-regression">
+<h3>4.3.4 Multiclass logistic regression<a class="headerlink" href="#multiclass-logistic-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="probit-regression">
+<h3>4.3.5 Probit regression<a class="headerlink" href="#probit-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="canonical-link-functions">
+<h3>4.3.6 Canonical link functions<a class="headerlink" href="#canonical-link-functions" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-laplace-approximation">
+<h2>4.4. The Laplace Approximation<a class="headerlink" href="#the-laplace-approximation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="model-comparison-and-bic">
+<h3>4.4.1 Model comparison and BIC<a class="headerlink" href="#model-comparison-and-bic" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="bayesian-logistic-regression">
+<h2>4.5. Bayesian Logistic Regression<a class="headerlink" href="#bayesian-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="laplace-approximation">
+<h3>4.5.1 Laplace approximation<a class="headerlink" href="#laplace-approximation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="predictive-distribution">
+<h3>4.5.2 Predictive distribution<a class="headerlink" href="#predictive-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -643,8 +867,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="03-linear-models-for-regression.html" title="previous page">Linear Models for Regression</a>
-    <a class='right-next' id="next-link" href="05-neural-networks.html" title="next page">Neural Networks</a>
+    <a class='left-prev' id="prev-link" href="03-linear-models-for-regression.html" title="previous page">3. Linear Models for Regression</a>
+    <a class='right-next' id="next-link" href="05-neural-networks.html" title="next page">5. Neural Networks</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

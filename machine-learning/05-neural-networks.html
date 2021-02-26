@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Neural Networks &#8212; ΨΦ</title>
+    <title>5. Neural Networks &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Kernel Methods" href="06-kernel-methods.html" />
-    <link rel="prev" title="Linear Models for Classification" href="04-linear-models-for-classification.html" />
+    <link rel="prev" title="4. Linear Models for Classification" href="04-linear-models-for-classification.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/05-neural-networks.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Neural Networks" />
-<meta property="og:description" content="Neural Networks  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import " />
+<meta property="og:title"       content="5. Neural Networks" />
+<meta property="og:description" content="5. Neural Networks  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np impo" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -114,22 +114,22 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02-probability-distributions.html">
-     Probability Distributions
+     2. Probability Distributions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-linear-models-for-regression.html">
-     Linear Models for Regression
+     3. Linear Models for Regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-linear-models-for-classification.html">
-     Linear Models for Classification
+     4. Linear Models for Classification
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Neural Networks
+     5. Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -159,7 +159,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-sampling-methods.html">
-     Sampling Methods
+     11. Sampling Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -569,6 +569,187 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#feed-forward-network-functions">
+   5.1. Feed-forward Network Functions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weight-space-symmetries">
+     5.1.1 Weight-space symmetries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#network-training">
+   5.2. Network Training
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-optimization">
+     5.2.1 Parameter optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-quadratic-approximation">
+     5.2.2 Local quadratic approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#use-of-gradient-information">
+     5.2.3 Use of gradient information
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent-information">
+     5.2.4 Gradient descent information
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#error-backpropagation">
+   5.3. Error Backpropagation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluation-of-error-function-derivatives">
+     5.3.1 Evaluation of error-function derivatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simple-example">
+     5.3.2 A simple example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#efficiency-of-backpropagation">
+     5.3.3 Efficiency of backpropagation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-jacobian-matrix">
+     5.3.4 The Jacobian matrix
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-hessian-matrix">
+   5.4. The Hessian Matrix
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#diagonal-approximation">
+     5.4.1 Diagonal approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outer-product-approximation">
+     5.4.2 Outer product approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-hessian">
+     5.4.3 Inverse Hessian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finite-differences">
+     5.4.4 Finite differences
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exact-evaluation-of-the-hessian">
+     5.4.5 Exact evaluation of the Hessian
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fast-multiplication-by-the-hessian">
+     5.4.6 Fast multiplication by the Hessian
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regularization-in-neural-networks">
+   5.5. Regularization in Neural Networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consistent-gaussian-priors">
+     5.5.1 Consistent Gaussian priors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#early-stopping">
+     5.5.2 Early stopping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#invariances">
+     5.5.3 Invariances
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tangent-propagation">
+     5.5.4 Tangent propagation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-with-transformed-data">
+     5.5.5 Training with transformed data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#convolutional-networks">
+     5.5.6 Convolutional networks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#soft-weight-sharing">
+     5.5.7 Soft weight sharing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mixture-density-networks">
+   5.6. Mixture Density Networks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-neural-networks">
+   5.7. Bayesian Neural Networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posterior-parameter-distribution">
+     5.7.1 Posterior parameter distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hyperparameter-optimization">
+     5.7.2 Hyperparameter optimization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-neural-networks-for-classification">
+     5.7.3 Bayesian neural networks for classification
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +758,7 @@
               <div>
                 
   <div class="section" id="neural-networks">
-<h1>Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
+<h1>5. Neural Networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +794,109 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="feed-forward-network-functions">
+<h2>5.1. Feed-forward Network Functions<a class="headerlink" href="#feed-forward-network-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="weight-space-symmetries">
+<h3>5.1.1 Weight-space symmetries<a class="headerlink" href="#weight-space-symmetries" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="network-training">
+<h2>5.2. Network Training<a class="headerlink" href="#network-training" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="parameter-optimization">
+<h3>5.2.1 Parameter optimization<a class="headerlink" href="#parameter-optimization" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="local-quadratic-approximation">
+<h3>5.2.2 Local quadratic approximation<a class="headerlink" href="#local-quadratic-approximation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="use-of-gradient-information">
+<h3>5.2.3 Use of gradient information<a class="headerlink" href="#use-of-gradient-information" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="gradient-descent-information">
+<h3>5.2.4 Gradient descent information<a class="headerlink" href="#gradient-descent-information" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="error-backpropagation">
+<h2>5.3. Error Backpropagation<a class="headerlink" href="#error-backpropagation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="evaluation-of-error-function-derivatives">
+<h3>5.3.1 Evaluation of error-function derivatives<a class="headerlink" href="#evaluation-of-error-function-derivatives" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="a-simple-example">
+<h3>5.3.2 A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="efficiency-of-backpropagation">
+<h3>5.3.3 Efficiency of backpropagation<a class="headerlink" href="#efficiency-of-backpropagation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-jacobian-matrix">
+<h3>5.3.4 The Jacobian matrix<a class="headerlink" href="#the-jacobian-matrix" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-hessian-matrix">
+<h2>5.4. The Hessian Matrix<a class="headerlink" href="#the-hessian-matrix" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="diagonal-approximation">
+<h3>5.4.1 Diagonal approximation<a class="headerlink" href="#diagonal-approximation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="outer-product-approximation">
+<h3>5.4.2 Outer product approximation<a class="headerlink" href="#outer-product-approximation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="inverse-hessian">
+<h3>5.4.3 Inverse Hessian<a class="headerlink" href="#inverse-hessian" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="finite-differences">
+<h3>5.4.4 Finite differences<a class="headerlink" href="#finite-differences" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="exact-evaluation-of-the-hessian">
+<h3>5.4.5 Exact evaluation of the Hessian<a class="headerlink" href="#exact-evaluation-of-the-hessian" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="fast-multiplication-by-the-hessian">
+<h3>5.4.6 Fast multiplication by the Hessian<a class="headerlink" href="#fast-multiplication-by-the-hessian" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="regularization-in-neural-networks">
+<h2>5.5. Regularization in Neural Networks<a class="headerlink" href="#regularization-in-neural-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="consistent-gaussian-priors">
+<h3>5.5.1 Consistent Gaussian priors<a class="headerlink" href="#consistent-gaussian-priors" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="early-stopping">
+<h3>5.5.2 Early stopping<a class="headerlink" href="#early-stopping" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="invariances">
+<h3>5.5.3 Invariances<a class="headerlink" href="#invariances" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="tangent-propagation">
+<h3>5.5.4 Tangent propagation<a class="headerlink" href="#tangent-propagation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="training-with-transformed-data">
+<h3>5.5.5 Training with transformed data<a class="headerlink" href="#training-with-transformed-data" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="convolutional-networks">
+<h3>5.5.6 Convolutional networks<a class="headerlink" href="#convolutional-networks" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="soft-weight-sharing">
+<h3>5.5.7 Soft weight sharing<a class="headerlink" href="#soft-weight-sharing" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="mixture-density-networks">
+<h2>5.6. Mixture Density Networks<a class="headerlink" href="#mixture-density-networks" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="bayesian-neural-networks">
+<h2>5.7. Bayesian Neural Networks<a class="headerlink" href="#bayesian-neural-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="posterior-parameter-distribution">
+<h3>5.7.1 Posterior parameter distribution<a class="headerlink" href="#posterior-parameter-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="hyperparameter-optimization">
+<h3>5.7.2 Hyperparameter optimization<a class="headerlink" href="#hyperparameter-optimization" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bayesian-neural-networks-for-classification">
+<h3>5.7.3 Bayesian neural networks for classification<a class="headerlink" href="#bayesian-neural-networks-for-classification" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -643,7 +927,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="04-linear-models-for-classification.html" title="previous page">Linear Models for Classification</a>
+    <a class='left-prev' id="prev-link" href="04-linear-models-for-classification.html" title="previous page">4. Linear Models for Classification</a>
     <a class='right-next' id="next-link" href="06-kernel-methods.html" title="next page">Kernel Methods</a>
 
     </div>

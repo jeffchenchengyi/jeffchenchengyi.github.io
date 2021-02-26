@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sampling Methods &#8212; ΨΦ</title>
+    <title>11. Sampling Methods &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/11-sampling-methods.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Sampling Methods" />
-<meta property="og:description" content="Sampling Methods  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import" />
+<meta property="og:title"       content="11. Sampling Methods" />
+<meta property="og:description" content="11. Sampling Methods  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np im" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -114,22 +114,22 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02-probability-distributions.html">
-     Probability Distributions
+     2. Probability Distributions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-linear-models-for-regression.html">
-     Linear Models for Regression
+     3. Linear Models for Regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-linear-models-for-classification.html">
-     Linear Models for Classification
+     4. Linear Models for Classification
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-neural-networks.html">
-     Neural Networks
+     5. Neural Networks
     </a>
    </li>
    <li class="toctree-l2">
@@ -159,7 +159,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Sampling Methods
+     11. Sampling Methods
     </a>
    </li>
    <li class="toctree-l2">
@@ -569,6 +569,101 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-sampling-algorithms">
+   11.1 Basic Sampling Algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standard-distributions">
+     11.1.1 Standard distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rejection-sampling">
+     11.1.2 Rejection sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adaptive-rejection-sampling">
+     11.1.3 Adaptive rejection sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importance-sampling">
+     11.1.4 Importance sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampling-importance-resampling">
+     11.1.5 Sampling-importance-resampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sampling-and-the-em-algorithm">
+     11.1.6 Sampling and the EM algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markov-chain-monte-carlo">
+   11.2 Markov Chain Monte Carlo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#markov-chains">
+     11.2.1 Markov Chains
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-metropolis-hastings-algorithm">
+     11.2.2 The Metropolis-Hastings algorithm
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gibbs-sampling">
+   11.3 Gibbs Sampling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slice-sampling">
+   11.4 Slice Sampling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-hybrid-monte-carlo-algorithm">
+   11.5 The Hybrid Monte Carlo Algorithm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamical-systems">
+     11.5.1 Dynamical Systems
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hybrid-monte-carlo">
+     11.5.2 Hybrid Monte Carlo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimating-the-partition-function">
+   11.6 Estimating the Partition Function
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +672,7 @@
               <div>
                 
   <div class="section" id="sampling-methods">
-<h1>Sampling Methods<a class="headerlink" href="#sampling-methods" title="Permalink to this headline">¶</a></h1>
+<h1>11. Sampling Methods<a class="headerlink" href="#sampling-methods" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -612,6 +707,60 @@
 </pre></div>
 </div>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="basic-sampling-algorithms">
+<h2>11.1 Basic Sampling Algorithms<a class="headerlink" href="#basic-sampling-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="standard-distributions">
+<h3>11.1.1 Standard distributions<a class="headerlink" href="#standard-distributions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="rejection-sampling">
+<h3>11.1.2 Rejection sampling<a class="headerlink" href="#rejection-sampling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="adaptive-rejection-sampling">
+<h3>11.1.3 Adaptive rejection sampling<a class="headerlink" href="#adaptive-rejection-sampling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="importance-sampling">
+<h3>11.1.4 Importance sampling<a class="headerlink" href="#importance-sampling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="sampling-importance-resampling">
+<h3>11.1.5 Sampling-importance-resampling<a class="headerlink" href="#sampling-importance-resampling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="sampling-and-the-em-algorithm">
+<h3>11.1.6 Sampling and the EM algorithm<a class="headerlink" href="#sampling-and-the-em-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="markov-chain-monte-carlo">
+<h2>11.2 Markov Chain Monte Carlo<a class="headerlink" href="#markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="markov-chains">
+<h3>11.2.1 Markov Chains<a class="headerlink" href="#markov-chains" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-metropolis-hastings-algorithm">
+<h3>11.2.2 The Metropolis-Hastings algorithm<a class="headerlink" href="#the-metropolis-hastings-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="gibbs-sampling">
+<h2>11.3 Gibbs Sampling<a class="headerlink" href="#gibbs-sampling" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="slice-sampling">
+<h2>11.4 Slice Sampling<a class="headerlink" href="#slice-sampling" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-hybrid-monte-carlo-algorithm">
+<h2>11.5 The Hybrid Monte Carlo Algorithm<a class="headerlink" href="#the-hybrid-monte-carlo-algorithm" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dynamical-systems">
+<h3>11.5.1 Dynamical Systems<a class="headerlink" href="#dynamical-systems" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="hybrid-monte-carlo">
+<h3>11.5.2 Hybrid Monte Carlo<a class="headerlink" href="#hybrid-monte-carlo" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="estimating-the-partition-function">
+<h2>11.6 Estimating the Partition Function<a class="headerlink" href="#estimating-the-partition-function" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
