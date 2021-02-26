@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kernel Methods &#8212; ΨΦ</title>
+    <title>6. Kernel Methods &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sparse Kernel Machines" href="07-sparse-kernel-machines.html" />
+    <link rel="next" title="7. Sparse Kernel Machines" href="07-sparse-kernel-machines.html" />
     <link rel="prev" title="5. Neural Networks" href="05-neural-networks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/06-kernel-methods.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Kernel Methods" />
-<meta property="og:description" content="Kernel Methods  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import p" />
+<meta property="og:title"       content="6. Kernel Methods" />
+<meta property="og:description" content="6. Kernel Methods  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np impor" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -569,6 +564,79 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dual-representations">
+   6.1. Dual Representations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-kernels">
+   6.2. Constructing Kernels
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radial-basis-function-networks">
+   6.3. Radial Basis Function Networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#nadaraya-watson-model">
+     6.3.1 Nadaraya-Watson model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaussian-processes">
+   6.4. Gaussian Processes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-regression-revisited">
+     6.4.1 Linear regression revisited
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gaussian-processes-for-regression">
+     6.4.2 Gaussian processes for regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-the-hyperparameters">
+     6.4.3 Learning the hyperparameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#automatic-relevance-determination">
+     6.4.4 Automatic relevance determination
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gaussian-processes-for-classification">
+     6.4.5 Gaussian processes for classification
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#laplace-approximation">
+     6.4.6 Laplace approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connection-to-neural-networks">
+     6.4.7 Connection to neural networks
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +645,7 @@
               <div>
                 
   <div class="section" id="kernel-methods">
-<h1>Kernel Methods<a class="headerlink" href="#kernel-methods" title="Permalink to this headline">¶</a></h1>
+<h1>6. Kernel Methods<a class="headerlink" href="#kernel-methods" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +681,46 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="dual-representations">
+<h2>6.1. Dual Representations<a class="headerlink" href="#dual-representations" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="constructing-kernels">
+<h2>6.2. Constructing Kernels<a class="headerlink" href="#constructing-kernels" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="radial-basis-function-networks">
+<h2>6.3. Radial Basis Function Networks<a class="headerlink" href="#radial-basis-function-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="nadaraya-watson-model">
+<h3>6.3.1 Nadaraya-Watson model<a class="headerlink" href="#nadaraya-watson-model" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="gaussian-processes">
+<h2>6.4. Gaussian Processes<a class="headerlink" href="#gaussian-processes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-regression-revisited">
+<h3>6.4.1 Linear regression revisited<a class="headerlink" href="#linear-regression-revisited" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="gaussian-processes-for-regression">
+<h3>6.4.2 Gaussian processes for regression<a class="headerlink" href="#gaussian-processes-for-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="learning-the-hyperparameters">
+<h3>6.4.3 Learning the hyperparameters<a class="headerlink" href="#learning-the-hyperparameters" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="automatic-relevance-determination">
+<h3>6.4.4 Automatic relevance determination<a class="headerlink" href="#automatic-relevance-determination" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="gaussian-processes-for-classification">
+<h3>6.4.5 Gaussian processes for classification<a class="headerlink" href="#gaussian-processes-for-classification" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="laplace-approximation">
+<h3>6.4.6 Laplace approximation<a class="headerlink" href="#laplace-approximation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="connection-to-neural-networks">
+<h3>6.4.7 Connection to neural networks<a class="headerlink" href="#connection-to-neural-networks" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -644,7 +752,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="05-neural-networks.html" title="previous page">5. Neural Networks</a>
-    <a class='right-next' id="next-link" href="07-sparse-kernel-machines.html" title="next page">Sparse Kernel Machines</a>
+    <a class='right-next' id="next-link" href="07-sparse-kernel-machines.html" title="next page">7. Sparse Kernel Machines</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

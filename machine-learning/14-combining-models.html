@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Combining Models &#8212; ΨΦ</title>
+    <title>14. Combining Models &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Contextual Bandits" href="15-contextual-bandits.html" />
-    <link rel="prev" title="Sequential Data" href="13-sequential-data.html" />
+    <link rel="next" title="ISE-530: Optimization Analytics" href="../course-work/ise-530/intro.html" />
+    <link rel="prev" title="13. Sequential Data" href="13-sequential-data.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/14-combining-models.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Combining Models" />
-<meta property="og:description" content="Combining Models  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import" />
+<meta property="og:title"       content="14. Combining Models" />
+<meta property="og:description" content="14. Combining Models  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np im" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -569,6 +564,69 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-model-averaging">
+   14.1. Bayesian Model Averaging
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#committees">
+   14.2. Committees
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   14.3. Boosting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimizing-exponential-error">
+     14.3.1 Minimizing exponential error
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#error-functions-for-boosting">
+     14.3.2 Error functions for boosting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tree-based-models">
+   14.4. Tree-based Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-mixture-models">
+   14.5. Conditional Mixture Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixtures-of-linear-regression-models">
+     14.5.1 Mixtures of linear regression models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixtures-of-logistic-models">
+     14.5.2 Mixtures of logistic models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixtures-of-experts">
+     14.5.3 Mixtures of experts
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +635,7 @@
               <div>
                 
   <div class="section" id="combining-models">
-<h1>Combining Models<a class="headerlink" href="#combining-models" title="Permalink to this headline">¶</a></h1>
+<h1>14. Combining Models<a class="headerlink" href="#combining-models" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +671,41 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="bayesian-model-averaging">
+<h2>14.1. Bayesian Model Averaging<a class="headerlink" href="#bayesian-model-averaging" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="committees">
+<h2>14.2. Committees<a class="headerlink" href="#committees" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="boosting">
+<h2>14.3. Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="minimizing-exponential-error">
+<h3>14.3.1 Minimizing exponential error<a class="headerlink" href="#minimizing-exponential-error" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="error-functions-for-boosting">
+<h3>14.3.2 Error functions for boosting<a class="headerlink" href="#error-functions-for-boosting" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="tree-based-models">
+<h2>14.4. Tree-based Models<a class="headerlink" href="#tree-based-models" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="conditional-mixture-models">
+<h2>14.5. Conditional Mixture Models<a class="headerlink" href="#conditional-mixture-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mixtures-of-linear-regression-models">
+<h3>14.5.1 Mixtures of linear regression models<a class="headerlink" href="#mixtures-of-linear-regression-models" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mixtures-of-logistic-models">
+<h3>14.5.2 Mixtures of logistic models<a class="headerlink" href="#mixtures-of-logistic-models" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mixtures-of-experts">
+<h3>14.5.3 Mixtures of experts<a class="headerlink" href="#mixtures-of-experts" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -643,8 +736,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="13-sequential-data.html" title="previous page">Sequential Data</a>
-    <a class='right-next' id="next-link" href="15-contextual-bandits.html" title="next page">Contextual Bandits</a>
+    <a class='left-prev' id="prev-link" href="13-sequential-data.html" title="previous page">13. Sequential Data</a>
+    <a class='right-next' id="next-link" href="../course-work/ise-530/intro.html" title="next page">ISE-530: Optimization Analytics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

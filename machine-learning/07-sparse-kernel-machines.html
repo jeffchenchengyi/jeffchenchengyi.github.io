@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sparse Kernel Machines &#8212; ΨΦ</title>
+    <title>7. Sparse Kernel Machines &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Graphical Models" href="08-graphical-models.html" />
-    <link rel="prev" title="Kernel Methods" href="06-kernel-methods.html" />
+    <link rel="next" title="8. Graphical Models" href="08-graphical-models.html" />
+    <link rel="prev" title="6. Kernel Methods" href="06-kernel-methods.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/07-sparse-kernel-machines.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Sparse Kernel Machines" />
-<meta property="og:description" content="Sparse Kernel Machines  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np " />
+<meta property="og:title"       content="7. Sparse Kernel Machines" />
+<meta property="og:description" content="7. Sparse Kernel Machines  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as " />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -569,6 +564,69 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-margin-classifiers">
+   7.1. Maximum Margin Classifiers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overlapping-class-distributions">
+     7.1.1 Overlapping class distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relation-to-logistic-regression">
+     7.1.2 Relation to logistic regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiclass-svms">
+     7.1.3 Multiclass SVMs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#svms-for-regression">
+     7.1.4 SVMs for regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-learning-theory">
+     7.1.5 Computational learning theory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#relevance-vector-machines">
+   7.2. Relevance Vector Machines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rvm-for-regression">
+     7.2.1 RVM for regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analysis-of-sparsity">
+     7.2.2 Analysis of sparsity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rvm-for-classification">
+     7.2.3 RVM for classification
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +635,7 @@
               <div>
                 
   <div class="section" id="sparse-kernel-machines">
-<h1>Sparse Kernel Machines<a class="headerlink" href="#sparse-kernel-machines" title="Permalink to this headline">¶</a></h1>
+<h1>7. Sparse Kernel Machines<a class="headerlink" href="#sparse-kernel-machines" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +671,38 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="maximum-margin-classifiers">
+<h2>7.1. Maximum Margin Classifiers<a class="headerlink" href="#maximum-margin-classifiers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overlapping-class-distributions">
+<h3>7.1.1 Overlapping class distributions<a class="headerlink" href="#overlapping-class-distributions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="relation-to-logistic-regression">
+<h3>7.1.2 Relation to logistic regression<a class="headerlink" href="#relation-to-logistic-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="multiclass-svms">
+<h3>7.1.3 Multiclass SVMs<a class="headerlink" href="#multiclass-svms" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="svms-for-regression">
+<h3>7.1.4 SVMs for regression<a class="headerlink" href="#svms-for-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="computational-learning-theory">
+<h3>7.1.5 Computational learning theory<a class="headerlink" href="#computational-learning-theory" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="relevance-vector-machines">
+<h2>7.2. Relevance Vector Machines<a class="headerlink" href="#relevance-vector-machines" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rvm-for-regression">
+<h3>7.2.1 RVM for regression<a class="headerlink" href="#rvm-for-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="analysis-of-sparsity">
+<h3>7.2.2 Analysis of sparsity<a class="headerlink" href="#analysis-of-sparsity" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="rvm-for-classification">
+<h3>7.2.3 RVM for classification<a class="headerlink" href="#rvm-for-classification" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -643,8 +733,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="06-kernel-methods.html" title="previous page">Kernel Methods</a>
-    <a class='right-next' id="next-link" href="08-graphical-models.html" title="next page">Graphical Models</a>
+    <a class='left-prev' id="prev-link" href="06-kernel-methods.html" title="previous page">6. Kernel Methods</a>
+    <a class='right-next' id="next-link" href="08-graphical-models.html" title="next page">8. Graphical Models</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

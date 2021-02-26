@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mixture Models and EM &#8212; ΨΦ</title>
+    <title>9. Mixture Models and EM &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Approximate Inference" href="10-approximate-inference.html" />
-    <link rel="prev" title="Graphical Models" href="08-graphical-models.html" />
+    <link rel="next" title="10. Approximate Inference" href="10-approximate-inference.html" />
+    <link rel="prev" title="8. Graphical Models" href="08-graphical-models.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/09-mixture-models-and-em.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Mixture Models and EM" />
-<meta property="og:description" content="Mixture Models and EM  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np i" />
+<meta property="og:title"       content="9. Mixture Models and EM" />
+<meta property="og:description" content="9. Mixture Models and EM  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as n" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -575,24 +570,73 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#k-means">
+  <a class="reference internal nav-link" href="#k-means-clustering">
+   9.1.
    <span class="math notranslate nohighlight">
     \(K\)
    </span>
-   -means
+   -means Clustering
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#problem-setup">
-     Problem Setup
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#optimization-formulation">
-     Optimization Formulation
+    <a class="reference internal nav-link" href="#image-segmentation-and-compression">
+     9.1.1 Image segmentation and compression
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mixtures-of-gaussians">
+   9.2. Mixtures of Gaussians
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximum-likelihood">
+     9.2.1 Maximum likelihood
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#em-for-gaussian-mixtures">
+     9.2.2 EM for Gaussian mixtures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-alternative-view-of-em">
+   9.3. An Alternative View of EM
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gaussian-mixtures-revisited">
+     9.3.1 Gaussian mixtures revisited
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relation-to-k-means">
+     9.3.2 Relation to
+     <span class="math notranslate nohighlight">
+      \(K\)
+     </span>
+     -means
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixtures-of-bernoulli-distributions">
+     9.3.3 Mixtures of Bernoulli distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#em-for-bayesian-linear-regression">
+     9.3.4 EM for Bayesian linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-em-algorithm-in-general">
+   9.4. The EM Algorithm in General
+  </a>
  </li>
 </ul>
 
@@ -606,7 +650,7 @@
               <div>
                 
   <div class="section" id="mixture-models-and-em">
-<h1>Mixture Models and EM<a class="headerlink" href="#mixture-models-and-em" title="Permalink to this headline">¶</a></h1>
+<h1>9. Mixture Models and EM<a class="headerlink" href="#mixture-models-and-em" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -642,10 +686,10 @@
 </div>
 </div>
 </div>
-<div class="section" id="k-means">
-<h2><span class="math notranslate nohighlight">\(K\)</span>-means<a class="headerlink" href="#k-means" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="problem-setup">
-<h3>Problem Setup<a class="headerlink" href="#problem-setup" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<div class="section" id="k-means-clustering">
+<h2>9.1. <span class="math notranslate nohighlight">\(K\)</span>-means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">¶</a></h2>
+<p>Problem Setup</p>
 <ul class="simple">
 <li><p>I.I.D. Observed data: <span class="math notranslate nohighlight">\(\mathcal{X} = \left(\mathbf{x}^{(1)}, \mathbf{x}^{(2)}, \cdots, \mathbf{x}^{(N)}\right), \mathbf{x}^{(i)} \in \mathbb{R}^{D}\)</span></p></li>
 <li><p>Goal: Assign each observation <span class="math notranslate nohighlight">\(\mathbf{x}^{(i)}\)</span> to a cluster <span class="math notranslate nohighlight">\(k = 1, \cdots, K\)</span></p></li>
@@ -656,9 +700,7 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="optimization-formulation">
-<h3>Optimization Formulation<a class="headerlink" href="#optimization-formulation" title="Permalink to this headline">¶</a></h3>
+<p>Optimization Formulation</p>
 <p>\begin{aligned}
 \underset{\mu_j, r_{ik} \forall i \in {1, \cdots, N}, k \in {1, \cdots, K }}{\arg\min} &amp;\sum^{N}<em>{i=1}\sum^{K}</em>{j=1}r_{ik}\lVert \mathbf{x}^{(i)} - \mu_j \rVert^2 \
 \text{subject to }
@@ -668,7 +710,39 @@ r_{ik} &amp;=
 0 \
 \end{cases} \
 \end{aligned}</p>
+<div class="section" id="image-segmentation-and-compression">
+<h3>9.1.1 Image segmentation and compression<a class="headerlink" href="#image-segmentation-and-compression" title="Permalink to this headline">¶</a></h3>
 </div>
+</div>
+<hr class="docutils" />
+<div class="section" id="mixtures-of-gaussians">
+<h2>9.2. Mixtures of Gaussians<a class="headerlink" href="#mixtures-of-gaussians" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maximum-likelihood">
+<h3>9.2.1 Maximum likelihood<a class="headerlink" href="#maximum-likelihood" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="em-for-gaussian-mixtures">
+<h3>9.2.2 EM for Gaussian mixtures<a class="headerlink" href="#em-for-gaussian-mixtures" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="an-alternative-view-of-em">
+<h2>9.3. An Alternative View of EM<a class="headerlink" href="#an-alternative-view-of-em" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gaussian-mixtures-revisited">
+<h3>9.3.1 Gaussian mixtures revisited<a class="headerlink" href="#gaussian-mixtures-revisited" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="relation-to-k-means">
+<h3>9.3.2 Relation to <span class="math notranslate nohighlight">\(K\)</span>-means<a class="headerlink" href="#relation-to-k-means" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="mixtures-of-bernoulli-distributions">
+<h3>9.3.3 Mixtures of Bernoulli distributions<a class="headerlink" href="#mixtures-of-bernoulli-distributions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="em-for-bayesian-linear-regression">
+<h3>9.3.4 EM for Bayesian linear regression<a class="headerlink" href="#em-for-bayesian-linear-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-em-algorithm-in-general">
+<h2>9.4. The EM Algorithm in General<a class="headerlink" href="#the-em-algorithm-in-general" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -700,8 +774,8 @@ r_{ik} &amp;=
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="08-graphical-models.html" title="previous page">Graphical Models</a>
-    <a class='right-next' id="next-link" href="10-approximate-inference.html" title="next page">Approximate Inference</a>
+    <a class='left-prev' id="prev-link" href="08-graphical-models.html" title="previous page">8. Graphical Models</a>
+    <a class='right-next' id="next-link" href="10-approximate-inference.html" title="next page">10. Approximate Inference</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

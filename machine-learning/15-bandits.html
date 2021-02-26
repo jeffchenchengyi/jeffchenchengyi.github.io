@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contextual Bandits &#8212; ΨΦ</title>
+    <title>15. Bandits &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,22 +57,20 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://jeffchenchengyi.github.io/machine-learning/15-contextual-bandits.html" />
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/machine-learning/15-bandits.html" />
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ISE-530: Optimization Analytics" href="../course-work/ise-530/intro.html" />
-    <link rel="prev" title="Combining Models" href="14-combining-models.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/15-contextual-bandits.html" />
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/15-bandits.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Contextual Bandits" />
-<meta property="og:description" content="Contextual Bandits  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np impo" />
+<meta property="og:title"       content="15. Bandits" />
+<meta property="og:description" content="15. Bandits  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import pand" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -106,12 +104,12 @@
   Machine-Learning
  </span>
 </p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="01-intro.html">
    Pattern Recognition and Machine Learning
   </a>
-  <ul class="current collapse-ul">
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02-probability-distributions.html">
      2. Probability Distributions
@@ -134,27 +132,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +162,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -531,7 +524,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/machine-learning/15-contextual-bandits.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/machine-learning/15-bandits.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -575,13 +568,171 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#introduction">
-   Introduction
+  <a class="reference internal nav-link" href="#off-policy-estimators">
+   15.1. Off-Policy Estimators
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replay-method-rm">
+     15.1.1 Replay Method (RM)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#direct-method-dm">
+     15.1.2 Direct Method (DM)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">
+     15.1.3 Inverse Probability Weighting (IPW)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#self-normalized-inverse-probability-weighting-snipw">
+     15.1.4 Self-Normalized Inverse Probability Weighting (SNIPW)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#doubly-robust-dr">
+     15.1.5 Doubly Robust (DR)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#switch-estimators">
+     15.1.6 Switch Estimators
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-robust-doubly-robust-mrdr">
+     15.1.7 More Robust Doubly Robust (MRDR)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#doubly-robust-with-optimistic-shrinkage-dros">
+     15.1.8 Doubly Robust with Optimistic Shrinkage (DRos)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#double-machine-learning-dml">
+     15.1.9 Double Machine Learning (DML)
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
+  <a class="reference internal nav-link" href="#off-policy-confidence-intervals">
+   15.2. Off-Policy Confidence Intervals
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#t-distribution-population-variance-unknown">
+     15.2.1 T-distribution (Population Variance Unknown)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#asymptotically-gaussian-central-limit-theorem">
+     15.2.2 Asymptotically Gaussian (Central Limit Theorem)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clopper-pearson">
+     15.2.3 Clopper-Pearson
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bootstrapping">
+     15.2.4 Bootstrapping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concentration-inequality-hoeffding-inequality">
+     15.2.5 Concentration Inequality: Hoeffding Inequality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#concentration-inequality-bernstein-inequality">
+     15.2.6 Concentration Inequality: Bernstein Inequality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#online-learning-context-free">
+   15.3. Online Learning: Context-free
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random">
+     15.3.1 Random
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#epsilon-greedy">
+     15.3.2 Epsilon Greedy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bernoulli-thompson-sampling">
+     15.3.3 Bernoulli Thompson Sampling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#online-learning-contextual-linear">
+   15.4. Online Learning: Contextual (Linear)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-epsilon-greedy">
+     15.4.1 Linear Epsilon Greedy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-thompson-sampling">
+     15.4.2 Linear Thompson Sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-upper-confidence-bound">
+     15.4.3 Linear Upper Confidence Bound
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#online-learning-contextual-logistic">
+   15.5. Online Learning: Contextual (Logistic)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-epsilon-greedy">
+     15.5.1 Logistic Epsilon Greedy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-thompson-sampling">
+     15.5.2 Logistic Thompson Sampling
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-upper-confidence-bound">
+     15.5.3 Logistic Upper Confidence Bound
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offline-off-policy-learning-algorithms">
+   15.6. Offline (Off-Policy) Learning Algorithms
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw-learner">
+     15.6.1 Inverse Probability Weighting (IPW) Learner
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -594,8 +745,8 @@
         
               <div>
                 
-  <div class="section" id="contextual-bandits">
-<h1>Contextual Bandits<a class="headerlink" href="#contextual-bandits" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="bandits">
+<h1>15. Bandits<a class="headerlink" href="#bandits" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -632,11 +783,103 @@
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="off-policy-estimators">
+<h2>15.1. Off-Policy Estimators<a class="headerlink" href="#off-policy-estimators" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="replay-method-rm">
+<h3>15.1.1 Replay Method (RM)<a class="headerlink" href="#replay-method-rm" title="Permalink to this headline">¶</a></h3>
 </div>
-<div class="section" id="id1">
-<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="direct-method-dm">
+<h3>15.1.2 Direct Method (DM)<a class="headerlink" href="#direct-method-dm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="inverse-probability-weighting-ipw">
+<h3>15.1.3 Inverse Probability Weighting (IPW)<a class="headerlink" href="#inverse-probability-weighting-ipw" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="self-normalized-inverse-probability-weighting-snipw">
+<h3>15.1.4 Self-Normalized Inverse Probability Weighting (SNIPW)<a class="headerlink" href="#self-normalized-inverse-probability-weighting-snipw" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="doubly-robust-dr">
+<h3>15.1.5 Doubly Robust (DR)<a class="headerlink" href="#doubly-robust-dr" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="switch-estimators">
+<h3>15.1.6 Switch Estimators<a class="headerlink" href="#switch-estimators" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="more-robust-doubly-robust-mrdr">
+<h3>15.1.7 More Robust Doubly Robust (MRDR)<a class="headerlink" href="#more-robust-doubly-robust-mrdr" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="doubly-robust-with-optimistic-shrinkage-dros">
+<h3>15.1.8 Doubly Robust with Optimistic Shrinkage (DRos)<a class="headerlink" href="#doubly-robust-with-optimistic-shrinkage-dros" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="double-machine-learning-dml">
+<h3>15.1.9 Double Machine Learning (DML)<a class="headerlink" href="#double-machine-learning-dml" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="off-policy-confidence-intervals">
+<h2>15.2. Off-Policy Confidence Intervals<a class="headerlink" href="#off-policy-confidence-intervals" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="t-distribution-population-variance-unknown">
+<h3>15.2.1 T-distribution (Population Variance Unknown)<a class="headerlink" href="#t-distribution-population-variance-unknown" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="asymptotically-gaussian-central-limit-theorem">
+<h3>15.2.2 Asymptotically Gaussian (Central Limit Theorem)<a class="headerlink" href="#asymptotically-gaussian-central-limit-theorem" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="clopper-pearson">
+<h3>15.2.3 Clopper-Pearson<a class="headerlink" href="#clopper-pearson" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bootstrapping">
+<h3>15.2.4 Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="concentration-inequality-hoeffding-inequality">
+<h3>15.2.5 Concentration Inequality: Hoeffding Inequality<a class="headerlink" href="#concentration-inequality-hoeffding-inequality" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="concentration-inequality-bernstein-inequality">
+<h3>15.2.6 Concentration Inequality: Bernstein Inequality<a class="headerlink" href="#concentration-inequality-bernstein-inequality" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="online-learning-context-free">
+<h2>15.3. Online Learning: Context-free<a class="headerlink" href="#online-learning-context-free" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="random">
+<h3>15.3.1 Random<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="epsilon-greedy">
+<h3>15.3.2 Epsilon Greedy<a class="headerlink" href="#epsilon-greedy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bernoulli-thompson-sampling">
+<h3>15.3.3 Bernoulli Thompson Sampling<a class="headerlink" href="#bernoulli-thompson-sampling" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="online-learning-contextual-linear">
+<h2>15.4. Online Learning: Contextual (Linear)<a class="headerlink" href="#online-learning-contextual-linear" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="linear-epsilon-greedy">
+<h3>15.4.1 Linear Epsilon Greedy<a class="headerlink" href="#linear-epsilon-greedy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="linear-thompson-sampling">
+<h3>15.4.2 Linear Thompson Sampling<a class="headerlink" href="#linear-thompson-sampling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="linear-upper-confidence-bound">
+<h3>15.4.3 Linear Upper Confidence Bound<a class="headerlink" href="#linear-upper-confidence-bound" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="online-learning-contextual-logistic">
+<h2>15.5. Online Learning: Contextual (Logistic)<a class="headerlink" href="#online-learning-contextual-logistic" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logistic-epsilon-greedy">
+<h3>15.5.1 Logistic Epsilon Greedy<a class="headerlink" href="#logistic-epsilon-greedy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="logistic-thompson-sampling">
+<h3>15.5.2 Logistic Thompson Sampling<a class="headerlink" href="#logistic-thompson-sampling" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="logistic-upper-confidence-bound">
+<h3>15.5.3 Logistic Upper Confidence Bound<a class="headerlink" href="#logistic-upper-confidence-bound" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="offline-off-policy-learning-algorithms">
+<h2>15.6. Offline (Off-Policy) Learning Algorithms<a class="headerlink" href="#offline-off-policy-learning-algorithms" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inverse-probability-weighting-ipw-learner">
+<h3>15.6.1 Inverse Probability Weighting (IPW) Learner<a class="headerlink" href="#inverse-probability-weighting-ipw-learner" title="Permalink to this headline">¶</a></h3>
+</div>
 </div>
 </div>
 
@@ -668,8 +911,6 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="14-combining-models.html" title="previous page">Combining Models</a>
-    <a class='right-next' id="next-link" href="../course-work/ise-530/intro.html" title="next page">ISE-530: Optimization Analytics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

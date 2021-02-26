@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Approximate Inference &#8212; ΨΦ</title>
+    <title>10. Approximate Inference &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="11. Sampling Methods" href="11-sampling-methods.html" />
-    <link rel="prev" title="Mixture Models and EM" href="09-mixture-models-and-em.html" />
+    <link rel="prev" title="9. Mixture Models and EM" href="09-mixture-models-and-em.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/10-approximate-inference.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Approximate Inference" />
-<meta property="og:description" content="Approximate Inference  Problem Setup  Given the following setup:  I.I.D. Observed data: \mathcal{X} = \left(X^{(1)}, \cdots, X^{(D)}\right), where each X^{(i)} " />
+<meta property="og:title"       content="10. Approximate Inference" />
+<meta property="og:description" content="10. Approximate Inference    10.1. Variational Inference  10.1.1 Factorized distributions  10.1.2 Properties of factorized approximations  10.1.3 Example: The u" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -575,103 +570,138 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#problem-setup">
-   Problem Setup
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technique-1-expectation-maximization">
-   Technique 1: Expectation-Maximization
+  <a class="reference internal nav-link" href="#variational-inference">
+   10.1. Variational Inference
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-01-gaussian-mixture-model-expectat31-online">
-     Example 01 - Gaussian Mixture Model
-     <span>
-      [Expectat31:online]
-     </span>
+    <a class="reference internal nav-link" href="#factorized-distributions">
+     10.1.1 Factorized distributions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-02-latent-dirichlet-allocation-topic-model">
-     Example 02 - Latent Dirichlet Allocation Topic Model
+    <a class="reference internal nav-link" href="#properties-of-factorized-approximations">
+     10.1.2 Properties of factorized approximations
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-03-hidden-markov-model-10-5555-1162264hmmbaumw42-online">
-     Example 03 - Hidden Markov Model
-     <span>
-      [10.5555/1162264]
-     </span>
-     <span>
-      [hmmbaumw42:online]
-     </span>
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#hmm-setup">
-       HMM Setup
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#e-step">
-       E-step
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technique-2-markov-chain-monte-carlo">
-   Technique 2: Markov Chain Monte Carlo
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technique-3-mean-field-approximation-variational-inference">
-   Technique 3: Mean-field Approximation Variational Inference
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-01-gaussian-mixture-model">
-     Example 01 - Gaussian Mixture Model
+    <a class="reference internal nav-link" href="#example-the-univariate-gaussian">
+     10.1.3 Example: The univariate Gaussian
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id10">
-     Example 02 - Latent Dirichlet Allocation Topic Model
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-03-hidden-markov-model">
-     Example 03 - Hidden Markov Model
+    <a class="reference internal nav-link" href="#model-comparison">
+     10.1.4 Model comparison
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#technique-4-black-box-variational-inference">
-   Technique 4: Black-box Variational Inference
+  <a class="reference internal nav-link" href="#illustration-variational-mixture-of-gaussians">
+   10.2. Illustration: Variational Mixture of Gaussians
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id11">
-     Example 01 - Gaussian Mixture Model
+    <a class="reference internal nav-link" href="#variational-distribution">
+     10.2.1 Variational distribution
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id12">
-     Example 02 - Latent Dirichlet Allocation Topic Model
+    <a class="reference internal nav-link" href="#variational-lower-bound">
+     10.2.2 Variational lower bound
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id13">
-     Example 03 - Hidden Markov Model
+    <a class="reference internal nav-link" href="#predictive-density">
+     10.2.3 Predictive density
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-04-bayesian-linear-regression">
-     Example 04 - Bayesian Linear Regression
+    <a class="reference internal nav-link" href="#determining-the-number-of-components">
+     10.2.4 Determining the number of components
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#induced-factorizations">
+     10.2.5 Induced factorizations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variational-linear-regression">
+   10.3. Variational Linear Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     10.3.1 Variational distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predictive-distribution">
+     10.3.2 Predictive distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lower-bound">
+     10.3.3 Lower bound
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-family-distributions">
+   10.4. Exponential Family Distributions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variational-message-passing">
+     10.4.1 Variational message passing
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#local-variational-methods">
+   10.5. Local Variational Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variational-logistic-regression">
+   10.6. Variational Logistic Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variational-posterior-distribution">
+     10.6.1 Variational posterior distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#optimizing-the-variational-parameters">
+     10.6.2 Optimizing the variational parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inference-of-hyperparameters">
+     10.6.3 Inference of hyperparameters
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation-propagation">
+   10.7. Expectation Propagation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-the-clutter-problem">
+     10.7.1 Example: The clutter problem
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expectation-propagation-on-graphs">
+     10.7.2 Expectation propagation on graphs
     </a>
    </li>
   </ul>
@@ -688,9 +718,88 @@
               <div>
                 
   <div class="section" id="approximate-inference">
-<h1>Approximate Inference<a class="headerlink" href="#approximate-inference" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="problem-setup">
-<h2>Problem Setup<a class="headerlink" href="#problem-setup" title="Permalink to this headline">¶</a></h2>
+<h1>10. Approximate Inference<a class="headerlink" href="#approximate-inference" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="variational-inference">
+<h2>10.1. Variational Inference<a class="headerlink" href="#variational-inference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="factorized-distributions">
+<h3>10.1.1 Factorized distributions<a class="headerlink" href="#factorized-distributions" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="properties-of-factorized-approximations">
+<h3>10.1.2 Properties of factorized approximations<a class="headerlink" href="#properties-of-factorized-approximations" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-the-univariate-gaussian">
+<h3>10.1.3 Example: The univariate Gaussian<a class="headerlink" href="#example-the-univariate-gaussian" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="model-comparison">
+<h3>10.1.4 Model comparison<a class="headerlink" href="#model-comparison" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="illustration-variational-mixture-of-gaussians">
+<h2>10.2. Illustration: Variational Mixture of Gaussians<a class="headerlink" href="#illustration-variational-mixture-of-gaussians" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variational-distribution">
+<h3>10.2.1 Variational distribution<a class="headerlink" href="#variational-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="variational-lower-bound">
+<h3>10.2.2 Variational lower bound<a class="headerlink" href="#variational-lower-bound" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="predictive-density">
+<h3>10.2.3 Predictive density<a class="headerlink" href="#predictive-density" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="determining-the-number-of-components">
+<h3>10.2.4 Determining the number of components<a class="headerlink" href="#determining-the-number-of-components" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="induced-factorizations">
+<h3>10.2.5 Induced factorizations<a class="headerlink" href="#induced-factorizations" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="variational-linear-regression">
+<h2>10.3. Variational Linear Regression<a class="headerlink" href="#variational-linear-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>10.3.1 Variational distribution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="predictive-distribution">
+<h3>10.3.2 Predictive distribution<a class="headerlink" href="#predictive-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="lower-bound">
+<h3>10.3.3 Lower bound<a class="headerlink" href="#lower-bound" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="exponential-family-distributions">
+<h2>10.4. Exponential Family Distributions<a class="headerlink" href="#exponential-family-distributions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variational-message-passing">
+<h3>10.4.1 Variational message passing<a class="headerlink" href="#variational-message-passing" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="local-variational-methods">
+<h2>10.5. Local Variational Methods<a class="headerlink" href="#local-variational-methods" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="variational-logistic-regression">
+<h2>10.6. Variational Logistic Regression<a class="headerlink" href="#variational-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variational-posterior-distribution">
+<h3>10.6.1 Variational posterior distribution<a class="headerlink" href="#variational-posterior-distribution" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="optimizing-the-variational-parameters">
+<h3>10.6.2 Optimizing the variational parameters<a class="headerlink" href="#optimizing-the-variational-parameters" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="inference-of-hyperparameters">
+<h3>10.6.3 Inference of hyperparameters<a class="headerlink" href="#inference-of-hyperparameters" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="expectation-propagation">
+<h2>10.7. Expectation Propagation<a class="headerlink" href="#expectation-propagation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-the-clutter-problem">
+<h3>10.7.1 Example: The clutter problem<a class="headerlink" href="#example-the-clutter-problem" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="expectation-propagation-on-graphs">
+<h3>10.7.2 Expectation propagation on graphs<a class="headerlink" href="#expectation-propagation-on-graphs" title="Permalink to this headline">¶</a></h3>
+<p>Problem Setup</p>
 <p>Given the following setup:</p>
 <ul class="simple">
 <li><p>I.I.D. Observed data: <span class="math notranslate nohighlight">\(\mathcal{X} = \left(X^{(1)}, \cdots, X^{(D)}\right)\)</span>, where each <span class="math notranslate nohighlight">\(X^{(i)} = (x^{(i)}_{1}, x^{(i)}_{2}, \cdots, x^{(i)}_{M})\)</span></p></li>
@@ -701,7 +810,7 @@
 <p>we have 2 tasks that are of interest:</p>
 <ul class="simple">
 <li><ol class="simple">
-<li><p>Find the MLE (<span class="math notranslate nohighlight">\(\boldsymbol {\theta}\)</span> is parameter) / MAP (<span class="math notranslate nohighlight">\(\boldsymbol {\theta}\)</span> is random variable) estimates of the model parameters <span class="math notranslate nohighlight">\(\boldsymbol {\theta_{\rm{max}}}\)</span> <span class="bibtex" id="id1">[Expectat45:online]</span>:</p></li>
+<li><p>Find the MLE (<span class="math notranslate nohighlight">\(\boldsymbol {\theta}\)</span> is parameter) / MAP (<span class="math notranslate nohighlight">\(\boldsymbol {\theta}\)</span> is random variable) estimates of the model parameters <span class="math notranslate nohighlight">\(\boldsymbol {\theta_{\rm{max}}}\)</span> <span class="bibtex" id="id2">[Expectat45:online]</span>:</p></li>
 </ol>
 </li>
 </ul>
@@ -712,7 +821,7 @@
 <p>where <span class="math notranslate nohighlight">\(p(\mathcal{X} \mid \boldsymbol{\theta })\)</span> is known as the <em><strong>Evidence / Marginal Likelihood / Incomplete-data Likelihood</strong></em> and <span class="math notranslate nohighlight">\(p(\mathcal{X} ,\mathcal{Z} \mid {\boldsymbol {\theta }})\)</span> is known as the <em><strong>Complete-data likelihood</strong></em>.</p>
 <ul class="simple">
 <li><ol class="simple">
-<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id2">[SVIPartI61:online]</span>:</p></li>
+<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id3">[SVIPartI61:online]</span>:</p></li>
 </ol>
 </li>
 </ul>
@@ -724,7 +833,7 @@ p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;= \frac{p
 <p class="admonition-title">Note</p>
 <p>Notice that <span class="math notranslate nohighlight">\(\sum_{z \in \mathcal{Z}}\)</span> is a general summation to encompass all types of marginalization possible, i.e. can be a multidimensional summation <span class="math notranslate nohighlight">\(\sum_{z_1 \in Z_1}\sum_{z_2 \in Z_2}\cdots\sum_{z_M \in Z_M}\)</span> or integral(s) if <span class="math notranslate nohighlight">\(z\)</span> is continuous or even a mix of summation and integration over different latent variables of interest.</p>
 </div>
-<p>However, this <span class="math notranslate nohighlight">\(p(\mathcal{X} \mid \boldsymbol{\theta }) = \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\,d\mathcal{Z}\)</span> is often intractable (e.g. if <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>  is a sequence of events, so that the number of values grows exponentially with the sequence length, the exact calculation of the sum will be extremely difficult). Let’s instead try to find a lower bound for it by expanding it <span class="bibtex" id="id3">[SVIPartI61:online]</span>:</p>
+<p>However, this <span class="math notranslate nohighlight">\(p(\mathcal{X} \mid \boldsymbol{\theta }) = \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\,d\mathcal{Z}\)</span> is often intractable (e.g. if <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>  is a sequence of events, so that the number of values grows exponentially with the sequence length, the exact calculation of the sum will be extremely difficult). Let’s instead try to find a lower bound for it by expanding it <span class="bibtex" id="id4">[SVIPartI61:online]</span>:</p>
 <p>\begin{aligned}
 \log p(\mathcal{X} \mid \boldsymbol{\theta })
 &amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \
@@ -735,25 +844,31 @@ p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;= \frac{p
 &amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \
 &amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \
 \end{aligned}</p>
-<p>By Jensen’s Inequality, given concave function <span class="math notranslate nohighlight">\(f(X)\)</span> (e.g. <span class="math notranslate nohighlight">\(\log\)</span>), <span class="math notranslate nohighlight">\(f\operatorname {E}\left[X\right] \geq \operatorname {E}\left[f(X)\right]\)</span> <span class="bibtex" id="id4">[Variatio28:online]</span>:</p>
-<p>\begin{aligned}
-\log p(\mathcal{X} \mid \boldsymbol{\theta })
-&amp;= \log \operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \
-&amp;\geq \operatorname {E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log\left(\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})}\right)\right] \
-&amp;= \operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) - \log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \
-&amp;= \operatorname {E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \
-&amp;= \underbrace{\underbrace{\operatorname {E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right]}<em>{\text{Expected Complete-data Log Likelihood}} + \underbrace{\operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]}</em>{\text{Entropy of Variational Dist.}}}_{\text{ELBO / Negative Variational Free Energy } \mathcal{L}(q({\mathcal{Z}}\mid {\bf \phi}))} \
-\end{aligned}</p>
+<p>By Jensen’s Inequality, given concave function <span class="math notranslate nohighlight">\(f(X)\)</span> (e.g. <span class="math notranslate nohighlight">\(\log\)</span>), <span class="math notranslate nohighlight">\(f\operatorname {E}\left[X\right] \geq \operatorname {E}\left[f(X)\right]\)</span> <span class="bibtex" id="id5">[Variatio28:online]</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    \log p(\mathcal{X} \mid \boldsymbol{\theta }) 
+    &amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \\
+    &amp;\geq \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log\left(\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})}\right)\right] \\
+    &amp;= \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) - \log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \\
+    &amp;= \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \\
+    &amp;= \underbrace{\underbrace{\operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right]}_{\text{Expected Complete-data Log Likelihood}} + \underbrace{\operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]}_{\text{Entropy of Variational Dist.}}}_{\text{ELBO / Negative Variational Free Energy } \mathcal{L}(q({\mathcal{Z}}\mid {\bf \phi}))} \\
+\end{aligned}
+\end{split}\]</div>
 <p>Hence, we get an <em><strong>Evidence Lower Bound (ELBO)</strong></em> (also known as the <em><strong>Negative Variational Free Energy</strong></em>) on the <span class="math notranslate nohighlight">\(\log\)</span> Evidence. Instead of an inequality, we can get an exact equality of the form below by deriving the ELBO from rearranging the KL Divergence from our variational distribution (approximate posterior of latent variables) <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi})\)</span> to our actual posterior over latent variables <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})\)</span>:</p>
 <p>Derivation from <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))\)</span>:</p>
-<p>\begin{aligned}
-{\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))
-&amp;= \operatorname{E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log\left(\frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})}\right)\right] \
-&amp;= \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})\right] \
-&amp;= \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z}, {\mathcal{x}} \mid {\bf \theta})\right] + \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \
-&amp;= -\left[\operatorname {E}<em>{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] + \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\right] + \operatorname{E}</em>{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \
-&amp;= -\mathcal{L}(q({\mathcal{Z} = z}\mid {\bf \phi})) + \log p({\mathcal{x}} \mid {\bf \theta}) \because \text{Expectation is over latent variables }{\mathcal{Z} = z}\text{, which is independent of }{\mathcal{x}} \
-\end{aligned}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+    {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))
+    &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log\left(\frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})}\right)\right] \\
+    &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})\right] \\
+    &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z}, {\mathcal{x}} \mid {\bf \theta})\right] + \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \\
+    &amp;= -\left[\operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] + \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\right] + \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \\
+    &amp;= -\mathcal{L}(q({\mathcal{Z} = z}\mid {\bf \phi})) + \log p({\mathcal{x}} \mid {\bf \theta}) \because \text{Expectation is over latent variables }{\mathcal{Z} = z}\text{, which is independent of }{\mathcal{x}} \\
+\end{aligned}
+\end{split}\]</div>
 <p>\begin{aligned}
 \therefore \log p({\mathcal{x}} \mid {\bf \theta})
 &amp;= \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) + {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) \
@@ -773,17 +888,15 @@ p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;= \frac{p
 <p>In maximizing the ELBO, the first term, Expected Complete-data Log Likelihood, encourages the MLE / MAP estimates of the model parameters to be</p>
 <ul class="simple">
 <li><ol class="simple">
-<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id5">[SVIPartI61:online]</span>:</p></li>
+<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id6">[SVIPartI61:online]</span>:</p></li>
 </ol>
 </li>
 </ul>
 <p>\begin{aligned}
 p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;\approx q({\mathcal{Z}} \mid {\bf \phi}) \
 \end{aligned}</p>
-</div>
-<div class="section" id="technique-1-expectation-maximization">
-<h2>Technique 1: Expectation-Maximization<a class="headerlink" href="#technique-1-expectation-maximization" title="Permalink to this headline">¶</a></h2>
-<p>The EM algorithm seeks to find the MLE of the evidence / marginal likelihood / incomplete-data likelihood by iteratively applying these two steps <span class="bibtex" id="id6">[Expectat45:online]</span>:</p>
+<p><strong>Technique 1: Expectation-Maximization</strong></p>
+<p>The EM algorithm seeks to find the MLE of the evidence / marginal likelihood / incomplete-data likelihood by iteratively applying these two steps <span class="bibtex" id="id7">[Expectat45:online]</span>:</p>
 <ul>
 <li><ol class="simple">
 <li><p>Expectation step (E step): Set the approximate posterior / variational distribution <span class="math notranslate nohighlight">\(q({\mathcal{Z}}\mid {\bf \phi}) = p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{t} })\)</span>, where <span class="math notranslate nohighlight">\(\bf \theta_{t}\)</span> are the previous M-step estimates of <span class="math notranslate nohighlight">\(\bf \theta\)</span>, this way the <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) = 0\)</span> and <span class="math notranslate nohighlight">\(\log p({\mathcal{x}} \mid {\bf \theta}) = \mathcal{L}(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta_{t}}))\)</span>. Our objective is then to</p></li>
@@ -809,16 +922,10 @@ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}) &amp;= \operatornam
 <p>\begin{aligned}
 {\boldsymbol {\theta }}^{(t+1)} &amp;= {\underset {\boldsymbol {\theta }}{\operatorname {arg,max} }}\ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}),
 \end{aligned}</p>
-<div class="section" id="example-01-gaussian-mixture-model-expectat31-online">
-<h3>Example 01 - Gaussian Mixture Model <span class="bibtex" id="id7">[Expectat31:online]</span><a class="headerlink" href="#example-01-gaussian-mixture-model-expectat31-online" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="example-02-latent-dirichlet-allocation-topic-model">
-<h3>Example 02 - Latent Dirichlet Allocation Topic Model<a class="headerlink" href="#example-02-latent-dirichlet-allocation-topic-model" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="example-03-hidden-markov-model-10-5555-1162264hmmbaumw42-online">
-<h3>Example 03 - Hidden Markov Model <span class="bibtex" id="id8">[10.5555/1162264]</span><span class="bibtex" id="id9">[hmmbaumw42:online]</span><a class="headerlink" href="#example-03-hidden-markov-model-10-5555-1162264hmmbaumw42-online" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="hmm-setup">
-<h4>HMM Setup<a class="headerlink" href="#hmm-setup" title="Permalink to this headline">¶</a></h4>
+<p>Example 01 - Gaussian Mixture Model <span class="bibtex" id="id8">[Expectat31:online]</span></p>
+<p>Example 02 - Latent Dirichlet Allocation Topic Model</p>
+<p>Example 03 - Hidden Markov Model <span class="bibtex" id="id9">[10.5555/1162264]</span><span class="bibtex" id="id10">[hmmbaumw42:online]</span></p>
+<p><strong>HMM Setup</strong></p>
 <p>Given the following setup:</p>
 <ul class="simple">
 <li><p>I.I.D. Observed data: <span class="math notranslate nohighlight">\(\mathcal{X} = \left(X^{(1)}, \cdots, X^{(D)}\right)\)</span>,</p>
@@ -853,52 +960,29 @@ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}) &amp;= \operatornam
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="e-step">
-<h4>E-step<a class="headerlink" href="#e-step" title="Permalink to this headline">¶</a></h4>
+<p><strong>E-step</strong></p>
 <p>\begin{aligned}</p>
 <p>\end{aligned}</p>
-</div>
-</div>
-</div>
-<div class="section" id="technique-2-markov-chain-monte-carlo">
-<h2>Technique 2: Markov Chain Monte Carlo<a class="headerlink" href="#technique-2-markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="technique-3-mean-field-approximation-variational-inference">
-<h2>Technique 3: Mean-field Approximation Variational Inference<a class="headerlink" href="#technique-3-mean-field-approximation-variational-inference" title="Permalink to this headline">¶</a></h2>
+<p><strong>Technique 2: Markov Chain Monte Carlo</strong></p>
+<p><strong>Technique 3: Mean-field Approximation Variational Inference</strong></p>
 <p>\begin{aligned}
 {\rm ELBO} &amp;\equiv \mathbb{E}_{q({\bf z} \mid {\bf \phi})} \left [
 \log p({\bf x}, {\bf z} \mid {\bf \theta}) - \log q({\bf z} \mid {\bf \phi})
 \right]
 \end{aligned}</p>
-<div class="section" id="example-01-gaussian-mixture-model">
-<h3>Example 01 - Gaussian Mixture Model<a class="headerlink" href="#example-01-gaussian-mixture-model" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id10">
-<h3>Example 02 - Latent Dirichlet Allocation Topic Model<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="example-03-hidden-markov-model">
-<h3>Example 03 - Hidden Markov Model<a class="headerlink" href="#example-03-hidden-markov-model" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-<div class="section" id="technique-4-black-box-variational-inference">
-<h2>Technique 4: Black-box Variational Inference<a class="headerlink" href="#technique-4-black-box-variational-inference" title="Permalink to this headline">¶</a></h2>
+<p><strong>Example 01 - Gaussian Mixture Model</strong></p>
+<p><strong>Example 02 - Latent Dirichlet Allocation Topic Model</strong></p>
+<p><strong>Example 03 - Hidden Markov Model</strong></p>
+<p><strong>Technique 4: Black-box Variational Inference</strong></p>
 <p>\begin{aligned}
 {\rm ELBO} &amp;\equiv \mathbb{E}_{q({\bf z} \mid {\bf \phi})} \left [
 \log p({\bf x}, {\bf z} \mid {\bf \theta}) - \log q({\bf z} \mid {\bf \phi})
 \right]
 \end{aligned}</p>
-<div class="section" id="id11">
-<h3>Example 01 - Gaussian Mixture Model<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id12">
-<h3>Example 02 - Latent Dirichlet Allocation Topic Model<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="id13">
-<h3>Example 03 - Hidden Markov Model<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="example-04-bayesian-linear-regression">
-<h3>Example 04 - Bayesian Linear Regression<a class="headerlink" href="#example-04-bayesian-linear-regression" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example 01 - Gaussian Mixture Model</strong></p>
+<p><strong>Example 02 - Latent Dirichlet Allocation Topic Model</strong></p>
+<p><strong>Example 03 - Hidden Markov Model</strong></p>
+<p><strong>Example 04 - Bayesian Linear Regression</strong></p>
 </div>
 </div>
 </div>
@@ -931,7 +1015,7 @@ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}) &amp;= \operatornam
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="09-mixture-models-and-em.html" title="previous page">Mixture Models and EM</a>
+    <a class='left-prev' id="prev-link" href="09-mixture-models-and-em.html" title="previous page">9. Mixture Models and EM</a>
     <a class='right-next' id="next-link" href="11-sampling-methods.html" title="next page">11. Sampling Methods</a>
 
     </div>

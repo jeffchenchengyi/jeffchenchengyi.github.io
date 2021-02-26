@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sequential Data &#8212; ΨΦ</title>
+    <title>13. Sequential Data &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Combining Models" href="14-combining-models.html" />
-    <link rel="prev" title="Continuous Latent Variables" href="12-continuous-latent-variables.html" />
+    <link rel="next" title="14. Combining Models" href="14-combining-models.html" />
+    <link rel="prev" title="12. Continuous Latent Variables" href="12-continuous-latent-variables.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/13-sequential-data.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Sequential Data" />
-<meta property="og:description" content="Sequential Data  This chapter will focus on markov processes, a subset of the more general stochastic processes that are used to model time series.  Representat" />
+<meta property="og:title"       content="13. Sequential Data" />
+<meta property="og:description" content="13. Sequential Data  This chapter will focus on markov processes, a subset of the more general stochastic processes that are used to model time series.    13.1." />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -575,26 +570,73 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#representations">
-   Representations
+  <a class="reference internal nav-link" href="#markov-models">
+   13.1. Markov Models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hidden-markov-models">
+   13.2. Hidden Markov Models
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#n-order-markov-chains">
-     N-order Markov Chains
+    <a class="reference internal nav-link" href="#maximum-likelihood-for-the-hmm">
+     13.2.1 Maximum likelihood for the HMM
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#state-space-models">
-     State Space Models
+    <a class="reference internal nav-link" href="#the-forward-backward-algorithm">
+     13.2.2 The forward-backward algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sum-product-algorithm-for-the-hmm">
+     13.2.3 The sum-product algorithm for the HMM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scaling-factors">
+     13.2.4 Scaling factors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-viterbi-algorithm">
+     13.2.5 The Viterbi algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extensions-of-the-hidden-markov-model">
+     13.2.6 Extensions of the hidden markov model
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inference-algorithms">
-   Inference Algorithms
+  <a class="reference internal nav-link" href="#linear-dynamical-systems">
+   13.3 Linear Dynamical Systems
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inference-in-lds">
+     13.3.1 Inference in LDS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-in-lds">
+     13.3.2 Learning in LDS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extensions-of-lds">
+     13.3.3 Extensions of LDS
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#particle-filters">
+     13.3.4 Particle Filters
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -608,12 +650,50 @@
               <div>
                 
   <div class="section" id="sequential-data">
-<h1>Sequential Data<a class="headerlink" href="#sequential-data" title="Permalink to this headline">¶</a></h1>
+<h1>13. Sequential Data<a class="headerlink" href="#sequential-data" title="Permalink to this headline">¶</a></h1>
 <p>This chapter will focus on markov processes, a subset of the more general stochastic processes that are used to model time series.</p>
-<div class="section" id="representations">
-<h2>Representations<a class="headerlink" href="#representations" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="n-order-markov-chains">
-<h3>N-order Markov Chains<a class="headerlink" href="#n-order-markov-chains" title="Permalink to this headline">¶</a></h3>
+<hr class="docutils" />
+<div class="section" id="markov-models">
+<h2>13.1. Markov Models<a class="headerlink" href="#markov-models" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="hidden-markov-models">
+<h2>13.2. Hidden Markov Models<a class="headerlink" href="#hidden-markov-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maximum-likelihood-for-the-hmm">
+<h3>13.2.1 Maximum likelihood for the HMM<a class="headerlink" href="#maximum-likelihood-for-the-hmm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-forward-backward-algorithm">
+<h3>13.2.2 The forward-backward algorithm<a class="headerlink" href="#the-forward-backward-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-sum-product-algorithm-for-the-hmm">
+<h3>13.2.3 The sum-product algorithm for the HMM<a class="headerlink" href="#the-sum-product-algorithm-for-the-hmm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="scaling-factors">
+<h3>13.2.4 Scaling factors<a class="headerlink" href="#scaling-factors" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-viterbi-algorithm">
+<h3>13.2.5 The Viterbi algorithm<a class="headerlink" href="#the-viterbi-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="extensions-of-the-hidden-markov-model">
+<h3>13.2.6 Extensions of the hidden markov model<a class="headerlink" href="#extensions-of-the-hidden-markov-model" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="linear-dynamical-systems">
+<h2>13.3 Linear Dynamical Systems<a class="headerlink" href="#linear-dynamical-systems" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inference-in-lds">
+<h3>13.3.1 Inference in LDS<a class="headerlink" href="#inference-in-lds" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="learning-in-lds">
+<h3>13.3.2 Learning in LDS<a class="headerlink" href="#learning-in-lds" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="extensions-of-lds">
+<h3>13.3.3 Extensions of LDS<a class="headerlink" href="#extensions-of-lds" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="particle-filters">
+<h3>13.3.4 Particle Filters<a class="headerlink" href="#particle-filters" title="Permalink to this headline">¶</a></h3>
+<p><strong>Representations</strong></p>
+<p><strong>N-order Markov Chains</strong></p>
 <ul class="simple">
 <li><p>AR</p></li>
 <li><p>MA</p></li>
@@ -622,18 +702,13 @@
 <li><p>GARCH</p></li>
 <li><p>VAR</p></li>
 </ul>
-</div>
-<div class="section" id="state-space-models">
-<h3>State Space Models<a class="headerlink" href="#state-space-models" title="Permalink to this headline">¶</a></h3>
+<p><strong>State Space Models</strong></p>
 <p>https://ericmjl.github.io/essays-on-data-science/machine-learning/markov-models/</p>
 <p>Variations:</p>
 <ul class="simple">
 <li><p>GMM - HMM https://stats.stackexchange.com/questions/171307/how-to-train-a-gaussian-mixture-hidden-markov-model</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="inference-algorithms">
-<h2>Inference Algorithms<a class="headerlink" href="#inference-algorithms" title="Permalink to this headline">¶</a></h2>
+<p><strong>Inference Algorithms</strong></p>
 <p>Problem Space:</p>
 <ol class="simple">
 <li><p>HMM: Discrete Time + Discrete Latent / State Space + Discrete Observed Space + No assumption on transmission / emission probabilities</p></li>
@@ -684,6 +759,7 @@ Stochastic Processes
 - Dirichlet Processes</p>
 </div>
 </div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -713,8 +789,8 @@ Stochastic Processes
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="12-continuous-latent-variables.html" title="previous page">Continuous Latent Variables</a>
-    <a class='right-next' id="next-link" href="14-combining-models.html" title="next page">Combining Models</a>
+    <a class='left-prev' id="prev-link" href="12-continuous-latent-variables.html" title="previous page">12. Continuous Latent Variables</a>
+    <a class='right-next' id="next-link" href="14-combining-models.html" title="next page">14. Combining Models</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

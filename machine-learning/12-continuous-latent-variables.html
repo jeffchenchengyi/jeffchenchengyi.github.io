@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Continuous Latent Variables &#8212; ΨΦ</title>
+    <title>12. Continuous Latent Variables &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,7 +61,7 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sequential Data" href="13-sequential-data.html" />
+    <link rel="next" title="13. Sequential Data" href="13-sequential-data.html" />
     <link rel="prev" title="11. Sampling Methods" href="11-sampling-methods.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/12-continuous-latent-variables.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Continuous Latent Variables" />
-<meta property="og:description" content="Continuous Latent Variables  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy a" />
+<meta property="og:title"       content="12. Continuous Latent Variables" />
+<meta property="og:description" content="12. Continuous Latent Variables  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import num" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="08-graphical-models.html">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -569,6 +564,96 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#principal-component-analysis">
+   12.1. Principal Component Analysis
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximum-variance-formulation">
+     12.1.1 Maximum variance formulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#minimum-error-formulation">
+     12.1.2 Minimum-error formulation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-pca">
+     12.1.3 Applications of PCA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pca-for-high-dimensional-data">
+     12.1.4 PCA for high-dimensional data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probabilistic-pca">
+   12.2. Probabilistic PCA
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#maximum-likelihood-pca">
+     12.2.1 Maximum likelihood PCA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#em-algorithm-for-pca">
+     12.2.2 EM algorithm for PCA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bayesian-pca">
+     12.2.3 Bayesian PCA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factor-analysis">
+     12.2.4 Factor analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kernel-pca">
+   12.3. Kernel PCA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinear-latent-variable-models">
+   12.4. Nonlinear Latent Variable Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#independent-component-analysis">
+     12.4.1 Independent component analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#autoassociative-neural-networks">
+     12.4.2 Autoassociative neural networks
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modelling-nonlinear-manifolds">
+     12.4.3 Modelling nonlinear manifolds
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +662,7 @@
               <div>
                 
   <div class="section" id="continuous-latent-variables">
-<h1>Continuous Latent Variables<a class="headerlink" href="#continuous-latent-variables" title="Permalink to this headline">¶</a></h1>
+<h1>12. Continuous Latent Variables<a class="headerlink" href="#continuous-latent-variables" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +698,55 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="principal-component-analysis">
+<h2>12.1. Principal Component Analysis<a class="headerlink" href="#principal-component-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maximum-variance-formulation">
+<h3>12.1.1 Maximum variance formulation<a class="headerlink" href="#maximum-variance-formulation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="minimum-error-formulation">
+<h3>12.1.2 Minimum-error formulation<a class="headerlink" href="#minimum-error-formulation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="applications-of-pca">
+<h3>12.1.3 Applications of PCA<a class="headerlink" href="#applications-of-pca" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="pca-for-high-dimensional-data">
+<h3>12.1.4 PCA for high-dimensional data<a class="headerlink" href="#pca-for-high-dimensional-data" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="probabilistic-pca">
+<h2>12.2. Probabilistic PCA<a class="headerlink" href="#probabilistic-pca" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="maximum-likelihood-pca">
+<h3>12.2.1 Maximum likelihood PCA<a class="headerlink" href="#maximum-likelihood-pca" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="em-algorithm-for-pca">
+<h3>12.2.2 EM algorithm for PCA<a class="headerlink" href="#em-algorithm-for-pca" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="bayesian-pca">
+<h3>12.2.3 Bayesian PCA<a class="headerlink" href="#bayesian-pca" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="factor-analysis">
+<h3>12.2.4 Factor analysis<a class="headerlink" href="#factor-analysis" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="kernel-pca">
+<h2>12.3. Kernel PCA<a class="headerlink" href="#kernel-pca" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="nonlinear-latent-variable-models">
+<h2>12.4. Nonlinear Latent Variable Models<a class="headerlink" href="#nonlinear-latent-variable-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="independent-component-analysis">
+<h3>12.4.1 Independent component analysis<a class="headerlink" href="#independent-component-analysis" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="autoassociative-neural-networks">
+<h3>12.4.2 Autoassociative neural networks<a class="headerlink" href="#autoassociative-neural-networks" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="modelling-nonlinear-manifolds">
+<h3>12.4.3 Modelling nonlinear manifolds<a class="headerlink" href="#modelling-nonlinear-manifolds" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -644,7 +778,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="11-sampling-methods.html" title="previous page">11. Sampling Methods</a>
-    <a class='right-next' id="next-link" href="13-sequential-data.html" title="next page">Sequential Data</a>
+    <a class='right-next' id="next-link" href="13-sequential-data.html" title="next page">13. Sequential Data</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

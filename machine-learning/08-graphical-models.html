@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Graphical Models &#8212; ΨΦ</title>
+    <title>8. Graphical Models &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,8 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Mixture Models and EM" href="09-mixture-models-and-em.html" />
-    <link rel="prev" title="Sparse Kernel Machines" href="07-sparse-kernel-machines.html" />
+    <link rel="next" title="9. Mixture Models and EM" href="09-mixture-models-and-em.html" />
+    <link rel="prev" title="7. Sparse Kernel Machines" href="07-sparse-kernel-machines.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/08-graphical-models.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Graphical Models" />
-<meta property="og:description" content="Graphical Models  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import" />
+<meta property="og:title"       content="8. Graphical Models" />
+<meta property="og:description" content="8. Graphical Models  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np imp" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -134,27 +134,27 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     Kernel Methods
+     6. Kernel Methods
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     Sparse Kernel Machines
+     7. Sparse Kernel Machines
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Graphical Models
+     8. Graphical Models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     Mixture Models and EM
+     9. Mixture Models and EM
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     Approximate Inference
+     10. Approximate Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,22 +164,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     Continuous Latent Variables
+     12. Continuous Latent Variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     Sequential Data
+     13. Sequential Data
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     Combining Models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15-contextual-bandits.html">
-     Contextual Bandits
+     14. Combining Models
     </a>
    </li>
   </ul>
@@ -569,6 +564,133 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian-networks">
+   8.1. Bayesian Networks
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-polynomial-regression">
+     8.1.1 Example: Polynomial Regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generative-models">
+     8.1.2 Generative models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#discrete-variables">
+     8.1.3 Discrete variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-gaussian-models">
+     8.1.4 Linear-Gaussian models
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-independence">
+   8.2. Conditional Independence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#three-example-graphs">
+     8.2.1 Three example graphs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-separation">
+     8.2.2 D-separation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#markov-random-fields">
+   8.3. Markov Random Fields
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conditional-independence-properties">
+     8.3.1 Conditional independence properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factorization-properties">
+     8.3.2 Factorization properties
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#illustration-image-de-noising">
+     8.3.3 Illustration: Image de-noising
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relation-to-directed-graphs">
+     8.3.4 Relation to directed graphs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inference-in-graphical-models">
+   8.4. Inference in Graphical Models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inference-on-a-chain">
+     8.4.1 Inference on a chain
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trees">
+     8.4.2 Trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factor-graphs">
+     8.4.3 Factor graphs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-sum-product-algorithm">
+     8.4.4 The sum-product algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-max-sum-algorithm">
+     8.4.5 The max-sum algorithm
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exact-inference-in-general-graphs">
+     8.4.6 Exact inference in general graphs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#loopy-belief-propagation">
+     8.4.7 Loopy belief propagation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#learning-the-graph-structure">
+     8.4.8 Learning the graph structure
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -577,7 +699,7 @@
               <div>
                 
   <div class="section" id="graphical-models">
-<h1>Graphical Models<a class="headerlink" href="#graphical-models" title="Permalink to this headline">¶</a></h1>
+<h1>8. Graphical Models<a class="headerlink" href="#graphical-models" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -613,6 +735,76 @@
 </div>
 </div>
 </div>
+<hr class="docutils" />
+<div class="section" id="bayesian-networks">
+<h2>8.1. Bayesian Networks<a class="headerlink" href="#bayesian-networks" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-polynomial-regression">
+<h3>8.1.1 Example: Polynomial Regression<a class="headerlink" href="#example-polynomial-regression" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="generative-models">
+<h3>8.1.2 Generative models<a class="headerlink" href="#generative-models" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="discrete-variables">
+<h3>8.1.3 Discrete variables<a class="headerlink" href="#discrete-variables" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="linear-gaussian-models">
+<h3>8.1.4 Linear-Gaussian models<a class="headerlink" href="#linear-gaussian-models" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="conditional-independence">
+<h2>8.2. Conditional Independence<a class="headerlink" href="#conditional-independence" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="three-example-graphs">
+<h3>8.2.1 Three example graphs<a class="headerlink" href="#three-example-graphs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="d-separation">
+<h3>8.2.2 D-separation<a class="headerlink" href="#d-separation" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="markov-random-fields">
+<h2>8.3. Markov Random Fields<a class="headerlink" href="#markov-random-fields" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="conditional-independence-properties">
+<h3>8.3.1 Conditional independence properties<a class="headerlink" href="#conditional-independence-properties" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="factorization-properties">
+<h3>8.3.2 Factorization properties<a class="headerlink" href="#factorization-properties" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="illustration-image-de-noising">
+<h3>8.3.3 Illustration: Image de-noising<a class="headerlink" href="#illustration-image-de-noising" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="relation-to-directed-graphs">
+<h3>8.3.4 Relation to directed graphs<a class="headerlink" href="#relation-to-directed-graphs" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="inference-in-graphical-models">
+<h2>8.4. Inference in Graphical Models<a class="headerlink" href="#inference-in-graphical-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="inference-on-a-chain">
+<h3>8.4.1 Inference on a chain<a class="headerlink" href="#inference-on-a-chain" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="trees">
+<h3>8.4.2 Trees<a class="headerlink" href="#trees" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="factor-graphs">
+<h3>8.4.3 Factor graphs<a class="headerlink" href="#factor-graphs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-sum-product-algorithm">
+<h3>8.4.4 The sum-product algorithm<a class="headerlink" href="#the-sum-product-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="the-max-sum-algorithm">
+<h3>8.4.5 The max-sum algorithm<a class="headerlink" href="#the-max-sum-algorithm" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="exact-inference-in-general-graphs">
+<h3>8.4.6 Exact inference in general graphs<a class="headerlink" href="#exact-inference-in-general-graphs" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="loopy-belief-propagation">
+<h3>8.4.7 Loopy belief propagation<a class="headerlink" href="#loopy-belief-propagation" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="learning-the-graph-structure">
+<h3>8.4.8 Learning the graph structure<a class="headerlink" href="#learning-the-graph-structure" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -643,8 +835,8 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="07-sparse-kernel-machines.html" title="previous page">Sparse Kernel Machines</a>
-    <a class='right-next' id="next-link" href="09-mixture-models-and-em.html" title="next page">Mixture Models and EM</a>
+    <a class='left-prev' id="prev-link" href="07-sparse-kernel-machines.html" title="previous page">7. Sparse Kernel Machines</a>
+    <a class='right-next' id="next-link" href="09-mixture-models-and-em.html" title="next page">9. Mixture Models and EM</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
