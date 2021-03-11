@@ -495,37 +495,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Exploring Residential House Prices in Singapore
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#business-understanding">
-   Business Understanding
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#data-understanding">
-   Data Understanding
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#data-preparation">
-   Data Preparation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#modeling">
-   Modeling
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#evaluation-to-be-continued">
-   Evaluation [To Be Continued]
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#deployment-to-be-continued">
-   Deployment [To Be Continued]
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
   </a>
  </li>
  <li class="toctree-l1">
@@ -633,95 +603,86 @@
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Exploring Residential House Prices in Singapore
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#table-of-contents">
-     Table of Contents
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#business-understanding">
    Business Understanding
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-understanding">
    Data Understanding
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#condominiums">
      Condominiums
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-preparation">
    Data Preparation
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#scaling">
      Scaling
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dimensionality-reduction">
      Dimensionality Reduction
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modeling">
    Modeling
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#cluster-analysis">
      1. Cluster Analysis
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#feature-importance-regression-analysis">
      2. Feature Importance / Regression Analysis
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#popularity">
      3. Popularity
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#visualize-evolution-of-psf-over-time-for-d9-10-11-condos-to-be-continued">
      4. Visualize Evolution of PSF over time for D9, 10, 11 Condos [To Be Continued]
     </a>
    </li>
   </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#evaluation-to-be-continued">
    Evaluation [To Be Continued]
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deployment-to-be-continued">
    Deployment [To Be Continued]
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#resources">
-     Resources
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
  </li>
 </ul>
 
@@ -888,10 +849,9 @@
 </div>
 <p><a id='business-understanding'></a></p>
 </div>
-</div>
 <hr class="docutils" />
 <div class="section" id="business-understanding">
-<h1>Business Understanding<a class="headerlink" href="#business-understanding" title="Permalink to this headline">¶</a></h1>
+<h2>Business Understanding<a class="headerlink" href="#business-understanding" title="Permalink to this headline">¶</a></h2>
 <p>This is the first stage of the CRISP-DM process. In the context of Singapore residential housing, what questions would we like to address and along what type of insights do we want to gather from this dataset?</p>
 <p>A brief preliminary:</p>
 <ul>
@@ -931,7 +891,7 @@
 </div>
 <hr class="docutils" />
 <div class="section" id="data-understanding">
-<h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Permalink to this headline">¶</a></h1>
+<h2>Data Understanding<a class="headerlink" href="#data-understanding" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># cleaned_dataset = pd.read_csv(&#39;./data/99.co/cleaned_dataset_{}.csv&#39;.format(date.today().strftime(&quot;%Y_%m_%d&quot;)), index_col=[0])</span>
@@ -1187,7 +1147,7 @@
 </div>
 <p>We do seem to have an overwhelmingly larger portion of condominium observations compared to HDBs or Landed properties. Hence, we’ll focus the analysis on condominiums.</p>
 <div class="section" id="condominiums">
-<h2>Condominiums<a class="headerlink" href="#condominiums" title="Permalink to this headline">¶</a></h2>
+<h3>Condominiums<a class="headerlink" href="#condominiums" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">condo_X</span> <span class="o">=</span> <span class="n">cleaned_dataset</span><span class="p">[</span><span class="n">cleaned_dataset</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;condo&#39;</span><span class="p">]</span>
@@ -1331,9 +1291,9 @@ Name: price, dtype: float64
 </div>
 <hr class="docutils" />
 <div class="section" id="data-preparation">
-<h1>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h1>
+<h2>Data Preparation<a class="headerlink" href="#data-preparation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scaling">
-<h2>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h2>
+<h3>Scaling<a class="headerlink" href="#scaling" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_scaler</span><span class="p">,</span> <span class="n">y_scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -1356,7 +1316,7 @@ Name: price, dtype: float64
 </div>
 </div>
 <div class="section" id="dimensionality-reduction">
-<h2>Dimensionality Reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">¶</a></h2>
+<h3>Dimensionality Reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">¶</a></h3>
 <p>We do still have quite a few features even after dropping a bunch above, can we reduce them?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1463,9 +1423,9 @@ Total variance explained by 23 components: 99.99801217275599%
 </div>
 <hr class="docutils" />
 <div class="section" id="modeling">
-<h1>Modeling<a class="headerlink" href="#modeling" title="Permalink to this headline">¶</a></h1>
+<h2>Modeling<a class="headerlink" href="#modeling" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="cluster-analysis">
-<h2>1. Cluster Analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h2>
+<h3>1. Cluster Analysis<a class="headerlink" href="#cluster-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Currently, there are <a class="reference external" href="https://www.singaporeexpats.com/housing-in-singapore/singapore-district-guide.htm">28 designated districts</a> in Singapore. After clustering our data, could we discern these 28 districts well, or is there a different clustering of the data?</p>
 <p>We want to visualize the clusters created using the KMeans clustering algorithm which assigns data points to the cluster that the data point has the shortest euclidean distance to. Furthermore, since we have &gt;3 features, we’ll want to either visualize the clusters based on 2-3 features or like what we’ll  be doing below, visualize the first 2 TSNE embeddings of the features, helping us best preserve the relative “distance” between data points in a lower dimensional space.</p>
 <div class="cell docutils container">
@@ -2257,7 +2217,7 @@ k: 29 MSE: 0.030750226150408833 MAE: 0.13793852254050484
 <p>Coincidentally, we got <span class="math notranslate nohighlight">\(k=27\)</span> as the best number of clusters for our data, very close to the 28 districts in Singapore. However, our clusters arent exactly like the ones in the 28 districts as virtually all the 27 clusters overlap various districts, not just a cluster for  each district. Although, the clusters do not seem too random and do appear to cluster some apartments quite logically. As you can see, Cluster 0 covers mostly Far East apartments, Clusters 1 and 8 covers mostly central apartments, Clusters 15 and  17 cover mostly North-west apartments, and Clusters 20 and 26 cover mostly Far-east / Far-north apartments.</p>
 </div>
 <div class="section" id="feature-importance-regression-analysis">
-<h2>2. Feature Importance / Regression Analysis<a class="headerlink" href="#feature-importance-regression-analysis" title="Permalink to this headline">¶</a></h2>
+<h3>2. Feature Importance / Regression Analysis<a class="headerlink" href="#feature-importance-regression-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Out of the physical features of the property we have gathered in our dataset, are there any that are most helpful in predicting the price of the house?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2436,7 +2396,7 @@ dtype: float64
 <p>We will be using the built-in <code class="docutils literal notranslate"><span class="pre">feature_importance_</span></code> attribute of most sklearn Tree models - how the feature importance is calculated can be better understood <a class="reference external" href="https://alexisperrier.com/datascience/2015/08/27/feature-importance-random-forests-gini-accuracy.html">here</a>, noting that RandomForestRegressor implements <em>Gini importance</em> or in layman terms, how important a feature is will be proportionate  to the number of times it is used in making a split in building the Decision Tree. It appears the <code class="docutils literal notranslate"><span class="pre">sqft</span></code> is the most important feature so far in making a prediction of the house  price, making intuitive sense since larger houses tend to command a higher price. Next up would be the <code class="docutils literal notranslate"><span class="pre">transit_duration_to_orchard_road</span></code>. This makes perfect sense since the apartments located in the prime shopping district in Singapore (Orchard Road) are known to be more luxurious and command a higher price for its accessibility. Following would be either <code class="docutils literal notranslate"><span class="pre">num_supermarkets_nearby</span></code> (Measure of Accessibility), <code class="docutils literal notranslate"><span class="pre">transit_duration_to_raffles_place</span></code> (Another Measure of Accessibility), or <code class="docutils literal notranslate"><span class="pre">total_units</span></code> (Density of the neighbourhood).</p>
 </div>
 <div class="section" id="popularity">
-<h2>3. Popularity<a class="headerlink" href="#popularity" title="Permalink to this headline">¶</a></h2>
+<h3>3. Popularity<a class="headerlink" href="#popularity" title="Permalink to this headline">¶</a></h3>
 <p>What are the “hottest” properties now, especially in the District 9, 10, 11 area (Primary Shopping district)?</p>
 <p>I’m by far no expert on properties. However, I have heard that how “valuable” a piece of property is can be approximiately attributed to how much land is owned by the property development, so that’s the first step we’re going to do - find the size of land owned by each of the District 9, 10, and 11 property developments. Afterwards, we’ll gather a few of the property developments that own the largest land plots and check out which of them are the most popular recently.</p>
 <p>Below we have a few functions dedicated to retrieving the Tranfaction history of the condominiums in districts 9, 10, 11.</p>
@@ -3578,7 +3538,7 @@ dtype: float64
 <p>As we can see, <code class="docutils literal notranslate"><span class="pre">hillcrest-arcadia</span></code> and <code class="docutils literal notranslate"><span class="pre">aspen-heights</span></code> seem to have the most frequent transactions recently and <code class="docutils literal notranslate"><span class="pre">wilshire-residences</span></code> has the shortest transaction history out of all the property developments in districts 9, 10, 11 with the largest land plots. Another noteworthy point would be that <code class="docutils literal notranslate"><span class="pre">ardmore-park</span></code> has the highest price per square foot as seen from the box and whisker’s plot, and <code class="docutils literal notranslate"><span class="pre">leedon-residence</span></code> has the greatest standard deviation in  transaction prices.</p>
 </div>
 <div class="section" id="visualize-evolution-of-psf-over-time-for-d9-10-11-condos-to-be-continued">
-<h2>4. Visualize Evolution of PSF over time for D9, 10, 11 Condos [To Be Continued]<a class="headerlink" href="#visualize-evolution-of-psf-over-time-for-d9-10-11-condos-to-be-continued" title="Permalink to this headline">¶</a></h2>
+<h3>4. Visualize Evolution of PSF over time for D9, 10, 11 Condos [To Be Continued]<a class="headerlink" href="#visualize-evolution-of-psf-over-time-for-d9-10-11-condos-to-be-continued" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">all_condos_cleaned_transact_history</span> <span class="o">=</span> <span class="p">{}</span>
@@ -3633,13 +3593,14 @@ dtype: float64
 </div>
 <hr class="docutils" />
 <div class="section" id="evaluation-to-be-continued">
-<h1>Evaluation [To Be Continued]<a class="headerlink" href="#evaluation-to-be-continued" title="Permalink to this headline">¶</a></h1>
+<h2>Evaluation [To Be Continued]<a class="headerlink" href="#evaluation-to-be-continued" title="Permalink to this headline">¶</a></h2>
 <p><a id='deploy'></a></p>
 </div>
 <hr class="docutils" />
 <div class="section" id="deployment-to-be-continued">
-<h1>Deployment [To Be Continued]<a class="headerlink" href="#deployment-to-be-continued" title="Permalink to this headline">¶</a></h1>
+<h2>Deployment [To Be Continued]<a class="headerlink" href="#deployment-to-be-continued" title="Permalink to this headline">¶</a></h2>
 <p><a id='resources'></a></p>
+</div>
 <hr class="docutils" />
 <div class="section" id="resources">
 <h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
