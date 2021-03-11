@@ -1932,45 +1932,45 @@ dtype: int64
 <p>Let <span class="math notranslate nohighlight">\(k \in K\)</span> index the users whose preference is to be accounted for.</p>
 <p>Let <span class="math notranslate nohighlight">\(m \in M\)</span> index the month we will be requesting a restaurant recommendation for.</p>
 <p>Let <span class="math notranslate nohighlight">\(n \in N\)</span> index the total number of restaurants in Los Angeles available on Yelp!.</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathcal{X} = \{{x}_{1}, {x}_{2}, \cdots, {x}_{N}\}\)</span> be a matrix that denotes our dataset of webscraped restaurant information from Yelp!, where</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{X} = \left\{{x}_{1}, {x}_{2}, \cdots, {x}_{N}\right\}\)</span> be a matrix that denotes our dataset of webscraped restaurant information from Yelp!, where</p>
 <p>\begin{aligned}
 {x}_{n} &amp;=
 \begin{bmatrix}
-\text{name} = { \mathbf{\text{String}} } \
-\text{address} = { \mathbf{\text{String}}} \
-\text{neighbourhood} = { \mathbf{\text{String}} } \
-\text{num_reviews} = {0.0 \leq \mathbf{\text{Integer}} \leq \infty } \
-\text{rating} = { 0.0 \leq \mathbf{\text{Float}} \leq 5.0 } \
-\text{price_range} = { \text{$}, \text{$$}, \text{$$$}, \text{$$$$} } \
-\text{categories} = { \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} } \
+\text{name} = \left{ \mathbf{\text{String}} \right} \
+\text{address} = \left{ \mathbf{\text{String}}\right} \
+\text{neighbourhood} = \left{ \mathbf{\text{String}} \right} \
+\text{num_reviews} = \left{0.0 \leq \mathbf{\text{Integer}} \leq \infty \right} \
+\text{rating} = \left{ 0.0 \leq \mathbf{\text{Float}} \leq 5.0 \right} \
+\text{price_range} = \left{ \text{$}, \text{$$}, \text{$$$}, \text{$$$$} \right} \
+\text{categories} = \left{ \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} \right} \
 \end{bmatrix} \
 \end{aligned}</p>
-<p>Let <span class="math notranslate nohighlight">\(\mathcal{U} = \{{u}_{1}, {u}_{2}, \cdots, {u}_{K}\}\)</span> be a matrix, where</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{U} = \left\{{u}_{1}, {u}_{2}, \cdots, {u}_{K}\right\}\)</span> be a matrix, where</p>
 <p>\begin{aligned}
 {u}_{k} &amp;=
 \begin{bmatrix}
-\text{address} = { \mathbf{\text{String}} } \
-\text{neighbourhood} = { \mathbf{\text{String}} } \
-\text{min_reviews} = {0.0 \leq \mathbf{\text{Integer}} \leq \infty } \
-\text{min_rating} = { 0.0 \leq \mathbf{\text{Float}} \leq 5.0 } \
-\text{price_range} = { \text{$}, \text{$$}, \text{$$$}, \text{$$$$} } \
-\text{max_distance (miles)} = { 0.0 \leq \bf{\text{Float}} \leq \infty } \
-\text{categories} = { \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} } \
+\text{address} = \left{ \mathbf{\text{String}} \right} \
+\text{neighbourhood} = \left{ \mathbf{\text{String}} \right} \
+\text{min_reviews} = \left{0.0 \leq \mathbf{\text{Integer}} \leq \infty \right} \
+\text{min_rating} = \left{ 0.0 \leq \mathbf{\text{Float}} \leq 5.0 \right} \
+\text{price_range} = \left{ \text{$}, \text{$$}, \text{$$$}, \text{$$$$} \right} \
+\text{max_distance (miles)} = \left{ 0.0 \leq \bf{\text{Float}} \leq \infty \right} \
+\text{categories} = \left{ \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} \right} \
 \end{bmatrix} \
 \end{aligned}</p>
-<p>Let <span class="math notranslate nohighlight">\(w \in \mathbb{Z}^N_2 = \{0, 1\}^N\)</span> a binary indicator vector denoting which of the <span class="math notranslate nohighlight">\(N\)</span> restaurants in the Los Angeles area were chosen.</p>
-<p>Let <span class="math notranslate nohighlight">\(d: L \times L \rightarrow \mathbb{R}^+_0, L = \{\mathbf{\text{Valid Address String}}\}\)</span> be a function that calculates the distance in miles between two points.</p>
+<p>Let <span class="math notranslate nohighlight">\(w \in \mathbb{Z}^N_2 = \left\{0, 1\right\}^N\)</span> a binary indicator vector denoting which of the <span class="math notranslate nohighlight">\(N\)</span> restaurants in the Los Angeles area were chosen.</p>
+<p>Let <span class="math notranslate nohighlight">\(d: L \times L \rightarrow \mathbb{R}^+_0, L = \left\{\mathbf{\text{Valid Address String}}\right\}\)</span> be a function that calculates the distance in miles between two points.</p>
 <p>Let <span class="math notranslate nohighlight">\(A.\text{&lt;attribute&gt;}\)</span> denote the column vector (if <span class="math notranslate nohighlight">\(A\)</span> is a matrix) / scalar (if <span class="math notranslate nohighlight">\(A\)</span> is a vector) of just the specific attribute.</p>
 </div>
 <div class="section" id="mixed-integer-program-formulation">
 <h3>Mixed-Integer Program Formulation<a class="headerlink" href="#mixed-integer-program-formulation" title="Permalink to this headline">¶</a></h3>
 <p>\begin{aligned}
-\underset{w}{\text{maximize }} &amp;{w^\top}{(\mathcal{X}.\text{rating})}  \
+\underset{w}{\text{maximize }} &amp;{w^\top}{\left(\mathcal{X}.\text{rating}\right)}  \
 \text{subject to }
 &amp;w^\top\mathbb{1} = M \
 &amp;w_nu_k.{\text{min_reviews}} \leq x_n.{\text{num_reviews}},\forall,n \in N, k \in K \
 &amp;w_nu_k.{\text{min_rating}} \leq x_n.{\text{rating}},\forall,n \in N, k \in K \
-&amp;w_n(1 - \frac{\min_{n, k} d({{x_n}.{\text{address}}}, {u_k}.{\text{address}})}{\max_{n, k} d({{x_n}.{\text{address}}}, {u_k}.{\text{address}})}) \leq \alpha_n,\forall,n \in N, k \in K, w_n = 1 \
+&amp;w_n\left(1 - \frac{\min_{n, k} d({{x_n}.{\text{address}}}, {u_k}.{\text{address}})}{\max_{n, k} d({{x_n}.{\text{address}}}, {u_k}.{\text{address}})}\right) \leq \alpha_n,\forall,n \in N, k \in K, w_n = 1 \
 &amp;u_k.{\text{price_range}} \geq x_n.{\text{price_range}},\forall,n \in N, k \in K, w_n = 1 \
 &amp;u_k.{\text{neighbourhood}} = x_n.{\text{neighbourhood}},\forall,n \in N, k \in K, w_n = 1 \
 &amp;u_k.{\text{categories}} \subseteq x_n.{\text{categories}},\forall,n \in N, k \in K, w_n = 1 \
