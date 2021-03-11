@@ -3,7 +3,7 @@
 - part: Machine-Learning
   chapters:
   - file: machine-learning/01-intro
-    title: Pattern Recognition and Machine Learning
+    title: Machine Learning
     sections:
       - file: machine-learning/02-probability-distributions
       - file: machine-learning/03-linear-models-for-regression
@@ -18,25 +18,16 @@
       - file: machine-learning/12-continuous-latent-variables
       - file: machine-learning/13-sequential-data
       - file: machine-learning/14-combining-models
-      - file: machine-learning/15-contextual-bandits
+      - file: machine-learning/15-bandits
 
 - part: Featured Course Work & Extra-curriculars
   chapters:
-  - file: course-work/ise-530/intro
-    title: ISE-530 Optimization Analytics
+  - file: course-work/ise-533/intro
+    title: ISE-533 Integrative Analytics
     sections:
-      - file: course-work/ise-530/hw1
-      - file: course-work/ise-530/hw2
-      - file: course-work/ise-530/hw3
-      - file: course-work/ise-530/hw4
-      - file: course-work/ise-530/hw5
-      - file: course-work/ise-530/hw6
-      - file: course-work/ise-530/hw7
-      - file: course-work/ise-530/hw8
-      - file: course-work/ise-530/hw9
-      - file: course-work/ise-530/midterm
-      - file: course-work/ise-530/final
-      - file: course-work/ise-530/notes
+      - file: course-work/ise-533/hw1
+      - file: course-work/ise-533/hw2
+      - file: course-work/ise-533/project1
   - file: course-work/ise-537/intro
     title: ISE-537 Financial Analytics
     sections:
@@ -60,6 +51,21 @@
           - file: course-work/ise-537/paper-review-5
       - file: course-work/ise-537/project1
       - file: course-work/ise-537/project2
+      - file: course-work/ise-537/notes
+  - file: course-work/ise-530/intro
+    title: ISE-530 Optimization Analytics
+    sections:
+      - file: course-work/ise-530/hw1
+      - file: course-work/ise-530/hw2
+      - file: course-work/ise-530/hw3
+      - file: course-work/ise-530/hw4
+      - file: course-work/ise-530/hw5
+      - file: course-work/ise-530/hw6
+      - file: course-work/ise-530/hw7
+      - file: course-work/ise-530/hw8
+      - file: course-work/ise-530/hw9
+      - file: course-work/ise-530/midterm
+      - file: course-work/ise-530/final
       - file: course-work/ise-530/notes
   - file: course-work/csci-499/intro
     title: CSCI-499 AI for Social Good
@@ -85,8 +91,10 @@
         title: Evolving FPGAs for Accelerated MachineLearning on Bare Metal
       - url: https://github.com/usc-caisplusplus/SLAB
         title: OCR Research on Google Street View Panoramics
+  - file: course-work/udacity/exploring-house-prices-singapore-part-3-crispdm
+    title: Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
   - url: https://graduation.udacity.com/confirm/2LGCCKNA
-    title: Certificate
+    title: Udacity Data Scientist Nanodegree Certificate
 
 - part: Reference
   chapters:
