@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15. Bandits &#8212; ΨΦ</title>
+    <title>15. Bandits [In Progress] &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -61,6 +61,8 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ISE-533: Integrative Analytics" href="../course-work/ise-533/intro.html" />
+    <link rel="prev" title="14. Combining Models [Empty]" href="14-combining-models.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -69,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/machine-learning/15-bandits.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="15. Bandits" />
-<meta property="og:description" content="15. Bandits  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as np import pand" />
+<meta property="og:title"       content="15. Bandits [In Progress]" />
+<meta property="og:description" content="15. Bandits [In Progress]  %load_ext autotime %load_ext nb_black %matplotlib inline  import os from collections import defaultdict import torch import numpy as " />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -104,40 +106,40 @@
   Machine-Learning
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="01-intro.html">
-   Pattern Recognition and Machine Learning
+   Machine Learning
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="02-probability-distributions.html">
-     2. Probability Distributions
+     2. Probability Distributions [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03-linear-models-for-regression.html">
-     3. Linear Models for Regression
+     3. Linear Models for Regression [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04-linear-models-for-classification.html">
-     4. Linear Models for Classification
+     4. Linear Models for Classification [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05-neural-networks.html">
-     5. Neural Networks
+     5. Neural Networks [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="06-kernel-methods.html">
-     6. Kernel Methods
+     6. Kernel Methods [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07-sparse-kernel-machines.html">
-     7. Sparse Kernel Machines
+     7. Sparse Kernel Machines [Empty]
     </a>
    </li>
    <li class="toctree-l2">
@@ -147,32 +149,37 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09-mixture-models-and-em.html">
-     9. Mixture Models and EM
+     9. Mixture Models and EM [In Progress]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10-approximate-inference.html">
-     10. Approximate Inference
+     10. Approximate Inference [In Progress]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11-sampling-methods.html">
-     11. Sampling Methods
+     11. Sampling Methods [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12-continuous-latent-variables.html">
-     12. Continuous Latent Variables
+     12. Continuous Latent Variables [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13-sequential-data.html">
-     13. Sequential Data
+     13. Sequential Data [Empty]
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14-combining-models.html">
-     14. Combining Models
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     15. Bandits [In Progress]
     </a>
    </li>
   </ul>
@@ -186,6 +193,142 @@
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../course-work/ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../course-work/ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../course-work/ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../course-work/ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../course-work/ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../course-work/ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../course-work/ise-530/intro.html">
    ISE-530 Optimization Analytics
@@ -256,118 +399,6 @@
   </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../course-work/ise-537/intro.html">
-   ISE-537 Financial Analytics
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-537/hw1.html">
-     HW 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-537/hw2_part1.html">
-     HW 2 Part 1
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-537/hw2_part2.html">
-     HW 2 Part 2
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-537/hw3.html">
-     HW 3
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../course-work/ise-537/market-observations.html">
-     Market Observations
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/market-observations-week-1.html">
-       TSLA Absurd P/E Ratio
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/market-observations-week-2.html">
-       The NASDAQ Whale
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/market-observations-week-3.html">
-       Dovish till 2024
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/market-observations-week-4.html">
-       The Future of EV batteries
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/market-observations-week-5.html">
-       Palantir
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../course-work/ise-537/paper-reviews.html">
-     Paper Reviews
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/paper-review-1.html">
-       Value and Momentum Everywhere
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/paper-review-2.html">
-       Carry
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/paper-review-3.html">
-       Quality Minus Junk
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/paper-review-4.html">
-       Size Matters, if You Control Your Junk
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../course-work/ise-537/paper-review-5.html">
-       The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-537/project1.html">
-     Momentum Strategies
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-537/project2.html">
-     Carry
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../course-work/ise-530/notes.html">
-     Summary
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../course-work/csci-499/intro.html">
    CSCI-499 AI for Social Good
   </a>
@@ -379,42 +410,42 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-1.html">
-       Representativeness-based sampling network design for the State of Alaska
+       Paper Review 1
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-2.html">
-       A Large-Scale Study on Predicting and Contextualizing Building Energy Usage
+       Paper Review 2
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-3.html">
-       Wildbook: Crowdsourcing, computer vision, and data science for conservation
+       Paper Review 3
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-4.html">
-       Trade-offs and efficiencies in optimal budget-constrained multispecies corridor networks
+       Paper Review 4
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-5.html">
-       End-to-End Influence Maximization in the Field
+       Paper Review 5
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-6.html">
-       A multiscale approach to balance trade-offs among dam infrastructure, river restoration, and cost
+       Paper Review 6
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-7.html">
-       Using network centrality measures to manage landscape connectivity
+       Paper Review 7
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../course-work/csci-499/paper-review-8.html">
-       Designing Fair, Efficient, and Interpretable Policies for Prioritizing Homeless Youth for Housing Resources
+       Paper Review 8
       </a>
      </li>
     </ul>
@@ -463,8 +494,43 @@
   </i>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Exploring Residential House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html#business-understanding">
+   Business Understanding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html#data-understanding">
+   Data Understanding
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html#data-preparation">
+   Data Preparation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html#modeling">
+   Modeling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html#evaluation-to-be-continued">
+   Evaluation [To Be Continued]
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html#deployment-to-be-continued">
+   Deployment [To Be Continued]
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
-   Certificate
+   Udacity Data Scientist Nanodegree Certificate
    <i class="fas fa-external-link-alt">
    </i>
   </a>
@@ -745,8 +811,8 @@
         
               <div>
                 
-  <div class="section" id="bandits">
-<h1>15. Bandits<a class="headerlink" href="#bandits" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="bandits-in-progress">
+<h1>15. Bandits [In Progress]<a class="headerlink" href="#bandits-in-progress" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
@@ -818,21 +884,276 @@
 <h2>15.2. Off-Policy Confidence Intervals<a class="headerlink" href="#off-policy-confidence-intervals" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="t-distribution-population-variance-unknown">
 <h3>15.2.1 T-distribution (Population Variance Unknown)<a class="headerlink" href="#t-distribution-population-variance-unknown" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">student_t_bound</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the Student T&#39;s confidence interval for the V_ips estimator</span>
+<span class="sd">    If V_ips = 1/nΣ_nX = μ, then var[V_ips] = sample variance / n = (1/(n - 1)Σ_n(X - μ)^2) / n</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        V_ips (float): Estimated value of the policy π using the Inverse Propensity Score estimator</span>
+<span class="sd">        var_V_ips (float): Variance of V_ips</span>
+<span class="sd">        w_max (float): Largest Ratio of current policy probability of taking logging policy action a_i given context x_i to logging policy&#39;s probability of taking action a_i given context x_i - π(a_i|x_i) / μ(a_i | x_i)</span>
+<span class="sd">        n (int): Size of the logging policy dataset</span>
+<span class="sd">        δ (float): Significance level for confidence coverage. If δ = 0.05, it&#39;s a 95% confidence interval</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple: (lower bound of V(π), upper bound of V(π))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">t_score</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">lb</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">t_score</span><span class="o">*</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;var_V_ips&quot;</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)))</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">t_score</span><span class="o">*</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;var_V_ips&quot;</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="asymptotically-gaussian-central-limit-theorem">
 <h3>15.2.2 Asymptotically Gaussian (Central Limit Theorem)<a class="headerlink" href="#asymptotically-gaussian-central-limit-theorem" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">asymptotic_gaussian_bound</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the asymptotically Gaussian confidence interval for the V_ips estimator</span>
+<span class="sd">    As n --&gt; \infty, by CLT, sampling distribution of the sample mean of the random variable,</span>
+<span class="sd">    in our case: importance-weighted rewards are our random variable α.</span>
+<span class="sd">    If V_ips = 1/nΣ_nX = μ, then var[V_ips] = sample variance / n = (1/(n - 1)Σ_n(X - μ)^2) / n</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        V_ips (float): Estimated value of the policy π using the Inverse Propensity Score estimator</span>
+<span class="sd">        var_V_ips (float): Variance of V_ips</span>
+<span class="sd">        w_max (float): Largest Ratio of current policy probability of taking logging policy action a_i given context x_i to logging policy&#39;s probability of taking action a_i given context x_i - π(a_i|x_i) / μ(a_i | x_i)</span>
+<span class="sd">        n (int): Size of the logging policy dataset</span>
+<span class="sd">        δ (float): Significance level for confidence coverage. If δ = 0.05, it&#39;s a 95% confidence interval</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple: (lower bound of V(π), upper bound of V(π))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">z_score</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="n">lb</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">z_score</span><span class="o">*</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;var_V_ips&quot;</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)))</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">z_score</span><span class="o">*</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;var_V_ips&quot;</span><span class="p">]</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)))</span>
+
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="clopper-pearson">
 <h3>15.2.3 Clopper-Pearson<a class="headerlink" href="#clopper-pearson" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clopper_pearson_bound</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the clopper pearson bound for the V_ips estimator</span>
+<span class="sd">    0 &lt;= V(π) &lt;= 1</span>
+<span class="sd">    https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Clopper%E2%80%93Pearson_interval</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        V_ips (float): Estimated value of the policy π using the Inverse Propensity Score estimator</span>
+<span class="sd">        w_max (float): Largest Ratio of current policy probability of taking logging policy action a_i given context x_i to logging policy&#39;s probability of taking action a_i given context x_i - π(a_i|x_i) / μ(a_i | x_i)</span>
+<span class="sd">        n (int): Size of the logging policy dataset</span>
+<span class="sd">        δ (float): Significance level for confidence coverage. If δ = 0.05, it&#39;s a 95% confidence interval</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple: (lower clopper-pearson bound of V(π), upper clopper-pearson bound of V(π))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;w_max&quot;</span><span class="p">]</span>
+
+    <span class="n">lb</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">betaincinv</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">special</span><span class="o">.</span><span class="n">betaincinv</span><span class="p">(</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">k</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="k">if</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">k</span> <span class="k">else</span> <span class="mi">1</span>
+
+    <span class="n">lb</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;w_max&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">lb</span><span class="p">))</span>
+    <span class="n">ub</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;w_max&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">ub</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">lb</span><span class="p">,</span> <span class="n">ub</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="bootstrapping">
 <h3>15.2.4 Bootstrapping<a class="headerlink" href="#bootstrapping" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="concentration-inequality-hoeffding-inequality">
 <h3>15.2.5 Concentration Inequality: Hoeffding Inequality<a class="headerlink" href="#concentration-inequality-hoeffding-inequality" title="Permalink to this headline">¶</a></h3>
+<p>\begin{aligned}
+{
+\left\vert
+\hat{V}<em>{\text{IPS}}{(\pi)}
+- {V}(\pi)
+\right\vert
+}
+&amp;\leq
+\sqrt{\frac{\sum</em>{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}} \
+\end{aligned}</p>
+<p>Hoeffding’s Inequality: Let <span class="math notranslate nohighlight">\(X_1, ..., X_n\)</span> be independent random variables strictly bounded by the interval <span class="math notranslate nohighlight">\([a_i, b_i]\)</span>, <span class="math notranslate nohighlight">\(a_i \leq X_i \leq b_i\)</span>. We define the empirical mean of these variables by <span class="math notranslate nohighlight">\(\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span>, such that</p>
+<p>\begin{aligned}
+P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert \geq \epsilon) \leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \
+\end{aligned}</p>
+<p>From Hoeffding’s Inequality:
+\begin{aligned}
+P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert \geq \epsilon) &amp;\leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \
+1 - P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) &amp;\leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \
+\end{aligned}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d27a9cd9-b0e3-402b-b028-42ca9c1a4ba6">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d27a9cd9-b0e3-402b-b028-42ca9c1a4ba6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+\label{eq:1}
+P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) \geq \underbrace{1 - 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)}}_{1-\delta}
+\end{equation}\]</div>
+<p>Finding <span class="math notranslate nohighlight">\(\epsilon\)</span>:</p>
+<p>\begin{aligned}
+\therefore 1-\delta &amp;= 1 - 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \
+\delta &amp;= 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \
+\ln{\delta} &amp;= \ln{2} - \frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2} \
+\ln{\frac{2}{\delta}} &amp;= \frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2} \
+2n^2\epsilon^2 &amp;= \sum_{i=1}^{n}{(b_i - a_i)}^2 \ln{\frac{2}{\delta}} \
+\epsilon &amp;= \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}} \
+\end{aligned}</p>
+<p>Substituting <span class="math notranslate nohighlight">\(\epsilon\)</span> into Equation 1, we get our Hoeffding Bound Confidence Intervals:</p>
+<p>\begin{aligned}
+P\Bigg(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \
+P\Bigg(-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}&lt; \bar{X} - \mathbb{E}[\bar{X}] &lt; \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \
+P\Bigg(\bar{X}-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}&lt; \mathbb{E}[\bar{X}] &lt; \bar{X}+\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta
+\end{aligned}</p>
+<p>Assuming that propensity scores <span class="math notranslate nohighlight">\(\alpha_i\)</span> are bounded between <span class="math notranslate nohighlight">\([0, w_{max}=\text{max}_{i\in n}\frac{\pi(a_i\vert x_i)}{\mu(a_i\vert x_i)}r_i]\)</span>, we can substitute the following:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{E}[\bar{X}]: V(\pi)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X_i: \alpha_i = \frac{\pi(a_i\vert x_i)}{\mu(a_i\vert x_i}r_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\bar{X}: \hat{V_{\text{IPS}}}(\pi) = \frac{1}{n} \sum_{i=1}^{n}\frac{\pi(a_i\vert x_i)}{\mu(a_i\vert x_i)}r_i\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(b_i: w_{max}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(a_i: 0\)</span></p></li>
+</ul>
+<p>\begin{aligned}
+P\Bigg(\hat{V_{\text{IPS}}}(\pi)-\sqrt{\frac{\sum_{i=1}^{n}{(w_{max} - 0)}^2}{2n^2} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+\sqrt{\frac{\sum_{i=1}^{n}{(w_{max} - 0)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \
+P\Bigg(\hat{V_{\text{IPS}}}(\pi)-\sqrt{\frac{nw^2_{max}}{2n^2} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+\sqrt{\frac{nw^2_{max}}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \
+P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hoeffding_bound</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the empirical hoeffding bounds for the V_ips estimator</span>
+<span class="sd">    using the Hoeffding Inequality</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        V_ips (float): Estimated value of the policy π using the Inverse Propensity Score estimator</span>
+<span class="sd">        w_max (float): Largest Ratio of current policy probability of taking logging policy action a_i given context x_i to logging policy&#39;s probability of taking action a_i given context x_i - π(a_i|x_i) / μ(a_i | x_i)</span>
+<span class="sd">        n (int): Size of the logging policy dataset</span>
+<span class="sd">        δ (float): Significance level for confidence coverage. Default = 0.05, meaning a 95% confidence interval</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple: (lower empirical hoeffding bound of V(π), upper empirical hoeffding bound of V(π))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ε</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;w_max&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">]))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">]))</span>
+    <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ε</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">ε</span>
+    <span class="k">return</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="concentration-inequality-bernstein-inequality">
 <h3>15.2.6 Concentration Inequality: Bernstein Inequality<a class="headerlink" href="#concentration-inequality-bernstein-inequality" title="Permalink to this headline">¶</a></h3>
+<p>\begin{aligned}
+{
+\left\vert
+\hat{V}<em>{\text{IPS}}{(\pi)}
+- {V}(\pi)
+\right\vert
+}
+&amp;\leq
+{
+\sqrt{
+{2\text{log}\frac{2}{\delta}}{\frac{{\text{Var}}</em>{(x, a, r) \sim \mu}[\hat{V}<em>{\text{IPS}}{(\pi)}]}{n}}}
++ \frac{2{\hat{w}</em>{max}}}{3n}{\text{log} \frac{2}{\delta}}
+} \
+\end{aligned}</p>
+<p>Bernstein Inequality: Suppose <span class="math notranslate nohighlight">\(X_1, \cdots, X_n\)</span> are <span class="math notranslate nohighlight">\(i.i.d.\)</span> with 0 mean, variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> and <span class="math notranslate nohighlight">\(\vert X_i \vert \leq M\)</span> almost surely,</p>
+<p>\begin{aligned}
+P\Bigg({
+\left\vert
+\frac{1}{n}\sum^{n}_{i=1} X_i
+\right\vert
+}
+&amp;\leq
+{
+\sqrt{\frac{2\sigma^2}{n}\log\frac{2}{\delta}}
++ \frac{2M}{3n}{\log\frac{2}{\delta}}
+}\Bigg) \geq 1 - \delta
+\end{aligned}</p>
+<p>Since <span class="math notranslate nohighlight">\(V_{\text{IPS}}(\pi)\)</span> is an unbiased estimator of <span class="math notranslate nohighlight">\(V(\pi)\)</span>, <span class="math notranslate nohighlight">\(\hat{V}_{\text{IPS}}{(\pi)} - {V}(\pi)\)</span> has 0 mean, and variance of <span class="math notranslate nohighlight">\(Var[\hat{V}_{\text{IPS}}(\pi)]\)</span>, and setting <span class="math notranslate nohighlight">\(M: w_{max}\)</span>,</p>
+<p>\begin{aligned}
+P\Bigg({
+\left\vert
+\hat{V}<em>{\text{IPS}}{(\pi)}
+- {V}(\pi)
+\right\vert
+}
+&amp;\leq
+{
+\sqrt{
+{2\text{log}\frac{2}{\delta}}{\frac{{\text{Var}}</em>{(x, a, r) \sim \mu}[\hat{V}<em>{\text{IPS}}{(\pi)}]}{n}}}
++ \frac{2{\hat{w}</em>{max}}}{3n}{\text{log} \frac{2}{\delta}}
+}\Bigg) \geq 1-\delta
+\end{aligned}</p>
+<p>\begin{aligned}
+P\Bigg(\hat{V}<em>{\text{IPS}}{(\pi)}
+-
+\Bigg({
+\sqrt{
+{2\text{log}\frac{2}{\delta}}{\frac{{\text{Var}}</em>{(x, a, r) \sim \mu}[\hat{V}<em>{\text{IPS}}{(\pi)}]}{n}}}
++ \frac{2{\hat{w}</em>{max}}}{3n}{\text{log} \frac{2}{\delta}}
+}\Bigg)
+&amp;\leq
+{V}(\pi)
+\leq
+\hat{V}<em>{\text{IPS}}{(\pi)}
++
+\Bigg({
+\sqrt{
+{2\text{log}\frac{2}{\delta}}{\frac{{\text{Var}}</em>{(x, a, r) \sim \mu}[\hat{V}<em>{\text{IPS}}{(\pi)}]}{n}}}
++ \frac{2{\hat{w}</em>{max}}}{3n}{\text{log} \frac{2}{\delta}}
+}\Bigg
+)
+\Bigg) &amp;\geq 1 - \delta \
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bernstein_bound</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the empirical benrstein bounds for the V_ips estimator</span>
+<span class="sd">    using the Bernstein Inequality</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        V_ips (float): Estimated value of the policy π using the Inverse Propensity Score estimator</span>
+<span class="sd">        var_V_ips (float): Variance of V_ips</span>
+<span class="sd">        w_max (float): Largest Ratio of current policy probability of taking logging policy action a_i given context x_i to logging policy&#39;s probability of taking action a_i given context x_i - π(a_i|x_i) / μ(a_i | x_i)</span>
+<span class="sd">        n (int): Size of the logging policy dataset</span>
+<span class="sd">        δ (float): Significance level for confidence coverage. If δ = 0.05, it&#39;s a 95% confidence interval</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Tuple: (lower empirical bernstein bound of V(π), upper empirical bernstein bound of V(π))</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">ε</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">])</span> <span class="o">*</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;var_V_ips&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span>
+        <span class="mi">2</span> <span class="o">*</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;w_max&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span> <span class="o">/</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;δ&quot;</span><span class="p">])</span>
+    <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;n&quot;</span><span class="p">])</span>
+
+    <span class="c1"># ε = np.sqrt(</span>
+    <span class="c1">#     2 * np.log(2 / kwargs[&quot;δ&quot;]) * (kwargs[&quot;var_V_ips&quot;] / kwargs[&quot;n&quot;])</span>
+    <span class="c1"># ) + (2 * kwargs[&quot;w_max&quot;] * np.log(2 / kwargs[&quot;δ&quot;])) / (3 * kwargs[&quot;n&quot;])</span>
+
+    <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span> <span class="o">=</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">ε</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;V_ips&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">ε</span>
+    <span class="k">return</span> <span class="n">lb</span><span class="p">,</span> <span class="n">ub</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <hr class="docutils" />
@@ -911,6 +1232,8 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="14-combining-models.html" title="previous page">14. Combining Models [Empty]</a>
+    <a class='right-next' id="next-link" href="../course-work/ise-533/intro.html" title="next page">ISE-533: Integrative Analytics</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
