@@ -505,6 +505,13 @@
    </i>
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
@@ -1929,12 +1936,12 @@ dtype: int64
 <p>\begin{aligned}
 {x}_{n} &amp;=
 \begin{bmatrix}
-\text{name} = \left{ \bf{\text{String}} \right} \
-\text{address} = \left{ \bf{\text{String}}\right} \
-\text{neighbourhood} = \left{ \bf{\text{String}} \right} \
-\text{num_reviews} = \left{0.0 \leq \bf{\text{Integer}} \leq \infty \right} \
-\text{rating} = \left{ 0.0 \leq \bf{\text{Float}} \leq 5.0 \right} \
-\text{price_range} = \left{ $, $$, $$$, $$$$ \right} \
+\text{name} = \left{ \mathbf{\text{String}} \right} \
+\text{address} = \left{ \mathbf{\text{String}}\right} \
+\text{neighbourhood} = \left{ \mathbf{\text{String}} \right} \
+\text{num_reviews} = \left{0.0 \leq \mathbf{\text{Integer}} \leq \infty \right} \
+\text{rating} = \left{ 0.0 \leq \mathbf{\text{Float}} \leq 5.0 \right} \
+\text{price_range} = \left{ \text{$}, \text{$$}, \text{$$$}, \text{$$$$} \right} \
 \text{categories} = \left{ \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} \right} \
 \end{bmatrix} \
 \end{aligned}</p>
@@ -1942,17 +1949,17 @@ dtype: int64
 <p>\begin{aligned}
 {u}_{k} &amp;=
 \begin{bmatrix}
-\text{address} = \left{ \bf{\text{String}} \right} \
-\text{neighbourhood} = \left{ \bf{\text{String}} \right} \
-\text{min_reviews} = \left{0.0 \leq \bf{\text{Integer}} \leq \infty \right} \
-\text{min_rating} = \left{ 0.0 \leq \bf{\text{Float}} \leq 5.0 \right} \
-\text{price_range} = \left{ $, $$, $$$, $$$$ \right} \
+\text{address} = \left{ \mathbf{\text{String}} \right} \
+\text{neighbourhood} = \left{ \mathbf{\text{String}} \right} \
+\text{min_reviews} = \left{0.0 \leq \mathbf{\text{Integer}} \leq \infty \right} \
+\text{min_rating} = \left{ 0.0 \leq \mathbf{\text{Float}} \leq 5.0 \right} \
+\text{price_range} = \left{ \text{$}, \text{$$}, \text{$$$}, \text{$$$$} \right} \
 \text{max_distance (miles)} = \left{ 0.0 \leq \bf{\text{Float}} \leq \infty \right} \
 \text{categories} = \left{ \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} \right} \
 \end{bmatrix} \
 \end{aligned}</p>
 <p>Let <span class="math notranslate nohighlight">\(w \in \mathbb{Z}^N_2 = \left\{0, 1\right\}^N\)</span> a binary indicator vector denoting which of the <span class="math notranslate nohighlight">\(N\)</span> restaurants in the Los Angeles area were chosen.</p>
-<p>Let <span class="math notranslate nohighlight">\(d: L \times L \rightarrow \mathbb{R}^+_0, L = \left\{\bf{\text{Valid Address String}}\right\}\)</span> be a function that calculates the distance in miles between two points.</p>
+<p>Let <span class="math notranslate nohighlight">\(d: L \times L \rightarrow \mathbb{R}^+_0, L = \left\{\mathbf{\text{Valid Address String}}\right\}\)</span> be a function that calculates the distance in miles between two points.</p>
 <p>Let <span class="math notranslate nohighlight">\(A.\text{&lt;attribute&gt;}\)</span> denote the column vector (if <span class="math notranslate nohighlight">\(A\)</span> is a matrix) / scalar (if <span class="math notranslate nohighlight">\(A\)</span> is a vector) of just the specific attribute.</p>
 </div>
 <div class="section" id="mixed-integer-program-formulation">
