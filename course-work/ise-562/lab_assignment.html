@@ -3566,8 +3566,8 @@ if (IPython.notebook.kernel != null) {
 <p>Let <span class="math notranslate nohighlight">\(u(x, \gamma) = e^{-x\gamma} \)</span> and <span class="math notranslate nohighlight">\(u^{-1}(u, \gamma) = x = -\frac{1}{\gamma}\ln u\)</span> be the <span class="math notranslate nohighlight">\(u\)</span>-value function and it’s inverse.</p>
 <p>Let <span class="math notranslate nohighlight">\(N, M\)</span> be the number of prospects in deal <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> respectively.</p>
 <p>Let <span class="math notranslate nohighlight">\(p^{(A)} \in \mathbb{R}^N: \mathbb{1}^\top  p^{(A)} = 1\)</span> and <span class="math notranslate nohighlight">\(p^{(B)} \in \mathbb{R}^M: \mathbb{1}^\top  p^{(B)} = 1\)</span> be the vector of probabilities of getting different prospects <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, for deals <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> respectively:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd94483b-2518-464e-b3d5-f08e93c82b28">
-<span class="eqno">(40)<a class="headerlink" href="#equation-cd94483b-2518-464e-b3d5-f08e93c82b28" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-896966bb-3912-4ac2-85f7-672654cb3a40">
+<span class="eqno">(40)<a class="headerlink" href="#equation-896966bb-3912-4ac2-85f7-672654cb3a40" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u(a, \gamma)^\top  p^{(A)} &amp;= u(b, \gamma)^\top p^{(B)} \\
     b_j &amp;= u^{-1}\left(\frac{1}{p^{(B)}_j}\left[u(a, \gamma)^\top  p^{(A)} - \sum^M_{i, i \not= j} u(b_i, \gamma)p^{(B)}_i\right], \gamma\right) \\
 \end{align}\]</div>
@@ -6403,8 +6403,8 @@ if (IPython.notebook.kernel != null) {
 <div class="section" id="large-monetary-prospects-using-an-exponential-u-curve">
 <h2>5) Large Monetary Prospects Using an Exponential U-Curve<a class="headerlink" href="#large-monetary-prospects-using-an-exponential-u-curve" title="Permalink to this headline">¶</a></h2>
 <p>In the deal below, assume <span class="math notranslate nohighlight">\(p = 0.5\)</span> and a decision maker with an exponential u-curve and a risk-aversion coefficient <span class="math notranslate nohighlight">\(\gamma = 0.001\)</span>. I.e. the equation for the u-curve is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e86412df-6438-4227-bc02-a39522aec220">
-<span class="eqno">(41)<a class="headerlink" href="#equation-e86412df-6438-4227-bc02-a39522aec220" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-61b1e862-a251-4e24-a454-da2173f561eb">
+<span class="eqno">(41)<a class="headerlink" href="#equation-61b1e862-a251-4e24-a454-da2173f561eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u(x) &amp;= a + b{e}^{-\gamma x} ,b \not= 0. \\
 \end{align}\]</div>
 <p>Plot the certain equivalent of the deal vs. <span class="math notranslate nohighlight">\(X\)</span> for the range where <span class="math notranslate nohighlight">\(X=\$0\)</span> to <span class="math notranslate nohighlight">\(X=\$10,000\)</span> in increments of <span class="math notranslate nohighlight">\({\$500}\)</span>.</p>
@@ -7258,16 +7258,16 @@ if (IPython.notebook.kernel != null) {
 <a class="reference internal image-reference" href="../../_images/lab_assignment_q6.png"><img alt="../../_images/lab_assignment_q6.png" src="../../_images/lab_assignment_q6.png" style="width: 60%;" /></a>
 <p>a) Kim’s risk Odd for <span class="math notranslate nohighlight">\(\$50\)</span> are <span class="math notranslate nohighlight">\(r_{50} = 2 :1\)</span>. What is her risk tolerance?</p>
 <p>Assuming that Kim satisfies the <span class="math notranslate nohighlight">\(\Delta\)</span> property,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-471a74c4-6e44-41d7-9744-78e93ed121b5">
-<span class="eqno">(42)<a class="headerlink" href="#equation-471a74c4-6e44-41d7-9744-78e93ed121b5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-40a9c50b-db15-4089-a40c-674cc5ef4ceb">
+<span class="eqno">(42)<a class="headerlink" href="#equation-40a9c50b-db15-4089-a40c-674cc5ef4ceb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     r_{50} &amp;= \frac{2}{1} \\
     r &amp;= {\left(\frac{2}{1}\right)}^{\frac{1}{50}} \\
     \text{Risk Tolerance } \rho &amp;= \frac{1}{\ln (r)} \\
     &amp;= \frac{50}{\ln (2)} \\
 \end{align}\]</div>
 <p>Also, we can find her risk tolerance by comparing the forms of the exponential <span class="math notranslate nohighlight">\(U\)</span>-curves:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3eb61ba7-b660-4e4e-8f56-51fbbc5928f2">
-<span class="eqno">(43)<a class="headerlink" href="#equation-3eb61ba7-b660-4e4e-8f56-51fbbc5928f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6a0c87fc-ab02-42e8-b177-7ef9de9c3308">
+<span class="eqno">(43)<a class="headerlink" href="#equation-6a0c87fc-ab02-42e8-b177-7ef9de9c3308" title="Permalink to this equation">¶</a></span>\[\begin{align}
     a + br^{-x} &amp;= a + be^{-\frac{x}{\rho}} \\
     \frac{4}{3} - \frac{4}{3} {\left(\frac{1}{2}\right)}^{\frac{x}{50}} &amp;= \frac{4}{3} - \frac{4}{3}e^{-\frac{x}{\rho}} \\
     {2}^{-\frac{x}{50}} &amp;= e^{-\frac{x}{\rho}} \\
@@ -7276,8 +7276,8 @@ if (IPython.notebook.kernel != null) {
 \end{align}\]</div>
 <p>b) Build a spreadsheet to calculate the Value of Clairvoyance for each person.</p>
 <p>Assuming a person satisfies the <span class="math notranslate nohighlight">\(\Delta\)</span> property,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c8354c1-034a-499f-871b-fcc0e32a55a1">
-<span class="eqno">(44)<a class="headerlink" href="#equation-4c8354c1-034a-499f-871b-fcc0e32a55a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d4ea4797-a647-4410-a347-7508440aa964">
+<span class="eqno">(44)<a class="headerlink" href="#equation-d4ea4797-a647-4410-a347-7508440aa964" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Value of Clairvoyance} &amp;= \text{Value of Free Clairvoyance} - \text{Value of No Clairvoyance} \\   
 \end{align}\]</div>
 <div class="cell docutils container">
