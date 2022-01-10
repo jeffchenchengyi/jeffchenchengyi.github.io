@@ -1,0 +1,2096 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With SNS &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-533/project4_det.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-533/project4_det.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="With SNS" />
+<meta property="og:description" content="With SNS  #open the cor file prediction = {} for d in range(1):     date = (&#39;_&#39;).join(dates[d].split(&#39;/&#39;))     T = (pd.to_datetime(dates[d + 1]) - pd.to_datetim" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-533/project4_det.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">pyomo.environ</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">pyomo.opt</span> <span class="kn">import</span> <span class="n">SolverFactory</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">timedelta</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./data/project 4 dataset/init_data.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">51</span><span class="p">,</span> <span class="s1">&#39;StateCode&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;SNS&#39;</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">51</span><span class="p">,</span> <span class="s1">&#39;Available capacity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12000</span>
+<span class="n">raw</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">51</span><span class="p">,</span> <span class="s1">&#39;nb_idx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">)])</span>
+<span class="n">raw</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StateCode</th>
+      <th>State</th>
+      <th>nb</th>
+      <th>nb_idx</th>
+      <th>Available capacity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AK</td>
+      <td>Alaska</td>
+      <td>['WA']</td>
+      <td>[46]</td>
+      <td>200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AL</td>
+      <td>Alabama</td>
+      <td>['FL', 'GA', 'MS', 'TN']</td>
+      <td>[8, 9, 24, 41]</td>
+      <td>1344</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR</td>
+      <td>Arkansas</td>
+      <td>['LA', 'MO', 'MS', 'OK', 'TN', 'TX']</td>
+      <td>[17, 23, 24, 35, 41, 42]</td>
+      <td>500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AZ</td>
+      <td>Arizona</td>
+      <td>['CA', 'CO', 'NM', 'NV', 'UT']</td>
+      <td>[4, 5, 31, 32, 43]</td>
+      <td>1500</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>California</td>
+      <td>['AZ', 'HI', 'NV', 'OR']</td>
+      <td>[3, 10, 32, 36]</td>
+      <td>11036</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CO</td>
+      <td>Colorado</td>
+      <td>['AZ', 'KS', 'NE', 'NM', 'OK', 'UT', 'WY']</td>
+      <td>[3, 15, 28, 31, 35, 43, 49]</td>
+      <td>600</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CT</td>
+      <td>Connecticut</td>
+      <td>['MA', 'NY', 'RI']</td>
+      <td>[18, 33, 38]</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>DE</td>
+      <td>Delaware</td>
+      <td>['MD', 'NJ', 'PA']</td>
+      <td>[19, 30, 37]</td>
+      <td>400</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>FL</td>
+      <td>Florida</td>
+      <td>['AL', 'GA']</td>
+      <td>[1, 9]</td>
+      <td>4000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>GA</td>
+      <td>Georgia</td>
+      <td>['AL', 'FL', 'NC', 'SC', 'TN']</td>
+      <td>[1, 8, 26, 39, 41]</td>
+      <td>1006</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>HI</td>
+      <td>Hawaii</td>
+      <td>['CA']</td>
+      <td>[4]</td>
+      <td>534</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>IA</td>
+      <td>Iowa</td>
+      <td>['IL', 'MN', 'MO', 'NE', 'SD', 'WI']</td>
+      <td>[13, 22, 23, 28, 40, 47]</td>
+      <td>280</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>ID</td>
+      <td>Idaho</td>
+      <td>['MT', 'NV', 'OR', 'UT', 'WA', 'WY']</td>
+      <td>[25, 32, 36, 43, 46, 49]</td>
+      <td>404</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>IL</td>
+      <td>Illinois</td>
+      <td>['IA', 'IN', 'KY', 'MO', 'WI']</td>
+      <td>[11, 14, 16, 23, 47]</td>
+      <td>1595</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>IN</td>
+      <td>Indiana</td>
+      <td>['IL', 'KY', 'MI', 'OH']</td>
+      <td>[13, 16, 21, 34]</td>
+      <td>1927</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KS</td>
+      <td>Kansas</td>
+      <td>['CO', 'MO', 'NE', 'OK']</td>
+      <td>[5, 23, 28, 35]</td>
+      <td>168</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KY</td>
+      <td>Kentucky</td>
+      <td>['IL', 'IN', 'MO', 'OH', 'TN', 'VA', 'WV']</td>
+      <td>[13, 14, 23, 34, 41, 44, 48]</td>
+      <td>1300</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>LA</td>
+      <td>Louisiana</td>
+      <td>['AR', 'MS', 'TX']</td>
+      <td>[2, 24, 42]</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>MA</td>
+      <td>Massachusetts</td>
+      <td>['CT', 'NH', 'NY', 'RI', 'VT']</td>
+      <td>[6, 29, 33, 38, 45]</td>
+      <td>1400</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>['DC', 'DE', 'PA', 'VA', 'WV']</td>
+      <td>[50, 7, 37, 44, 48]</td>
+      <td>1040</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>ME</td>
+      <td>Maine</td>
+      <td>['NH']</td>
+      <td>[29]</td>
+      <td>248</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>MI</td>
+      <td>Michigan</td>
+      <td>['IN', 'OH', 'WI']</td>
+      <td>[14, 34, 47]</td>
+      <td>1700</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>MN</td>
+      <td>Minnesota</td>
+      <td>['IA', 'ND', 'SD', 'WI']</td>
+      <td>[11, 27, 40, 47]</td>
+      <td>1384</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>MO</td>
+      <td>Missouri</td>
+      <td>['AR', 'IA', 'IL', 'KS', 'KY', 'NE', 'OK', 'TN']</td>
+      <td>[2, 11, 13, 15, 16, 28, 35, 41]</td>
+      <td>1832</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>MS</td>
+      <td>Mississippi</td>
+      <td>['AL', 'AR', 'LA', 'TN']</td>
+      <td>[1, 2, 17, 41]</td>
+      <td>400</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>MT</td>
+      <td>Montana</td>
+      <td>['ID', 'ND', 'SD', 'WY']</td>
+      <td>[12, 27, 40, 49]</td>
+      <td>327</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>NC</td>
+      <td>North Carolina</td>
+      <td>['GA', 'SC', 'TN', 'VA']</td>
+      <td>[9, 39, 41, 44]</td>
+      <td>2127</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>ND</td>
+      <td>North Dakota</td>
+      <td>['MN', 'MT', 'SD']</td>
+      <td>[22, 25, 40]</td>
+      <td>408</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>NE</td>
+      <td>Nebraska</td>
+      <td>['CO', 'IA', 'KS', 'MO', 'SD', 'WY']</td>
+      <td>[5, 11, 15, 23, 40, 49]</td>
+      <td>600</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>NH</td>
+      <td>New Hampshire</td>
+      <td>['MA', 'ME', 'VT']</td>
+      <td>[18, 20, 45]</td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>NJ</td>
+      <td>New Jersey</td>
+      <td>['DE', 'NY', 'PA']</td>
+      <td>[7, 33, 37]</td>
+      <td>1227</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>NM</td>
+      <td>New Mexico</td>
+      <td>['AZ', 'CO', 'OK', 'TX', 'UT']</td>
+      <td>[3, 5, 35, 42, 43]</td>
+      <td>630</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>NV</td>
+      <td>Nevada</td>
+      <td>['AZ', 'CA', 'ID', 'OR', 'UT']</td>
+      <td>[3, 4, 12, 36, 43]</td>
+      <td>838</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>NY</td>
+      <td>New York</td>
+      <td>['CT', 'MA', 'NJ', 'PA', 'VT']</td>
+      <td>[6, 18, 30, 37, 45]</td>
+      <td>2200</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>OH</td>
+      <td>Ohio</td>
+      <td>['IN', 'KY', 'MI', 'PA', 'WV']</td>
+      <td>[14, 16, 21, 37, 48]</td>
+      <td>2729</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>OK</td>
+      <td>Oklahoma</td>
+      <td>['AR', 'CO', 'KS', 'MO', 'NM', 'TX']</td>
+      <td>[2, 5, 15, 23, 31, 42]</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>OR</td>
+      <td>Oregon</td>
+      <td>['CA', 'ID', 'NV', 'WA']</td>
+      <td>[4, 12, 32, 46]</td>
+      <td>800</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>PA</td>
+      <td>Pennsylvania</td>
+      <td>['DE', 'MD', 'NJ', 'NY', 'OH', 'WV']</td>
+      <td>[7, 19, 30, 33, 34, 48]</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>RI</td>
+      <td>Rhode Island</td>
+      <td>['CT', 'MA']</td>
+      <td>[6, 18]</td>
+      <td>388</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>SC</td>
+      <td>South Carolina</td>
+      <td>['GA', 'NC']</td>
+      <td>[9, 26]</td>
+      <td>1265</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>SD</td>
+      <td>South Dakota</td>
+      <td>['IA', 'MN', 'MT', 'ND', 'NE', 'WY']</td>
+      <td>[11, 22, 25, 27, 28, 49]</td>
+      <td>525</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>TN</td>
+      <td>Tennessee</td>
+      <td>['AL', 'AR', 'GA', 'KY', 'MO', 'MS', 'NC', 'VA']</td>
+      <td>[1, 2, 9, 16, 23, 24, 26, 44]</td>
+      <td>950</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>TX</td>
+      <td>Texas</td>
+      <td>['AR', 'LA', 'NM', 'OK']</td>
+      <td>[2, 17, 31, 35]</td>
+      <td>8741</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>UT</td>
+      <td>Utah</td>
+      <td>['AZ', 'CO', 'ID', 'NM', 'NV', 'WY']</td>
+      <td>[3, 5, 12, 31, 32, 49]</td>
+      <td>720</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>VA</td>
+      <td>Virginia</td>
+      <td>['DC', 'KY', 'MD', 'NC', 'TN', 'WV']</td>
+      <td>[50, 16, 19, 26, 41, 48]</td>
+      <td>2533</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>VT</td>
+      <td>Vermont</td>
+      <td>['MA', 'NH', 'NY']</td>
+      <td>[18, 29, 33]</td>
+      <td>208</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>WA</td>
+      <td>Washington</td>
+      <td>['AK', 'ID', 'OR']</td>
+      <td>[0, 12, 36]</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>WI</td>
+      <td>Wisconsin</td>
+      <td>['IA', 'IL', 'MI', 'MN']</td>
+      <td>[11, 13, 21, 22]</td>
+      <td>620</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>WV</td>
+      <td>West Virginia</td>
+      <td>['KY', 'MD', 'OH', 'PA', 'VA']</td>
+      <td>[16, 19, 34, 37, 44]</td>
+      <td>700</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>WY</td>
+      <td>Wyoming</td>
+      <td>['CO', 'ID', 'MT', 'NE', 'SD', 'UT']</td>
+      <td>[5, 12, 25, 28, 40, 43]</td>
+      <td>180</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>DC</td>
+      <td>District of Columbia</td>
+      <td>['MD', 'VA']</td>
+      <td>[19, 44]</td>
+      <td>440</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>SNS</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13,...</td>
+      <td>12000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_date</span> <span class="o">=</span> <span class="s1">&#39;2020/03/25&#39;</span>
+<span class="n">t</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">P</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">lbd</span> <span class="o">=</span> <span class="mf">0.1</span>
+
+<span class="n">S</span> <span class="o">=</span> <span class="mi">52</span>
+<span class="n">states_name</span> <span class="o">=</span> <span class="n">raw</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">]</span>
+<span class="n">SNS_stock</span> <span class="o">=</span> <span class="mi">12000</span>
+
+<span class="n">init_ratio</span> <span class="o">=</span> <span class="mf">0.6</span>
+<span class="n">flow_bound_ratio</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">stock_bound_ratio</span> <span class="o">=</span> <span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#first iteration values</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">raw</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Available capacity&#39;</span><span class="p">:</span> <span class="s2">&quot;stock_self&quot;</span><span class="p">})</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_self&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">init_ratio</span> <span class="o">*</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_self&#39;</span><span class="p">]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">([</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;nb&#39;</span><span class="p">])])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_sns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">)]</span>
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="n">b50f024b8707</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+<span class="nn">----&gt; 6     data.loc[i, &#39;stock_nb&#39;] = str([0 for _</span> in <span class="ni">eval</span><span class="nt">(data.loc[i, &#39;nb&#39;])])</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_sns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">)]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">data</span>
+
+<span class="ne">TypeError</span>: eval() arg 1 must be a string, bytes or code object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">flow_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">flow_mapping_rev</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">out_flow</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="n">in_flow</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">nbs</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">out_flow</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nbs</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">nbs</span><span class="p">:</span>
+        <span class="n">flow_mapping</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="n">flow_mapping_rev</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+        <span class="n">in_flow</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">in_flow</span><span class="p">[</span><span class="mi">51</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">out_flow</span><span class="p">[</span><span class="mi">51</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">flow_mapping</span><span class="p">[(</span><span class="mi">51</span><span class="p">,</span> <span class="n">n</span><span class="p">)]</span> <span class="o">=</span> <span class="n">idx</span>
+    <span class="n">flow_mapping_rev</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">51</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">ConcreteModel</span><span class="p">()</span>
+
+<span class="c1">#Sets</span>
+<span class="n">F</span> <span class="o">=</span> <span class="n">idx</span>
+<span class="n">model</span><span class="o">.</span><span class="n">time_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">state_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">state_p_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">S</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">flow_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">flow_no_sns_set</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">F</span> <span class="o">-</span> <span class="n">S</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate Param</span>
+<span class="n">ini_self</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_self&#39;</span><span class="p">]]</span>
+<span class="n">ini_nb</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">ini_nb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_nb&#39;</span><span class="p">])</span>
+<span class="n">ini_SNS</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_sns&#39;</span><span class="p">]]</span>
+
+<span class="c1"># Parameters</span>
+<span class="n">model</span><span class="o">.</span><span class="n">demand</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">time_set</span><span class="p">,</span> <span class="n">within</span><span class="o">=</span><span class="n">NonNegativeReals</span><span class="p">,</span> <span class="n">mutable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">U</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">flow_bound_ratio</span> <span class="o">*</span> <span class="n">ini_self</span><span class="p">[</span><span class="n">flow_mapping_rev</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">flow_no_sns_set</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">flow_bound_ratio</span> <span class="o">*</span> <span class="n">init_ratio</span> <span class="o">*</span> <span class="n">SNS_stock</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">)]</span>
+<span class="n">model</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">stock_bound_ratio</span> <span class="o">*</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ini_self</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#date = pd.to_datetime(first_date) + timedelta(21)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">first_date</span><span class="p">)</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;State&#39;</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../IHME/</span><span class="si">{}</span><span class="s1">/</span><span class="si">{}</span><span class="s1">.csv&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">),</span> <span class="n">state</span><span class="p">),</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">tt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">demand</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">tt</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">tt</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Var</span>
+<span class="n">model</span><span class="o">.</span><span class="n">s0</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_p_set</span><span class="p">,</span> <span class="n">within</span><span class="o">=</span><span class="n">NonNegativeReals</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">flow_set</span><span class="p">,</span> <span class="n">within</span><span class="o">=</span><span class="n">NonNegativeReals</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">flow_set</span><span class="p">,</span> <span class="n">within</span><span class="o">=</span><span class="n">NonNegativeReals</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">delta</span> <span class="o">=</span> <span class="n">Var</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">time_set</span><span class="p">,</span> <span class="n">within</span><span class="o">=</span><span class="n">NonNegativeReals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Constraints</span>
+<span class="n">model</span><span class="o">.</span><span class="n">stock_self</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">,</span> <span class="n">rule</span><span class="o">=</span><span class="k">lambda</span> <span class="n">model</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">s0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">flow_mapping</span><span class="p">[(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">out_flow</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">==</span> <span class="n">ini_self</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">stock_SNS_self</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">rule</span><span class="o">=</span><span class="k">lambda</span> <span class="n">model</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">s0</span><span class="p">[</span><span class="mi">51</span><span class="p">]</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">flow_mapping</span><span class="p">[(</span><span class="mi">51</span><span class="p">,</span> <span class="n">i</span><span class="p">)]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">out_flow</span><span class="p">[</span><span class="mi">51</span><span class="p">])</span> <span class="o">==</span> <span class="n">init_ratio</span> <span class="o">*</span> <span class="n">SNS_stock</span><span class="p">)</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">stock_nb</span> <span class="o">=</span> <span class="n">ConstraintList</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">dum</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">out_flow</span><span class="p">[</span><span class="n">j</span><span class="p">]):</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="n">flow_mapping</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> 
+        <span class="n">model</span><span class="o">.</span><span class="n">stock_nb</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">==</span> <span class="n">ini_nb</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">dum</span><span class="p">])</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">flow_mapping</span><span class="p">[(</span><span class="mi">51</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> 
+    <span class="n">model</span><span class="o">.</span><span class="n">stock_nb</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">-</span> <span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">f</span><span class="p">]</span> <span class="o">==</span> <span class="n">ini_SNS</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        
+<span class="n">model</span><span class="o">.</span><span class="n">delta_bound</span> <span class="o">=</span> <span class="n">ConstraintList</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">tt</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">time_set</span><span class="p">:</span>
+        <span class="n">total_stock</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">s0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">flow_mapping</span><span class="p">[(</span><span class="mi">51</span><span class="p">,</span> <span class="n">j</span><span class="p">)]</span> <span class="p">]</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">flow_mapping</span><span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)]]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">out_flow</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">delta_bound</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">delta</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">tt</span><span class="p">]</span> <span class="o">+</span> <span class="n">total_stock</span> <span class="o">&gt;=</span> <span class="n">model</span><span class="o">.</span><span class="n">demand</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">tt</span><span class="p">])</span>
+        
+
+<span class="n">model</span><span class="o">.</span><span class="n">s0_bound</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">,</span> \
+                                  <span class="n">rule</span><span class="o">=</span><span class="k">lambda</span> <span class="n">model</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">s0</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">model</span><span class="o">.</span><span class="n">G</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="n">model</span><span class="o">.</span><span class="n">x_bound</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">flow_set</span><span class="p">,</span> \
+                                  <span class="n">rule</span><span class="o">=</span><span class="k">lambda</span> <span class="n">model</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="n">model</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">model</span><span class="o">.</span><span class="n">U</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Objective</span>
+<span class="n">model</span><span class="o">.</span><span class="n">unmet</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span><span class="n">initialize</span><span class="o">=</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">delta</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">tt</span><span class="p">]</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_set</span> <span class="k">for</span> <span class="n">tt</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">time_set</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">penalty</span> <span class="o">=</span> <span class="n">Expression</span><span class="p">(</span><span class="n">initialize</span><span class="o">=</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">lbd</span><span class="o">*</span><span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">flow_no_sns_set</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">obj</span> <span class="o">=</span> <span class="n">Objective</span><span class="p">(</span><span class="n">expr</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">unmet</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">penalty</span><span class="p">,</span> <span class="n">sense</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SolverFactory</span><span class="p">(</span><span class="s1">&#39;cplex_direct&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">model</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># ==========================================================
+# = Solver Results                                         =
+# ==========================================================
+# ----------------------------------------------------------
+#   Problem Information
+# ----------------------------------------------------------
+Problem: 
+- Name: 
+  Lower bound: 7.025068740000002
+  Upper bound: 7.025068740000002
+  Number of objectives: 1
+  Number of constraints: 1006
+  Number of variables: 955
+  Number of binary variables: 0
+  Number of integer variables: 0
+  Number of continuous variables: 955
+  Number of nonzeros: None
+  Sense: 1
+# ----------------------------------------------------------
+#   Solver Information
+# ----------------------------------------------------------
+Solver: 
+- Name: CPLEX 12.8.0.0
+  Status: ok
+  Wallclock time: 0.002009868621826172
+  Termination condition: optimal
+# ----------------------------------------------------------
+#   Solution Information
+# ----------------------------------------------------------
+Solution: 
+- number of solutions: 0
+  number of solutions displayed: 0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;stock_all&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">)]</span> 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">:</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_self&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">s0</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_all&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_self&#39;</span><span class="p">]</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">:</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;nb_idx&#39;</span><span class="p">])</span>
+    <span class="n">new_nb</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">flow_mapping</span><span class="p">[(</span><span class="n">n</span><span class="p">,</span> <span class="n">i</span><span class="p">)]</span>
+        <span class="n">new_nb</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_nb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">new_nb</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_all&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">new_nb</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">state_set</span><span class="p">:</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">flow_mapping</span><span class="p">[(</span><span class="mi">51</span><span class="p">,</span> <span class="n">i</span><span class="p">)]</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_sns&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">s0_nb</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_all&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;stock_sns&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>StateCode</th>
+      <th>State</th>
+      <th>nb</th>
+      <th>nb_idx</th>
+      <th>stock_self</th>
+      <th>stock_nb</th>
+      <th>stock_sns</th>
+      <th>stock_all</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AK</td>
+      <td>Alaska</td>
+      <td>['WA']</td>
+      <td>[46]</td>
+      <td>120.0</td>
+      <td>[0]</td>
+      <td>0</td>
+      <td>120.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AL</td>
+      <td>Alabama</td>
+      <td>['FL', 'GA', 'MS', 'TN']</td>
+      <td>[8, 9, 24, 41]</td>
+      <td>806.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>806.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR</td>
+      <td>Arkansas</td>
+      <td>['LA', 'MO', 'MS', 'OK', 'TN', 'TX']</td>
+      <td>[17, 23, 24, 35, 41, 42]</td>
+      <td>300.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>300.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AZ</td>
+      <td>Arizona</td>
+      <td>['CA', 'CO', 'NM', 'NV', 'UT']</td>
+      <td>[4, 5, 31, 32, 43]</td>
+      <td>900.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>900.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>CA</td>
+      <td>California</td>
+      <td>['AZ', 'HI', 'NV', 'OR']</td>
+      <td>[3, 10, 32, 36]</td>
+      <td>6622.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>6622.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CO</td>
+      <td>Colorado</td>
+      <td>['AZ', 'KS', 'NE', 'NM', 'OK', 'UT', 'WY']</td>
+      <td>[3, 15, 28, 31, 35, 43, 49]</td>
+      <td>360.0</td>
+      <td>[0, 0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>360.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>CT</td>
+      <td>Connecticut</td>
+      <td>['MA', 'NY', 'RI']</td>
+      <td>[18, 33, 38]</td>
+      <td>450.0</td>
+      <td>[0, 0, 0]</td>
+      <td>0</td>
+      <td>450.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>DE</td>
+      <td>Delaware</td>
+      <td>['MD', 'NJ', 'PA']</td>
+      <td>[19, 30, 37]</td>
+      <td>240.0</td>
+      <td>[0, 0, 0]</td>
+      <td>0</td>
+      <td>240.0</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>FL</td>
+      <td>Florida</td>
+      <td>['AL', 'GA']</td>
+      <td>[1, 9]</td>
+      <td>2400.0</td>
+      <td>[0, 0]</td>
+      <td>0</td>
+      <td>2400.0</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>GA</td>
+      <td>Georgia</td>
+      <td>['AL', 'FL', 'NC', 'SC', 'TN']</td>
+      <td>[1, 8, 26, 39, 41]</td>
+      <td>604.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>604.0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>HI</td>
+      <td>Hawaii</td>
+      <td>['CA']</td>
+      <td>[4]</td>
+      <td>320.0</td>
+      <td>[0]</td>
+      <td>0</td>
+      <td>320.0</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>IA</td>
+      <td>Iowa</td>
+      <td>['IL', 'MN', 'MO', 'NE', 'SD', 'WI']</td>
+      <td>[13, 22, 23, 28, 40, 47]</td>
+      <td>168.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>168.0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>ID</td>
+      <td>Idaho</td>
+      <td>['MT', 'NV', 'OR', 'UT', 'WA', 'WY']</td>
+      <td>[25, 32, 36, 43, 46, 49]</td>
+      <td>242.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>242.0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>IL</td>
+      <td>Illinois</td>
+      <td>['IA', 'IN', 'KY', 'MO', 'WI']</td>
+      <td>[11, 14, 16, 23, 47]</td>
+      <td>957.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>957.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>IN</td>
+      <td>Indiana</td>
+      <td>['IL', 'KY', 'MI', 'OH']</td>
+      <td>[13, 16, 21, 34]</td>
+      <td>1156.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>1156.0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>KS</td>
+      <td>Kansas</td>
+      <td>['CO', 'MO', 'NE', 'OK']</td>
+      <td>[5, 23, 28, 35]</td>
+      <td>101.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>101.0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>KY</td>
+      <td>Kentucky</td>
+      <td>['IL', 'IN', 'MO', 'OH', 'TN', 'VA', 'WV']</td>
+      <td>[13, 14, 23, 34, 41, 44, 48]</td>
+      <td>780.0</td>
+      <td>[0, 0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>780.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>LA</td>
+      <td>Louisiana</td>
+      <td>['AR', 'MS', 'TX']</td>
+      <td>[2, 24, 42]</td>
+      <td>600.0</td>
+      <td>[0, 0, 0]</td>
+      <td>48</td>
+      <td>648.0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>MA</td>
+      <td>Massachusetts</td>
+      <td>['CT', 'NH', 'NY', 'RI', 'VT']</td>
+      <td>[6, 29, 33, 38, 45]</td>
+      <td>630.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>630.0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>MD</td>
+      <td>Maryland</td>
+      <td>['DC', 'DE', 'PA', 'VA', 'WV']</td>
+      <td>[50, 7, 37, 44, 48]</td>
+      <td>624.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>624.0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>ME</td>
+      <td>Maine</td>
+      <td>['NH']</td>
+      <td>[29]</td>
+      <td>149.0</td>
+      <td>[0]</td>
+      <td>0</td>
+      <td>149.0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>MI</td>
+      <td>Michigan</td>
+      <td>['IN', 'OH', 'WI']</td>
+      <td>[14, 34, 47]</td>
+      <td>1020.0</td>
+      <td>[0, 0, 0]</td>
+      <td>343</td>
+      <td>1363.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>MN</td>
+      <td>Minnesota</td>
+      <td>['IA', 'ND', 'SD', 'WI']</td>
+      <td>[11, 27, 40, 47]</td>
+      <td>830.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>830.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>MO</td>
+      <td>Missouri</td>
+      <td>['AR', 'IA', 'IL', 'KS', 'KY', 'NE', 'OK', 'TN']</td>
+      <td>[2, 11, 13, 15, 16, 28, 35, 41]</td>
+      <td>1099.0</td>
+      <td>[0, 0, 0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>1099.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>MS</td>
+      <td>Mississippi</td>
+      <td>['AL', 'AR', 'LA', 'TN']</td>
+      <td>[1, 2, 17, 41]</td>
+      <td>240.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>240.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>MT</td>
+      <td>Montana</td>
+      <td>['ID', 'ND', 'SD', 'WY']</td>
+      <td>[12, 27, 40, 49]</td>
+      <td>196.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>196.0</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>NC</td>
+      <td>North Carolina</td>
+      <td>['GA', 'SC', 'TN', 'VA']</td>
+      <td>[9, 39, 41, 44]</td>
+      <td>1276.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>1276.0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>ND</td>
+      <td>North Dakota</td>
+      <td>['MN', 'MT', 'SD']</td>
+      <td>[22, 25, 40]</td>
+      <td>245.0</td>
+      <td>[0, 0, 0]</td>
+      <td>0</td>
+      <td>245.0</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>NE</td>
+      <td>Nebraska</td>
+      <td>['CO', 'IA', 'KS', 'MO', 'SD', 'WY']</td>
+      <td>[5, 11, 15, 23, 40, 49]</td>
+      <td>360.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>360.0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>NH</td>
+      <td>New Hampshire</td>
+      <td>['MA', 'ME', 'VT']</td>
+      <td>[18, 20, 45]</td>
+      <td>600.0</td>
+      <td>[0, 0, 0]</td>
+      <td>0</td>
+      <td>600.0</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>NJ</td>
+      <td>New Jersey</td>
+      <td>['DE', 'NY', 'PA']</td>
+      <td>[7, 33, 37]</td>
+      <td>693.0</td>
+      <td>[0, 0, 0]</td>
+      <td>294</td>
+      <td>987.0</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>NM</td>
+      <td>New Mexico</td>
+      <td>['AZ', 'CO', 'OK', 'TX', 'UT']</td>
+      <td>[3, 5, 35, 42, 43]</td>
+      <td>378.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>378.0</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>NV</td>
+      <td>Nevada</td>
+      <td>['AZ', 'CA', 'ID', 'OR', 'UT']</td>
+      <td>[3, 4, 12, 36, 43]</td>
+      <td>503.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>503.0</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>NY</td>
+      <td>New York</td>
+      <td>['CT', 'MA', 'NJ', 'PA', 'VT']</td>
+      <td>[6, 18, 30, 37, 45]</td>
+      <td>1320.0</td>
+      <td>[150, 210, 43, 300, 0]</td>
+      <td>1800</td>
+      <td>3823.0</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>OH</td>
+      <td>Ohio</td>
+      <td>['IN', 'KY', 'MI', 'PA', 'WV']</td>
+      <td>[14, 16, 21, 37, 48]</td>
+      <td>1637.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>1637.0</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>OK</td>
+      <td>Oklahoma</td>
+      <td>['AR', 'CO', 'KS', 'MO', 'NM', 'TX']</td>
+      <td>[2, 5, 15, 23, 31, 42]</td>
+      <td>480.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>480.0</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>OR</td>
+      <td>Oregon</td>
+      <td>['CA', 'ID', 'NV', 'WA']</td>
+      <td>[4, 12, 32, 46]</td>
+      <td>480.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>480.0</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>PA</td>
+      <td>Pennsylvania</td>
+      <td>['DE', 'MD', 'NJ', 'NY', 'OH', 'WV']</td>
+      <td>[7, 19, 30, 33, 34, 48]</td>
+      <td>900.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>900.0</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>RI</td>
+      <td>Rhode Island</td>
+      <td>['CT', 'MA']</td>
+      <td>[6, 18]</td>
+      <td>233.0</td>
+      <td>[0, 0]</td>
+      <td>0</td>
+      <td>233.0</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>SC</td>
+      <td>South Carolina</td>
+      <td>['GA', 'NC']</td>
+      <td>[9, 26]</td>
+      <td>759.0</td>
+      <td>[0, 0]</td>
+      <td>0</td>
+      <td>759.0</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>SD</td>
+      <td>South Dakota</td>
+      <td>['IA', 'MN', 'MT', 'ND', 'NE', 'WY']</td>
+      <td>[11, 22, 25, 27, 28, 49]</td>
+      <td>315.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>315.0</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>TN</td>
+      <td>Tennessee</td>
+      <td>['AL', 'AR', 'GA', 'KY', 'MO', 'MS', 'NC', 'VA']</td>
+      <td>[1, 2, 9, 16, 23, 24, 26, 44]</td>
+      <td>570.0</td>
+      <td>[0, 0, 0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>570.0</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>TX</td>
+      <td>Texas</td>
+      <td>['AR', 'LA', 'NM', 'OK']</td>
+      <td>[2, 17, 31, 35]</td>
+      <td>5245.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>5245.0</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>UT</td>
+      <td>Utah</td>
+      <td>['AZ', 'CO', 'ID', 'NM', 'NV', 'WY']</td>
+      <td>[3, 5, 12, 31, 32, 49]</td>
+      <td>432.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>432.0</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>VA</td>
+      <td>Virginia</td>
+      <td>['DC', 'KY', 'MD', 'NC', 'TN', 'WV']</td>
+      <td>[50, 16, 19, 26, 41, 48]</td>
+      <td>1520.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>1520.0</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>VT</td>
+      <td>Vermont</td>
+      <td>['MA', 'NH', 'NY']</td>
+      <td>[18, 29, 33]</td>
+      <td>125.0</td>
+      <td>[0, 0, 0]</td>
+      <td>42</td>
+      <td>167.0</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>WA</td>
+      <td>Washington</td>
+      <td>['AK', 'ID', 'OR']</td>
+      <td>[0, 12, 36]</td>
+      <td>720.0</td>
+      <td>[0, 0, 0]</td>
+      <td>0</td>
+      <td>720.0</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>WI</td>
+      <td>Wisconsin</td>
+      <td>['IA', 'IL', 'MI', 'MN']</td>
+      <td>[11, 13, 21, 22]</td>
+      <td>372.0</td>
+      <td>[0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>372.0</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>WV</td>
+      <td>West Virginia</td>
+      <td>['KY', 'MD', 'OH', 'PA', 'VA']</td>
+      <td>[16, 19, 34, 37, 44]</td>
+      <td>420.0</td>
+      <td>[0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>420.0</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>WY</td>
+      <td>Wyoming</td>
+      <td>['CO', 'ID', 'MT', 'NE', 'SD', 'UT']</td>
+      <td>[5, 12, 25, 28, 40, 43]</td>
+      <td>108.0</td>
+      <td>[0, 0, 0, 0, 0, 0]</td>
+      <td>0</td>
+      <td>108.0</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>DC</td>
+      <td>District of Columbia</td>
+      <td>['MD', 'VA']</td>
+      <td>[19, 44]</td>
+      <td>264.0</td>
+      <td>[0, 0]</td>
+      <td>0</td>
+      <td>264.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">obj</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.025068740000002
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">prediction</span><span class="p">[</span><span class="n">states_name</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.106127518402928
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="with-sns">
+<h1>With SNS<a class="headerlink" href="#with-sns" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#open the cor file</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">d</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">d</span><span class="p">]))</span><span class="o">.</span><span class="n">days</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+        <span class="n">prediction</span><span class="p">[</span><span class="n">states_name</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../IHME_data/&#39;</span> <span class="o">+</span> <span class="n">date</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">states_name</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    
+    <span class="n">base_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+    <span class="n">prob_name</span> <span class="o">=</span> <span class="s1">&#39;det_exp_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+
+    <span class="n">f_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="s1">&#39;../input/deterministic/&#39;</span> <span class="o">+</span> <span class="n">prob_name</span> <span class="o">+</span> <span class="s1">&#39;.lp&#39;</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">f_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Minimize </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; obj: &#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">t</span> <span class="ow">or</span> <span class="n">j</span><span class="p">:</span> 
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; +&#39;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; delta_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;subject To </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+        <span class="n">nbs</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="s1">&#39;nb_idx&#39;</span><span class="p">])</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; s_</span><span class="si">{}</span><span class="s1">_0 - &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; - &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;x_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nbs</span><span class="p">]))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; - x_51_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; + &#39;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;x_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nbs</span><span class="p">]))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">])))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+        
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; s_51_0 +&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; + &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;x_51_</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">)]))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; = </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">51</span><span class="p">]))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">dmd</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="n">states_name</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">t</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="c1">#print(date + states_name[j] + str(t))</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; delta_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1"> + s_</span><span class="si">{}</span><span class="s1">_0&gt;= </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">dmd</span><span class="p">))</span>
+
+
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Bounds </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">max</span><span class="p">(</span><span class="n">prediction</span><span class="p">[</span><span class="n">states_name</span><span class="p">[</span><span class="n">j</span><span class="p">]][</span><span class="s1">&#39;InvVen_mean&#39;</span><span class="p">])))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; </span><span class="si">{}</span><span class="s1"> &lt;= s_</span><span class="si">{}</span><span class="s1">_0 </span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">j</span><span class="p">))</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; 0 &lt;= s_51_0 </span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">nbs</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="s1">&#39;nb_idx&#39;</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">nbs</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; 0 &lt;= x_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="s1"> &lt;= </span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39; 0 &lt;= delta_</span><span class="si">{}</span><span class="s1">_</span><span class="si">{}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">t</span><span class="p">))</span>
+
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;End</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-ml-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-ml-py",
+            path: "./course-work/ise-533"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-ml-py'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

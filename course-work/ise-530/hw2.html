@@ -1,0 +1,2678 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 2 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-530/hw2.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HW 3" href="hw3.html" />
+    <link rel="prev" title="HW 1" href="hw1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-530/hw2.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HW 2" />
+<meta property="og:description" content="HW 2  ISE-530 Homework II: Chapters III and IV of Cottle-Thapa. Due 11:59 PM Wednesday September 23, 2020  Exercises 3.3, 3.4, and 3.5.  Exercises 4.1(a), 4.11," />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-530/hw2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-3">
+   Chapter 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     3.3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     3.4
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     3.5
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chapter-4">
+   Chapter 4
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a">
+     4.1(a)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     4.11
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     4.12
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     4.14
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     4.18
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra">
+   Extra
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-2">
+<h1>HW 2<a class="headerlink" href="#hw-2" title="Permalink to this headline">¶</a></h1>
+<p>ISE-530 Homework II: Chapters III and IV of Cottle-Thapa. Due 11:59 PM Wednesday September 23, 2020</p>
+<ul class="simple">
+<li><p>Exercises 3.3, 3.4, and 3.5.</p></li>
+<li><p>Exercises 4.1(a), 4.11, 4.12, 4.14 and 4.18.</p></li>
+<li><p>Formulate a linear program for the planar absolute-value regression problem given the 5 points: (-1,-2), (0,0), (1,1), (2,3), and (3,0). Write an AMPL code for the resulting linear program and solve it by a solver.</p></li>
+<li><p>Use the same 5 points and same objective as above to determine a planar isotone (i.e, nondecreasing) curve that best fits the given points. Do the same with a convex curve instead. Solve both linear programs using AMPL.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\n\nimport numpy as np\nimport cvxpy as cp\nfrom collections import namedtuple";
+                var nbb_formatted_code = "%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\n\nimport numpy as np\nimport cvxpy as cp\nfrom collections import namedtuple";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="chapter-3">
+<h2>Chapter 3<a class="headerlink" href="#chapter-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>3.3<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Consider the system of equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    4x_1 − x_2 + 5x_3 + 2x_4 + 2x_5 &amp;= 20 \\
+    −3x_1 + x_2 +3x_4 −2x_5 &amp;= 18 \\
+    2x_1 −4x_2 +10x_3 −6x_4 +8x_5 &amp;= 4.
+\end{align}
+\end{split}\]</div>
+<p><strong>(a) Write the matrix <span class="math notranslate nohighlight">\(A\)</span> and the vector <span class="math notranslate nohighlight">\(b\)</span> such that the given system of equations is the verbose form of <span class="math notranslate nohighlight">\(Ax = b\)</span>.</strong></p>
+<p>Define:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    \underbrace{
+        A = 
+        \begin{pmatrix}
+        4 &amp; -1 &amp; 5 &amp; 2 &amp; 2 \\
+        -3 &amp; 1 &amp; 0 &amp; 3 &amp; -2 \\
+        2 &amp; -4 &amp; 10 &amp; -6 &amp; 8 \\
+        \end{pmatrix}
+    }_{\text{Detached Coefficient Matrix}}
+    \,\,,\,\,
+    \underbrace{
+        \mathbf{x} = 
+        \begin{pmatrix}
+        x_1 \\
+        x_2 \\
+        x_3 \\
+        x_4 \\
+        x_5 \\
+        \end{pmatrix}
+    }_{\text{Decision Variables}}
+    \,\,,\,\,
+    \underbrace{
+        \mathbf{b} = 
+        \begin{pmatrix}
+        20 \\
+        18 \\
+        4 \\
+        \end{pmatrix}
+    }_{\text{Constraints}}
+\end{equation*}\]</div>
+<p><strong>(b) Identify the matrix <span class="math notranslate nohighlight">\(B = [A_{\bullet3} A_{\bullet2} A_{\bullet4}]\)</span> and verify that it is a basis in <span class="math notranslate nohighlight">\(A\)</span>.</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-24227a4d-570d-435b-86fe-0586370fac9e">
+<span class="eqno">(101)<a class="headerlink" href="#equation-24227a4d-570d-435b-86fe-0586370fac9e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    B &amp;= 
+    \begin{pmatrix}
+    5 &amp; -1 &amp; 2 \\
+    0 &amp; 1 &amp; 3 \\
+    10 &amp; -4 &amp; -6 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{R_1 - 0.5R_3}
+    \begin{pmatrix}
+    0 &amp; 1 &amp; 5 \\
+    0 &amp; 1 &amp; 3 \\
+    10 &amp; -4 &amp; -6 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{R_1 - R_2}
+    \begin{pmatrix}
+    0 &amp; 0 &amp; 2 \\
+    0 &amp; 1 &amp; 3 \\
+    10 &amp; -4 &amp; -6 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{0.5R_1}
+    \begin{pmatrix}
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 3 \\
+    10 &amp; -4 &amp; -6 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{R_2 - 3R_1}
+    \begin{pmatrix}
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 0 \\
+    10 &amp; -4 &amp; -6 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{R_3 + 4R_2}
+    \begin{pmatrix}
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 0 \\
+    10 &amp; 0 &amp; -6 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{R_3 + 6R_1}
+    \begin{pmatrix}
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 0 \\
+    10 &amp; 0 &amp; 0 \\
+    \end{pmatrix} \\
+    &amp;\xrightarrow{0.1R_3}
+    \begin{pmatrix}
+    0 &amp; 0 &amp; 1 \\
+    0 &amp; 1 &amp; 0 \\
+    1 &amp; 0 &amp; 0 \\
+    \end{pmatrix} \\
+\end{align}\]</div>
+<p>After performing elementary row operations, we see that matrix <span class="math notranslate nohighlight">\(B\)</span>’s column space contain 3 linearly independent column vectors which span <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, making it a basis for <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><strong>(c) Compute the basic solution associated with the matrix <span class="math notranslate nohighlight">\(B\)</span> (in part(b) above) and verify that it is a nonnegative vector.</strong></p>
+<p>Define:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+    B = 
+    \begin{pmatrix}
+    5 &amp; -1 &amp; 2 \\
+    0 &amp; 1 &amp; 3 \\
+    10 &amp; -4 &amp; -6 \\
+    \end{pmatrix}
+    \,\,,\,\,
+    N = 
+    \begin{pmatrix}
+    4 &amp; 2 \\
+    -3 &amp; -2 \\
+    2 &amp; 8 \\
+    \end{pmatrix}
+    \,\,,\,\,
+    x_B =
+    \begin{pmatrix}
+    x_3 \\
+    x_2 \\
+    x_4 \\
+    \end{pmatrix}
+    \,\,,\,\,
+    x_N =
+    \begin{pmatrix}
+    x_1 \\
+    x_5 \\
+    \end{pmatrix}
+\end{equation*}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e586557b-429d-4c0c-8eed-1901d9d5e69b">
+<span class="eqno">(102)<a class="headerlink" href="#equation-e586557b-429d-4c0c-8eed-1901d9d5e69b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    Ax &amp;= [B N]
+    \begin{bmatrix}
+    x_B \\
+    x_N \\
+    \end{bmatrix} \\
+    &amp;= Bx_B + Nx_N \\
+    &amp;= b \\
+    \therefore x_B &amp;= B^{-1}b - B^{-1}Nx_N
+\end{align}\]</div>
+<p>(Personal Note: If A was the detached coefficient matrix representing constraints, The corresponding basic solution with matrix <span class="math notranslate nohighlight">\(B\)</span> is a basic solution when we set <span class="math notranslate nohighlight">\(x_N = 0\)</span> and solve for <span class="math notranslate nohighlight">\(x_B\)</span>, and is a basic <strong>feasible</strong> solution iff <span class="math notranslate nohighlight">\(x_B = B^{-1}b \geq 0\)</span>.)</p>
+<p>Hence, basic solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81a3a207-1b82-460c-8a94-3864b5100a61">
+<span class="eqno">(103)<a class="headerlink" href="#equation-81a3a207-1b82-460c-8a94-3864b5100a61" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{bmatrix}
+        x_B \\
+        x_N \\
+    \end{bmatrix}
+    &amp;=
+    \begin{bmatrix}
+        B^{-1}b \\
+        \vec{0} \\
+    \end{bmatrix} \\
+    &amp;=
+    \begin{bmatrix}
+        \begin{pmatrix}
+            5 &amp; -1 &amp; 2 \\
+            0 &amp; 1 &amp; 3 \\
+            10 &amp; -4 &amp; -6 \\
+        \end{pmatrix}^{-1} 
+        \begin{pmatrix}
+        20 \\
+        18 \\
+        4 \\
+        \end{pmatrix} \\
+        \vec{0} \\
+    \end{bmatrix} \\
+    &amp;=
+    \begin{bmatrix}
+        \begin{pmatrix}
+            -0.3 &amp; 0.7 &amp; 0.25 \\
+            -1.5 &amp; 2.5 &amp; 0.75 \\
+            0.5 &amp; -0.5 &amp; -0.25 \\
+        \end{pmatrix}^{-1} 
+        \begin{pmatrix}
+        20 \\
+        18 \\
+        4 \\
+        \end{pmatrix} \\
+        \vec{0} \\
+    \end{bmatrix} \\
+    &amp;=
+    \begin{bmatrix}
+        \begin{pmatrix}
+            7.6 \\ 
+            18 \\
+            0 \\
+        \end{pmatrix}\\
+        \vec{0} \\
+    \end{bmatrix} \\
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3 \\
+        x_4 \\
+        x_5 \\
+    \end{bmatrix}
+    &amp;= 
+    \begin{bmatrix}
+        0 \\
+        18 \\
+        7.6 \\
+        0 \\
+        0 \\
+    \end{bmatrix}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> basic solution associated with matrix <span class="math notranslate nohighlight">\(B\)</span> is a non-negative vector.</p>
+<p><strong>(d) What is the index set <span class="math notranslate nohighlight">\(N\)</span> of the nonbasic variables in this case?</strong>
+[Hint: Although it is not absolutely necessary to do so, you may find it useful to compute the inverse of B in this exercise.]</p>
+<p><span class="math notranslate nohighlight">\(N = \{1, 5\}\)</span></p>
+</div>
+<div class="section" id="id2">
+<h3>3.4<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Consider the LP</p>
+<div class="amsmath math notranslate nohighlight" id="equation-98d660fe-4039-40d6-b838-39c68e1f47a6">
+<span class="eqno">(104)<a class="headerlink" href="#equation-98d660fe-4039-40d6-b838-39c68e1f47a6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{maximize } &amp;x_1 + 2x_2 \\
+    \text{subject to } 
+    &amp;x_1 + x_2 \leq 4 \\
+    &amp;−x_1 + x_2 \leq 2 \\
+    &amp;\text{and } x_1, x_2 \geq 0 \\
+\end{align}\]</div>
+<p><strong>(a) Plot the feasible region.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create one vector optimization variable.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">2</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal solution is: x = </span><span class="si">{</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: 7.0
+The optimal solution is: x = [1.0, 3.0]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "# Create one vector optimization variable.\nx = cp.Variable((2,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 1], [-1, 1]]) @ x <= np.array([4, 2]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Maximize(np.array([1, 2]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_formatted_code = "# Create one vector optimization variable.\nx = cp.Variable((2,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 1], [-1, 1]]) @ x <= np.array([4, 2]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Maximize(np.array([1, 2]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct lines</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>  <span class="c1"># x_1 &gt;= 0</span>
+<span class="n">x_2_1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="o">-</span><span class="n">x_1</span> <span class="o">+</span> <span class="mi">4</span>  <span class="c1"># constraint 1: 𝑥1 + 𝑥2 ≤ 4</span>
+<span class="n">x_2_2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="n">x_1</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># constraint 2: −𝑥1 + 𝑥2 ≤ 2</span>
+
+<span class="c1"># Make plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x_1 + x_2 \leq 4$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$-x_1 + x_2 \leq 2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fill feasible region</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw2_18_0.png" src="../../_images/hw2_18_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "# Construct lines\nx_1 = np.linspace(0, 20, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: -x_1 + 4  # constraint 1: \ud835\udc651 + \ud835\udc652 \u2264 4\nx_2_2 = lambda x_1: x_1 + 2  # constraint 2: \u2212\ud835\udc651 + \ud835\udc652 \u2264 2\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$x_1 + x_2 \\leq 4$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$-x_1 + x_2 \\leq 2$\")\nplt.xlim((0, 10))\nplt.ylim((0, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\ny = np.minimum(x_2_1(x_1), x_2_2(x_1))\nx = np.zeros(len(x_1))\nplt.fill_between(x_1, x, y, where=y > x, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "# Construct lines\nx_1 = np.linspace(0, 20, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: -x_1 + 4  # constraint 1: \ud835\udc651 + \ud835\udc652 \u2264 4\nx_2_2 = lambda x_1: x_1 + 2  # constraint 2: \u2212\ud835\udc651 + \ud835\udc652 \u2264 2\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$x_1 + x_2 \\leq 4$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$-x_1 + x_2 \\leq 2$\")\nplt.xlim((0, 10))\nplt.ylim((0, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\ny = np.minimum(x_2_1(x_1), x_2_2(x_1))\nx = np.zeros(len(x_1))\nplt.fill_between(x_1, x, y, where=y > x, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p><strong>(b) Identify all the basic solutions and specify which are feasible and which are infeasible.</strong></p>
+<p>For a linear inequality system (including equalities) in <span class="math notranslate nohighlight">\(n\)</span> variables, a feasible solution is basic if there are <span class="math notranslate nohighlight">\(n\)</span> linearly independent active constraints at the given solution.</p>
+<p>Basic Solutions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((x_1=0, x_2=0)\)</span>, 2 active constraints, <span class="math notranslate nohighlight">\(x_1=0\geq0\)</span> &amp; <span class="math notranslate nohighlight">\(x_2=0\geq0\)</span> [Feasible]</p></li>
+<li><p><span class="math notranslate nohighlight">\((x_1=0, x_2=2)\)</span>, 2 active constraints, <span class="math notranslate nohighlight">\(x_1=0\geq0\)</span> &amp; <span class="math notranslate nohighlight">\(−x_1+x_2=0+2=2\leq 2\)</span> [Feasible]</p></li>
+<li><p><span class="math notranslate nohighlight">\((x_1=1, x_2=3)\)</span>, 2 active constraints, <span class="math notranslate nohighlight">\(x_1+x_2=1+3=4\leq 4\)</span> &amp; <span class="math notranslate nohighlight">\(−x_1+x_2=-1+3=2\leq 2\)</span> [Feasible]</p></li>
+<li><p><span class="math notranslate nohighlight">\((x_1=4, x_2=0)\)</span>, 2 active constraints, <span class="math notranslate nohighlight">\(x_1+x_2=4+0=4\leq 4\)</span> &amp; <span class="math notranslate nohighlight">\(x_2\geq0\)</span> [Feasible]</p></li>
+</ul>
+<p><strong>(c) Solve the problem using the Simplex Algorithm.</strong></p>
+<p>Standard Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-310cb658-7981-494d-9fc4-55f9a1e0520e">
+<span class="eqno">(105)<a class="headerlink" href="#equation-310cb658-7981-494d-9fc4-55f9a1e0520e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;z = -x_1 - 2x_2 \\
+    \text{subject to } 
+    &amp;x_1 + x_2 + s_1 = 4 \\
+    &amp;−x_1 + x_2 + s_2 = 2 \\
+    &amp;\text{and } x_1, x_2, s_1, s_2 \geq 0 \\
+\end{align}\]</div>
+<p>From the Canonical Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2c04b744-6324-4678-acd7-c9791de9fab3">
+<span class="eqno">(106)<a class="headerlink" href="#equation-2c04b744-6324-4678-acd7-c9791de9fab3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    z \\ 
+    s_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccc|c}
+      z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; b \\ \hline
+      1 &amp; 1 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 4  \\
+      0 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 2 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-91a674a8-f352-475f-a75a-274f5b96a04e">
+<span class="eqno">(107)<a class="headerlink" href="#equation-91a674a8-f352-475f-a75a-274f5b96a04e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_2\,\because \text{argmin}\Big(\frac{4}{1}, \frac{2}{1}\Big) = s_2
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    z \\ 
+    s_1 \\
+    x_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccc|c}
+      z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; b \\ \hline
+      1 &amp; 3 &amp; 0 &amp; 0 &amp; -2 &amp; -4 \\ \hline
+      0 &amp; 2 &amp; 0 &amp; 1 &amp; -1 &amp; 2  \\
+      0 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 2 \\
+    \end{array}
+    \end{bmatrix}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0cb38595-e997-4549-afb8-83b48d4f1125">
+<span class="eqno">(108)<a class="headerlink" href="#equation-0cb38595-e997-4549-afb8-83b48d4f1125" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_1\,\because \text{argmin}\Big(\frac{2}{2}\Big) = s_1
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    z \\ 
+    x_1 \\
+    x_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccc|c}
+      z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; -3 &amp; -3/2 &amp; -1/2 &amp; -7 \\ \hline
+      0 &amp; 1 &amp; 0 &amp; 1/2 &amp; -1/2 &amp; 1  \\
+      0 &amp; 0 &amp; 1 &amp; 1/2 &amp; 1/2 &amp; 3 \\
+    \end{array}
+    \end{bmatrix}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> Since the reduced costs are all <span class="math notranslate nohighlight">\(\leq 0\)</span> for a <strong>minimization</strong> problem, our simplex method is complete, with basic variables <span class="math notranslate nohighlight">\(x_1 = 1, x_2 = 3, s_1 = 0, s_2 = 0\)</span> and our <strong>maximum</strong> objective value is <span class="math notranslate nohighlight">\(7.0\)</span>.</p>
+</div>
+<div class="section" id="id3">
+<h3>3.5<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Consider the LP</p>
+<div class="amsmath math notranslate nohighlight" id="equation-228e21c8-d17a-4ccb-8cda-14f731e584b4">
+<span class="eqno">(109)<a class="headerlink" href="#equation-228e21c8-d17a-4ccb-8cda-14f731e584b4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{maximize } &amp;x_1 + x_2 \\
+    \text{subject to } 
+    &amp;x_1 + x_2 \geq 2 \\
+    &amp;−x_1 + x_2 \leq 2 \\
+    &amp;\text{and } x_1, x_2 \geq 0 \\
+\end{align}\]</div>
+<p><strong>(a) Plot the feasible region.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct lines</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>  <span class="c1"># x_1 &gt;= 0</span>
+<span class="n">x_2_1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="o">-</span><span class="n">x_1</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># constraint 1: 𝑥1 + 𝑥2 ≥ 2</span>
+<span class="n">x_2_2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="n">x_1</span> <span class="o">+</span> <span class="mi">2</span>  <span class="c1"># constraint 2: −𝑥1 + 𝑥2 ≤ 2</span>
+
+<span class="c1"># Make plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x_1 + x_2 \geq 2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$-x_1 + x_2 \leq 2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fill feasible region</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_1</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw2_29_0.png" src="../../_images/hw2_29_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "# Construct lines\nx_1 = np.linspace(0, 20, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: -x_1 + 2  # constraint 1: \ud835\udc651 + \ud835\udc652 \u2265 2\nx_2_2 = lambda x_1: x_1 + 2  # constraint 2: \u2212\ud835\udc651 + \ud835\udc652 \u2264 2\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$x_1 + x_2 \\geq 2$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$-x_1 + x_2 \\leq 2$\")\nplt.xlim((0, 10))\nplt.ylim((0, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\ny = x_2_2(x_1)\nx = np.maximum(x_2_1(x_1), np.zeros(len(x_1)))\nplt.fill_between(x_1, x, y, where=y > x, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "# Construct lines\nx_1 = np.linspace(0, 20, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: -x_1 + 2  # constraint 1: \ud835\udc651 + \ud835\udc652 \u2265 2\nx_2_2 = lambda x_1: x_1 + 2  # constraint 2: \u2212\ud835\udc651 + \ud835\udc652 \u2264 2\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$x_1 + x_2 \\geq 2$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$-x_1 + x_2 \\leq 2$\")\nplt.xlim((0, 10))\nplt.ylim((0, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\ny = x_2_2(x_1)\nx = np.maximum(x_2_1(x_1), np.zeros(len(x_1)))\nplt.fill_between(x_1, x, y, where=y > x, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p><strong>(b) Identify all the basic solutions and specify which are feasible and which are infeasible.</strong></p>
+<p>For a linear inequality system (including equalities) in <span class="math notranslate nohighlight">\(n\)</span> variables, a feasible solution is basic if there are <span class="math notranslate nohighlight">\(n\)</span> linearly independent active constraints at the given solution.</p>
+<p>Basic Solutions:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\((x_1=0, x_2=0)\)</span>, 2 active constraints, <span class="math notranslate nohighlight">\(x_1=0\geq0\)</span> &amp; <span class="math notranslate nohighlight">\(x_2=0\geq0\)</span> [Infeasible]</p></li>
+<li><p><span class="math notranslate nohighlight">\((x_1=2, x_2=0)\)</span>, 2 active constraints, <span class="math notranslate nohighlight">\(x_1 + x_2 =2+0=2\geq 2\)</span> &amp; <span class="math notranslate nohighlight">\(x_2=0\geq0\)</span> [Feasible]</p></li>
+</ul>
+<p><strong>(c) Solve the LP by the Simplex Algorithm and show that the algorithm stops with the objective function being unbounded over the feasible region.</strong></p>
+<p>Standard Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e03de452-1659-4895-b335-468a24e3a3d2">
+<span class="eqno">(110)<a class="headerlink" href="#equation-e03de452-1659-4895-b335-468a24e3a3d2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;-x_1 - x_2 \\
+    \text{subject to } 
+    &amp;x_1 + x_2 - s_1 + y_1 = 2 \\
+    &amp;−x_1 + x_2 + s_2 = 2 \\
+    &amp;\text{and } x_1, x_2, s_1, s_2, y_1 \geq 0 \\
+\end{align}\]</div>
+<p>From Phase I Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-eef9c4a9-2824-4d28-9084-7c6d4c002b38">
+<span class="eqno">(111)<a class="headerlink" href="#equation-eef9c4a9-2824-4d28-9084-7c6d4c002b38" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; y_1 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; 2  \\
+      0 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 2 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f4d8f460-61ad-4872-aea9-952192a40d2e">
+<span class="eqno">(112)<a class="headerlink" href="#equation-f4d8f460-61ad-4872-aea9-952192a40d2e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Add 2nd last row to 1st row}
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; y_1 &amp; b \\ \hline
+      1 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 2 \\ \hline
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; 2  \\
+      0 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 2 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-bbb9de0b-da66-4981-92a2-0bae8b6cab73">
+<span class="eqno">(113)<a class="headerlink" href="#equation-bbb9de0b-da66-4981-92a2-0bae8b6cab73" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{2}{1}\Big) = y_1
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; y_1 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -1 &amp; -2 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; 1 &amp; 2  \\
+      0 &amp; 0 &amp; 0 &amp; 2 &amp; -1 &amp; 1 &amp; 1 &amp; 4 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1\)</span> column can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, s_1, s_2) = (2, 0, 0, 4)\)</span> of the original system that has been found by the Phase I Procedure.</p>
+<p>Phase II: Normal Simplex Method</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ed769b67-ef9a-4ad3-8649-d9bc17defe94">
+<span class="eqno">(114)<a class="headerlink" href="#equation-ed769b67-ef9a-4ad3-8649-d9bc17defe94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    z \\ 
+    x_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccc|c}
+      z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; -2 \\ \hline
+      0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; 2  \\
+      0 &amp; 0 &amp; 2 &amp; -1 &amp; 1 &amp; 4 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> Since, we will choose the entering variable as <span class="math notranslate nohighlight">\(s_1\)</span>, but the column of <span class="math notranslate nohighlight">\(s_1\)</span> has no positive entries, the linear program is unbounded.</p>
+<p><strong>(d) Modify the first inequality constraint to be x1 + x2 ≤ 2 and show that there are infinite optimal solutions.</strong></p>
+<p>Standard Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ee716436-8e1a-4154-831a-4a1b5405189c">
+<span class="eqno">(115)<a class="headerlink" href="#equation-ee716436-8e1a-4154-831a-4a1b5405189c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;-x_1 - x_2 \\
+    \text{subject to } 
+    &amp;x_1 + x_2 + s_1 = 2 \\
+    &amp;−x_1 + x_2 + s_2 = 2 \\
+    &amp;\text{and } x_1, x_2, s_1, s_2 \geq 0 \\
+\end{align}\]</div>
+<p>Canonical Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-975e3ddf-69ae-48e2-b5de-c0fbf571ef1f">
+<span class="eqno">(116)<a class="headerlink" href="#equation-975e3ddf-69ae-48e2-b5de-c0fbf571ef1f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    z \\ 
+    s_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccc|c}
+      z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; b \\ \hline
+      1 &amp; 1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 2  \\
+      0 &amp; -1 &amp; 1 &amp; 0 &amp; 1 &amp; 2 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-507c90bd-c1ad-4070-bf1b-bf967a81d2da">
+<span class="eqno">(117)<a class="headerlink" href="#equation-507c90bd-c1ad-4070-bf1b-bf967a81d2da" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_1\,\because \text{argmin}\Big(\frac{2}{1}\Big) = s_1
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    z \\ 
+    x_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|ccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; s_1 &amp; s_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; -2 \\ \hline
+      0 &amp; 1 &amp; 1 &amp; 1 &amp; 0 &amp; 2  \\
+      0 &amp; 0 &amp; 2 &amp; 1 &amp; 1 &amp; 4 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> Since the reduced costs are all <span class="math notranslate nohighlight">\(\leq 0\)</span> for a <strong>minimization</strong> problem, our simplex method is complete, with basic variables <span class="math notranslate nohighlight">\(x_1 = 2, s_2 = 4\)</span> and non-basic variables <span class="math notranslate nohighlight">\(x_2=0, s_1=0\)</span> and our <strong>maximum</strong> objective value is <span class="math notranslate nohighlight">\(2.0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create one vector optimization variable.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">2</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]),</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal solution is: x = </span><span class="si">{</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: -2.0
+The optimal solution is: x = [1.0, 1.0]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "# Create one vector optimization variable.\nx = cp.Variable((2,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 1], [-1, 1]]) @ x <= np.array([2, 2]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([-1, -1]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_formatted_code = "# Create one vector optimization variable.\nx = cp.Variable((2,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 1], [-1, 1]]) @ x <= np.array([2, 2]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([-1, -1]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="chapter-4">
+<h2>Chapter 4<a class="headerlink" href="#chapter-4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a">
+<h3>4.1(a)<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h3>
+<p>Use Phase I and Phase II of the Simplex Algorithm to solve the linear program</p>
+<div class="amsmath math notranslate nohighlight" id="equation-abc36a15-41d6-4ce2-88e2-4f5fc710675e">
+<span class="eqno">(118)<a class="headerlink" href="#equation-abc36a15-41d6-4ce2-88e2-4f5fc710675e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;3x_1 - 2x_2 - 3x_3 \\
+    \text{subject to } 
+    &amp;x_1 + 2x_2 - 3x_3 = 4 \\
+    &amp;2x_1 + 3x_2 + x_3 = 7 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3 \\
+\end{align}\]</div>
+<p>Do the computations “by hand.”</p>
+<p>From Phase I Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cd043b75-5db7-4c27-94b2-d8fb23f6075f">
+<span class="eqno">(119)<a class="headerlink" href="#equation-cd043b75-5db7-4c27-94b2-d8fb23f6075f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; -3 &amp; 2 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 2 &amp; -3 &amp; 1 &amp; 0 &amp; 4 \\
+      0 &amp; 0 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 1 &amp; 7 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3d176e83-2e3c-4b14-8d5d-766ad6829615">
+<span class="eqno">(120)<a class="headerlink" href="#equation-3d176e83-2e3c-4b14-8d5d-766ad6829615" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Add last 2 rows to 1st row}
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 3 &amp; 5 &amp; -2 &amp; 0 &amp; 0 &amp; 11 \\ \hline
+      0 &amp; 1 &amp; -3 &amp; 2 &amp; 3 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 2 &amp; -3 &amp; 1 &amp; 0 &amp; 4 \\
+      0 &amp; 0 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 1 &amp; 7 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d4d59426-6e89-4823-af11-320f6fdf3e3e">
+<span class="eqno">(121)<a class="headerlink" href="#equation-d4d59426-6e89-4823-af11-320f6fdf3e3e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{4}{2}, \frac{7}{3}\Big) = y_1
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    y_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 1/2 &amp; 0 &amp; 11/2 &amp; -5/2 &amp; 0 &amp; 1 \\ \hline
+      0 &amp; 1 &amp; -4 &amp; 0 &amp; 6 &amp; -1 &amp; 0 &amp; -4 \\ \hline
+      0 &amp; 0 &amp; 1/2 &amp; 1 &amp; -3/2 &amp; 1/2 &amp; 0 &amp; 2 \\
+      0 &amp; 0 &amp; 1/2 &amp; 0 &amp; 11/2 &amp; -3/2 &amp; 1 &amp; 1 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1eef9d59-a4bb-4d1c-93c1-041d767a23de">
+<span class="eqno">(122)<a class="headerlink" href="#equation-1eef9d59-a4bb-4d1c-93c1-041d767a23de" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_3\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_2\,\because \text{argmin}\Big(\frac{1}{11/2}\Big) = y_2
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    x_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; -50/11 &amp; 0 &amp; 0 &amp; 7/11 &amp; -12/11 &amp; -56/11 \\ \hline
+      0 &amp; 0 &amp; 7/11 &amp; 1 &amp; 0 &amp; 1/11 &amp; 3/11 &amp; 25/11 \\
+      0 &amp; 0 &amp; 1/11 &amp; 0 &amp; 1 &amp; -3/11 &amp; 2/11 &amp; 2/11 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1, y_2\)</span> columns can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, x_3) = (0, \frac{25}{11}, \frac{2}{11})\)</span> of the original system that has been found by the Phase I Procedure.</p>
+<p>Phase II: Normal Simplex Tableau</p>
+<div class="amsmath math notranslate nohighlight" id="equation-63ed5a8b-05a1-4fdb-8952-925dc54afa15">
+<span class="eqno">(123)<a class="headerlink" href="#equation-63ed5a8b-05a1-4fdb-8952-925dc54afa15" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    z \\ 
+    x_2 \\
+    x_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|ccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; b \\ \hline
+      1 &amp; -50/11 &amp; 0 &amp; 0 &amp; -56/11 \\ \hline
+      0 &amp; 14/22 &amp; 1 &amp; 0 &amp; 25/11 \\
+      0 &amp; 1/11 &amp; 0 &amp; 1 &amp; 2/11 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> Since the reduced costs are all <span class="math notranslate nohighlight">\(\leq 0\)</span> for a <strong>minimization</strong> problem, our simplex method is complete, with basic variables <span class="math notranslate nohighlight">\(x_2 = \frac{25}{11}, x_3 = \frac{2}{11}\)</span>, non-basic variables <span class="math notranslate nohighlight">\(x_1 = 0\)</span> and our <strong>minimum</strong> objective value is <span class="math notranslate nohighlight">\(-\frac{56}{11}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create one vector optimization variable.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">3</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">]),</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal solution is: x = </span><span class="si">{</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: -5.09
+The optimal solution is: x = [0.0, 2.27, 0.18]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "# Create one vector optimization variable.\nx = cp.Variable((3,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 2, -3], [2, 3, 1]]) @ x == np.array([4, 7]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([3, -2, -3]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_formatted_code = "# Create one vector optimization variable.\nx = cp.Variable((3,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 2, -3], [2, 3, 1]]) @ x == np.array([4, 7]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([3, -2, -3]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>4.11<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Solve the following linear program by the Simplex Method</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9096b1d7-d3ca-4a12-b001-e5d83aed68ed">
+<span class="eqno">(124)<a class="headerlink" href="#equation-9096b1d7-d3ca-4a12-b001-e5d83aed68ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;-4x_1 - 8x_2 + 2x_3 + 4x_4 \\
+    \text{subject to } 
+    &amp;2x_1 + x_2 + x_3 - 2x_4 \leq 12 \\
+    &amp;2x_2 - 2x_3 + x_4 \leq 8 \\
+    &amp;4x_1 + x_2 + 2x_3 + 3x_4 \leq 10 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3,4 \\
+\end{align}\]</div>
+<p>Standard Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ec3ccf29-5d0c-4e39-b061-e4298c0996e7">
+<span class="eqno">(125)<a class="headerlink" href="#equation-ec3ccf29-5d0c-4e39-b061-e4298c0996e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;-4x_1 - 8x_2 + 2x_3 + 4x_4 \\
+    \text{subject to } 
+    &amp;2x_1 + x_2 + x_3 - 2x_4 + s_1 = 12 \\
+    &amp;2x_2 - 2x_3 + x_4 + s_2 = 8 \\
+    &amp;4x_1 + x_2 + 2x_3 + 3x_4 + s_3 = 10 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3,4, s_i \geq 0, i = 1,2,3 \\
+\end{align}\]</div>
+<p>From the Canonical Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-64df352e-8b5a-4fdc-a37f-090d21e530c7">
+<span class="eqno">(126)<a class="headerlink" href="#equation-64df352e-8b5a-4fdc-a37f-090d21e530c7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    z \\ 
+    s_1 \\
+    s_2 \\
+    s_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|ccccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; s_2 &amp; s_3 &amp; b \\ \hline
+      1 &amp; 4 &amp; 8 &amp; -2 &amp; 4 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 2 &amp; 1 &amp; 1 &amp; -2 &amp; 1 &amp; 0 &amp; 0 &amp; 12 \\
+      0 &amp; 0 &amp; 2 &amp; -2 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 8 \\
+      0 &amp; 4 &amp; 1 &amp; 2 &amp; 3 &amp; 0 &amp; 0 &amp; 1 &amp; 10 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-36e2535c-09b6-496a-bda0-ce1d02d4844d">
+<span class="eqno">(127)<a class="headerlink" href="#equation-36e2535c-09b6-496a-bda0-ce1d02d4844d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_2\,\because \text{argmin}\Big(\frac{12}{1}, \frac{8}{2}, \frac{10}{1}\Big) = s_2
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    z \\ 
+    s_1 \\
+    x_2 \\
+    s_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|ccccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; s_2 &amp; s_3 &amp; b \\ \hline
+      1 &amp; 4 &amp; 0 &amp; 6 &amp; 0 &amp; 0 &amp; -4 &amp; 0 &amp; -32 \\ \hline
+      0 &amp; 2 &amp; 0 &amp; 2 &amp; -2.5 &amp; 1 &amp; -1/2 &amp; 0 &amp; 8 \\
+      0 &amp; 0 &amp; 1 &amp; -1 &amp; 1/2 &amp; 0 &amp; 1/2 &amp; 0 &amp; 4 \\
+      0 &amp; 4 &amp; 0 &amp; 3 &amp; 2.5 &amp; 0 &amp; -1/2 &amp; 1 &amp; 6 \\
+    \end{array}
+    \end{bmatrix}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-431dc47c-8820-41d9-9516-38f42716eea0">
+<span class="eqno">(128)<a class="headerlink" href="#equation-431dc47c-8820-41d9-9516-38f42716eea0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_3\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_3\,\because \text{argmin}\Big(\frac{8}{2}, \frac{6}{3}\Big) = s_3
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    z \\ 
+    s_1 \\
+    x_2 \\
+    x_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|ccccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; s_2 &amp; s_3 &amp; b \\ \hline
+      1 &amp; -4 &amp; 0 &amp; 0 &amp; -5 &amp; 0 &amp; -3 &amp; -2 &amp; -44 \\ \hline
+      0 &amp; -2/3 &amp; 0 &amp; 0 &amp; -25/6 &amp; 1 &amp; -1/6 &amp; -2/3 &amp; 4 \\
+      0 &amp; 4/3 &amp; 1 &amp; 0 &amp; 4/3 &amp; 0 &amp; 1/3 &amp; 1/3 &amp; 6 \\
+      0 &amp; 4/3 &amp; 0 &amp; 1 &amp; 5/6 &amp; 0 &amp; -1/6 &amp; 1/3 &amp; 2 \\
+    \end{array}
+    \end{bmatrix}
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> Since the reduced costs are all <span class="math notranslate nohighlight">\(\leq 0\)</span> for a <strong>minimization</strong> problem, our simplex method is complete, with basic variables <span class="math notranslate nohighlight">\(x_2 = 6, x_3 = 2, s_1 = 4\)</span>, non-basic variables <span class="math notranslate nohighlight">\(x_1 = 0, x_4 = 0, s_2 = 0, s_3 = 0\)</span> and our <strong>minimum</strong> objective value is <span class="math notranslate nohighlight">\(-44.0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create one vector optimization variable.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">4</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]),</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal solution is: x = </span><span class="si">{</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: -44.0
+The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "# Create one vector optimization variable.\nx = cp.Variable((4,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[2, 1, 1, -2], [0, 2, -2, 1], [4, 1, 2, 3]]) @ x <= np.array([12, 8, 10]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([-4, -8, 2, 4]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_formatted_code = "# Create one vector optimization variable.\nx = cp.Variable((4,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[2, 1, 1, -2], [0, 2, -2, 1], [4, 1, 2, 3]]) @ x <= np.array([12, 8, 10]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([-4, -8, 2, 4]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h3>4.12<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Solve the following linear program by the Simplex Method</p>
+<div class="amsmath math notranslate nohighlight" id="equation-83055124-457d-42d3-8aa4-a774aedc9ba8">
+<span class="eqno">(129)<a class="headerlink" href="#equation-83055124-457d-42d3-8aa4-a774aedc9ba8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;x_1 + 4x_2 + 6x_3 \\
+    \text{subject to } 
+    &amp;−2x_1 +4x_2 + x_3 \geq 8 \\
+    &amp;x_1 +4x_2 +2x_3 \geq 12 \\
+    &amp;2x_1 + 2x_3 \geq 16 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3 \\
+\end{align}\]</div>
+<p>Standard Form with Slack and Artificial Variables:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c41dd6f0-356b-4646-b5f9-6561f1045289">
+<span class="eqno">(130)<a class="headerlink" href="#equation-c41dd6f0-356b-4646-b5f9-6561f1045289" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;x_1 + 4x_2 + 6x_3 \\
+    \text{subject to } 
+    &amp;−2x_1 +4x_2 + x_3 - s_1 + y_1 = 8 \\
+    &amp;x_1 +4x_2 +2x_3 - s_2 + y_2 = 12 \\
+    &amp;2x_1 + 2x_3 - s_3 + y_3 = 16 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3, s_i \geq 0, i = 1,2,3, y_k \geq 0, k = 1,2,3 \\
+\end{align}\]</div>
+<p>From the Phase I Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6f564e3c-d7c4-483e-8cb0-60c6dc504ef1">
+<span class="eqno">(131)<a class="headerlink" href="#equation-6f564e3c-d7c4-483e-8cb0-60c6dc504ef1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    y_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; y_1 &amp; y_2 &amp; y_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; -1 &amp; -4 &amp; -6 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; -2 &amp; 4 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 8 \\
+      0 &amp; 0 &amp; 1 &amp; 4 &amp; 2 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 12 \\
+      0 &amp; 0 &amp; 2 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 16 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-380b9cf5-fdd0-4575-9ed0-d14db22bc7f3">
+<span class="eqno">(132)<a class="headerlink" href="#equation-380b9cf5-fdd0-4575-9ed0-d14db22bc7f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Add last 3 rows to 1st row}
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    y_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; y_1 &amp; y_2 &amp; y_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; 1 &amp; 8 &amp; 5 &amp; -1 &amp; -1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 36 \\ \hline
+      0 &amp; 1 &amp; -1 &amp; -4 &amp; -6 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; -2 &amp; 4 &amp; 1 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 8 \\
+      0 &amp; 0 &amp; 1 &amp; 4 &amp; 2 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 12 \\
+      0 &amp; 0 &amp; 2 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 16 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e91e9dc9-ca93-450b-802a-50e5e728755d">
+<span class="eqno">(133)<a class="headerlink" href="#equation-e91e9dc9-ca93-450b-802a-50e5e728755d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{8}{4}, \frac{12}{4}\Big) = y_1
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    y_2 \\
+    y_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; y_1 &amp; y_2 &amp; y_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; 5 &amp; 0 &amp; 3 &amp; 1 &amp; -1 &amp; -1 &amp; -2 &amp; 0 &amp; 0 &amp; 20 \\ \hline
+      0 &amp; 1 &amp; -3 &amp; 0 &amp; -5 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 8 \\ \hline
+      0 &amp; 0 &amp; -1/2 &amp; 1 &amp; 1/4 &amp; -1/4 &amp; 0 &amp; 0 &amp; 1/4 &amp; 0 &amp; 0 &amp; 2 \\
+      0 &amp; 0 &amp; 3 &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 4 \\
+      0 &amp; 0 &amp; 2 &amp; 0 &amp; 2 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 16 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4914226c-3ae3-44db-9dbb-7403d4b81ba3">
+<span class="eqno">(134)<a class="headerlink" href="#equation-4914226c-3ae3-44db-9dbb-7403d4b81ba3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_2\,\because \text{argmin}\Big(\frac{4}{3}, \frac{16}{2}\Big) = y_2
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    x_1 \\
+    y_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; y_1 &amp; y_2 &amp; y_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 4/3 &amp; -2/3 &amp; 2/3 &amp; -1 &amp; -1/3 &amp; -5/3 &amp; 0 &amp; 40/3 \\ \hline
+      0 &amp; 1 &amp; 0 &amp; 0 &amp; -4 &amp; 0 &amp; -1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 12 \\ \hline
+      0 &amp; 0 &amp; 0 &amp; 1 &amp; 5/12 &amp; -1/12 &amp; -1/6 &amp; 0 &amp; 1/12 &amp; 1/6 &amp; 0 &amp; 8/3 \\
+      0 &amp; 0 &amp; 1 &amp; 0 &amp; 1/3 &amp; 1/3 &amp; -1/3 &amp; 0 &amp; -1/3 &amp; 1/3 &amp; 0 &amp; 4/3 \\
+      0 &amp; 0 &amp; 0 &amp; 0 &amp; 4/3 &amp; -2/3 &amp; 2/3 &amp; -1 &amp; 2/3 &amp; -2/3 &amp; 1 &amp; 40/3 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-349d6b3c-e94a-4c70-b1a6-e031bac03d95">
+<span class="eqno">(135)<a class="headerlink" href="#equation-349d6b3c-e94a-4c70-b1a6-e031bac03d95" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_3\,\because \text{Largest non-basic},\,\text{Leaving Variable: }x_1\,\because \text{argmin}\Big(\frac{8/3}{5/12}, \frac{4/3}{1/3}, \frac{40/3}{4/3}\Big) = x_1
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    x_3 \\
+    y_3 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; y_1 &amp; y_2 &amp; y_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; -4 &amp; 0 &amp; 0 &amp; -2 &amp; 2 &amp; -1 &amp; 1 &amp; -3 &amp; 0 &amp; 8 \\ \hline
+      0 &amp; 1 &amp; 12 &amp; 0 &amp; 0 &amp; 4 &amp; -5 &amp; 0 &amp; -4 &amp; 5 &amp; 0 &amp; 28 \\ \hline
+      0 &amp; 0 &amp; -5/4 &amp; 1 &amp; 0 &amp; -1/2 &amp; 1/4 &amp; 0 &amp; 1/2 &amp; -1/4 &amp; 0 &amp; 1 \\
+      0 &amp; 0 &amp; 3  &amp; 0 &amp; 1 &amp; 1 &amp; -1 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; 4 \\
+      0 &amp; 0 &amp; -4 &amp; 0 &amp; 0 &amp; -2 &amp; 2 &amp; -1 &amp; 2 &amp; -2 &amp; 1 &amp; 8 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f24e9977-dcef-4e6e-a401-f588783c462a">
+<span class="eqno">(136)<a class="headerlink" href="#equation-f24e9977-dcef-4e6e-a401-f588783c462a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }s_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_3\,\because \text{argmin}\Big(\frac{1}{1/4}, \frac{8}{2}\Big) = y_3
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    x_3 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; y_1 &amp; y_2 &amp; y_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; 2 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; -1/2 &amp; 1 &amp; 0 &amp; 5/2 &amp; 48 \\ \hline
+      0 &amp; 0 &amp; -3/4 &amp; 1 &amp; 0 &amp; -1/4 &amp; 0 &amp; 1/8 &amp; 1/4 &amp; 0 &amp; -1/8 &amp; 0 \\
+      0 &amp; 0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; -1/2 &amp; 0 &amp; 0 &amp; 1/2 &amp; 8 \\
+      0 &amp; 0 &amp; -2 &amp; 0 &amp; 0 &amp; -1 &amp; 1 &amp; -1/2 &amp; 1 &amp; -1 &amp; 1/2 &amp; 4 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span> columns can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, x_3, s_1, s_2, s_3) = (0, 0, 8, 0, 4, 0)\)</span> of the original system that has been found by the Phase I Procedure.</p>
+<p>Phase II: Normal Simplex Tableau</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d80e62f5-800e-42e9-8709-ceeb2814806d">
+<span class="eqno">(137)<a class="headerlink" href="#equation-d80e62f5-800e-42e9-8709-ceeb2814806d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{array}{c}
+    \\
+    z \\ 
+    x_2 \\
+    x_3 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; b \\ \hline
+      1 &amp; 2 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; -1/2 &amp; 48 \\ \hline
+      0 &amp; -3/4 &amp; 1 &amp; 0 &amp; -1/4 &amp; 0 &amp; 1/8 &amp; 0 \\
+      0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; -1/2 &amp; 8 \\
+      0 &amp; -2 &amp; 0 &amp; 0 &amp; -1 &amp; 1 &amp; -1/2 &amp; 4 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4a3bbeb1-794d-4de9-929e-5e4ba8ffd2a2">
+<span class="eqno">(138)<a class="headerlink" href="#equation-4a3bbeb1-794d-4de9-929e-5e4ba8ffd2a2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }x_3\,\because \text{argmin}\Big(\frac{8}{1}\Big) = x_3
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    z \\ 
+    x_2 \\
+    x_1 \\
+    s_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|cccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; s_1 &amp; s_2 &amp; s_3 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; -2 &amp; -1 &amp; 0 &amp; 1/2 &amp; 32 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 3/4 &amp; -1/4 &amp; 0 &amp; -1/4 &amp; 6 \\
+      0 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; -1/2 &amp; 8 \\
+      0 &amp; 0 &amp; 0 &amp; 2 &amp; -1 &amp; 1 &amp; -3/2 &amp; 20 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\therefore\)</span> Since the reduced costs are all <span class="math notranslate nohighlight">\(\leq 0\)</span> for a <strong>minimization</strong> problem, our simplex method is complete, with basic variables <span class="math notranslate nohighlight">\(x_2 = 6, x_1 = 8, s_2 = 20\)</span>, non-basic variables <span class="math notranslate nohighlight">\(x_3 = 0, s_1 = 0, s_3 = 0\)</span> and our <strong>minimum</strong> objective value is <span class="math notranslate nohighlight">\(32.0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create one vector optimization variable.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">3</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">]),</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal solution is: x = </span><span class="si">{</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: 32.0
+The optimal solution is: x = [8.0, 6.0, 0.0]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "# Create one vector optimization variable.\nx = cp.Variable((3,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[2, -4, -1], [-1, -4, -2], [-2, 0, -2]]) @ x <= np.array([-8, -12, -16]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([1, 4, 6]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_formatted_code = "# Create one vector optimization variable.\nx = cp.Variable((3,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[2, -4, -1], [-1, -4, -2], [-2, 0, -2]]) @ x <= np.array([-8, -12, -16]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([1, 4, 6]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h3>4.14<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p>Solve the following linear program by the Revised Simplex Method</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4c4ab345-0e7c-4071-b8f5-e2ab968efc6f">
+<span class="eqno">(139)<a class="headerlink" href="#equation-4c4ab345-0e7c-4071-b8f5-e2ab968efc6f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;3x_1 + x_2 + 4x_3 + 2x_4 \\
+    \text{subject to } 
+    &amp;x_1 +x_2 −2x_3 + x_4 =10 \\
+    &amp;4x_1 +x_2 +2x_3 +3x_4 \geq 20 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3,4 \\
+\end{align}\]</div>
+<p>Standard Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-366e3a30-8d32-4326-a826-6a7481c5ad4b">
+<span class="eqno">(140)<a class="headerlink" href="#equation-366e3a30-8d32-4326-a826-6a7481c5ad4b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;3x_1 + x_2 + 4x_3 + 2x_4 \\
+    \text{subject to } 
+    &amp;x_1 +x_2 −2x_3 + x_4 =10 \\
+    &amp;4x_1 +x_2 +2x_3 +3x_4 - s_1 = 20 \\
+    &amp;\text{and } x_j \geq 0, j = 1,2,3,4, s_1 \geq 0 \\
+\end{align}\]</div>
+<p>Phase I Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d281d8a5-9555-4138-9e87-0488c447a9e1">
+<span class="eqno">(141)<a class="headerlink" href="#equation-d281d8a5-9555-4138-9e87-0488c447a9e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; -3 &amp; 1 &amp; -4 &amp; -2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 10 \\
+      0 &amp; 0 &amp; 4 &amp; 1 &amp; 2 &amp; 3 &amp; -1 &amp; 0 &amp; 1 &amp; 20 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fb05db08-09b9-4c75-9afb-9bd899af05c0">
+<span class="eqno">(142)<a class="headerlink" href="#equation-fb05db08-09b9-4c75-9afb-9bd899af05c0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Add last 3 rows to 1st row}
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 5 &amp; 2 &amp; 0 &amp; 4 &amp; -1 &amp; 0 &amp; 0 &amp; 30 \\ \hline
+      0 &amp; 1 &amp; -3 &amp; 1 &amp; -4 &amp; -2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; 1 &amp; -2 &amp; 1 &amp; 0 &amp; 1 &amp; 0 &amp; 10 \\
+      0 &amp; 0 &amp; 4 &amp; 1 &amp; 2 &amp; 3 &amp; -1 &amp; 0 &amp; 1 &amp; 20 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4a0f5714-a6b3-4388-be29-63b3481f1b7a">
+<span class="eqno">(143)<a class="headerlink" href="#equation-4a0f5714-a6b3-4388-be29-63b3481f1b7a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_2\,\because \text{argmin}\Big(\frac{10}{1}, \frac{20}{4}\Big) = y_2
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    x_1 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 3/4 &amp; -5/2 &amp; 1/4 &amp; 1/4 &amp; 0 &amp; -5/4 &amp; 5 \\ \hline
+      0 &amp; 1 &amp; 0 &amp; 7/4 &amp; -5/2 &amp; 1/4 &amp; -3/4 &amp; 0 &amp; 3/4 &amp; 15 \\ \hline
+      0 &amp; 0 &amp; 0 &amp; 3/4 &amp; -5/2 &amp; 1/4 &amp; 1/4 &amp; 1 &amp; -1/4 &amp; 5 \\
+      0 &amp; 0 &amp; 1 &amp; 1/4 &amp; 1/2 &amp; 3/4 &amp; -1/4 &amp; 0 &amp; 1/4 &amp; 5 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4bda1d98-4a19-42e0-9962-cfdb8c264d2a">
+<span class="eqno">(144)<a class="headerlink" href="#equation-4bda1d98-4a19-42e0-9962-cfdb8c264d2a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{5}{3/4}, \frac{5}{1/4}\Big) = y_2
+    \rightarrow&amp;
+    \begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    x_2 \\
+    x_1 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; y_1 &amp; y_2 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; 0 &amp; 0 &amp; 10/3 &amp; -1/3 &amp; -4/3 &amp; -7/3 &amp; 4/3 &amp; 10/3 \\ \hline
+      0 &amp; 0 &amp; 0 &amp; 1 &amp; -10/3 &amp; 1/3 &amp; 1/3 &amp; 4/3 &amp; -1/3 &amp; 20/3 \\
+      0 &amp; 0 &amp; 1 &amp; 0 &amp; 4/3 &amp; 2/3 &amp; -1/3 &amp; -1/3 &amp; 1/3 &amp; 10/3 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1, y_2\)</span> columns can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, x_3, x_4, s_1) = (10/3, 20/3, 0, 0, 0, 0)\)</span> of the original system that has been found by the Phase I Procedure.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-af057e65-0fb8-4818-90f2-06456cdda7eb">
+<span class="eqno">(145)<a class="headerlink" href="#equation-af057e65-0fb8-4818-90f2-06456cdda7eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{array}{c}
+    \\
+    z \\ 
+    x_2 \\
+    x_1 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|ccccc|c}
+      z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; s_1 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 10/3 &amp; -1/3 &amp; -4/3 &amp; 10/3 \\ \hline
+      0 &amp; 0 &amp; 1 &amp; -10/3 &amp; 1/3 &amp; 1/3 &amp; 20/3 \\
+      0 &amp; 1 &amp; 0 &amp; 4/3 &amp; 2/3 &amp; -1/3 &amp; 10/3 \\
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+<p>Revised Simplex Method:</p>
+<ol class="simple">
+<li><p>Test for Optimality</p>
+<ol class="simple">
+<li><p>Find Pricing Vector <span class="math notranslate nohighlight">\(y = c_B B^{-1}\)</span></p></li>
+<li><p>Compute <span class="math notranslate nohighlight">\(z_j = c_B B^{-1}N\)</span></p></li>
+<li><p>Find non-basic index <span class="math notranslate nohighlight">\(j\)</span> such that <span class="math notranslate nohighlight">\(z_N - c_N = \text{max}_{j\in N}{\{z_j - c_j\}}\)</span>. If <span class="math notranslate nohighlight">\(z_j - c_j \leq 0\)</span>, stop, current BFS is optimal</p></li>
+</ol>
+</li>
+<li><p>Min. Ratio Test</p>
+<ol class="simple">
+<li><p>Find <span class="math notranslate nohighlight">\(\bar{A}_{\bullet s} = B^{-1}A_{\bullet s}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\bar{a}_{is} \leq 0\)</span> for all <span class="math notranslate nohighlight">\(i\)</span>, stop. The objective is unbounded below. Otherwise, find an index <span class="math notranslate nohighlight">\(r\)</span> such that <span class="math notranslate nohighlight">\(\bar{a}_{is} &gt; 0\)</span> and <span class="math notranslate nohighlight">\(\frac{\bar{b}_r}{\bar{a}_{rs}} = \text{min}\Big\{\frac{\bar{b}_i}{\bar{a}_{is}}: \bar{a}_{is} &gt; 0 \Big\}\)</span></p></li>
+</ol>
+</li>
+<li><p>Update new basis, <span class="math notranslate nohighlight">\(A_{\bullet {j_r}}\)</span> replaces <span class="math notranslate nohighlight">\(B_{\bullet {j_r}}\)</span></p></li>
+</ol>
+<p>Iteration 1:</p>
+<p>1A.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6831f6a7-08c8-4e92-ab42-b3029d134f79">
+<span class="eqno">(146)<a class="headerlink" href="#equation-6831f6a7-08c8-4e92-ab42-b3029d134f79" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    y &amp;= {B^\top}^{-1}c_B \\
+    &amp;= {\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \\ \end{bmatrix}^\top}^{-1} \begin{bmatrix}0 \\ 0\\ \end{bmatrix} \\
+    &amp;= \begin{bmatrix}0 \\ 0\\ \end{bmatrix} \\
+\end{align}\]</div>
+<p>1B.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ecafab3-497d-4562-a18c-d0332a10dbcb">
+<span class="eqno">(147)<a class="headerlink" href="#equation-2ecafab3-497d-4562-a18c-d0332a10dbcb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    z_j &amp;= y^\top A_{\bullet j} \\
+    &amp;= \begin{bmatrix}0 \\ 0\\ \end{bmatrix}^\top \begin{bmatrix} -10/3 &amp; 1/3 &amp; 1/3 \\ 4/3 &amp; 2/3 &amp; -1/3 \\ \end{bmatrix} \\
+    &amp;= \begin{bmatrix}0 &amp; 0 &amp; 0 \\ \end{bmatrix} \\
+\end{align}\]</div>
+<p>1C.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d50a256-3110-47d1-a291-3357b2f80fcf">
+<span class="eqno">(148)<a class="headerlink" href="#equation-3d50a256-3110-47d1-a291-3357b2f80fcf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    z_s - c_s &amp;= \text{max}_{j\in N}{\{z_j - c_j\}} \\
+    &amp;= \text{max}_{j\in N}{\{0+10/3=10/3, 0-1/3=-1/3, 0-4/3=-4/3\}} \\
+    s &amp;= 3
+\end{align}\]</div>
+<p>2A.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d28f3942-6c71-4b18-9c44-55eea209add8">
+<span class="eqno">(149)<a class="headerlink" href="#equation-d28f3942-6c71-4b18-9c44-55eea209add8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \bar{A}_{\bullet s=3} &amp;= B^{-1}A_{\bullet s=3} \\
+    &amp;= {\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \\ \end{bmatrix}}^{-1} \begin{bmatrix}-10/3 \\ 4/3\\ \end{bmatrix} \\
+    &amp;= \begin{bmatrix}4/3 \\ -10/3\\ \end{bmatrix} \\
+\end{align}\]</div>
+<p>2B.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5b178767-3851-410a-af00-7d3fea60f275">
+<span class="eqno">(150)<a class="headerlink" href="#equation-5b178767-3851-410a-af00-7d3fea60f275" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \frac{\bar{b}_r}{\bar{a}_{r3}} &amp;= \text{min}\Big\{\frac{20/3}{4/3} \Big\} = 5 \\
+    r &amp;= 2 \\
+\end{align}\]</div>
+<ol class="simple">
+<li></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-4fd5fc31-f7c7-413d-807d-b397853bb709">
+<span class="eqno">(151)<a class="headerlink" href="#equation-4fd5fc31-f7c7-413d-807d-b397853bb709" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    B &amp;= \begin{bmatrix} -10/3 &amp; 1 \\ 4/3 &amp; 0 \\ \end{bmatrix} \\
+    x_B &amp;= B^{-1}b = \begin{bmatrix} -10/3 &amp; 1 \\ 4/3 &amp; 0 \\ \end{bmatrix}^{-1} \begin{bmatrix}20/3 \\ 10/3 \\ \end{bmatrix} = \begin{bmatrix}5/2 \\ 15 \\ \end{bmatrix} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2ecb4e45-5912-4301-b644-b1bf8eea8b07">
+<span class="eqno">(152)<a class="headerlink" href="#equation-2ecb4e45-5912-4301-b644-b1bf8eea8b07" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\vdots
+\end{align}\]</div>
+<p>When all reduced cost coefficients are <span class="math notranslate nohighlight">\(\leq 0\)</span>, BFS is optimal, hence solution is <span class="math notranslate nohighlight">\((x_1, x_2, x_3, x_4) = (0, 5, 0, 5)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create one vector optimization variable.</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">4</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">]),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">20</span><span class="p">]),</span>
+    <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal solution is: x = </span><span class="si">{</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x_i</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: 15.0
+The optimal solution is: x = [0.0, 5.0, 0.0, 5.0]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "# Create one vector optimization variable.\nx = cp.Variable((4,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 1, -2, 1]]) @ x == np.array([10]),\n    np.array([[4, 1, 2, 3]]) @ x >= np.array([20]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([3, 1, 4, 2]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_formatted_code = "# Create one vector optimization variable.\nx = cp.Variable((4,), integer=False)\n\n# Create constraints.\nconstraints = [\n    np.array([[1, 1, -2, 1]]) @ x == np.array([10]),\n    np.array([[4, 1, 2, 3]]) @ x >= np.array([20]),\n    x >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.array([3, 1, 4, 2]) @ x)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"The optimal solution is: x = {[np.round(x_i, 2) for x_i in x.value]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>4.18<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p>CT Gift Shop is profitable but has a cash flow problem as of the end of June. December is the busiest month, and the shop expects to make a decent profit by the end of the year. As of the end of June, the gift shop has 2, 000 in cash in the bank. At the start of each month, rent and other bills are due, and the shop has to make the payments. By the end of the month the shop will receive revenues from its sales. The projected revenues and payments are as follows:</p>
+<img alt="../../_images/hw2-4_18.png" src="../../_images/hw2-4_18.png" />
+<p>CT Gift Shop has an excellent credit history and can take out loans to help cover the shortfalls. On July 1, the gift shop can take out a 6-month loan with a 10% interest rate for the period that is to be paid back at the end of December. The gift shop can also take out a 1-month loan at the start of each month at an interest rate of 2% per month. Formulate CT Gift Shop’s cashflow problem as an LP so to minimize the amount of interest paid. Solve the LP by the Simplex Method.</p>
+<p>Linear Program:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-39d24378-6cd7-4429-89de-939d2fffd805">
+<span class="eqno">(153)<a class="headerlink" href="#equation-39d24378-6cd7-4429-89de-939d2fffd805" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;\begin{bmatrix}0.02 &amp; 0.02 &amp; 0.02 &amp; 0.02 &amp; 0.02 &amp; 0.02 &amp; 0.10\end{bmatrix} \cdot \begin{bmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7\\ \end{bmatrix} \\
+    &amp;\text{subject to } \\
+    &amp;2000 + x_1 + x_7 \geq 6000 \\
+    &amp;2000 + x_1 + x_7 - 6000 + 3000 \geq 5000 + 1.02x_1 \\
+    &amp;2000 + x_1 + x_7 - 6000 + 3000 + x_2 - 5000 - 1.02x_1 + 3000 \geq 8000 + 1.02x_2 \\
+    &amp;2000 + x_1 + x_7 - 6000 + 3000 + x_2 - 5000 - 1.02x_1 + 3000 + x_3 - 8000 - 1.02x_2 + 4000 \geq 3000 + 1.02x_3 \\
+    &amp;2000 + x_1 + x_7 - 6000 + 3000 + x_2 - 5000 - 1.02x_1 + 3000 + x_3 - 8000 - 1.02x_2 + 4000 + x_4 - 3000 - 1.02x_3 + 4000 \geq 4000 + 1.02x_4 \\
+    &amp;2000 + x_1 + x_7 - 6000 + 3000 + x_2 - 5000 - 1.02x_1 + 3000 + x_3 - 8000 - 1.02x_2 + 4000 + x_4 - 3000 - 1.02x_3 + 4000 + x_5 - 4000 - 1.02x_4 + 9000 \geq 6000 + 1.02x_5 \\
+    &amp;2000 + x_1 + x_7 - 6000 + 3000 + x_2 - 5000 - 1.02x_1 + 3000 + x_3 - 8000 - 1.02x_2 + 4000 + x_4 - 3000 - 1.02x_3 + 4000 + x_5 - 4000 - 1.02x_4 + 9000 + x_6 - 6000 - 1.02x_5 + 15000 \geq 1.10x_7 + 1.02x_6 \\
+    &amp;x_i \geq 0, i = 1, \cdots 7 \\
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(x_1, \cdots x_6\)</span> represent the 1-month loan amounts and <span class="math notranslate nohighlight">\(x_7\)</span> represents the 6-month loan amount.</p>
+<p>Standard Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-958bd5a4-54e7-4055-b220-8f7f7076de04">
+<span class="eqno">(154)<a class="headerlink" href="#equation-958bd5a4-54e7-4055-b220-8f7f7076de04" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;0.02x_1 + 0.02x_2 + 0.02x_3 + 0.02x_4 + 0.02x_5 + 0.02x_6 + 0.1x_7 \\
+    \text{subject to } 
+    &amp;x_1 + x_7 - s_1 = 4000 \\
+    &amp;-0.02x_1 + x_7 - s_2 = 6000 \\
+    &amp;-0.02x_1 -0.02x_2 + x_7 - s_3 = 11000 \\
+    &amp;-0.02x_1 -0.02x_2 -0.02x_3 + x_7 - s_4 = 10000 \\
+    &amp;-0.02x_1 -0.02x_2 -0.02x_3 -0.02x_4 + x_7 - s_5 = 10000 \\
+    &amp;-0.02x_1 -0.02x_2 -0.02x_3 -0.02x_4 -0.02x_5 + x_7 - s_5 = 7000 \\
+    &amp;0.02x_1 +0.02x_2 +0.02x_3 +0.02x_4 +0.02x_5 +0.02x_6 + 0.1x_7 + s_5 = 8000 \\
+    &amp;\text{and } x_j \geq 0, j = 1,\cdots7, s_i \geq 0, i = 1, \cdots 5 \\
+\end{align}\]</div>
+<p>Standard Form with artificial variables:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f553f9fd-e76a-4250-b5b7-7b6c27628468">
+<span class="eqno">(155)<a class="headerlink" href="#equation-f553f9fd-e76a-4250-b5b7-7b6c27628468" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;0.02x_1 + 0.02x_2 + 0.02x_3 + 0.02x_4 + 0.02x_5 + 0.02x_6 + 0.1x_7 \\
+    \text{subject to } 
+    &amp;x_1 + x_7 - s_1 + y_1 = 4000 \\
+    &amp;-0.02x_1 + x_7 - s_2 + y_2 = 6000 \\
+    &amp;-0.02x_1 -0.02x_2 + x_7 - s_3 + y_3 = 11000 \\
+    &amp;-0.02x_1 -0.02x_2 -0.02x_3 + x_7 - s_4 + y_4 = 10000 \\
+    &amp;-0.02x_1 -0.02x_2 -0.02x_3 -0.02x_4 + x_7 - s_5 + y_5 = 10000 \\
+    &amp;-0.02x_1 -0.02x_2 -0.02x_3 -0.02x_4 -0.02x_5 + x_7 - s_5 + y_6 = 7000 \\
+    &amp;0.02x_1 +0.02x_2 +0.02x_3 +0.02x_4 +0.02x_5 +0.02x_6 + 0.1x_7 + s_5 + y_7 = 8000 \\
+    &amp;\text{and } x_j \geq 0, j = 1,\cdots7, s_i \geq 0, i = 1, \cdots, 5, y_k \geq 0, k = 1, \cdots, 7 \\
+\end{align}\]</div>
+<p>Phase I Tableau:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f8ccbf1a-d146-4164-a4ce-d0324110adfc">
+<span class="eqno">(156)<a class="headerlink" href="#equation-f8ccbf1a-d146-4164-a4ce-d0324110adfc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;\begin{array}{c}
+    \\
+    w \\
+    z \\ 
+    y_1 \\
+    y_2 \\
+    y_3 \\
+    y_4 \\
+    y_5 \\
+    y_6 \\
+    y_7 \\
+    \end{array}
+    \begin{bmatrix}
+    \begin{array}{c|c|ccccccccccccccccccc|c}
+      w &amp; z &amp; x_1 &amp; x_2 &amp; x_3 &amp; x_4 &amp; x_5 &amp; x_6 &amp; x_7 &amp; s_1 &amp; s_2 &amp; s_3 &amp; s_4 &amp; s_5 &amp; y_1 &amp; y_2 &amp; y_3 &amp; y_4 &amp; y_5 &amp; y_6 &amp; y_7 &amp; b \\ \hline
+      1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+      0 &amp; 1 &amp; -0.02 &amp; -0.02 &amp; -0.02 &amp; -0.02 &amp; -0.02 &amp; -0.02 &amp; -0.1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \hline
+      0 &amp; 0 &amp; -0.02 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; -1 &amp; 0 \\ \hline
+    \end{array}
+    \end{bmatrix} \\
+\end{align}\]</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="extra">
+<h2>Extra<a class="headerlink" href="#extra" title="Permalink to this headline">¶</a></h2>
+<p><strong>Formulate a linear program for the planar absolute-value regression problem given the 5 points: (-1,-2), (0,0), (1,1), (2,3), and (3,0). Write an AMPL code for the resulting linear program and solve it by a solver.</strong></p>
+<div class="amsmath math notranslate nohighlight" id="equation-d2a4b64e-9185-40e7-8a89-409b16538f7c">
+<span class="eqno">(157)<a class="headerlink" href="#equation-d2a4b64e-9185-40e7-8a89-409b16538f7c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{w, \alpha, t}{\text{minimize }} &amp;\frac{1}{N}\sum_{i=1}^N (t^+_i + t^-_i) \\
+    \text{subject to } 
+    &amp;t^+_i - t^-_i + wx_i + \alpha = y_i, i = 1, \cdots, N \\
+    &amp;\text{and } t^+_i, t^-_i \geq 0 \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="nb">sorted</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]],</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw2_98_0.png" src="../../_images/hw2_98_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "points = np.array(\n    sorted([[-1, -2], [0, 0], [1, 1], [2, 3], [3, 0]], key=lambda x: x[0])\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.show()";
+                var nbb_formatted_code = "points = np.array(\n    sorted([[-1, -2], [0, 0], [1, 1], [2, 3], [3, 0]], key=lambda x: x[0])\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create optimization variables</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Absolute Deviations</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">1</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Weights</span>
+<span class="n">α</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">1</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Bias</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">t</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">α</span><span class="p">)</span> <span class="o">==</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">t</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)))</span> <span class="o">@</span> <span class="p">(</span><span class="n">t</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]]))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">))</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Residuals: t = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">x </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: 1.0
+Residuals: t = [0.19 0.4  0.   0.6  3.81]
+y = 1.4x -0.4
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "# Create optimization variables\nt = cp.Variable((len(points), 2), integer=False)  # Absolute Deviations\nw = cp.Variable((1,), integer=False)  # Weights\n\u03b1 = cp.Variable((1,), integer=False)  # Bias\n\n# Create constraints.\nconstraints = [\n    t @ np.array([1, -1]) + (w * points[:, 0] + \u03b1) == points[:, 1],\n    t >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.ones((1, len(points))) @ (t @ np.array([[1], [1]])) / len(points))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"Residuals: t = {np.max(np.round(t.value, 2), axis=1)}\")\nprint(f\"y = {np.round(w.value, 2)[0]}x {np.round(\u03b1.value, 2)[0]}\")";
+                var nbb_formatted_code = "# Create optimization variables\nt = cp.Variable((len(points), 2), integer=False)  # Absolute Deviations\nw = cp.Variable((1,), integer=False)  # Weights\n\u03b1 = cp.Variable((1,), integer=False)  # Bias\n\n# Create constraints.\nconstraints = [\n    t @ np.array([1, -1]) + (w * points[:, 0] + \u03b1) == points[:, 1],\n    t >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.ones((1, len(points))) @ (t @ np.array([[1], [1]])) / len(points))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"Residuals: t = {np.max(np.round(t.value, 2), axis=1)}\")\nprint(f\"y = {np.round(w.value, 2)[0]}x {np.round(\u03b1.value, 2)[0]}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">α</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$y = 1.4x - 0.4$&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw2_100_0.png" src="../../_images/hw2_100_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "plt.plot(\n    np.linspace(-1, 3, 2000),\n    np.round(w.value, 2)[0] * np.linspace(-1, 3, 2000) + np.round(\u03b1.value, 2)[0],\n    c=\"red\",\n    label=r\"$y = 1.4x - 0.4$\",\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "plt.plot(\n    np.linspace(-1, 3, 2000),\n    np.round(w.value, 2)[0] * np.linspace(-1, 3, 2000) + np.round(\u03b1.value, 2)[0],\n    c=\"red\",\n    label=r\"$y = 1.4x - 0.4$\",\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p><strong>Use the same 5 points and same objective as above to determine a planar isotone (i.e, nondecreasing) curve that best fits the given points. Do the same with a convex curve instead. Solve both linear programs using AMPL.</strong></p>
+<p>Isotonic Regression QP (Minimize Squared errors):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a3af6ca2-b265-419a-b54a-3a0aa48b83e3">
+<span class="eqno">(158)<a class="headerlink" href="#equation-a3af6ca2-b265-419a-b54a-3a0aa48b83e3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{w, \alpha}{\text{minimize }} &amp;\sum_{i=1}^N w_i{(x_i - \alpha_i)}^2 \\
+    \text{subject to } 
+    &amp;x_i \leq x_{i+1}, i = 1, \cdots, N-1 \\
+\end{align}\]</div>
+<p>Isotonic Regression (Minimize Absolute errors):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3814eb6b-0485-401b-878c-19f662fcd76c">
+<span class="eqno">(159)<a class="headerlink" href="#equation-3814eb6b-0485-401b-878c-19f662fcd76c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N \vert y_i - \hat{y}_i \vert \\
+    \text{subject to } 
+    &amp;\hat{y}_i &lt;= \hat{y}_{i+1} , i = 1, \cdots, N-1 \\
+\end{align}\]</div>
+<p>LP Formulation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f332eadb-6447-4953-a2ba-38c41e125a30">
+<span class="eqno">(160)<a class="headerlink" href="#equation-f332eadb-6447-4953-a2ba-38c41e125a30" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N (t^+_i - t^-_i) \\
+    \text{subject to } 
+    &amp;t^+_i - t^-_i + \hat{y}_i = y_i \\
+    &amp;\hat{y}_i \leq \hat{y}_{i+1} , i = 1, \cdots, N-1 \\
+    &amp;\text{and } t^+_i, t^-_i \geq 0 \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create optimization variables</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Absolute Deviations</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># y predictions</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">y_i</span> <span class="o">&lt;=</span> <span class="n">y_j</span> <span class="k">for</span> <span class="n">y_i</span><span class="p">,</span> <span class="n">y_j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:])]</span> <span class="o">+</span> <span class="p">[</span>
+    <span class="n">t</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">t</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)))</span> <span class="o">@</span> <span class="p">(</span><span class="n">t</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]])))</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Residuals: t = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: 3.0
+Residuals: t = [-0.    0.   -0.    1.52  1.48]
+y = [-2.   -0.    1.    1.48  1.48]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "# Create optimization variables\nt = cp.Variable((len(points), 2), integer=False)  # Absolute Deviations\ny = cp.Variable((len(points),), integer=False) # y predictions\n\n# Create constraints.\nconstraints = [y_i <= y_j for y_i, y_j in zip(y,y[1:])] + [t @ np.array([1, -1]) + y == points[:, 1], t >= 0]\n\n# Form objective.\nobj = cp.Minimize(np.ones((1, len(points))) @ (t @ np.array([[1], [1]])))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"Residuals: t = {np.max(np.round(t.value, 2), axis=1)}\")\nprint(f\"y = {np.round(y.value, 2)}\")";
+                var nbb_formatted_code = "# Create optimization variables\nt = cp.Variable((len(points), 2), integer=False)  # Absolute Deviations\ny = cp.Variable((len(points),), integer=False)  # y predictions\n\n# Create constraints.\nconstraints = [y_i <= y_j for y_i, y_j in zip(y, y[1:])] + [\n    t @ np.array([1, -1]) + y == points[:, 1],\n    t >= 0,\n]\n\n# Form objective.\nobj = cp.Minimize(np.ones((1, len(points))) @ (t @ np.array([[1], [1]])))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"Residuals: t = {np.max(np.round(t.value, 2), axis=1)}\")\nprint(f\"y = {np.round(y.value, 2)}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;-x&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Isotonic Regression&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw2_105_0.png" src="../../_images/hw2_105_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "plt.plot(\n    points[:, 0], np.round(y.value, 2), \"-x\", c=\"red\", label=r\"Isotonic Regression\",\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "plt.plot(\n    points[:, 0], np.round(y.value, 2), \"-x\", c=\"red\", label=r\"Isotonic Regression\",\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Convex Regression:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a9de8805-65f7-4ec2-9787-f037d539de24">
+<span class="eqno">(161)<a class="headerlink" href="#equation-a9de8805-65f7-4ec2-9787-f037d539de24" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N \vert y_i - \hat{y}_i \vert \\
+    \text{subject to } 
+    &amp; \frac{hat{y}_{i+1} - \hat{y}_i}{x_{i+1} - x_{i}} &lt;= \frac{hat{y}_{i+2} - \hat{y}_{i+1}}{x_{i+2} - x_{i+1}} , i = 1, \cdots, N-2 \\
+\end{align}\]</div>
+<p>LP Formulation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4c6129e-ec2f-4a75-b918-f13e3049ba04">
+<span class="eqno">(162)<a class="headerlink" href="#equation-e4c6129e-ec2f-4a75-b918-f13e3049ba04" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N (t^+_i - t^-_i) \\
+    \text{subject to } 
+    &amp;t^+_i - t^-_i + \hat{y}_i = y_i \\
+    &amp; \frac{\hat{y}_{i+1} - \hat{y}_i}{x_{i+1} - x_{i}} &lt;= \frac{\hat{y}_{i+2} - \hat{y}_{i+1}}{x_{i+2} - x_{i+1}} , i = 1, \cdots, N-2 \\
+    &amp;\text{and } t^+_i, t^-_i \geq 0 \\
+\end{align}\]</div>
+<p>Change fractional constraints by clearing denominator:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-14b2465c-b9e9-46d1-b290-19764b1a0a8a">
+<span class="eqno">(163)<a class="headerlink" href="#equation-14b2465c-b9e9-46d1-b290-19764b1a0a8a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N (t^+_i - t^-_i) \\
+    \text{subject to } 
+    &amp;t^+_i - t^-_i + \hat{y}_i = y_i \\
+    &amp; (x_{i+1} - x_{i+2})\hat{y}_{i} + (x_{i+2} - x_{i})\hat{y}_{i+1} + (x_{i} - x_{i+1})\hat{y}_{i+2} \leq 0 , i = 1, \cdots, N-2 \\
+    &amp;\text{and } t^+_i, t^-_i \geq 0 \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create optimization variables</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># Absolute Deviations</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">),),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># y predictions</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">x_j</span> <span class="o">-</span> <span class="n">x_k</span><span class="p">)</span> <span class="o">*</span> <span class="n">y_i</span> <span class="o">+</span> <span class="p">(</span><span class="n">x_k</span> <span class="o">-</span> <span class="n">x_i</span><span class="p">)</span> <span class="o">*</span> <span class="n">y_j</span> <span class="o">+</span> <span class="p">(</span><span class="n">x_i</span> <span class="o">-</span> <span class="n">x_j</span><span class="p">)</span> <span class="o">*</span> <span class="n">y_k</span> <span class="o">&lt;=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">y_i</span><span class="p">,</span> <span class="n">y_j</span><span class="p">,</span> <span class="n">y_k</span><span class="p">,</span> <span class="n">x_i</span><span class="p">,</span> <span class="n">x_j</span><span class="p">,</span> <span class="n">x_k</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">:],</span> <span class="n">points</span><span class="p">,</span> <span class="n">points</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">points</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="p">)</span>
+<span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="n">t</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">points</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">t</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)))</span> <span class="o">@</span> <span class="p">(</span><span class="n">t</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]])))</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Linear Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Residuals: t = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;y = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear Programming Solution
+==============================
+Status: optimal
+The optimal value is: 6.0
+Residuals: t = [1.87 0.   0.87 2.61 0.66]
+y = [-0.13 -0.    0.13  0.39  0.66]
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "# Create optimization variables\nt = cp.Variable((len(points), 2), integer=False)  # Absolute Deviations\ny = cp.Variable((len(points),), integer=False)  # y predictions\n\n# Create constraints.\nconstraints = [\n    (x_j - x_k) * y_i + (x_k - x_i) * y_j + (x_i - x_j) * y_k <= 0\n    for y_i, y_j, y_k, x_i, x_j, x_k in zip(\n        y, y[1:], y[2:], points, points[1:], points[2:]\n    )\n] + [t @ np.array([1, -1]) + y == points[:, 1], t >= 0]\n\n# Form objective.\nobj = cp.Minimize(np.ones((1, len(points))) @ (t @ np.array([[1], [1]])))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"Residuals: t = {np.max(np.round(t.value, 2), axis=1)}\")\nprint(f\"y = {np.round(y.value, 2)}\")";
+                var nbb_formatted_code = "# Create optimization variables\nt = cp.Variable((len(points), 2), integer=False)  # Absolute Deviations\ny = cp.Variable((len(points),), integer=False)  # y predictions\n\n# Create constraints.\nconstraints = [\n    (x_j - x_k) * y_i + (x_k - x_i) * y_j + (x_i - x_j) * y_k <= 0\n    for y_i, y_j, y_k, x_i, x_j, x_k in zip(\n        y, y[1:], y[2:], points, points[1:], points[2:]\n    )\n] + [t @ np.array([1, -1]) + y == points[:, 1], t >= 0]\n\n# Form objective.\nobj = cp.Minimize(np.ones((1, len(points))) @ (t @ np.array([[1], [1]])))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Linear Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(f\"Residuals: t = {np.max(np.round(t.value, 2), axis=1)}\")\nprint(f\"y = {np.round(y.value, 2)}\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span>
+    <span class="n">points</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="s2">&quot;-x&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Convex Regression&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">points</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw2_108_0.png" src="../../_images/hw2_108_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 16;
+                var nbb_unformatted_code = "plt.plot(\n    points[:, 0], np.round(y.value, 2), \"-x\", c=\"red\", label=r\"Convex Regression\",\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "plt.plot(\n    points[:, 0], np.round(y.value, 2), \"-x\", c=\"red\", label=r\"Convex Regression\",\n)\nplt.scatter(*list(zip(*points)))\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-530"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw1.html" title="previous page">HW 1</a>
+    <a class='right-next' id="next-link" href="hw3.html" title="next page">HW 3</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

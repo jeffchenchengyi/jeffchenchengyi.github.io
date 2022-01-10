@@ -1,0 +1,979 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-5.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project 1: Momentum Strategies" href="project1.html" />
+    <link rel="prev" title="Paper Review 4: Size Matters, if You Control Your Junk" href="paper-review-4.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-5.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects" />
+<meta property="og:description" content="Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects  By: Chengyi (Jeff) Chen  Table of Contents  The Low-Risk Anomaly  Variations" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/paper-review-5.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-low-risk-anomaly">
+   1. The Low-Risk Anomaly
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variations-on-the-low-risk-anomaly">
+   2. Variations on the Low-Risk Anomaly
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#beta-turnover-and-liquidity">
+     Beta Turnover and Liquidity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#benchmark-models">
+     Benchmark Models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measures-of-risk">
+     Measures of Risk
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-decomposition-of-micro-and-macro-effects-in-29-industries">
+   3. A Decomposition of Micro and Macro Effects in 29 Industries
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-low-risk-anomaly-across-industries">
+     The Low-Risk Anomaly across Industries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decomposing-the-low-risk-anomaly-between-stocks-and-industries">
+     Decomposing the Low-Risk Anomaly between Stocks and Industries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-decomposition-of-micro-and-macro-effects-in-up-to-31-developed-country-markets">
+   4. A Decomposition of Micro and Macro Effects in Up to 31 Developed-Country Markets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-low-risk-anomaly-across-countries">
+     The Low-Risk Anomaly across Countries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decomposing-the-low-risk-anomaly-between-stocks-and-countries">
+     Decomposing the Low-Risk Anomaly between Stocks and Countries
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#idiosyncratic-risk">
+   5. Idiosyncratic Risk
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion-samuelsons-dictum-and-the-implications-for-managed-volatility-strategies">
+   6. Conclusion: Samuelson’s Dictum and the Implications for Managed-Volatility Strategies
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="paper-review-5-the-low-risk-anomaly-a-decomposition-into-micro-and-macro-effects">
+<h1>Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects<a class="headerlink" href="#paper-review-5-the-low-risk-anomaly-a-decomposition-into-micro-and-macro-effects" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#1">The Low-Risk Anomaly</a></p></li>
+<li><p><a class="reference external" href="#2">Variations on the Low-Risk Anomaly</a></p></li>
+<li><p><a class="reference external" href="#3">A Decomposition of Micro and Macro Effects in 29 Industries</a></p></li>
+<li><p><a class="reference external" href="#4">A Decomposition of Micro and Macro Effects in Up to 31 Developed-Country Markets</a></p></li>
+<li><p><a class="reference external" href="#5">Idiosyncratic Risk</a></p></li>
+<li><p><a class="reference external" href="#6">Conclusion: Samuelson’s Dictum and the Implications for Managed-Volatility Strategies</a></p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-low-risk-anomaly">
+<h2>1. The Low-Risk Anomaly<a class="headerlink" href="#the-low-risk-anomaly" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Low-risk stocks outperform high-risk stocks on a risk-adjusted basis.</p></li>
+<li><p>After forming 5 risk-sorted quintile portfolios and  regressing the returns of each of the resulting five portfolios, measured in excess of US Treasury bill returns, on the aggregate market excess return to find the portfolio’s full-period <em>ex post</em> market <span class="math notranslate nohighlight">\(\beta\)</span> and CAPM <span class="math notranslate nohighlight">\(\alpha\)</span>, <span class="math notranslate nohighlight">\(\beta\)</span>s estimated from past returns are shownb to be strong predictors of future <span class="math notranslate nohighlight">\(\beta\)</span>s</p></li>
+<li><p>There is a rough risk–return trade-off across long histories of asset class returns, where stocks outperform bonds, for example. But within asset classes, the lowest-risk portfolios have higher Sharpe ratios.</p></li>
+<li><p>Explanations have emphasized a combination of behavioral demand and the limits to arbitrage, including limited borrowing capacity and the delegation of stock selection, to explain the lowrisk anomaly</p>
+<ol class="simple">
+<li><p>Baker et al. (2011):</p>
+<ol class="simple">
+<li><p>Lottery preferences</p></li>
+<li><p>Representativeness</p></li>
+<li><p>Overconfidence</p></li>
+</ol>
+</li>
+<li><p>Black (1972) and Frazzini and Pedersen (2010):</p>
+<ol class="simple">
+<li><p>Leverage</p></li>
+</ol>
+</li>
+<li><p>Karceski (2002)</p>
+<ol class="simple">
+<li><p>Effects of intermediation: Interaction between high <span class="math notranslate nohighlight">\(\beta\)</span> strategies and the capture of mutual fund flows</p></li>
+</ol>
+</li>
+<li><p>Baker et al. (2011)</p>
+<ol class="simple">
+<li><p>Effects of intermediation: Implications of fixed-benchmark strategies for low-risk stocks</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="variations-on-the-low-risk-anomaly">
+<h2>2. Variations on the Low-Risk Anomaly<a class="headerlink" href="#variations-on-the-low-risk-anomaly" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="beta-turnover-and-liquidity">
+<h3>Beta Turnover and Liquidity<a class="headerlink" href="#beta-turnover-and-liquidity" title="Permalink to this headline">¶</a></h3>
+<p>Low <span class="math notranslate nohighlight">\(\beta\)</span> Turnover:</p>
+<ul class="simple">
+<li><p>The <span class="math notranslate nohighlight">\(\beta\)</span>s were computed using 60 months of data, so changes in beta estimates from month to month are small.</p></li>
+<li><p>The probability of staying in the first or fifth quintile from one month to the next is greater than 95%, and the probability of moving out of the top or bottom two quintiles from the first or fifth quintile is less than 0.5%.</p></li>
+<li><p>Moreover, lagged betas show a similar ability to predict monthly returns, so turnover is of limited value.</p></li>
+</ul>
+</div>
+<div class="section" id="benchmark-models">
+<h3>Benchmark Models<a class="headerlink" href="#benchmark-models" title="Permalink to this headline">¶</a></h3>
+<p>Why focus on CAPM regressions:</p>
+<ol class="simple">
+<li><p>Less complicated</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> is a theoretically motivated measure of risk</p></li>
+</ol>
+</div>
+<div class="section" id="measures-of-risk">
+<h3>Measures of Risk<a class="headerlink" href="#measures-of-risk" title="Permalink to this headline">¶</a></h3>
+<p>Why <span class="math notranslate nohighlight">\(\beta\)</span>?</p>
+<ul class="simple">
+<li><p>Any portfolio <span class="math notranslate nohighlight">\(\beta\)</span>, including <span class="math notranslate nohighlight">\(\beta\)</span>s of industry or country portfolios, is a simple weighted-average combination of the individual security <span class="math notranslate nohighlight">\(\beta\)</span>s contained in that portfolio, at their portfolio weights.</p></li>
+<li><p>The same cannot be said of a portfolio’s idiosyncratic volatility. The full covariance matrix of the individual securities is needed to go from security-level risk to portfolio-level risk.</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-decomposition-of-micro-and-macro-effects-in-29-industries">
+<h2>3. A Decomposition of Micro and Macro Effects in 29 Industries<a class="headerlink" href="#a-decomposition-of-micro-and-macro-effects-in-29-industries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-low-risk-anomaly-across-industries">
+<h3>The Low-Risk Anomaly across Industries<a class="headerlink" href="#the-low-risk-anomaly-across-industries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>A stock’s industry <span class="math notranslate nohighlight">\(\beta\)</span> is the capitalization-weighted average of the <span class="math notranslate nohighlight">\(\beta\)</span>s of the stocks within the industry</p></li>
+<li><p>Using only information about industry <span class="math notranslate nohighlight">\(\beta\)</span>s and no stock-level information delivers a reasonable fraction of the risk reduction and risk-adjusted return improvement of stock-level sorts.</p></li>
+</ul>
+</div>
+<div class="section" id="decomposing-the-low-risk-anomaly-between-stocks-and-industries">
+<h3>Decomposing the Low-Risk Anomaly between Stocks and Industries<a class="headerlink" href="#decomposing-the-low-risk-anomaly-between-stocks-and-industries" title="Permalink to this headline">¶</a></h3>
+<p>To what degree do macro effects contribute to the low-risk anomaly?</p>
+<ul class="simple">
+<li><p>Stock-level beta, as estimated from historical data, is a much better predictor of future beta than industry beta is</p>
+<ul>
+<li><p>However, both a stock-level historical beta and each stock’s industry-level historical beta, each relative to the other, have incremental predictive power for future beta.</p></li>
+</ul>
+</li>
+<li><p>Pure stock alpha (the micro effect) and pure industry alpha (the macro effect) arise for different reasons</p>
+<ol class="simple">
+<li><p>The pure industry alpha of 1.53% is present in spite of a small cross-industry beta difference of –0.20.</p>
+<ul>
+<li><p>By implication, the industry alpha obtains as a consequence of cross-industry portfolios exhibiting differences in returns, with modest differences in risk.</p></li>
+</ul>
+</li>
+<li><p>The pure stock alpha of 4.44% is present alongside a dramatic difference in withinindustry beta of –0.82.</p>
+<ul>
+<li><p>By implication, the stock alpha obtains as a consequence of within-industry portfolios exhibiting material differences in risk, with a more limited difference in returns.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-decomposition-of-micro-and-macro-effects-in-up-to-31-developed-country-markets">
+<h2>4. A Decomposition of Micro and Macro Effects in Up to 31 Developed-Country Markets<a class="headerlink" href="#a-decomposition-of-micro-and-macro-effects-in-up-to-31-developed-country-markets" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-low-risk-anomaly-across-countries">
+<h3>The Low-Risk Anomaly across Countries<a class="headerlink" href="#the-low-risk-anomaly-across-countries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Using only information about country betas and no stock-level information delivers roughly half the risk reduction and about two-thirds of the risk-adjusted return improvement of stock-level sorts.</p></li>
+</ul>
+</div>
+<div class="section" id="decomposing-the-low-risk-anomaly-between-stocks-and-countries">
+<h3>Decomposing the Low-Risk Anomaly between Stocks and Countries<a class="headerlink" href="#decomposing-the-low-risk-anomaly-between-stocks-and-countries" title="Permalink to this headline">¶</a></h3>
+<p>To what degree macro effects contribute to the low-risk anomaly, but in this case, countries represent the macro dimension of the anomaly?</p>
+<ul class="simple">
+<li><p>Stock-level beta, as estimated from historical data, is a much better predictor of future beta than each stock’s country beta is</p>
+<ul>
+<li><p>The incremental predictive power of country-level historical beta is closer to zero, in both economic and statistical terms.</p></li>
+</ul>
+</li>
+<li><p>Pure stock alpha (the micro effect) and pure country alpha (the macro effect) arise for different reasons.</p>
+<ol class="simple">
+<li><p>The pure country alpha of 6.22% is present in spite of no difference in cross-country beta.</p>
+<ul>
+<li><p>By implication, the country alpha obtains as a consequence of cross-country portfolios exhibiting material differences in returns, with modest differences in risk.</p></li>
+</ul>
+</li>
+<li><p>The pure stock alpha of 5.40% is present alongside a dramatic difference in withincountry beta of –1.01.</p>
+<ul>
+<li><p>By implication, the stock alpha obtains as a consequence of within-country portfolios exhibiting material differences in risk, with modest differences in returns.</p></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="idiosyncratic-risk">
+<h2>5. Idiosyncratic Risk<a class="headerlink" href="#idiosyncratic-risk" title="Permalink to this headline">¶</a></h2>
+<p>Definition of Idiosyncratic Risk:</p>
+<ol class="simple">
+<li><p>Te industry contribution could be measured with either the idiosyncratic risk of aggregated industry portfolios</p>
+<ul class="simple">
+<li><p>Measures the risk of the industry</p></li>
+</ul>
+</li>
+<li><p>Or the average firm-level idiosyncratic risk within the industry. (CHOSEN APPROACH)</p>
+<ul class="simple">
+<li><p>Measures how risky the stocks within the industry are</p></li>
+</ul>
+</li>
+</ol>
+<ul class="simple">
+<li><p>We found that the idiosyncratic risk effect is almost entirely a micro phenomenon:</p>
+<ul>
+<li><p>96% comes from a pure stock effect in the CRSP industry sample, and 86% comes from a pure stock effect in the BMI country sample.</p></li>
+</ul>
+</li>
+<li><p>Idiosyncratic risk is similar to valuation ratios in the sense that the intuition behind it does not necessarily hold in the aggregate. What matters more is whether a stock is risky relative to another stock in its category rather than the category average.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="conclusion-samuelsons-dictum-and-the-implications-for-managed-volatility-strategies">
+<h2>6. Conclusion: Samuelson’s Dictum and the Implications for Managed-Volatility Strategies<a class="headerlink" href="#conclusion-samuelsons-dictum-and-the-implications-for-managed-volatility-strategies" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>The micro component arises from the selection of lower-risk stocks, holding country and industry risk constant.</p></li>
+<li><p>The macro component arises from the selection of lower-risk industries and countries, holding stocklevel risk constant.</p></li>
+<li><p>Market inefficiency arises from some combination of less than fully rational demand and the limits to arbitrage</p></li>
+<li><p>Micro efficiency holds only up to the limits of arbitrage.</p></li>
+<li><p>Macro inefficiency is more present for countries than for industries, perhaps because arbitrage is more limited across countries than across industries.</p></li>
+<li><p>Absence of material risk reduction from the macro selection of industries and countries</p>
+<ol class="simple">
+<li><p>Compared with predicting the relative risk of individual stocks, pure country or industry risk prediction is hard</p></li>
+<li><p>To the extent that this anomaly arises because of investor demand for high-risk aggregations of stocks, this demand is in large part backward looking.</p></li>
+</ol>
+</li>
+<li><p>In practice, the incremental value of industry and country selection, even when holding stocklevel risk constant, suggests:</p>
+<ul class="simple">
+<li><p>Use of a risk model in beta estimation that includes fixed country and industry effects is &gt; to simple stock-level sorts on beta or volatility</p>
+<ul>
+<li><p>Especially true in global portfolios because:</p>
+<ol class="simple">
+<li><p>Incremental value of estimating country-level risk is significant</p></li>
+<li><p>Because country and industry exposures have generated incremental alpha, a global mandate with somewhat relaxed country and industry constraints would have delivered higher risk-adjusted returns.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="paper-review-4.html" title="previous page">Paper Review 4: Size Matters, if You Control Your Junk</a>
+    <a class='right-next' id="next-link" href="project1.html" title="next page">Project 1: Momentum Strategies</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1437 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 4: &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-533/project4.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-533/project4.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Project 4:" />
+<meta property="og:description" content="Project 4:  # !pip install autotime # !pip install nb-black # !pip install cvxpy  %load_ext autotime %load_ext nb_black  # General import os import time import " />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-533/project4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#deterministic-model">
+   1) Deterministic Model
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="project-4">
+<h1>Project 4:<a class="headerlink" href="#project-4" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install autotime</span>
+<span class="c1"># !pip install nb-black</span>
+<span class="c1"># !pip install cvxpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+
+<span class="c1"># General</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">itertools</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Ignore warnings LOL</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n\n# General\nimport os\nimport time\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nimport pandas as pd\nimport itertools\nfrom datetime import datetime\n\n# Ignore warnings LOL\nimport warnings\n\nwarnings.simplefilter(\"ignore\")";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n\n# General\nimport os\nimport time\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nimport pandas as pd\nimport itertools\nfrom datetime import datetime\n\n# Ignore warnings LOL\nimport warnings\n\nwarnings.simplefilter(\"ignore\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;./data/project 4 dataset/prediction/&quot;</span><span class="p">))[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]):</span>
+
+    <span class="c1"># Initial capacity</span>
+    <span class="n">init_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/project 4 dataset/init_data.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="c1"># Train data</span>
+    <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./data/project 4 dataset/prediction/</span><span class="si">{</span><span class="n">folder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;csv&quot;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span>
+                <span class="n">train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span>
+                            <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+                        <span class="k">if</span> <span class="s2">&quot;/&quot;</span> <span class="ow">in</span> <span class="n">date</span>
+                        <span class="k">else</span> <span class="n">date</span>
+                        <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">index</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">train</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">pdb</span>
+
+                <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+    <span class="c1"># Test data</span>
+    <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;./data/project 4 dataset/eval&quot;</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">&quot;csv&quot;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+                    <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span>
+                    <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                    <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                    <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;InvVen_actual&quot;</span><span class="p">],</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span>
+                <span class="n">test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">datetime</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span>
+                            <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">),</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+                        <span class="k">if</span> <span class="s2">&quot;/&quot;</span> <span class="ow">in</span> <span class="n">date</span>
+                        <span class="k">else</span> <span class="n">date</span>
+                        <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">test</span><span class="o">.</span><span class="n">index</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">data</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)],</span>
+                        <span class="n">test</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                            <span class="n">data</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span>
+                        <span class="p">],</span>
+                    <span class="p">],</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="kn">import</span> <span class="nn">pdb</span>
+
+                <span class="n">pdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+
+    <span class="c1"># Number of days</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">7</span>
+
+    <span class="c1"># Penalization term for Number of ventilators to be transported / shared</span>
+    <span class="n">λ</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+    <span class="c1"># θj = the maximum fraction of ajj used for Uji , that is Uji = θjajj</span>
+    <span class="n">θ</span> <span class="o">=</span> <span class="mf">0.2</span>
+
+    <span class="c1"># ρj = the maximum fraction of ajj used for Gj , that is Gj = ρjajj</span>
+    <span class="n">ρ</span> <span class="o">=</span> <span class="mf">0.6</span>
+
+    <span class="c1"># Number of ventilator locations</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="n">init_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Adjacency Matrix with 1 if neighbours, 0 if not</span>
+    <span class="c1"># Rows i ∈ Sj (includes SNS), Columns j ∈ S+ (includes SNS)</span>
+    <span class="k">if</span> <span class="n">A</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">)))</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span><span class="p">])</span>
+                        <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">indices</span><span class="p">))</span>
+                    <span class="p">],</span>
+                    <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">indices</span> <span class="ow">in</span> <span class="n">init_data</span><span class="p">[</span><span class="s2">&quot;nb_idx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">alltrue</span><span class="p">(</span><span class="n">A</span> <span class="o">==</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="s2">&quot;Adjacency matrix must be symmetric.&quot;</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">51</span><span class="p">,</span> <span class="mi">1</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">52</span><span class="p">))),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">init_data</span><span class="p">[</span><span class="s2">&quot;Available capacity&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">())</span>
+
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">52</span><span class="p">,</span> <span class="mi">52</span><span class="p">))</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">J</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">52</span><span class="p">))</span>
+
+    <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">51</span><span class="p">)))</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">idx</span><span class="p">])</span>
+                    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">indices</span><span class="p">))</span>
+                <span class="p">],</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">indices</span> <span class="ow">in</span> <span class="n">init_data</span><span class="p">[</span><span class="s2">&quot;nb_idx&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+    <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">alltrue</span><span class="p">(</span><span class="n">K</span> <span class="o">==</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span><span class="p">),</span> <span class="s2">&quot;Adjacency matrix must be symmetric.&quot;</span>
+
+    <span class="c1"># Demand</span>
+    <span class="k">def</span> <span class="nf">demand</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;InvVen_mean&quot;</span><span class="p">):</span>
+        <span class="n">d_jt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">init_data</span><span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">state</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">state</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">date</span><span class="p">][</span><span class="n">col</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+                    <span class="k">else</span> <span class="mi">0</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">date</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;Georgia&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span>
+            <span class="p">],</span>
+            <span class="n">keys</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Georgia&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">d_jt</span> <span class="o">=</span> <span class="n">d_jt</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">init_data</span><span class="p">[</span><span class="s2">&quot;State&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">d_jt</span>
+
+    <span class="n">D</span> <span class="o">=</span> <span class="n">demand</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s2">&quot;InvVen_mean&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+
+    <span class="c1"># xij = the number of ventilators shipped</span>
+    <span class="c1"># from location i ∈ S+ to location j ∈ S+</span>
+    <span class="c1"># at time 0. The flow matrix is X, with</span>
+    <span class="c1"># xij as the element at (i,j).</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Number of ventilators shipped&quot;</span><span class="p">,</span> <span class="n">nonneg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># sjj = the total number of ventilators that</span>
+    <span class="c1"># are available in j ∈ S+ after initial</span>
+    <span class="c1"># allocation, and belongs to j.</span>
+    <span class="c1"># sij = the total number of ventilators that</span>
+    <span class="c1"># are available in j ∈ S+ after initial</span>
+    <span class="c1"># allocation, and belongs to i ∈ Sj.</span>
+    <span class="n">S</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Total number of available ventilators&quot;</span><span class="p">,</span> <span class="n">nonneg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># ∆jt = unmet demand for ventilators at</span>
+    <span class="c1"># location j ∈ S on day t ∈ T . The matrix</span>
+    <span class="c1"># representation is ∆.</span>
+    <span class="n">Δ</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Unmet Demand&quot;</span><span class="p">,</span> <span class="n">nonneg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Solve optimization</span>
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Δ</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">λ</span> <span class="o">*</span> <span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,)),</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">S</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])))</span>
+        <span class="p">),</span>  <span class="c1"># (1a)</span>
+        <span class="n">constraints</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="o">-</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">X</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="o">+</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># (1b)</span>
+            <span class="n">S</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span>  <span class="c1"># (1c)</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">J</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">S</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="o">==</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">J</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">A</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+            <span class="o">+</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">J</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">X</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span>  <span class="c1"># (1d)</span>
+            <span class="n">Δ</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="o">*</span><span class="p">[</span>
+                <span class="n">Δ</span><span class="p">[:,</span> <span class="n">t</span><span class="p">]</span>
+                <span class="o">&gt;=</span> <span class="n">D</span><span class="p">[:,</span> <span class="n">t</span><span class="p">]</span>
+                <span class="o">-</span> <span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+                <span class="o">-</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">K</span><span class="p">,</span> <span class="n">cp</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">J</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">S</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span>
+                <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+            <span class="p">],</span>  <span class="c1"># (1e)</span>
+            <span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">S</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">ρ</span> <span class="o">*</span> <span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">),</span>  <span class="c1"># (1f)</span>
+            <span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">52</span><span class="p">)],</span>  <span class="c1"># (1g)</span>
+            <span class="o">*</span><span class="p">[</span><span class="n">X</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">θ</span> <span class="o">*</span> <span class="n">cp</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">52</span><span class="p">)],</span>  <span class="c1"># (1g)</span>
+        <span class="p">],</span>
+    <span class="p">)</span>
+    <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Δ</span><span class="o">.</span><span class="n">value</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">T</span><span class="p">))</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">value</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>optimal_inaccurate
+0.0
+&gt; <span class=" -Color -Color-Green">&lt;ipython-input-5-e1d7fe4918bb&gt;</span>(32)<span class=" -Color -Color-Cyan">&lt;module&gt;</span><span class=" -Color -Color-Blue">()</span>
+<span class=" -Color -Color-Green">     30 </span><span class=" -Color -Color-Red">    # Test data</span>
+<span class=" -Color -Color-Green">     31 </span><span class=" -Color -Color-Red">    </span>root<span class=" -Color -Color-Blue">,</span> dirs<span class=" -Color -Color-Blue">,</span> files <span class=" -Color -Color-Blue">=</span> next<span class=" -Color -Color-Blue">(</span>os<span class=" -Color -Color-Blue">.</span>walk<span class=" -Color -Color-Blue">(&quot;./data/project 4 dataset/eval&quot;))</span>
+<span class=" -Color -Color-Green">---&gt; 32 </span><span class=" -Color -Color-Red">    </span><span class=" -Color -Color-Green">for</span> file <span class=" -Color -Color-Green">in</span> files<span class=" -Color -Color-Blue">:</span>
+<span class=" -Color -Color-Green">     33 </span><span class=" -Color -Color-Red">        </span><span class=" -Color -Color-Green">if</span> <span class=" -Color -Color-Blue">&quot;csv&quot;</span> <span class=" -Color -Color-Green">in</span> file<span class=" -Color -Color-Blue">:</span>
+<span class=" -Color -Color-Green">     34 </span><span class=" -Color -Color-Red">            </span><span class=" -Color -Color-Green">try</span><span class=" -Color -Color-Blue">:</span>
+
+ipdb&gt; D.shape
+(51, 7)
+ipdb&gt; quit
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">BdbQuit</span><span class="g g-Whitespace">                                   </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">e1d7fe4918bb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="c1"># Test data</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;./data/project 4 dataset/eval&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">32</span>     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="k">if</span> <span class="s2">&quot;csv&quot;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="k">try</span><span class="p">:</span>
+
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">e1d7fe4918bb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="c1"># Test data</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span>     <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;./data/project 4 dataset/eval&quot;</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">32</span>     <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">33</span>         <span class="k">if</span> <span class="s2">&quot;csv&quot;</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span>             <span class="k">try</span><span class="p">:</span>
+
+<span class="nn">/opt/anaconda3/envs/ml/lib/python3.8/bdb.py</span> in <span class="ni">trace_dispatch</span><span class="nt">(self, frame, event, arg)</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span>             <span class="k">return</span> <span class="c1"># None</span>
+<span class="g g-Whitespace">     </span><span class="mi">87</span>         <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;line&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">88</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_line</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>         <span class="k">if</span> <span class="n">event</span> <span class="o">==</span> <span class="s1">&#39;call&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span>             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">dispatch_call</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">arg</span><span class="p">)</span>
+
+<span class="nn">/opt/anaconda3/envs/ml/lib/python3.8/bdb.py</span> in <span class="ni">dispatch_line</span><span class="nt">(self, frame)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stop_here</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">break_here</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>             <span class="bp">self</span><span class="o">.</span><span class="n">user_line</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">quitting</span><span class="p">:</span> <span class="k">raise</span> <span class="n">BdbQuit</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">trace_dispatch</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span> 
+
+<span class="ne">BdbQuit</span>: 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 35min 47s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "A = None\n\nfor folder in sorted(list(os.walk(\"./data/project 4 dataset/prediction/\"))[0][1]):\n\n    # Initial capacity\n    init_data = pd.read_csv(\"./data/project 4 dataset/init_data.csv\", index_col=[0])\n\n    # Train data\n    root, dirs, files = next(os.walk(f\"./data/project 4 dataset/prediction/{folder}\"))\n    data = {}\n    for file in files:\n        if \"csv\" in file:\n            try:\n                train = pd.read_csv(os.path.join(root, file), index_col=[0]).iloc[:7]\n                train = train.reindex(\n                    [\n                        datetime.strftime(\n                            datetime.strptime(date, \"%Y/%m/%d\"), \"%Y-%m-%d\"\n                        )\n                        if \"/\" in date\n                        else date\n                        for date in train.index\n                    ]\n                )\n                data[os.path.basename(file).replace(\".csv\", \"\")] = train\n            except:\n                import pdb\n\n                pdb.set_trace()\n    # Test data\n    root, dirs, files = next(os.walk(\"./data/project 4 dataset/eval\"))\n    for file in files:\n        if \"csv\" in file:\n            try:\n                test = pd.read_csv(\n                    os.path.join(root, file),\n                    header=None,\n                    index_col=[0],\n                    names=[\"InvVen_actual\"],\n                ).iloc[:7]\n                test = test.reindex(\n                    [\n                        datetime.strftime(\n                            datetime.strptime(date, \"%Y/%m/%d\"), \"%Y-%m-%d\"\n                        )\n                        if \"/\" in date\n                        else date\n                        for date in test.index\n                    ]\n                )\n                data[os.path.basename(file).replace(\".csv\", \"\")] = pd.concat(\n                    [\n                        data[os.path.basename(file).replace(\".csv\", \"\")],\n                        test.loc[\n                            data[os.path.basename(file).replace(\".csv\", \"\")].index\n                        ],\n                    ],\n                    axis=1,\n                )\n            except:\n                import pdb\n\n                pdb.set_trace()\n\n    # Number of days\n    T = 7\n\n    # Penalization term for Number of ventilators to be transported / shared\n    \u03bb = 0.5\n\n    # \u03b8j = the maximum fraction of ajj used for Uji , that is Uji = \u03b8jajj\n    \u03b8 = 0.2\n\n    # \u03c1j = the maximum fraction of ajj used for Gj , that is Gj = \u03c1jajj\n    \u03c1 = 0.6\n\n    # Number of ventilator locations\n    N = init_data.shape[0]\n\n    # Adjacency Matrix with 1 if neighbours, 0 if not\n    # Rows i \u2208 Sj (includes SNS), Columns j \u2208 S+ (includes SNS)\n    if A is None:\n        A = np.array(\n            [\n                np.sum(\n                    [\n                        np.array(list(range(51))) == np.array([idx])\n                        for idx in eval(str(indices))\n                    ],\n                    axis=0,\n                )\n                for _, indices in init_data[\"nb_idx\"].iloc[:-1].iteritems()\n            ]\n        )\n        assert np.alltrue(A == A.T), \"Adjacency matrix must be symmetric.\"\n        A = np.concatenate((A, np.zeros((51, 1))), axis=1)\n        A = np.concatenate((A, np.zeros((1, 52))), axis=0)\n        np.fill_diagonal(A, init_data[\"Available capacity\"].to_numpy())\n\n    J = np.ones((52, 52))\n    np.fill_diagonal(J, np.zeros(52))\n\n    K = np.array(\n        [\n            np.sum(\n                [\n                    np.array(list(range(51))) == np.array([idx])\n                    for idx in eval(str(indices))\n                ],\n                axis=0,\n            )\n            for _, indices in init_data[\"nb_idx\"].iloc[:-1].iteritems()\n        ]\n    )\n    assert np.alltrue(K == K.T), \"Adjacency matrix must be symmetric.\"\n\n    # Demand\n    def demand(col=\"InvVen_mean\"):\n        d_jt = pd.concat(\n            [\n                init_data[\"State\"]\n                .iloc[:-1]\n                .apply(\n                    lambda state: data[state].loc[date][col]\n                    if state in data.keys()\n                    else 0\n                )\n                for date in data[\"Georgia\"].index\n            ],\n            keys=data[\"Georgia\"].index,\n            axis=1,\n        )\n        d_jt = d_jt.reindex(init_data[\"State\"].iloc[:-1])\n        return d_jt\n\n    D = demand(col=\"InvVen_mean\").to_numpy()\n\n    # xij = the number of ventilators shipped\n    # from location i \u2208 S+ to location j \u2208 S+\n    # at time 0. The flow matrix is X, with\n    # xij as the element at (i,j).\n    X = cp.Variable((N, N), name=\"Number of ventilators shipped\", nonneg=True)\n\n    # sjj = the total number of ventilators that\n    # are available in j \u2208 S+ after initial\n    # allocation, and belongs to j.\n    # sij = the total number of ventilators that\n    # are available in j \u2208 S+ after initial\n    # allocation, and belongs to i \u2208 Sj.\n    S = cp.Variable((N, N), name=\"Total number of available ventilators\", nonneg=True)\n\n    # \u2206jt = unmet demand for ventilators at\n    # location j \u2208 S on day t \u2208 T . The matrix\n    # representation is \u2206.\n    \u0394 = cp.Variable((N - 1, T), name=\"Unmet Demand\", nonneg=True)\n\n    # Solve optimization\n    prob = cp.Problem(\n        cp.Minimize(\n            np.ones(N - 1).T @ \u0394 @ np.ones(T)\n            + \u03bb * (cp.quad_form(np.ones((N - 1,)), cp.multiply(K, S[:-1, :-1])))\n        ),  # (1a)\n        constraints=[\n            cp.diag(S[:-1, :-1])\n            == cp.diag(A[:-1, :-1])\n            - cp.multiply(K, X[:-1, :-1]).T @ np.ones(N - 1)\n            + X[-1, :-1],  # (1b)\n            S[-1, -1] == A[-1, -1] - X[-1, :-1] @ np.ones(N - 1),  # (1c)\n            cp.multiply(K, cp.multiply(J[:-1, :-1], S[:-1, :-1]))\n            == cp.multiply(K, cp.multiply(J[:-1, :-1], A[:-1, :-1]))\n            + cp.multiply(K, cp.multiply(J[:-1, :-1], X[:-1, :-1])),  # (1d)\n            \u0394 >= 0,\n            *[\n                \u0394[:, t]\n                >= D[:, t]\n                - cp.diag(S[:-1, :-1])\n                - cp.multiply(K, cp.multiply(J[:-1, :-1], S[:-1, :-1])).T\n                @ np.ones(N - 1)\n                for t in range(T)\n            ],  # (1e)\n            cp.diag(S) >= \u03c1 * cp.diag(A),  # (1f)\n            *[-cp.diag(A) <= X[:, i] for i in range(52)],  # (1g)\n            *[X[:, i] <= \u03b8 * cp.diag(A) for i in range(52)],  # (1g)\n        ],\n    )\n    prob.solve()\n\n    print(prob.status)\n    print(np.ones(N - 1).T @ \u0394.value @ np.ones(T))\n\n    A = S.value";
+                var nbb_formatted_code = "A = None\n\nfor folder in sorted(list(os.walk(\"./data/project 4 dataset/prediction/\"))[0][1]):\n\n    # Initial capacity\n    init_data = pd.read_csv(\"./data/project 4 dataset/init_data.csv\", index_col=[0])\n\n    # Train data\n    root, dirs, files = next(os.walk(f\"./data/project 4 dataset/prediction/{folder}\"))\n    data = {}\n    for file in files:\n        if \"csv\" in file:\n            try:\n                train = pd.read_csv(os.path.join(root, file), index_col=[0]).iloc[:7]\n                train = train.reindex(\n                    [\n                        datetime.strftime(\n                            datetime.strptime(date, \"%Y/%m/%d\"), \"%Y-%m-%d\"\n                        )\n                        if \"/\" in date\n                        else date\n                        for date in train.index\n                    ]\n                )\n                data[os.path.basename(file).replace(\".csv\", \"\")] = train\n            except:\n                import pdb\n\n                pdb.set_trace()\n    # Test data\n    root, dirs, files = next(os.walk(\"./data/project 4 dataset/eval\"))\n    for file in files:\n        if \"csv\" in file:\n            try:\n                test = pd.read_csv(\n                    os.path.join(root, file),\n                    header=None,\n                    index_col=[0],\n                    names=[\"InvVen_actual\"],\n                ).iloc[:7]\n                test = test.reindex(\n                    [\n                        datetime.strftime(\n                            datetime.strptime(date, \"%Y/%m/%d\"), \"%Y-%m-%d\"\n                        )\n                        if \"/\" in date\n                        else date\n                        for date in test.index\n                    ]\n                )\n                data[os.path.basename(file).replace(\".csv\", \"\")] = pd.concat(\n                    [\n                        data[os.path.basename(file).replace(\".csv\", \"\")],\n                        test.loc[\n                            data[os.path.basename(file).replace(\".csv\", \"\")].index\n                        ],\n                    ],\n                    axis=1,\n                )\n            except:\n                import pdb\n\n                pdb.set_trace()\n\n    # Number of days\n    T = 7\n\n    # Penalization term for Number of ventilators to be transported / shared\n    \u03bb = 0.5\n\n    # \u03b8j = the maximum fraction of ajj used for Uji , that is Uji = \u03b8jajj\n    \u03b8 = 0.2\n\n    # \u03c1j = the maximum fraction of ajj used for Gj , that is Gj = \u03c1jajj\n    \u03c1 = 0.6\n\n    # Number of ventilator locations\n    N = init_data.shape[0]\n\n    # Adjacency Matrix with 1 if neighbours, 0 if not\n    # Rows i \u2208 Sj (includes SNS), Columns j \u2208 S+ (includes SNS)\n    if A is None:\n        A = np.array(\n            [\n                np.sum(\n                    [\n                        np.array(list(range(51))) == np.array([idx])\n                        for idx in eval(str(indices))\n                    ],\n                    axis=0,\n                )\n                for _, indices in init_data[\"nb_idx\"].iloc[:-1].iteritems()\n            ]\n        )\n        assert np.alltrue(A == A.T), \"Adjacency matrix must be symmetric.\"\n        A = np.concatenate((A, np.zeros((51, 1))), axis=1)\n        A = np.concatenate((A, np.zeros((1, 52))), axis=0)\n        np.fill_diagonal(A, init_data[\"Available capacity\"].to_numpy())\n\n    J = np.ones((52, 52))\n    np.fill_diagonal(J, np.zeros(52))\n\n    K = np.array(\n        [\n            np.sum(\n                [\n                    np.array(list(range(51))) == np.array([idx])\n                    for idx in eval(str(indices))\n                ],\n                axis=0,\n            )\n            for _, indices in init_data[\"nb_idx\"].iloc[:-1].iteritems()\n        ]\n    )\n    assert np.alltrue(K == K.T), \"Adjacency matrix must be symmetric.\"\n\n    # Demand\n    def demand(col=\"InvVen_mean\"):\n        d_jt = pd.concat(\n            [\n                init_data[\"State\"]\n                .iloc[:-1]\n                .apply(\n                    lambda state: data[state].loc[date][col]\n                    if state in data.keys()\n                    else 0\n                )\n                for date in data[\"Georgia\"].index\n            ],\n            keys=data[\"Georgia\"].index,\n            axis=1,\n        )\n        d_jt = d_jt.reindex(init_data[\"State\"].iloc[:-1])\n        return d_jt\n\n    D = demand(col=\"InvVen_mean\").to_numpy()\n\n    # xij = the number of ventilators shipped\n    # from location i \u2208 S+ to location j \u2208 S+\n    # at time 0. The flow matrix is X, with\n    # xij as the element at (i,j).\n    X = cp.Variable((N, N), name=\"Number of ventilators shipped\", nonneg=True)\n\n    # sjj = the total number of ventilators that\n    # are available in j \u2208 S+ after initial\n    # allocation, and belongs to j.\n    # sij = the total number of ventilators that\n    # are available in j \u2208 S+ after initial\n    # allocation, and belongs to i \u2208 Sj.\n    S = cp.Variable((N, N), name=\"Total number of available ventilators\", nonneg=True)\n\n    # \u2206jt = unmet demand for ventilators at\n    # location j \u2208 S on day t \u2208 T . The matrix\n    # representation is \u2206.\n    \u0394 = cp.Variable((N - 1, T), name=\"Unmet Demand\", nonneg=True)\n\n    # Solve optimization\n    prob = cp.Problem(\n        cp.Minimize(\n            np.ones(N - 1).T @ \u0394 @ np.ones(T)\n            + \u03bb * (cp.quad_form(np.ones((N - 1,)), cp.multiply(K, S[:-1, :-1])))\n        ),  # (1a)\n        constraints=[\n            cp.diag(S[:-1, :-1])\n            == cp.diag(A[:-1, :-1])\n            - cp.multiply(K, X[:-1, :-1]).T @ np.ones(N - 1)\n            + X[-1, :-1],  # (1b)\n            S[-1, -1] == A[-1, -1] - X[-1, :-1] @ np.ones(N - 1),  # (1c)\n            cp.multiply(K, cp.multiply(J[:-1, :-1], S[:-1, :-1]))\n            == cp.multiply(K, cp.multiply(J[:-1, :-1], A[:-1, :-1]))\n            + cp.multiply(K, cp.multiply(J[:-1, :-1], X[:-1, :-1])),  # (1d)\n            \u0394 >= 0,\n            *[\n                \u0394[:, t]\n                >= D[:, t]\n                - cp.diag(S[:-1, :-1])\n                - cp.multiply(K, cp.multiply(J[:-1, :-1], S[:-1, :-1])).T\n                @ np.ones(N - 1)\n                for t in range(T)\n            ],  # (1e)\n            cp.diag(S) >= \u03c1 * cp.diag(A),  # (1f)\n            *[-cp.diag(A) <= X[:, i] for i in range(52)],  # (1g)\n            *[X[:, i] <= \u03b8 * cp.diag(A) for i in range(52)],  # (1g)\n        ],\n    )\n    prob.solve()\n\n    print(prob.status)\n    print(np.ones(N - 1).T @ \u0394.value @ np.ones(T))\n\n    A = S.value";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">781</span><span class="p">,</span> <span class="mi">781</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4421</span><span class="p">,</span> <span class="mi">3438</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6427</span><span class="p">,</span> <span class="mi">4078</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5949</span><span class="p">,</span> <span class="mi">4637</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3855</span><span class="p">,</span> <span class="mi">3077</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1706</span><span class="p">,</span> <span class="mi">923</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">,</span> <span class="mi">23139</span><span class="p">,</span> <span class="mi">16934</span><span class="p">],</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Week&quot;</span><span class="p">,</span> <span class="s2">&quot;Point Forecasts&quot;</span><span class="p">,</span> <span class="s2">&quot;Forecast Uncertainty - SR&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Week&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Week</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Point Forecasts</th>
+      <td>781</td>
+      <td>4421</td>
+      <td>6427</td>
+      <td>5949</td>
+      <td>3855</td>
+      <td>1706</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>23139</td>
+    </tr>
+    <tr>
+      <th>Forecast Uncertainty - SR</th>
+      <td>781</td>
+      <td>3438</td>
+      <td>4078</td>
+      <td>4637</td>
+      <td>3077</td>
+      <td>923</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>16934</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 9.47 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "results = pd.DataFrame(\n    [\n        [1, 781, 781],\n        [2, 4421, 3438],\n        [3, 6427, 4078],\n        [4, 5949, 4637],\n        [5, 3855, 3077],\n        [6, 1706, 923],\n        [7, 0, 0],\n        [8, 0, 0],\n        [9, 0, 0],\n        [10, 0, 0],\n        [\"Total\", 23139, 16934],\n    ],\n    columns=[\"Week\", \"Point Forecasts\", \"Forecast Uncertainty - SR\"],\n)\nresults.set_index(\"Week\", inplace=True)\nresults.T";
+                var nbb_formatted_code = "results = pd.DataFrame(\n    [\n        [1, 781, 781],\n        [2, 4421, 3438],\n        [3, 6427, 4078],\n        [4, 5949, 4637],\n        [5, 3855, 3077],\n        [6, 1706, 923],\n        [7, 0, 0],\n        [8, 0, 0],\n        [9, 0, 0],\n        [10, 0, 0],\n        [\"Total\", 23139, 16934],\n    ],\n    columns=[\"Week\", \"Point Forecasts\", \"Forecast Uncertainty - SR\"],\n)\nresults.set_index(\"Week\", inplace=True)\nresults.T";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="deterministic-model">
+<h2>1) Deterministic Model<a class="headerlink" href="#deterministic-model" title="Permalink to this headline">¶</a></h2>
+<p>Master Problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-36524061-295a-4ab3-9980-a676e7220f72">
+<span class="eqno">()<a class="headerlink" href="#equation-36524061-295a-4ab3-9980-a676e7220f72" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \underset{S \geq 0}{\min} \mu &amp; \\
+\end{align}\]</div>
+<p>Sub Problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bd00b999-543a-4669-a020-1b04601a222f">
+<span class="eqno">()<a class="headerlink" href="#equation-bd00b999-543a-4669-a020-1b04601a222f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+  \underset{F}{\min} h(S=S^* = \underset{S \geq 0}{\arg\min}\,\mu, d=\tilde{d}) &amp;= \underset{F}{\min} \sum^N_{i=1} h_i F_{B_i E_i} + \sum^N_{i=1} \sum^N_{j=1} c_{ij} F_{B_i M_j} + \sum^N_i p_i F_{RM_i} \\
+  \text{subject to } &amp;S_i = F_{B_i M_i} + \sum^N_{j =1 \\ i \not= 1} F_{B_i M_j} + F_{B_i E_i}\qquad i = 1, \cdots , N, \\
+  &amp;F_{B_i M_i} + \sum^N_{j = 1 \\ j \not= i} F_{B_j M_i} + F_{RM_i} = {d}_i\qquad i = 1, \cdots , N, \\
+  &amp;\sum^N_{i=1} {d}_i = \sum^N_{i=1} F_{RM_i} + \sum^N_{i = 1} F_{RE_i}, \\
+  &amp;F_{B_i E_i} + F_{RE_i} = S_i\qquad i = 1, \cdots , N, \\
+  &amp;F_{B_i E_i}, F_{B_i M_j}, F_{RM_i}, F_{RE_i} \geq 0\qquad i = 1, \cdots , N, \\
+  &amp;j = 1, \cdots , N.
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Benders</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">first_stage_constraints</span><span class="p">,</span> <span class="n">s_gen</span><span class="p">,</span> <span class="n">ε</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">log</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;The Bender&#39;s method implemented here</span>
+<span class="sd">        is used to optimize the Two-Stage Stochastic Linear Program</span>
+<span class="sd">        with second-stage variables following a discrete distribution</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">c</span> <span class="o">=</span> <span class="n">c</span>  <span class="c1"># First-stage decision coefficient</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">first_stage_constraints</span> <span class="o">=</span> <span class="n">first_stage_constraints</span>  <span class="c1"># Function that gives a list of the constraints for first-stage problem</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">s_gen</span> <span class="o">=</span> <span class="n">s_gen</span>  <span class="c1"># Function to generate scenario specific entities</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ε</span> <span class="o">=</span> <span class="n">ε</span>  <span class="c1"># Tolerance between Upper Bound and Lower Bound</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span> <span class="o">=</span> <span class="n">log</span>  <span class="c1"># Whether or not to log progress</span>
+
+    <span class="k">def</span> <span class="nf">solve</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Solves the Two-stage Stochastic Optimization&quot;&quot;&quot;</span>
+        <span class="c1"># 1. Initialize UB = infinity, LB = -infinity</span>
+        <span class="n">UB</span><span class="p">,</span> <span class="n">LB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">nonneg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># First-stage decision variables</span>
+
+        <span class="c1"># Master Problem</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nonneg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">MP_obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+        <span class="c1"># Bender cuts that we will be adding to the master problem</span>
+        <span class="n">cuts</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">first_stage_constraints</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">first_stage_constraints</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="k">else</span> <span class="p">[]</span>
+        <span class="p">)</span>
+
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="c1"># 2. While UB - LB &gt; ε, we will continue adding cuts</span>
+        <span class="k">while</span> <span class="n">UB</span> <span class="o">-</span> <span class="n">LB</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">ε</span><span class="p">:</span>
+
+            <span class="n">expected_h</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">α</span><span class="p">,</span> <span class="n">β</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>  <span class="c1"># Hyperplane of cut coefficients</span>
+
+            <span class="c1"># Go through all the scenarios possible</span>
+            <span class="k">for</span> <span class="n">p_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">C_s</span><span class="p">,</span> <span class="n">D_s</span><span class="p">,</span> <span class="n">ξ_s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">s_gen</span><span class="p">():</span>
+
+                <span class="c1"># 3. Solve the Dual of the Sub-problem for all combinations of demand \tilde{d}</span>
+                <span class="c1"># [Equivalent to solving primal since LPs have 0 duality gap]</span>
+                <span class="n">π_optimal</span><span class="p">,</span> <span class="n">h_dual_optimal</span><span class="p">,</span> <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">second_stage</span><span class="p">(</span>
+                    <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="o">=</span><span class="n">d_s</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="n">C_s</span><span class="p">,</span> <span class="n">D</span><span class="o">=</span><span class="n">D_s</span><span class="p">,</span> <span class="n">ξ</span><span class="o">=</span><span class="n">ξ_s</span>
+                <span class="p">)</span>
+
+                <span class="c1">#                 # 4a. If dual variables are unbounded, add cut</span>
+                <span class="c1">#                 if status == &quot;infeasible&quot;:</span>
+                <span class="c1">#                     cuts += [(ξ_s - C_s @ x).T @ π_optimal &lt;= 0]</span>
+
+                <span class="c1">#                 # 4b. Else set UB and add cut on first stage primal optimal value</span>
+                <span class="c1">#                 else:</span>
+                <span class="c1">#                     expected_h += p_s * h_dual_optimal</span>
+                <span class="c1">#                     cuts += [z &gt;= (ξ_s - C_s @ x).T @ π_optimal]</span>
+
+                <span class="n">expected_h</span> <span class="o">+=</span> <span class="n">p_s</span> <span class="o">*</span> <span class="n">h_dual_optimal</span>
+                <span class="n">α</span> <span class="o">+=</span> <span class="n">p_s</span> <span class="o">*</span> <span class="n">ξ_s</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">π_optimal</span>
+                <span class="n">β</span> <span class="o">+=</span> <span class="o">-</span><span class="n">p_s</span> <span class="o">*</span> <span class="n">C_s</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">π_optimal</span>
+
+            <span class="n">cuts</span> <span class="o">+=</span> <span class="p">[</span><span class="n">z</span> <span class="o">&gt;=</span> <span class="n">α</span> <span class="o">+</span> <span class="n">β</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">x</span><span class="p">]</span>
+
+            <span class="c1"># Update UB</span>
+            <span class="n">UB</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+                <span class="n">UB</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="n">expected_h</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">expected_h</span><span class="p">,</span>
+            <span class="p">)</span>
+
+            <span class="c1"># 5. Solve Master Problem</span>
+            <span class="n">MP_prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">MP_obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">cuts</span><span class="p">)</span>
+            <span class="n">MP_prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+            <span class="c1"># 6. Update LB</span>
+            <span class="n">LB</span> <span class="o">=</span> <span class="n">MP_prob</span><span class="o">.</span><span class="n">value</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot; Iteration </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Lower Bound:&quot;</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">LB</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+                    <span class="s2">&quot;|&quot;</span><span class="p">,</span>
+                    <span class="sa">f</span><span class="s2">&quot;Upper Bound:&quot;</span><span class="p">,</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">UB</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+                <span class="p">)</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Optimal primal objective of first stage problem: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">LB</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Optimal first-stage decision variables: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">LB</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">second_stage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">D</span><span class="p">,</span> <span class="n">ξ</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Dual Form of Second-stage Optimization&quot;&quot;&quot;</span>
+
+        <span class="n">π</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span>
+            <span class="n">ξ</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">nonneg</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>  <span class="c1"># Second-stage dual variables are Free since they are dual of the equality constraints</span>
+        <span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">D</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">π</span> <span class="o">&lt;=</span> <span class="n">d</span><span class="p">]</span>  <span class="c1"># Second-stage dual constraints</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ξ</span> <span class="o">-</span> <span class="n">C</span> <span class="o">@</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">))</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">π</span>
+        <span class="p">)</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">)</span>
+        <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">π</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">prob</span><span class="o">.</span><span class="n">status</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_transshipment_variables</span><span class="p">():</span>
+
+    <span class="c1"># Number of retailers</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">4</span>
+
+    <span class="c1"># Holding cost Vector</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># Shortage cost Vector</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span>
+
+    <span class="c1"># Cost of transshipment from retailer i to retailer j Matrix</span>
+    <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">),</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># PMF of Retailer Demand distribution</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.020</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">,</span> <span class="mf">0.68</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">,</span> <span class="mf">0.020</span><span class="p">])</span>
+
+    <span class="c1"># Each Retailer&#39;s Demand distribution associated with probabilities above</span>
+    <span class="n">RETAILER_DEMANDS</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">210</span><span class="p">],</span>
+            <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">120</span><span class="p">,</span> <span class="mi">170</span><span class="p">,</span> <span class="mi">220</span><span class="p">,</span> <span class="mi">270</span><span class="p">],</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">N</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">RETAILER_DEMANDS</span>
+
+
+<span class="k">def</span> <span class="nf">get_second_stage_variables</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+
+    <span class="n">N</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">RETAILER_DEMANDS</span> <span class="o">=</span> <span class="n">get_transshipment_variables</span><span class="p">()</span>
+
+    <span class="c1"># Coefficient of Second-stage decision variables</span>
+    <span class="n">d_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">h</span><span class="p">,</span>  <span class="c1"># Coefficient of Amount of inventory that moves from begining to ending (FBE)</span>
+            <span class="n">C</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span>  <span class="c1"># Coefficient of Amount of inventory to ship from current retailer to other retailers (FBM)</span>
+            <span class="n">p</span><span class="p">,</span>  <span class="c1"># Coefficient of Amount to ship from supplier to retailer&#39;s middle inventory (FRM)</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span>
+            <span class="p">),</span>  <span class="c1"># Coefficient of Amount to ship from supplier to retailer&#39;s ending inventory (FRE)</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Second-stage C(s) matrix</span>
+    <span class="n">C_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Second-stage D(s) matrix</span>
+    <span class="n">D_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                        <span class="p">[</span>
+                            <span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))[</span><span class="o">-</span><span class="n">N</span> <span class="o">*</span> <span class="n">idx</span> <span class="p">:]</span>
+                            <span class="o">+</span> <span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)))[:</span> <span class="o">-</span><span class="n">N</span> <span class="o">*</span> <span class="n">idx</span><span class="p">]</span>
+                            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+                        <span class="p">]</span>
+                    <span class="p">),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+                <span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                        <span class="p">[</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                                <span class="p">[</span>
+                                    <span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))[</span><span class="o">-</span><span class="n">idx</span><span class="p">:]</span>
+                                    <span class="o">+</span> <span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))[:</span><span class="o">-</span><span class="n">idx</span><span class="p">]</span>
+                                <span class="p">]</span>
+                                <span class="o">*</span> <span class="n">N</span>
+                            <span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+                            <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+                        <span class="p">]</span>
+                    <span class="p">),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+                <span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span> <span class="o">+</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">*</span> <span class="n">N</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">N</span><span class="p">]),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+                <span class="p">(</span>
+                    <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span> <span class="o">*</span> <span class="n">N</span><span class="p">)),</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">)),</span>
+                    <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+                <span class="p">),</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># ξ(s) vector</span>
+    <span class="n">ξ_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+            <span class="n">s</span><span class="p">,</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s</span><span class="p">)]),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">C_s</span><span class="p">,</span> <span class="n">D_s</span><span class="p">,</span> <span class="n">ξ_s</span>
+
+
+<span class="k">def</span> <span class="nf">s_gen_sgd</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function that generates the scenario dependent</span>
+<span class="sd">    second-stage variables by sampling demand</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">N</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">RETAILER_DEMANDS</span> <span class="o">=</span> <span class="n">get_transshipment_variables</span><span class="p">()</span>
+
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+
+        <span class="c1"># Get Second-stage variables</span>
+        <span class="n">s</span><span class="p">,</span> <span class="n">p_s</span> <span class="o">=</span> <span class="n">random_demand</span><span class="p">(</span><span class="n">P</span><span class="o">=</span><span class="n">P</span><span class="p">,</span> <span class="n">retailer_demands</span><span class="o">=</span><span class="n">RETAILER_DEMANDS</span><span class="p">)</span>
+
+        <span class="c1"># Get scenario-dependent variables</span>
+        <span class="n">d_s</span><span class="p">,</span> <span class="n">C_s</span><span class="p">,</span> <span class="n">D_s</span><span class="p">,</span> <span class="n">ξ_s</span> <span class="o">=</span> <span class="n">get_second_stage_variables</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">p_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">C_s</span><span class="p">,</span> <span class="n">D_s</span><span class="p">,</span> <span class="n">ξ_s</span>
+
+
+<span class="k">def</span> <span class="nf">s_gen_benders</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Function that generates the scenario dependent</span>
+<span class="sd">    second-stage variables by enumerating all combinations of demand</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">N</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">P</span><span class="p">,</span> <span class="n">RETAILER_DEMANDS</span> <span class="o">=</span> <span class="n">get_transshipment_variables</span><span class="p">()</span>
+
+    <span class="c1"># Get Second-stage variables</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">RETAILER_DEMANDS</span><span class="p">):</span>
+
+        <span class="n">p_s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">P</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">retailer_demand</span> <span class="o">==</span> <span class="n">D_i</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]]</span>
+                <span class="k">for</span> <span class="n">retailer_demand</span><span class="p">,</span> <span class="n">D_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">RETAILER_DEMANDS</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Get scenario-dependent variables</span>
+        <span class="n">d_s</span><span class="p">,</span> <span class="n">C_s</span><span class="p">,</span> <span class="n">D_s</span><span class="p">,</span> <span class="n">ξ_s</span> <span class="o">=</span> <span class="n">get_second_stage_variables</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+        <span class="k">yield</span> <span class="n">p_s</span><span class="p">,</span> <span class="n">d_s</span><span class="p">,</span> <span class="n">C_s</span><span class="p">,</span> <span class="n">D_s</span><span class="p">,</span> <span class="n">ξ_s</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benders</span> <span class="o">=</span> <span class="n">Benders</span><span class="p">(</span>
+    <span class="n">c</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+    <span class="n">first_stage_constraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">s_gen</span><span class="o">=</span><span class="n">s_gen_benders</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">benders</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-ml-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-ml-py",
+            path: "./course-work/ise-533"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-ml-py'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

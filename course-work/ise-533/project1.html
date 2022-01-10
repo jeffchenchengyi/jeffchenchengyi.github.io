@@ -1,0 +1,2474 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1: Group Restaurants Choice &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-533/project1.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project 2: Multi-location Transshipment Problem" href="project2.html" />
+    <link rel="prev" title="HW 2" href="hw2.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-533/project1.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Project 1: Group Restaurants Choice" />
+<meta property="og:description" content="Project 1: Group Restaurants Choice  By: Jacob Andreesen, Jeff Chen, Miao Xu, Yiyi Wang  Finding an ideal restaurants for students with a group of friends is al" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-533/project1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-scraping-yelp">
+   Web Scraping Yelp!
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-pre-processing">
+   Data Pre-processing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization">
+   Optimization
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-setup">
+     Problem Setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mixed-integer-program-formulation">
+     Mixed-Integer Program Formulation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="project-1-group-restaurants-choice">
+<h1>Project 1: Group Restaurants Choice<a class="headerlink" href="#project-1-group-restaurants-choice" title="Permalink to this headline">¶</a></h1>
+<p>By: Jacob Andreesen, Jeff Chen, Miao Xu, Yiyi Wang</p>
+<p>Finding an ideal restaurants for students with a group of friends is always a struggle for newcomers, who are looking for places new and excited to go. Inspired by such a challenge, our group aim to build a personalized restaurant recommender system prototype that serve a small group of people to meet their requirements and close to their taste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+
+<span class="c1"># For scraping</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">flatten_dict</span> <span class="kn">import</span> <span class="n">flatten</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">copyheaders</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="c1"># General tools</span>
+<span class="kn">import</span> <span class="nn">regex</span> <span class="k">as</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">geopandas</span>
+<span class="kn">from</span> <span class="nn">geopy</span> <span class="kn">import</span> <span class="n">Nominatim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.46 s (started: 2021-03-09 15:47:27 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n%config InlineBackend.figure_format = 'retina'\n\n# For scraping\nimport time\nimport urllib.request, json\nfrom flatten_dict import flatten\nimport requests\nimport copyheaders\nfrom bs4 import BeautifulSoup\n\n# General tools\nimport regex as re\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom tqdm import tqdm\nimport geopandas\nfrom geopy import Nominatim";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n%config InlineBackend.figure_format = 'retina'\n\n# For scraping\nimport time\nimport urllib.request, json\nfrom flatten_dict import flatten\nimport requests\nimport copyheaders\nfrom bs4 import BeautifulSoup\n\n# General tools\nimport regex as re\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom tqdm import tqdm\nimport geopandas\nfrom geopy import Nominatim";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<p><a id=1></a></p>
+<div class="section" id="web-scraping-yelp">
+<h2>Web Scraping Yelp!<a class="headerlink" href="#web-scraping-yelp" title="Permalink to this headline">¶</a></h2>
+<p>We will be simply grabbing data from <code class="docutils literal notranslate"><span class="pre">https://www.yelp.com/search/snippet</span></code> api endpoint instead of actually web scraping from the Yelp! website. We attempted to scrape it through the website but it was hard to select specific elements that we required and some of them are only revealed through button clicks, meaning we’d have to use a browser automation software like selenium to simulate clicks and grab data from the html afterwards, a little too much unecessary work.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">headers_str</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    cache-control: max-age=0, must-revalidate, no-cache, no-store, private</span>
+<span class="s2">    cache-control: no-transform</span>
+<span class="s2">    cf-cache-status: DYNAMIC</span>
+<span class="s2">    cf-ray: 58b26184fbd76c86-SJC</span>
+<span class="s2">    cf-request-id: 02635b471c00006c86b019b200000001</span>
+<span class="s2">    content-encoding: gzip</span>
+<span class="s2">    content-security-policy: report-uri https://www.yelp.com/csp_block?id=bf59639897830a99&amp;page=enforced_by_default_directives&amp;policy_hash=7b6f2d6630868fdb2698dac44731677c&amp;site=www&amp;timestamp=1588093661; object-src &#39;self&#39;; base-uri &#39;self&#39; https://*.yelpcdn.com https://*.adsrvr.org https://6372968.fls.doubleclick.net; font-src data: &#39;self&#39; https://*.yelp.com https://*.yelpcdn.com https://fonts.gstatic.com https://connect.facebook.net https://cdnjs.cloudflare.com https://apis.google.com https://www.google-analytics.com https://use.typekit.net https://player.ooyala.com https://use.fontawesome.com https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com</span>
+<span class="s2">    content-security-policy-report-only: report-uri https://www.yelp.com/csp_report_only?id=bf59639897830a99&amp;page=csp_report_frame_directives%2Cfull_site_ssl_csp_report_directives&amp;policy_hash=9dd00a1a6fbb402584b7ce0c1fdb4d14&amp;site=www&amp;timestamp=1588093661; frame-ancestors &#39;self&#39; https://*.yelp.com; default-src https:; img-src https: data: https://*.adsrvr.org; script-src https: data: &#39;unsafe-inline&#39; &#39;unsafe-eval&#39; blob:; style-src https: &#39;unsafe-inline&#39; data:; connect-src https:; font-src data: &#39;self&#39; https://*.yelp.com https://*.yelpcdn.com https://fonts.gstatic.com https://connect.facebook.net https://cdnjs.cloudflare.com https://apis.google.com https://www.google-analytics.com https://use.typekit.net https://player.ooyala.com https://use.fontawesome.com https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com; frame-src https: yelp-webview://* yelp://* data:; child-src https: yelp-webview://* yelp://*; media-src https:; object-src &#39;self&#39;; base-uri &#39;self&#39; https://*.yelpcdn.com https://*.adsrvr.org https://6372968.fls.doubleclick.net; form-action https: &#39;self&#39;</span>
+<span class="s2">    content-type: application/json; charset=utf-8</span>
+<span class="s2">    date: Tue, 28 Apr 2020 17:07:42 GMT</span>
+<span class="s2">    expect-ct: max-age=604800, report-uri=&quot;https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct&quot;</span>
+<span class="s2">    expires: Tue, 28 Apr 2020 17:07:41 GMT</span>
+<span class="s2">    pragma: no-cache</span>
+<span class="s2">    referrer-policy: origin-when-cross-origin</span>
+<span class="s2">    server: cloudflare</span>
+<span class="s2">    status: 200</span>
+<span class="s2">    strict-transport-security: max-age=31536000; includeSubDomains; preload</span>
+<span class="s2">    vary: User-Agent</span>
+<span class="s2">    vary: Accept-Encoding</span>
+<span class="s2">    x-b3-sampled: 0</span>
+<span class="s2">    x-content-type-options: nosniff</span>
+<span class="s2">    x-mode: ro</span>
+<span class="s2">    x-node: www_all</span>
+<span class="s2">    x-node: 10-69-179-105-uswest2bprod-9c0a6478-895a-11ea-98c5-b6d34d770</span>
+<span class="s2">    x-proxied: 10-69-159-164-uswest2bprod</span>
+<span class="s2">    x-routing-service: 10-69-187-145-uswest2bprod; site=www</span>
+<span class="s2">    x-xss-protection: 1; report=https://www.yelp.com/xss_protection_report</span>
+<span class="s2">    x-zipkin-id: 9a87fa4730749a04</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="n">copyheaders</span><span class="o">.</span><span class="n">headers_raw_to_dict</span><span class="p">(</span><span class="n">headers_str</span><span class="p">)</span>
+<span class="n">restaurant_list_url</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">index</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;https://www.yelp.com/search/snippet?find_desc=&amp;find_loc=Los%20Angeles%2C%20CA&amp;start=</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="n">total_number_of_restaurants</span> <span class="o">=</span> <span class="mi">240</span>
+<span class="n">yelp_raw_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">((</span><span class="n">total_number_of_restaurants</span> <span class="o">//</span> <span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)):</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="k">if</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">&lt;</span> <span class="n">total_number_of_restaurants</span> <span class="k">else</span> <span class="n">total_number_of_restaurants</span>
+    <span class="p">)</span>
+    <span class="n">retries</span><span class="p">,</span> <span class="n">max_retries</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">5e2</span>
+    <span class="k">while</span> <span class="n">retries</span> <span class="o">&lt;</span> <span class="n">max_retries</span><span class="p">:</span>
+        <span class="n">retries</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">page</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">restaurant_list_url</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+                <span class="n">yelp_raw_data</span> <span class="o">+=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">content</span><span class="p">)[</span><span class="s2">&quot;searchPageProps&quot;</span><span class="p">][</span>
+                    <span class="s2">&quot;mainContentComponentsListProps&quot;</span>
+                <span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">retries</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of attempts to get data for </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">retries</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">retries</span> <span class="o">&gt;</span> <span class="n">max_retries</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">page</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Couldn&#39;t get data for index: </span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|████████  | 20/25 [00:35&lt;00:09,  1.87s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of attempts to get data for 200: 10
+Number of attempts to get data for 200: 20
+Number of attempts to get data for 200: 30
+Number of attempts to get data for 200: 40
+Number of attempts to get data for 200: 50
+Number of attempts to get data for 200: 60
+Number of attempts to get data for 200: 70
+Number of attempts to get data for 200: 80
+Number of attempts to get data for 200: 90
+Number of attempts to get data for 200: 100
+Number of attempts to get data for 200: 110
+Number of attempts to get data for 200: 120
+Number of attempts to get data for 200: 130
+Number of attempts to get data for 200: 140
+Number of attempts to get data for 200: 150
+Number of attempts to get data for 200: 160
+Number of attempts to get data for 200: 170
+Number of attempts to get data for 200: 180
+Number of attempts to get data for 200: 190
+Number of attempts to get data for 200: 200
+Number of attempts to get data for 200: 210
+Number of attempts to get data for 200: 220
+Number of attempts to get data for 200: 230
+Number of attempts to get data for 200: 240
+Number of attempts to get data for 200: 250
+Number of attempts to get data for 200: 260
+Number of attempts to get data for 200: 270
+Number of attempts to get data for 200: 280
+Number of attempts to get data for 200: 290
+Number of attempts to get data for 200: 300
+Number of attempts to get data for 200: 310
+Number of attempts to get data for 200: 320
+Number of attempts to get data for 200: 330
+Number of attempts to get data for 200: 340
+Number of attempts to get data for 200: 350
+Number of attempts to get data for 200: 360
+Number of attempts to get data for 200: 370
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████▌| 24/25 [04:38&lt;00:26, 26.14s/it]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of attempts to get data for 240: 10
+Number of attempts to get data for 240: 20
+Number of attempts to get data for 240: 30
+Number of attempts to get data for 240: 40
+Number of attempts to get data for 240: 50
+Number of attempts to get data for 240: 60
+Number of attempts to get data for 240: 70
+Number of attempts to get data for 240: 80
+Number of attempts to get data for 240: 90
+Number of attempts to get data for 240: 100
+Number of attempts to get data for 240: 110
+Number of attempts to get data for 240: 120
+Number of attempts to get data for 240: 130
+Number of attempts to get data for 240: 140
+Number of attempts to get data for 240: 150
+Number of attempts to get data for 240: 160
+Number of attempts to get data for 240: 170
+Number of attempts to get data for 240: 180
+Number of attempts to get data for 240: 190
+Number of attempts to get data for 240: 200
+Number of attempts to get data for 240: 210
+Number of attempts to get data for 240: 220
+Number of attempts to get data for 240: 230
+Number of attempts to get data for 240: 240
+Number of attempts to get data for 240: 250
+Number of attempts to get data for 240: 260
+Number of attempts to get data for 240: 270
+Number of attempts to get data for 240: 280
+Number of attempts to get data for 240: 290
+Number of attempts to get data for 240: 300
+Number of attempts to get data for 240: 310
+Number of attempts to get data for 240: 320
+Number of attempts to get data for 240: 330
+Number of attempts to get data for 240: 340
+Number of attempts to get data for 240: 350
+Number of attempts to get data for 240: 360
+Number of attempts to get data for 240: 370
+Number of attempts to get data for 240: 380
+Number of attempts to get data for 240: 390
+Number of attempts to get data for 240: 400
+Number of attempts to get data for 240: 410
+Number of attempts to get data for 240: 420
+Number of attempts to get data for 240: 430
+Number of attempts to get data for 240: 440
+Number of attempts to get data for 240: 450
+Number of attempts to get data for 240: 460
+Number of attempts to get data for 240: 470
+Number of attempts to get data for 240: 480
+Number of attempts to get data for 240: 490
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 25/25 [09:52&lt;00:00, 23.68s/it] 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of attempts to get data for 240: 500
+time: 9min 51s (started: 2021-03-09 15:47:29 +08:00)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "headers_str = b\"\"\"\n    cache-control: max-age=0, must-revalidate, no-cache, no-store, private\n    cache-control: no-transform\n    cf-cache-status: DYNAMIC\n    cf-ray: 58b26184fbd76c86-SJC\n    cf-request-id: 02635b471c00006c86b019b200000001\n    content-encoding: gzip\n    content-security-policy: report-uri https://www.yelp.com/csp_block?id=bf59639897830a99&page=enforced_by_default_directives&policy_hash=7b6f2d6630868fdb2698dac44731677c&site=www&timestamp=1588093661; object-src 'self'; base-uri 'self' https://*.yelpcdn.com https://*.adsrvr.org https://6372968.fls.doubleclick.net; font-src data: 'self' https://*.yelp.com https://*.yelpcdn.com https://fonts.gstatic.com https://connect.facebook.net https://cdnjs.cloudflare.com https://apis.google.com https://www.google-analytics.com https://use.typekit.net https://player.ooyala.com https://use.fontawesome.com https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com\n    content-security-policy-report-only: report-uri https://www.yelp.com/csp_report_only?id=bf59639897830a99&page=csp_report_frame_directives%2Cfull_site_ssl_csp_report_directives&policy_hash=9dd00a1a6fbb402584b7ce0c1fdb4d14&site=www&timestamp=1588093661; frame-ancestors 'self' https://*.yelp.com; default-src https:; img-src https: data: https://*.adsrvr.org; script-src https: data: 'unsafe-inline' 'unsafe-eval' blob:; style-src https: 'unsafe-inline' data:; connect-src https:; font-src data: 'self' https://*.yelp.com https://*.yelpcdn.com https://fonts.gstatic.com https://connect.facebook.net https://cdnjs.cloudflare.com https://apis.google.com https://www.google-analytics.com https://use.typekit.net https://player.ooyala.com https://use.fontawesome.com https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com; frame-src https: yelp-webview://* yelp://* data:; child-src https: yelp-webview://* yelp://*; media-src https:; object-src 'self'; base-uri 'self' https://*.yelpcdn.com https://*.adsrvr.org https://6372968.fls.doubleclick.net; form-action https: 'self'\n    content-type: application/json; charset=utf-8\n    date: Tue, 28 Apr 2020 17:07:42 GMT\n    expect-ct: max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"\n    expires: Tue, 28 Apr 2020 17:07:41 GMT\n    pragma: no-cache\n    referrer-policy: origin-when-cross-origin\n    server: cloudflare\n    status: 200\n    strict-transport-security: max-age=31536000; includeSubDomains; preload\n    vary: User-Agent\n    vary: Accept-Encoding\n    x-b3-sampled: 0\n    x-content-type-options: nosniff\n    x-mode: ro\n    x-node: www_all\n    x-node: 10-69-179-105-uswest2bprod-9c0a6478-895a-11ea-98c5-b6d34d770\n    x-proxied: 10-69-159-164-uswest2bprod\n    x-routing-service: 10-69-187-145-uswest2bprod; site=www\n    x-xss-protection: 1; report=https://www.yelp.com/xss_protection_report\n    x-zipkin-id: 9a87fa4730749a04\n\"\"\"\nheaders = copyheaders.headers_raw_to_dict(headers_str)\nrestaurant_list_url = (\n    lambda index: f\"https://www.yelp.com/search/snippet?find_desc=&find_loc=Los%20Angeles%2C%20CA&start={index}\"\n)\ntotal_number_of_restaurants = 240\nyelp_raw_data = []\nfor i in tqdm(range((total_number_of_restaurants // 10) + 1)):\n    index = (\n        i * 10 if i * 10 < total_number_of_restaurants else total_number_of_restaurants\n    )\n    retries, max_retries = 0, 5e2\n    while retries < max_retries:\n        retries += 1\n        page = requests.get(restaurant_list_url(index), headers=headers)\n        try:\n            if page.ok:\n                yelp_raw_data += json.loads(page.content)[\"searchPageProps\"][\n                    \"mainContentComponentsListProps\"\n                ]\n        except:\n            if retries % 10 == 0:\n                print(f\"Number of attempts to get data for {index}: {retries}\")\n            continue\n        if retries > max_retries and not page.ok:\n            print(f\"Couldn't get data for index: {index}\")\n        break";
+                var nbb_formatted_code = "headers_str = b\"\"\"\n    cache-control: max-age=0, must-revalidate, no-cache, no-store, private\n    cache-control: no-transform\n    cf-cache-status: DYNAMIC\n    cf-ray: 58b26184fbd76c86-SJC\n    cf-request-id: 02635b471c00006c86b019b200000001\n    content-encoding: gzip\n    content-security-policy: report-uri https://www.yelp.com/csp_block?id=bf59639897830a99&page=enforced_by_default_directives&policy_hash=7b6f2d6630868fdb2698dac44731677c&site=www&timestamp=1588093661; object-src 'self'; base-uri 'self' https://*.yelpcdn.com https://*.adsrvr.org https://6372968.fls.doubleclick.net; font-src data: 'self' https://*.yelp.com https://*.yelpcdn.com https://fonts.gstatic.com https://connect.facebook.net https://cdnjs.cloudflare.com https://apis.google.com https://www.google-analytics.com https://use.typekit.net https://player.ooyala.com https://use.fontawesome.com https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com\n    content-security-policy-report-only: report-uri https://www.yelp.com/csp_report_only?id=bf59639897830a99&page=csp_report_frame_directives%2Cfull_site_ssl_csp_report_directives&policy_hash=9dd00a1a6fbb402584b7ce0c1fdb4d14&site=www&timestamp=1588093661; frame-ancestors 'self' https://*.yelp.com; default-src https:; img-src https: data: https://*.adsrvr.org; script-src https: data: 'unsafe-inline' 'unsafe-eval' blob:; style-src https: 'unsafe-inline' data:; connect-src https:; font-src data: 'self' https://*.yelp.com https://*.yelpcdn.com https://fonts.gstatic.com https://connect.facebook.net https://cdnjs.cloudflare.com https://apis.google.com https://www.google-analytics.com https://use.typekit.net https://player.ooyala.com https://use.fontawesome.com https://maxcdn.bootstrapcdn.com https://fonts.googleapis.com; frame-src https: yelp-webview://* yelp://* data:; child-src https: yelp-webview://* yelp://*; media-src https:; object-src 'self'; base-uri 'self' https://*.yelpcdn.com https://*.adsrvr.org https://6372968.fls.doubleclick.net; form-action https: 'self'\n    content-type: application/json; charset=utf-8\n    date: Tue, 28 Apr 2020 17:07:42 GMT\n    expect-ct: max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"\n    expires: Tue, 28 Apr 2020 17:07:41 GMT\n    pragma: no-cache\n    referrer-policy: origin-when-cross-origin\n    server: cloudflare\n    status: 200\n    strict-transport-security: max-age=31536000; includeSubDomains; preload\n    vary: User-Agent\n    vary: Accept-Encoding\n    x-b3-sampled: 0\n    x-content-type-options: nosniff\n    x-mode: ro\n    x-node: www_all\n    x-node: 10-69-179-105-uswest2bprod-9c0a6478-895a-11ea-98c5-b6d34d770\n    x-proxied: 10-69-159-164-uswest2bprod\n    x-routing-service: 10-69-187-145-uswest2bprod; site=www\n    x-xss-protection: 1; report=https://www.yelp.com/xss_protection_report\n    x-zipkin-id: 9a87fa4730749a04\n\"\"\"\nheaders = copyheaders.headers_raw_to_dict(headers_str)\nrestaurant_list_url = (\n    lambda index: f\"https://www.yelp.com/search/snippet?find_desc=&find_loc=Los%20Angeles%2C%20CA&start={index}\"\n)\ntotal_number_of_restaurants = 240\nyelp_raw_data = []\nfor i in tqdm(range((total_number_of_restaurants // 10) + 1)):\n    index = (\n        i * 10 if i * 10 < total_number_of_restaurants else total_number_of_restaurants\n    )\n    retries, max_retries = 0, 5e2\n    while retries < max_retries:\n        retries += 1\n        page = requests.get(restaurant_list_url(index), headers=headers)\n        try:\n            if page.ok:\n                yelp_raw_data += json.loads(page.content)[\"searchPageProps\"][\n                    \"mainContentComponentsListProps\"\n                ]\n        except:\n            if retries % 10 == 0:\n                print(f\"Number of attempts to get data for {index}: {retries}\")\n            continue\n        if retries > max_retries and not page.ok:\n            print(f\"Couldn't get data for index: {index}\")\n        break";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">flatten</span><span class="p">(</span><span class="n">content</span><span class="p">)</span> <span class="k">for</span> <span class="n">content</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">yelp_raw_data</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;bizId&quot;</span> <span class="ow">in</span> <span class="n">content</span><span class="o">.</span><span class="n">keys</span><span class="p">()]</span>
+<span class="p">)</span>
+<span class="n">yelp_raw</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;./data/yelp_raw.csv&quot;</span><span class="p">)</span>
+<span class="n">yelp_raw</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 480/480 [00:00&lt;00:00, 33043.36it/s]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>(searchActions,)</th>
+      <th>(isYelpGuaranteed,)</th>
+      <th>(bizId,)</th>
+      <th>(tags,)</th>
+      <th>(scrollablePhotos, allPhotosHref)</th>
+      <th>(scrollablePhotos, photoHref)</th>
+      <th>(scrollablePhotos, photoList)</th>
+      <th>(scrollablePhotos, isResponsive)</th>
+      <th>(scrollablePhotos, isScrollable)</th>
+      <th>(searchResultLayoutType,)</th>
+      <th>...</th>
+      <th>(snippet, thumbnail, src)</th>
+      <th>(snippet, thumbnail, srcset)</th>
+      <th>(snippet, readMoreText)</th>
+      <th>(snippet, text)</th>
+      <th>(searchResultBusiness, parentBusiness, businessUrl)</th>
+      <th>(searchResultBusiness, parentBusiness, name)</th>
+      <th>(searchResultBusinessHighlights, bizSiteUrl)</th>
+      <th>(searchResultBusinessHighlights, businessHighlights)</th>
+      <th>(childrenBusinessInfo, businessUrls)</th>
+      <th>(childrenBusinessInfo, businessNames)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>[]</td>
+      <td>False</td>
+      <td>rF7KNmSv5sYbwd3D5sA_vw</td>
+      <td>[{'label': {'color': 'normal', 'text': 'New on...</td>
+      <td>/biz_photos/rF7KNmSv5sYbwd3D5sA_vw</td>
+      <td>/adredir?ad_business_id=rF7KNmSv5sYbwd3D5sA_vw...</td>
+      <td>[{'src': 'https://s3-media0.fl.yelpcdn.com/bph...</td>
+      <td>True</td>
+      <td>True</td>
+      <td>scrollablePhotos</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>[]</td>
+      <td>False</td>
+      <td>7O1ORGY36A-2aIENyaJWPg</td>
+      <td>[]</td>
+      <td>/biz_photos/7O1ORGY36A-2aIENyaJWPg</td>
+      <td>/biz/howlin-rays-los-angeles-3</td>
+      <td>[{'src': 'https://s3-media0.fl.yelpcdn.com/bph...</td>
+      <td>True</td>
+      <td>True</td>
+      <td>scrollablePhotos</td>
+      <td>...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/22VFkvu...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/22VFkvu...</td>
+      <td>more</td>
+      <td>I FINALLY got to try this place... but sadly b...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>[]</td>
+      <td>False</td>
+      <td>KQBGm5G8IDkE8LeNY45mbA</td>
+      <td>[]</td>
+      <td>/biz_photos/KQBGm5G8IDkE8LeNY45mbA</td>
+      <td>/biz/wurstk%C3%BCche-los-angeles-2</td>
+      <td>[{'src': 'https://s3-media0.fl.yelpcdn.com/bph...</td>
+      <td>True</td>
+      <td>True</td>
+      <td>scrollablePhotos</td>
+      <td>...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/mUmrPnL...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/mUmrPnL...</td>
+      <td>more</td>
+      <td>A group of us stopped by for dinner before exp...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>[{'content': {'text': {'text': 'Offers takeout...</td>
+      <td>False</td>
+      <td>iSZpZgVnASwEmlq0DORY2A</td>
+      <td>[]</td>
+      <td>/biz_photos/iSZpZgVnASwEmlq0DORY2A</td>
+      <td>/biz/daikokuya-little-tokyo-los-angeles</td>
+      <td>[{'src': 'https://s3-media0.fl.yelpcdn.com/bph...</td>
+      <td>True</td>
+      <td>True</td>
+      <td>scrollablePhotos</td>
+      <td>...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/5P7QP1p...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/5P7QP1p...</td>
+      <td>more</td>
+      <td>Daikokuya just never disappoints!\nWent last n...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>[{'content': {'text': {'text': 'Offers takeout...</td>
+      <td>False</td>
+      <td>MlmcOkwaNnxl3Zuk6HsPCQ</td>
+      <td>[{'label': {'color': 'normal', 'text': 'Curren...</td>
+      <td>/biz_photos/MlmcOkwaNnxl3Zuk6HsPCQ</td>
+      <td>/biz/slurpin-ramen-bar-los-angeles-los-angeles</td>
+      <td>[{'src': 'https://s3-media0.fl.yelpcdn.com/bph...</td>
+      <td>True</td>
+      <td>True</td>
+      <td>scrollablePhotos</td>
+      <td>...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/-6T8kS9...</td>
+      <td>https://s3-media0.fl.yelpcdn.com/photo/-6T8kS9...</td>
+      <td>more</td>
+      <td>Covid delivery review:\nOooooooof this hit the...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 53 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 91.1 ms (started: 2021-03-09 15:57:21 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "yelp_raw = pd.DataFrame(\n    [flatten(content) for content in tqdm(yelp_raw_data) if \"bizId\" in content.keys()]\n)\nyelp_raw.to_csv(\"./data/yelp_raw.csv\")\nyelp_raw.head()";
+                var nbb_formatted_code = "yelp_raw = pd.DataFrame(\n    [flatten(content) for content in tqdm(yelp_raw_data) if \"bizId\" in content.keys()]\n)\nyelp_raw.to_csv(\"./data/yelp_raw.csv\")\nyelp_raw.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-pre-processing">
+<h2>Data Pre-processing<a class="headerlink" href="#data-pre-processing" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take out some of the unecessary columns for now.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_raw</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([                                       (&#39;searchActions&#39;,),
+                                           (&#39;isYelpGuaranteed&#39;,),
+                                                      (&#39;bizId&#39;,),
+                                                       (&#39;tags&#39;,),
+                           (&#39;scrollablePhotos&#39;, &#39;allPhotosHref&#39;),
+                               (&#39;scrollablePhotos&#39;, &#39;photoHref&#39;),
+                               (&#39;scrollablePhotos&#39;, &#39;photoList&#39;),
+                            (&#39;scrollablePhotos&#39;, &#39;isResponsive&#39;),
+                            (&#39;scrollablePhotos&#39;, &#39;isScrollable&#39;),
+                                     (&#39;searchResultLayoutType&#39;,),
+                             (&#39;searchResultBusinessHighlights&#39;,),
+                                      (&#39;verifiedLicenseLayout&#39;,),
+                                           (&#39;serviceOfferings&#39;,),
+                                                    (&#39;snippet&#39;,),
+                                                  (&#39;markerKey&#39;,),
+                                       (&#39;adLoggingInfo&#39;, &#39;slot&#39;),
+                              (&#39;adLoggingInfo&#39;, &#39;placementSlot&#39;),
+                                       (&#39;adLoggingInfo&#39;, &#39;flow&#39;),
+                              (&#39;adLoggingInfo&#39;, &#39;opportunityId&#39;),
+                               (&#39;adLoggingInfo&#39;, &#39;adCampaignId&#39;),
+                               (&#39;adLoggingInfo&#39;, &#39;isShowcaseAd&#39;),
+                                  (&#39;adLoggingInfo&#39;, &#39;placement&#39;),
+                                       (&#39;offerCampaignDetails&#39;,),
+                      (&#39;searchResultBusinessPortfolioProjects&#39;,),
+                      (&#39;searchResultBusiness&#39;, &#39;parentBusiness&#39;),
+                             (&#39;searchResultBusiness&#39;, &#39;ranking&#39;),
+                         (&#39;searchResultBusiness&#39;, &#39;reviewCount&#39;),
+                        (&#39;searchResultBusiness&#39;, &#39;renderAdInfo&#39;),
+                                (&#39;searchResultBusiness&#39;, &#39;name&#39;),
+                       (&#39;searchResultBusiness&#39;, &#39;neighborhoods&#39;),
+                              (&#39;searchResultBusiness&#39;, &#39;rating&#39;),
+                         (&#39;searchResultBusiness&#39;, &#39;businessUrl&#39;),
+                                (&#39;searchResultBusiness&#39;, &#39;isAd&#39;),
+                         (&#39;searchResultBusiness&#39;, &#39;serviceArea&#39;),
+                               (&#39;searchResultBusiness&#39;, &#39;phone&#39;),
+                          (&#39;searchResultBusiness&#39;, &#39;priceRange&#39;),
+                      (&#39;searchResultBusiness&#39;, &#39;alternateNames&#39;),
+                    (&#39;searchResultBusiness&#39;, &#39;formattedAddress&#39;),
+                      (&#39;searchResultBusiness&#39;, &#39;servicePricing&#39;),
+                          (&#39;searchResultBusiness&#39;, &#39;bizSiteUrl&#39;),
+                          (&#39;searchResultBusiness&#39;, &#39;categories&#39;),
+                                       (&#39;childrenBusinessInfo&#39;,),
+                                      (&#39;snippet&#39;, &#39;readMoreUrl&#39;),
+                                 (&#39;snippet&#39;, &#39;thumbnail&#39;, &#39;src&#39;),
+                              (&#39;snippet&#39;, &#39;thumbnail&#39;, &#39;srcset&#39;),
+                                     (&#39;snippet&#39;, &#39;readMoreText&#39;),
+                                             (&#39;snippet&#39;, &#39;text&#39;),
+       (&#39;searchResultBusiness&#39;, &#39;parentBusiness&#39;, &#39;businessUrl&#39;),
+              (&#39;searchResultBusiness&#39;, &#39;parentBusiness&#39;, &#39;name&#39;),
+                (&#39;searchResultBusinessHighlights&#39;, &#39;bizSiteUrl&#39;),
+        (&#39;searchResultBusinessHighlights&#39;, &#39;businessHighlights&#39;),
+                        (&#39;childrenBusinessInfo&#39;, &#39;businessUrls&#39;),
+                       (&#39;childrenBusinessInfo&#39;, &#39;businessNames&#39;)],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 7.82 ms (started: 2021-03-09 15:57:21 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "yelp_raw.columns";
+                var nbb_formatted_code = "yelp_raw.columns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_filtered</span> <span class="o">=</span> <span class="n">yelp_raw</span><span class="p">[</span>
+    <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">yelp_raw</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> <span class="s2">&quot;searchResultBusiness&quot;</span> <span class="ow">in</span> <span class="n">col</span><span class="p">]</span>
+<span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">yelp_filtered</span> <span class="o">=</span> <span class="n">yelp_filtered</span><span class="p">[</span>
+    <span class="n">yelp_filtered</span><span class="p">[(</span><span class="s2">&quot;searchResultBusiness&quot;</span><span class="p">,</span> <span class="s2">&quot;priceRange&quot;</span><span class="p">)]</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span>
+<span class="p">]</span>  <span class="c1"># Remove rows with no price range</span>
+<span class="n">yelp_filtered</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">col</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">yelp_filtered</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">yelp_filtered</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;./data/yelp_filtered.csv&quot;</span><span class="p">)</span>
+<span class="n">yelp_filtered</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.8/site-packages/numpy/core/_asarray.py:102: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify &#39;dtype=object&#39; when creating the ndarray.
+  return array(a, dtype, copy=False, order=order)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>reviewCount</th>
+      <th>renderAdInfo</th>
+      <th>name</th>
+      <th>neighborhoods</th>
+      <th>rating</th>
+      <th>businessUrl</th>
+      <th>isAd</th>
+      <th>phone</th>
+      <th>priceRange</th>
+      <th>alternateNames</th>
+      <th>formattedAddress</th>
+      <th>categories</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6636</td>
+      <td>False</td>
+      <td>Howlin’ Ray’s</td>
+      <td>[Chinatown]</td>
+      <td>4.5</td>
+      <td>/biz/howlin-rays-los-angeles-3</td>
+      <td>False</td>
+      <td>(213) 935-8399</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>727 N Broadway</td>
+      <td>[{'url': '/search?cflt=southern&amp;find_loc=Los+A...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8449</td>
+      <td>False</td>
+      <td>Wurstküche</td>
+      <td>[Arts District]</td>
+      <td>4.0</td>
+      <td>/biz/wurstk%C3%BCche-los-angeles-2</td>
+      <td>False</td>
+      <td>(213) 687-4444</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>800 E 3rd St</td>
+      <td>[{'url': '/search?cflt=hotdog&amp;find_loc=Los+Ang...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8644</td>
+      <td>False</td>
+      <td>Daikokuya Little Tokyo</td>
+      <td>[Little Tokyo]</td>
+      <td>4.0</td>
+      <td>/biz/daikokuya-little-tokyo-los-angeles</td>
+      <td>False</td>
+      <td>(213) 626-1680</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>327 E 1st St</td>
+      <td>[{'url': '/search?cflt=ramen&amp;find_loc=Los+Ange...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4641</td>
+      <td>False</td>
+      <td>Slurpin’ Ramen Bar - Los Angeles</td>
+      <td>[Koreatown]</td>
+      <td>4.5</td>
+      <td>/biz/slurpin-ramen-bar-los-angeles-los-angeles</td>
+      <td>False</td>
+      <td>(213) 388-8607</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>3500 W 8th St</td>
+      <td>[{'url': '/search?cflt=ramen&amp;find_loc=Los+Ange...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6228</td>
+      <td>False</td>
+      <td>Bestia</td>
+      <td>[Downtown]</td>
+      <td>4.5</td>
+      <td>/biz/bestia-los-angeles</td>
+      <td>False</td>
+      <td>(213) 514-5724</td>
+      <td>$$$</td>
+      <td>[]</td>
+      <td>2121 E 7th Pl</td>
+      <td>[{'url': '/search?cflt=italian&amp;find_loc=Los+An...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 29.9 ms (started: 2021-03-09 15:57:21 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "yelp_filtered = yelp_raw[\n    [col for col in yelp_raw.columns if \"searchResultBusiness\" in col]\n].dropna(axis=1)\nyelp_filtered = yelp_filtered[\n    yelp_filtered[(\"searchResultBusiness\", \"priceRange\")] != \"\"\n]  # Remove rows with no price range\nyelp_filtered.columns = [tuple(col)[-1] for col in yelp_filtered.columns]\nyelp_filtered.to_csv(\"./data/yelp_filtered.csv\")\nyelp_filtered.head()";
+                var nbb_formatted_code = "yelp_filtered = yelp_raw[\n    [col for col in yelp_raw.columns if \"searchResultBusiness\" in col]\n].dropna(axis=1)\nyelp_filtered = yelp_filtered[\n    yelp_filtered[(\"searchResultBusiness\", \"priceRange\")] != \"\"\n]  # Remove rows with no price range\nyelp_filtered.columns = [tuple(col)[-1] for col in yelp_filtered.columns]\nyelp_filtered.to_csv(\"./data/yelp_filtered.csv\")\nyelp_filtered.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Add the lat, long for each address</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">locator</span> <span class="o">=</span> <span class="n">Nominatim</span><span class="p">(</span><span class="n">user_agent</span><span class="o">=</span><span class="s2">&quot;myGeocoder&quot;</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_latlong</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locator</span><span class="o">=</span><span class="n">locator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get lat, long from string address&quot;&quot;&quot;</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">, Los Angeles, CA&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lat</span><span class="p">,</span> <span class="n">long</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">longitude</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">lat</span><span class="p">,</span> <span class="n">long</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">lat</span><span class="p">,</span> <span class="n">long</span>
+
+
+<span class="n">yelp_filtered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">yelp_filtered</span><span class="p">,</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;formattedAddress&quot;</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">address</span><span class="p">:</span> <span class="n">get_latlong</span><span class="p">(</span><span class="n">address</span><span class="p">))</span>
+            <span class="o">.</span><span class="n">tolist</span><span class="p">(),</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">],</span>
+            <span class="n">index</span><span class="o">=</span><span class="n">yelp_filtered</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">yelp_filtered</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>reviewCount</th>
+      <th>renderAdInfo</th>
+      <th>name</th>
+      <th>neighborhoods</th>
+      <th>rating</th>
+      <th>businessUrl</th>
+      <th>isAd</th>
+      <th>phone</th>
+      <th>priceRange</th>
+      <th>alternateNames</th>
+      <th>formattedAddress</th>
+      <th>categories</th>
+      <th>latitude</th>
+      <th>longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6636</td>
+      <td>False</td>
+      <td>Howlin’ Ray’s</td>
+      <td>[Chinatown]</td>
+      <td>4.5</td>
+      <td>/biz/howlin-rays-los-angeles-3</td>
+      <td>False</td>
+      <td>(213) 935-8399</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>727 N Broadway</td>
+      <td>[{'url': '/search?cflt=southern&amp;find_loc=Los+A...</td>
+      <td>34.061519</td>
+      <td>-118.239473</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8449</td>
+      <td>False</td>
+      <td>Wurstküche</td>
+      <td>[Arts District]</td>
+      <td>4.0</td>
+      <td>/biz/wurstk%C3%BCche-los-angeles-2</td>
+      <td>False</td>
+      <td>(213) 687-4444</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>800 E 3rd St</td>
+      <td>[{'url': '/search?cflt=hotdog&amp;find_loc=Los+Ang...</td>
+      <td>33.896347</td>
+      <td>-118.117083</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8644</td>
+      <td>False</td>
+      <td>Daikokuya Little Tokyo</td>
+      <td>[Little Tokyo]</td>
+      <td>4.0</td>
+      <td>/biz/daikokuya-little-tokyo-los-angeles</td>
+      <td>False</td>
+      <td>(213) 626-1680</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>327 E 1st St</td>
+      <td>[{'url': '/search?cflt=ramen&amp;find_loc=Los+Ange...</td>
+      <td>34.049971</td>
+      <td>-118.240083</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4641</td>
+      <td>False</td>
+      <td>Slurpin’ Ramen Bar - Los Angeles</td>
+      <td>[Koreatown]</td>
+      <td>4.5</td>
+      <td>/biz/slurpin-ramen-bar-los-angeles-los-angeles</td>
+      <td>False</td>
+      <td>(213) 388-8607</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>3500 W 8th St</td>
+      <td>[{'url': '/search?cflt=ramen&amp;find_loc=Los+Ange...</td>
+      <td>34.057590</td>
+      <td>-118.306725</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6228</td>
+      <td>False</td>
+      <td>Bestia</td>
+      <td>[Downtown]</td>
+      <td>4.5</td>
+      <td>/biz/bestia-los-angeles</td>
+      <td>False</td>
+      <td>(213) 514-5724</td>
+      <td>$$$</td>
+      <td>[]</td>
+      <td>2121 E 7th Pl</td>
+      <td>[{'url': '/search?cflt=italian&amp;find_loc=Los+An...</td>
+      <td>34.033738</td>
+      <td>-118.229309</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2min 34s (started: 2021-03-09 15:57:21 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "locator = Nominatim(user_agent=\"myGeocoder\")\n\n\ndef get_latlong(address: str, locator=locator):\n    \"\"\"Get lat, long from string address\"\"\"\n    location = locator.geocode(f\"{address}, Los Angeles, CA\")\n    try:\n        lat, long = location.latitude, location.longitude\n    except:\n        lat, long = None, None\n    return lat, long\n\n\nyelp_filtered = pd.concat(\n    [\n        yelp_filtered,\n        pd.DataFrame(\n            yelp_filtered[\"formattedAddress\"]\n            .apply(lambda address: get_latlong(address))\n            .tolist(),\n            columns=[\"latitude\", \"longitude\"],\n            index=yelp_filtered.index,\n        ),\n    ],\n    axis=1,\n)\nyelp_filtered.head()";
+                var nbb_formatted_code = "locator = Nominatim(user_agent=\"myGeocoder\")\n\n\ndef get_latlong(address: str, locator=locator):\n    \"\"\"Get lat, long from string address\"\"\"\n    location = locator.geocode(f\"{address}, Los Angeles, CA\")\n    try:\n        lat, long = location.latitude, location.longitude\n    except:\n        lat, long = None, None\n    return lat, long\n\n\nyelp_filtered = pd.concat(\n    [\n        yelp_filtered,\n        pd.DataFrame(\n            yelp_filtered[\"formattedAddress\"]\n            .apply(lambda address: get_latlong(address))\n            .tolist(),\n            columns=[\"latitude\", \"longitude\"],\n            index=yelp_filtered.index,\n        ),\n    ],\n    axis=1,\n)\nyelp_filtered.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Convert neighbourhoods into a single value for each row</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;neighborhoods&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">neighbourhoods</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">neighbourhoods</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1    234
+Name: neighborhoods, dtype: int64
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 4.93 ms (started: 2021-03-09 15:59:55 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "yelp_filtered[\"neighborhoods\"].apply(\n    lambda neighbourhoods: len(neighbourhoods)\n).value_counts()";
+                var nbb_formatted_code = "yelp_filtered[\"neighborhoods\"].apply(\n    lambda neighbourhoods: len(neighbourhoods)\n).value_counts()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;neighborhoods&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;neighborhoods&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">neighbourhoods</span><span class="p">:</span> <span class="n">neighbourhoods</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.31 ms (started: 2021-03-09 15:59:55 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "yelp_filtered[\"neighborhoods\"] = yelp_filtered[\"neighborhoods\"].apply(\n    lambda neighbourhoods: neighbourhoods[0]\n)";
+                var nbb_formatted_code = "yelp_filtered[\"neighborhoods\"] = yelp_filtered[\"neighborhoods\"].apply(\n    lambda neighbourhoods: neighbourhoods[0]\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;neighborhoods&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downtown                   30
+Koreatown                  23
+Hollywood                  15
+Little Tokyo               15
+Wilshire Center            14
+Beverly Grove              13
+Fairfax                    11
+Mid-Wilshire               10
+East Hollywood             10
+Los Feliz                   9
+Silver Lake                 6
+Arts District               6
+Chinatown                   5
+Hancock Park                5
+Echo Park                   4
+Sawtelle                    4
+University Park             3
+Mid-City                    3
+Larchmont                   3
+Arlington Heights           3
+Harvard Heights             3
+Lincoln Heights             3
+Palms                       3
+Highland Park               2
+Century City                2
+Mar Vista                   2
+Pico-Robertson              2
+Windsor Square              2
+Atwater Village             2
+Westlake                    2
+Boyle Heights               2
+Exposition Park             2
+Historic South Central      2
+Pico-Union                  2
+Eagle Rock                  2
+Elysian Park                1
+Beverlywood                 1
+Westchester                 1
+View Park/Windsor Hills     1
+Studio City                 1
+West Adams                  1
+Hollywood Hills West        1
+Westwood                    1
+Griffith Park               1
+Name: neighborhoods, dtype: int64
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 4.17 ms (started: 2021-03-09 15:59:55 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "yelp_filtered[\"neighborhoods\"].value_counts()";
+                var nbb_formatted_code = "yelp_filtered[\"neighborhoods\"].value_counts()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>What categories do our restaurants have?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">cat</span>
+        <span class="k">for</span> <span class="n">cats</span> <span class="ow">in</span> <span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span>
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">raw_categories</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+                <span class="p">[</span><span class="n">category</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">raw_categories</span><span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">cats</span>
+    <span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()[:</span><span class="mi">30</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Breakfast &amp; Brunch           33
+Korean                       27
+Seafood                      21
+Sandwiches                   21
+Coffee &amp; Tea                 21
+American (New)               21
+Mexican                      20
+Barbeque                     17
+Desserts                     15
+Italian                      14
+Noodles                      14
+Japanese                     13
+Ice Cream &amp; Frozen Yogurt    13
+Bakeries                     13
+Cocktail Bars                12
+Sushi Bars                   11
+Ramen                        10
+Pizza                         9
+American (Traditional)        9
+Vegan                         9
+Mediterranean                 8
+Cafes                         8
+Salad                         8
+Burgers                       7
+Soup                          7
+Chicken Shop                  7
+Halal                         6
+Chinese                       6
+Comfort Food                  6
+Thai                          6
+dtype: int64
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 7.52 ms (started: 2021-03-09 15:59:55 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "from collections import Counter\n\npd.Series(\n    [\n        cat\n        for cats in yelp_filtered[\"categories\"]\n        .apply(\n            lambda raw_categories: np.array(\n                [category[\"title\"] for category in raw_categories]\n            )\n        )\n        .to_numpy()\n        for cat in cats\n    ]\n).value_counts()[:30]";
+                var nbb_formatted_code = "from collections import Counter\n\npd.Series(\n    [\n        cat\n        for cats in yelp_filtered[\"categories\"]\n        .apply(\n            lambda raw_categories: np.array(\n                [category[\"title\"] for category in raw_categories]\n            )\n        )\n        .to_numpy()\n        for cat in cats\n    ]\n).value_counts()[:30]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">yelp_filtered</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">raw_categories</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">category</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">raw_categories</span><span class="p">])</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.82 ms (started: 2021-03-09 15:59:55 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "yelp_filtered[\"categories\"] = yelp_filtered[\"categories\"].apply(\n    lambda raw_categories: np.array([category[\"title\"] for category in raw_categories])\n)";
+                var nbb_formatted_code = "yelp_filtered[\"categories\"] = yelp_filtered[\"categories\"].apply(\n    lambda raw_categories: np.array([category[\"title\"] for category in raw_categories])\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save this dataset</span>
+<span class="n">yelp_filtered</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;./data/yelp_cleaned.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 11.5 ms (started: 2021-03-10 08:00:35 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 30;
+                var nbb_unformatted_code = "# Save this dataset\nyelp_filtered.to_csv(\"./data/yelp_cleaned.csv\")";
+                var nbb_formatted_code = "# Save this dataset\nyelp_filtered.to_csv(\"./data/yelp_cleaned.csv\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<p><a id=2></a></p>
+</div>
+<div class="section" id="optimization">
+<h2>Optimization<a class="headerlink" href="#optimization" title="Permalink to this headline">¶</a></h2>
+<p>This can be run indepedently from <code class="docutils literal notranslate"><span class="pre">Web</span> <span class="pre">Scraping</span> <span class="pre">Yelp!</span></code> as long as <code class="docutils literal notranslate"><span class="pre">yelp_cleaned.csv</span></code> is loaded</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the cleaned yelp dataset</span>
+<span class="n">yelp_filtered</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/yelp_cleaned.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">yelp_filtered</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>reviewCount</th>
+      <th>renderAdInfo</th>
+      <th>name</th>
+      <th>neighborhoods</th>
+      <th>rating</th>
+      <th>businessUrl</th>
+      <th>isAd</th>
+      <th>phone</th>
+      <th>priceRange</th>
+      <th>alternateNames</th>
+      <th>formattedAddress</th>
+      <th>categories</th>
+      <th>latitude</th>
+      <th>longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>6636</td>
+      <td>False</td>
+      <td>Howlin’ Ray’s</td>
+      <td>Chinatown</td>
+      <td>4.5</td>
+      <td>/biz/howlin-rays-los-angeles-3</td>
+      <td>False</td>
+      <td>(213) 935-8399</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>727 N Broadway</td>
+      <td>['Southern' 'Chicken Shop' 'American (Traditio...</td>
+      <td>34.061519</td>
+      <td>-118.239473</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8449</td>
+      <td>False</td>
+      <td>Wurstküche</td>
+      <td>Arts District</td>
+      <td>4.0</td>
+      <td>/biz/wurstk%C3%BCche-los-angeles-2</td>
+      <td>False</td>
+      <td>(213) 687-4444</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>800 E 3rd St</td>
+      <td>['Hot Dogs' 'German' 'Gastropubs']</td>
+      <td>33.896347</td>
+      <td>-118.117083</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8644</td>
+      <td>False</td>
+      <td>Daikokuya Little Tokyo</td>
+      <td>Little Tokyo</td>
+      <td>4.0</td>
+      <td>/biz/daikokuya-little-tokyo-los-angeles</td>
+      <td>False</td>
+      <td>(213) 626-1680</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>327 E 1st St</td>
+      <td>['Ramen' 'Noodles']</td>
+      <td>34.049971</td>
+      <td>-118.240083</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4641</td>
+      <td>False</td>
+      <td>Slurpin’ Ramen Bar - Los Angeles</td>
+      <td>Koreatown</td>
+      <td>4.5</td>
+      <td>/biz/slurpin-ramen-bar-los-angeles-los-angeles</td>
+      <td>False</td>
+      <td>(213) 388-8607</td>
+      <td>$$</td>
+      <td>[]</td>
+      <td>3500 W 8th St</td>
+      <td>['Ramen' 'Noodles']</td>
+      <td>34.057590</td>
+      <td>-118.306725</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6228</td>
+      <td>False</td>
+      <td>Bestia</td>
+      <td>Downtown</td>
+      <td>4.5</td>
+      <td>/biz/bestia-los-angeles</td>
+      <td>False</td>
+      <td>(213) 514-5724</td>
+      <td>$$$</td>
+      <td>[]</td>
+      <td>2121 E 7th Pl</td>
+      <td>['Italian' 'Cocktail Bars' 'Pizza']</td>
+      <td>34.033738</td>
+      <td>-118.229309</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 19.7 ms (started: 2021-03-10 08:02:22 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 32;
+                var nbb_unformatted_code = "# Load the cleaned yelp dataset\nyelp_filtered = pd.read_csv(\"./data/yelp_cleaned.csv\", index_col=[0])\nyelp_filtered.head()";
+                var nbb_formatted_code = "# Load the cleaned yelp dataset\nyelp_filtered = pd.read_csv(\"./data/yelp_cleaned.csv\", index_col=[0])\nyelp_filtered.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="section" id="problem-setup">
+<h3>Problem Setup<a class="headerlink" href="#problem-setup" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(k \in K\)</span> index the users whose preference is to be accounted for.</p>
+<p>Let <span class="math notranslate nohighlight">\(m \in M\)</span> index the month we will be requesting a restaurant recommendation for.</p>
+<p>Let <span class="math notranslate nohighlight">\(n \in N\)</span> index the total number of restaurants in Los Angeles available on Yelp!.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{X} = \left\{{x}_{1}, {x}_{2}, \cdots, {x}_{N}\right\}\)</span> be a matrix that denotes our dataset of webscraped restaurant information from Yelp!, where</p>
+<p>\begin{aligned}
+{x}_{n} &amp;=
+\begin{bmatrix}
+\text{name} = \left{ \mathbf{\text{String}} \right} \
+\text{address} = \left{ \mathbf{\text{String}}\right} \
+\text{neighbourhood} = \left{ \mathbf{\text{String}} \right} \
+\text{num_reviews} = \left{0.0 \leq \mathbf{\text{Integer}} \leq \infty \right} \
+\text{rating} = \left{ 0.0 \leq \mathbf{\text{Float}} \leq 5.0 \right} \
+\text{price_range} = \left{ \text{$}, \text{$$}, \text{$$$}, \text{$$$$} \right} \
+\text{categories} = \left{ \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} \right} \
+\end{bmatrix} \
+\end{aligned}</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathcal{U} = \left\{{u}_{1}, {u}_{2}, \cdots, {u}_{K}\right\}\)</span> be a matrix, where</p>
+<p>\begin{aligned}
+{u}_{k} &amp;=
+\begin{bmatrix}
+\text{address} = \left{ \mathbf{\text{String}} \right} \
+\text{neighbourhood} = \left{ \mathbf{\text{String}} \right} \
+\text{min_reviews} = \left{0.0 \leq \mathbf{\text{Integer}} \leq \infty \right} \
+\text{min_rating} = \left{ 0.0 \leq \mathbf{\text{Float}} \leq 5.0 \right} \
+\text{price_range} = \left{ \text{$}, \text{$$}, \text{$$$}, \text{$$$$} \right} \
+\text{max_distance (miles)} = \left{ 0.0 \leq \bf{\text{Float}} \leq \infty \right} \
+\text{categories} = \left{ \text{Breakfast &amp; Brunch}, \text{Korean}, \cdots, \text{Halal} \right} \
+\end{bmatrix} \
+\end{aligned}</p>
+<p>Let <span class="math notranslate nohighlight">\(w \in \mathbb{Z}^N_2 = \left\{0, 1\right\}^N\)</span> a binary indicator vector denoting which of the <span class="math notranslate nohighlight">\(N\)</span> restaurants in the Los Angeles area were chosen.</p>
+<p>Let <span class="math notranslate nohighlight">\(d: L \times L \rightarrow \mathbb{R}^+_0, L = \left\{\mathbf{\text{Valid Address String}}\right\}\)</span> be a function that calculates the distance in miles between two points.</p>
+<p>Let <span class="math notranslate nohighlight">\(A.\text{&lt;attribute&gt;}\)</span> denote the column vector (if <span class="math notranslate nohighlight">\(A\)</span> is a matrix) / scalar (if <span class="math notranslate nohighlight">\(A\)</span> is a vector) of just the specific attribute.</p>
+</div>
+<div class="section" id="mixed-integer-program-formulation">
+<h3>Mixed-Integer Program Formulation<a class="headerlink" href="#mixed-integer-program-formulation" title="Permalink to this headline">¶</a></h3>
+<p>\begin{aligned}
+\underset{w}{\text{maximize }} &amp;{w^\top}{\left(\mathcal{X}.\text{rating}\right)}  \
+\text{subject to }
+&amp;w^\top\mathbb{1} = M \
+&amp;w_nu_k.{\text{min_reviews}} \leq x_n.{\text{num_reviews}},\forall,n \in N, k \in K \
+&amp;w_nu_k.{\text{min_rating}} \leq x_n.{\text{rating}},\forall,n \in N, k \in K \
+&amp;w_n\left(1 - \frac{\min_{n, k} d({{x_n}.{\text{address}}}, {u_k}.{\text{address}})}{\max_{n, k} d({{x_n}.{\text{address}}}, {u_k}.{\text{address}})}\right) \leq \alpha_n,\forall,n \in N, k \in K, w_n = 1 \
+&amp;u_k.{\text{price_range}} \geq x_n.{\text{price_range}},\forall,n \in N, k \in K, w_n = 1 \
+&amp;u_k.{\text{neighbourhood}} = x_n.{\text{neighbourhood}},\forall,n \in N, k \in K, w_n = 1 \
+&amp;u_k.{\text{categories}} \subseteq x_n.{\text{categories}},\forall,n \in N, k \in K, w_n = 1 \
+\end{aligned}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For distance calculation</span>
+<span class="kn">from</span> <span class="nn">haversine</span> <span class="kn">import</span> <span class="n">haversine</span><span class="p">,</span> <span class="n">Unit</span>
+
+<span class="c1"># For optimization</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+
+<span class="c1"># For converting street in LA to lat long</span>
+<span class="n">locator</span> <span class="o">=</span> <span class="n">Nominatim</span><span class="p">(</span><span class="n">user_agent</span><span class="o">=</span><span class="s2">&quot;myGeocoder&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">get_latlong</span><span class="p">(</span><span class="n">address</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">locator</span><span class="o">=</span><span class="n">locator</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get lat, long from string address&quot;&quot;&quot;</span>
+    <span class="n">location</span> <span class="o">=</span> <span class="n">locator</span><span class="o">.</span><span class="n">geocode</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">address</span><span class="si">}</span><span class="s2">, Los Angeles, CA&quot;</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lat</span><span class="p">,</span> <span class="n">long</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="n">location</span><span class="o">.</span><span class="n">longitude</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">lat</span><span class="p">,</span> <span class="n">long</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="k">return</span> <span class="n">lat</span><span class="p">,</span> <span class="n">long</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 476 ms (started: 2021-03-09 15:59:55 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "# For distance calculation\nfrom haversine import haversine, Unit\n\n# For optimization\nimport cvxpy as cp";
+                var nbb_formatted_code = "# For distance calculation\nfrom haversine import haversine, Unit\n\n# For optimization\nimport cvxpy as cp";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>User Preference Matrix <span class="math notranslate nohighlight">\(\mathcal{U}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;3584 S Figueroa St&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="mi">100</span><span class="p">,</span>
+            <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">&quot;$$&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">get_latlong</span><span class="p">(</span><span class="s2">&quot;3584 S Figueroa St&quot;</span><span class="p">),</span>
+        <span class="p">],</span>  <span class="c1"># Icon Plaza USC</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;3301 S Hoover St&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="mi">200</span><span class="p">,</span>
+            <span class="mf">3.6</span><span class="p">,</span>
+            <span class="s2">&quot;$$$&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">get_latlong</span><span class="p">(</span><span class="s2">&quot;3301 S Hoover St&quot;</span><span class="p">),</span>
+        <span class="p">],</span>  <span class="c1"># USC Village</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;10250 Santa Monica Blvd&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="mi">1000</span><span class="p">,</span>
+            <span class="mf">4.5</span><span class="p">,</span>
+            <span class="s2">&quot;$$$$&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="o">*</span><span class="n">get_latlong</span><span class="p">(</span><span class="s2">&quot;10250 Santa Monica Blvd&quot;</span><span class="p">),</span>
+        <span class="p">],</span>  <span class="c1"># Westfield Century City</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;189 The Grove Dr&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="mi">1000</span><span class="p">,</span>
+            <span class="mf">3.9</span><span class="p">,</span>
+            <span class="s2">&quot;$$$&quot;</span><span class="p">,</span>
+            <span class="kc">None</span><span class="p">,</span>
+            <span class="p">[</span><span class="s2">&quot;Korean&quot;</span><span class="p">],</span>
+            <span class="o">*</span><span class="n">get_latlong</span><span class="p">(</span><span class="s2">&quot;189 The Grove Dr&quot;</span><span class="p">),</span>
+        <span class="p">],</span>  <span class="c1"># The Grove</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;address&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;neighbourhood&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;min_reviews&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;min_rating&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;price_range&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;max_distance&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;categories&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">U</span><span class="p">[</span><span class="s2">&quot;neighbourhood&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Number of different neighbourhood preferences must be &lt;= 1.&quot;</span>
+<span class="p">)</span>
+<span class="c1"># assert U[&quot;price_range&quot;].nunique() &lt;= 1, print(</span>
+<span class="c1">#     &quot;Number of different price_range preferences must be &lt;= 1.&quot;</span>
+<span class="c1"># )</span>
+<span class="k">assert</span> <span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">cat</span>
+                <span class="k">for</span> <span class="n">cats</span> <span class="ow">in</span> <span class="n">U</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">cats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">cats</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="o">&lt;=</span> <span class="mi">2</span>
+<span class="p">),</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of different category preferences must be &lt;= 2.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.64 s (started: 2021-03-09 17:18:06 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "U = pd.DataFrame(\n    [\n        [\n            \"3584 S Figueroa St\",\n            None,\n            100,\n            4,\n            \"$$\",\n            None,\n            None,\n            *get_latlong(\"3584 S Figueroa St\"),\n        ],  # Icon Plaza USC\n        [\n            \"3301 S Hoover St\",\n            None,\n            200,\n            3.6,\n            \"$$$\",\n            None,\n            None,\n            *get_latlong(\"3301 S Hoover St\"),\n        ],  # USC Village\n        [\n            \"10250 Santa Monica Blvd\",\n            None,\n            1000,\n            4.5,\n            \"$$$$\",\n            None,\n            None,\n            *get_latlong(\"10250 Santa Monica Blvd\"),\n        ],  # Westfield Century City\n        [\n            \"189 The Grove Dr\",\n            None,\n            1000,\n            3.9,\n            \"$$$\",\n            None,\n            [\"Korean\"],\n            *get_latlong(\"189 The Grove Dr\"),\n        ],  # The Grove\n    ],\n    columns=[\n        \"address\",\n        \"neighbourhood\",\n        \"min_reviews\",\n        \"min_rating\",\n        \"price_range\",\n        \"max_distance\",\n        \"categories\",\n        \"latitude\",\n        \"longitude\",\n    ],\n)\n\nassert U[\"neighbourhood\"].nunique() <= 1, print(\n    \"Number of different neighbourhood preferences must be <= 1.\"\n)\n# assert U[\"price_range\"].nunique() <= 1, print(\n#     \"Number of different price_range preferences must be <= 1.\"\n# )\nassert (\n    len(\n        np.unique(\n            [\n                cat\n                for cats in U[\"categories\"].to_numpy()\n                if cats is not None\n                for cat in cats\n            ]\n        )\n    )\n    <= 2\n), print(\"Number of different category preferences must be <= 2.\")";
+                var nbb_formatted_code = "U = pd.DataFrame(\n    [\n        [\n            \"3584 S Figueroa St\",\n            None,\n            100,\n            4,\n            \"$$\",\n            None,\n            None,\n            *get_latlong(\"3584 S Figueroa St\"),\n        ],  # Icon Plaza USC\n        [\n            \"3301 S Hoover St\",\n            None,\n            200,\n            3.6,\n            \"$$$\",\n            None,\n            None,\n            *get_latlong(\"3301 S Hoover St\"),\n        ],  # USC Village\n        [\n            \"10250 Santa Monica Blvd\",\n            None,\n            1000,\n            4.5,\n            \"$$$$\",\n            None,\n            None,\n            *get_latlong(\"10250 Santa Monica Blvd\"),\n        ],  # Westfield Century City\n        [\n            \"189 The Grove Dr\",\n            None,\n            1000,\n            3.9,\n            \"$$$\",\n            None,\n            [\"Korean\"],\n            *get_latlong(\"189 The Grove Dr\"),\n        ],  # The Grove\n    ],\n    columns=[\n        \"address\",\n        \"neighbourhood\",\n        \"min_reviews\",\n        \"min_rating\",\n        \"price_range\",\n        \"max_distance\",\n        \"categories\",\n        \"latitude\",\n        \"longitude\",\n    ],\n)\n\nassert U[\"neighbourhood\"].nunique() <= 1, print(\n    \"Number of different neighbourhood preferences must be <= 1.\"\n)\n# assert U[\"price_range\"].nunique() <= 1, print(\n#     \"Number of different price_range preferences must be <= 1.\"\n# )\nassert (\n    len(\n        np.unique(\n            [\n                cat\n                for cats in U[\"categories\"].to_numpy()\n                if cats is not None\n                for cat in cats\n            ]\n        )\n    )\n    <= 2\n), print(\"Number of different category preferences must be <= 2.\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Updated Data Matrix <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, filtering out some data that does not match constraints:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">yelp_filtered</span><span class="p">[</span>
+    <span class="p">[</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;formattedAddress&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;neighborhoods&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;reviewCount&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;rating&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;priceRange&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;categories&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+<span class="n">X</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;name&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;address&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;neighbourhood&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;num_reviews&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rating&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;price_range&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;categories&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;latitude&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;longitude&quot;</span><span class="p">,</span>
+<span class="p">]</span>  <span class="c1"># rename columns</span>
+
+<span class="c1"># Filter out the neighbourhoods not in the user preference</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="s2">&quot;neighbourhood&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">X</span><span class="p">[</span><span class="s2">&quot;neighbourhood&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">U</span><span class="p">[</span><span class="s2">&quot;neighbourhood&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
+
+<span class="c1"># Filter out the restaurants whose price ranges exceed the lowest price range in user preferences</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="s2">&quot;price_range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span>
+        <span class="n">X</span><span class="p">[</span><span class="s2">&quot;price_range&quot;</span><span class="p">]</span>
+        <span class="o">==</span> <span class="nb">sorted</span><span class="p">(</span>
+            <span class="n">U</span><span class="p">[</span><span class="s2">&quot;price_range&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">]</span>
+
+<span class="c1"># Filter out restaurants that are not in the same categories as what we requested in user preference</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">U</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span>
+        <span class="n">X</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">categories</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">any</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">cat</span> <span class="ow">in</span> <span class="n">categories</span>
+                    <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="p">[</span>
+                        <span class="n">cat</span>
+                        <span class="k">for</span> <span class="n">cats</span> <span class="ow">in</span> <span class="n">U</span><span class="p">[</span><span class="s2">&quot;categories&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="n">cats</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                        <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="n">cats</span>
+                    <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 15.4 ms (started: 2021-03-10 07:57:39 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 27;
+                var nbb_unformatted_code = "X = yelp_filtered[\n    [\n        \"name\",\n        \"formattedAddress\",\n        \"neighborhoods\",\n        \"reviewCount\",\n        \"rating\",\n        \"priceRange\",\n        \"categories\",\n        \"latitude\",\n        \"longitude\",\n    ]\n]\nX.columns = [\n    \"name\",\n    \"address\",\n    \"neighbourhood\",\n    \"num_reviews\",\n    \"rating\",\n    \"price_range\",\n    \"categories\",\n    \"latitude\",\n    \"longitude\",\n]  # rename columns\n\n# Filter out the neighbourhoods not in the user preference\nif len(U[\"neighbourhood\"].dropna().unique()) > 0:\n    X = X[X[\"neighbourhood\"] == U[\"neighbourhood\"].dropna().unique()[0]]\n\n# Filter out the restaurants whose price ranges exceed the lowest price range in user preferences\nif len(U[\"price_range\"].dropna().unique()) > 0:\n    X = X[X[\"price_range\"] == sorted(U[\"price_range\"].dropna().unique(), key=lambda x: len(x), reverse=False)[0]]\n\n# Filter out restaurants that are not in the same categories as what we requested in user preference\nif len(U[\"categories\"].dropna()) > 0:\n    X = X[\n        X[\"categories\"].apply(\n            lambda categories: np.any(\n                [\n                    cat in categories\n                    for cat in [\n                        cat\n                        for cats in U[\"categories\"].to_numpy()\n                        if cats is not None\n                        for cat in cats\n                    ]\n                ]\n            )\n        )\n    ]";
+                var nbb_formatted_code = "X = yelp_filtered[\n    [\n        \"name\",\n        \"formattedAddress\",\n        \"neighborhoods\",\n        \"reviewCount\",\n        \"rating\",\n        \"priceRange\",\n        \"categories\",\n        \"latitude\",\n        \"longitude\",\n    ]\n]\nX.columns = [\n    \"name\",\n    \"address\",\n    \"neighbourhood\",\n    \"num_reviews\",\n    \"rating\",\n    \"price_range\",\n    \"categories\",\n    \"latitude\",\n    \"longitude\",\n]  # rename columns\n\n# Filter out the neighbourhoods not in the user preference\nif len(U[\"neighbourhood\"].dropna().unique()) > 0:\n    X = X[X[\"neighbourhood\"] == U[\"neighbourhood\"].dropna().unique()[0]]\n\n# Filter out the restaurants whose price ranges exceed the lowest price range in user preferences\nif len(U[\"price_range\"].dropna().unique()) > 0:\n    X = X[\n        X[\"price_range\"]\n        == sorted(\n            U[\"price_range\"].dropna().unique(), key=lambda x: len(x), reverse=False\n        )[0]\n    ]\n\n# Filter out restaurants that are not in the same categories as what we requested in user preference\nif len(U[\"categories\"].dropna()) > 0:\n    X = X[\n        X[\"categories\"].apply(\n            lambda categories: np.any(\n                [\n                    cat in categories\n                    for cat in [\n                        cat\n                        for cats in U[\"categories\"].to_numpy()\n                        if cats is not None\n                        for cat in cats\n                    ]\n                ]\n            )\n        )\n    ]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Optimization</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Distance metric</span>
+<span class="n">d</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">lat1</span><span class="p">,</span> <span class="n">long1</span><span class="p">,</span> <span class="n">lat2</span><span class="p">,</span> <span class="n">long2</span><span class="p">:</span> <span class="n">haversine</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">lat1</span><span class="p">,</span> <span class="n">long1</span><span class="p">),</span> <span class="p">(</span><span class="n">lat2</span><span class="p">,</span> <span class="n">long2</span><span class="p">),</span> <span class="n">unit</span><span class="o">=</span><span class="n">Unit</span><span class="o">.</span><span class="n">MILES</span>
+<span class="p">)</span>
+
+<span class="c1"># Percentage difference between furthest travelling indiividual and shortest travelling individual</span>
+<span class="n">α</span> <span class="o">=</span> <span class="mf">0.75</span>
+
+<span class="c1"># Number of months we getting recommendations</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Number of restaurants in our dataset</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Number of users</span>
+<span class="n">K</span> <span class="o">=</span> <span class="n">U</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Create one vector optimization variable.</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">boolean</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Create constraints.</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">M</span><span class="p">,</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">M</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">[</span>
+        <span class="n">w_n</span> <span class="o">*</span> <span class="n">u_k</span> <span class="o">&lt;=</span> <span class="n">x_n</span>
+        <span class="k">for</span> <span class="n">u_k</span> <span class="ow">in</span> <span class="n">U</span><span class="p">[</span><span class="s2">&quot;min_reviews&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">w_n</span><span class="p">,</span> <span class="n">x_n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;num_reviews&quot;</span><span class="p">])</span>
+    <span class="p">],</span>
+    <span class="o">*</span><span class="p">[</span><span class="n">w_n</span> <span class="o">*</span> <span class="n">u_k</span> <span class="o">&lt;=</span> <span class="n">x_n</span> <span class="k">for</span> <span class="n">u_k</span> <span class="ow">in</span> <span class="n">U</span><span class="p">[</span><span class="s2">&quot;min_rating&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">w_n</span><span class="p">,</span> <span class="n">x_n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">])],</span>
+    <span class="o">*</span><span class="p">[</span>
+        <span class="n">w_n</span>
+        <span class="o">*</span> <span class="p">(</span>
+            <span class="mi">1</span>
+            <span class="o">-</span> <span class="p">(</span>
+                <span class="n">cp</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span>
+                    <span class="o">*</span><span class="p">[</span>
+                        <span class="n">d</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">],</span> <span class="n">lat_n</span><span class="p">,</span> <span class="n">long_n</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">U</span><span class="p">[[</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+                <span class="o">/</span> <span class="n">cp</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span>
+                    <span class="o">*</span><span class="p">[</span>
+                        <span class="n">d</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">],</span> <span class="n">lat_n</span><span class="p">,</span> <span class="n">long_n</span><span class="p">)</span>
+                        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">U</span><span class="p">[[</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;longitude&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="o">&lt;=</span> <span class="n">α</span>
+        <span class="k">for</span> <span class="n">w_n</span><span class="p">,</span> <span class="n">lat_n</span><span class="p">,</span> <span class="n">long_n</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">])</span>
+    <span class="p">],</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">[</span><span class="s2">&quot;rating&quot;</span><span class="p">])</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mixed Integer Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The optimal value is: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Restaurants chosen: &quot;</span><span class="p">)</span>
+<span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mixed Integer Programming Solution
+==============================
+Status: optimal
+The optimal value is: 22.5
+Restaurants chosen: 
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>address</th>
+      <th>neighbourhood</th>
+      <th>num_reviews</th>
+      <th>rating</th>
+      <th>price_range</th>
+      <th>categories</th>
+      <th>latitude</th>
+      <th>longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>21</th>
+      <td>Yup Dduk LA</td>
+      <td>3603 W 6th St</td>
+      <td>Wilshire Center</td>
+      <td>2111</td>
+      <td>4.5</td>
+      <td>$$</td>
+      <td>[Korean, Chicken Shop]</td>
+      <td>34.063892</td>
+      <td>-118.300805</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Han Bat Sul Lung Tang</td>
+      <td>4163 W 5th St</td>
+      <td>Koreatown</td>
+      <td>2294</td>
+      <td>4.5</td>
+      <td>$$</td>
+      <td>[Korean, Comfort Food, Soup]</td>
+      <td>34.065408</td>
+      <td>-118.309849</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>Magal BBQ</td>
+      <td>3460 W 8th St</td>
+      <td>Koreatown</td>
+      <td>1676</td>
+      <td>4.5</td>
+      <td>$$</td>
+      <td>[Korean, Barbeque]</td>
+      <td>34.057598</td>
+      <td>-118.305479</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>Bulgogi Hut</td>
+      <td>3600 Wilshire Blvd</td>
+      <td>Koreatown</td>
+      <td>2471</td>
+      <td>4.5</td>
+      <td>$$</td>
+      <td>[Korean, Barbeque, Asian Fusion]</td>
+      <td>34.062375</td>
+      <td>-118.298589</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>Eight Korean BBQ</td>
+      <td>863 S Western Ave</td>
+      <td>Koreatown</td>
+      <td>1651</td>
+      <td>4.5</td>
+      <td>$$</td>
+      <td>[Korean, Barbeque]</td>
+      <td>34.056027</td>
+      <td>-118.309888</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 283 ms (started: 2021-03-10 07:59:21 +08:00)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 29;
+                var nbb_unformatted_code = "# Distance metric\nd = lambda lat1, long1, lat2, long2: haversine(\n    (lat1, long1), (lat2, long2), unit=Unit.MILES\n)\n\n# Percentage difference between furthest travelling indiividual and shortest travelling individual\n\u03b1 = 0.75\n\n# Number of months we getting recommendations\nM = 5\n\n# Number of restaurants in our dataset\nN = X.shape[0]\n\n# Number of users \nK = U.shape[0]\n\n# Create one vector optimization variable.\nw = cp.Variable(X.shape[0], boolean=True)\n\n# Create constraints.\nconstraints = [\n    cp.sum(w) >= M,\n    cp.sum(w) <= M,\n    *[\n        w_n * u_k <= x_n\n        for u_k in U[\"min_reviews\"]\n        for w_n, x_n in zip(w, X[\"num_reviews\"])\n    ],\n    *[w_n * u_k <= x_n for u_k in U[\"min_rating\"] for w_n, x_n in zip(w, X[\"rating\"])],\n    *[\n        w_n\n        * (\n            1\n            - (\n                cp.minimum(\n                    *[\n                        d(row[\"latitude\"], row[\"longitude\"], lat_n, long_n)\n                        for idx, row in U[[\"latitude\", \"longitude\"]].iterrows()\n                    ]\n                )\n                / cp.maximum(\n                    *[\n                        d(row[\"latitude\"], row[\"longitude\"], lat_n, long_n)\n                        for idx, row in U[[\"latitude\", \"longitude\"]].iterrows()\n                    ]\n                )\n            )\n        )\n        <= \u03b1\n        for w_n, lat_n, long_n in zip(w, X[\"latitude\"], X[\"longitude\"])\n    ],\n]\n\n# Form objective.\nobj = cp.Maximize(w.T @ X[\"rating\"])\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Mixed Integer Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(\"Restaurants chosen: \")\nX.iloc[np.argwhere(w.value).flatten()]";
+                var nbb_formatted_code = "# Distance metric\nd = lambda lat1, long1, lat2, long2: haversine(\n    (lat1, long1), (lat2, long2), unit=Unit.MILES\n)\n\n# Percentage difference between furthest travelling indiividual and shortest travelling individual\n\u03b1 = 0.75\n\n# Number of months we getting recommendations\nM = 5\n\n# Number of restaurants in our dataset\nN = X.shape[0]\n\n# Number of users\nK = U.shape[0]\n\n# Create one vector optimization variable.\nw = cp.Variable(X.shape[0], boolean=True)\n\n# Create constraints.\nconstraints = [\n    cp.sum(w) >= M,\n    cp.sum(w) <= M,\n    *[\n        w_n * u_k <= x_n\n        for u_k in U[\"min_reviews\"]\n        for w_n, x_n in zip(w, X[\"num_reviews\"])\n    ],\n    *[w_n * u_k <= x_n for u_k in U[\"min_rating\"] for w_n, x_n in zip(w, X[\"rating\"])],\n    *[\n        w_n\n        * (\n            1\n            - (\n                cp.minimum(\n                    *[\n                        d(row[\"latitude\"], row[\"longitude\"], lat_n, long_n)\n                        for idx, row in U[[\"latitude\", \"longitude\"]].iterrows()\n                    ]\n                )\n                / cp.maximum(\n                    *[\n                        d(row[\"latitude\"], row[\"longitude\"], lat_n, long_n)\n                        for idx, row in U[[\"latitude\", \"longitude\"]].iterrows()\n                    ]\n                )\n            )\n        )\n        <= \u03b1\n        for w_n, lat_n, long_n in zip(w, X[\"latitude\"], X[\"longitude\"])\n    ],\n]\n\n# Form objective.\nobj = cp.Maximize(w.T @ X[\"rating\"])\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\n\nprint(\"Mixed Integer Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"The optimal value is: {np.round(prob.value, 2)}\")\nprint(\"Restaurants chosen: \")\nX.iloc[np.argwhere(w.value).flatten()]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-533"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw2.html" title="previous page">HW 2</a>
+    <a class='right-next' id="next-link" href="project2.html" title="next page">Project 2: Multi-location Transshipment Problem</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

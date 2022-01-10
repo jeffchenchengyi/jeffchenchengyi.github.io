@@ -1,0 +1,2359 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 3 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/hw3.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Market Observations" href="market-observations.html" />
+    <link rel="prev" title="HW 2 Part 2" href="hw2_part2.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/hw3.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HW 3" />
+<meta property="og:description" content="HW 3  In this HW, we are going to back-test strategies of forecasting FX returns on a rolling basis.  We’ll back-test two strategies, one based on Model Selecti" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/hw3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-1">
+   Step 1:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-2">
+   Step 2:
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-selection-method-a-in-sample">
+     Model Selection Method A (In-Sample):
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-selection-method-b-out-sample">
+     Model Selection Method B (Out-Sample):
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-3">
+   Step 3:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#step-4">
+   Step 4:
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-3">
+<h1>HW 3<a class="headerlink" href="#hw-3" title="Permalink to this headline">¶</a></h1>
+<p>In this HW, we are going to back-test strategies of forecasting FX returns on a rolling basis.</p>
+<p>We’ll back-test two strategies, one based on Model Selection Method A, and the other based on Method B.</p>
+<p>Deliverables:</p>
+<ul class="simple">
+<li><p>A. the program coding.</p></li>
+<li><p>B. performance summaries for the two strategies.</p></li>
+</ul>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">statsmodels.tsa.arima_model</span> <span class="kn">import</span> <span class="n">ARIMA</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/ml/lib/python3.7/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sklearn.metrics import mean_squared_error\nfrom statsmodels.tsa.arima_model import ARIMA\nfrom datetime import datetime, timedelta\nimport warnings\n\nwarnings.simplefilter(\"ignore\")";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sklearn.metrics import mean_squared_error\nfrom statsmodels.tsa.arima_model import ARIMA\nfrom datetime import datetime, timedelta\nimport warnings\n\nwarnings.simplefilter(\"ignore\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;./data/HW3_20201112.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">available_currencies</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[::</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="mi">3</span><span class="p">))]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="mi">3</span><span class="p">))]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span>
+<span class="n">data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">freq</span> <span class="o">=</span> <span class="s2">&quot;-1BM&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EURUSD</th>
+      <th>GBPUSD</th>
+      <th>JPYUSD</th>
+      <th>AUDUSD</th>
+      <th>CADUSD</th>
+      <th>NOKUSD</th>
+      <th>CHFUSD</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1994-04-29</th>
+      <td>1.1840</td>
+      <td>1.5185</td>
+      <td>0.009833</td>
+      <td>0.7155</td>
+      <td>0.7231</td>
+      <td>0.1395</td>
+      <td>0.7125</td>
+    </tr>
+    <tr>
+      <th>1994-05-31</th>
+      <td>1.1909</td>
+      <td>1.5113</td>
+      <td>0.009544</td>
+      <td>0.7371</td>
+      <td>0.7225</td>
+      <td>0.1400</td>
+      <td>0.7130</td>
+    </tr>
+    <tr>
+      <th>1994-06-30</th>
+      <td>1.2238</td>
+      <td>1.5443</td>
+      <td>0.010158</td>
+      <td>0.7285</td>
+      <td>0.7224</td>
+      <td>0.1444</td>
+      <td>0.7499</td>
+    </tr>
+    <tr>
+      <th>1994-07-29</th>
+      <td>1.2261</td>
+      <td>1.5440</td>
+      <td>0.009985</td>
+      <td>0.7395</td>
+      <td>0.7211</td>
+      <td>0.1448</td>
+      <td>0.7463</td>
+    </tr>
+    <tr>
+      <th>1994-08-31</th>
+      <td>1.2341</td>
+      <td>1.5340</td>
+      <td>0.009995</td>
+      <td>0.7429</td>
+      <td>0.7310</td>
+      <td>0.1442</td>
+      <td>0.7508</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 154 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "raw_data = pd.read_excel(\"./data/HW3_20201112.xlsx\", sheet_name=1)\navailable_currencies = raw_data.columns[::3]\ndata = raw_data.iloc[1:, list(range(1, len(raw_data.columns), 3))].astype(float)\ndata.columns = raw_data.iloc[0, list(range(1, len(raw_data.columns), 3))].values\ndata.index = pd.to_datetime(raw_data.iloc[1:, 0])\ndata.index.name = \"date\"\ndata.index.freq = \"-1BM\"\ndata = data.sort_index()\ndata.head()";
+                var nbb_formatted_code = "raw_data = pd.read_excel(\"./data/HW3_20201112.xlsx\", sheet_name=1)\navailable_currencies = raw_data.columns[::3]\ndata = raw_data.iloc[1:, list(range(1, len(raw_data.columns), 3))].astype(float)\ndata.columns = raw_data.iloc[0, list(range(1, len(raw_data.columns), 3))].values\ndata.index = pd.to_datetime(raw_data.iloc[1:, 0])\ndata.index.name = \"date\"\ndata.index.freq = \"-1BM\"\ndata = data.sort_index()\ndata.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-1">
+<h2>Step 1:<a class="headerlink" href="#step-1" title="Permalink to this headline">¶</a></h2>
+<p>Transform currency prices to monthly returns</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">monthly_returns</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">monthly_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EURUSD</th>
+      <th>GBPUSD</th>
+      <th>JPYUSD</th>
+      <th>AUDUSD</th>
+      <th>CADUSD</th>
+      <th>NOKUSD</th>
+      <th>CHFUSD</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1994-05-31</th>
+      <td>0.005828</td>
+      <td>-0.004742</td>
+      <td>-0.029391</td>
+      <td>0.030189</td>
+      <td>-0.000830</td>
+      <td>0.003584</td>
+      <td>0.000702</td>
+    </tr>
+    <tr>
+      <th>1994-06-30</th>
+      <td>0.027626</td>
+      <td>0.021836</td>
+      <td>0.064334</td>
+      <td>-0.011667</td>
+      <td>-0.000138</td>
+      <td>0.031429</td>
+      <td>0.051753</td>
+    </tr>
+    <tr>
+      <th>1994-07-29</th>
+      <td>0.001879</td>
+      <td>-0.000194</td>
+      <td>-0.017031</td>
+      <td>0.015100</td>
+      <td>-0.001800</td>
+      <td>0.002770</td>
+      <td>-0.004801</td>
+    </tr>
+    <tr>
+      <th>1994-08-31</th>
+      <td>0.006525</td>
+      <td>-0.006477</td>
+      <td>0.001002</td>
+      <td>0.004598</td>
+      <td>0.013729</td>
+      <td>-0.004144</td>
+      <td>0.006030</td>
+    </tr>
+    <tr>
+      <th>1994-09-30</th>
+      <td>0.017827</td>
+      <td>0.028357</td>
+      <td>0.009105</td>
+      <td>-0.003634</td>
+      <td>0.018605</td>
+      <td>0.022191</td>
+      <td>0.034497</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 24.9 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "monthly_returns = data.pct_change(1).iloc[1:]\nmonthly_returns.head()";
+                var nbb_formatted_code = "monthly_returns = data.pct_change(1).iloc[1:]\nmonthly_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-2">
+<h2>Step 2:<a class="headerlink" href="#step-2" title="Permalink to this headline">¶</a></h2>
+<p>Starting from 12/31/1999, at each month-end date, we’ll forecast next-month returns for the seven currencies separately using one of two different model selection methods:</p>
+<p>Two models:</p>
+<ol class="simple">
+<li><p>AR(1)</p></li>
+<li><p>MA(1)</p></li>
+</ol>
+<div class="section" id="model-selection-method-a-in-sample">
+<h3>Model Selection Method A (In-Sample):<a class="headerlink" href="#model-selection-method-a-in-sample" title="Permalink to this headline">¶</a></h3>
+<p>At the time point t, calibrate/estimate the two models based on the past 24 monthly return observations (current observation at t included).</p>
+<p>Calculate the AICs for the two estimated models for those 24 obsevations, and choose the one with lower AIC.</p>
+<p>Please note that AIC and mean squared error (MSE) are equivalent for comparing the two pre-assigned models. (So if you are not familiar with AIC, try use MSE instead).</p>
+<p>Forecast the next period return at time (t+1) using the selected model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_date</span> <span class="o">=</span> <span class="s2">&quot;1999-12-31&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 473 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "start_date = \"1999-12-31\"";
+                var nbb_formatted_code = "start_date = \"1999-12-31\"";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_selection_A</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns next period forecast using best model&quot;&quot;&quot;</span>
+    <span class="n">ar_1_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># AR(1)</span>
+    <span class="n">ma_1_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># MA(1)</span>
+
+    <span class="c1"># Select Best model based on AIC</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="n">ar_1_model</span> <span class="k">if</span> <span class="n">ar_1_model</span><span class="o">.</span><span class="n">aic</span> <span class="o">&lt;</span> <span class="n">ma_1_model</span><span class="o">.</span><span class="n">aic</span> <span class="k">else</span> <span class="n">ma_1_model</span>
+
+    <span class="c1"># Get forecast</span>
+    <span class="n">forecast</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">conf_int</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">forecast</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">forecast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">model_selection_A_predictions</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">monthly_returns</span><span class="p">[</span><span class="n">currency</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">model_selection_A</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start_date</span><span class="p">:]</span>
+            <span class="k">for</span> <span class="n">currency</span> <span class="ow">in</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">columns</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="p">)</span>
+
+<span class="n">model_selection_A_predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EURUSD</th>
+      <th>GBPUSD</th>
+      <th>JPYUSD</th>
+      <th>AUDUSD</th>
+      <th>CADUSD</th>
+      <th>NOKUSD</th>
+      <th>CHFUSD</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-31</th>
+      <td>-0.003131</td>
+      <td>-0.001858</td>
+      <td>0.014124</td>
+      <td>-0.000595</td>
+      <td>-0.002344</td>
+      <td>0.011939</td>
+      <td>-0.003192</td>
+    </tr>
+    <tr>
+      <th>2000-02-29</th>
+      <td>-0.006137</td>
+      <td>-0.000819</td>
+      <td>0.018341</td>
+      <td>-0.000382</td>
+      <td>0.000340</td>
+      <td>0.012523</td>
+      <td>-0.007582</td>
+    </tr>
+    <tr>
+      <th>2000-03-31</th>
+      <td>-0.004628</td>
+      <td>0.009065</td>
+      <td>0.012377</td>
+      <td>-0.002184</td>
+      <td>-0.000579</td>
+      <td>0.002050</td>
+      <td>-0.005109</td>
+    </tr>
+    <tr>
+      <th>2000-04-28</th>
+      <td>-0.004501</td>
+      <td>-0.001630</td>
+      <td>-0.000457</td>
+      <td>-0.002368</td>
+      <td>-0.000798</td>
+      <td>-0.000776</td>
+      <td>-0.002774</td>
+    </tr>
+    <tr>
+      <th>2000-05-31</th>
+      <td>-0.011437</td>
+      <td>0.007824</td>
+      <td>0.027002</td>
+      <td>-0.002033</td>
+      <td>0.000620</td>
+      <td>0.007167</td>
+      <td>-0.008398</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>-0.003151</td>
+      <td>0.010656</td>
+      <td>0.001052</td>
+      <td>-0.005594</td>
+      <td>-0.001367</td>
+      <td>0.002645</td>
+      <td>0.000012</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>0.002632</td>
+      <td>0.002070</td>
+      <td>0.001336</td>
+      <td>-0.000985</td>
+      <td>-0.000446</td>
+      <td>0.001262</td>
+      <td>0.000492</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>0.005300</td>
+      <td>0.001749</td>
+      <td>0.001517</td>
+      <td>-0.000071</td>
+      <td>-0.004193</td>
+      <td>0.000369</td>
+      <td>0.001042</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>0.001467</td>
+      <td>-0.006201</td>
+      <td>0.001589</td>
+      <td>-0.007189</td>
+      <td>0.005521</td>
+      <td>0.000814</td>
+      <td>-0.000118</td>
+    </tr>
+    <tr>
+      <th>2019-03-29</th>
+      <td>0.000857</td>
+      <td>0.000701</td>
+      <td>0.001366</td>
+      <td>0.000846</td>
+      <td>-0.000173</td>
+      <td>-0.000415</td>
+      <td>0.000416</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 7 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1min 55s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "def model_selection_A(monthly_returns):\n    \"\"\"Returns next period forecast using best model\"\"\"\n    ar_1_model = ARIMA(monthly_returns, order=(1, 0, 0)).fit()  # AR(1)\n    ma_1_model = ARIMA(monthly_returns, order=(0, 0, 1)).fit()  # MA(1)\n\n    # Select Best model based on AIC\n    best_model = ar_1_model if ar_1_model.aic < ma_1_model.aic else ma_1_model\n\n    # Get forecast\n    forecast, stderr, conf_int = best_model.forecast()\n\n    return forecast[0]\n\n\nmodel_selection_A_predictions = (\n    pd.concat(\n        [\n            monthly_returns[currency]\n            .rolling(24, min_periods=24)\n            .agg(model_selection_A)\n            .loc[start_date:]\n            for currency in monthly_returns.columns\n        ],\n        axis=1,\n    )\n    .shift(1)\n    .iloc[1:]\n)\n\nmodel_selection_A_predictions";
+                var nbb_formatted_code = "def model_selection_A(monthly_returns):\n    \"\"\"Returns next period forecast using best model\"\"\"\n    ar_1_model = ARIMA(monthly_returns, order=(1, 0, 0)).fit()  # AR(1)\n    ma_1_model = ARIMA(monthly_returns, order=(0, 0, 1)).fit()  # MA(1)\n\n    # Select Best model based on AIC\n    best_model = ar_1_model if ar_1_model.aic < ma_1_model.aic else ma_1_model\n\n    # Get forecast\n    forecast, stderr, conf_int = best_model.forecast()\n\n    return forecast[0]\n\n\nmodel_selection_A_predictions = (\n    pd.concat(\n        [\n            monthly_returns[currency]\n            .rolling(24, min_periods=24)\n            .agg(model_selection_A)\n            .loc[start_date:]\n            for currency in monthly_returns.columns\n        ],\n        axis=1,\n    )\n    .shift(1)\n    .iloc[1:]\n)\n\nmodel_selection_A_predictions";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="model-selection-method-b-out-sample">
+<h3>Model Selection Method B (Out-Sample):<a class="headerlink" href="#model-selection-method-b-out-sample" title="Permalink to this headline">¶</a></h3>
+<p>At the time point t, for each model, out-of-samplely forecast the returns for the past 12 months.</p>
+<ul class="simple">
+<li><p>for each time point from t-11 to t, say for t-k where k=0,…,11, we’ll estimate each model using the past 24 observations, i.e., observations at (t-k-24,…,t-k-1), then based on the estimated model to forecast returns at t-k.</p></li>
+<li><p>Now, for AR(1) model, we have forecasts for t-11, t-10,…,t, the MSE can be calculated as the mean of (forecast - true return)^2. for MA(1) model, we have another vector of 12 forecasts, with corresponded 12 true returns, and we can calculate MSE.</p></li>
+</ul>
+<p>The model with lower MSE would be selected.</p>
+<p>And then we need to calibrate that model using the past 24 observations.</p>
+<p>Forecast the next period return at time (t+1).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">model_selection_B</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Returns next period forecast using best model according to lower MSE on past 12 return forecasts&quot;&quot;&quot;</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">12</span><span class="p">:]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ar_1_model_preds</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">ma_1_model_preds</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+        <span class="n">past_24_observations</span> <span class="o">=</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">12</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="mi">24</span> <span class="p">:</span> <span class="o">-</span><span class="mi">12</span> <span class="o">+</span> <span class="n">k</span><span class="p">]</span>
+
+        <span class="n">ar_1_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">past_24_observations</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># AR(1)</span>
+        <span class="n">ma_1_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">past_24_observations</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># MA(1)</span>
+
+        <span class="c1"># Get forecast</span>
+        <span class="n">ar_1_model_pred</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">conf_int</span> <span class="o">=</span> <span class="n">ar_1_model</span><span class="o">.</span><span class="n">forecast</span><span class="p">()</span>
+        <span class="n">ma_1_model_pred</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">conf_int</span> <span class="o">=</span> <span class="n">ma_1_model</span><span class="o">.</span><span class="n">forecast</span><span class="p">()</span>
+
+        <span class="n">ar_1_model_preds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ar_1_model_pred</span><span class="p">)</span>
+        <span class="n">ma_1_model_preds</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ma_1_model_pred</span><span class="p">)</span>
+
+    <span class="c1"># Caliberated models based on past 24 month returns</span>
+    <span class="n">ar_1_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:],</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># AR(1)</span>
+    <span class="n">ma_1_model</span> <span class="o">=</span> <span class="n">ARIMA</span><span class="p">(</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">24</span><span class="p">:],</span> <span class="n">order</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>  <span class="c1"># MA(1)</span>
+
+    <span class="c1"># Select Best model based on AIC</span>
+    <span class="n">best_model</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="n">ar_1_model</span>
+        <span class="k">if</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_true</span><span class="o">=</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="o">=</span><span class="n">ar_1_model_preds</span><span class="p">)</span>
+        <span class="o">&lt;</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_true</span><span class="o">=</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="o">=</span><span class="n">ma_1_model_preds</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">ma_1_model</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Get forecast</span>
+    <span class="n">forecast</span><span class="p">,</span> <span class="n">stderr</span><span class="p">,</span> <span class="n">conf_int</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">forecast</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">forecast</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+
+<span class="n">model_selection_B_predictions</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">monthly_returns</span><span class="p">[</span><span class="n">currency</span><span class="p">]</span>
+            <span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">36</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">model_selection_B</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start_date</span><span class="p">:]</span>
+            <span class="k">for</span> <span class="n">currency</span> <span class="ow">in</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">columns</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="p">)</span>
+
+<span class="n">model_selection_B_predictions</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EURUSD</th>
+      <th>GBPUSD</th>
+      <th>JPYUSD</th>
+      <th>AUDUSD</th>
+      <th>CADUSD</th>
+      <th>NOKUSD</th>
+      <th>CHFUSD</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-31</th>
+      <td>-0.003022</td>
+      <td>-0.005389</td>
+      <td>0.012898</td>
+      <td>-0.000065</td>
+      <td>-0.002057</td>
+      <td>-0.006123</td>
+      <td>-0.003192</td>
+    </tr>
+    <tr>
+      <th>2000-02-29</th>
+      <td>-0.005529</td>
+      <td>-0.000007</td>
+      <td>0.014642</td>
+      <td>-0.000583</td>
+      <td>0.000287</td>
+      <td>0.009027</td>
+      <td>-0.007582</td>
+    </tr>
+    <tr>
+      <th>2000-03-31</th>
+      <td>-0.004428</td>
+      <td>0.006833</td>
+      <td>0.010626</td>
+      <td>-0.002631</td>
+      <td>-0.000590</td>
+      <td>-0.002736</td>
+      <td>-0.005109</td>
+    </tr>
+    <tr>
+      <th>2000-04-28</th>
+      <td>-0.004393</td>
+      <td>-0.005841</td>
+      <td>0.003849</td>
+      <td>-0.002691</td>
+      <td>-0.000777</td>
+      <td>-0.002713</td>
+      <td>-0.002774</td>
+    </tr>
+    <tr>
+      <th>2000-05-31</th>
+      <td>-0.010242</td>
+      <td>0.007824</td>
+      <td>0.020417</td>
+      <td>-0.002566</td>
+      <td>0.000268</td>
+      <td>0.007167</td>
+      <td>-0.008398</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>-0.003151</td>
+      <td>0.010656</td>
+      <td>-0.001926</td>
+      <td>-0.004398</td>
+      <td>-0.001367</td>
+      <td>0.001452</td>
+      <td>-0.000205</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>0.002632</td>
+      <td>0.002620</td>
+      <td>0.001336</td>
+      <td>-0.000718</td>
+      <td>-0.000446</td>
+      <td>0.000841</td>
+      <td>0.000503</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>0.005300</td>
+      <td>0.001979</td>
+      <td>0.001517</td>
+      <td>-0.000180</td>
+      <td>-0.004193</td>
+      <td>0.000369</td>
+      <td>0.001274</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>0.001467</td>
+      <td>-0.003161</td>
+      <td>0.001589</td>
+      <td>-0.006649</td>
+      <td>0.005521</td>
+      <td>0.000577</td>
+      <td>-0.000090</td>
+    </tr>
+    <tr>
+      <th>2019-03-29</th>
+      <td>0.000857</td>
+      <td>0.000945</td>
+      <td>0.001222</td>
+      <td>0.001408</td>
+      <td>0.000340</td>
+      <td>-0.000426</td>
+      <td>0.000435</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 7 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 24min 12s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "def model_selection_B(monthly_returns):\n    \"\"\"Returns next period forecast using best model according to lower MSE on past 12 return forecasts\"\"\"\n    y_true = monthly_returns.iloc[-12:].values\n    ar_1_model_preds = []\n    ma_1_model_preds = []\n    for k in range(12):\n        past_24_observations = monthly_returns.iloc[-12 + k - 24 : -12 + k]\n\n        ar_1_model = ARIMA(past_24_observations, order=(1, 0, 0)).fit()  # AR(1)\n        ma_1_model = ARIMA(past_24_observations, order=(0, 0, 1)).fit()  # MA(1)\n\n        # Get forecast\n        ar_1_model_pred, stderr, conf_int = ar_1_model.forecast()\n        ma_1_model_pred, stderr, conf_int = ma_1_model.forecast()\n\n        ar_1_model_preds.append(ar_1_model_pred)\n        ma_1_model_preds.append(ma_1_model_pred)\n\n    # Caliberated models based on past 24 month returns\n    ar_1_model = ARIMA(monthly_returns.iloc[-24:], order=(1, 0, 0)).fit()  # AR(1)\n    ma_1_model = ARIMA(monthly_returns.iloc[-24:], order=(0, 0, 1)).fit()  # MA(1)\n\n    # Select Best model based on AIC\n    best_model = (\n        ar_1_model\n        if mean_squared_error(y_true=y_true, y_pred=ar_1_model_preds)\n        < mean_squared_error(y_true=y_true, y_pred=ma_1_model_preds)\n        else ma_1_model\n    )\n\n    # Get forecast\n    forecast, stderr, conf_int = best_model.forecast()\n\n    return forecast[0]\n\n\nmodel_selection_B_predictions = (\n    pd.concat(\n        [\n            monthly_returns[currency]\n            .rolling(36, min_periods=36)\n            .agg(model_selection_B)\n            .loc[start_date:]\n            for currency in monthly_returns.columns\n        ],\n        axis=1,\n    )\n    .shift(1)\n    .iloc[1:]\n)\n\nmodel_selection_B_predictions";
+                var nbb_formatted_code = "def model_selection_B(monthly_returns):\n    \"\"\"Returns next period forecast using best model according to lower MSE on past 12 return forecasts\"\"\"\n    y_true = monthly_returns.iloc[-12:].values\n    ar_1_model_preds = []\n    ma_1_model_preds = []\n    for k in range(12):\n        past_24_observations = monthly_returns.iloc[-12 + k - 24 : -12 + k]\n\n        ar_1_model = ARIMA(past_24_observations, order=(1, 0, 0)).fit()  # AR(1)\n        ma_1_model = ARIMA(past_24_observations, order=(0, 0, 1)).fit()  # MA(1)\n\n        # Get forecast\n        ar_1_model_pred, stderr, conf_int = ar_1_model.forecast()\n        ma_1_model_pred, stderr, conf_int = ma_1_model.forecast()\n\n        ar_1_model_preds.append(ar_1_model_pred)\n        ma_1_model_preds.append(ma_1_model_pred)\n\n    # Caliberated models based on past 24 month returns\n    ar_1_model = ARIMA(monthly_returns.iloc[-24:], order=(1, 0, 0)).fit()  # AR(1)\n    ma_1_model = ARIMA(monthly_returns.iloc[-24:], order=(0, 0, 1)).fit()  # MA(1)\n\n    # Select Best model based on AIC\n    best_model = (\n        ar_1_model\n        if mean_squared_error(y_true=y_true, y_pred=ar_1_model_preds)\n        < mean_squared_error(y_true=y_true, y_pred=ma_1_model_preds)\n        else ma_1_model\n    )\n\n    # Get forecast\n    forecast, stderr, conf_int = best_model.forecast()\n\n    return forecast[0]\n\n\nmodel_selection_B_predictions = (\n    pd.concat(\n        [\n            monthly_returns[currency]\n            .rolling(36, min_periods=36)\n            .agg(model_selection_B)\n            .loc[start_date:]\n            for currency in monthly_returns.columns\n        ],\n        axis=1,\n    )\n    .shift(1)\n    .iloc[1:]\n)\n\nmodel_selection_B_predictions";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-3">
+<h2>Step 3:<a class="headerlink" href="#step-3" title="Permalink to this headline">¶</a></h2>
+<p>Now at time t, we have made our forecasts for the seven currencies of their monthly returns at t+1.</p>
+<p>Suppose the forecasted returns are (r1,r2,…,r7).</p>
+<p>We’ll transform the forecasts to return sign only: (sign(r1),sign(r2),…,sign(r7)).</p>
+<p>We’ll invest in currency h with a long position if sign(rh)=1, otherwise we’ll invest in it with a short position.
+But right now, we need to figure out the weight vector based on Risk Parity.</p>
+<p>Prepare the covariance matrix corresponding to (sign(r1),sign(r2),…,sign(r7)), i.e., for currency h, if sign(rh)=1, we use the currency’s original returns; otherwise, use the negative of original returns. Then we’ll calculate the covariance matrix based on past 60 monthly returns (time t included) (<strong>ASSUMPTION 1. I assume that the past 60 monthly returns refer to the original past 60 monthly returns, not the ones we forecast using model A / B</strong>).</p>
+<p>Based on the covariance matrix, run Risk Parity program (see class slide) to get a weight vector (w1, …, w7) whose summation equals 1. However, we’ll target an annualized volatility of 5%, i.e., we’ll invest with the updated weight vector (w1*,…,w7*)=the levarage factor x(w1,…,w7) where the leverage factor = 5%/(the expected volatility of the portfolio given (w1,…,w7)) (<strong>ASSUMPTION 2. I assume that the expected volatility here refers to the annualized expected volatility of the portfolio</strong>).</p>
+<p>Note: w1*,…, w7* are all of positive values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_returns</span> <span class="o">=</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_selection_A_predictions</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span>
+    <span class="n">model_selection_A_predictions</span>
+<span class="p">)</span>
+
+<span class="n">A_returns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EURUSD</th>
+      <th>GBPUSD</th>
+      <th>JPYUSD</th>
+      <th>AUDUSD</th>
+      <th>CADUSD</th>
+      <th>NOKUSD</th>
+      <th>CHFUSD</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-31</th>
+      <td>0.035281</td>
+      <td>0.001236</td>
+      <td>-0.045310</td>
+      <td>0.029998</td>
+      <td>0.001157</td>
+      <td>-0.036889</td>
+      <td>0.040401</td>
+    </tr>
+    <tr>
+      <th>2000-02-29</th>
+      <td>0.006696</td>
+      <td>0.022893</td>
+      <td>-0.026415</td>
+      <td>0.030141</td>
+      <td>-0.001593</td>
+      <td>-0.007494</td>
+      <td>0.004641</td>
+    </tr>
+    <tr>
+      <th>2000-03-31</th>
+      <td>0.009023</td>
+      <td>0.007535</td>
+      <td>0.072902</td>
+      <td>0.017320</td>
+      <td>-0.000870</td>
+      <td>-0.009228</td>
+      <td>-0.000000</td>
+    </tr>
+    <tr>
+      <th>2000-04-28</th>
+      <td>0.045631</td>
+      <td>0.025014</td>
+      <td>0.049856</td>
+      <td>0.038214</td>
+      <td>0.021008</td>
+      <td>0.053345</td>
+      <td>0.029642</td>
+    </tr>
+    <tr>
+      <th>2000-05-31</th>
+      <td>-0.028622</td>
+      <td>-0.032167</td>
+      <td>0.004977</td>
+      <td>0.019524</td>
+      <td>-0.011100</td>
+      <td>0.006261</td>
+      <td>-0.021452</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>-0.000442</td>
+      <td>-0.001332</td>
+      <td>-0.004631</td>
+      <td>-0.032942</td>
+      <td>0.010132</td>
+      <td>-0.018565</td>
+      <td>0.009882</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>0.013254</td>
+      <td>0.000392</td>
+      <td>0.035293</td>
+      <td>0.035177</td>
+      <td>0.025389</td>
+      <td>-0.005159</td>
+      <td>0.017174</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>-0.001657</td>
+      <td>0.027834</td>
+      <td>0.006906</td>
+      <td>-0.031778</td>
+      <td>-0.039143</td>
+      <td>0.025065</td>
+      <td>-0.012761</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>-0.006726</td>
+      <td>-0.011748</td>
+      <td>-0.022643</td>
+      <td>0.024612</td>
+      <td>-0.003938</td>
+      <td>-0.015177</td>
+      <td>0.003679</td>
+    </tr>
+    <tr>
+      <th>2019-03-29</th>
+      <td>-0.010289</td>
+      <td>-0.006107</td>
+      <td>0.011027</td>
+      <td>-0.000564</td>
+      <td>0.017525</td>
+      <td>0.007705</td>
+      <td>0.002994</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 7 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 20.8 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "A_returns = monthly_returns.loc[model_selection_A_predictions.index[0] :] * np.sign(\n    model_selection_A_predictions\n)\n\nA_returns";
+                var nbb_formatted_code = "A_returns = monthly_returns.loc[model_selection_A_predictions.index[0] :] * np.sign(\n    model_selection_A_predictions\n)\n\nA_returns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B_returns</span> <span class="o">=</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">model_selection_B_predictions</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">:]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span>
+    <span class="n">model_selection_B_predictions</span>
+<span class="p">)</span>
+
+<span class="n">B_returns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>EURUSD</th>
+      <th>GBPUSD</th>
+      <th>JPYUSD</th>
+      <th>AUDUSD</th>
+      <th>CADUSD</th>
+      <th>NOKUSD</th>
+      <th>CHFUSD</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-31</th>
+      <td>0.035281</td>
+      <td>0.001236</td>
+      <td>-0.045310</td>
+      <td>0.029998</td>
+      <td>0.001157</td>
+      <td>0.036889</td>
+      <td>0.040401</td>
+    </tr>
+    <tr>
+      <th>2000-02-29</th>
+      <td>0.006696</td>
+      <td>0.022893</td>
+      <td>-0.026415</td>
+      <td>0.030141</td>
+      <td>-0.001593</td>
+      <td>-0.007494</td>
+      <td>0.004641</td>
+    </tr>
+    <tr>
+      <th>2000-03-31</th>
+      <td>0.009023</td>
+      <td>0.007535</td>
+      <td>0.072902</td>
+      <td>0.017320</td>
+      <td>-0.000870</td>
+      <td>0.009228</td>
+      <td>-0.000000</td>
+    </tr>
+    <tr>
+      <th>2000-04-28</th>
+      <td>0.045631</td>
+      <td>0.025014</td>
+      <td>-0.049856</td>
+      <td>0.038214</td>
+      <td>0.021008</td>
+      <td>0.053345</td>
+      <td>0.029642</td>
+    </tr>
+    <tr>
+      <th>2000-05-31</th>
+      <td>-0.028622</td>
+      <td>-0.032167</td>
+      <td>0.004977</td>
+      <td>0.019524</td>
+      <td>-0.011100</td>
+      <td>0.006261</td>
+      <td>-0.021452</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>-0.000442</td>
+      <td>-0.001332</td>
+      <td>0.004631</td>
+      <td>-0.032942</td>
+      <td>0.010132</td>
+      <td>-0.018565</td>
+      <td>-0.009882</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>0.013254</td>
+      <td>0.000392</td>
+      <td>0.035293</td>
+      <td>0.035177</td>
+      <td>0.025389</td>
+      <td>-0.005159</td>
+      <td>0.017174</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>-0.001657</td>
+      <td>0.027834</td>
+      <td>0.006906</td>
+      <td>-0.031778</td>
+      <td>-0.039143</td>
+      <td>0.025065</td>
+      <td>-0.012761</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>-0.006726</td>
+      <td>-0.011748</td>
+      <td>-0.022643</td>
+      <td>0.024612</td>
+      <td>-0.003938</td>
+      <td>-0.015177</td>
+      <td>0.003679</td>
+    </tr>
+    <tr>
+      <th>2019-03-29</th>
+      <td>-0.010289</td>
+      <td>-0.006107</td>
+      <td>0.011027</td>
+      <td>-0.000564</td>
+      <td>-0.017525</td>
+      <td>0.007705</td>
+      <td>0.002994</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 7 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 15.8 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "B_returns = monthly_returns.loc[model_selection_B_predictions.index[0] :] * np.sign(\n    model_selection_B_predictions\n)\n\nB_returns";
+                var nbb_formatted_code = "B_returns = monthly_returns.loc[model_selection_B_predictions.index[0] :] * np.sign(\n    model_selection_B_predictions\n)\n\nB_returns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Risk-Parity Program:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b33ad62e-e4c2-4f98-9dc1-30a585d0e231">
+<span class="eqno">(73)<a class="headerlink" href="#equation-b33ad62e-e4c2-4f98-9dc1-30a585d0e231" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{w}{\text{minimize }} &amp;{(\mathbb{CR} - b\sigma(w))}^\top {(\mathbb{CR} - b\sigma(w))} \\
+    \text{subject to } &amp;w^\top \mathbb{1} = 1 \text{ and } 0 \leq w \leq 1 \\ 
+    \text{where } &amp;b_i = \frac{1}{n}\qquad\forall i \in 1, \cdots, n, \\
+    \text{and } &amp;\mathbb{CR} = \frac{\text{diag}(w)\Sigma w}{\sigma(w)} \\
+    &amp;\mathbb{MCR} = \frac{\Sigma w}{\sigma(w)} \\
+    &amp;\sigma(w) = \sqrt{w^\top\Sigma w}
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">risk_budgeting_weights</span><span class="p">(</span><span class="n">Σ</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">target_ann_vol</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Solves risk-budgeting program and returns optimal</span>
+<span class="sd">    weights for each asset such that the volatility of </span>
+<span class="sd">    each asset in portfolio conforms to the risk budget</span>
+<span class="sd">    allocated using differential evolution.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        Σ (np.array): Covariance matrix of the monthly asset returns</span>
+<span class="sd">        b (np.array): Risk budgets</span>
+<span class="sd">        target_ann_vol (float): Target annualized volatility, default - 0.05</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        (np.array): Weight vector</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Number of assets in portfolio</span>
+    <span class="n">σ</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Σ</span> <span class="o">@</span> <span class="n">w</span><span class="p">)</span>  <span class="c1"># Portfolio volatility</span>
+    <span class="n">MCR</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">σ</span><span class="p">:</span> <span class="p">(</span><span class="n">Σ</span> <span class="o">@</span> <span class="n">w</span><span class="p">)</span> <span class="o">/</span> <span class="n">σ</span>  <span class="c1"># Marginal Contribution to Risk</span>
+    <span class="n">CR</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">σ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="o">@</span> <span class="n">MCR</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">σ</span><span class="p">)</span>  <span class="c1"># Contribution to Risk</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">w</span><span class="p">:</span> <span class="p">(</span><span class="n">CR</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">σ</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">))</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">σ</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">))</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="p">(</span>
+        <span class="n">CR</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">,</span> <span class="n">σ</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">))</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">T</span> <span class="o">*</span> <span class="n">σ</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span>
+    <span class="p">)</span>  <span class="c1"># Form objective</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">differential_evolution</span><span class="p">(</span>
+        <span class="n">func</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span>
+        <span class="n">bounds</span><span class="o">=</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span>
+        <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">popsize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+        <span class="n">constraints</span><span class="o">=</span><span class="p">(</span>
+            <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">LinearConstraint</span><span class="p">(</span><span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,)),</span> <span class="n">lb</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ub</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>  <span class="c1"># 𝑤⊤𝟙 = 1</span>
+            <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">LinearConstraint</span><span class="p">(</span>
+                <span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">lb</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,)),</span> <span class="n">ub</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="p">,)),</span>
+            <span class="p">),</span>  <span class="c1"># 0 ≤ 𝑤 ≤ 1</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Optimal weight vector</span>
+    <span class="n">w_star</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+
+    <span class="c1"># Update weight vector to target annualized volatility</span>
+    <span class="c1"># By normalizing the weights according to their expected</span>
+    <span class="c1"># annualized volatility and then x 5% target annualized volatility</span>
+    <span class="n">leverage_factor</span> <span class="o">=</span> <span class="n">target_ann_vol</span> <span class="o">/</span> <span class="p">(</span><span class="n">σ</span><span class="p">(</span><span class="n">w_star</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span><span class="p">))</span>
+    <span class="n">w_star</span> <span class="o">*=</span> <span class="n">leverage_factor</span>
+
+    <span class="c1"># Form and solve problem.</span>
+    <span class="k">return</span> <span class="n">w_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.7 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "def risk_budgeting_weights(\u03a3, b, target_ann_vol=0.05):\n    \"\"\"Solves risk-budgeting program and returns optimal\n    weights for each asset such that the volatility of \n    each asset in portfolio conforms to the risk budget\n    allocated using differential evolution.\n    \n    Args:\n        \u03a3 (np.array): Covariance matrix of the monthly asset returns\n        b (np.array): Risk budgets\n        target_ann_vol (float): Target annualized volatility, default - 0.05\n        \n    Returns:\n        (np.array): Weight vector\n    \"\"\"\n    n = \u03a3.shape[0]  # Number of assets in portfolio\n    \u03c3 = lambda w, \u03a3: np.sqrt(w.T @ \u03a3 @ w)  # Portfolio volatility\n    MCR = lambda w, \u03a3, \u03c3: (\u03a3 @ w) / \u03c3  # Marginal Contribution to Risk\n    CR = lambda w, \u03a3, \u03c3: np.diag(w) @ MCR(w, \u03a3, \u03c3)  # Contribution to Risk\n    obj = lambda w: (CR(w, \u03a3, \u03c3(w, \u03a3)) - b.T * \u03c3(w, \u03a3)).T @ (\n        CR(w, \u03a3, \u03c3(w, \u03a3)) - b.T * \u03c3(w, \u03a3)\n    )  # Form objective\n    result = sp.optimize.differential_evolution(\n        func=obj,\n        bounds=[(0, 1) for _ in range(n)],\n        maxiter=1000,\n        popsize=15,\n        constraints=(\n            sp.optimize.LinearConstraint(A=np.ones(shape=(n,)), lb=1, ub=1),  # \ud835\udc64\u22a4\ud835\udfd9 = 1\n            sp.optimize.LinearConstraint(\n                A=np.eye(n), lb=np.zeros(shape=(n,)), ub=np.ones(shape=(n,)),\n            ),  # 0 \u2264 \ud835\udc64 \u2264 1\n        ),\n    )\n\n    # Optimal weight vector\n    w_star = result.x\n\n    # Update weight vector to target annualized volatility\n    # By normalizing the weights according to their expected\n    # annualized volatility and then x 5% target annualized volatility\n    leverage_factor = target_ann_vol / (\u03c3(w_star, \u03a3) * np.sqrt(12))\n    w_star *= leverage_factor\n\n    # Form and solve problem.\n    return w_star";
+                var nbb_formatted_code = "def risk_budgeting_weights(\u03a3, b, target_ann_vol=0.05):\n    \"\"\"Solves risk-budgeting program and returns optimal\n    weights for each asset such that the volatility of \n    each asset in portfolio conforms to the risk budget\n    allocated using differential evolution.\n    \n    Args:\n        \u03a3 (np.array): Covariance matrix of the monthly asset returns\n        b (np.array): Risk budgets\n        target_ann_vol (float): Target annualized volatility, default - 0.05\n        \n    Returns:\n        (np.array): Weight vector\n    \"\"\"\n    n = \u03a3.shape[0]  # Number of assets in portfolio\n    \u03c3 = lambda w, \u03a3: np.sqrt(w.T @ \u03a3 @ w)  # Portfolio volatility\n    MCR = lambda w, \u03a3, \u03c3: (\u03a3 @ w) / \u03c3  # Marginal Contribution to Risk\n    CR = lambda w, \u03a3, \u03c3: np.diag(w) @ MCR(w, \u03a3, \u03c3)  # Contribution to Risk\n    obj = lambda w: (CR(w, \u03a3, \u03c3(w, \u03a3)) - b.T * \u03c3(w, \u03a3)).T @ (\n        CR(w, \u03a3, \u03c3(w, \u03a3)) - b.T * \u03c3(w, \u03a3)\n    )  # Form objective\n    result = sp.optimize.differential_evolution(\n        func=obj,\n        bounds=[(0, 1) for _ in range(n)],\n        maxiter=1000,\n        popsize=15,\n        constraints=(\n            sp.optimize.LinearConstraint(A=np.ones(shape=(n,)), lb=1, ub=1),  # \ud835\udc64\u22a4\ud835\udfd9 = 1\n            sp.optimize.LinearConstraint(\n                A=np.eye(n), lb=np.zeros(shape=(n,)), ub=np.ones(shape=(n,)),\n            ),  # 0 \u2264 \ud835\udc64 \u2264 1\n        ),\n    )\n\n    # Optimal weight vector\n    w_star = result.x\n\n    # Update weight vector to target annualized volatility\n    # By normalizing the weights according to their expected\n    # annualized volatility and then x 5% target annualized volatility\n    leverage_factor = target_ann_vol / (\u03c3(w_star, \u03a3) * np.sqrt(12))\n    w_star *= leverage_factor\n\n    # Form and solve problem.\n    return w_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="step-4">
+<h2>Step 4:<a class="headerlink" href="#step-4" title="Permalink to this headline">¶</a></h2>
+<p>the portfolio (w1*,…,w7*)’s return at time t+1 will be calculated as (sign(r1) x w1* x r1_new+…+ sign(r7) x w1* x r7_new) where sign(rh) is your directional forecast for currency h at time t+1, and rh_new is its actual return at time t+1.</p>
+<p>Record the portfolio’s returns at time t+1, and go to Step 2 to make forecast for time t+2 and build the portfolio, and stop until 3/29/2019.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">annualized_volatility</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">monthly_returns</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">else</span> <span class="kc">None</span>
+<span class="p">)</span>
+<span class="n">annualized_return</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">monthly_returns</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">monthly_returns</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">12</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">))</span>
+    <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="k">else</span> <span class="kc">None</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">sharpe_ratio</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">,</span> <span class="n">R_f</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="n">R_p</span> <span class="o">=</span> <span class="n">annualized_return</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">)</span>
+    <span class="n">σ_p</span> <span class="o">=</span> <span class="n">annualized_volatility</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">R_p</span> <span class="o">-</span> <span class="n">R_f</span><span class="p">)</span> <span class="o">/</span> <span class="n">σ_p</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">monthly_returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">get_risk_parity_returns</span><span class="p">(</span><span class="n">past_returns</span><span class="p">,</span> <span class="n">forecasted_returns</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">past_returns</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="n">Σ</span> <span class="o">=</span> <span class="n">past_returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span>
+    <span class="n">risk_parity_weights</span> <span class="o">=</span> <span class="n">risk_budgeting_weights</span><span class="p">(</span><span class="n">Σ</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">risk_parity_weights</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">forecasted_returns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.35 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "annualized_volatility = (\n    lambda monthly_returns: np.std(monthly_returns) * np.sqrt(12)\n    if len(monthly_returns) > 0\n    else None\n)\nannualized_return = (\n    lambda monthly_returns: np.prod(monthly_returns + 1) ** (12 / len(monthly_returns))\n    - 1\n    if len(monthly_returns) > 0\n    else None\n)\n\n\ndef sharpe_ratio(monthly_returns, R_f=0):\n    R_p = annualized_return(monthly_returns)\n    \u03c3_p = annualized_volatility(monthly_returns)\n    return (R_p - R_f) / \u03c3_p if len(monthly_returns) > 0 else None\n\n\ndef get_risk_parity_returns(past_returns, forecasted_returns):\n    n = len(past_returns.columns)\n    \u03a3 = past_returns.cov().values\n    b = np.array([1] * n) / n\n    risk_parity_weights = risk_budgeting_weights(\u03a3, b)\n    return risk_parity_weights.T @ forecasted_returns";
+                var nbb_formatted_code = "annualized_volatility = (\n    lambda monthly_returns: np.std(monthly_returns) * np.sqrt(12)\n    if len(monthly_returns) > 0\n    else None\n)\nannualized_return = (\n    lambda monthly_returns: np.prod(monthly_returns + 1) ** (12 / len(monthly_returns))\n    - 1\n    if len(monthly_returns) > 0\n    else None\n)\n\n\ndef sharpe_ratio(monthly_returns, R_f=0):\n    R_p = annualized_return(monthly_returns)\n    \u03c3_p = annualized_volatility(monthly_returns)\n    return (R_p - R_f) / \u03c3_p if len(monthly_returns) > 0 else None\n\n\ndef get_risk_parity_returns(past_returns, forecasted_returns):\n    n = len(past_returns.columns)\n    \u03a3 = past_returns.cov().values\n    b = np.array([1] * n) / n\n    risk_parity_weights = risk_budgeting_weights(\u03a3, b)\n    return risk_parity_weights.T @ forecasted_returns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_risk_parity_returns</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">get_risk_parity_returns</span><span class="p">(</span>
+                <span class="n">past_returns</span><span class="o">=</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+                    <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+                    <span class="o">-</span> <span class="mi">60</span>
+                    <span class="o">+</span> <span class="n">start_idx</span> <span class="p">:</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+                    <span class="o">+</span> <span class="n">start_idx</span><span class="p">,</span>
+                    <span class="p">:,</span>
+                <span class="p">],</span>
+                <span class="n">forecasted_returns</span><span class="o">=</span><span class="n">A_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+                        <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span> <span class="o">+</span> <span class="n">start_idx</span>
+                    <span class="p">]</span><span class="o">.</span><span class="n">name</span>
+                <span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">start_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span>
+                <span class="mi">1</span><span class="p">,</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">A_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start_date</span><span class="p">:]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;returns&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">A_risk_parity_returns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>returns</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-31</th>
+      <td>0.006108</td>
+    </tr>
+    <tr>
+      <th>2000-02-29</th>
+      <td>0.006802</td>
+    </tr>
+    <tr>
+      <th>2000-03-31</th>
+      <td>0.009838</td>
+    </tr>
+    <tr>
+      <th>2000-04-28</th>
+      <td>0.038707</td>
+    </tr>
+    <tr>
+      <th>2000-05-31</th>
+      <td>-0.011690</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>-0.003069</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>0.014000</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>-0.002045</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>-0.004150</td>
+    </tr>
+    <tr>
+      <th>2019-03-29</th>
+      <td>0.002271</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 1 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 39min 23s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "A_risk_parity_returns = (\n    pd.Series(\n        [\n            get_risk_parity_returns(\n                past_returns=monthly_returns.iloc[\n                    monthly_returns.index.get_loc(start_date)\n                    - 60\n                    + start_idx : monthly_returns.index.get_loc(start_date)\n                    + start_idx,\n                    :,\n                ],\n                forecasted_returns=A_returns.loc[\n                    monthly_returns.iloc[monthly_returns.index.get_loc(start_date) + start_idx].name\n                ],\n            ) for start_idx in range(1, monthly_returns.shape[0] - monthly_returns.index.get_loc(start_date))\n        ],\n        index=A_returns.loc[start_date:].index,\n    )\n    .to_frame()\n    .rename({0: \"returns\"}, axis=1)\n)\nA_risk_parity_returns";
+                var nbb_formatted_code = "A_risk_parity_returns = (\n    pd.Series(\n        [\n            get_risk_parity_returns(\n                past_returns=monthly_returns.iloc[\n                    monthly_returns.index.get_loc(start_date)\n                    - 60\n                    + start_idx : monthly_returns.index.get_loc(start_date)\n                    + start_idx,\n                    :,\n                ],\n                forecasted_returns=A_returns.loc[\n                    monthly_returns.iloc[\n                        monthly_returns.index.get_loc(start_date) + start_idx\n                    ].name\n                ],\n            )\n            for start_idx in range(\n                1, monthly_returns.shape[0] - monthly_returns.index.get_loc(start_date)\n            )\n        ],\n        index=A_returns.loc[start_date:].index,\n    )\n    .to_frame()\n    .rename({0: \"returns\"}, axis=1)\n)\nA_risk_parity_returns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Risk-Parity with Model Selection A: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annualized Return:&quot;</span><span class="p">,</span> <span class="n">annualized_return</span><span class="p">(</span><span class="n">A_risk_parity_returns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annualized Volatility:&quot;</span><span class="p">,</span> <span class="n">annualized_volatility</span><span class="p">(</span><span class="n">A_risk_parity_returns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annualized Sharpe Ratio:&quot;</span><span class="p">,</span> <span class="n">sharpe_ratio</span><span class="p">(</span><span class="n">A_risk_parity_returns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Risk-Parity with Model Selection A: 
+Annualized Return: 0.006451740379742388
+Annualized Volatility: 0.04123175329661224
+Annualized Sharpe Ratio: 0.15647504323500325
+time: 1.48 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "print(f\"Risk-Parity with Model Selection A: \")\nprint(f\"Annualized Return:\", annualized_return(A_risk_parity_returns.values))\nprint(f\"Annualized Volatility:\", annualized_volatility(A_risk_parity_returns.values))\nprint(f\"Annualized Sharpe Ratio:\", sharpe_ratio(A_risk_parity_returns.values))";
+                var nbb_formatted_code = "print(f\"Risk-Parity with Model Selection A: \")\nprint(f\"Annualized Return:\", annualized_return(A_risk_parity_returns.values))\nprint(f\"Annualized Volatility:\", annualized_volatility(A_risk_parity_returns.values))\nprint(f\"Annualized Sharpe Ratio:\", sharpe_ratio(A_risk_parity_returns.values))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B_risk_parity_returns</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">get_risk_parity_returns</span><span class="p">(</span>
+                <span class="n">past_returns</span><span class="o">=</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+                    <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+                    <span class="o">-</span> <span class="mi">60</span>
+                    <span class="o">+</span> <span class="n">start_idx</span> <span class="p">:</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+                    <span class="o">+</span> <span class="n">start_idx</span><span class="p">,</span>
+                    <span class="p">:,</span>
+                <span class="p">],</span>
+                <span class="n">forecasted_returns</span><span class="o">=</span><span class="n">B_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span>
+                    <span class="n">monthly_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+                        <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span> <span class="o">+</span> <span class="n">start_idx</span>
+                    <span class="p">]</span><span class="o">.</span><span class="n">name</span>
+                <span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">start_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span>
+                <span class="mi">1</span><span class="p">,</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_loc</span><span class="p">(</span><span class="n">start_date</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">],</span>
+        <span class="n">index</span><span class="o">=</span><span class="n">B_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">start_date</span><span class="p">:]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;returns&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">B_risk_parity_returns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>returns</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2000-01-31</th>
+      <td>0.014290</td>
+    </tr>
+    <tr>
+      <th>2000-02-29</th>
+      <td>0.006797</td>
+    </tr>
+    <tr>
+      <th>2000-03-31</th>
+      <td>0.011856</td>
+    </tr>
+    <tr>
+      <th>2000-04-28</th>
+      <td>0.029459</td>
+    </tr>
+    <tr>
+      <th>2000-05-31</th>
+      <td>-0.011655</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2018-11-30</th>
+      <td>-0.004471</td>
+    </tr>
+    <tr>
+      <th>2018-12-31</th>
+      <td>0.014027</td>
+    </tr>
+    <tr>
+      <th>2019-01-31</th>
+      <td>-0.002052</td>
+    </tr>
+    <tr>
+      <th>2019-02-28</th>
+      <td>-0.004151</td>
+    </tr>
+    <tr>
+      <th>2019-03-29</th>
+      <td>-0.001552</td>
+    </tr>
+  </tbody>
+</table>
+<p>231 rows × 1 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 35min 53s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "B_risk_parity_returns = (\n    pd.Series(\n        [\n            get_risk_parity_returns(\n                past_returns=monthly_returns.iloc[\n                    monthly_returns.index.get_loc(start_date)\n                    - 60\n                    + start_idx : monthly_returns.index.get_loc(start_date)\n                    + start_idx,\n                    :,\n                ],\n                forecasted_returns=B_returns.loc[\n                    monthly_returns.iloc[monthly_returns.index.get_loc(start_date) + start_idx].name\n                ],\n            ) for start_idx in range(1, monthly_returns.shape[0] - monthly_returns.index.get_loc(start_date))\n        ],\n        index=B_returns.loc[start_date:].index,\n    )\n    .to_frame()\n    .rename({0: \"returns\"}, axis=1)\n)\nB_risk_parity_returns";
+                var nbb_formatted_code = "B_risk_parity_returns = (\n    pd.Series(\n        [\n            get_risk_parity_returns(\n                past_returns=monthly_returns.iloc[\n                    monthly_returns.index.get_loc(start_date)\n                    - 60\n                    + start_idx : monthly_returns.index.get_loc(start_date)\n                    + start_idx,\n                    :,\n                ],\n                forecasted_returns=B_returns.loc[\n                    monthly_returns.iloc[\n                        monthly_returns.index.get_loc(start_date) + start_idx\n                    ].name\n                ],\n            )\n            for start_idx in range(\n                1, monthly_returns.shape[0] - monthly_returns.index.get_loc(start_date)\n            )\n        ],\n        index=B_returns.loc[start_date:].index,\n    )\n    .to_frame()\n    .rename({0: \"returns\"}, axis=1)\n)\nB_risk_parity_returns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Risk-Parity with Model Selection B: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annualized Return:&quot;</span><span class="p">,</span> <span class="n">annualized_return</span><span class="p">(</span><span class="n">B_risk_parity_returns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annualized Volatility:&quot;</span><span class="p">,</span> <span class="n">annualized_volatility</span><span class="p">(</span><span class="n">B_risk_parity_returns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Annualized Sharpe Ratio:&quot;</span><span class="p">,</span> <span class="n">sharpe_ratio</span><span class="p">(</span><span class="n">B_risk_parity_returns</span><span class="o">.</span><span class="n">values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Risk-Parity with Model Selection B: 
+Annualized Return: 0.0061803207332966625
+Annualized Volatility: 0.04209334277303941
+Annualized Sharpe Ratio: 0.14682418468449907
+time: 1.27 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "print(f\"Risk-Parity with Model Selection B: \")\nprint(f\"Annualized Return:\", annualized_return(B_risk_parity_returns.values))\nprint(f\"Annualized Volatility:\", annualized_volatility(B_risk_parity_returns.values))\nprint(f\"Annualized Sharpe Ratio:\", sharpe_ratio(B_risk_parity_returns.values))";
+                var nbb_formatted_code = "print(f\"Risk-Parity with Model Selection B: \")\nprint(f\"Annualized Return:\", annualized_return(B_risk_parity_returns.values))\nprint(f\"Annualized Volatility:\", annualized_volatility(B_risk_parity_returns.values))\nprint(f\"Annualized Sharpe Ratio:\", sharpe_ratio(B_risk_parity_returns.values))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw2_part2.html" title="previous page">HW 2 Part 2</a>
+    <a class='right-next' id="next-link" href="market-observations.html" title="next page">Market Observations</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

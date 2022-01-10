@@ -1,0 +1,2391 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 6 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-530/hw6.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HW 7" href="hw7.html" />
+    <link rel="prev" title="HW 5" href="hw5.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-530/hw6.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HW 6" />
+<meta property="og:description" content="HW 6  ISE 530 Optimization for Analytics Homework VI: On linearly constrained, including quadratic minimization and from Cottle-Thapa. Due 11:59 PM Wednesday Oc" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-530/hw6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-6">
+<h1>HW 6<a class="headerlink" href="#hw-6" title="Permalink to this headline">¶</a></h1>
+<p>ISE 530 Optimization for Analytics Homework VI: On linearly constrained, including quadratic minimization and from Cottle-Thapa. Due 11:59 PM Wednesday October 28, 2020</p>
+<ul class="simple">
+<li><p>Find the minimum norm solution of the linear system:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-3c50ed46-7042-4792-b85d-95152e4e570f">
+<span class="eqno">(259)<a class="headerlink" href="#equation-3c50ed46-7042-4792-b85d-95152e4e570f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 + x_2 + 5x_3 − 7x_4 &amp;= 1 \\
+    x_1 − 3x_2 − x_3 + x_4 &amp;= 2 \\
+\end{align}\]</div>
+<p>by first formulating a quadratic program to minimize the sum of squares of the variables subject to the two equations. Solve the resulting program by introducing Lagrangian multipliers of the constraints and solving the resulting optimality conditions. Verify your solution by expressing the variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> in terms of <span class="math notranslate nohighlight">\(x_3\)</span> and <span class="math notranslate nohighlight">\(x_4\)</span>, ending up with a quadratic minimization problem in two variables and no constraints whose solution can be readily obtained.</p>
+<ul class="simple">
+<li><p>Consider the quadratic program in three variables:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a4c2745c-208e-49c3-8d64-83f69b53d46a">
+<span class="eqno">(260)<a class="headerlink" href="#equation-a4c2745c-208e-49c3-8d64-83f69b53d46a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x_1,x_2,x_3}{\text{minimize }} &amp; 2x^2_1 + x_1x_2 + 2x^2_2 + x^2_3 + 2x_2x_3 \\
+    \text{subject to } 
+    &amp;0.8x_1 + 0.4x_2 + 0.6x_3 \geq 0.5 \\
+    &amp;x_1 + x_2 + x_3 = 1,\text{ and }x_1, x_2, x_3, \geq 0. \\
+\end{align}\]</div>
+<p>(a) Show that the objective function is strictly convex.</p>
+<p>(b) Write down the optimality conditions for the problem. Are they necessary and sufficient for optimality?</p>
+<p>(c) Starting at the feasible solution of <span class="math notranslate nohighlight">\(x_1 = x_2 = x_3 = 1/3\)</span>, carry out 3 iterations of the feasible descent method using the active constraints at each iterate to solve the program.</p>
+<ul class="simple">
+<li><p>Do Exercise 11.9. Enumerate all possibilities of the complementary slackness conditions to find an optimal solution of the problem.</p></li>
+<li><p>Do Exercises 12.8 and 12.10.</p></li>
+<li><p>Consider the problem:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-522357de-236e-449a-9d8f-ceee0bf838e7">
+<span class="eqno">(261)<a class="headerlink" href="#equation-522357de-236e-449a-9d8f-ceee0bf838e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} &amp; 2x_1x_2 + x_2x_3 + x_1x_3 \\
+    \text{subject to } &amp; 3x_1 + 3x_2 + 2x_3 = 3. \\
+\end{align}\]</div>
+<p>Write and solve the KKT optimality conditions of the problem. Is the computed solution <span class="math notranslate nohighlight">\(x\)</span> a local minimum? Explain.</p>
+<ul class="simple">
+<li><p>Consider the nonnegatively constrained problem:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-351361be-c922-4f06-95d6-17bf3301ccf7">
+<span class="eqno">(262)<a class="headerlink" href="#equation-351361be-c922-4f06-95d6-17bf3301ccf7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x \geq 0}{\text{minimize }} &amp; \frac{4}{3}{[x^2_1 - x_1x_2 + x^2_2]}^{3/4} + x^2_3 - 2x_1x_3 + x^2_1. \\
+\end{align}\]</div>
+<p>(a) Write the KKT conditions for the problem? Are they necessary?</p>
+<p>(b) Starting at <span class="math notranslate nohighlight">\(x^0 = (0, 1/4, 1/2)\)</span>, carry out several iterations of the feasible descent method (using the active constraints at each iterate) until an observable pattern emerges.</p>
+<p>(c) Can you solve the problem analytically using the KKT conditions and say something about the method when you stop it?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autotime extension is already loaded. To reload it, use:
+  %reload_ext autotime
+The nb_black extension is already loaded. To reload it, use:
+  %reload_ext nb_black
+time: 6.91 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 140;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport operator\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sympy import Matrix\nfrom scipy import optimize";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport operator\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sympy import Matrix\nfrom scipy import optimize";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Find the minimum norm solution of the linear system:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-709e4f44-8f77-4a5c-b02e-02e24d6782bc">
+<span class="eqno">(263)<a class="headerlink" href="#equation-709e4f44-8f77-4a5c-b02e-02e24d6782bc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 + x_2 + 5x_3 − 7x_4 &amp;= 1 \\
+    x_1 − 3x_2 − x_3 + x_4 &amp;= 2 \\
+\end{align}\]</div>
+<p>by first formulating a quadratic program to minimize the sum of squares of the variables subject to the two equations. Solve the resulting program by introducing Lagrangian multipliers of the constraints and solving the resulting optimality conditions. Verify your solution by expressing the variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> in terms of <span class="math notranslate nohighlight">\(x_3\)</span> and <span class="math notranslate nohighlight">\(x_4\)</span>, ending up with a quadratic minimization problem in two variables and no constraints whose solution can be readily obtained.</p>
+<p>Quadratic Program:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0e315e01-175e-464b-809d-9621ce0c602a">
+<span class="eqno">(264)<a class="headerlink" href="#equation-0e315e01-175e-464b-809d-9621ce0c602a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} &amp; {\vert \vert x \vert \vert} \\
+    \text{subject to } 
+    &amp;Ax = b \\
+    A = \begin{bmatrix} 1 &amp; 1 &amp; 5 &amp; -7 \\ 1 &amp; -3 &amp; -1 &amp; 1 \end{bmatrix}\,,\,
+    &amp;b = \begin{bmatrix} 1 \\ 2 \end{bmatrix}\,,\,
+    x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\x_4 \end{bmatrix}
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 566 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "A = np.array([[1, 1, 5, -7], [1, -3, -1, 1]])\nb = np.array([1, 2])";
+                var nbb_formatted_code = "A = np.array([[1, 1, 5, -7], [1, -3, -1, 1]])\nb = np.array([1, 2])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Solution via Lagrange Multipliers (By LCQ constraint qualification):</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0f2965c4-3833-4de7-9719-b56b7d16b89a">
+<span class="eqno">(265)<a class="headerlink" href="#equation-0f2965c4-3833-4de7-9719-b56b7d16b89a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x, \lambda) &amp;= x^\top x - (Ax - b)^\top\lambda \\
+\end{align}\]</div>
+<p>Stationarity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-bf52a028-f670-4f89-a14e-734dbcde7d08">
+<span class="eqno">(266)<a class="headerlink" href="#equation-bf52a028-f670-4f89-a14e-734dbcde7d08" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x\mathcal{L}(x, \lambda) &amp;= 0 \\
+    \nabla_x x^\top x - (Ax - b)^\top\lambda &amp;= 0 \\
+    2x - A^\top\lambda &amp;= 0 \\
+    x^* &amp;= \frac{1}{2} A^\top \lambda \\
+\end{align}\]</div>
+<p>Primal feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9c0ef581-d07b-47b4-896c-f914864da421">
+<span class="eqno">(267)<a class="headerlink" href="#equation-9c0ef581-d07b-47b4-896c-f914864da421" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    Ax &amp;= b \\
+    \text{Substituting }x=x^*, A(\frac{1}{2} A^\top \lambda) &amp;= b \\
+    \frac{1}{2} AA^\top \lambda &amp;= b \\
+    \lambda^* &amp;= 2{(AA^\top)}^{-1}b \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">λ_star</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span> <span class="o">@</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">@</span> <span class="n">b</span>
+<span class="n">λ_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.11173184, 0.46368715])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.17 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "\u03bb_star = 2 * np.linalg.inv(A @ A.T) @ b\n\u03bb_star";
+                var nbb_formatted_code = "\u03bb_star = 2 * np.linalg.inv(A @ A.T) @ b\n\u03bb_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Substituting <span class="math notranslate nohighlight">\(\lambda=\lambda^*\)</span> into <span class="math notranslate nohighlight">\(x^* = \frac{1}{2} A^\top \lambda\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e94fec07-f373-4d05-9c70-8198655ad0d6">
+<span class="eqno">(268)<a class="headerlink" href="#equation-e94fec07-f373-4d05-9c70-8198655ad0d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^* &amp;= \frac{1}{2} A^\top \lambda^* \\
+    &amp;= A^\top {(AA^\top)}^{-1}b \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_star</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">A</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">λ_star</span>
+<span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_star</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.29, -0.64,  0.05, -0.16])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.52 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 94;
+                var nbb_unformatted_code = "x_star = 0.5 * A.T @ \u03bb_star\nnp.round(x_star, 2)";
+                var nbb_formatted_code = "x_star = 0.5 * A.T @ \u03bb_star\nnp.round(x_star, 2)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Verify your solution by expressing the variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> in terms of <span class="math notranslate nohighlight">\(x_3\)</span> and <span class="math notranslate nohighlight">\(x_4\)</span> (<a class="reference external" href="https://faculty.math.illinois.edu/~mlavrov/docs/484-spring-2019/ch4lec4.pdf">Least-squares technique</a>):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">augmented_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">A</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">rref</span><span class="p">,</span> <span class="n">leading_idxs</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">(</span><span class="n">augmented_matrix</span><span class="p">,</span> <span class="n">permute_l</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">rref</span><span class="p">()</span>
+<span class="n">rref</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1 &amp; 0 &amp; \frac{7}{2} &amp; -5 &amp; \frac{5}{4}\\0 &amp; 1 &amp; \frac{3}{2} &amp; -2 &amp; - \frac{1}{4}\end{matrix}\right]\end{split}\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.48 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 28;
+                var nbb_unformatted_code = "augmented_matrix = np.concatenate((A, np.expand_dims(b, axis=1)), axis=1)\nrref, leading_idxs = Matrix(augmented_matrix, permute_l=False).rref()\nrref";
+                var nbb_formatted_code = "augmented_matrix = np.concatenate((A, np.expand_dims(b, axis=1)), axis=1)\nrref, leading_idxs = Matrix(augmented_matrix, permute_l=False).rref()\nrref";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>After Gaussian Elimination, we choose <span class="math notranslate nohighlight">\(x_3\)</span> and <span class="math notranslate nohighlight">\(x_4\)</span> as the free variables, and <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> as the leading variables:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4b4e519f-3346-42a1-89f2-148b75d683c9">
+<span class="eqno">(269)<a class="headerlink" href="#equation-4b4e519f-3346-42a1-89f2-148b75d683c9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 &amp;= -\frac{7}{2}x_3 + 5x_4 + \frac{5}{4} \\
+    x_2 &amp;= -\frac{3}{2}x_3 + 2x_4 - \frac{1}{4} \\
+\end{align}\]</div>
+<p>Hence, our generic solution is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-545871d3-5ff6-426b-9840-9d26c7f6f2be">
+<span class="eqno">(270)<a class="headerlink" href="#equation-545871d3-5ff6-426b-9840-9d26c7f6f2be" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3 \\
+        x_4 \\
+    \end{bmatrix}
+    &amp;=
+    \underbrace{
+    \begin{bmatrix}
+        \frac{5}{4} \\
+        -\frac{1}{4} \\
+        0 \\
+        0 \\
+    \end{bmatrix}}_{\text{Specific solution for Homogeneous system}}
+    +
+    x_3
+    \begin{bmatrix}
+        -\frac{7}{2} \\
+        -\frac{3}{2} \\
+        1 \\
+        0 \\
+    \end{bmatrix}
+    +
+    x_4
+    \begin{bmatrix}
+        5 \\
+        2 \\
+        0 \\
+        1 \\
+    \end{bmatrix}
+\end{align}\]</div>
+<p>Our problem transforms from a minimum norm problem to a least squares problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9b1ceaab-6f5a-4122-9fa7-58829b04ccc8">
+<span class="eqno">(271)<a class="headerlink" href="#equation-9b1ceaab-6f5a-4122-9fa7-58829b04ccc8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x_3, x_4 \in \mathbb{R}^2}{\text{minimize }} &amp; 
+    \Bigg\vert\Bigg\vert
+    \begin{bmatrix}
+        -\frac{7}{2} &amp; 5 \\
+        -\frac{3}{2} &amp; 2 \\
+        1 &amp; 0 \\
+        0 &amp; 1 \\
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_3 \\
+        x_4 \\
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+        -\frac{5}{4} \\
+        \frac{1}{4} \\
+        0 \\
+        0 \\
+    \end{bmatrix}
+    \Bigg\vert\Bigg\vert
+    \\
+\end{align}\]</div>
+<p>Linear least squares problem, where <span class="math notranslate nohighlight">\(X\)</span> is the data matrix, <span class="math notranslate nohighlight">\(\beta\)</span> are the coefficients, and <span class="math notranslate nohighlight">\(y\)</span> is the response variable:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0c26e3c0-787e-4914-93d8-367b68efac49">
+<span class="eqno">(272)<a class="headerlink" href="#equation-0c26e3c0-787e-4914-93d8-367b68efac49" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\beta}{\text{minimize }} &amp; 
+    \vert\vert
+        X\beta - y
+    \vert\vert
+    \\
+\end{align}\]</div>
+<p>Solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-45eee754-4157-474a-b1c3-50044eebccb1">
+<span class="eqno">(273)<a class="headerlink" href="#equation-45eee754-4157-474a-b1c3-50044eebccb1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \beta^* &amp;= {(X^\top X)}^{-1}X^\top y
+\end{align}\]</div>
+<p>Hence, solution to our problem is:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="o">-</span><span class="n">rref</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="o">-</span><span class="n">rref</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))))</span>
+<span class="n">β_star</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">y</span>
+<span class="n">β_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.04748603],
+       [-0.15921788]])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.66 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 89;
+                var nbb_unformatted_code = "X = np.float64(np.concatenate((-rref[:, 2:4], np.eye(2)), axis=0))\ny = np.float64(np.concatenate((-rref[:, -1], np.zeros((2, 1)))))\n\u03b2_star = np.linalg.inv(X.T @ X) @ X.T @ y\n\u03b2_star";
+                var nbb_formatted_code = "X = np.float64(np.concatenate((-rref[:, 2:4], np.eye(2)), axis=0))\ny = np.float64(np.concatenate((-rref[:, -1], np.zeros((2, 1)))))\n\u03b2_star = np.linalg.inv(X.T @ X) @ X.T @ y\n\u03b2_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">X</span> <span class="o">@</span> <span class="n">β_star</span> <span class="o">-</span> <span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.29],
+       [-0.64],
+       [ 0.05],
+       [-0.16]])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.48 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 93;
+                var nbb_unformatted_code = "np.round(X @ \u03b2_star - y, 2)";
+                var nbb_formatted_code = "np.round(X @ \u03b2_star - y, 2)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Hence, we arrive at the same solution as the original min norm problem.</p>
+<p>Sanity Check</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">norm2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">A</span> <span class="o">@</span> <span class="n">x</span> <span class="o">==</span> <span class="n">b</span><span class="p">]</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot; | &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;x_</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">opt_x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">opt_x</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">)]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x_1: 0.29 | x_2: -0.64 | x_3: 0.05 | x_4: -0.16
+time: 8.78 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 32;
+                var nbb_unformatted_code = "x = cp.Variable(shape=(4,), integer=False)\nobj = cp.Minimize(cp.norm2(x))\nconstraints = [A @ x == b]\nprob = cp.Problem(obj, constraints=constraints)\nprob.solve()\nprint(\n    \" | \".join(\n        [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 5), x.value)]\n    )\n)";
+                var nbb_formatted_code = "x = cp.Variable(shape=(4,), integer=False)\nobj = cp.Minimize(cp.norm2(x))\nconstraints = [A @ x == b]\nprob = cp.Problem(obj, constraints=constraints)\nprob.solve()\nprint(\n    \" | \".join(\n        [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 5), x.value)]\n    )\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Consider the quadratic program in three variables:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-eb0bb777-d00c-407e-ab48-b4cca49aaa26">
+<span class="eqno">(274)<a class="headerlink" href="#equation-eb0bb777-d00c-407e-ab48-b4cca49aaa26" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x_1,x_2,x_3}{\text{minimize }} &amp; 2x^2_1 + x_1x_2 + 2x^2_2 + x^2_3 + 2x_2x_3 \\
+    \text{subject to } 
+    &amp;0.8x_1 + 0.4x_2 + 0.6x_3 \geq 0.5 \\
+    &amp;x_1 + x_2 + x_3 = 1,\text{ and }x_1, x_2, x_3, \geq 0. \\
+\end{align}\]</div>
+<p>(a) Show that the objective function is strictly convex.</p>
+<p>Gradient Vector:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0b8b7458-8531-48f9-acc8-b662ec9a8f2f">
+<span class="eqno">(275)<a class="headerlink" href="#equation-0b8b7458-8531-48f9-acc8-b662ec9a8f2f" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+    4x_1 + x_2 \\
+    x_1 + 4x_2 + 2x_3 \\
+    2x_2 + 2x_3 \\
+\end{bmatrix}\]</div>
+<p>Hessian <span class="math notranslate nohighlight">\(H\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c0e88e20-4a85-42f7-bfb1-aee8b79f55c4">
+<span class="eqno">(276)<a class="headerlink" href="#equation-c0e88e20-4a85-42f7-bfb1-aee8b79f55c4" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+    4 &amp; 1 &amp; 0 \\
+    1 &amp; 4 &amp; 2 \\
+    0 &amp; 2 &amp; 2 \\
+\end{bmatrix}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.68133064, 3.64207363, 0.67659572])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.68 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 95;
+                var nbb_unformatted_code = "np.linalg.eigvals(np.array([[4,1,0], [1,4,2], [0,2,2]]))";
+                var nbb_formatted_code = "np.linalg.eigvals(np.array([[4, 1, 0], [1, 4, 2], [0, 2, 2]]))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Since all the eigenvalues of the Hessian are strictly <span class="math notranslate nohighlight">\(&gt; 0\)</span>, our Hessian is positive definite, and our objective function is strictly convex. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+<p>(b) Write down the optimality conditions for the problem. Are they necessary and sufficient for optimality?</p>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cfbedcaa-1aa9-4507-929e-dd2a0203e18a">
+<span class="eqno">(277)<a class="headerlink" href="#equation-cfbedcaa-1aa9-4507-929e-dd2a0203e18a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x, \mu, \lambda) &amp;= \frac{1}{2}x^\top H x - \lambda(x_1+x_2+x_3-1) - \mu(0.8x_1+0.4x_2+0.6x_3-0.5) \\
+\end{align}\]</div>
+<p>KKT Conditions:</p>
+<p>Stationarity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b9bda6ea-72f9-4599-965b-1a8083b45566">
+<span class="eqno">(278)<a class="headerlink" href="#equation-b9bda6ea-72f9-4599-965b-1a8083b45566" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x\mathcal{L}(x, \lambda, \mu) &amp;= 0 \\
+    Hx^* - \lambda\begin{bmatrix} 1 \\ 1 \\ 1 \\ \end{bmatrix} - \mu\begin{bmatrix} 0.8 \\ 0.4 \\ 0.6 \\ \end{bmatrix} &amp;= 0 \\
+    \begin{bmatrix} 4x_1 + x_2 - \lambda - 0.8\mu \\ x_1 + 4x_2 + 2x_3 - \lambda - 0.4\mu \\ 2x_2 + 2x_3 - \lambda - 0.6\mu \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ 0 \\ \end{bmatrix} \\
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-41436607-efee-4548-85c8-02ce81e086e1">
+<span class="eqno">(279)<a class="headerlink" href="#equation-41436607-efee-4548-85c8-02ce81e086e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1+x_2+x_3 &amp;= 1 \\
+    0.8x_1+0.4x_2+0.6x_3 &amp;= 0.5 \\
+\end{align}\]</div>
+<p>Dual Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d21c2248-95cc-4b36-a401-de55a0c41f69">
+<span class="eqno">(280)<a class="headerlink" href="#equation-d21c2248-95cc-4b36-a401-de55a0c41f69" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \lambda \text{ free} \\ 
+    \mu \geq 0
+\end{align}\]</div>
+<p>Complementary Slackness:</p>
+<p>\begin{array}{lll}
+\text{free } \lambda &amp;  &amp; x_1+x_2+x_3 = 1 \
+0 \leq \mu^\top &amp; \perp &amp; 0.8x_1+0.4x_2+0.6x_3-0.5 \geq 0 \
+\end{array}</p>
+<p>Since the constraints are affine, by the Linear Constraint Qualification (LCQ), the KKT conditions above are necessary. Furthermore, since our objective function is strictly convex, these conditions are also sufficient conditions for optimality, meaning that a <span class="math notranslate nohighlight">\(x^*\)</span> found to fulfill the KKT conditions above is definitely a strict minimizer of the objective function.</p>
+<p>(c) Starting at the feasible solution of <span class="math notranslate nohighlight">\(x_1 = x_2 = x_3 = 1/3\)</span>, carry out 3 iterations of the feasible descent method using the active constraints at each iterate to solve the program.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">f_prime</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
+<span class="p">)</span>
+<span class="n">inequality_constraints</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">],]</span>
+<span class="p">)</span>
+
+<span class="n">equality_constraints</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.1 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 232;
+                var nbb_unformatted_code = "feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n)";
+                var nbb_formatted_code = "feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">armijo_line_search</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">x_k</span><span class="p">,</span> <span class="n">p_k</span><span class="p">,</span> <span class="n">α</span><span class="p">,</span> <span class="n">ρ</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">σ</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Armijo Backtracking Line Search</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        α: Initial step size</span>
+<span class="sd">        ρ: Backtracking factor</span>
+<span class="sd">        σ: Bending factor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">m</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">α</span> <span class="o">=</span> <span class="n">ρ</span> <span class="o">**</span> <span class="n">m</span>
+        <span class="k">if</span> <span class="n">f</span><span class="p">(</span><span class="n">x_k</span> <span class="o">+</span> <span class="n">α</span> <span class="o">*</span> <span class="n">p_k</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">f</span><span class="p">(</span><span class="n">x_k</span><span class="p">)</span> <span class="o">+</span> <span class="n">σ</span> <span class="o">*</span> <span class="n">α</span> <span class="o">*</span> <span class="n">f_prime</span><span class="p">(</span><span class="n">x_k</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">p_k</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">α</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">m</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">constrained_feasible_direction</span><span class="p">(</span>
+    <span class="n">f_prime</span><span class="p">,</span> <span class="n">x_k</span><span class="p">,</span> <span class="n">inequality_constraints</span><span class="p">,</span> <span class="n">equality_constraints</span>
+<span class="p">):</span>
+
+    <span class="n">d</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_k</span><span class="p">,)),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">lhs_inequality_constraints</span> <span class="o">=</span> <span class="n">inequality_constraints</span><span class="p">(</span><span class="n">x_k</span><span class="p">)</span>
+    <span class="n">binding_constraints</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">inequality_constraints</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">lhs_inequality_constraints</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="p">]</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">f_prime</span><span class="p">(</span><span class="n">x_k</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">ec</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">[</span><span class="n">equality_constraint</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">equality_constraint</span> <span class="ow">in</span> <span class="n">equality_constraints</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">equality_constraints</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">equality_constraints</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+    <span class="n">bc</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">[</span><span class="n">binding_constraint</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">binding_constraint</span> <span class="ow">in</span> <span class="n">binding_constraints</span><span class="p">(</span><span class="n">d</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">binding_constraints</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">binding_constraints</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="k">else</span> <span class="kc">None</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">bc</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">ec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">bc</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">ec</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">ec</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">bc</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">bc</span> <span class="o">+</span> <span class="n">ec</span><span class="p">)</span>
+    <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        If the optimal objective value of this linear program is zero, then x¯, together with a pair of optimal</span>
+<span class="sd">        dual solution (µ, λ), yields a KKT triple. Otherwise, the linear program must have an unbounded</span>
+<span class="sd">        objective value tending to −∞ along a direction ¯d. Such a direction ¯</span>
+<span class="sd">        d is then a feasible descent</span>
+<span class="sd">        direction of f at the current feasible point x¯. A maximum step size τmax &gt; 0 is then determined</span>
+<span class="sd">        such that x¯ + τ ¯</span>
+<span class="sd">        d is feasible for all τ in the interval [ 0, τmax ].</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">prob</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;unbounded&quot;</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Direction d is a feasible descent direction!&quot;</span><span class="p">)</span>
+        <span class="n">feasible_direction</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;d:&quot;</span><span class="p">,</span> <span class="n">feasible_direction</span><span class="p">)</span>
+        <span class="n">τ_max</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="o">-</span><span class="n">lhs_inequality_constraints</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="o">/</span> <span class="p">(</span>
+                    <span class="n">inequality_constraints</span><span class="p">(</span><span class="n">x_k</span> <span class="o">+</span> <span class="n">feasible_direction</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
+                    <span class="o">-</span> <span class="n">lhs_inequality_constraints</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">lhs</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lhs_inequality_constraints</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="n">inequality_constraints</span><span class="p">(</span><span class="n">x_k</span> <span class="o">+</span> <span class="n">feasible_direction</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
+                    <span class="o">-</span> <span class="n">lhs_inequality_constraints</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+                <span class="p">)</span>
+                <span class="o">&lt;</span> <span class="mi">0</span>
+            <span class="p">]</span>
+        <span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;τ_max:&quot;</span><span class="p">,</span> <span class="n">τ_max</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">feasible_direction</span><span class="p">,</span> <span class="n">τ_max</span>
+
+
+<span class="k">def</span> <span class="nf">feasible_descent</span><span class="p">(</span>
+    <span class="n">f</span><span class="p">,</span>
+    <span class="n">f_prime</span><span class="p">,</span>
+    <span class="n">x_0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="n">inequality_constraints</span><span class="o">=</span><span class="n">inequality_constraints</span><span class="p">,</span>
+    <span class="n">equality_constraints</span><span class="o">=</span><span class="n">equality_constraints</span><span class="p">,</span>
+    <span class="n">ε</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+    <span class="n">steplength_algo</span><span class="o">=</span><span class="n">armijo_line_search</span><span class="p">,</span>
+<span class="p">):</span>
+    <span class="n">k</span><span class="p">,</span> <span class="n">x_k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x_0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+
+        <span class="c1"># 1. Test for Convergence</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">f_prime</span><span class="p">(</span><span class="n">x_k</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">ε</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">x_k</span>
+
+        <span class="c1"># 2. Compute a search direction</span>
+        <span class="n">p_k</span><span class="p">,</span> <span class="n">τ_max</span> <span class="o">=</span> <span class="n">constrained_feasible_direction</span><span class="p">(</span>
+            <span class="n">f_prime</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span>
+            <span class="n">x_k</span><span class="o">=</span><span class="n">x_k</span><span class="p">,</span>
+            <span class="n">inequality_constraints</span><span class="o">=</span><span class="n">inequality_constraints</span><span class="p">,</span>
+            <span class="n">equality_constraints</span><span class="o">=</span><span class="n">equality_constraints</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="c1"># 3. Compute a steplength</span>
+        <span class="n">α_k</span> <span class="o">=</span> <span class="n">steplength_algo</span><span class="p">(</span><span class="n">f</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span> <span class="n">x_k</span><span class="o">=</span><span class="n">x_k</span><span class="p">,</span> <span class="n">p_k</span><span class="o">=</span><span class="n">p_k</span><span class="p">,</span> <span class="n">α</span><span class="o">=</span><span class="n">τ_max</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Iteration: </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> - x_</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">x_k</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">, p_k = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">p_k</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">, α_k = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">α_k</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+
+        <span class="c1"># 4. Update the iterate and return to Step 1</span>
+        <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">x_k</span> <span class="o">+=</span> <span class="n">α_k</span> <span class="o">*</span> <span class="n">p_k</span>
+
+        <span class="c1"># Check for divergence</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">x_k</span><span class="p">,</span> <span class="n">x_k</span> <span class="o">+</span> <span class="n">α_k</span> <span class="o">*</span> <span class="n">p_k</span><span class="p">)</span> <span class="ow">and</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Series diverged.&quot;</span><span class="p">)</span>
+            <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 6.6 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 235;
+                var nbb_unformatted_code = "feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n)";
+                var nbb_formatted_code = "feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feasible_descent</span><span class="p">(</span>
+    <span class="n">f</span><span class="p">,</span>
+    <span class="n">f_prime</span><span class="p">,</span>
+    <span class="n">x_0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">3</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">),</span>
+    <span class="n">inequality_constraints</span><span class="o">=</span><span class="n">inequality_constraints</span><span class="p">,</span>
+    <span class="n">equality_constraints</span><span class="o">=</span><span class="n">equality_constraints</span><span class="p">,</span>
+    <span class="n">ε</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+    <span class="n">steplength_algo</span><span class="o">=</span><span class="n">armijo_line_search</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.6666666666666666
+Iteration: 0 - x_0 = [0.33333 0.33333 0.33333], p_k = [-0.5 -0.5  1. ], α_k = 0.0859
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.5807673207466666
+Iteration: 1 - x_1 = [0.29038 0.29038 0.41923], p_k = [-0.5 -0.5  1. ], α_k = 0.06872
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.5120478440106666
+Iteration: 2 - x_2 = [0.25602 0.25602 0.48795], p_k = [-0.5 -0.5  1. ], α_k = 0.04398
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4680673788996266
+Iteration: 3 - x_3 = [0.23403 0.23403 0.53193], p_k = [-0.5 -0.5  1. ], α_k = 0.02252
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.44554938076277406
+Iteration: 4 - x_4 = [0.22277 0.22277 0.55445], p_k = [-0.5 -0.5  1. ], α_k = 0.01801
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.42753498225329206
+Iteration: 5 - x_5 = [0.21377 0.21377 0.57247], p_k = [-0.5 -0.5  1. ], α_k = 0.00922
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.41831161021643726
+Iteration: 6 - x_6 = [0.20916 0.20916 0.58169], p_k = [-0.5 -0.5  1. ], α_k = 0.0059
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4124086521128502
+Iteration: 7 - x_7 = [0.2062  0.2062  0.58759], p_k = [-0.5 -0.5  1. ], α_k = 0.00472
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40768628562998055
+Iteration: 8 - x_8 = [0.20384 0.20384 0.59231], p_k = [-0.5 -0.5  1. ], α_k = 0.00302
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.404663971080944
+Iteration: 9 - x_9 = [0.20233 0.20233 0.59534], p_k = [-0.5 -0.5  1. ], α_k = 0.00155
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4031165460318373
+Iteration: 10 - x_10 = [0.20156 0.20156 0.59688], p_k = [-0.5 -0.5  1. ], α_k = 0.00124
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4018786059925519
+Iteration: 11 - x_11 = [0.20094 0.20094 0.59812], p_k = [-0.5 -0.5  1. ], α_k = 0.00063
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40124478069243774
+Iteration: 12 - x_12 = [0.20062 0.20062 0.59876], p_k = [-0.5 -0.5  1. ], α_k = 0.00041
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4008391325003647
+Iteration: 13 - x_13 = [0.20042 0.20042 0.59916], p_k = [-0.5 -0.5  1. ], α_k = 0.00032
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40051461394670623
+Iteration: 14 - x_14 = [0.20026 0.20026 0.59949], p_k = [-0.5 -0.5  1. ], α_k = 0.00017
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4003484604472331
+Iteration: 15 - x_15 = [0.20017 0.20017 0.59965], p_k = [-0.5 -0.5  1. ], α_k = 0.00013
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4002155376476546
+Iteration: 16 - x_16 = [0.20011 0.20011 0.59978], p_k = [-0.5 -0.5  1. ], α_k = 9e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40013046705592437
+Iteration: 17 - x_17 = [0.20007 0.20007 0.59987], p_k = [-0.5 -0.5  1. ], α_k = 4e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4000869109129585
+Iteration: 18 - x_18 = [0.20004 0.20004 0.59991], p_k = [-0.5 -0.5  1. ], α_k = 3e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40005903498146034
+Iteration: 19 - x_19 = [0.20003 0.20003 0.59994], p_k = [-0.5 -0.5  1. ], α_k = 2e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4000367342362618
+Iteration: 20 - x_20 = [0.20002 0.20002 0.59996], p_k = [-0.5 -0.5  1. ], α_k = 1e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40002246175933476
+Iteration: 21 - x_21 = [0.20001 0.20001 0.59998], p_k = [-0.5 -0.5  1. ], α_k = 1e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.4000151542511481
+Iteration: 22 - x_22 = [0.20001 0.20001 0.59998], p_k = [-0.5 -0.5  1. ], α_k = 1e-05
+Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+τ_max: 0.40000930824459874
+Iteration: 23 - x_23 = [0.2     0.2     0.59999], p_k = [-0.5 -0.5  1. ], α_k = 0.0
+Series diverged.
+time: 174 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 236;
+                var nbb_unformatted_code = "def armijo_line_search(f, f_prime, x_k, p_k, \u03b1, \u03c1=0.8, \u03c3=0.8):\n    \"\"\"Armijo Backtracking Line Search\n    \n    Args:\n        \u03b1: Initial step size\n        \u03c1: Backtracking factor\n        \u03c3: Bending factor\n    \"\"\"\n    m = 0\n    while True:\n        if m > 0:\n            \u03b1 = \u03c1 ** m\n        if f(x_k + \u03b1 * p_k) <= f(x_k) + \u03c3 * \u03b1 * f_prime(x_k).T @ p_k:\n            return \u03b1\n        else:\n            m += 1\n\n\ndef constrained_feasible_direction(\n    f_prime, x_k, inequality_constraints, equality_constraints\n):\n\n    d = cp.Variable(shape=(len(x_k,)), integer=False)\n    lhs_inequality_constraints = inequality_constraints(x_k)\n    binding_constraints = lambda x: inequality_constraints(x)[\n        np.argwhere(np.allclose(lhs_inequality_constraints, 0))\n    ]\n    obj = cp.Minimize(f_prime(x_k).T @ d)\n    ec = (\n        [equality_constraint == 0 for equality_constraint in equality_constraints(d)]\n        if equality_constraints is not None and equality_constraints(d).shape[0] > 0\n        else None\n    )\n    bc = (\n        [binding_constraint == 0 for binding_constraint in binding_constraints(d)]\n        if binding_constraints is not None and binding_constraints(d).shape[0] > 0\n        else None\n    )\n    if bc is None and ec is None:\n        prob = cp.Problem(obj, constraints=None)\n    elif bc is None:\n        prob = cp.Problem(obj, constraints=ec)\n    elif ec is None:\n        prob = cp.Problem(obj, constraints=bc)\n    else:\n        prob = cp.Problem(obj, constraints=bc + ec)\n    prob.solve()\n\n    \"\"\"\n        If the optimal objective value of this linear program is zero, then x\u00af, together with a pair of optimal\n        dual solution (\u00b5, \u03bb), yields a KKT triple. Otherwise, the linear program must have an unbounded\n        objective value tending to \u2212\u221e along a direction \u00afd. Such a direction \u00af\n        d is then a feasible descent\n        direction of f at the current feasible point x\u00af. A maximum step size \u03c4max > 0 is then determined\n        such that x\u00af + \u03c4 \u00af\n        d is feasible for all \u03c4 in the interval [ 0, \u03c4max ].\n    \"\"\"\n    if prob.status == \"unbounded\":\n        print(\"Direction d is a feasible descent direction!\")\n        feasible_direction = np.array([-0.5, -0.5, 1])\n        print(\"d:\", feasible_direction)\n        \u03c4_max = min(\n            [\n                -lhs_inequality_constraints[idx]\n                / (\n                    inequality_constraints(x_k + feasible_direction)[idx]\n                    - lhs_inequality_constraints[idx]\n                )\n                for idx, lhs in enumerate(lhs_inequality_constraints)\n                if (\n                    inequality_constraints(x_k + feasible_direction)[idx]\n                    - lhs_inequality_constraints[idx]\n                )\n                < 0\n            ]\n        )\n        print(\"\u03c4_max:\", \u03c4_max)\n    return feasible_direction, \u03c4_max\n\n\ndef feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n):\n    k, x_k = 0, x_0\n    while True:\n\n        # 1. Test for Convergence\n        if np.allclose(f_prime(x_k), 0, rtol=\u03b5):\n            return x_k\n\n        # 2. Compute a search direction\n        p_k, \u03c4_max = constrained_feasible_direction(\n            f_prime=f_prime,\n            x_k=x_k,\n            inequality_constraints=inequality_constraints,\n            equality_constraints=equality_constraints,\n        )\n\n        # 3. Compute a steplength\n        \u03b1_k = steplength_algo(f=f, f_prime=f_prime, x_k=x_k, p_k=p_k, \u03b1=\u03c4_max)\n\n        print(\n            f\"Iteration: {k} - x_{k} = {np.round(x_k, 5)}, p_k = {np.round(p_k, 5)}, \u03b1_k = {np.round(\u03b1_k, 5)}\"\n        )\n\n        # 4. Update the iterate and return to Step 1\n        k += 1\n        x_k += \u03b1_k * p_k\n\n        # Check for divergence\n        if np.allclose(x_k, x_k + \u03b1_k * p_k) and k > 1:\n            print(\"Series diverged.\")\n            break";
+                var nbb_formatted_code = "def armijo_line_search(f, f_prime, x_k, p_k, \u03b1, \u03c1=0.8, \u03c3=0.8):\n    \"\"\"Armijo Backtracking Line Search\n    \n    Args:\n        \u03b1: Initial step size\n        \u03c1: Backtracking factor\n        \u03c3: Bending factor\n    \"\"\"\n    m = 0\n    while True:\n        if m > 0:\n            \u03b1 = \u03c1 ** m\n        if f(x_k + \u03b1 * p_k) <= f(x_k) + \u03c3 * \u03b1 * f_prime(x_k).T @ p_k:\n            return \u03b1\n        else:\n            m += 1\n\n\ndef constrained_feasible_direction(\n    f_prime, x_k, inequality_constraints, equality_constraints\n):\n\n    d = cp.Variable(shape=(len(x_k,)), integer=False)\n    lhs_inequality_constraints = inequality_constraints(x_k)\n    binding_constraints = lambda x: inequality_constraints(x)[\n        np.argwhere(np.allclose(lhs_inequality_constraints, 0))\n    ]\n    obj = cp.Minimize(f_prime(x_k).T @ d)\n    ec = (\n        [equality_constraint == 0 for equality_constraint in equality_constraints(d)]\n        if equality_constraints is not None and equality_constraints(d).shape[0] > 0\n        else None\n    )\n    bc = (\n        [binding_constraint == 0 for binding_constraint in binding_constraints(d)]\n        if binding_constraints is not None and binding_constraints(d).shape[0] > 0\n        else None\n    )\n    if bc is None and ec is None:\n        prob = cp.Problem(obj, constraints=None)\n    elif bc is None:\n        prob = cp.Problem(obj, constraints=ec)\n    elif ec is None:\n        prob = cp.Problem(obj, constraints=bc)\n    else:\n        prob = cp.Problem(obj, constraints=bc + ec)\n    prob.solve()\n\n    \"\"\"\n        If the optimal objective value of this linear program is zero, then x\u00af, together with a pair of optimal\n        dual solution (\u00b5, \u03bb), yields a KKT triple. Otherwise, the linear program must have an unbounded\n        objective value tending to \u2212\u221e along a direction \u00afd. Such a direction \u00af\n        d is then a feasible descent\n        direction of f at the current feasible point x\u00af. A maximum step size \u03c4max > 0 is then determined\n        such that x\u00af + \u03c4 \u00af\n        d is feasible for all \u03c4 in the interval [ 0, \u03c4max ].\n    \"\"\"\n    if prob.status == \"unbounded\":\n        print(\"Direction d is a feasible descent direction!\")\n        feasible_direction = np.array([-0.5, -0.5, 1])\n        print(\"d:\", feasible_direction)\n        \u03c4_max = min(\n            [\n                -lhs_inequality_constraints[idx]\n                / (\n                    inequality_constraints(x_k + feasible_direction)[idx]\n                    - lhs_inequality_constraints[idx]\n                )\n                for idx, lhs in enumerate(lhs_inequality_constraints)\n                if (\n                    inequality_constraints(x_k + feasible_direction)[idx]\n                    - lhs_inequality_constraints[idx]\n                )\n                < 0\n            ]\n        )\n        print(\"\u03c4_max:\", \u03c4_max)\n    return feasible_direction, \u03c4_max\n\n\ndef feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n):\n    k, x_k = 0, x_0\n    while True:\n\n        # 1. Test for Convergence\n        if np.allclose(f_prime(x_k), 0, rtol=\u03b5):\n            return x_k\n\n        # 2. Compute a search direction\n        p_k, \u03c4_max = constrained_feasible_direction(\n            f_prime=f_prime,\n            x_k=x_k,\n            inequality_constraints=inequality_constraints,\n            equality_constraints=equality_constraints,\n        )\n\n        # 3. Compute a steplength\n        \u03b1_k = steplength_algo(f=f, f_prime=f_prime, x_k=x_k, p_k=p_k, \u03b1=\u03c4_max)\n\n        print(\n            f\"Iteration: {k} - x_{k} = {np.round(x_k, 5)}, p_k = {np.round(p_k, 5)}, \u03b1_k = {np.round(\u03b1_k, 5)}\"\n        )\n\n        # 4. Update the iterate and return to Step 1\n        k += 1\n        x_k += \u03b1_k * p_k\n\n        # Check for divergence\n        if np.allclose(x_k, x_k + \u03b1_k * p_k) and k > 1:\n            print(\"Series diverged.\")\n            break";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>UNBOUNDED.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Do Exercise 11.9. Enumerate all possibilities of the complementary slackness conditions to find an optimal solution of the problem.</p></li>
+</ul>
+<p>Write down the KKT conditions for the following quadratic program:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8f90258c-82ae-4e0e-8a0e-8f5708ebedfe">
+<span class="eqno">(281)<a class="headerlink" href="#equation-8f90258c-82ae-4e0e-8a0e-8f5708ebedfe" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp; x^2_1 +x^2_2 +x^2_3 −x_1x_2 −x_2x_3 −3x_1 −2x_2 +x_3 \\
+    \text{subject to } &amp; x_1 \geq 0, x_2 \geq 0, x_3 \geq 0.
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="c1"># x = cp.Variable(shape=(3,), integer=False)</span>
+<span class="c1"># obj = cp.Minimize(cp.quad_form(x, H) + c @ x)</span>
+<span class="c1"># constraints = [x &gt;= 0]</span>
+<span class="c1"># prob = cp.Problem(obj, constraints=constraints)</span>
+<span class="c1"># prob.solve()</span>
+<span class="c1"># print(</span>
+<span class="c1">#     &quot; | &quot;.join(</span>
+<span class="c1">#         [f&quot;x_{idx}: {np.round(opt_x, 2)}&quot; for idx, opt_x in zip(range(1, 4), x.value)]</span>
+<span class="c1">#     )</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 827 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 114;
+                var nbb_unformatted_code = "H = np.array([[2, -1, 0], [-1, 2, 0], [0, -1, 2]])\nc = np.array([-3, -2, 1])\n# x = cp.Variable(shape=(3,), integer=False)\n# obj = cp.Minimize(cp.quad_form(x, H) + c @ x)\n# constraints = [x >= 0]\n# prob = cp.Problem(obj, constraints=constraints)\n# prob.solve()\n# print(\n#     \" | \".join(\n#         [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 4), x.value)]\n#     )\n# )";
+                var nbb_formatted_code = "H = np.array([[2, -1, 0], [-1, 2, 0], [0, -1, 2]])\nc = np.array([-3, -2, 1])\n# x = cp.Variable(shape=(3,), integer=False)\n# obj = cp.Minimize(cp.quad_form(x, H) + c @ x)\n# constraints = [x >= 0]\n# prob = cp.Problem(obj, constraints=constraints)\n# prob.solve()\n# print(\n#     \" | \".join(\n#         [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 4), x.value)]\n#     )\n# )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Gradient Vector:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e3c8829f-49d0-481d-97c2-9fbd4914da21">
+<span class="eqno">(282)<a class="headerlink" href="#equation-e3c8829f-49d0-481d-97c2-9fbd4914da21" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{bmatrix}
+        2x_1 - x_2 - 3 \\
+        -x_1 + 2x_2 - 2 \\
+        - x_2 + 2x_3 + 1 \\
+    \end{bmatrix}
+    &amp;=
+    Hx + \begin{bmatrix} -3 \\ -2 \\ 1 \\ \end{bmatrix}
+\end{align}\]</div>
+<p>Hessian <span class="math notranslate nohighlight">\(H\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-63811887-70e6-487a-b9bc-6e1dbfe0eed8">
+<span class="eqno">(283)<a class="headerlink" href="#equation-63811887-70e6-487a-b9bc-6e1dbfe0eed8" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+    2 &amp; -1 &amp; 0 \\
+    -1 &amp; 2 &amp; 0 \\
+    0 &amp; -1 &amp; 2 \\
+\end{bmatrix}\]</div>
+<p>Quadratic Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ee1709e-5675-4154-81fc-8cafbc99c6f5">
+<span class="eqno">(284)<a class="headerlink" href="#equation-6ee1709e-5675-4154-81fc-8cafbc99c6f5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp; \frac{1}{2} x^\top H x + c^\top x \\
+    \text{subject to } &amp; x_1 \geq 0, x_2 \geq 0, x_3 \geq 0. \\
+    \newline \\
+    c = \begin{bmatrix} -3 \\ -2 \\ 1 \\ \end{bmatrix}
+    ,\,&amp; x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ \end{bmatrix}
+    \\
+\end{align}\]</div>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ebb8132a-51db-4ccc-b0f4-ddb575b39190">
+<span class="eqno">(285)<a class="headerlink" href="#equation-ebb8132a-51db-4ccc-b0f4-ddb575b39190" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x) &amp;= \frac{1}{2}x^\top H x + c^\top x \\
+\end{align}\]</div>
+<p>KKT Conditions for optimal <span class="math notranslate nohighlight">\(x = x^*\)</span>:</p>
+<p>Stationarity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4d682102-c689-485c-a7c7-8bb69ab768a9">
+<span class="eqno">(286)<a class="headerlink" href="#equation-4d682102-c689-485c-a7c7-8bb69ab768a9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x\mathcal{L}(x) &amp;= 0 \\
+    Hx^* + c &amp;= 0 \\
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1ee7efde-fb8c-4d78-bd4c-35ac376645eb">
+<span class="eqno">(287)<a class="headerlink" href="#equation-1ee7efde-fb8c-4d78-bd4c-35ac376645eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+   x^* &amp;\geq 0 \\
+\end{align}\]</div>
+<p>Complementary Slackness:</p>
+<p>\begin{array}{lll}
+0 \leq x_1 &amp; \perp &amp; \frac{\partial \mathcal{L(x)}}{\partial x_1} = 2x_1 - x_2 - 3 \geq 0 \
+0 \leq x_2 &amp; \perp &amp; \frac{\partial \mathcal{L(x)}}{\partial x_2} = -x_1 + 2x_2 - 2 \geq 0 \
+0 \leq x_3 &amp; \perp &amp; \frac{\partial \mathcal{L(x)}}{\partial x_3} = -x_2 + 2x_3 + 1 \geq 0 \
+\end{array}</p>
+<p>Case 1: <span class="math notranslate nohighlight">\(x_1=0, x_2=0, x_3=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 - x_2 - 3 = -3 \not\geq 0\)</span>.</p>
+<p>Case 2: <span class="math notranslate nohighlight">\(x_1&gt;0, x_2=0, x_3=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 - x_2 - 3 = 0 \rightarrow x_2 = -3\)</span>, INFEASIBLE.</p>
+<p>Case 3: <span class="math notranslate nohighlight">\(x_1=0, x_2&gt;0, x_3=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(-x_1 + 2x_2 - 2 = 0 \rightarrow x_1 = -2\)</span>, INFEASIBLE.</p>
+<p>Case 4: <span class="math notranslate nohighlight">\(x_1=0, x_2=0, x_3&gt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(-x_2 + 2x_3 + 1 = 0 \rightarrow x_3=-1/2\)</span>, INFEASIBLE and CONTRADICTING.</p>
+<p>Case 5: <span class="math notranslate nohighlight">\(x_1&gt;0, x_2&gt;0, x_3=0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 - x_2 - 3 = 0\)</span> and <span class="math notranslate nohighlight">\(-x_1 + 2x_2 - 2 = 0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.66666667, 2.33333333])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.5 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 101;
+                var nbb_unformatted_code = "np.linalg.inv(np.array([[2, -1], [-1, 2]]))@np.array([3, 2])";
+                var nbb_formatted_code = "np.linalg.inv(np.array([[2, -1], [-1, 2]])) @ np.array([3, 2])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Stationarity is not fulfilled, solution though feasible, is not optimal.</p>
+<p>Case 6: <span class="math notranslate nohighlight">\(x_1=0, x_2&gt;0, x_3&gt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(-x_1 + 2x_2 - 2 = 0 \rightarrow x_2 = 1\)</span> and <span class="math notranslate nohighlight">\(-x_2 + 2x_3 + 1 = 0 \rightarrow x_3 = 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2,  4, -2])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.28 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 109;
+                var nbb_unformatted_code = "H@np.array([0, 1, 0]) + np.array([3, 2, -1])";
+                var nbb_formatted_code = "H @ np.array([0, 1, 0]) + np.array([3, 2, -1])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Stationarity is not fulfilled, solution though feasible, is not optimal.</p>
+<p>Case 7: <span class="math notranslate nohighlight">\(x_1&gt;0, x_2=0, x_3&gt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 - x_2 - 3 = 0 \rightarrow x_1 = 3/2\)</span> and <span class="math notranslate nohighlight">\(-x_2 + 2x_3 + 1 = 0 \rightarrow x_3 = -1/2\)</span>, INFEASIBLE.</p>
+<p>Case 8: <span class="math notranslate nohighlight">\(x_1&gt;0, x_2&gt;0, x_3&gt;0\)</span></p>
+<p><span class="math notranslate nohighlight">\(2x_1 - x_2 - 3 = 0\)</span> and <span class="math notranslate nohighlight">\(-x_1 + 2x_2 - 2 = 0\)</span> and <span class="math notranslate nohighlight">\(-x_2 + 2x_3 + 1 = 0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_star</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">x_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.66666667, 2.33333333, 0.66666667])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.68 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 110;
+                var nbb_unformatted_code = "x_star = np.linalg.inv(np.array([[2, -1, 0], [-1, 2, 0], [0, -1, 2]])) @ np.array([3, 2, -1])\nx_star";
+                var nbb_formatted_code = "x_star = np.linalg.inv(np.array([[2, -1, 0], [-1, 2, 0], [0, -1, 2]])) @ np.array(\n    [3, 2, -1]\n)\nx_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">H</span> <span class="o">@</span> <span class="n">x_star</span> <span class="o">+</span> <span class="n">c</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.12 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 113;
+                var nbb_unformatted_code = "np.allclose(H @ x_star + c, 0)";
+                var nbb_formatted_code = "np.allclose(H @ x_star + c, 0)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>This case fulfills all the KKT conditions, and so is optimal.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Do Exercises 12.8 and 12.10.</p></li>
+</ul>
+<p>12.8</p>
+<p>Minimize the function</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f8daea4e-1ecb-487e-854f-c490da0b0aec">
+<span class="eqno">(288)<a class="headerlink" href="#equation-f8daea4e-1ecb-487e-854f-c490da0b0aec" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    f (x_1, x_2) &amp;= x_1 − x_2 − x^2_1 + x^2_2 \\
+\end{align}\]</div>
+<p>subject to the constraints given in Examples 12.12 and 12.13.</p>
+<p>Example 12.12 &amp; 12.13 constraints:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-efe695ba-63f2-4387-883b-537ec07271bf">
+<span class="eqno">(289)<a class="headerlink" href="#equation-efe695ba-63f2-4387-883b-537ec07271bf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp; x_1 − x_2 − x^2_1 + x^2_2 \\
+    \text{subject to } &amp; −x_1 − x_2 \geq −2 \\
+    &amp; x_1 − 2x_2 \geq −2 \\
+    &amp; x_1 \geq 0 \\
+    &amp; x_2 \geq 0 \\
+\end{align}\]</div>
+<p>Gradient Vector:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-67f3acf8-158c-4ac4-b1d1-e21d5017ba16">
+<span class="eqno">(290)<a class="headerlink" href="#equation-67f3acf8-158c-4ac4-b1d1-e21d5017ba16" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{bmatrix}
+        1 - 2x_1 \\
+        -1 + 2x_2 \\
+    \end{bmatrix}
+    &amp;=
+    Hx + \begin{bmatrix} 1 \\ -1 \\ \end{bmatrix}
+\end{align}\]</div>
+<p>Hessian <span class="math notranslate nohighlight">\(H\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-11b4c3fb-0352-4f9c-95f1-8f22f3e0f1a2">
+<span class="eqno">(291)<a class="headerlink" href="#equation-11b4c3fb-0352-4f9c-95f1-8f22f3e0f1a2" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+    -2 &amp; 0 \\
+    0 &amp; 2 \\
+\end{bmatrix}\]</div>
+<p>Quadratic Form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79714722-36c7-41c4-a152-1298a26fccdd">
+<span class="eqno">(292)<a class="headerlink" href="#equation-79714722-36c7-41c4-a152-1298a26fccdd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp; \frac{1}{2} x^\top H x + c^\top x \\
+    \text{subject to } &amp; Ex \geq f \\
+    \newline \\
+    c = \begin{bmatrix} 1 \\ -1 \\ \end{bmatrix}
+    ,\,&amp; x = \begin{bmatrix} x_1 \\ x_2 \\ \end{bmatrix} 
+    ,\, E = \begin{bmatrix} -1 &amp; -1 \\ 1 &amp; -2 \\ \end{bmatrix} 
+    ,\, f = \begin{bmatrix} -2 \\ -2 \\ \end{bmatrix} 
+    \\
+\end{align}\]</div>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-416b4ee0-fc39-4d3c-a4f8-34354d8093f7">
+<span class="eqno">(293)<a class="headerlink" href="#equation-416b4ee0-fc39-4d3c-a4f8-34354d8093f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x, \mu) &amp;= \frac{1}{2}x^\top H x + c^\top x - (Ex - f)\mu \\
+\end{align}\]</div>
+<p>KKT Conditions for optimal <span class="math notranslate nohighlight">\(x = x^*\)</span>:</p>
+<p>Stationarity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c0b7c61c-aecb-4480-ac60-5b39e1158c5e">
+<span class="eqno">(294)<a class="headerlink" href="#equation-c0b7c61c-aecb-4480-ac60-5b39e1158c5e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x\mathcal{L}(x, \mu) &amp;= 0 \\
+    Hx^* + c - E^\top \mu &amp;= 0 \\
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9b008662-234c-4d28-8b07-0e1db7d4c96f">
+<span class="eqno">(295)<a class="headerlink" href="#equation-9b008662-234c-4d28-8b07-0e1db7d4c96f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    Ex^* - f &amp;\geq 0 \\
+\end{align}\]</div>
+<p>Dual Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2365156a-0361-418b-8319-8b24753d1ea1">
+<span class="eqno">(296)<a class="headerlink" href="#equation-2365156a-0361-418b-8319-8b24753d1ea1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mu \geq 0
+\end{align}\]</div>
+<p>Complementary Slackness:</p>
+<p>\begin{array}{lll}
+0 \leq x_1 &amp; \perp &amp; \frac{\partial \mathcal{L(x, \mu)}}{\partial x_1} = -2x_1 + 1 + \mu_1 -\mu_2 \geq 0 \
+0 \leq x_2 &amp; \perp &amp; \frac{\partial \mathcal{L(x, \mu)}}{\partial x_2} = 2x_2 - 1 + \mu_1 + 2\mu_2 \geq 0 \
+0 \leq \mu_1 &amp; \perp &amp; -x_1-x_2+2 \geq 0 \
+0 \leq \mu_2 &amp; \perp &amp; x_1-2x_2+2 \geq 0 \
+\end{array}</p>
+<p>Case 1: <span class="math notranslate nohighlight">\(x_1&gt;0, x_2&gt;0, \mu_1=0, \mu_2=0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_star</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]]))</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">x_star</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.66666667, 1.33333333])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.4 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 124;
+                var nbb_unformatted_code = "x_star = np.linalg.inv(np.array([[-1, -1], [1, -2]])) @ np.array([-2, -2])\nx_star";
+                var nbb_formatted_code = "x_star = np.linalg.inv(np.array([[-1, -1], [1, -2]])) @ np.array([-2, -2])\nx_star";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Stationarity:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x_star</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.36 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 125;
+                var nbb_unformatted_code = "np.allclose(np.array([[-2, 1], [2, -1]]) @ x_star, 0)";
+                var nbb_formatted_code = "np.allclose(np.array([[-2, 1], [2, -1]]) @ x_star, 0)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Primal Feasibility:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">alltrue</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]])</span> <span class="o">@</span> <span class="n">x_star</span> <span class="o">&gt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.27 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 128;
+                var nbb_unformatted_code = "np.alltrue(np.array([[-1, -1], [1, -2]]) @ x_star >= np.array([-2, -2]))";
+                var nbb_formatted_code = "np.alltrue(np.array([[-1, -1], [1, -2]]) @ x_star >= np.array([-2, -2]))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>KKT conditions are fulfilled and so solution is optimal.</p>
+<p>12.10</p>
+<p>(Based on an example by P.B. Zwart [202].) Consider the quadratic program</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dfda1bea-7247-412c-85db-db723f2be4bf">
+<span class="eqno">(297)<a class="headerlink" href="#equation-dfda1bea-7247-412c-85db-db723f2be4bf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{maximize } &amp; Q(x) = 2x^2_1 + x_1x_2 + 2x_2 \\
+    \text{subject to } &amp; 1.5x_1 + x_2 \leq 1.4 \\
+    &amp; x_1 + x_2 \leq 1 \\
+    &amp; x_1 \geq 0 \\
+    &amp; x_2 \geq -10 \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Q</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="c1"># x = cp.Variable(shape=(2,), integer=False)</span>
+<span class="c1"># obj = cp.Minimize(Q(x))</span>
+<span class="c1"># constraints = [E@x&lt;=f]</span>
+<span class="c1"># prob = cp.Problem(obj, constraints=constraints)</span>
+<span class="c1"># prob.solve()</span>
+<span class="c1"># print(</span>
+<span class="c1">#     &quot; | &quot;.join(</span>
+<span class="c1">#         [f&quot;x_{idx}: {np.round(opt_x, 2)}&quot; for idx, opt_x in zip(range(1, 3), x.value)]</span>
+<span class="c1">#     )</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.05 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 192;
+                var nbb_unformatted_code = "Q = lambda x: 2*(x[0]**2) + x[0]*x[1] + 2*x[1]\nE = np.array([[1.5, 1], [1, 1], [-1, 0], [0, -1]])\nf = np.array([1.4, 1, 0, 10])\nx = cp.Variable(shape=(2,), integer=False)\nobj = cp.Minimize(Q(x))\nconstraints = [E@x<=f]\nprob = cp.Problem(obj, constraints=constraints)\nprob.solve()\nprint(\n    \" | \".join(\n        [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 3), x.value)]\n    )\n)";
+                var nbb_formatted_code = "Q = lambda x: 2 * (x[0] ** 2) + x[0] * x[1] + 2 * x[1]\nE = np.array([[1.5, 1], [1, 1], [-1, 0], [0, -1]])\nf = np.array([1.4, 1, 0, 10])\nx = cp.Variable(shape=(2,), integer=False)\nobj = cp.Minimize(Q(x))\nconstraints = [E @ x <= f]\nprob = cp.Problem(obj, constraints=constraints)\nprob.solve()\nprint(\n    \" | \".join(\n        [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 3), x.value)]\n    )\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>(a) Graph the feasible region of this optimization problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct lines</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>  <span class="c1"># x_1 &gt;= 0</span>
+<span class="n">x_2_1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="o">-</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">x_1</span> <span class="o">+</span> <span class="mi">4</span>  <span class="c1"># constraint 1: 1.5𝑥1 + 𝑥2 ≤ 1.4</span>
+<span class="n">x_2_2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="o">-</span><span class="n">x_1</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># constraint 2: 𝑥1 + 𝑥2 ≤ 1</span>
+
+<span class="c1"># Make plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$1.5x_1 + x_2 \leq 1.4$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x_1 + x_2 \leq 1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fill feasible region</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">))</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">10</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw6_87_0.png" src="../../_images/hw6_87_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.41 s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 121;
+                var nbb_unformatted_code = "# Construct lines\nx_1 = np.linspace(0, 20, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: -1.5 * x_1 + 4  # constraint 1: 1.5\ud835\udc651 + \ud835\udc652 \u2264 1.4\nx_2_2 = lambda x_1: -x_1 + 1  # constraint 2: \ud835\udc651 + \ud835\udc652 \u2264 1\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$1.5x_1 + x_2 \\leq 1.4$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$x_1 + x_2 \\leq 1$\")\nplt.xlim((0, 10))\nplt.ylim((-10, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\ny = np.minimum(x_2_1(x_1), x_2_2(x_1))\nx = [-10]*len(x_1)\nplt.fill_between(x_1, x, y, where=y > x, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "# Construct lines\nx_1 = np.linspace(0, 20, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: -1.5 * x_1 + 4  # constraint 1: 1.5\ud835\udc651 + \ud835\udc652 \u2264 1.4\nx_2_2 = lambda x_1: -x_1 + 1  # constraint 2: \ud835\udc651 + \ud835\udc652 \u2264 1\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$1.5x_1 + x_2 \\leq 1.4$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$x_1 + x_2 \\leq 1$\")\nplt.xlim((0, 10))\nplt.ylim((-10, 10))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\ny = np.minimum(x_2_1(x_1), x_2_2(x_1))\nx = [-10] * len(x_1)\nplt.fill_between(x_1, x, y, where=y > x, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>(b) Is the point <span class="math notranslate nohighlight">\(\bar{x} = (0, 1)\)</span> a local maximum for this problem? Justify your answer.</p>
+<p>Hessian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4e707853-ca41-4594-98d4-f0dfc7f4e6b8">
+<span class="eqno">(298)<a class="headerlink" href="#equation-4e707853-ca41-4594-98d4-f0dfc7f4e6b8" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+    4 &amp; 1 \\
+    1 &amp; 0 \\
+\end{bmatrix}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 4.23606798, -0.23606798])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.1 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 129;
+                var nbb_unformatted_code = "np.linalg.eigvals(np.array([[4, 1], [1,0]]))";
+                var nbb_formatted_code = "np.linalg.eigvals(np.array([[4, 1], [1, 0]]))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Consider the problem:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-91c78987-5a05-423b-94d8-e7d7544888ab">
+<span class="eqno">(299)<a class="headerlink" href="#equation-91c78987-5a05-423b-94d8-e7d7544888ab" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} &amp; 2x_1x_2 + x_2x_3 + x_1x_3 \\
+    \text{subject to } &amp; 3x_1 + 3x_2 + 2x_3 = 3. \\
+\end{align}\]</div>
+<p>Write and solve the KKT optimality conditions of the problem. Is the computed solution <span class="math notranslate nohighlight">\(x\)</span> a local minimum? Explain.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># x = cp.Variable(shape=(3,), integer=False)</span>
+<span class="c1"># obj = cp.Minimize(f(x))</span>
+<span class="c1"># constraints = [3 * x[0] + 3 * x[1] + 2 * x[2] == 3]</span>
+<span class="c1"># prob = cp.Problem(obj, constraints=constraints)</span>
+<span class="c1"># prob.solve()</span>
+<span class="c1"># print(</span>
+<span class="c1">#     &quot; | &quot;.join(</span>
+<span class="c1">#         [f&quot;x_{idx}: {np.round(opt_x, 2)}&quot; for idx, opt_x in zip(range(1, 4), x.value)]</span>
+<span class="c1">#     )</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 727 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 100;
+                var nbb_unformatted_code = "f = lambda x: 2 * x[0] * x[1] + x[1] * x[2] + x[0] * x[2]\n# x = cp.Variable(shape=(3,), integer=False)\n# obj = cp.Minimize(f(x))\n# constraints = [3 * x[0] + 3 * x[1] + 2 * x[2] == 3]\n# prob = cp.Problem(obj, constraints=constraints)\n# prob.solve()\n# print(\n#     \" | \".join(\n#         [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 4), x.value)]\n#     )\n# )";
+                var nbb_formatted_code = "f = lambda x: 2 * x[0] * x[1] + x[1] * x[2] + x[0] * x[2]\n# x = cp.Variable(shape=(3,), integer=False)\n# obj = cp.Minimize(f(x))\n# constraints = [3 * x[0] + 3 * x[1] + 2 * x[2] == 3]\n# prob = cp.Problem(obj, constraints=constraints)\n# prob.solve()\n# print(\n#     \" | \".join(\n#         [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 4), x.value)]\n#     )\n# )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>KKT Conditions:</p>
+<p>Stationarity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ae0f87a5-43e4-4453-9bb7-cd8003be51d3">
+<span class="eqno">(300)<a class="headerlink" href="#equation-ae0f87a5-43e4-4453-9bb7-cd8003be51d3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    2x_2 + x_3 + 3\lambda &amp;= 0 \\
+    2x_1 + x_3 + 3\lambda &amp;= 0 \\
+    x_2 + x_1 + 2\lambda &amp;= 0 \\
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7bef6212-63a8-4be1-9532-1ccd3c182126">
+<span class="eqno">(301)<a class="headerlink" href="#equation-7bef6212-63a8-4be1-9532-1ccd3c182126" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    3x_1 + 3x_2 + 2x_3 &amp;= 3 \\
+\end{align}\]</div>
+<p>Dual Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7c548ece-fa8a-4502-b5f2-7d3ebac200f6">
+<span class="eqno">(302)<a class="headerlink" href="#equation-7c548ece-fa8a-4502-b5f2-7d3ebac200f6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \lambda \text{ free.} \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Solution by KKT: &quot;</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Solution by KKT: 
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.375,  0.375,  0.375, -0.375])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.41 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 118;
+                var nbb_unformatted_code = "print(\"Solution by KKT: \")\nnp.linalg.inv(\n    np.array([[0, 2, 1, 3], [2, 0, 1, 3], [1, 1, 0, 2], [3, 3, 2, 0]])\n) @ np.array([0, 0, 0, 3])";
+                var nbb_formatted_code = "print(\"Solution by KKT: \")\nnp.linalg.inv(\n    np.array([[0, 2, 1, 3], [2, 0, 1, 3], [1, 1, 0, 2], [3, 3, 2, 0]])\n) @ np.array([0, 0, 0, 3])";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Hessian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-49327044-a6f3-4db0-95d2-2726158cc629">
+<span class="eqno">(303)<a class="headerlink" href="#equation-49327044-a6f3-4db0-95d2-2726158cc629" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+    0 &amp; 2 &amp; 1 \\
+    2 &amp; 0 &amp; 1 \\
+    1 &amp; 1 &amp; 0 \\
+\end{bmatrix}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvals</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2.73205081, -2.        , -0.73205081])
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2.64 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 117;
+                var nbb_unformatted_code = "np.linalg.eigvals(np.array([[0,2,1],[2,0,1],[1,1,0]]))";
+                var nbb_formatted_code = "np.linalg.eigvals(np.array([[0, 2, 1], [2, 0, 1], [1, 1, 0]]))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Since the Hessian is indefinite, we can’t conclude anything about whether the solution found by KKT is a local minimum.</p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Consider the nonnegatively constrained problem:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-bc5c3d7d-a244-40ba-bfbe-b3bece199a9d">
+<span class="eqno">(304)<a class="headerlink" href="#equation-bc5c3d7d-a244-40ba-bfbe-b3bece199a9d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x \geq 0}{\text{minimize }} &amp; \frac{4}{3}{[x^2_1 - x_1x_2 + x^2_2]}^{3/4} + x^2_3 - 2x_1x_3 + x^2_1. \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+    <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="n">f_prime</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">((</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+        <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="c1"># x = cp.Variable(shape=(3,), integer=False)</span>
+<span class="c1"># obj = cp.Minimize(f(x))</span>
+<span class="c1"># constraints = [x &gt;= 0]</span>
+<span class="c1"># prob = cp.Problem(obj, constraints=constraints)</span>
+<span class="c1"># prob.solve()</span>
+<span class="c1"># print(</span>
+<span class="c1">#     &quot; | &quot;.join(</span>
+<span class="c1">#         [f&quot;x_{idx}: {np.round(opt_x, 2)}&quot; for idx, opt_x in zip(range(1, 4), x.value)]</span>
+<span class="c1">#     )</span>
+<span class="c1"># )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 2 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 237;
+                var nbb_unformatted_code = "feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n)";
+                var nbb_formatted_code = "feasible_descent(\n    f,\n    f_prime,\n    x_0=np.array([1 / 3] * 3),\n    inequality_constraints=inequality_constraints,\n    equality_constraints=equality_constraints,\n    \u03b5=1e-15,\n    steplength_algo=armijo_line_search,\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>(a) Write the KKT conditions for the problem? Are they necessary?</p>
+<p>KKT Conditions:</p>
+<p>Stationarity:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5feae0dd-97c1-49d5-9fbe-0df95735105e">
+<span class="eqno">(305)<a class="headerlink" href="#equation-5feae0dd-97c1-49d5-9fbe-0df95735105e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    {[x^2_1 - x_1x_2 + x^2_2]}^{-1/4}[2x_1-x_2] - 2x_3 + 2x_1 &amp;= 0 \\
+    {[x^2_1 - x_1x_2 + x^2_2]}^{-1/4}[-x_1+2x_2] &amp;= 0 \\
+    2x_3 - 2x_1 &amp;= 0 \\
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e189b05b-f2b0-4c4a-9e16-a175f7a8ab41">
+<span class="eqno">(306)<a class="headerlink" href="#equation-e189b05b-f2b0-4c4a-9e16-a175f7a8ab41" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1, x_2, x_3 \geq 0 \\
+\end{align}\]</div>
+<p>Complementary Slackness:</p>
+<p>\begin{array}{lll}
+0 \leq x_1 &amp; \perp &amp; \frac{\partial \mathcal{L(x)}}{\partial x_1} = {[x^2_1 - x_1x_2 + x^2_2]}^{-1/4}[2x_1-x_2] - 2x_3 + 2x_1 \geq 0 \
+0 \leq x_2 &amp; \perp &amp; \frac{\partial \mathcal{L(x)}}{\partial x_2} = {[x^2_1 - x_1x_2 + x^2_2]}^{-1/4}[-x_1+2x_2] \geq 0 \
+0 \leq x_3 &amp; \perp &amp; \frac{\partial \mathcal{L(x)}}{\partial x_3} = 2x_3 - 2x_1 \geq 0 \
+\end{array}</p>
+<p>There are no equality constraints and the only inequality constraint is non-negativity of the solution, so they are necessary conditions.</p>
+<p>(b) Starting at <span class="math notranslate nohighlight">\(x^0 = (0, 1/4, 1/2)\)</span>, carry out several iterations of the feasible descent method (using the active constraints at each iterate) until an observable pattern emerges.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feasible_descent</span><span class="p">(</span>
+    <span class="n">f</span><span class="p">,</span>
+    <span class="n">f_prime</span><span class="p">,</span>
+    <span class="n">x_0</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span><span class="p">]),</span>
+    <span class="n">inequality_constraints</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,]),</span>
+    <span class="n">equality_constraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ε</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+    <span class="n">steplength_algo</span><span class="o">=</span><span class="n">armijo_line_search</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Direction d is a feasible descent direction!
+d: [-0.5 -0.5  1. ]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">239</span><span class="o">-</span><span class="mi">59</span><span class="n">edf2929d16</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">equality_constraints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">ε</span><span class="o">=</span><span class="mf">1e-15</span><span class="p">,</span>
+<span class="ne">----&gt; </span><span class="mi">8</span>     <span class="n">steplength_algo</span><span class="o">=</span><span class="n">armijo_line_search</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
+
+<span class="nn">&lt;ipython-input-236-b7389e68bc82&gt;</span> in <span class="ni">feasible_descent</span><span class="nt">(f, f_prime, x_0, inequality_constraints, equality_constraints, ε, steplength_algo)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>             <span class="n">x_k</span><span class="o">=</span><span class="n">x_k</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>             <span class="n">inequality_constraints</span><span class="o">=</span><span class="n">inequality_constraints</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">102</span>             <span class="n">equality_constraints</span><span class="o">=</span><span class="n">equality_constraints</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span> 
+
+<span class="nn">&lt;ipython-input-236-b7389e68bc82&gt;</span> in <span class="ni">constrained_feasible_direction</span><span class="nt">(f_prime, x_k, inequality_constraints, equality_constraints)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>                     <span class="o">-</span> <span class="n">lhs_inequality_constraints</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>                 <span class="p">)</span>
+<span class="nn">---&gt; 69                 for idx, lhs</span> in <span class="ni">enumerate</span><span class="nt">(lhs_inequality_constraints)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                 <span class="k">if</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span>                     <span class="n">inequality_constraints</span><span class="p">(</span><span class="n">x_k</span> <span class="o">+</span> <span class="n">feasible_direction</span><span class="p">)[</span><span class="n">idx</span><span class="p">]</span>
+
+<span class="nn">&lt;ipython-input-236-b7389e68bc82&gt;</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>                     <span class="o">-</span> <span class="n">lhs_inequality_constraints</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>                 <span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>                 <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>             <span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>         <span class="p">)</span>
+
+<span class="ne">ValueError</span>: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 25.8 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 238;
+                var nbb_unformatted_code = "f = (\n    lambda x: (4 / 3) * ((x[0] ** 2 - x[0] * x[1] + x[1] ** 2) ** (3 / 4))\n    + x[2] ** 2\n    - 2 * x[0] * x[2]\n    + x[0] ** 2\n)\n\nf_prime = lambda x: np.array(\n    [\n        ((x[0] ** 2 - x[0] * x[1] + x[1] ** 2) ** (-1 / 4)) * (2 * x[0] - x[1])\n        - 2 * x[2]\n        + 2 * x[0],\n        ((x[0] ** 2 - x[0] * x[1] + x[1] ** 2) ** (-1 / 4)) * (-x[0] + 2 * x[1]),\n        2 * x[2] - 2 * x[0],\n    ]\n)\n# x = cp.Variable(shape=(3,), integer=False)\n# obj = cp.Minimize(f(x))\n# constraints = [x >= 0]\n# prob = cp.Problem(obj, constraints=constraints)\n# prob.solve()\n# print(\n#     \" | \".join(\n#         [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 4), x.value)]\n#     )\n# )";
+                var nbb_formatted_code = "f = (\n    lambda x: (4 / 3) * ((x[0] ** 2 - x[0] * x[1] + x[1] ** 2) ** (3 / 4))\n    + x[2] ** 2\n    - 2 * x[0] * x[2]\n    + x[0] ** 2\n)\n\nf_prime = lambda x: np.array(\n    [\n        ((x[0] ** 2 - x[0] * x[1] + x[1] ** 2) ** (-1 / 4)) * (2 * x[0] - x[1])\n        - 2 * x[2]\n        + 2 * x[0],\n        ((x[0] ** 2 - x[0] * x[1] + x[1] ** 2) ** (-1 / 4)) * (-x[0] + 2 * x[1]),\n        2 * x[2] - 2 * x[0],\n    ]\n)\n# x = cp.Variable(shape=(3,), integer=False)\n# obj = cp.Minimize(f(x))\n# constraints = [x >= 0]\n# prob = cp.Problem(obj, constraints=constraints)\n# prob.solve()\n# print(\n#     \" | \".join(\n#         [f\"x_{idx}: {np.round(opt_x, 2)}\" for idx, opt_x in zip(range(1, 4), x.value)]\n#     )\n# )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>(c) Can you solve the problem analytically using the KKT conditions and say something about the method when you stop it?</p>
+<ul class="simple">
+<li><p>No</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-530"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw5.html" title="previous page">HW 5</a>
+    <a class='right-next' id="next-link" href="hw7.html" title="next page">HW 7</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

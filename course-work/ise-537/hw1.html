@@ -1,0 +1,2348 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 1 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/hw1.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HW 2 Part 1" href="hw2_part1.html" />
+    <link rel="prev" title="ISE-537: Financial Analytics" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/hw1.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HW 1" />
+<meta property="og:description" content="HW 1  By: Chengyi (Jeff) Chen  %load_ext nb_black %matplotlib inline  import matplotlib.pyplot as plt  plt.rcParams[&#34;figure.dpi&#34;] = 300 plt.rcParams[&#34;figure.fig" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/hw1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-1">
+   Problem 1
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#transform-vix-daily-price-time-series-to-daily-return-time-series">
+     1. Transform VIX daily price time series to daily return time series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-the-sample-moments-mean-skewness-and-kurtosis-for-the-vix-daily-returns">
+     2. Calculate the sample moments (mean,skewness, and kurtosis) for the VIX daily returns
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#test-whether-the-vix-daily-returns-were-normally-distributed-or-not-need-to-generate-necessary-figures-and-statistics-for-normality-test-describe-your-observations-before-make-any-conclusion">
+     3. Test whether the VIX daily returns were normally distributed or not. (Need to generate necessary figures and statistics for normality test, describe your observations before make any conclusion)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shapiro-wilk-test">
+     Shapiro-Wilk Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dagostinos-k-2-test">
+     D’Agostino’s
+     <span class="math notranslate nohighlight">
+      \(K^2\)
+     </span>
+     Test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kolmogorov-smirnov-test">
+     Kolmogorov-Smirnov Test
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-2">
+   Problem 2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-rolling-252-day-annualized-spy-return-volatilities-and-plot-the-time-series">
+     1. Calculate rolling 252-day annualized SPY return volatilities, and plot the time series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-rolling-252-day-annualized-spy-return-semi-volatility-based-on-negative-daily-returns-and-plot-the-time-series">
+     2. Calculate rolling 252-day annualized SPY return semi-volatility (based on negative daily returns) , and plot the time series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#based-on-spy-daily-returns-in-2018-a-calculate-its-shortfall-probability-for-a-daily-return-less-than-2-b-value-at-risk-at-95-for-daily-return-c-cvar-95-for-daily-return">
+     3. Based on SPY daily returns in 2018, A). calculate its shortfall probability for a daily return less than -2%; B). Value at Risk at 95% for daily return; C). CVaR-95% for daily return.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-drawdowns-for-the-spy-price-times-series-plot-the-drawdown-time-series-and-locate-the-maximum-drawdown-for-the-whole-period">
+     4. Calculate drawdowns for the SPY price times series, plot the drawdown time series, and locate the maximum drawdown for the whole period
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problem-3">
+   Problem 3
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-annualized-returns-covariance-matrix">
+     Expected Annualized Returns &amp; Covariance Matrix
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#run-an-optimization-to-locate-the-minimum-variance-portfolio-on-the-new-frontier">
+     1. Run an optimization to locate the minimum-variance portfolio on the new frontier.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-run-optimizations-to-locate-two-other-efficient-portfolios-different-than-the-minimum-variance-portfolio">
+     2A. Run optimizations to locate two other efficient portfolios different than the minimum-variance portfolio
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#risk-level-upperbound-leq-0-05">
+       1. Risk-level Upperbound
+       <span class="math notranslate nohighlight">
+        \(σ \leq 0.05\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#risk-level-upperbound-leq-1-00">
+       2. Risk-level Upperbound
+       <span class="math notranslate nohighlight">
+        \(σ \leq 1.00\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-prove-or-disprove-the-minimum-variance-portfolio-can-be-represented-as-a-combination-of-the-two-portfolios-found-on-2a">
+     2B. Prove or disprove the minimum-variance portfolio can be represented as a combination of the two portfolios found on 2A.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-both-the-old-efficient-frontier-without-the-short-sell-constraint-and-the-new-efficient-frontier-with-the-short-sell-constraint-on-the-same-graph">
+     3. Plot both the old efficient frontier without the short-sell constraint and the new efficient frontier with the short-sell constraint on the same graph.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-1">
+<h1>HW 1<a class="headerlink" href="#hw-1" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">statsmodels.graphics.gofplots</span> <span class="kn">import</span> <span class="n">qqplot</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/ml/lib/python3.7/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom collections import namedtuple\nfrom statsmodels.graphics.gofplots import qqplot\nfrom datetime import datetime, timedelta\nfrom tqdm import tqdm";
+                var nbb_formatted_code = "%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom collections import namedtuple\nfrom statsmodels.graphics.gofplots import qqplot\nfrom datetime import datetime, timedelta\nfrom tqdm import tqdm";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;./data/HW1_Due20200927.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;DataSource&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "data = pd.read_excel(\n    \"./data/HW1_Due20200927.xlsx\", sheet_name=\"DataSource\", header=[0, 1]\n).dropna(how=\"all\", axis=1)";
+                var nbb_formatted_code = "data = pd.read_excel(\n    \"./data/HW1_Due20200927.xlsx\", sheet_name=\"DataSource\", header=[0, 1]\n).dropna(how=\"all\", axis=1)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vix</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;VIX Index&quot;</span><span class="p">]</span>
+<span class="n">vix</span> <span class="o">=</span> <span class="n">vix</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+<span class="n">vix</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">vix</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">vix</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999-01-15</th>
+      <td>29.24</td>
+    </tr>
+    <tr>
+      <th>1999-01-19</th>
+      <td>29.24</td>
+    </tr>
+    <tr>
+      <th>1999-01-20</th>
+      <td>28.60</td>
+    </tr>
+    <tr>
+      <th>1999-01-21</th>
+      <td>30.92</td>
+    </tr>
+    <tr>
+      <th>1999-01-22</th>
+      <td>31.95</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "vix = data[\"VIX Index\"]\nvix = vix.set_index(\"Date\")\nvix.index = pd.to_datetime(vix.index)\nvix.head()";
+                var nbb_formatted_code = "vix = data[\"VIX Index\"]\nvix = vix.set_index(\"Date\")\nvix.index = pd.to_datetime(vix.index)\nvix.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spy</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;SPY ETF&quot;</span><span class="p">]</span>
+<span class="n">spy</span> <span class="o">=</span> <span class="n">spy</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Dates&quot;</span><span class="p">)</span>
+<span class="n">spy</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">spy</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">spy</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <th>Dates</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999-01-15</th>
+      <td>124.3750</td>
+    </tr>
+    <tr>
+      <th>1999-01-19</th>
+      <td>125.1875</td>
+    </tr>
+    <tr>
+      <th>1999-01-20</th>
+      <td>126.1875</td>
+    </tr>
+    <tr>
+      <th>1999-01-21</th>
+      <td>122.8438</td>
+    </tr>
+    <tr>
+      <th>1999-01-22</th>
+      <td>122.5625</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "spy = data[\"SPY ETF\"]\nspy = spy.set_index(\"Dates\")\nspy.index = pd.to_datetime(spy.index)\nspy.head()";
+                var nbb_formatted_code = "spy = data[\"SPY ETF\"]\nspy = spy.set_index(\"Dates\")\nspy.index = pd.to_datetime(spy.index)\nspy.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vix</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Price&quot;</span><span class="p">:</span> <span class="s2">&quot;VIX&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">spy</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Price&quot;</span><span class="p">:</span> <span class="s2">&quot;SPY&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;VIX and SPY Stock Prices&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_5_0.png" src="../../_images/hw1_5_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "fig, ax = plt.subplots(1, 1)\n\nvix.rename({\"Price\": \"VIX\"}, axis=1).plot.line(ax=ax)\nspy.rename({\"Price\": \"SPY\"}, axis=1).plot.line(ax=ax)\n\nplt.title(\"VIX and SPY Stock Prices\")\nplt.legend()\nplt.grid(True)\nplt.show()";
+                var nbb_formatted_code = "fig, ax = plt.subplots(1, 1)\n\nvix.rename({\"Price\": \"VIX\"}, axis=1).plot.line(ax=ax)\nspy.rename({\"Price\": \"SPY\"}, axis=1).plot.line(ax=ax)\n\nplt.title(\"VIX and SPY Stock Prices\")\nplt.legend()\nplt.grid(True)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="problem-1">
+<h2>Problem 1<a class="headerlink" href="#problem-1" title="Permalink to this headline">¶</a></h2>
+<p>Data: the VIX price time series on the tab DataSource</p>
+<div class="section" id="transform-vix-daily-price-time-series-to-daily-return-time-series">
+<h3>1. Transform VIX daily price time series to daily return time series<a class="headerlink" href="#transform-vix-daily-price-time-series-to-daily-return-time-series" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vix_returns</span> <span class="o">=</span> <span class="n">vix</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">vix_returns</span> <span class="o">=</span> <span class="n">vix_returns</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Price&quot;</span><span class="p">:</span> <span class="s2">&quot;daily_returns&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">vix_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>daily_returns</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999-01-19</th>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1999-01-20</th>
+      <td>-0.021888</td>
+    </tr>
+    <tr>
+      <th>1999-01-21</th>
+      <td>0.081119</td>
+    </tr>
+    <tr>
+      <th>1999-01-22</th>
+      <td>0.033312</td>
+    </tr>
+    <tr>
+      <th>1999-01-25</th>
+      <td>-0.025665</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "vix_returns = vix.pct_change(1).iloc[1:]\nvix_returns = vix_returns.rename({\"Price\": \"daily_returns\"}, axis=1)\nvix_returns.head()";
+                var nbb_formatted_code = "vix_returns = vix.pct_change(1).iloc[1:]\nvix_returns = vix_returns.rename({\"Price\": \"daily_returns\"}, axis=1)\nvix_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spy_returns</span> <span class="o">=</span> <span class="n">spy</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">spy_returns</span> <span class="o">=</span> <span class="n">spy_returns</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Price&quot;</span><span class="p">:</span> <span class="s2">&quot;daily_returns&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">spy_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>daily_returns</th>
+    </tr>
+    <tr>
+      <th>Dates</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999-01-19</th>
+      <td>0.006533</td>
+    </tr>
+    <tr>
+      <th>1999-01-20</th>
+      <td>0.007988</td>
+    </tr>
+    <tr>
+      <th>1999-01-21</th>
+      <td>-0.026498</td>
+    </tr>
+    <tr>
+      <th>1999-01-22</th>
+      <td>-0.002290</td>
+    </tr>
+    <tr>
+      <th>1999-01-25</th>
+      <td>0.010199</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "spy_returns = spy.pct_change(1).iloc[1:]\nspy_returns = spy_returns.rename({\"Price\": \"daily_returns\"}, axis=1)\nspy_returns.head()";
+                var nbb_formatted_code = "spy_returns = spy.pct_change(1).iloc[1:]\nspy_returns = spy_returns.rename({\"Price\": \"daily_returns\"}, axis=1)\nspy_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vix_returns</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;daily_returns&quot;</span><span class="p">:</span> <span class="s2">&quot;VIX&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">spy_returns</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;daily_returns&quot;</span><span class="p">:</span> <span class="s2">&quot;SPY&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;VIX and SPY Daily Returns&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_11_0.png" src="../../_images/hw1_11_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "fig, ax = plt.subplots(1, 1)\n\nvix_returns.rename({\"daily_returns\": \"VIX\"}, axis=1).plot.line(ax=ax)\nspy_returns.rename({\"daily_returns\": \"SPY\"}, axis=1).plot.line(ax=ax)\n\nplt.title(\"VIX and SPY Daily Returns\")\nplt.legend()\nplt.grid(True)\nplt.show()";
+                var nbb_formatted_code = "fig, ax = plt.subplots(1, 1)\n\nvix_returns.rename({\"daily_returns\": \"VIX\"}, axis=1).plot.line(ax=ax)\nspy_returns.rename({\"daily_returns\": \"SPY\"}, axis=1).plot.line(ax=ax)\n\nplt.title(\"VIX and SPY Daily Returns\")\nplt.legend()\nplt.grid(True)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="calculate-the-sample-moments-mean-skewness-and-kurtosis-for-the-vix-daily-returns">
+<h3>2. Calculate the sample moments (mean,skewness, and kurtosis) for the VIX daily returns<a class="headerlink" href="#calculate-the-sample-moments-mean-skewness-and-kurtosis-for-the-vix-daily-returns" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vix_returns</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>daily_returns    0.002357
+dtype: float64
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "vix_returns.mean()";
+                var nbb_formatted_code = "vix_returns.mean()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vix_returns</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>daily_returns    2.014783
+dtype: float64
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "vix_returns.skew()";
+                var nbb_formatted_code = "vix_returns.skew()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vix_returns</span><span class="o">.</span><span class="n">kurtosis</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>daily_returns    19.302523
+dtype: float64
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "vix_returns.kurtosis()";
+                var nbb_formatted_code = "vix_returns.kurtosis()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="test-whether-the-vix-daily-returns-were-normally-distributed-or-not-need-to-generate-necessary-figures-and-statistics-for-normality-test-describe-your-observations-before-make-any-conclusion">
+<h3>3. Test whether the VIX daily returns were normally distributed or not. (Need to generate necessary figures and statistics for normality test, describe your observations before make any conclusion)<a class="headerlink" href="#test-whether-the-vix-daily-returns-were-normally-distributed-or-not-need-to-generate-necessary-figures-and-statistics-for-normality-test-describe-your-observations-before-make-any-conclusion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vix_returns</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">vix_returns</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">kde</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Historgram of VIX daily returns and KDE plot overlay&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">qqplot</span><span class="p">(</span><span class="n">vix_returns</span><span class="p">,</span> <span class="n">line</span><span class="o">=</span><span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;QQ plot&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_17_0.png" src="../../_images/hw1_17_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "fig, ax = plt.subplots(2, 1)\n\nvix_returns.plot.hist(bins=5000, ax=ax[0])\nvix_returns.plot.kde(ax=ax[0])\nax[0].set_title(\"Historgram of VIX daily returns and KDE plot overlay\")\nax[0].grid(True)\n\nqqplot(vix_returns, line=\"s\", ax=ax[1])\nax[1].set_title(\"QQ plot\")\nax[1].grid(True)\n\nplt.tight_layout()\nplt.show()";
+                var nbb_formatted_code = "fig, ax = plt.subplots(2, 1)\n\nvix_returns.plot.hist(bins=5000, ax=ax[0])\nvix_returns.plot.kde(ax=ax[0])\nax[0].set_title(\"Historgram of VIX daily returns and KDE plot overlay\")\nax[0].grid(True)\n\nqqplot(vix_returns, line=\"s\", ax=ax[1])\nax[1].set_title(\"QQ plot\")\nax[1].grid(True)\n\nplt.tight_layout()\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Although visually, the histogram and kernel density estimation makes the VIX daily returns look normally distributed, let’s use a statistical test to verify.</p>
+</div>
+<div class="section" id="shapiro-wilk-test">
+<h3>Shapiro-Wilk Test<a class="headerlink" href="#shapiro-wilk-test" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">sw_stat</span><span class="p">,</span> <span class="n">p_val</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">shapiro</span><span class="p">(</span><span class="n">vix_returns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H_0: Vix is drawn from a Normal Distribution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H_α: Vix is not from a Normal Distribution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Failed to reject H_0 as p-value (</span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s2">) @ </span><span class="si">{</span><span class="n">α</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">% significance level&quot;</span>
+    <span class="k">if</span> <span class="n">p_val</span> <span class="o">&gt;</span> <span class="n">α</span>
+    <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;H_0 is rejected as p-value (</span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s2">) @ </span><span class="si">{</span><span class="n">α</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">% significance level&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_0: Vix is drawn from a Normal Distribution
+H_α: Vix is not from a Normal Distribution
+H_0 is rejected as p-value (0.0) @ 5.0% significance level
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/ml/lib/python3.7/site-packages/scipy/stats/morestats.py:1681: UserWarning: p-value may not be accurate for N &gt; 5000.
+  warnings.warn(&quot;p-value may not be accurate for N &gt; 5000.&quot;)
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "\u03b1 = 0.05\nsw_stat, p_val = sp.stats.shapiro(vix_returns)\nprint(f\"H_0: Vix is drawn from a Normal Distribution\")\nprint(f\"H_\u03b1: Vix is not from a Normal Distribution\")\nprint(\n    f\"Failed to reject H_0 as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n    if p_val > \u03b1\n    else f\"H_0 is rejected as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n)";
+                var nbb_formatted_code = "\u03b1 = 0.05\nsw_stat, p_val = sp.stats.shapiro(vix_returns)\nprint(f\"H_0: Vix is drawn from a Normal Distribution\")\nprint(f\"H_\u03b1: Vix is not from a Normal Distribution\")\nprint(\n    f\"Failed to reject H_0 as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n    if p_val > \u03b1\n    else f\"H_0 is rejected as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="dagostinos-k-2-test">
+<h3>D’Agostino’s <span class="math notranslate nohighlight">\(K^2\)</span> Test<a class="headerlink" href="#dagostinos-k-2-test" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">sw_stat</span><span class="p">,</span> <span class="n">p_val</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">normaltest</span><span class="p">(</span><span class="n">vix_returns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H_0: Vix is drawn from a Normal Distribution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H_α: Vix is not from a Normal Distribution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Failed to reject H_0 as p-value (</span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s2">) @ </span><span class="si">{</span><span class="n">α</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">% significance level&quot;</span>
+    <span class="k">if</span> <span class="n">p_val</span> <span class="o">&gt;</span> <span class="n">α</span>
+    <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;H_0 is rejected as p-value (</span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s2">) @ </span><span class="si">{</span><span class="n">α</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">% significance level&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_0: Vix is drawn from a Normal Distribution
+H_α: Vix is not from a Normal Distribution
+H_0 is rejected as p-value ([0.]) @ 5.0% significance level
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "\u03b1 = 0.05\nsw_stat, p_val = sp.stats.normaltest(vix_returns)\nprint(f\"H_0: Vix is drawn from a Normal Distribution\")\nprint(f\"H_\u03b1: Vix is not from a Normal Distribution\")\nprint(\n    f\"Failed to reject H_0 as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n    if p_val > \u03b1\n    else f\"H_0 is rejected as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n)";
+                var nbb_formatted_code = "\u03b1 = 0.05\nsw_stat, p_val = sp.stats.normaltest(vix_returns)\nprint(f\"H_0: Vix is drawn from a Normal Distribution\")\nprint(f\"H_\u03b1: Vix is not from a Normal Distribution\")\nprint(\n    f\"Failed to reject H_0 as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n    if p_val > \u03b1\n    else f\"H_0 is rejected as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="kolmogorov-smirnov-test">
+<h3>Kolmogorov-Smirnov Test<a class="headerlink" href="#kolmogorov-smirnov-test" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">ks_stat</span><span class="p">,</span> <span class="n">p_val</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">rvs</span><span class="o">=</span><span class="n">vix_returns</span><span class="p">,</span> <span class="n">cdf</span><span class="o">=</span><span class="s2">&quot;norm&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H_0: Vix is drawn from a Normal Distribution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;H_α: Vix is not from a Normal Distribution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Failed to reject H_0 as p-value (</span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s2">) @ </span><span class="si">{</span><span class="n">α</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">% significance level&quot;</span>
+    <span class="k">if</span> <span class="n">p_val</span> <span class="o">&gt;</span> <span class="n">α</span>
+    <span class="k">else</span> <span class="sa">f</span><span class="s2">&quot;H_0 is rejected as p-value (</span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s2">) @ </span><span class="si">{</span><span class="n">α</span><span class="o">*</span><span class="mi">100</span><span class="si">}</span><span class="s2">% significance level&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H_0: Vix is drawn from a Normal Distribution
+H_α: Vix is not from a Normal Distribution
+H_0 is rejected as p-value (0.0) @ 5.0% significance level
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "\u03b1 = 0.05\nks_stat, p_val = sp.stats.kstest(rvs=vix_returns, cdf=\"norm\")\nprint(f\"H_0: Vix is drawn from a Normal Distribution\")\nprint(f\"H_\u03b1: Vix is not from a Normal Distribution\")\nprint(\n    f\"Failed to reject H_0 as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n    if p_val > \u03b1\n    else f\"H_0 is rejected as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n)";
+                var nbb_formatted_code = "\u03b1 = 0.05\nks_stat, p_val = sp.stats.kstest(rvs=vix_returns, cdf=\"norm\")\nprint(f\"H_0: Vix is drawn from a Normal Distribution\")\nprint(f\"H_\u03b1: Vix is not from a Normal Distribution\")\nprint(\n    f\"Failed to reject H_0 as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n    if p_val > \u03b1\n    else f\"H_0 is rejected as p-value ({p_val}) @ {\u03b1*100}% significance level\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>All 3 tests reveal that though visually, the VIX daily returns look normally distributed, they are not.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="problem-2">
+<h2>Problem 2<a class="headerlink" href="#problem-2" title="Permalink to this headline">¶</a></h2>
+<p>Data: 	the SPY ETF price times series on the tab DataSource.</p>
+<div class="section" id="calculate-rolling-252-day-annualized-spy-return-volatilities-and-plot-the-time-series">
+<h3>1. Calculate rolling 252-day annualized SPY return volatilities, and plot the time series<a class="headerlink" href="#calculate-rolling-252-day-annualized-spy-return-volatilities-and-plot-the-time-series" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spy_returns</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">252</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">daily_returns</span><span class="p">:</span> <span class="p">(</span><span class="mi">252</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">daily_returns</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">252</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Rolling 252-day annualized SPY return volatilities&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_29_0.png" src="../../_images/hw1_29_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 16;
+                var nbb_unformatted_code = "spy_returns.rolling(window=252).agg(\n    lambda daily_returns: (252 ** 0.5) * daily_returns.std()\n).iloc[252 - 1 :].plot.line()\n\nplt.title(\"Rolling 252-day annualized SPY return volatilities\")\nplt.grid(True)\nplt.show()";
+                var nbb_formatted_code = "spy_returns.rolling(window=252).agg(\n    lambda daily_returns: (252 ** 0.5) * daily_returns.std()\n).iloc[252 - 1 :].plot.line()\n\nplt.title(\"Rolling 252-day annualized SPY return volatilities\")\nplt.grid(True)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="calculate-rolling-252-day-annualized-spy-return-semi-volatility-based-on-negative-daily-returns-and-plot-the-time-series">
+<h3>2. Calculate rolling 252-day annualized SPY return semi-volatility (based on negative daily returns) , and plot the time series<a class="headerlink" href="#calculate-rolling-252-day-annualized-spy-return-semi-volatility-based-on-negative-daily-returns-and-plot-the-time-series" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spy_returns</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">252</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">daily_returns</span><span class="p">:</span> <span class="p">(</span><span class="mi">252</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span> <span class="n">daily_returns</span><span class="p">[</span><span class="n">daily_returns</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">252</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span>
+    <span class="s2">&quot;Rolling 252-day annualized SPY return semi-volatilities (based on negative returns)&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_31_0.png" src="../../_images/hw1_31_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 17;
+                var nbb_unformatted_code = "spy_returns.rolling(window=252).agg(\n    lambda daily_returns: (252 ** 0.5) * daily_returns[daily_returns < 0].std()\n).iloc[252 - 1 :].plot.line()\n\nplt.title(\n    \"Rolling 252-day annualized SPY return semi-volatilities (based on negative returns)\"\n)\nplt.grid(True)\nplt.show()";
+                var nbb_formatted_code = "spy_returns.rolling(window=252).agg(\n    lambda daily_returns: (252 ** 0.5) * daily_returns[daily_returns < 0].std()\n).iloc[252 - 1 :].plot.line()\n\nplt.title(\n    \"Rolling 252-day annualized SPY return semi-volatilities (based on negative returns)\"\n)\nplt.grid(True)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="based-on-spy-daily-returns-in-2018-a-calculate-its-shortfall-probability-for-a-daily-return-less-than-2-b-value-at-risk-at-95-for-daily-return-c-cvar-95-for-daily-return">
+<h3>3. Based on SPY daily returns in 2018, A). calculate its shortfall probability for a daily return less than -2%; B). Value at Risk at 95% for daily return; C). CVaR-95% for daily return.<a class="headerlink" href="#based-on-spy-daily-returns-in-2018-a-calculate-its-shortfall-probability-for-a-daily-return-less-than-2-b-value-at-risk-at-95-for-daily-return-c-cvar-95-for-daily-return" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;A) Shortfall Probaility for Daily Return &lt; -2%: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">((</span><span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;B) Value at Risk at 95% for daily return: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;B) Value at Risk at 95% for daily return (Parametric): </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;C) CVaR-95% for daily return: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">][</span><span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2018&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">%&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A) Shortfall Probaility for Daily Return &lt; -2%: 0.06
+B) Value at Risk at 95% for daily return: -2.14%
+B) Value at Risk at 95% for daily return (Parametric): -1.8%
+C) CVaR-95% for daily return: -2.79%
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 18;
+                var nbb_unformatted_code = "print(\n    f\"A) Shortfall Probaility for Daily Return < -2%: {np.round((spy_returns.loc['2018'] < -0.02).mean().values[0], 2)}\"\n)\nprint(\n    f\"B) Value at Risk at 95% for daily return: {np.round(spy_returns.loc['2018'].quantile(q=0.05).values[0]*100, 2)}%\"\n)\nprint(\n    f\"B) Value at Risk at 95% for daily return (Parametric): {np.round(sp.stats.norm.ppf(0.05, spy_returns.loc['2018'].mean(), spy_returns.loc['2018'].std())[0]*100, 2)}%\"\n)\nprint(\n    f\"C) CVaR-95% for daily return: {np.round(spy_returns.loc['2018'][spy_returns.loc['2018'] <= spy_returns.loc['2018'].quantile(q=0.05)].mean().values[0]*100, 2)}%\"\n)";
+                var nbb_formatted_code = "print(\n    f\"A) Shortfall Probaility for Daily Return < -2%: {np.round((spy_returns.loc['2018'] < -0.02).mean().values[0], 2)}\"\n)\nprint(\n    f\"B) Value at Risk at 95% for daily return: {np.round(spy_returns.loc['2018'].quantile(q=0.05).values[0]*100, 2)}%\"\n)\nprint(\n    f\"B) Value at Risk at 95% for daily return (Parametric): {np.round(sp.stats.norm.ppf(0.05, spy_returns.loc['2018'].mean(), spy_returns.loc['2018'].std())[0]*100, 2)}%\"\n)\nprint(\n    f\"C) CVaR-95% for daily return: {np.round(spy_returns.loc['2018'][spy_returns.loc['2018'] <= spy_returns.loc['2018'].quantile(q=0.05)].mean().values[0]*100, 2)}%\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="calculate-drawdowns-for-the-spy-price-times-series-plot-the-drawdown-time-series-and-locate-the-maximum-drawdown-for-the-whole-period">
+<h3>4. Calculate drawdowns for the SPY price times series, plot the drawdown time series, and locate the maximum drawdown for the whole period<a class="headerlink" href="#calculate-drawdowns-for-the-spy-price-times-series-plot-the-drawdown-time-series-and-locate-the-maximum-drawdown-for-the-whole-period" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Current SPY price / Largest SPY Price seen so far</span>
+<span class="n">spy_price_highwatermark</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">spy</span><span class="p">)</span>
+<span class="n">spy_price_drawdown</span> <span class="o">=</span> <span class="p">(</span><span class="n">spy</span> <span class="o">/</span> <span class="n">spy_price_highwatermark</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;Price&quot;</span><span class="p">:</span> <span class="s2">&quot;Price Drawdown&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">spy_price_drawdown</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">spy_price_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(),</span>
+    <span class="n">spy_price_drawdown</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Max Drawdown: </span><span class="si">{</span><span class="n">spy_price_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, High-Watermark - </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">spy_price_highwatermark</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spy_price_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">, Current Price - </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">spy</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spy_price_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;SPY Price Drawdown&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Current Cum. returns / Largest Cum. returns so far</span>
+<span class="n">spy_returns_highwatermark</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="o">.</span><span class="n">accumulate</span><span class="p">(</span><span class="n">spy_returns</span><span class="p">)</span>
+<span class="n">spy_cumreturns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumprod</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">spy_returns</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">spy_returns_drawdown</span> <span class="o">=</span> <span class="p">(</span><span class="n">spy_cumreturns</span> <span class="o">/</span> <span class="n">spy_returns_highwatermark</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">spy_returns_drawdown</span> <span class="o">=</span> <span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;daily_returns&quot;</span><span class="p">:</span> <span class="s2">&quot;Cumulative Returns Drawdown&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+<span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">(),</span>
+    <span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Max Drawdown: </span><span class="si">{</span><span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, High-Watermark - </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">spy_returns_highwatermark</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">, Current Returns - </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">spy_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">spy_returns_drawdown</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;SPY Returns Drawdown&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_35_0.png" src="../../_images/hw1_35_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 19;
+                var nbb_unformatted_code = "fig, ax = plt.subplots(2, 1)\n\n# Current SPY price / Largest SPY Price seen so far\nspy_price_highwatermark = np.maximum.accumulate(spy)\nspy_price_drawdown = (spy / spy_price_highwatermark - 1).rename(\n    {\"Price\": \"Price Drawdown\"}, axis=1\n)\nspy_price_drawdown.plot.line(ax=ax[0])\nax[0].scatter(\n    spy_price_drawdown.idxmin(),\n    spy_price_drawdown.min(),\n    s=100,\n    c=\"red\",\n    marker=\"x\",\n    label=f\"Max Drawdown: {spy_price_drawdown.idxmin().values[0]}, High-Watermark - {np.round(spy_price_highwatermark.loc[spy_price_drawdown.idxmin()].values[0][0], 2)}, Current Price - {np.round(spy.loc[spy_price_drawdown.idxmin()].values[0][0], 2)}\",\n)\nax[0].set_title(\"SPY Price Drawdown\")\nax[0].legend(loc=2)\nax[0].grid(True)\n\n# Current Cum. returns / Largest Cum. returns so far\nspy_returns_highwatermark = np.maximum.accumulate(spy_returns)\nspy_cumreturns = np.cumprod(1 + spy_returns) - 1\nspy_returns_drawdown = (spy_cumreturns / spy_returns_highwatermark) - 1\nspy_returns_drawdown = spy_returns_drawdown.rename(\n    {\"daily_returns\": \"Cumulative Returns Drawdown\"}, axis=1\n)\nspy_returns_drawdown.plot.line(ax=ax[1])\nax[1].scatter(\n    spy_returns_drawdown.idxmin(),\n    spy_returns_drawdown.min(),\n    s=100,\n    c=\"red\",\n    marker=\"x\",\n    label=f\"Max Drawdown: {spy_returns_drawdown.idxmin().values[0]}, High-Watermark - {np.round(spy_returns_highwatermark.loc[spy_returns_drawdown.idxmin()].values[0][0], 2)}, Current Returns - {np.round(spy_returns.loc[spy_returns_drawdown.idxmin()].values[0][0], 2)}\",\n)\nax[1].set_title(\"SPY Returns Drawdown\")\nax[1].legend(loc=2)\nax[1].grid(True)\nplt.tight_layout()\nplt.show()";
+                var nbb_formatted_code = "fig, ax = plt.subplots(2, 1)\n\n# Current SPY price / Largest SPY Price seen so far\nspy_price_highwatermark = np.maximum.accumulate(spy)\nspy_price_drawdown = (spy / spy_price_highwatermark - 1).rename(\n    {\"Price\": \"Price Drawdown\"}, axis=1\n)\nspy_price_drawdown.plot.line(ax=ax[0])\nax[0].scatter(\n    spy_price_drawdown.idxmin(),\n    spy_price_drawdown.min(),\n    s=100,\n    c=\"red\",\n    marker=\"x\",\n    label=f\"Max Drawdown: {spy_price_drawdown.idxmin().values[0]}, High-Watermark - {np.round(spy_price_highwatermark.loc[spy_price_drawdown.idxmin()].values[0][0], 2)}, Current Price - {np.round(spy.loc[spy_price_drawdown.idxmin()].values[0][0], 2)}\",\n)\nax[0].set_title(\"SPY Price Drawdown\")\nax[0].legend(loc=2)\nax[0].grid(True)\n\n# Current Cum. returns / Largest Cum. returns so far\nspy_returns_highwatermark = np.maximum.accumulate(spy_returns)\nspy_cumreturns = np.cumprod(1 + spy_returns) - 1\nspy_returns_drawdown = (spy_cumreturns / spy_returns_highwatermark) - 1\nspy_returns_drawdown = spy_returns_drawdown.rename(\n    {\"daily_returns\": \"Cumulative Returns Drawdown\"}, axis=1\n)\nspy_returns_drawdown.plot.line(ax=ax[1])\nax[1].scatter(\n    spy_returns_drawdown.idxmin(),\n    spy_returns_drawdown.min(),\n    s=100,\n    c=\"red\",\n    marker=\"x\",\n    label=f\"Max Drawdown: {spy_returns_drawdown.idxmin().values[0]}, High-Watermark - {np.round(spy_returns_highwatermark.loc[spy_returns_drawdown.idxmin()].values[0][0], 2)}, Current Returns - {np.round(spy_returns.loc[spy_returns_drawdown.idxmin()].values[0][0], 2)}\",\n)\nax[1].set_title(\"SPY Returns Drawdown\")\nax[1].legend(loc=2)\nax[1].grid(True)\nplt.tight_layout()\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="problem-3">
+<h2>Problem 3<a class="headerlink" href="#problem-3" title="Permalink to this headline">¶</a></h2>
+<p>Data: 	Multi-Asset Class Monthly Returns on Datasource_CAPMAssetClasses</p>
+<p>Assumptions:</p>
+<ol class="simple">
+<li><p>No risk-free asset in the investable universe and all the risky assets are given on Datasource_CAPMAssetClasses;</p></li>
+<li><p>Use historical covariance matrix and historical returns to estimate covariance matrix and expected return vector (see on lecture 2 notes)</p></li>
+<li><p>No short-sell allowed. (before we have no such constraint)</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;./data/HW1_Due20200927.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s2">&quot;DataSource_CAPMAssetClasses&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span>
+    <span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>  <span class="c1"># I&#39;m assuming all of the values here are monthly returns in percentage</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s2">&quot;Period Ending&quot;</span><span class="p">:</span> <span class="s2">&quot;Date&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Bloomberg Barclays - U.S. TIPS Index</th>
+      <th>Bloomberg Barclays - U.S. Aggregate Index</th>
+      <th>BofA Merrill Lynch - U.S. High Yield Index</th>
+      <th>FTSE - Non U.S. Govt Bond Index ($)</th>
+      <th>Russell - 1000 Growth Index</th>
+      <th>Russell - 1000 Value Index</th>
+      <th>Russell - 2000 Growth Index</th>
+      <th>Russell - 2000 Value Index</th>
+      <th>MSCI - EAFE Index ($Net)</th>
+      <th>MSCI - Emerging Markets Index ($ Net)</th>
+      <th>S&amp;P - GSCI Total Index</th>
+      <th>MSCI - U.S. REIT Index</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1999-01-31</th>
+      <td>0.011644</td>
+      <td>0.0071</td>
+      <td>0.0135</td>
+      <td>-0.0157</td>
+      <td>0.0587</td>
+      <td>0.0080</td>
+      <td>0.0450</td>
+      <td>-0.0227</td>
+      <td>-0.0030</td>
+      <td>-0.015075</td>
+      <td>0.0044</td>
+      <td>-0.026855</td>
+    </tr>
+    <tr>
+      <th>1999-02-28</th>
+      <td>-0.006987</td>
+      <td>-0.0175</td>
+      <td>-0.0068</td>
+      <td>-0.0351</td>
+      <td>-0.0457</td>
+      <td>-0.0141</td>
+      <td>-0.0915</td>
+      <td>-0.0683</td>
+      <td>-0.0238</td>
+      <td>0.009635</td>
+      <td>-0.0460</td>
+      <td>-0.016449</td>
+    </tr>
+    <tr>
+      <th>1999-03-31</th>
+      <td>-0.000145</td>
+      <td>0.0055</td>
+      <td>0.0116</td>
+      <td>0.0019</td>
+      <td>0.0527</td>
+      <td>0.0207</td>
+      <td>0.0356</td>
+      <td>-0.0082</td>
+      <td>0.0417</td>
+      <td>0.132146</td>
+      <td>0.1688</td>
+      <td>-0.005460</td>
+    </tr>
+    <tr>
+      <th>1999-04-30</th>
+      <td>0.006619</td>
+      <td>0.0032</td>
+      <td>0.0183</td>
+      <td>-0.0015</td>
+      <td>0.0013</td>
+      <td>0.0934</td>
+      <td>0.0883</td>
+      <td>0.0913</td>
+      <td>0.0405</td>
+      <td>0.123700</td>
+      <td>0.0413</td>
+      <td>0.096692</td>
+    </tr>
+    <tr>
+      <th>1999-05-31</th>
+      <td>0.006887</td>
+      <td>-0.0088</td>
+      <td>-0.0092</td>
+      <td>-0.0202</td>
+      <td>-0.0307</td>
+      <td>-0.0110</td>
+      <td>0.0016</td>
+      <td>0.0307</td>
+      <td>-0.0515</td>
+      <td>-0.005800</td>
+      <td>-0.0546</td>
+      <td>0.021194</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 20;
+                var nbb_unformatted_code = "data = pd.read_excel(\n    \"./data/HW1_Due20200927.xlsx\", sheet_name=\"DataSource_CAPMAssetClasses\", header=[1],\n).dropna(\n    how=\"all\", axis=1\n)  # I'm assuming all of the values here are monthly returns in percentage\ndata = data.rename({\"Period Ending\": \"Date\"}, axis=1).set_index(\"Date\") / 100\ndata.head()";
+                var nbb_formatted_code = "data = pd.read_excel(\n    \"./data/HW1_Due20200927.xlsx\", sheet_name=\"DataSource_CAPMAssetClasses\", header=[1],\n).dropna(\n    how=\"all\", axis=1\n)  # I'm assuming all of the values here are monthly returns in percentage\ndata = data.rename({\"Period Ending\": \"Date\"}, axis=1).set_index(\"Date\") / 100\ndata.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="section" id="expected-annualized-returns-covariance-matrix">
+<h3>Expected Annualized Returns &amp; Covariance Matrix<a class="headerlink" href="#expected-annualized-returns-covariance-matrix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">μ</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">prod</span><span class="p">()</span> <span class="o">**</span> <span class="p">(</span><span class="mi">12</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># Annualized Returns</span>
+<span class="n">Σ</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span> <span class="o">*</span> <span class="mi">12</span>  <span class="c1"># Annualized Covariance matrix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 21;
+                var nbb_unformatted_code = "\u03bc = (data + 1).prod() ** (12 / data.notnull().sum()) - 1  # Annualized Returns\n\u03a3 = data.cov() * 12  # Annualized Covariance matrix";
+                var nbb_formatted_code = "\u03bc = (data + 1).prod() ** (12 / data.notnull().sum()) - 1  # Annualized Returns\n\u03a3 = data.cov() * 12  # Annualized Covariance matrix";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="run-an-optimization-to-locate-the-minimum-variance-portfolio-on-the-new-frontier">
+<h3>1. Run an optimization to locate the minimum-variance portfolio on the new frontier.<a class="headerlink" href="#run-an-optimization-to-locate-the-minimum-variance-portfolio-on-the-new-frontier" title="Permalink to this headline">¶</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-29115394-9fde-4c6a-99d7-d944f9fdcc34">
+<span class="eqno">(67)<a class="headerlink" href="#equation-29115394-9fde-4c6a-99d7-d944f9fdcc34" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp;w^\top \Sigma w \\
+    \text{subject to } 
+    &amp;w^\top \mathbb{1} = 1 \\
+    &amp;w \geq 0 \\
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w_minvar</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">),),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">w_minvar</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">w_minvar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">w_minvar</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># No short-selling allowed</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w_minvar</span><span class="p">,</span> <span class="n">Σ</span><span class="p">))</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quadratic Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Variance of Minimum-Variance Portfolio: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Expected Annualized Return of Minimum-Variance Portfolio: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">w_minvar</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">T</span><span class="nd">@μ</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The optimal portfolio weights:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span>
+    <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">security</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">w_minvar_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+            <span class="k">for</span> <span class="n">security</span><span class="p">,</span> <span class="n">w_minvar_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">w_minvar</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quadratic Programming Solution
+==============================
+Status: optimal
+Variance of Minimum-Variance Portfolio: 0.00103
+Expected Annualized Return of Minimum-Variance Portfolio: 0.04577
+The optimal portfolio weights:
+	Bloomberg Barclays - U.S. TIPS Index: 0.0
+	Bloomberg Barclays - U.S. Aggregate Index: 0.93
+	BofA Merrill Lynch - U.S. High Yield Index: 0.0
+	FTSE - Non U.S. Govt Bond Index ($): 0.0
+	Russell - 1000 Growth Index: 0.01
+	Russell - 1000 Value Index: 0.04
+	Russell - 2000 Growth Index: 0.01
+	Russell - 2000 Value Index: 0.0
+	MSCI - EAFE Index ($Net): 0.0
+	MSCI - Emerging Markets Index ($ Net): 0.0
+	S&amp;P - GSCI Total Index: 0.01
+	MSCI - U.S. REIT Index: 0.0
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 22;
+                var nbb_unformatted_code = "w_minvar = cp.Variable((len(data.columns),), integer=False)\nconstraints = [\n    w_minvar.T @ np.ones((w_minvar.shape[0],)) == 1,\n    w_minvar >= 0,  # No short-selling allowed\n]\n\n# Form objective.\nobj = cp.Minimize(cp.quad_form(w_minvar, \u03a3))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\nprint(\"Quadratic Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"Variance of Minimum-Variance Portfolio: {np.round(prob.value, 5)}\")\nprint(\n    f\"Expected Annualized Return of Minimum-Variance Portfolio: {np.round(w_minvar.value.T@\u03bc, 5)}\"\n)\nprint(\"The optimal portfolio weights:\")\nprint(\n    \"\\t\"\n    + \"\\n\\t\".join(\n        [\n            security + \": \" + str(np.abs(np.round(w_minvar_i, 2)))\n            for security, w_minvar_i in zip(data.columns, w_minvar.value)\n        ]\n    )\n)";
+                var nbb_formatted_code = "w_minvar = cp.Variable((len(data.columns),), integer=False)\nconstraints = [\n    w_minvar.T @ np.ones((w_minvar.shape[0],)) == 1,\n    w_minvar >= 0,  # No short-selling allowed\n]\n\n# Form objective.\nobj = cp.Minimize(cp.quad_form(w_minvar, \u03a3))\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\nprint(\"Quadratic Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(f\"Variance of Minimum-Variance Portfolio: {np.round(prob.value, 5)}\")\nprint(\n    f\"Expected Annualized Return of Minimum-Variance Portfolio: {np.round(w_minvar.value.T@\u03bc, 5)}\"\n)\nprint(\"The optimal portfolio weights:\")\nprint(\n    \"\\t\"\n    + \"\\n\\t\".join(\n        [\n            security + \": \" + str(np.abs(np.round(w_minvar_i, 2)))\n            for security, w_minvar_i in zip(data.columns, w_minvar.value)\n        ]\n    )\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="a-run-optimizations-to-locate-two-other-efficient-portfolios-different-than-the-minimum-variance-portfolio">
+<h3>2A. Run optimizations to locate two other efficient portfolios different than the minimum-variance portfolio<a class="headerlink" href="#a-run-optimizations-to-locate-two-other-efficient-portfolios-different-than-the-minimum-variance-portfolio" title="Permalink to this headline">¶</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-85348d52-c27c-401f-9ed3-47c185db1a78">
+<span class="eqno">(68)<a class="headerlink" href="#equation-85348d52-c27c-401f-9ed3-47c185db1a78" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{maximize } &amp;w^\top \mu \\
+    \text{subject to } 
+    &amp;w^\top \Sigma w \leq \sigma^2 \\
+    &amp;w^\top \mathbb{1} = 1 \\
+    &amp;w \geq 0 \\
+\end{align}\]</div>
+<div class="section" id="risk-level-upperbound-leq-0-05">
+<h4>1. Risk-level Upperbound <span class="math notranslate nohighlight">\(σ \leq 0.05\)</span><a class="headerlink" href="#risk-level-upperbound-leq-0-05" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">σ_1</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">w_σ_1</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">),),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w_σ_1</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">σ_1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">w_σ_1</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">w_σ_1</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">w_σ_1</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># No short-selling allowed</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span><span class="n">w_σ_1</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quadratic Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Variance of Max Expected Return with σ &lt;= </span><span class="si">{</span><span class="n">σ_1</span><span class="si">}</span><span class="s2"> Portfolio: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w_σ_1</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Expected Annualized Return of Max Expected Return with σ &lt;= </span><span class="si">{</span><span class="n">σ_1</span><span class="si">}</span><span class="s2"> Portfolio: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The optimal portfolio weights:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span>
+    <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">security</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">w_σ_1_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+            <span class="k">for</span> <span class="n">security</span><span class="p">,</span> <span class="n">w_σ_1_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">w_σ_1</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quadratic Programming Solution
+==============================
+Status: optimal
+Variance of Max Expected Return with σ &lt;= 0.05 Portfolio: 0.0025
+Expected Annualized Return of Max Expected Return with σ &lt;= 0.05 Portfolio: 0.05637
+The optimal portfolio weights:
+	Bloomberg Barclays - U.S. TIPS Index: 0.27
+	Bloomberg Barclays - U.S. Aggregate Index: 0.43
+	BofA Merrill Lynch - U.S. High Yield Index: 0.14
+	FTSE - Non U.S. Govt Bond Index ($): 0.0
+	Russell - 1000 Growth Index: 0.0
+	Russell - 1000 Value Index: 0.0
+	Russell - 2000 Growth Index: 0.0
+	Russell - 2000 Value Index: 0.11
+	MSCI - EAFE Index ($Net): 0.0
+	MSCI - Emerging Markets Index ($ Net): 0.0
+	S&amp;P - GSCI Total Index: 0.0
+	MSCI - U.S. REIT Index: 0.05
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 23;
+                var nbb_unformatted_code = "\u03c3_1 = 0.05\nw_\u03c3_1 = cp.Variable((len(data.columns),), integer=False)\nconstraints = [\n    cp.quad_form(w_\u03c3_1, \u03a3) <= \u03c3_1 ** 2,\n    w_\u03c3_1.T @ np.ones((w_\u03c3_1.shape[0],)) == 1,\n    w_\u03c3_1 >= 0,  # No short-selling allowed\n]\n\n# Form objective.\nobj = cp.Maximize(w_\u03c3_1.T @ \u03bc)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\nprint(\"Quadratic Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(\n    f\"Variance of Max Expected Return with \u03c3 <= {\u03c3_1} Portfolio: {np.round(cp.quad_form(w_\u03c3_1, \u03a3).value, 5)}\"\n)\nprint(\n    f\"Expected Annualized Return of Max Expected Return with \u03c3 <= {\u03c3_1} Portfolio: {np.round(prob.value, 5)}\"\n)\nprint(\"The optimal portfolio weights:\")\nprint(\n    \"\\t\"\n    + \"\\n\\t\".join(\n        [\n            security + \": \" + str(np.abs(np.round(w_\u03c3_1_i, 2)))\n            for security, w_\u03c3_1_i in zip(data.columns, w_\u03c3_1.value)\n        ]\n    )\n)";
+                var nbb_formatted_code = "\u03c3_1 = 0.05\nw_\u03c3_1 = cp.Variable((len(data.columns),), integer=False)\nconstraints = [\n    cp.quad_form(w_\u03c3_1, \u03a3) <= \u03c3_1 ** 2,\n    w_\u03c3_1.T @ np.ones((w_\u03c3_1.shape[0],)) == 1,\n    w_\u03c3_1 >= 0,  # No short-selling allowed\n]\n\n# Form objective.\nobj = cp.Maximize(w_\u03c3_1.T @ \u03bc)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\nprint(\"Quadratic Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(\n    f\"Variance of Max Expected Return with \u03c3 <= {\u03c3_1} Portfolio: {np.round(cp.quad_form(w_\u03c3_1, \u03a3).value, 5)}\"\n)\nprint(\n    f\"Expected Annualized Return of Max Expected Return with \u03c3 <= {\u03c3_1} Portfolio: {np.round(prob.value, 5)}\"\n)\nprint(\"The optimal portfolio weights:\")\nprint(\n    \"\\t\"\n    + \"\\n\\t\".join(\n        [\n            security + \": \" + str(np.abs(np.round(w_\u03c3_1_i, 2)))\n            for security, w_\u03c3_1_i in zip(data.columns, w_\u03c3_1.value)\n        ]\n    )\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="risk-level-upperbound-leq-1-00">
+<h4>2. Risk-level Upperbound <span class="math notranslate nohighlight">\(σ \leq 1.00\)</span><a class="headerlink" href="#risk-level-upperbound-leq-1-00" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">σ_2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">w_σ_2</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">),),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w_σ_2</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">σ_2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">w_σ_2</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">w_σ_2</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">w_σ_2</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># No short-selling allowed</span>
+<span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span><span class="n">w_σ_2</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quadratic Programming Solution&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">30</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Status: </span><span class="si">{</span><span class="n">prob</span><span class="o">.</span><span class="n">status</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Variance of Max Expected Return with σ &lt;= </span><span class="si">{</span><span class="n">σ_2</span><span class="si">}</span><span class="s2"> Portfolio: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w_σ_2</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Expected Annualized Return of Max Expected Return with σ &lt;= </span><span class="si">{</span><span class="n">σ_2</span><span class="si">}</span><span class="s2"> Portfolio: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The optimal portfolio weights:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span>
+    <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">security</span> <span class="o">+</span> <span class="s2">&quot;: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">w_σ_2_i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+            <span class="k">for</span> <span class="n">security</span><span class="p">,</span> <span class="n">w_σ_2_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">w_σ_2</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Quadratic Programming Solution
+==============================
+Status: optimal
+Variance of Max Expected Return with σ &lt;= 1 Portfolio: 0.04336
+Expected Annualized Return of Max Expected Return with σ &lt;= 1 Portfolio: 0.09651
+The optimal portfolio weights:
+	Bloomberg Barclays - U.S. TIPS Index: 0.0
+	Bloomberg Barclays - U.S. Aggregate Index: 0.0
+	BofA Merrill Lynch - U.S. High Yield Index: 0.0
+	FTSE - Non U.S. Govt Bond Index ($): 0.0
+	Russell - 1000 Growth Index: 0.0
+	Russell - 1000 Value Index: 0.0
+	Russell - 2000 Growth Index: 0.0
+	Russell - 2000 Value Index: 0.0
+	MSCI - EAFE Index ($Net): 0.0
+	MSCI - Emerging Markets Index ($ Net): 0.0
+	S&amp;P - GSCI Total Index: 0.0
+	MSCI - U.S. REIT Index: 1.0
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 24;
+                var nbb_unformatted_code = "\u03c3_2 = 1\nw_\u03c3_2 = cp.Variable((len(data.columns),), integer=False)\nconstraints = [\n    cp.quad_form(w_\u03c3_2, \u03a3) <= \u03c3_2 ** 2,\n    w_\u03c3_2.T @ np.ones((w_\u03c3_2.shape[0],)) == 1,\n    w_\u03c3_2 >= 0,  # No short-selling allowed\n]\n\n# Form objective.\nobj = cp.Maximize(w_\u03c3_2.T @ \u03bc)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\nprint(\"Quadratic Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(\n    f\"Variance of Max Expected Return with \u03c3 <= {\u03c3_2} Portfolio: {np.round(cp.quad_form(w_\u03c3_2, \u03a3).value, 5)}\"\n)\nprint(\n    f\"Expected Annualized Return of Max Expected Return with \u03c3 <= {\u03c3_2} Portfolio: {np.round(prob.value, 5)}\"\n)\nprint(\"The optimal portfolio weights:\")\nprint(\n    \"\\t\"\n    + \"\\n\\t\".join(\n        [\n            security + \": \" + str(np.abs(np.round(w_\u03c3_2_i, 2)))\n            for security, w_\u03c3_2_i in zip(data.columns, w_\u03c3_2.value)\n        ]\n    )\n)";
+                var nbb_formatted_code = "\u03c3_2 = 1\nw_\u03c3_2 = cp.Variable((len(data.columns),), integer=False)\nconstraints = [\n    cp.quad_form(w_\u03c3_2, \u03a3) <= \u03c3_2 ** 2,\n    w_\u03c3_2.T @ np.ones((w_\u03c3_2.shape[0],)) == 1,\n    w_\u03c3_2 >= 0,  # No short-selling allowed\n]\n\n# Form objective.\nobj = cp.Maximize(w_\u03c3_2.T @ \u03bc)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()\nprint(\"Quadratic Programming Solution\")\nprint(\"=\" * 30)\nprint(f\"Status: {prob.status}\")\nprint(\n    f\"Variance of Max Expected Return with \u03c3 <= {\u03c3_2} Portfolio: {np.round(cp.quad_form(w_\u03c3_2, \u03a3).value, 5)}\"\n)\nprint(\n    f\"Expected Annualized Return of Max Expected Return with \u03c3 <= {\u03c3_2} Portfolio: {np.round(prob.value, 5)}\"\n)\nprint(\"The optimal portfolio weights:\")\nprint(\n    \"\\t\"\n    + \"\\n\\t\".join(\n        [\n            security + \": \" + str(np.abs(np.round(w_\u03c3_2_i, 2)))\n            for security, w_\u03c3_2_i in zip(data.columns, w_\u03c3_2.value)\n        ]\n    )\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+<div class="section" id="b-prove-or-disprove-the-minimum-variance-portfolio-can-be-represented-as-a-combination-of-the-two-portfolios-found-on-2a">
+<h3>2B. Prove or disprove the minimum-variance portfolio can be represented as a combination of the two portfolios found on 2A.<a class="headerlink" href="#b-prove-or-disprove-the-minimum-variance-portfolio-can-be-represented-as-a-combination-of-the-two-portfolios-found-on-2a" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="mi">2</span><span class="p">,),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">2</span><span class="p">,))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Form objective.</span>
+<span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Minimize</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((((</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">w_σ_1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">w_σ_2</span><span class="o">.</span><span class="n">value</span><span class="p">]))</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span> <span class="o">@</span> <span class="n">w_minvar</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Form and solve problem.</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+<span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.016525880278835e-21
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 25;
+                var nbb_unformatted_code = "x = cp.Variable((2,), integer=False)\nconstraints = [x.T @ np.ones((2,)) == 1, x >= 0]\n\n# Form objective.\nobj = cp.Minimize(\n    np.mean((((np.array([w_\u03c3_1.value, w_\u03c3_2.value])).T @ x) @ w_minvar.value) ** 2)\n)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()";
+                var nbb_formatted_code = "x = cp.Variable((2,), integer=False)\nconstraints = [x.T @ np.ones((2,)) == 1, x >= 0]\n\n# Form objective.\nobj = cp.Minimize(\n    np.mean((((np.array([w_\u03c3_1.value, w_\u03c3_2.value])).T @ x) @ w_minvar.value) ** 2)\n)\n\n# Form and solve problem.\nprob = cp.Problem(obj, constraints)\nprob.solve()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>The minimum-variance portfolio cannot be represented as a combination of 2 portfolios as all 3 vectors are linearly independent.</p>
+</div>
+<div class="section" id="plot-both-the-old-efficient-frontier-without-the-short-sell-constraint-and-the-new-efficient-frontier-with-the-short-sell-constraint-on-the-same-graph">
+<h3>3. Plot both the old efficient frontier without the short-sell constraint and the new efficient frontier with the short-sell constraint on the same graph.<a class="headerlink" href="#plot-both-the-old-efficient-frontier-without-the-short-sell-constraint-and-the-new-efficient-frontier-with-the-short-sell-constraint-on-the-same-graph" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two -Fund Theorem</span>
+<span class="n">w_minvar_shortsell_allowed</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],)))</span> <span class="o">/</span> <span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span>
+<span class="p">)</span>
+
+<span class="n">w_msr_shortsell_allowed</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span> <span class="o">@</span> <span class="n">μ</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">Σ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">Σ</span><span class="p">)</span> <span class="o">@</span> <span class="n">μ</span>
+<span class="p">)</span>
+
+<span class="n">w_2_fund_theorem_shortsell_allowed</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">α</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">α</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">α</span><span class="p">])</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span><span class="n">w_minvar_shortsell_allowed</span><span class="p">,</span> <span class="n">w_msr_shortsell_allowed</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">old_efficient_frontier</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span>
+        <span class="p">(</span>
+            <span class="n">w_2_fund_theorem_shortsell_allowed</span><span class="p">(</span><span class="n">α</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+            <span class="o">@</span> <span class="n">Σ</span>
+            <span class="o">@</span> <span class="n">w_2_fund_theorem_shortsell_allowed</span><span class="p">(</span><span class="n">α</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">w_2_fund_theorem_shortsell_allowed</span><span class="p">(</span><span class="n">α</span><span class="p">)</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">α</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 26;
+                var nbb_unformatted_code = "# Two -Fund Theorem\nw_minvar_shortsell_allowed = (np.linalg.inv(\u03a3) @ np.ones((\u03a3.shape[0],))) / (\n    np.ones((\u03a3.shape[0],)).T @ np.linalg.inv(\u03a3) @ np.ones((\u03a3.shape[0],))\n)\n\nw_msr_shortsell_allowed = (np.linalg.inv(\u03a3) @ \u03bc) / (\n    np.ones((\u03a3.shape[0],)).T @ np.linalg.inv(\u03a3) @ \u03bc\n)\n\nw_2_fund_theorem_shortsell_allowed = lambda \u03b1: np.array([\u03b1, 1 - \u03b1]).T @ np.array(\n    [w_minvar_shortsell_allowed, w_msr_shortsell_allowed]\n)\nold_efficient_frontier = [\n    (\n        (\n            w_2_fund_theorem_shortsell_allowed(\u03b1).T\n            @ \u03a3\n            @ w_2_fund_theorem_shortsell_allowed(\u03b1)\n        )\n        ** 0.5,\n        w_2_fund_theorem_shortsell_allowed(\u03b1).T @ \u03bc,\n    )\n    for \u03b1 in np.arange(0, 1, 0.01)\n]";
+                var nbb_formatted_code = "# Two -Fund Theorem\nw_minvar_shortsell_allowed = (np.linalg.inv(\u03a3) @ np.ones((\u03a3.shape[0],))) / (\n    np.ones((\u03a3.shape[0],)).T @ np.linalg.inv(\u03a3) @ np.ones((\u03a3.shape[0],))\n)\n\nw_msr_shortsell_allowed = (np.linalg.inv(\u03a3) @ \u03bc) / (\n    np.ones((\u03a3.shape[0],)).T @ np.linalg.inv(\u03a3) @ \u03bc\n)\n\nw_2_fund_theorem_shortsell_allowed = lambda \u03b1: np.array([\u03b1, 1 - \u03b1]).T @ np.array(\n    [w_minvar_shortsell_allowed, w_msr_shortsell_allowed]\n)\nold_efficient_frontier = [\n    (\n        (\n            w_2_fund_theorem_shortsell_allowed(\u03b1).T\n            @ \u03a3\n            @ w_2_fund_theorem_shortsell_allowed(\u03b1)\n        )\n        ** 0.5,\n        w_2_fund_theorem_shortsell_allowed(\u03b1).T @ \u03bc,\n    )\n    for \u03b1 in np.arange(0, 1, 0.01)\n]";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">new_efficient_frontier</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">σ</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mi">500</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Variable</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">),),</span> <span class="n">integer</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">σ</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="n">w</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">w</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="n">w</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span>  <span class="c1"># No short-selling allowed</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Form objective.</span>
+    <span class="n">obj</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Maximize</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">)</span>
+
+    <span class="c1"># Form and solve problem.</span>
+    <span class="n">prob</span> <span class="o">=</span> <span class="n">cp</span><span class="o">.</span><span class="n">Problem</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">constraints</span><span class="p">)</span>
+    <span class="n">prob</span><span class="o">.</span><span class="n">solve</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">prob</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;optimal&quot;</span><span class="p">:</span>
+        <span class="n">new_efficient_frontier</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">cp</span><span class="o">.</span><span class="n">quad_form</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Σ</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">prob</span><span class="o">.</span><span class="n">value</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 27;
+                var nbb_unformatted_code = "new_efficient_frontier = []\nfor \u03c3 in np.linspace(0.01, 0.05, 500):\n    w = cp.Variable((len(data.columns),), integer=False)\n    constraints = [\n        cp.quad_form(w, \u03a3) <= \u03c3 ** 2,\n        w.T @ np.ones((w.shape[0],)) == 1,\n        w >= 0,  # No short-selling allowed\n    ]\n\n    # Form objective.\n    obj = cp.Maximize(w.T @ \u03bc)\n\n    # Form and solve problem.\n    prob = cp.Problem(obj, constraints)\n    prob.solve()\n\n    if prob.status == \"optimal\":\n        new_efficient_frontier.append((cp.quad_form(w, \u03a3).value ** 0.5, prob.value))";
+                var nbb_formatted_code = "new_efficient_frontier = []\nfor \u03c3 in np.linspace(0.01, 0.05, 500):\n    w = cp.Variable((len(data.columns),), integer=False)\n    constraints = [\n        cp.quad_form(w, \u03a3) <= \u03c3 ** 2,\n        w.T @ np.ones((w.shape[0],)) == 1,\n        w >= 0,  # No short-selling allowed\n    ]\n\n    # Form objective.\n    obj = cp.Maximize(w.T @ \u03bc)\n\n    # Form and solve problem.\n    prob = cp.Problem(obj, constraints)\n    prob.solve()\n\n    if prob.status == \"optimal\":\n        new_efficient_frontier.append((cp.quad_form(w, \u03a3).value ** 0.5, prob.value))";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">old_efficient_frontier</span><span class="p">)),</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Old Efficient Frontier (Short Selling Allowed)&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">w_minvar_shortsell_allowed</span> <span class="o">@</span> <span class="n">Σ</span> <span class="o">@</span> <span class="n">w_minvar_shortsell_allowed</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">w_minvar_shortsell_allowed</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Min. Var. Portfolio (Short-sell allowed)&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">w_msr_shortsell_allowed</span> <span class="o">@</span> <span class="n">Σ</span> <span class="o">@</span> <span class="n">w_msr_shortsell_allowed</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">w_msr_shortsell_allowed</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Pseudo Max. Sharpe Ratio Portfolio (Short-sell allowed)&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">new_efficient_frontier</span><span class="p">)),</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;orange&quot;</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Old Efficient Frontier (Short Selling Not Allowed)&quot;</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">w_minvar</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">Σ</span> <span class="o">@</span> <span class="n">w_minvar</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span><span class="p">,</span>
+    <span class="n">w_minvar</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">μ</span><span class="p">,</span>
+    <span class="n">c</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+    <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Min. Var. Portfolio (Short-sell Not allowed)&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># plt.scatter(</span>
+<span class="c1">#     (w_msr_shortsell_allowed @ Σ @ w_msr_shortsell_allowed) ** 0.5,</span>
+<span class="c1">#     w_msr_shortsell_allowed.T @ μ,</span>
+<span class="c1">#     c=&quot;green&quot;,</span>
+<span class="c1">#     marker=&quot;x&quot;,</span>
+<span class="c1">#     s=200,</span>
+<span class="c1">#     label=&quot;Pseudo Max. Sharpe Ratio Portfolio (Short-sell allowed)&quot;,</span>
+<span class="c1"># )</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw1_54_0.png" src="../../_images/hw1_54_0.png" />
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 28;
+                var nbb_unformatted_code = "plt.scatter(\n    *list(zip(*old_efficient_frontier)),\n    c=\"black\",\n    label=\"Old Efficient Frontier (Short Selling Allowed)\"\n)\nplt.scatter(\n    (w_minvar_shortsell_allowed @ \u03a3 @ w_minvar_shortsell_allowed) ** 0.5,\n    w_minvar_shortsell_allowed.T @ \u03bc,\n    c=\"red\",\n    marker=\"x\",\n    s=200,\n    label=\"Min. Var. Portfolio (Short-sell allowed)\",\n)\nplt.scatter(\n    (w_msr_shortsell_allowed @ \u03a3 @ w_msr_shortsell_allowed) ** 0.5,\n    w_msr_shortsell_allowed.T @ \u03bc,\n    c=\"green\",\n    marker=\"x\",\n    s=200,\n    label=\"Pseudo Max. Sharpe Ratio Portfolio (Short-sell allowed)\",\n)\n\nplt.scatter(\n    *list(zip(*new_efficient_frontier)),\n    c=\"orange\",\n    label=\"Old Efficient Frontier (Short Selling Not Allowed)\"\n)\nplt.scatter(\n    (w_minvar.value.T @ \u03a3 @ w_minvar.value) ** 0.5,\n    w_minvar.value.T @ \u03bc,\n    c=\"blue\",\n    marker=\"x\",\n    s=200,\n    label=\"Min. Var. Portfolio (Short-sell Not allowed)\",\n)\n# plt.scatter(\n#     (w_msr_shortsell_allowed @ \u03a3 @ w_msr_shortsell_allowed) ** 0.5,\n#     w_msr_shortsell_allowed.T @ \u03bc,\n#     c=\"green\",\n#     marker=\"x\",\n#     s=200,\n#     label=\"Pseudo Max. Sharpe Ratio Portfolio (Short-sell allowed)\",\n# )\n\nplt.grid(True)\nplt.legend()\nplt.show()";
+                var nbb_formatted_code = "plt.scatter(\n    *list(zip(*old_efficient_frontier)),\n    c=\"black\",\n    label=\"Old Efficient Frontier (Short Selling Allowed)\"\n)\nplt.scatter(\n    (w_minvar_shortsell_allowed @ \u03a3 @ w_minvar_shortsell_allowed) ** 0.5,\n    w_minvar_shortsell_allowed.T @ \u03bc,\n    c=\"red\",\n    marker=\"x\",\n    s=200,\n    label=\"Min. Var. Portfolio (Short-sell allowed)\",\n)\nplt.scatter(\n    (w_msr_shortsell_allowed @ \u03a3 @ w_msr_shortsell_allowed) ** 0.5,\n    w_msr_shortsell_allowed.T @ \u03bc,\n    c=\"green\",\n    marker=\"x\",\n    s=200,\n    label=\"Pseudo Max. Sharpe Ratio Portfolio (Short-sell allowed)\",\n)\n\nplt.scatter(\n    *list(zip(*new_efficient_frontier)),\n    c=\"orange\",\n    label=\"Old Efficient Frontier (Short Selling Not Allowed)\"\n)\nplt.scatter(\n    (w_minvar.value.T @ \u03a3 @ w_minvar.value) ** 0.5,\n    w_minvar.value.T @ \u03bc,\n    c=\"blue\",\n    marker=\"x\",\n    s=200,\n    label=\"Min. Var. Portfolio (Short-sell Not allowed)\",\n)\n# plt.scatter(\n#     (w_msr_shortsell_allowed @ \u03a3 @ w_msr_shortsell_allowed) ** 0.5,\n#     w_msr_shortsell_allowed.T @ \u03bc,\n#     c=\"green\",\n#     marker=\"x\",\n#     s=200,\n#     label=\"Pseudo Max. Sharpe Ratio Portfolio (Short-sell allowed)\",\n# )\n\nplt.grid(True)\nplt.legend()\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">ISE-537: Financial Analytics</a>
+    <a class='right-next' id="next-link" href="hw2_part1.html" title="next page">HW 2 Part 1</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

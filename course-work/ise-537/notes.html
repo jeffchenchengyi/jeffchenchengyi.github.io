@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/notes.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ISE-530: Optimization Analytics" href="../ise-530/intro.html" />
+    <link rel="prev" title="Project 2: Carry" href="project2.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/notes.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Notes" />
+<meta property="og:description" content="Notes    1. CAPM  Market Portfolio: The portfolio of risky assets with the Maximum Sharpe Ratio (Best Allocation of weights of risky assets in the investable un" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/notes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#capm">
+   1. CAPM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apt">
+   2. APT
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#black-litterman">
+   3. Black-Litterman
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#futures">
+   4. Futures
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#current-spot-price-s-0-vs-actual-current-futures-contract-price-f-0-t">
+     Current Spot Price
+     <span class="math notranslate nohighlight">
+      \(S_{0}\)
+     </span>
+     Vs. Actual Current Futures Contract Price
+     <span class="math notranslate nohighlight">
+      \(F_{0,T}\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expected-future-spot-price-mathbb-e-s-t-vs-current-futures-contract-price-f-0-t">
+     Expected Future Spot Price
+     <span class="math notranslate nohighlight">
+      \(\mathbb{E}[S_T]\)
+     </span>
+     Vs. Current Futures Contract Price
+     <span class="math notranslate nohighlight">
+      \(F_{0,T}\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carry">
+   5. Carry
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#risk-parity-risk-budgetting">
+   6. Risk-parity / Risk-budgetting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#active-management">
+   7. Active Management
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="notes">
+<h1>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="capm">
+<h2>1. CAPM<a class="headerlink" href="#capm" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Market Portfolio: The portfolio of risky assets with the Maximum Sharpe Ratio (Best Allocation of weights of risky assets in the investable universe, <strong>excluding</strong> the risk-free asset such that you get the highest <strong>historical</strong> Sharpe Ratio <span class="math notranslate nohighlight">\(\Big[\frac{\mathbb{E}[r_{\text{portfolio}}]=w^\top \mu}{\sigma_{\text{portfolio}}}\Big]\)</span>)</p>
+<ul>
+<li><p>We get this by running mean-variance optimization for universe of risky assetsusing <strong>historical</strong> returns</p></li>
+</ul>
+</li>
+<li><p>Key takeaway:</p></li>
+</ul>
+<p>For any security <span class="math notranslate nohighlight">\(i\)</span>:</p>
+<p>\begin{aligned}
+\mathbb{E}[r_i] &amp;= \beta_i\underbrace{(\mathbb{E}[r_{\text{Market Portfolio}}] - r_f)}_{\text{Market Portfolio’s Expected Excess Return}} + r_f
+\end{aligned}</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="apt">
+<h2>2. APT<a class="headerlink" href="#apt" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Multi-factor version of CAPM: Instead of assuming that Stock returns are only affected by market exposure, we find other factor exposures</p>
+<ul>
+<li><p>Fama-French 4 factor model proposes 3 other factors that stock returns are exposed to</p></li>
+<li><p>We can create other factors by ourselves such that our portfolio is only exposed to that factor (weather)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="black-litterman">
+<h2>3. Black-Litterman<a class="headerlink" href="#black-litterman" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Bayesian Framework of updating Portfolio weights given active views: Use Active Views to update the Prior expected return of portfolio to get posterior.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="futures">
+<h2>4. Futures<a class="headerlink" href="#futures" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Futures contract price $<span class="math notranslate nohighlight">\( will always \)</span>=$ Actual spot price when futures contract matures</p></li>
+<li><p>Current Spot Price <span class="math notranslate nohighlight">\(S_{0}\)</span>: How much the asset is selling for right now (<span class="math notranslate nohighlight">\(t = 0\)</span>) with information from <span class="math notranslate nohighlight">\(t \leq 0\)</span></p></li>
+<li><p>Current Futures Contract Price <span class="math notranslate nohighlight">\(F_{0,T}\)</span>: How much the market thinks (<span class="math notranslate nohighlight">\(t = 0\)</span>) the asset will sell for with information from <span class="math notranslate nohighlight">\(t \leq 0\)</span></p></li>
+<li></li>
+</ul>
+<div class="section" id="current-spot-price-s-0-vs-actual-current-futures-contract-price-f-0-t">
+<h3>Current Spot Price <span class="math notranslate nohighlight">\(S_{0}\)</span> Vs. Actual Current Futures Contract Price <span class="math notranslate nohighlight">\(F_{0,T}\)</span><a class="headerlink" href="#current-spot-price-s-0-vs-actual-current-futures-contract-price-f-0-t" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Intangible Asset Model (Stocks): Link between Current Spot Price <span class="math notranslate nohighlight">\(S_{0}\)</span> &amp; <strong>Theoretical</strong> Current Futures Contract Price <span class="math notranslate nohighlight">\(\hat{F_{0,T}}\)</span></p></li>
+</ol>
+<p>\begin{aligned}
+\hat{F_{0,T}} &amp;= S_0 e^{r_fT} \
+r_f &amp;= \text{Risk-free rate / Interest Rate} \
+\end{aligned}</p>
+<ol class="simple">
+<li><p>Cost of Carry Model (Commodities): Link between Current Spot Price <span class="math notranslate nohighlight">\(S_{0}\)</span> &amp; <strong>Theoretical</strong> Current Futures Contract Price <span class="math notranslate nohighlight">\(\hat{F_{0,T}}\)</span></p></li>
+</ol>
+<p>\begin{aligned}
+\hat{F_{0, T}} &amp;= S_{0} e^{(r_f + u - q - y)T} \
+r_f &amp;= \text{Risk-free rate / Interest Rate} \
+u &amp;= \text{Cost of Storage} \
+q &amp;= \text{Dividends / Cash Benefit from holding the asset} \
+y &amp;= \text{Convienience Yield} \
+\end{aligned}</p>
+<p>Comparing <span class="math notranslate nohighlight">\(S_{0}\)</span> and <span class="math notranslate nohighlight">\(F_{0,T}\)</span> is seeing whether costs outweigh the benefits of buying the asset right now:</p>
+<ol class="simple">
+<li><p>Contango: <span class="math notranslate nohighlight">\(S_{0} &lt; F_{0,T}\)</span></p>
+<ul class="simple">
+<li><p>The market <strong>thinks</strong> that the costs of holding the asset over period <span class="math notranslate nohighlight">\(T\)</span> &gt; the benefits</p></li>
+<li><p>We can justify this theoretically as <span class="math notranslate nohighlight">\(r + u &gt; c + y\)</span> means cost &gt; the benfits of holding the asset over period <span class="math notranslate nohighlight">\(T\)</span> which will make <span class="math notranslate nohighlight">\(S_{0} &lt; \hat{F_{0,T}}\)</span></p></li>
+</ul>
+</li>
+<li><p>Backwardation: <span class="math notranslate nohighlight">\(S_{0} &gt; F_{0,T}\)</span></p>
+<ul class="simple">
+<li><p>The market <strong>thinks</strong> that the costs of holding the asset over period <span class="math notranslate nohighlight">\(T\)</span> &lt; the benefits</p></li>
+<li><p>We can justify this theoretically as <span class="math notranslate nohighlight">\(r + u &lt; c + y\)</span> means cost &lt; the benfits of holding the asset over period <span class="math notranslate nohighlight">\(T\)</span> which will make <span class="math notranslate nohighlight">\(S_{0} &gt; \hat{F_{0,T}}\)</span></p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="expected-future-spot-price-mathbb-e-s-t-vs-current-futures-contract-price-f-0-t">
+<h3>Expected Future Spot Price <span class="math notranslate nohighlight">\(\mathbb{E}[S_T]\)</span> Vs. Current Futures Contract Price <span class="math notranslate nohighlight">\(F_{0,T}\)</span><a class="headerlink" href="#expected-future-spot-price-mathbb-e-s-t-vs-current-futures-contract-price-f-0-t" title="Permalink to this headline">¶</a></h3>
+<p>Link between Expected Future Spot Price <span class="math notranslate nohighlight">\(\mathbb{E}[S_T]\)</span> &amp; Current Spot Price <span class="math notranslate nohighlight">\(S_{0}\)</span></p>
+<p>\begin{aligned}
+\mathbb{E}[S_T] &amp;= S_{0} e^{k_eT} \
+k_e &amp;= \mathbb{E}[R_{stock}], \text{ The Discount Rate / Expected Return of the stock via CAPM} \
+\end{aligned}</p>
+<p>Link between Expected Future Spot Price <span class="math notranslate nohighlight">\(\mathbb{E}[S_T]\)</span> &amp; <strong>Theoretical</strong> Current Futures Contract Price <span class="math notranslate nohighlight">\(\hat{F_{0,T}}\)</span></p>
+<p>\begin{aligned}
+\hat{F_{0,T}} &amp;= \mathbb{E}[S_T] e^{(r_f-k_e)T} \
+r_f &amp;= \text{Risk-free rate / Interest Rate} \
+k_e &amp;= \mathbb{E}[R_{stock}], \text{ The Discount Rate / Expected Return of the stock via CAPM} \
+\end{aligned}</p>
+<p>Comparing <span class="math notranslate nohighlight">\(\mathbb{E}[S_T]\)</span> and <span class="math notranslate nohighlight">\(F_{0,T}\)</span> is seeing how much the longer of the futures contract is compensated for the equity risk premium (<span class="math notranslate nohighlight">\(\mathbb{E}[R_{stock}] - r_f\)</span>):</p>
+<ol class="simple">
+<li><p>Normal Contango: <span class="math notranslate nohighlight">\(\mathbb{E}[S_T] &lt; F_{0,T}\)</span></p>
+<ul class="simple">
+<li><p>Less common, market <strong>thinks</strong> that equity return is &lt; than the risk-free rate</p></li>
+<li><p>We can  justify this theoretically as <span class="math notranslate nohighlight">\(\mathbb{E}[S_T] &lt; F_{0,T}\)</span> happens when <span class="math notranslate nohighlight">\(r_f &gt; k_e\)</span></p></li>
+</ul>
+</li>
+<li><p>Normal Backwardation: <span class="math notranslate nohighlight">\(\mathbb{E}[S_T] &gt; F_{0,T}\)</span></p>
+<ul class="simple">
+<li><p>More common, market <strong>thinks</strong> that equity return is &gt; than the risk-free rate</p></li>
+<li><p>We can  justify this theoretically as <span class="math notranslate nohighlight">\(\mathbb{E}[S_T] &gt; F_{0,T}\)</span> happens when <span class="math notranslate nohighlight">\(r_f &lt; k_e\)</span></p></li>
+<li><p>In this case, longer of futures contract pays a price <span class="math notranslate nohighlight">\(F_{0,T}\)</span> and is expected to receive the asset of price <span class="math notranslate nohighlight">\(\mathbb{E}[S_T]\)</span> at maturity - the expected profit of <span class="math notranslate nohighlight">\(\mathbb{E}[S_T] - F_{0,T}\)</span> is compensation for the equity risk premium and the hedger is willing to pay for this in order to lock in the price and limit the losses.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="carry">
+<h2>5. Carry<a class="headerlink" href="#carry" title="Permalink to this headline">¶</a></h2>
+</div>
+<hr class="docutils" />
+<div class="section" id="risk-parity-risk-budgetting">
+<h2>6. Risk-parity / Risk-budgetting<a class="headerlink" href="#risk-parity-risk-budgetting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We start off after finding a set of assets that we want to <strong>long</strong> on</p></li>
+<li><p>We place the <span class="math notranslate nohighlight">\(w &gt; 0\)</span> constraint in the risk-budgetting optimization because it cannot be <span class="math notranslate nohighlight">\(w = 0\)</span> because we already know we want to long it, and it cannot <span class="math notranslate nohighlight">\(w \leq 0\)</span> because we want to <strong>long</strong> it.</p></li>
+<li><p>Risk-parity means <span class="math notranslate nohighlight">\(b = \frac{1}{n}\mathbf{1}\)</span>, all risks allocated to each opportunity is equal, risk parity is a special case of risk-budgetting</p></li>
+<li><p>No one can make a good argument on why you don’t want to allocate equal risk to each opportunity</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="active-management">
+<h2>7. Active Management<a class="headerlink" href="#active-management" title="Permalink to this headline">¶</a></h2>
+<p>Fundamental Law of Active Management (Bets must be INDEPENDENT):</p>
+<p>\begin{aligned}
+IR &amp;= IC \sqrt{BR}, \
+IC &amp;= 2\text{Accuracy} - 1 \
+\end{aligned}</p>
+<ul class="simple">
+<li><p>HFT’s secret sauce is making so many bets such that their accuracy only needs to be very low because the BR bumps up their IR</p></li>
+<li><p>Fundamental investors need to have a very high accuracy in order to get the same IR as HFTs</p></li>
+<li><p>Quants exist between HFT and Fundamental, higher bets than fundamentals, lower bets than HFT, higher accuracy than HFT, lower accuracy than Fundamental</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="project2.html" title="previous page">Project 2: Carry</a>
+    <a class='right-next' id="next-link" href="../ise-530/intro.html" title="next page">ISE-530: Optimization Analytics</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

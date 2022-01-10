@@ -1,0 +1,3757 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1: Momentum Strategies &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/project1.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Project 2: Carry" href="project2.html" />
+    <link rel="prev" title="Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects" href="paper-review-5.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/project1.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Project 1: Momentum Strategies" />
+<meta property="og:description" content="Project 1: Momentum Strategies  By: Chengyi (Jeff) Chen  Description of The Project:  We want to test the momentum effect on different assets. We have daily pri" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/project1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#description-of-the-project">
+   Description of The Project:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-series-momentum-strategy">
+   Time Series Momentum Strategy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cross-sectional-momentum-strategy">
+   Cross-sectional Momentum Strategy
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="project-1-momentum-strategies">
+<h1>Project 1: Momentum Strategies<a class="headerlink" href="#project-1-momentum-strategies" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="section" id="description-of-the-project">
+<h2>Description of The Project:<a class="headerlink" href="#description-of-the-project" title="Permalink to this headline">¶</a></h2>
+<p>We want to test the momentum effect on different assets. We have daily price time series information for assets in the following asset classes:</p>
+<ol class="simple">
+<li><p>Equity Index</p></li>
+<li><p>Credit (Corporate Bonds)</p></li>
+<li><p>Govt Bond (Sovereign Bonds)</p></li>
+<li><p>Currencies</p></li>
+<li><p>Commodities</p></li>
+<li><p>Equity Factors</p></li>
+</ol>
+<p>You choose one of the above 6 asset classes, and we’ll build momentum portfolios for each one of the assets in the chosen asset class.</p>
+<p>For every asset, based on its price time series, a momentum portfolio could be built in the following way:		
+Step 1: starting from 12/31/2001, at each month-end time point, calculate the asset’s return in the past 12 months, if the return is positive (negative), the portfolio longs (shorts) 100% of the asset and holds the long (short) position for the next month. 	
+Step 2:	calculate the monthly returns for the above-built portfolio till 2020/8/31.	
+Step 3: prepare the deliverable table as follows:</p>
+<a class="reference internal image-reference" href="../../_images/project_1_deliverable.png"><img alt="../../_images/project_1_deliverable.png" src="../../_images/project_1_deliverable.png" style="width: 500px;" /></a>
+<p>Bonus problem
+At step 1, at each month-end date, calculate all asset returns in the past 12 months,<br />
+and allocate 50% weight to the top two performing assets respectively; and -50% to the bottom two performing assets respectively in your portfolio.
+And then do step 2 and step 3.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">load_ext</span> autotime
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+
+<span class="k">def</span> <span class="nf">get_asset_class_data</span><span class="p">(</span><span class="n">raw_data</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Splits the Raw dataframe into the separate asset </span>
+<span class="sd">    class dataframes and return them in a MultiIndex Dataframe</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">asset_class_df_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">split</span><span class="p">(</span>
+        <span class="n">raw_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">raw_data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">(),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">asset_class_dfs</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">df</span> <span class="ow">in</span> <span class="n">asset_class_df_list</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">asset_class_name</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot; - &quot;</span><span class="p">)</span>
+        <span class="n">columns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Date&quot;</span>
+        <span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">columns</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Date&quot;</span><span class="p">)</span>
+        <span class="n">asset_class_dfs</span><span class="p">[</span>
+            <span class="n">asset_class_name</span>
+        <span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>  <span class="c1"># Earliest stock price on top</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">asset_class_dfs</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;asset_class&quot;</span><span class="p">,</span> <span class="s2">&quot;security&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">TradingStrategy</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">asset_class_history</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">asset_class</span><span class="o">=</span><span class="s2">&quot;Equity Idx&quot;</span>
+    <span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class</span> <span class="o">=</span> <span class="n">asset_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span> <span class="o">=</span> <span class="n">asset_class_history</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">execute_backtest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+        <span class="k">pass</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">annualized_volatility</span><span class="p">(</span><span class="n">returns</span><span class="p">):</span>
+        <span class="n">returns</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">))</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">annualized_return</span><span class="p">(</span><span class="n">returns</span><span class="p">):</span>
+        <span class="n">returns</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">returns</span><span class="p">))</span> <span class="o">**</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">))</span>
+                <span class="o">-</span> <span class="mi">1</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">calendar_year_return</span><span class="p">(</span><span class="n">returns</span><span class="p">):</span>
+        <span class="n">returns</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="p">((</span><span class="n">TradingStrategy</span><span class="o">.</span><span class="n">annualized_return</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">**</span> <span class="mi">12</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">sharpe_ratio</span><span class="p">(</span><span class="n">returns</span><span class="p">,</span> <span class="n">R_f</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="n">returns</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">R_p</span> <span class="o">=</span> <span class="n">TradingStrategy</span><span class="o">.</span><span class="n">annualized_return</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
+        <span class="n">σ_p</span> <span class="o">=</span> <span class="n">TradingStrategy</span><span class="o">.</span><span class="n">annualized_volatility</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">R_p</span> <span class="o">-</span> <span class="n">R_f</span><span class="p">)</span> <span class="o">/</span> <span class="n">σ_p</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext nb_black\n%load_ext autotime\n\nimport pandas as pd\nimport numpy as np\nfrom typing import Dict\nfrom datetime import datetime, timedelta\nfrom abc import ABC, abstractmethod\n\n\ndef get_asset_class_data(raw_data: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Splits the Raw dataframe into the separate asset \n    class dataframes and return them in a MultiIndex Dataframe\n    \"\"\"\n    asset_class_df_list = np.split(\n        raw_data, np.argwhere(raw_data.isnull().all(axis=0).values).flatten(), axis=1\n    )\n    asset_class_dfs = {}\n    for df in asset_class_df_list:\n        df = df.dropna(how=\"all\", axis=1)\n        asset_class_name = df.iloc[0, 0]\n        columns = df.iloc[0, :].str.cat(df.iloc[1, :], sep=\" - \")\n        columns.iloc[0] = \"Date\"\n        df.columns = columns\n        df = df.drop([0, 1], axis=0)\n        df = df.set_index(\"Date\")\n        asset_class_dfs[\n            asset_class_name\n        ] = df.sort_index()  # Earliest stock price on top\n    return pd.concat(asset_class_dfs, names=[\"asset_class\", \"security\"], axis=1)\n\n\nclass TradingStrategy(ABC):\n    def __init__(\n        self, name: str, asset_class_history: pd.DataFrame, asset_class=\"Equity Idx\"\n    ):\n        \"\"\"\"\"\"\n        self.name = name\n        self.asset_class = asset_class\n        self.asset_class_history = asset_class_history\n\n    @abstractmethod\n    def execute_backtest(self):\n        \"\"\"\"\"\"\n        pass\n\n    @abstractmethod\n    def _results(self):\n        \"\"\"\"\"\"\n        pass\n\n    @staticmethod\n    def annualized_volatility(returns):\n        returns = returns.dropna(axis=0)\n        return np.std(returns) * np.sqrt(len(returns)) if len(returns) > 0 else None\n\n    @staticmethod\n    def annualized_return(returns):\n        returns = returns.dropna(axis=0)\n        return (\n            (\n                np.prod(np.ones(len(returns)) + np.array(returns)) ** (1 / len(returns))\n                - 1\n            )\n            if len(returns) > 0\n            else None\n        )\n\n    @staticmethod\n    def calendar_year_return(returns):\n        returns = returns.dropna(axis=0)\n        return (\n            ((TradingStrategy.annualized_return(returns) + 1) ** 12) - 1\n            if len(returns) > 0\n            else None\n        )\n\n    @staticmethod\n    def sharpe_ratio(returns, R_f=0):\n        returns = returns.dropna(axis=0)\n        R_p = TradingStrategy.annualized_return(returns)\n        \u03c3_p = TradingStrategy.annualized_volatility(returns)\n        return (R_p - R_f) / \u03c3_p if len(returns) > 0 else None";
+                var nbb_formatted_code = "%load_ext nb_black\n%load_ext autotime\n\nimport pandas as pd\nimport numpy as np\nfrom typing import Dict\nfrom datetime import datetime, timedelta\nfrom abc import ABC, abstractmethod\n\n\ndef get_asset_class_data(raw_data: pd.DataFrame) -> pd.DataFrame:\n    \"\"\"Splits the Raw dataframe into the separate asset \n    class dataframes and return them in a MultiIndex Dataframe\n    \"\"\"\n    asset_class_df_list = np.split(\n        raw_data, np.argwhere(raw_data.isnull().all(axis=0).values).flatten(), axis=1\n    )\n    asset_class_dfs = {}\n    for df in asset_class_df_list:\n        df = df.dropna(how=\"all\", axis=1)\n        asset_class_name = df.iloc[0, 0]\n        columns = df.iloc[0, :].str.cat(df.iloc[1, :], sep=\" - \")\n        columns.iloc[0] = \"Date\"\n        df.columns = columns\n        df = df.drop([0, 1], axis=0)\n        df = df.set_index(\"Date\")\n        asset_class_dfs[\n            asset_class_name\n        ] = df.sort_index()  # Earliest stock price on top\n    return pd.concat(asset_class_dfs, names=[\"asset_class\", \"security\"], axis=1)\n\n\nclass TradingStrategy(ABC):\n    def __init__(\n        self, name: str, asset_class_history: pd.DataFrame, asset_class=\"Equity Idx\"\n    ):\n        \"\"\"\"\"\"\n        self.name = name\n        self.asset_class = asset_class\n        self.asset_class_history = asset_class_history\n\n    @abstractmethod\n    def execute_backtest(self):\n        \"\"\"\"\"\"\n        pass\n\n    @abstractmethod\n    def _results(self):\n        \"\"\"\"\"\"\n        pass\n\n    @staticmethod\n    def annualized_volatility(returns):\n        returns = returns.dropna(axis=0)\n        return np.std(returns) * np.sqrt(len(returns)) if len(returns) > 0 else None\n\n    @staticmethod\n    def annualized_return(returns):\n        returns = returns.dropna(axis=0)\n        return (\n            (\n                np.prod(np.ones(len(returns)) + np.array(returns)) ** (1 / len(returns))\n                - 1\n            )\n            if len(returns) > 0\n            else None\n        )\n\n    @staticmethod\n    def calendar_year_return(returns):\n        returns = returns.dropna(axis=0)\n        return (\n            ((TradingStrategy.annualized_return(returns) + 1) ** 12) - 1\n            if len(returns) > 0\n            else None\n        )\n\n    @staticmethod\n    def sharpe_ratio(returns, R_f=0):\n        returns = returns.dropna(axis=0)\n        R_p = TradingStrategy.annualized_return(returns)\n        \u03c3_p = TradingStrategy.annualized_volatility(returns)\n        return (R_p - R_f) / \u03c3_p if len(returns) > 0 else None";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">get_asset_class_data</span><span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+        <span class="s2">&quot;./data/Project1_TimeSeries_Momentum_Due20200913.xlsx&quot;</span><span class="p">,</span>
+        <span class="n">sheet_name</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "data = get_asset_class_data(\n    pd.read_excel(\n        \"./data/Project1_TimeSeries_Momentum_Due20200913.xlsx\",\n        sheet_name=2,\n        header=None,\n    )\n)";
+                var nbb_formatted_code = "data = get_asset_class_data(\n    pd.read_excel(\n        \"./data/Project1_TimeSeries_Momentum_Due20200913.xlsx\",\n        sheet_name=2,\n        header=None,\n    )\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 3.34 s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="time-series-momentum-strategy">
+<h2>Time Series Momentum Strategy<a class="headerlink" href="#time-series-momentum-strategy" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TimeSeriesMomentumStrategy</span><span class="p">(</span><span class="n">TradingStrategy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Longs (Shorts) 100% for 1 month if asset&#39;s own past 12 month returns &gt; 0 (&lt; 0) </span>
+<span class="sd">    Assumes that all transactions happen on the end of month</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">momentum_signal_period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Time Series Momentum Strategy&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">momentum_signal_period</span> <span class="o">=</span> <span class="n">momentum_signal_period</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_asset_history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;asset_class&quot;</span><span class="p">)</span>
+                <span class="o">==</span> <span class="n">asset_class</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">filter_month_end</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">df</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Filter out only data of end of month&quot;&quot;&quot;</span>
+        <span class="n">dates</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span>
+        <span class="n">only_month_end_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">dates</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">dates</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">is_month_end</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">only_month_end_df</span>
+
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+        <span class="c1"># Check if there&#39;s enough data from the past data for a momentum strategy</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_date_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span><span class="o">.</span><span class="n">index</span>
+                <span class="o">==</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">date_format</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">end_date_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span><span class="o">.</span><span class="n">index</span>
+                <span class="o">==</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">end_date</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">date_format</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2"> not available in asset history data.&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">start_date_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">momentum_signal_period</span><span class="p">,</span> <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;There is not enough data (Number of months &lt; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">momentum_signal_period</span><span class="si">}</span><span class="s2">) before </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date</span><span class="si">}</span><span class="s2"> to generate a momentum signal.&quot;</span>
+        <span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">execute_backtest</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;2001-12-31&quot;</span><span class="p">,</span>
+        <span class="n">end_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;2020-08-31&quot;</span><span class="p">,</span>
+        <span class="n">date_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Contains the actual trading logic &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">start_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="n">end_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date_format</span> <span class="o">=</span> <span class="n">date_format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_month_end</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_asset_history</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_data</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">past_12_month_returns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">momentum_signal_period</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_date_idx</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date_idx</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">]</span>  <span class="c1"># Cumulative returns from past 12 months</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monthly_long_position_returns</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:]</span>
+            <span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">)</span>  <span class="c1"># End of Month Monthly Long position returns</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">past_12_month_returns</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">)</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">monthly_long_position_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_results</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">calendar_year_return</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_returns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annualized_return</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_returns</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Annualized Returns&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_volatility</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">annualized_volatility</span><span class="p">])</span>
+            <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annualized_volatility</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_volatility</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Annualized Volatility&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_sharpe_ratio</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">sharpe_ratio</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_sharpe_ratio</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Sharpe Ratio (assuming $R_f$ = 0)&quot;</span>
+        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_returns</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_volatility</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_sharpe_ratio</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "class TimeSeriesMomentumStrategy(TradingStrategy):\n    \"\"\"Longs (Shorts) 100% for 1 month if asset's own past 12 month returns > 0 (< 0) \n    Assumes that all transactions happen on the end of month\n    \"\"\"\n\n    def __init__(\n        self, momentum_signal_period: int = 12, **kwargs\n    ):\n        super().__init__(name=\"Time Series Momentum Strategy\", **kwargs)\n        self.momentum_signal_period = momentum_signal_period\n        self.target_asset_history = self.asset_class_history[\n            self.asset_class_history.columns[\n                self.asset_class_history.columns.get_level_values(\"asset_class\")\n                == asset_class\n            ]\n        ]\n\n    def filter_month_end(self, df):\n        \"\"\"Filter out only data of end of month\"\"\"\n        dates = df.index\n        only_month_end_df = df[pd.Series(dates, index=dates).dt.is_month_end]\n        return only_month_end_df\n\n    def check_data(self):\n        \"\"\"\"\"\"\n        # Check if there's enough data from the past data for a momentum strategy\n        try:\n            self.start_date_idx = np.argwhere(\n                self.only_month_end_df.index\n                == datetime.strptime(self.start_date, self.date_format)\n            ).flatten()[0]\n\n            self.end_date_idx = np.argwhere(\n                self.only_month_end_df.index\n                == datetime.strptime(self.end_date, self.date_format)\n            ).flatten()[0]\n        except:\n            raise ValueError(f\"{start_date} not available in asset history data.\")\n        assert self.start_date_idx - 1 >= self.momentum_signal_period, print(\n            f\"There is not enough data (Number of months < {self.momentum_signal_period}) before {self.start_date} to generate a momentum signal.\"\n        )\n\n    def execute_backtest(\n        self,\n        start_date: str = \"2001-12-31\",\n        end_date: str = \"2020-08-31\",\n        date_format: str = \"%Y-%m-%d\",\n    ):\n        \"\"\"Contains the actual trading logic \"\"\"\n        self.start_date = start_date\n        self.end_date = end_date\n        self.date_format = date_format\n        self.only_month_end_df = self.filter_month_end(df=self.target_asset_history)\n        self.check_data()\n        self.past_12_month_returns = self.only_month_end_df.pct_change(\n            self.momentum_signal_period\n        ).iloc[\n            self.start_date_idx : self.end_date_idx + 1\n        ]  # Cumulative returns from past 12 months\n        self.monthly_long_position_returns = (\n            self.only_month_end_df.iloc[self.start_date_idx - 1 :]\n            .pct_change(1)\n            .iloc[1 : self.end_date_idx + 1]\n        )  # End of Month Monthly Long position returns\n        self.monthly_returns = (\n            self.past_12_month_returns.apply(np.sign).shift(1).iloc[1:]\n            * self.monthly_long_position_returns.iloc[1:]\n        )\n        self._results()\n\n    def _results(self):\n        \"\"\"\"\"\"\n        self.annual_results = self.monthly_returns.groupby(\n            [self.monthly_returns.index.year]\n        ).agg([self.calendar_year_return])\n        self.asset_class_annualized_returns = self.annual_results.apply(\n            self.annualized_return, axis=0\n        ).droplevel(-1)\n        self.asset_class_annualized_returns.name = \"Annualized Returns\"\n        self.asset_class_annualized_volatility = (\n            self.monthly_returns.groupby([self.monthly_returns.index.year])\n            .agg([self.annualized_volatility])\n            .apply(self.annualized_volatility, axis=0)\n        ).droplevel(-1)\n        self.asset_class_annualized_volatility.name = \"Annualized Volatility\"\n        self.asset_class_sharpe_ratio = self.annual_results.apply(\n            self.sharpe_ratio, axis=0\n        ).droplevel(-1)\n        self.asset_class_sharpe_ratio.name = \"Sharpe Ratio (assuming $R_f$ = 0)\"\n        display(self.annual_results)\n        display(\n            pd.concat(\n                [\n                    self.asset_class_annualized_returns,\n                    self.asset_class_annualized_volatility,\n                    self.asset_class_sharpe_ratio,\n                ],\n                axis=1,\n            ).transpose()\n        )";
+                var nbb_formatted_code = "class TimeSeriesMomentumStrategy(TradingStrategy):\n    \"\"\"Longs (Shorts) 100% for 1 month if asset's own past 12 month returns > 0 (< 0) \n    Assumes that all transactions happen on the end of month\n    \"\"\"\n\n    def __init__(self, momentum_signal_period: int = 12, **kwargs):\n        super().__init__(name=\"Time Series Momentum Strategy\", **kwargs)\n        self.momentum_signal_period = momentum_signal_period\n        self.target_asset_history = self.asset_class_history[\n            self.asset_class_history.columns[\n                self.asset_class_history.columns.get_level_values(\"asset_class\")\n                == asset_class\n            ]\n        ]\n\n    def filter_month_end(self, df):\n        \"\"\"Filter out only data of end of month\"\"\"\n        dates = df.index\n        only_month_end_df = df[pd.Series(dates, index=dates).dt.is_month_end]\n        return only_month_end_df\n\n    def check_data(self):\n        \"\"\"\"\"\"\n        # Check if there's enough data from the past data for a momentum strategy\n        try:\n            self.start_date_idx = np.argwhere(\n                self.only_month_end_df.index\n                == datetime.strptime(self.start_date, self.date_format)\n            ).flatten()[0]\n\n            self.end_date_idx = np.argwhere(\n                self.only_month_end_df.index\n                == datetime.strptime(self.end_date, self.date_format)\n            ).flatten()[0]\n        except:\n            raise ValueError(f\"{start_date} not available in asset history data.\")\n        assert self.start_date_idx - 1 >= self.momentum_signal_period, print(\n            f\"There is not enough data (Number of months < {self.momentum_signal_period}) before {self.start_date} to generate a momentum signal.\"\n        )\n\n    def execute_backtest(\n        self,\n        start_date: str = \"2001-12-31\",\n        end_date: str = \"2020-08-31\",\n        date_format: str = \"%Y-%m-%d\",\n    ):\n        \"\"\"Contains the actual trading logic \"\"\"\n        self.start_date = start_date\n        self.end_date = end_date\n        self.date_format = date_format\n        self.only_month_end_df = self.filter_month_end(df=self.target_asset_history)\n        self.check_data()\n        self.past_12_month_returns = self.only_month_end_df.pct_change(\n            self.momentum_signal_period\n        ).iloc[\n            self.start_date_idx : self.end_date_idx + 1\n        ]  # Cumulative returns from past 12 months\n        self.monthly_long_position_returns = (\n            self.only_month_end_df.iloc[self.start_date_idx - 1 :]\n            .pct_change(1)\n            .iloc[1 : self.end_date_idx + 1]\n        )  # End of Month Monthly Long position returns\n        self.monthly_returns = (\n            self.past_12_month_returns.apply(np.sign).shift(1).iloc[1:]\n            * self.monthly_long_position_returns.iloc[1:]\n        )\n        self._results()\n\n    def _results(self):\n        \"\"\"\"\"\"\n        self.annual_results = self.monthly_returns.groupby(\n            [self.monthly_returns.index.year]\n        ).agg([self.calendar_year_return])\n        self.asset_class_annualized_returns = self.annual_results.apply(\n            self.annualized_return, axis=0\n        ).droplevel(-1)\n        self.asset_class_annualized_returns.name = \"Annualized Returns\"\n        self.asset_class_annualized_volatility = (\n            self.monthly_returns.groupby([self.monthly_returns.index.year])\n            .agg([self.annualized_volatility])\n            .apply(self.annualized_volatility, axis=0)\n        ).droplevel(-1)\n        self.asset_class_annualized_volatility.name = \"Annualized Volatility\"\n        self.asset_class_sharpe_ratio = self.annual_results.apply(\n            self.sharpe_ratio, axis=0\n        ).droplevel(-1)\n        self.asset_class_sharpe_ratio.name = \"Sharpe Ratio (assuming $R_f$ = 0)\"\n        display(self.annual_results)\n        display(\n            pd.concat(\n                [\n                    self.asset_class_annualized_returns,\n                    self.asset_class_annualized_volatility,\n                    self.asset_class_sharpe_ratio,\n                ],\n                axis=1,\n            ).transpose()\n        )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 58.3 ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">asset_class</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;asset_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">tsms</span> <span class="o">=</span> <span class="n">TimeSeriesMomentumStrategy</span><span class="p">(</span><span class="n">asset_class</span><span class="o">=</span><span class="n">asset_class</span><span class="p">,</span> <span class="n">asset_class_history</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">tsms</span><span class="o">.</span><span class="n">execute_backtest</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="15" halign="left">Equity Idx</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>S&amp;P 500 - SPX</th>
+      <th>Russell 2K - RTY</th>
+      <th>NASDAQ 100 - NDX</th>
+      <th>Hang Seng -  HSI</th>
+      <th>Shanghai SE - SHCOMP</th>
+      <th>KOSPI - KOSPI</th>
+      <th>ASX 200 - AS51</th>
+      <th>NIKKEI - NKY</th>
+      <th>FTSE 100 - UKX</th>
+      <th>DAX - DAX</th>
+      <th>FTSE MIB - FTSEMIB</th>
+      <th>CAC  - CAC</th>
+      <th>MSCI India - M1IN</th>
+      <th>MSCI Russia - M1RU</th>
+      <th>MSCI Brazil - M1BR</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002</th>
+      <td>0.088434</td>
+      <td>0.279880</td>
+      <td>0.387414</td>
+      <td>0.142797</td>
+      <td>0.135255</td>
+      <td>-0.071996</td>
+      <td>0.051451</td>
+      <td>0.169137</td>
+      <td>0.232031</td>
+      <td>0.535081</td>
+      <td>0.264682</td>
+      <td>0.353556</td>
+      <td>0.222429</td>
+      <td>0.154326</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>0.019208</td>
+      <td>-0.086041</td>
+      <td>-0.014318</td>
+      <td>0.113109</td>
+      <td>-0.199595</td>
+      <td>-0.015477</td>
+      <td>0.009032</td>
+      <td>-0.166724</td>
+      <td>-0.008626</td>
+      <td>0.003490</td>
+      <td>0.020381</td>
+      <td>-0.058143</td>
+      <td>0.919416</td>
+      <td>0.140371</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.108757</td>
+      <td>0.182753</td>
+      <td>0.106847</td>
+      <td>0.171412</td>
+      <td>-0.074865</td>
+      <td>0.137561</td>
+      <td>0.295137</td>
+      <td>0.086359</td>
+      <td>0.112444</td>
+      <td>0.073369</td>
+      <td>0.188540</td>
+      <td>0.101350</td>
+      <td>0.191084</td>
+      <td>0.054620</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.049069</td>
+      <td>0.045117</td>
+      <td>-0.123204</td>
+      <td>0.084047</td>
+      <td>0.018237</td>
+      <td>0.567997</td>
+      <td>0.240955</td>
+      <td>0.278645</td>
+      <td>0.208053</td>
+      <td>0.270714</td>
+      <td>0.201198</td>
+      <td>0.269533</td>
+      <td>0.375694</td>
+      <td>0.700018</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>0.157767</td>
+      <td>0.183298</td>
+      <td>-0.024914</td>
+      <td>0.389660</td>
+      <td>0.988308</td>
+      <td>0.060301</td>
+      <td>0.254948</td>
+      <td>0.080900</td>
+      <td>0.144439</td>
+      <td>0.219786</td>
+      <td>0.209513</td>
+      <td>0.209697</td>
+      <td>0.510044</td>
+      <td>0.555970</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.055713</td>
+      <td>-0.014266</td>
+      <td>0.191648</td>
+      <td>0.433789</td>
+      <td>0.979663</td>
+      <td>0.237113</td>
+      <td>0.174193</td>
+      <td>-0.058043</td>
+      <td>0.073884</td>
+      <td>0.222892</td>
+      <td>-0.031965</td>
+      <td>0.041919</td>
+      <td>0.731106</td>
+      <td>0.245037</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>0.330330</td>
+      <td>0.385477</td>
+      <td>0.202456</td>
+      <td>0.055844</td>
+      <td>0.227160</td>
+      <td>0.213187</td>
+      <td>0.136177</td>
+      <td>0.516562</td>
+      <td>0.108632</td>
+      <td>0.048457</td>
+      <td>0.730014</td>
+      <td>0.198327</td>
+      <td>-0.159019</td>
+      <td>0.501275</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>-0.119551</td>
+      <td>-0.097311</td>
+      <td>-0.273061</td>
+      <td>-0.360089</td>
+      <td>-0.359757</td>
+      <td>-0.290330</td>
+      <td>-0.251316</td>
+      <td>-0.120017</td>
+      <td>-0.145776</td>
+      <td>-0.091792</td>
+      <td>-0.184650</td>
+      <td>-0.107100</td>
+      <td>-0.545699</td>
+      <td>-0.578876</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.150587</td>
+      <td>0.268146</td>
+      <td>0.200588</td>
+      <td>0.085812</td>
+      <td>-0.441488</td>
+      <td>0.235763</td>
+      <td>0.029409</td>
+      <td>-0.148346</td>
+      <td>0.126689</td>
+      <td>0.160599</td>
+      <td>-0.327295</td>
+      <td>-0.115950</td>
+      <td>0.209516</td>
+      <td>0.190655</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>0.021055</td>
+      <td>-0.293698</td>
+      <td>0.036123</td>
+      <td>-0.271779</td>
+      <td>-0.011050</td>
+      <td>-0.228118</td>
+      <td>-0.140106</td>
+      <td>-0.104074</td>
+      <td>-0.169795</td>
+      <td>-0.193300</td>
+      <td>-0.152196</td>
+      <td>-0.111474</td>
+      <td>-0.061607</td>
+      <td>-0.317564</td>
+      <td>-0.534078</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0.068127</td>
+      <td>0.051368</td>
+      <td>0.183478</td>
+      <td>-0.103584</td>
+      <td>-0.094842</td>
+      <td>-0.012624</td>
+      <td>0.026742</td>
+      <td>-0.029484</td>
+      <td>0.066475</td>
+      <td>-0.097605</td>
+      <td>0.004187</td>
+      <td>-0.053662</td>
+      <td>-0.332252</td>
+      <td>-0.249583</td>
+      <td>-0.079200</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>0.323742</td>
+      <td>0.388219</td>
+      <td>0.369096</td>
+      <td>0.065616</td>
+      <td>0.069251</td>
+      <td>0.019623</td>
+      <td>0.219773</td>
+      <td>0.593699</td>
+      <td>0.186501</td>
+      <td>0.254817</td>
+      <td>-0.006969</td>
+      <td>0.222258</td>
+      <td>-0.396076</td>
+      <td>-0.092174</td>
+      <td>-0.058150</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0.136783</td>
+      <td>0.048962</td>
+      <td>0.193963</td>
+      <td>-0.021945</td>
+      <td>0.624548</td>
+      <td>-0.016952</td>
+      <td>0.071487</td>
+      <td>0.089566</td>
+      <td>0.007179</td>
+      <td>0.026527</td>
+      <td>0.029781</td>
+      <td>0.025418</td>
+      <td>0.048017</td>
+      <td>0.137143</td>
+      <td>-0.070510</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>-0.143971</td>
+      <td>-0.044132</td>
+      <td>0.097507</td>
+      <td>-0.086906</td>
+      <td>0.111542</td>
+      <td>0.002824</td>
+      <td>0.100783</td>
+      <td>0.109935</td>
+      <td>-0.024950</td>
+      <td>0.095605</td>
+      <td>0.157532</td>
+      <td>0.119448</td>
+      <td>-0.055465</td>
+      <td>-0.141711</td>
+      <td>0.516565</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>-0.020077</td>
+      <td>-0.020325</td>
+      <td>-0.143435</td>
+      <td>-0.130668</td>
+      <td>-0.303595</td>
+      <td>-0.057955</td>
+      <td>-0.028356</td>
+      <td>-0.324395</td>
+      <td>0.043638</td>
+      <td>-0.225592</td>
+      <td>-0.217988</td>
+      <td>-0.150836</td>
+      <td>-0.182770</td>
+      <td>0.186032</td>
+      <td>-0.466803</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>0.218228</td>
+      <td>0.146277</td>
+      <td>0.329921</td>
+      <td>0.412730</td>
+      <td>0.049283</td>
+      <td>0.239290</td>
+      <td>0.134067</td>
+      <td>0.213360</td>
+      <td>0.119541</td>
+      <td>0.125126</td>
+      <td>0.244154</td>
+      <td>0.125445</td>
+      <td>0.271831</td>
+      <td>0.052043</td>
+      <td>0.241117</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>-0.043918</td>
+      <td>-0.110274</td>
+      <td>0.000368</td>
+      <td>-0.170337</td>
+      <td>-0.044080</td>
+      <td>0.060109</td>
+      <td>-0.014635</td>
+      <td>-0.103034</td>
+      <td>0.009453</td>
+      <td>-0.031980</td>
+      <td>0.036292</td>
+      <td>0.054855</td>
+      <td>-0.245235</td>
+      <td>-0.003945</td>
+      <td>-0.524253</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>0.050027</td>
+      <td>-0.222140</td>
+      <td>0.394574</td>
+      <td>-0.177570</td>
+      <td>-0.254777</td>
+      <td>0.020049</td>
+      <td>0.156804</td>
+      <td>-0.174382</td>
+      <td>-0.038051</td>
+      <td>-0.139648</td>
+      <td>-0.089326</td>
+      <td>-0.078987</td>
+      <td>-0.074335</td>
+      <td>0.128606</td>
+      <td>-0.065489</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>-0.219109</td>
+      <td>-0.324053</td>
+      <td>0.648726</td>
+      <td>-0.103680</td>
+      <td>0.079134</td>
+      <td>0.181846</td>
+      <td>-0.497120</td>
+      <td>-0.374425</td>
+      <td>-0.107319</td>
+      <td>-0.505415</td>
+      <td>-0.514804</td>
+      <td>-0.486342</td>
+      <td>-0.668994</td>
+      <td>-0.635793</td>
+      <td>0.124278</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="15" halign="left">Equity Idx</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>S&amp;P 500 - SPX</th>
+      <th>Russell 2K - RTY</th>
+      <th>NASDAQ 100 - NDX</th>
+      <th>Hang Seng -  HSI</th>
+      <th>Shanghai SE - SHCOMP</th>
+      <th>KOSPI - KOSPI</th>
+      <th>ASX 200 - AS51</th>
+      <th>NIKKEI - NKY</th>
+      <th>FTSE 100 - UKX</th>
+      <th>DAX - DAX</th>
+      <th>FTSE MIB - FTSEMIB</th>
+      <th>CAC  - CAC</th>
+      <th>MSCI India - M1IN</th>
+      <th>MSCI Russia - M1RU</th>
+      <th>MSCI Brazil - M1BR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.055576</td>
+      <td>0.019841</td>
+      <td>0.124717</td>
+      <td>0.005114</td>
+      <td>0.019207</td>
+      <td>0.051567</td>
+      <td>0.030362</td>
+      <td>-0.000177</td>
+      <td>0.043581</td>
+      <td>0.012956</td>
+      <td>-0.004439</td>
+      <td>0.009452</td>
+      <td>-0.044851</td>
+      <td>-0.011820</td>
+      <td>-0.153728</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.250217</td>
+      <td>0.258396</td>
+      <td>0.299556</td>
+      <td>0.279455</td>
+      <td>0.396346</td>
+      <td>0.309805</td>
+      <td>0.180394</td>
+      <td>0.215803</td>
+      <td>0.201919</td>
+      <td>0.342666</td>
+      <td>0.298922</td>
+      <td>0.263166</td>
+      <td>0.399527</td>
+      <td>0.422950</td>
+      <td>0.262285</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.091799</td>
+      <td>0.022376</td>
+      <td>0.132030</td>
+      <td>0.005419</td>
+      <td>0.011392</td>
+      <td>0.063658</td>
+      <td>0.037631</td>
+      <td>-0.000164</td>
+      <td>0.089658</td>
+      <td>0.013405</td>
+      <td>-0.003924</td>
+      <td>0.011559</td>
+      <td>-0.025470</td>
+      <td>-0.008077</td>
+      <td>-0.149786</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">Credit</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>US IG - LUACTRUU</th>
+      <th>US HY - H0A0</th>
+      <th>EU IG - SPEZICUT</th>
+      <th>EU HY - HE00</th>
+      <th>EM Corp - EMCB</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002</th>
+      <td>0.101171</td>
+      <td>-0.114729</td>
+      <td>NaN</td>
+      <td>0.033558</td>
+      <td>0.107632</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>0.082424</td>
+      <td>0.206790</td>
+      <td>NaN</td>
+      <td>0.130784</td>
+      <td>0.171954</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.044620</td>
+      <td>0.108698</td>
+      <td>NaN</td>
+      <td>0.145615</td>
+      <td>0.100654</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.016762</td>
+      <td>0.027381</td>
+      <td>NaN</td>
+      <td>0.059634</td>
+      <td>0.043976</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>0.013826</td>
+      <td>0.117671</td>
+      <td>NaN</td>
+      <td>0.111028</td>
+      <td>0.076199</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.045608</td>
+      <td>0.021929</td>
+      <td>NaN</td>
+      <td>-0.022205</td>
+      <td>0.049376</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>-0.129893</td>
+      <td>0.258021</td>
+      <td>NaN</td>
+      <td>0.436900</td>
+      <td>0.013024</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>0.064239</td>
+      <td>-0.188552</td>
+      <td>NaN</td>
+      <td>-0.256437</td>
+      <td>-0.155023</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.089958</td>
+      <td>0.151904</td>
+      <td>NaN</td>
+      <td>0.142566</td>
+      <td>0.114395</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>0.081460</td>
+      <td>0.043827</td>
+      <td>NaN</td>
+      <td>-0.110336</td>
+      <td>-0.056776</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0.098174</td>
+      <td>0.155834</td>
+      <td>NaN</td>
+      <td>0.115463</td>
+      <td>0.157965</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>-0.036943</td>
+      <td>0.074187</td>
+      <td>NaN</td>
+      <td>0.100641</td>
+      <td>-0.005148</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0.036368</td>
+      <td>0.025033</td>
+      <td>NaN</td>
+      <td>0.054770</td>
+      <td>-0.016850</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>-0.021545</td>
+      <td>0.060394</td>
+      <td>NaN</td>
+      <td>0.007552</td>
+      <td>0.051350</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>-0.019228</td>
+      <td>-0.020808</td>
+      <td>-0.066869</td>
+      <td>-0.012205</td>
+      <td>0.092452</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>0.064178</td>
+      <td>0.074832</td>
+      <td>0.025810</td>
+      <td>0.067444</td>
+      <td>0.081342</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>-0.040784</td>
+      <td>-0.022649</td>
+      <td>0.000440</td>
+      <td>0.010756</td>
+      <td>-0.030833</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>0.092737</td>
+      <td>0.043631</td>
+      <td>-0.091023</td>
+      <td>0.025470</td>
+      <td>0.069415</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>0.105935</td>
+      <td>-0.318564</td>
+      <td>-0.265735</td>
+      <td>-0.364253</td>
+      <td>-0.034163</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">Credit</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>US IG - LUACTRUU</th>
+      <th>US HY - H0A0</th>
+      <th>EU IG - SPEZICUT</th>
+      <th>EU HY - HE00</th>
+      <th>EM Corp - EMCB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.034379</td>
+      <td>0.027816</td>
+      <td>-0.085631</td>
+      <td>0.022193</td>
+      <td>0.040705</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.110831</td>
+      <td>0.211764</td>
+      <td>0.021668</td>
+      <td>0.250086</td>
+      <td>0.209394</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.128956</td>
+      <td>0.048584</td>
+      <td>-0.373882</td>
+      <td>0.031851</td>
+      <td>0.119703</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">Govt Bond</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>US Treasury - LUATTRUU</th>
+      <th>UK Gilt - JFBG3GUS</th>
+      <th>German Bund - CBKIG0FT</th>
+      <th>Japan JGB - SPJGBTR</th>
+      <th>EM Govt - GBIEMCOR</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002</th>
+      <td>0.117935</td>
+      <td>0.066458</td>
+      <td>0.105547</td>
+      <td>0.051543</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>0.022414</td>
+      <td>0.006415</td>
+      <td>0.020399</td>
+      <td>-0.041043</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.007724</td>
+      <td>0.003808</td>
+      <td>0.042187</td>
+      <td>0.005642</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.027919</td>
+      <td>0.028276</td>
+      <td>0.042376</td>
+      <td>0.006645</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>-0.001478</td>
+      <td>-0.030992</td>
+      <td>-0.051699</td>
+      <td>-0.013907</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.090124</td>
+      <td>-0.005503</td>
+      <td>0.020445</td>
+      <td>0.040500</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>0.137371</td>
+      <td>0.104842</td>
+      <td>-0.027833</td>
+      <td>0.035918</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>-0.035674</td>
+      <td>-0.032949</td>
+      <td>-0.000288</td>
+      <td>0.025105</td>
+      <td>-0.088812</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.004481</td>
+      <td>0.047323</td>
+      <td>0.027167</td>
+      <td>0.024459</td>
+      <td>0.154323</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>0.098133</td>
+      <td>0.150250</td>
+      <td>0.052122</td>
+      <td>0.027175</td>
+      <td>-0.125680</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0.019934</td>
+      <td>0.051032</td>
+      <td>0.067543</td>
+      <td>0.018526</td>
+      <td>-0.179821</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>0.007119</td>
+      <td>0.053977</td>
+      <td>-0.021530</td>
+      <td>0.004020</td>
+      <td>-0.070201</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>-0.007403</td>
+      <td>0.050203</td>
+      <td>0.077912</td>
+      <td>0.040626</td>
+      <td>-0.063224</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>0.008425</td>
+      <td>0.005043</td>
+      <td>0.020838</td>
+      <td>0.014520</td>
+      <td>0.155773</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>0.010376</td>
+      <td>0.038564</td>
+      <td>0.070891</td>
+      <td>0.010483</td>
+      <td>-0.165256</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>-0.015598</td>
+      <td>0.037761</td>
+      <td>-0.047833</td>
+      <td>-0.013668</td>
+      <td>0.146637</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>-0.065910</td>
+      <td>-0.012898</td>
+      <td>0.004869</td>
+      <td>0.014964</td>
+      <td>-0.024602</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>0.068576</td>
+      <td>0.047258</td>
+      <td>0.048424</td>
+      <td>-0.003778</td>
+      <td>-0.063896</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>0.134123</td>
+      <td>0.074121</td>
+      <td>0.042626</td>
+      <td>-0.024609</td>
+      <td>-0.350187</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">Govt Bond</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>US Treasury - LUATTRUU</th>
+      <th>UK Gilt - JFBG3GUS</th>
+      <th>German Bund - CBKIG0FT</th>
+      <th>Japan JGB - SPJGBTR</th>
+      <th>EM Govt - GBIEMCOR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.031570</td>
+      <td>0.035009</td>
+      <td>0.025165</td>
+      <td>0.011475</td>
+      <td>-0.067697</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.055405</td>
+      <td>0.073377</td>
+      <td>0.049919</td>
+      <td>0.043905</td>
+      <td>0.084537</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.128530</td>
+      <td>0.180850</td>
+      <td>0.139315</td>
+      <td>0.113346</td>
+      <td>-0.135072</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">Currencies</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>EUR/USD - EURUSD</th>
+      <th>JPY/USD - JPYUSD</th>
+      <th>GBP/USD - GBPUSD</th>
+      <th>AUD/USD - AUDUSD</th>
+      <th>CNY/USD - CNYUSD</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002</th>
+      <td>0.148162</td>
+      <td>-0.077826</td>
+      <td>0.150727</td>
+      <td>0.006712</td>
+      <td>-0.000331</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>0.200438</td>
+      <td>0.053686</td>
+      <td>0.109193</td>
+      <td>0.339031</td>
+      <td>-0.000083</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.076141</td>
+      <td>0.044709</td>
+      <td>0.074140</td>
+      <td>0.037633</td>
+      <td>-0.000166</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>-0.102000</td>
+      <td>-0.064387</td>
+      <td>-0.046275</td>
+      <td>-0.021218</td>
+      <td>-0.018382</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>-0.050245</td>
+      <td>-0.045898</td>
+      <td>-0.039035</td>
+      <td>-0.094061</td>
+      <td>0.033091</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.105479</td>
+      <td>0.003912</td>
+      <td>0.013376</td>
+      <td>0.109829</td>
+      <td>0.069609</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>-0.044681</td>
+      <td>0.231672</td>
+      <td>0.347671</td>
+      <td>-0.009721</td>
+      <td>0.070411</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>-0.080276</td>
+      <td>-0.024317</td>
+      <td>-0.139300</td>
+      <td>-0.216322</td>
+      <td>-0.000819</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>-0.223406</td>
+      <td>0.046534</td>
+      <td>-0.167473</td>
+      <td>0.139913</td>
+      <td>0.034906</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>-0.100326</td>
+      <td>0.055019</td>
+      <td>-0.113537</td>
+      <td>-0.166821</td>
+      <td>0.047657</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>-0.025019</td>
+      <td>0.088735</td>
+      <td>-0.037251</td>
+      <td>-0.068677</td>
+      <td>0.011026</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>0.049704</td>
+      <td>0.204304</td>
+      <td>-0.144734</td>
+      <td>0.146359</td>
+      <td>0.029040</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>-0.012627</td>
+      <td>0.127919</td>
+      <td>-0.008513</td>
+      <td>-0.066779</td>
+      <td>-0.028018</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>0.100158</td>
+      <td>0.000587</td>
+      <td>0.049289</td>
+      <td>0.110821</td>
+      <td>0.042214</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>-0.078979</td>
+      <td>-0.102517</td>
+      <td>0.177952</td>
+      <td>-0.111267</td>
+      <td>0.068763</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>-0.004080</td>
+      <td>0.030011</td>
+      <td>-0.074729</td>
+      <td>0.028235</td>
+      <td>-0.039351</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>-0.007993</td>
+      <td>-0.023951</td>
+      <td>0.009791</td>
+      <td>-0.007616</td>
+      <td>-0.034823</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>0.020213</td>
+      <td>-0.047243</td>
+      <td>0.002487</td>
+      <td>-0.001233</td>
+      <td>0.009126</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>-0.056399</td>
+      <td>-0.020593</td>
+      <td>-0.053442</td>
+      <td>0.002394</td>
+      <td>-0.026229</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">Currencies</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>EUR/USD - EURUSD</th>
+      <th>JPY/USD - JPYUSD</th>
+      <th>GBP/USD - GBPUSD</th>
+      <th>AUD/USD - AUDUSD</th>
+      <th>CNY/USD - CNYUSD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>-0.009381</td>
+      <td>0.021707</td>
+      <td>-0.001322</td>
+      <td>0.001016</td>
+      <td>0.013498</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.136584</td>
+      <td>0.133411</td>
+      <td>0.074319</td>
+      <td>0.168132</td>
+      <td>0.073629</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>-0.021918</td>
+      <td>0.056978</td>
+      <td>-0.002456</td>
+      <td>0.001898</td>
+      <td>0.089492</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="6" halign="left">Commod</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>WTI Oil - CL1 COMB</th>
+      <th>Brent Oil - CO1</th>
+      <th>Gold - XAUUSD</th>
+      <th>Silver - XAG</th>
+      <th>Copper - SPGSIC</th>
+      <th>Agriculture - BCOMAGTR</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002</th>
+      <td>-0.137678</td>
+      <td>-0.142562</td>
+      <td>0.247715</td>
+      <td>-0.073021</td>
+      <td>-0.196890</td>
+      <td>0.041818</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>-0.218048</td>
+      <td>-0.163959</td>
+      <td>0.193650</td>
+      <td>-0.131105</td>
+      <td>0.081011</td>
+      <td>-0.015321</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.131023</td>
+      <td>0.136938</td>
+      <td>0.055362</td>
+      <td>0.148569</td>
+      <td>0.389583</td>
+      <td>-0.165351</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.404833</td>
+      <td>0.457736</td>
+      <td>0.179154</td>
+      <td>0.370638</td>
+      <td>0.401533</td>
+      <td>-0.238630</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>-0.016730</td>
+      <td>0.152491</td>
+      <td>0.231528</td>
+      <td>0.463982</td>
+      <td>0.408749</td>
+      <td>0.108420</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>-0.038936</td>
+      <td>0.007421</td>
+      <td>0.309408</td>
+      <td>-0.137633</td>
+      <td>-0.053572</td>
+      <td>0.298885</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>-0.001325</td>
+      <td>-0.056533</td>
+      <td>-0.185666</td>
+      <td>-0.181195</td>
+      <td>0.671353</td>
+      <td>-0.012467</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>-0.473938</td>
+      <td>-0.434962</td>
+      <td>0.305817</td>
+      <td>-0.231319</td>
+      <td>-0.515501</td>
+      <td>-0.009318</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>0.151462</td>
+      <td>0.215835</td>
+      <td>0.295739</td>
+      <td>0.831556</td>
+      <td>0.308329</td>
+      <td>0.003032</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>-0.243198</td>
+      <td>0.133298</td>
+      <td>0.100964</td>
+      <td>-0.099410</td>
+      <td>-0.342450</td>
+      <td>-0.105827</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>-0.105795</td>
+      <td>0.074718</td>
+      <td>-0.073634</td>
+      <td>-0.421993</td>
+      <td>-0.183567</td>
+      <td>-0.257674</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>0.055780</td>
+      <td>0.264209</td>
+      <td>0.321928</td>
+      <td>0.517521</td>
+      <td>0.116259</td>
+      <td>0.001788</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0.600033</td>
+      <td>0.705686</td>
+      <td>-0.068142</td>
+      <td>0.007230</td>
+      <td>0.138502</td>
+      <td>-0.026743</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>0.230527</td>
+      <td>0.279488</td>
+      <td>-0.021973</td>
+      <td>0.095398</td>
+      <td>0.278538</td>
+      <td>0.138459</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>-0.229107</td>
+      <td>-0.271858</td>
+      <td>-0.217889</td>
+      <td>-0.522722</td>
+      <td>-0.275194</td>
+      <td>0.011708</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>0.032603</td>
+      <td>-0.034583</td>
+      <td>0.006521</td>
+      <td>0.005963</td>
+      <td>0.308171</td>
+      <td>0.051301</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>-0.065707</td>
+      <td>-0.048602</td>
+      <td>-0.106186</td>
+      <td>0.126177</td>
+      <td>-0.091015</td>
+      <td>0.098412</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>-0.163310</td>
+      <td>-0.072973</td>
+      <td>0.139826</td>
+      <td>0.035179</td>
+      <td>-0.050574</td>
+      <td>-0.036729</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>-0.940855</td>
+      <td>-0.506588</td>
+      <td>0.476989</td>
+      <td>0.597779</td>
+      <td>-0.154135</td>
+      <td>-0.062749</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="6" halign="left">Commod</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>WTI Oil - CL1 COMB</th>
+      <th>Brent Oil - CO1</th>
+      <th>Gold - XAUUSD</th>
+      <th>Silver - XAG</th>
+      <th>Copper - SPGSIC</th>
+      <th>Agriculture - BCOMAGTR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>-0.166098</td>
+      <td>-0.004430</td>
+      <td>0.098833</td>
+      <td>0.019317</td>
+      <td>0.019451</td>
+      <td>-0.017449</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.794941</td>
+      <td>0.562311</td>
+      <td>0.221906</td>
+      <td>0.509008</td>
+      <td>0.387265</td>
+      <td>0.309227</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>-0.120575</td>
+      <td>-0.003592</td>
+      <td>0.120173</td>
+      <td>0.013014</td>
+      <td>0.014807</td>
+      <td>-0.031794</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">EQ Factors</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Value - DJTMNSV</th>
+      <th>Size - DJTMNSS</th>
+      <th>Quality - DJTMNQU</th>
+      <th>Momentum - DJTMNMO</th>
+      <th>Low Beta - DJTMNAB</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+      <th>calendar_year_return</th>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2002</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2003</th>
+      <td>0.128332</td>
+      <td>-0.045934</td>
+      <td>-0.027136</td>
+      <td>-0.114272</td>
+      <td>-0.095846</td>
+    </tr>
+    <tr>
+      <th>2004</th>
+      <td>0.124360</td>
+      <td>0.089198</td>
+      <td>-0.016135</td>
+      <td>-0.021923</td>
+      <td>-0.020721</td>
+    </tr>
+    <tr>
+      <th>2005</th>
+      <td>0.015967</td>
+      <td>0.022662</td>
+      <td>0.042710</td>
+      <td>0.151704</td>
+      <td>-0.007309</td>
+    </tr>
+    <tr>
+      <th>2006</th>
+      <td>-0.067420</td>
+      <td>0.045008</td>
+      <td>0.006538</td>
+      <td>-0.000067</td>
+      <td>-0.155052</td>
+    </tr>
+    <tr>
+      <th>2007</th>
+      <td>0.064438</td>
+      <td>0.014825</td>
+      <td>0.073109</td>
+      <td>0.202739</td>
+      <td>-0.000901</td>
+    </tr>
+    <tr>
+      <th>2008</th>
+      <td>-0.084118</td>
+      <td>0.002846</td>
+      <td>0.159003</td>
+      <td>0.080683</td>
+      <td>0.351417</td>
+    </tr>
+    <tr>
+      <th>2009</th>
+      <td>0.339859</td>
+      <td>0.151237</td>
+      <td>-0.060329</td>
+      <td>-0.092819</td>
+      <td>-0.164237</td>
+    </tr>
+    <tr>
+      <th>2010</th>
+      <td>-0.066073</td>
+      <td>0.119517</td>
+      <td>0.051802</td>
+      <td>-0.000386</td>
+      <td>0.153621</td>
+    </tr>
+    <tr>
+      <th>2011</th>
+      <td>0.032565</td>
+      <td>0.015253</td>
+      <td>0.089126</td>
+      <td>0.067082</td>
+      <td>-0.299770</td>
+    </tr>
+    <tr>
+      <th>2012</th>
+      <td>0.083043</td>
+      <td>0.032431</td>
+      <td>0.037111</td>
+      <td>0.076830</td>
+      <td>-0.060622</td>
+    </tr>
+    <tr>
+      <th>2013</th>
+      <td>0.158641</td>
+      <td>0.063753</td>
+      <td>-0.003690</td>
+      <td>0.003273</td>
+      <td>0.030478</td>
+    </tr>
+    <tr>
+      <th>2014</th>
+      <td>0.024173</td>
+      <td>-0.068263</td>
+      <td>-0.110608</td>
+      <td>-0.003507</td>
+      <td>-0.013651</td>
+    </tr>
+    <tr>
+      <th>2015</th>
+      <td>-0.022226</td>
+      <td>0.051858</td>
+      <td>0.103951</td>
+      <td>0.013864</td>
+      <td>0.083934</td>
+    </tr>
+    <tr>
+      <th>2016</th>
+      <td>0.077949</td>
+      <td>-0.059151</td>
+      <td>-0.121989</td>
+      <td>-0.008552</td>
+      <td>-0.018173</td>
+    </tr>
+    <tr>
+      <th>2017</th>
+      <td>-0.087912</td>
+      <td>-0.076334</td>
+      <td>0.100932</td>
+      <td>-0.038273</td>
+      <td>0.007228</td>
+    </tr>
+    <tr>
+      <th>2018</th>
+      <td>0.140675</td>
+      <td>0.048635</td>
+      <td>0.044165</td>
+      <td>0.057604</td>
+      <td>0.050381</td>
+    </tr>
+    <tr>
+      <th>2019</th>
+      <td>-0.012805</td>
+      <td>-0.017005</td>
+      <td>0.004608</td>
+      <td>-0.199652</td>
+      <td>0.030855</td>
+    </tr>
+    <tr>
+      <th>2020</th>
+      <td>0.712308</td>
+      <td>0.276804</td>
+      <td>-0.165403</td>
+      <td>0.132956</td>
+      <td>0.142463</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="5" halign="left">EQ Factors</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Value - DJTMNSV</th>
+      <th>Size - DJTMNSS</th>
+      <th>Quality - DJTMNQU</th>
+      <th>Momentum - DJTMNMO</th>
+      <th>Low Beta - DJTMNAB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.073872</td>
+      <td>0.033848</td>
+      <td>0.008022</td>
+      <td>0.012581</td>
+      <td>-0.008529</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.146757</td>
+      <td>0.111505</td>
+      <td>0.153330</td>
+      <td>0.291844</td>
+      <td>0.232533</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.094764</td>
+      <td>0.095148</td>
+      <td>0.022765</td>
+      <td>0.031399</td>
+      <td>-0.014766</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "for asset_class in data.columns.get_level_values(\"asset_class\").unique():\n    print(\"=\" * 100)\n    tsms = TimeSeriesMomentumStrategy(asset_class=asset_class, asset_class_history=data)\n    tsms.execute_backtest()";
+                var nbb_formatted_code = "for asset_class in data.columns.get_level_values(\"asset_class\").unique():\n    print(\"=\" * 100)\n    tsms = TimeSeriesMomentumStrategy(asset_class=asset_class, asset_class_history=data)\n    tsms.execute_backtest()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.35 s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cross-sectional-momentum-strategy">
+<h2>Cross-sectional Momentum Strategy<a class="headerlink" href="#cross-sectional-momentum-strategy" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CrossSectionalMomentumStrategy</span><span class="p">(</span><span class="n">TimeSeriesMomentumStrategy</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Longs 50% of best performing asset in past 12 months in asset class </span>
+<span class="sd">    and Shorts 50% of worst performing asset in past 12 months in asset class for 1 month  </span>
+<span class="sd">    Assumes that all transactions happen on the end of month</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">momentum_signal_period</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">TradingStrategy</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Cross Sectional Momentum Strategy&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">momentum_signal_period</span> <span class="o">=</span> <span class="n">momentum_signal_period</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_asset_history</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_history</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;asset_class&quot;</span><span class="p">)</span>
+                <span class="o">==</span> <span class="n">asset_class</span>
+            <span class="p">]</span>
+        <span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">execute_backtest</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">start_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;2001-12-31&quot;</span><span class="p">,</span>
+        <span class="n">end_date</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;2020-08-31&quot;</span><span class="p">,</span>
+        <span class="n">date_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Contains the actual trading logic &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">start_date</span> <span class="o">=</span> <span class="n">start_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">end_date</span> <span class="o">=</span> <span class="n">end_date</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">date_format</span> <span class="o">=</span> <span class="n">date_format</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">filter_month_end</span><span class="p">(</span><span class="n">df</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">target_asset_history</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_data</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">past_12_month_returns</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span><span class="o">.</span><span class="n">pct_change</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">momentum_signal_period</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">start_date_idx</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date_idx</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="p">]</span>  <span class="c1"># Cumulative returns from past 12 months</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monthly_long_position_returns</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">only_month_end_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">start_date_idx</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">:]</span>
+            <span class="o">.</span><span class="n">pct_change</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span> <span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">end_date_idx</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="p">)</span>  <span class="c1"># End of Month Monthly Long position returns</span>
+
+        <span class="n">long_portfolio_returns</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">past_12_month_returns</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">row</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">monthly_long_position_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>  <span class="c1"># Longs 50% of best performing asset in past 12 months in asset class</span>
+
+        <span class="n">short_portfolio_returns</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">past_12_month_returns</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">(</span><span class="n">row</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">row</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+            <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">monthly_long_position_returns</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+        <span class="p">)</span>  <span class="c1"># Shorts 50% of worst performing asset in past 12 months in asset class</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">long_portfolio_returns</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">short_portfolio_returns</span> <span class="o">*</span> <span class="mf">0.5</span>
+        <span class="p">)</span>  <span class="c1"># Weight portfolios</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_results</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_results</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+            <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">]</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">calendar_year_return</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annualized_return</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Annualized Returns&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_volatility</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+            <span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span><span class="p">])</span>
+                <span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">annualized_volatility</span><span class="p">])</span>
+                <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annualized_volatility</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+            <span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Annualized Volatility&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_sharpe_ratio</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">sharpe_ratio</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Sharpe Ratio (assuming $R_f$ = 0)&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_caption</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">asset_class</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">annual_results</span><span class="p">)</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_returns</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_annualized_volatility</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">asset_class_sharpe_ratio</span><span class="p">,</span>
+            <span class="p">],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Summary&quot;</span><span class="p">]</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "class CrossSectionalMomentumStrategy(TimeSeriesMomentumStrategy):\n    \"\"\"Longs 50% of best performing asset in past 12 months in asset class \n    and Shorts 50% of worst performing asset in past 12 months in asset class for 1 month  \n    Assumes that all transactions happen on the end of month\n    \"\"\"\n\n    def __init__(self, momentum_signal_period: int = 12, **kwargs):\n        TradingStrategy.__init__(\n            self, name=\"Cross Sectional Momentum Strategy\", **kwargs\n        )\n        self.momentum_signal_period = momentum_signal_period\n        self.target_asset_history = self.asset_class_history[\n            self.asset_class_history.columns[\n                self.asset_class_history.columns.get_level_values(\"asset_class\")\n                == asset_class\n            ]\n        ]\n\n    def execute_backtest(\n        self,\n        start_date: str = \"2001-12-31\",\n        end_date: str = \"2020-08-31\",\n        date_format: str = \"%Y-%m-%d\",\n    ):\n        \"\"\"Contains the actual trading logic \"\"\"\n        self.start_date = start_date\n        self.end_date = end_date\n        self.date_format = date_format\n        self.only_month_end_df = self.filter_month_end(df=self.target_asset_history)\n        self.check_data()\n        self.past_12_month_returns = self.only_month_end_df.pct_change(\n            self.momentum_signal_period\n        ).iloc[\n            self.start_date_idx : self.end_date_idx + 1\n        ]  # Cumulative returns from past 12 months\n        self.monthly_long_position_returns = (\n            self.only_month_end_df.iloc[self.start_date_idx - 1 :]\n            .pct_change(1)\n            .iloc[1 : self.end_date_idx + 1]\n        )  # End of Month Monthly Long position returns\n\n        long_portfolio_returns = (\n            self.past_12_month_returns.apply(lambda row: (row == np.max(row)), axis=1)\n            .shift(1)\n            .iloc[1:]\n            * self.monthly_long_position_returns.iloc[1:]\n        ).sum(\n            axis=1\n        )  # Longs 50% of best performing asset in past 12 months in asset class\n\n        short_portfolio_returns = -(\n            self.past_12_month_returns.apply(lambda row: (row == np.min(row)), axis=1)\n            .shift(1)\n            .iloc[1:]\n            * self.monthly_long_position_returns.iloc[1:]\n        ).sum(\n            axis=1\n        )  # Shorts 50% of worst performing asset in past 12 months in asset class\n\n        self.monthly_returns = (\n            long_portfolio_returns * 0.5 + short_portfolio_returns * 0.5\n        )  # Weight portfolios\n        self._results()\n\n    def _results(self):\n        \"\"\"\"\"\"\n        self.annual_results = self.monthly_returns.groupby(\n            [self.monthly_returns.index.year]\n        ).agg([self.calendar_year_return])\n        self.asset_class_annualized_returns = pd.Series(\n            self.annual_results.apply(self.annualized_return, axis=0).values,\n            name=\"Annualized Returns\",\n        )\n        self.asset_class_annualized_volatility = pd.Series(\n            (\n                self.monthly_returns.groupby([self.monthly_returns.index.year])\n                .agg([self.annualized_volatility])\n                .apply(self.annualized_volatility, axis=0)\n            ).values,\n            name=\"Annualized Volatility\",\n        )\n        self.asset_class_sharpe_ratio = pd.Series(\n            self.annual_results.apply(self.sharpe_ratio, axis=0).values,\n            name=\"Sharpe Ratio (assuming $R_f$ = 0)\",\n        )\n        self.annual_results = self.annual_results.style.set_caption(self.asset_class)\n        display(self.annual_results)\n        summary = pd.concat(\n            [\n                self.asset_class_annualized_returns,\n                self.asset_class_annualized_volatility,\n                self.asset_class_sharpe_ratio,\n            ],\n            axis=1,\n        ).transpose()\n        summary.columns = [\"Summary\"]\n        display(summary)";
+                var nbb_formatted_code = "class CrossSectionalMomentumStrategy(TimeSeriesMomentumStrategy):\n    \"\"\"Longs 50% of best performing asset in past 12 months in asset class \n    and Shorts 50% of worst performing asset in past 12 months in asset class for 1 month  \n    Assumes that all transactions happen on the end of month\n    \"\"\"\n\n    def __init__(self, momentum_signal_period: int = 12, **kwargs):\n        TradingStrategy.__init__(\n            self, name=\"Cross Sectional Momentum Strategy\", **kwargs\n        )\n        self.momentum_signal_period = momentum_signal_period\n        self.target_asset_history = self.asset_class_history[\n            self.asset_class_history.columns[\n                self.asset_class_history.columns.get_level_values(\"asset_class\")\n                == asset_class\n            ]\n        ]\n\n    def execute_backtest(\n        self,\n        start_date: str = \"2001-12-31\",\n        end_date: str = \"2020-08-31\",\n        date_format: str = \"%Y-%m-%d\",\n    ):\n        \"\"\"Contains the actual trading logic \"\"\"\n        self.start_date = start_date\n        self.end_date = end_date\n        self.date_format = date_format\n        self.only_month_end_df = self.filter_month_end(df=self.target_asset_history)\n        self.check_data()\n        self.past_12_month_returns = self.only_month_end_df.pct_change(\n            self.momentum_signal_period\n        ).iloc[\n            self.start_date_idx : self.end_date_idx + 1\n        ]  # Cumulative returns from past 12 months\n        self.monthly_long_position_returns = (\n            self.only_month_end_df.iloc[self.start_date_idx - 1 :]\n            .pct_change(1)\n            .iloc[1 : self.end_date_idx + 1]\n        )  # End of Month Monthly Long position returns\n\n        long_portfolio_returns = (\n            self.past_12_month_returns.apply(lambda row: (row == np.max(row)), axis=1)\n            .shift(1)\n            .iloc[1:]\n            * self.monthly_long_position_returns.iloc[1:]\n        ).sum(\n            axis=1\n        )  # Longs 50% of best performing asset in past 12 months in asset class\n\n        short_portfolio_returns = -(\n            self.past_12_month_returns.apply(lambda row: (row == np.min(row)), axis=1)\n            .shift(1)\n            .iloc[1:]\n            * self.monthly_long_position_returns.iloc[1:]\n        ).sum(\n            axis=1\n        )  # Shorts 50% of worst performing asset in past 12 months in asset class\n\n        self.monthly_returns = (\n            long_portfolio_returns * 0.5 + short_portfolio_returns * 0.5\n        )  # Weight portfolios\n        self._results()\n\n    def _results(self):\n        \"\"\"\"\"\"\n        self.annual_results = self.monthly_returns.groupby(\n            [self.monthly_returns.index.year]\n        ).agg([self.calendar_year_return])\n        self.asset_class_annualized_returns = pd.Series(\n            self.annual_results.apply(self.annualized_return, axis=0).values,\n            name=\"Annualized Returns\",\n        )\n        self.asset_class_annualized_volatility = pd.Series(\n            (\n                self.monthly_returns.groupby([self.monthly_returns.index.year])\n                .agg([self.annualized_volatility])\n                .apply(self.annualized_volatility, axis=0)\n            ).values,\n            name=\"Annualized Volatility\",\n        )\n        self.asset_class_sharpe_ratio = pd.Series(\n            self.annual_results.apply(self.sharpe_ratio, axis=0).values,\n            name=\"Sharpe Ratio (assuming $R_f$ = 0)\",\n        )\n        self.annual_results = self.annual_results.style.set_caption(self.asset_class)\n        display(self.annual_results)\n        summary = pd.concat(\n            [\n                self.asset_class_annualized_returns,\n                self.asset_class_annualized_volatility,\n                self.asset_class_sharpe_ratio,\n            ],\n            axis=1,\n        ).transpose()\n        summary.columns = [\"Summary\"]\n        display(summary)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 63 ms
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">asset_class</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;asset_class&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">csms</span> <span class="o">=</span> <span class="n">CrossSectionalMomentumStrategy</span><span class="p">(</span>
+        <span class="n">asset_class</span><span class="o">=</span><span class="n">asset_class</span><span class="p">,</span> <span class="n">asset_class_history</span><span class="o">=</span><span class="n">data</span>
+    <span class="p">)</span>
+    <span class="n">csms</span><span class="o">.</span><span class="n">execute_backtest</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_33ee80fc_f5a1_11ea_87db_acde48001122" ><caption>Equity Idx</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >calendar_year_return</th>    </tr>    <tr>        <th class="index_name level0" >Date</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row0" class="row_heading level0 row0" >2002</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row0_col0" class="data row0 col0" >0.099955</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row1" class="row_heading level0 row1" >2003</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row1_col0" class="data row1 col0" >0.175910</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row2" class="row_heading level0 row2" >2004</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row2_col0" class="data row2 col0" >0.076786</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row3" class="row_heading level0 row3" >2005</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row3_col0" class="data row3 col0" >0.200651</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row4" class="row_heading level0 row4" >2006</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row4_col0" class="data row4 col0" >0.306280</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row5" class="row_heading level0 row5" >2007</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row5_col0" class="data row5 col0" >0.417425</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row6" class="row_heading level0 row6" >2008</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row6_col0" class="data row6 col0" >-0.139295</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row7" class="row_heading level0 row7" >2009</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row7_col0" class="data row7 col0" >-0.365068</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row8" class="row_heading level0 row8" >2010</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row8_col0" class="data row8 col0" >-0.063702</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row9" class="row_heading level0 row9" >2011</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row9_col0" class="data row9 col0" >-0.007779</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row10" class="row_heading level0 row10" >2012</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row10_col0" class="data row10 col0" >-0.043413</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row11" class="row_heading level0 row11" >2013</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row11_col0" class="data row11 col0" >0.113152</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row12" class="row_heading level0 row12" >2014</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row12_col0" class="data row12 col0" >-0.019550</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row13" class="row_heading level0 row13" >2015</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row13_col0" class="data row13 col0" >0.138860</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row14" class="row_heading level0 row14" >2016</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row14_col0" class="data row14 col0" >-0.247295</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row15" class="row_heading level0 row15" >2017</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row15_col0" class="data row15 col0" >0.008662</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row16" class="row_heading level0 row16" >2018</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row16_col0" class="data row16 col0" >-0.214263</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row17" class="row_heading level0 row17" >2019</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row17_col0" class="data row17 col0" >-0.030656</td>
+            </tr>
+            <tr>
+                        <th id="T_33ee80fc_f5a1_11ea_87db_acde48001122level0_row18" class="row_heading level0 row18" >2020</th>
+                        <td id="T_33ee80fc_f5a1_11ea_87db_acde48001122row18_col0" class="data row18 col0" >0.345217</td>
+            </tr>
+    </tbody></table></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.019892</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.163184</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.023065</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_34072c42_f5a1_11ea_87db_acde48001122" ><caption>Credit</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >calendar_year_return</th>    </tr>    <tr>        <th class="index_name level0" >Date</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row0" class="row_heading level0 row0" >2002</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row0_col0" class="data row0 col0" >0.062447</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row1" class="row_heading level0 row1" >2003</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row1_col0" class="data row1 col0" >-0.020326</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row2" class="row_heading level0 row2" >2004</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row2_col0" class="data row2 col0" >0.034811</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row3" class="row_heading level0 row3" >2005</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row3_col0" class="data row3 col0" >0.003829</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row4" class="row_heading level0 row4" >2006</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row4_col0" class="data row4 col0" >0.036200</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row5" class="row_heading level0 row5" >2007</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row5_col0" class="data row5 col0" >0.013033</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row6" class="row_heading level0 row6" >2008</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row6_col0" class="data row6 col0" >0.114485</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row7" class="row_heading level0 row7" >2009</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row7_col0" class="data row7 col0" >-0.156851</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row8" class="row_heading level0 row8" >2010</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row8_col0" class="data row8 col0" >0.038716</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row9" class="row_heading level0 row9" >2011</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row9_col0" class="data row9 col0" >-0.028698</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row10" class="row_heading level0 row10" >2012</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row10_col0" class="data row10 col0" >-0.006391</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row11" class="row_heading level0 row11" >2013</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row11_col0" class="data row11 col0" >0.057092</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row12" class="row_heading level0 row12" >2014</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row12_col0" class="data row12 col0" >-0.000328</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row13" class="row_heading level0 row13" >2015</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row13_col0" class="data row13 col0" >-0.002702</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row14" class="row_heading level0 row14" >2016</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row14_col0" class="data row14 col0" >0.027312</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row15" class="row_heading level0 row15" >2017</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row15_col0" class="data row15 col0" >-0.016831</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row16" class="row_heading level0 row16" >2018</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row16_col0" class="data row16 col0" >-0.009025</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row17" class="row_heading level0 row17" >2019</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row17_col0" class="data row17 col0" >0.041674</td>
+            </tr>
+            <tr>
+                        <th id="T_34072c42_f5a1_11ea_87db_acde48001122level0_row18" class="row_heading level0 row18" >2020</th>
+                        <td id="T_34072c42_f5a1_11ea_87db_acde48001122row18_col0" class="data row18 col0" >0.004932</td>
+            </tr>
+    </tbody></table></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.008773</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.074868</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.038750</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_341fe692_f5a1_11ea_87db_acde48001122" ><caption>Govt Bond</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >calendar_year_return</th>    </tr>    <tr>        <th class="index_name level0" >Date</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row0" class="row_heading level0 row0" >2002</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row0_col0" class="data row0 col0" >0.014456</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row1" class="row_heading level0 row1" >2003</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row1_col0" class="data row1 col0" >-0.020465</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row2" class="row_heading level0 row2" >2004</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row2_col0" class="data row2 col0" >0.000196</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row3" class="row_heading level0 row3" >2005</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row3_col0" class="data row3 col0" >0.008041</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row4" class="row_heading level0 row4" >2006</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row4_col0" class="data row4 col0" >0.013660</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row5" class="row_heading level0 row5" >2007</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row5_col0" class="data row5 col0" >0.053238</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row6" class="row_heading level0 row6" >2008</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row6_col0" class="data row6 col0" >0.012984</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row7" class="row_heading level0 row7" >2009</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row7_col0" class="data row7 col0" >-0.079125</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row8" class="row_heading level0 row8" >2010</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row8_col0" class="data row8 col0" >0.031045</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row9" class="row_heading level0 row9" >2011</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row9_col0" class="data row9 col0" >-0.068423</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row10" class="row_heading level0 row10" >2012</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row10_col0" class="data row10 col0" >-0.023359</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row11" class="row_heading level0 row11" >2013</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row11_col0" class="data row11 col0" >-0.007865</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row12" class="row_heading level0 row12" >2014</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row12_col0" class="data row12 col0" >0.039288</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row13" class="row_heading level0 row13" >2015</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row13_col0" class="data row13 col0" >0.070262</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row14" class="row_heading level0 row14" >2016</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row14_col0" class="data row14 col0" >-0.044730</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row15" class="row_heading level0 row15" >2017</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row15_col0" class="data row15 col0" >0.049316</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row16" class="row_heading level0 row16" >2018</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row16_col0" class="data row16 col0" >-0.030712</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row17" class="row_heading level0 row17" >2019</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row17_col0" class="data row17 col0" >-0.015553</td>
+            </tr>
+            <tr>
+                        <th id="T_341fe692_f5a1_11ea_87db_acde48001122level0_row18" class="row_heading level0 row18" >2020</th>
+                        <td id="T_341fe692_f5a1_11ea_87db_acde48001122row18_col0" class="data row18 col0" >-0.049961</td>
+            </tr>
+    </tbody></table></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>-0.003329</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.097833</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>-0.018946</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_343b3c8a_f5a1_11ea_87db_acde48001122" ><caption>Currencies</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >calendar_year_return</th>    </tr>    <tr>        <th class="index_name level0" >Date</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row0" class="row_heading level0 row0" >2002</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row0_col0" class="data row0 col0" >0.024058</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row1" class="row_heading level0 row1" >2003</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row1_col0" class="data row1 col0" >0.094440</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row2" class="row_heading level0 row2" >2004</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row2_col0" class="data row2 col0" >-0.013657</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row3" class="row_heading level0 row3" >2005</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row3_col0" class="data row3 col0" >-0.036125</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row4" class="row_heading level0 row4" >2006</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row4_col0" class="data row4 col0" >-0.001895</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row5" class="row_heading level0 row5" >2007</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row5_col0" class="data row5 col0" >0.000725</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row6" class="row_heading level0 row6" >2008</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row6_col0" class="data row6 col0" >0.099092</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row7" class="row_heading level0 row7" >2009</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row7_col0" class="data row7 col0" >-0.106025</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row8" class="row_heading level0 row8" >2010</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row8_col0" class="data row8 col0" >-0.049425</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row9" class="row_heading level0 row9" >2011</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row9_col0" class="data row9 col0" >-0.041039</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row10" class="row_heading level0 row10" >2012</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row10_col0" class="data row10 col0" >-0.032922</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row11" class="row_heading level0 row11" >2013</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row11_col0" class="data row11 col0" >0.090975</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row12" class="row_heading level0 row12" >2014</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row12_col0" class="data row12 col0" >-0.011465</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row13" class="row_heading level0 row13" >2015</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row13_col0" class="data row13 col0" >-0.009285</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row14" class="row_heading level0 row14" >2016</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row14_col0" class="data row14 col0" >0.059619</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row15" class="row_heading level0 row15" >2017</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row15_col0" class="data row15 col0" >0.029123</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row16" class="row_heading level0 row16" >2018</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row16_col0" class="data row16 col0" >-0.028743</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row17" class="row_heading level0 row17" >2019</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row17_col0" class="data row17 col0" >-0.014778</td>
+            </tr>
+            <tr>
+                        <th id="T_343b3c8a_f5a1_11ea_87db_acde48001122level0_row18" class="row_heading level0 row18" >2020</th>
+                        <td id="T_343b3c8a_f5a1_11ea_87db_acde48001122row18_col0" class="data row18 col0" >-0.036071</td>
+            </tr>
+    </tbody></table></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>-0.000491</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.070615</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>-0.002142</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_3454808c_f5a1_11ea_87db_acde48001122" ><caption>Commod</caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >calendar_year_return</th>    </tr>    <tr>        <th class="index_name level0" >Date</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row0" class="row_heading level0 row0" >2002</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row0_col0" class="data row0 col0" >-0.044172</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row1" class="row_heading level0 row1" >2003</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row1_col0" class="data row1 col0" >-0.148021</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row2" class="row_heading level0 row2" >2004</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row2_col0" class="data row2 col0" >0.005226</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row3" class="row_heading level0 row3" >2005</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row3_col0" class="data row3 col0" >0.168395</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row4" class="row_heading level0 row4" >2006</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row4_col0" class="data row4 col0" >0.228971</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row5" class="row_heading level0 row5" >2007</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row5_col0" class="data row5 col0" >0.049709</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row6" class="row_heading level0 row6" >2008</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row6_col0" class="data row6 col0" >0.356241</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row7" class="row_heading level0 row7" >2009</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row7_col0" class="data row7 col0" >-0.290566</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row8" class="row_heading level0 row8" >2010</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row8_col0" class="data row8 col0" >0.018869</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row9" class="row_heading level0 row9" >2011</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row9_col0" class="data row9 col0" >0.036266</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row10" class="row_heading level0 row10" >2012</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row10_col0" class="data row10 col0" >-0.201700</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row11" class="row_heading level0 row11" >2013</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row11_col0" class="data row11 col0" >0.165785</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row12" class="row_heading level0 row12" >2014</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row12_col0" class="data row12 col0" >0.110457</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row13" class="row_heading level0 row13" >2015</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row13_col0" class="data row13 col0" >0.035128</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row14" class="row_heading level0 row14" >2016</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row14_col0" class="data row14 col0" >-0.308718</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row15" class="row_heading level0 row15" >2017</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row15_col0" class="data row15 col0" >0.019870</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row16" class="row_heading level0 row16" >2018</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row16_col0" class="data row16 col0" >-0.112933</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row17" class="row_heading level0 row17" >2019</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row17_col0" class="data row17 col0" >-0.099779</td>
+            </tr>
+            <tr>
+                        <th id="T_3454808c_f5a1_11ea_87db_acde48001122level0_row18" class="row_heading level0 row18" >2020</th>
+                        <td id="T_3454808c_f5a1_11ea_87db_acde48001122row18_col0" class="data row18 col0" >-0.442822</td>
+            </tr>
+    </tbody></table></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>-0.044557</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.381381</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>-0.053051</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>====================================================================================================
+</pre></div>
+</div>
+<div class="output text_html"><style  type="text/css" >
+</style><table id="T_34736574_f5a1_11ea_87db_acde48001122" ><caption>EQ Factors </caption><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >calendar_year_return</th>    </tr>    <tr>        <th class="index_name level0" >Date</th>        <th class="blank" ></th>    </tr></thead><tbody>
+                <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row0" class="row_heading level0 row0" >2002</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row0_col0" class="data row0 col0" >0.000000</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row1" class="row_heading level0 row1" >2003</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row1_col0" class="data row1 col0" >-0.021777</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row2" class="row_heading level0 row2" >2004</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row2_col0" class="data row2 col0" >-0.035077</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row3" class="row_heading level0 row3" >2005</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row3_col0" class="data row3 col0" >0.023022</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row4" class="row_heading level0 row4" >2006</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row4_col0" class="data row4 col0" >-0.033745</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row5" class="row_heading level0 row5" >2007</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row5_col0" class="data row5 col0" >0.061733</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row6" class="row_heading level0 row6" >2008</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row6_col0" class="data row6 col0" >0.018270</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row7" class="row_heading level0 row7" >2009</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row7_col0" class="data row7 col0" >0.016557</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row8" class="row_heading level0 row8" >2010</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row8_col0" class="data row8 col0" >-0.011831</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row9" class="row_heading level0 row9" >2011</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row9_col0" class="data row9 col0" >-0.175542</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row10" class="row_heading level0 row10" >2012</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row10_col0" class="data row10 col0" >0.014983</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row11" class="row_heading level0 row11" >2013</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row11_col0" class="data row11 col0" >0.110600</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row12" class="row_heading level0 row12" >2014</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row12_col0" class="data row12 col0" >-0.079264</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row13" class="row_heading level0 row13" >2015</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row13_col0" class="data row13 col0" >0.058069</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row14" class="row_heading level0 row14" >2016</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row14_col0" class="data row14 col0" >-0.072724</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row15" class="row_heading level0 row15" >2017</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row15_col0" class="data row15 col0" >0.009679</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row16" class="row_heading level0 row16" >2018</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row16_col0" class="data row16 col0" >0.037166</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row17" class="row_heading level0 row17" >2019</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row17_col0" class="data row17 col0" >0.026270</td>
+            </tr>
+            <tr>
+                        <th id="T_34736574_f5a1_11ea_87db_acde48001122level0_row18" class="row_heading level0 row18" >2020</th>
+                        <td id="T_34736574_f5a1_11ea_87db_acde48001122row18_col0" class="data row18 col0" >0.427873</td>
+            </tr>
+    </tbody></table></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Summary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Annualized Returns</th>
+      <td>0.014129</td>
+    </tr>
+    <tr>
+      <th>Annualized Volatility</th>
+      <td>0.228858</td>
+    </tr>
+    <tr>
+      <th>Sharpe Ratio (assuming $R_f$ = 0)</th>
+      <td>0.028603</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "for asset_class in data.columns.get_level_values(\"asset_class\").unique():\n    print(\"=\" * 100)\n    csms = CrossSectionalMomentumStrategy(\n        asset_class=asset_class, asset_class_history=data\n    )\n    csms.execute_backtest()";
+                var nbb_formatted_code = "for asset_class in data.columns.get_level_values(\"asset_class\").unique():\n    print(\"=\" * 100)\n    csms = CrossSectionalMomentumStrategy(\n        asset_class=asset_class, asset_class_history=data\n    )\n    csms.execute_backtest()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.04 s
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="paper-review-5.html" title="previous page">Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects</a>
+    <a class='right-next' id="next-link" href="project2.html" title="next page">Project 2: Carry</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

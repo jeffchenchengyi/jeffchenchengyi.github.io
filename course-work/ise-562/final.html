@@ -1,0 +1,2032 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Final Project &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-562/final.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-562/final.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Final Project" />
+<meta property="og:description" content="Final Project  By: Chengyi (Jeff) Chen  %load_ext autotime %load_ext nb_black %matplotlib inline %config InlineBackend.figure_format = &#39;retina&#39;  # Graphing impo" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-562/final.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tornado-diagrams-for-strategies">
+   1) Tornado Diagrams for Strategies
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensitivity-analysis">
+   2) Sensitivity Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#value-of-free-clairvoyance">
+   3) Value of Free Clairvoyance
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="final-project">
+<h1>Final Project<a class="headerlink" href="#final-project" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+
+<span class="c1"># Graphing</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="c1"># Plotting Design Configs</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
+    <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Verdana&quot;</span><span class="p">,</span>
+    <span class="n">rc</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;axes.axisbelow&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;axes.edgecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;axes.facecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;None&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;axes.grid&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;grid.color&quot;</span><span class="p">:</span> <span class="s2">&quot;lightgrey&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;axes.labelcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;dimgrey&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;axes.spines.right&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;axes.spines.top&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;figure.facecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lines.solid_capstyle&quot;</span><span class="p">:</span> <span class="s2">&quot;round&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;patch.edgecolor&quot;</span><span class="p">:</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;patch.force_edgecolor&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;text.color&quot;</span><span class="p">:</span> <span class="s2">&quot;dimgrey&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;xtick.bottom&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;xtick.color&quot;</span><span class="p">:</span> <span class="s2">&quot;dimgrey&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;xtick.direction&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;xtick.top&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;ytick.color&quot;</span><span class="p">:</span> <span class="s2">&quot;dimgrey&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ytick.direction&quot;</span><span class="p">:</span> <span class="s2">&quot;out&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ytick.left&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;ytick.right&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;figure.dpi&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;figure.figsize&quot;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span>
+    <span class="p">},</span>
+<span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_context</span><span class="p">(</span>
+    <span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;font.size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;axes.titlesize&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;axes.labelsize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">(</span><span class="n">palette</span><span class="o">=</span><span class="s2">&quot;Spectral&quot;</span><span class="p">)</span>
+
+<span class="c1"># General</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+
+<span class="c1"># Ignore warnings LOL</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autotime extension is already loaded. To reload it, use:
+  %reload_ext autotime
+The nb_black extension is already loaded. To reload it, use:
+  %reload_ext nb_black
+time: 6.84 s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n%config InlineBackend.figure_format = 'retina'\n\n# Graphing\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Plotting Design Configs\nsns.set(\n    font=\"Verdana\",\n    rc={\n        \"axes.axisbelow\": False,\n        \"axes.edgecolor\": \"lightgrey\",\n        \"axes.facecolor\": \"None\",\n        \"axes.grid\": True,\n        \"grid.color\": \"lightgrey\",\n        \"axes.labelcolor\": \"dimgrey\",\n        \"axes.spines.right\": False,\n        \"axes.spines.top\": False,\n        \"figure.facecolor\": \"white\",\n        \"lines.solid_capstyle\": \"round\",\n        \"patch.edgecolor\": \"w\",\n        \"patch.force_edgecolor\": True,\n        \"text.color\": \"dimgrey\",\n        \"xtick.bottom\": False,\n        \"xtick.color\": \"dimgrey\",\n        \"xtick.direction\": \"out\",\n        \"xtick.top\": False,\n        \"ytick.color\": \"dimgrey\",\n        \"ytick.direction\": \"out\",\n        \"ytick.left\": False,\n        \"ytick.right\": False,\n        \"figure.dpi\": 100,\n        \"figure.figsize\": (8, 6),\n    },\n)\nsns.set_context(\n    \"notebook\", rc={\"font.size\": 10, \"axes.titlesize\": 12, \"axes.labelsize\": 10}\n)\nsns.color_palette(palette=\"Spectral\")\n\n# General\nimport numpy as np\nimport scipy.stats as sp\nimport pandas as pd\nfrom functools import partial\n\n# Ignore warnings LOL\nimport warnings\n\nwarnings.simplefilter(\"ignore\")";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n%config InlineBackend.figure_format = 'retina'\n\n# Graphing\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\n# Plotting Design Configs\nsns.set(\n    font=\"Verdana\",\n    rc={\n        \"axes.axisbelow\": False,\n        \"axes.edgecolor\": \"lightgrey\",\n        \"axes.facecolor\": \"None\",\n        \"axes.grid\": True,\n        \"grid.color\": \"lightgrey\",\n        \"axes.labelcolor\": \"dimgrey\",\n        \"axes.spines.right\": False,\n        \"axes.spines.top\": False,\n        \"figure.facecolor\": \"white\",\n        \"lines.solid_capstyle\": \"round\",\n        \"patch.edgecolor\": \"w\",\n        \"patch.force_edgecolor\": True,\n        \"text.color\": \"dimgrey\",\n        \"xtick.bottom\": False,\n        \"xtick.color\": \"dimgrey\",\n        \"xtick.direction\": \"out\",\n        \"xtick.top\": False,\n        \"ytick.color\": \"dimgrey\",\n        \"ytick.direction\": \"out\",\n        \"ytick.left\": False,\n        \"ytick.right\": False,\n        \"figure.dpi\": 100,\n        \"figure.figsize\": (8, 6),\n    },\n)\nsns.set_context(\n    \"notebook\", rc={\"font.size\": 10, \"axes.titlesize\": 12, \"axes.labelsize\": 10}\n)\nsns.color_palette(palette=\"Spectral\")\n\n# General\nimport numpy as np\nimport scipy.stats as sp\nimport pandas as pd\nfrom functools import partial\n\n# Ignore warnings LOL\nimport warnings\n\nwarnings.simplefilter(\"ignore\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ρ</span><span class="p">(</span><span class="n">γ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Risk tolerance&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">γ</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 281 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "def \u03c1(\u03b3):\n    \"\"\"Risk tolerance\"\"\"\n    return 1 / \u03b3";
+                var nbb_formatted_code = "def \u03c1(\u03b3):\n    \"\"\"Risk tolerance\"\"\"\n    return 1 / \u03b3";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">r</span><span class="p">(</span><span class="n">γ</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Risk Odds&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 276 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "def r(\u03b3):\n    \"\"\"Risk Odds\"\"\"\n    return np.log(\u03b3)";
+                var nbb_formatted_code = "def r(\u03b3):\n    \"\"\"Risk Odds\"\"\"\n    return np.log(\u03b3)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">γ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assuming user satisifies the Δ property,</span>
+<span class="sd">    calculates the U-values using either a</span>
+<span class="sd">    Piecewise Linear u = a + bx if γ = 0 (Risk-Neutral)</span>
+<span class="sd">    else Exponential u = a + be^(-xγ) U-curve U(x)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)</span>
+<span class="sd">        γ (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [γ &gt; 0: Risk-averse, γ &lt; 0: Risk-seeking]</span>
+<span class="sd">        a (float): Constant for U-curve</span>
+<span class="sd">        b (float): Coefficient for payoff variable</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array:</span>
+<span class="sd">            U-values, Shape = (Number of Risk Aversion Coefficients γ, Number of deals, Number of prospects in each deal)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">2</span>
+    <span class="p">),</span> <span class="s2">&quot;Payoffs require 2 dimensions, first dim is number of deals, second is number of prospects in each deal.&quot;</span>
+    <span class="n">γ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">γ</span><span class="p">])</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span>
+                <span class="n">func1d</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="n">γ</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">x</span> <span class="k">if</span> <span class="n">γ</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span> <span class="o">*</span> <span class="n">γ</span><span class="p">),</span>
+                <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">arr</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+                <span class="n">γ</span><span class="o">=</span><span class="n">γ_i</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">γ_i</span> <span class="ow">in</span> <span class="n">γ</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 627 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "def u(x, \u03b3: np.array = np.array([0.0]), a: float = 0.0, b: float = 1.0):\n    \"\"\"Assuming user satisifies the \u0394 property, \n    calculates the U-values using either a \n    Piecewise Linear u = a + bx if \u03b3 = 0 (Risk-Neutral) \n    else Exponential u = a + be^(-x\u03b3) U-curve U(x)\n    \n    Args:\n        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)\n        \u03b3 (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [\u03b3 > 0: Risk-averse, \u03b3 < 0: Risk-seeking]\n        a (float): Constant for U-curve\n        b (float): Coefficient for payoff variable\n        \n    Returns:\n        np.array:\n            U-values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n    \"\"\"\n    assert (\n        x.ndim == 2\n    ), \"Payoffs require 2 dimensions, first dim is number of deals, second is number of prospects in each deal.\"\n    \u03b3 = np.array([\u03b3]) if np.isscalar(\u03b3) else np.array(\u03b3)\n    return np.array(\n        [\n            np.apply_along_axis(\n                func1d=lambda x, \u03b3=\u03b3: a + b * x if \u03b3 == 0 else a + b * np.exp(-x * \u03b3),\n                axis=-1,\n                arr=x,\n                \u03b3=\u03b3_i,\n            )\n            for \u03b3_i in \u03b3\n        ]\n    )";
+                var nbb_formatted_code = "def u(x, \u03b3: np.array = np.array([0.0]), a: float = 0.0, b: float = 1.0):\n    \"\"\"Assuming user satisifies the \u0394 property,\n    calculates the U-values using either a\n    Piecewise Linear u = a + bx if \u03b3 = 0 (Risk-Neutral)\n    else Exponential u = a + be^(-x\u03b3) U-curve U(x)\n\n    Args:\n        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)\n        \u03b3 (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [\u03b3 > 0: Risk-averse, \u03b3 < 0: Risk-seeking]\n        a (float): Constant for U-curve\n        b (float): Coefficient for payoff variable\n\n    Returns:\n        np.array:\n            U-values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n    \"\"\"\n    assert (\n        x.ndim == 2\n    ), \"Payoffs require 2 dimensions, first dim is number of deals, second is number of prospects in each deal.\"\n    \u03b3 = np.array([\u03b3]) if np.isscalar(\u03b3) else np.array(\u03b3)\n    return np.array(\n        [\n            np.apply_along_axis(\n                func1d=lambda x, \u03b3=\u03b3: a + b * x if \u03b3 == 0 else a + b * np.exp(-x * \u03b3),\n                axis=-1,\n                arr=x,\n                \u03b3=\u03b3_i,\n            )\n            for \u03b3_i in \u03b3\n        ]\n    )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">eu</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assuming user satisifies the Δ property, calculates the</span>
+<span class="sd">    hadamard product of the u values matrix and probabilities</span>
+<span class="sd">    matrix (respective probabilities associated with each</span>
+<span class="sd">    prospect in the u matrix)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        u (np.array): U-values matrix, Shape = (Number of Risk Aversion Coefficients γ, Number of deals, Number of prospects in each deal)</span>
+<span class="sd">        p (np.array): Probabilities of each prospect matrix, Shape = (Number of Risk Aversion Coefficients γ, Number of deals, Number of prospects in each deal)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array:</span>
+<span class="sd">            E-values, Shape = (Number of Risk Aversion Coefficients γ, Number of deals)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">u</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="n">shape</span>
+    <span class="p">),</span> <span class="s2">&quot;U-values matrix must be the same shape as the probabilities matrix.&quot;</span>
+
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">u</span><span class="o">.</span><span class="n">ndim</span> <span class="o">==</span> <span class="mi">3</span>
+    <span class="p">),</span> <span class="s2">&quot;Both matrices must have 3 dimensions, Shape = (Number of Risk Aversion Coefficients γ, Number of deals, Number of prospects in each deal).&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">u</span> <span class="o">*</span> <span class="n">p</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 405 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "def eu(u, p):\n    \"\"\"Assuming user satisifies the \u0394 property, calculates the \n    hadamard product of the u values matrix and probabilities \n    matrix (respective probabilities associated with each \n    prospect in the u matrix)\n    \n    Args:\n        u (np.array): U-values matrix, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n        p (np.array): Probabilities of each prospect matrix, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n        \n    Returns:\n        np.array:\n            E-values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals) \n    \"\"\"\n    assert (\n        u.shape == p.shape\n    ), \"U-values matrix must be the same shape as the probabilities matrix.\"\n\n    assert (\n        u.ndim == 3\n    ), \"Both matrices must have 3 dimensions, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal).\"\n\n    return np.sum(u * p, axis=-1)";
+                var nbb_formatted_code = "def eu(u, p):\n    \"\"\"Assuming user satisifies the \u0394 property, calculates the\n    hadamard product of the u values matrix and probabilities\n    matrix (respective probabilities associated with each\n    prospect in the u matrix)\n\n    Args:\n        u (np.array): U-values matrix, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n        p (np.array): Probabilities of each prospect matrix, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n\n    Returns:\n        np.array:\n            E-values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    \"\"\"\n    assert (\n        u.shape == p.shape\n    ), \"U-values matrix must be the same shape as the probabilities matrix.\"\n\n    assert (\n        u.ndim == 3\n    ), \"Both matrices must have 3 dimensions, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal).\"\n\n    return np.sum(u * p, axis=-1)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">u_inv</span><span class="p">(</span><span class="n">eu</span><span class="p">,</span> <span class="n">γ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span> <span class="n">a</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Piecewise Inverse of Linear if γ = 0 (Risk-Neutral)</span>
+<span class="sd">    else Inverse of Exponential U-curve Certain equivalent</span>
+<span class="sd">    function U^{-1}(x)</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        eu (np.array): E[U-Values] / Expectation over u-values, AKA E-values, Shape = (Number of Risk Aversion Coefficients γ, Number of deals)</span>
+<span class="sd">        γ (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [γ &gt; 0: Risk-averse, γ &lt; 0: Risk-seeking]</span>
+<span class="sd">        a (float): Constant for U-curve</span>
+<span class="sd">        b (float): Coefficient for payoff variable</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array:</span>
+<span class="sd">             Certainty Equivalent values, Shape = (Number of Risk Aversion Coefficients γ, Number of deals)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">γ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">γ</span><span class="p">])</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">eu_i</span><span class="p">,</span> <span class="n">γ_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">eu</span><span class="p">,</span> <span class="n">γ</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">γ_i</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">alltrue</span><span class="p">(</span>
+                <span class="n">eu_i</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="p">),</span> <span class="s2">&quot;E[U-Values] / Expectation over u-values must be positive for γ &gt; 0 and γ &lt; 0 in order for inverse of Exponential U-curve to work.&quot;</span>
+
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">eu</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">γ</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="p">),</span> <span class="s2">&quot;E-values first dimension must be the same as γ first dimension for inverse operation.&quot;</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="nb">list</span><span class="p">(</span>
+                <span class="nb">map</span><span class="p">(</span>
+                    <span class="k">lambda</span> <span class="n">eu</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="n">γ_i</span><span class="p">:</span> <span class="p">(</span><span class="n">eu</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">/</span> <span class="n">b</span> <span class="k">if</span> <span class="n">γ</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">γ</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">eu</span><span class="p">),</span>
+                    <span class="n">eu_i</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">eu_i</span><span class="p">,</span> <span class="n">γ_i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">eu</span><span class="p">,</span> <span class="n">γ</span><span class="p">)</span>
+        <span class="p">]</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 762 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "def u_inv(eu, \u03b3: np.array = np.array([0.0]), a: float = 0, b: float = 1):\n    \"\"\"Piecewise Inverse of Linear if \u03b3 = 0 (Risk-Neutral) \n    else Inverse of Exponential U-curve Certain equivalent \n    function U^{-1}(x)\n    \n    Args:\n        eu (np.array): E[U-Values] / Expectation over u-values, AKA E-values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n        \u03b3 (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [\u03b3 > 0: Risk-averse, \u03b3 < 0: Risk-seeking]\n        a (float): Constant for U-curve\n        b (float): Coefficient for payoff variable\n        \n    Returns:\n        np.array:\n             Certainty Equivalent values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    \"\"\"\n    \u03b3 = np.array([\u03b3]) if np.isscalar(\u03b3) else np.array(\u03b3)\n\n    for eu_i, \u03b3_i in zip(eu, \u03b3):\n        if not np.isclose(\u03b3_i, 0):\n            assert np.alltrue(\n                eu_i > 0\n            ), \"E[U-Values] / Expectation over u-values must be positive for \u03b3 > 0 and \u03b3 < 0 in order for inverse of Exponential U-curve to work.\"\n\n    assert (\n        eu.shape[0] == \u03b3.shape[0]\n    ), \"E-values first dimension must be the same as \u03b3 first dimension for inverse operation.\"\n\n    return np.array(\n        [\n            list(\n                map(\n                    lambda eu, \u03b3=\u03b3_i: (eu - a) / b if \u03b3 == 0 else -(1 / \u03b3) * np.log(eu),\n                    eu_i,\n                )\n            )\n            for eu_i, \u03b3_i in zip(eu, \u03b3)\n        ]\n    )";
+                var nbb_formatted_code = "def u_inv(eu, \u03b3: np.array = np.array([0.0]), a: float = 0, b: float = 1):\n    \"\"\"Piecewise Inverse of Linear if \u03b3 = 0 (Risk-Neutral)\n    else Inverse of Exponential U-curve Certain equivalent\n    function U^{-1}(x)\n\n    Args:\n        eu (np.array): E[U-Values] / Expectation over u-values, AKA E-values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n        \u03b3 (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [\u03b3 > 0: Risk-averse, \u03b3 < 0: Risk-seeking]\n        a (float): Constant for U-curve\n        b (float): Coefficient for payoff variable\n\n    Returns:\n        np.array:\n             Certainty Equivalent values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    \"\"\"\n    \u03b3 = np.array([\u03b3]) if np.isscalar(\u03b3) else np.array(\u03b3)\n\n    for eu_i, \u03b3_i in zip(eu, \u03b3):\n        if not np.isclose(\u03b3_i, 0):\n            assert np.alltrue(\n                eu_i > 0\n            ), \"E[U-Values] / Expectation over u-values must be positive for \u03b3 > 0 and \u03b3 < 0 in order for inverse of Exponential U-curve to work.\"\n\n    assert (\n        eu.shape[0] == \u03b3.shape[0]\n    ), \"E-values first dimension must be the same as \u03b3 first dimension for inverse operation.\"\n\n    return np.array(\n        [\n            list(\n                map(\n                    lambda eu, \u03b3=\u03b3_i: (eu - a) / b if \u03b3 == 0 else -(1 / \u03b3) * np.log(eu),\n                    eu_i,\n                )\n            )\n            for eu_i, \u03b3_i in zip(eu, \u03b3)\n        ]\n    )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">certainty_equivalent_values_calculator</span><span class="p">(</span>
+    <span class="n">u</span><span class="p">,</span>
+    <span class="n">u_inv</span><span class="p">,</span>
+    <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">p</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">N</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="n">payout_lb</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span>
+    <span class="n">payout_ub</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">100.0</span><span class="p">,</span>
+    <span class="n">γ</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.0</span><span class="p">]),</span>
+<span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Assuming user satisifies the Δ property, calculates the Certainty Equivalent values for a given</span>
+<span class="sd">    payoff matrix `x` and probability matrix `p`. If both matrices</span>
+<span class="sd">    are not provided, random matrices will be sampled to simulate</span>
+<span class="sd">    calculations.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        u (function): U-curve function</span>
+<span class="sd">        u_inv (function): Inverse U-curve function</span>
+<span class="sd">        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)</span>
+<span class="sd">        p (np.array): Probabilities of each prospect matrix, Shape = (Number of deals, Number of prospects in each deal)</span>
+<span class="sd">        N (int): Number of prospects</span>
+<span class="sd">        payout_lb (float): Lower Bound of Payout for simulation, Default = 0.0</span>
+<span class="sd">        payout_ub (float): Upper Bound of Payout for simulation, Default = 100.0</span>
+<span class="sd">        γ (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [γ &gt; 0: Risk-averse, γ &lt; 0: Risk-seeking]</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        np.array:</span>
+<span class="sd">            Certainty Equivalent values, Shape = (Number of Risk Aversion Coefficients γ, Number of deals)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">γ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">γ</span><span class="p">])</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">isscalar</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">γ</span><span class="p">)</span>
+
+    <span class="c1"># Case 1: Simulator - Both x and p arent provided</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="c1"># Preferential probabilities for each prospect</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">dirichlet</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="p">),</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># Payouts for each prospect</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">payout_lb</span><span class="p">,</span> <span class="n">payout_ub</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">N</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="c1"># Case 2: Simulator - Only payouts provided</span>
+    <span class="k">elif</span> <span class="n">p</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="c1"># Payouts for each prospect</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">payout_lb</span><span class="p">,</span> <span class="n">payout_ub</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Case 3: Simulator - Only probabilities provided</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+        <span class="c1"># Preferential probabilities for each prospect</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">dirichlet</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="n">size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Case 4: Calculator - Both are provided</span>
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="k">pass</span>
+
+    <span class="c1"># Check that payoffs and probability assignments are the same shape</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="n">shape</span>
+    <span class="p">),</span> <span class="s2">&quot;Payoffs `x` and Probabilities `p` must be the same shape=(Number of deals, Number of prospects in each deal).&quot;</span>
+
+    <span class="c1"># Calculates U-values Shape = (Number of Risk Aversion Coefficients γ, Number of deals, Number of prospects in each deal)</span>
+    <span class="n">u_values</span> <span class="o">=</span> <span class="n">u</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="n">γ</span><span class="p">)</span>
+
+    <span class="c1"># Reshape p to match U-values shape</span>
+    <span class="n">p_reshaped</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">p</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">u_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+
+    <span class="c1"># Expectation of U values Shape = (Number of Risk Aversion Coefficients γ, Number of deals)</span>
+    <span class="n">eu_values</span> <span class="o">=</span> <span class="n">eu</span><span class="p">(</span><span class="n">u</span><span class="o">=</span><span class="n">u_values</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p_reshaped</span><span class="p">)</span>
+
+    <span class="c1"># Certainty equivalent value of deal</span>
+    <span class="n">ce_values</span> <span class="o">=</span> <span class="n">u_inv</span><span class="p">(</span><span class="n">eu_values</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="n">γ</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ce_values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 951 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "def certainty_equivalent_values_calculator(\n    u,\n    u_inv,\n    x: np.array = None,\n    p: np.array = None,\n    N: int = 10,\n    payout_lb: float = 0.0,\n    payout_ub: float = 100.0,\n    \u03b3: np.array = np.array([0.0]),\n):\n    \"\"\"Assuming user satisifies the \u0394 property, calculates the Certainty Equivalent values for a given \n    payoff matrix `x` and probability matrix `p`. If both matrices\n    are not provided, random matrices will be sampled to simulate\n    calculations.\n\n    Args:\n        u (function): U-curve function\n        u_inv (function): Inverse U-curve function\n        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)\n        p (np.array): Probabilities of each prospect matrix, Shape = (Number of deals, Number of prospects in each deal)\n        N (int): Number of prospects\n        payout_lb (float): Lower Bound of Payout for simulation, Default = 0.0\n        payout_ub (float): Upper Bound of Payout for simulation, Default = 100.0\n        \u03b3 (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [\u03b3 > 0: Risk-averse, \u03b3 < 0: Risk-seeking]\n        \n    Returns:\n        np.array:\n            Certainty Equivalent values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    \"\"\"\n    \u03b3 = np.array([\u03b3]) if np.isscalar(\u03b3) else np.array(\u03b3)\n\n    # Case 1: Simulator - Both x and p arent provided\n    if p is None and x is None:\n\n        # Preferential probabilities for each prospect\n        p = np.random.dirichlet(np.ones(N), size=1)\n\n        # Payouts for each prospect\n        x = np.expand_dims(np.random.randint(payout_lb, payout_ub, size=N), axis=0)\n\n    # Case 2: Simulator - Only payouts provided\n    elif p is None:\n\n        # Payouts for each prospect\n        x = np.expand_dims(\n            np.random.randint(payout_lb, payout_ub, size=p.shape[-1]), axis=0\n        )\n\n    # Case 3: Simulator - Only probabilities provided\n    elif x is None:\n\n        # Preferential probabilities for each prospect\n        p = np.random.dirichlet(np.ones(x.shape[-1]), size=1)\n\n    # Case 4: Calculator - Both are provided\n    else:\n\n        pass\n\n    # Check that payoffs and probability assignments are the same shape\n    assert (\n        x.shape == p.shape\n    ), \"Payoffs `x` and Probabilities `p` must be the same shape=(Number of deals, Number of prospects in each deal).\"\n\n    # Calculates U-values Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n    u_values = u(x, \u03b3=\u03b3)\n\n    # Reshape p to match U-values shape\n    p_reshaped = np.array([p for _ in range(u_values.shape[0])])\n\n    # Expectation of U values Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    eu_values = eu(u=u_values, p=p_reshaped)\n\n    # Certainty equivalent value of deal\n    ce_values = u_inv(eu_values, \u03b3=\u03b3)\n\n    return ce_values";
+                var nbb_formatted_code = "def certainty_equivalent_values_calculator(\n    u,\n    u_inv,\n    x: np.array = None,\n    p: np.array = None,\n    N: int = 10,\n    payout_lb: float = 0.0,\n    payout_ub: float = 100.0,\n    \u03b3: np.array = np.array([0.0]),\n):\n    \"\"\"Assuming user satisifies the \u0394 property, calculates the Certainty Equivalent values for a given\n    payoff matrix `x` and probability matrix `p`. If both matrices\n    are not provided, random matrices will be sampled to simulate\n    calculations.\n\n    Args:\n        u (function): U-curve function\n        u_inv (function): Inverse U-curve function\n        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)\n        p (np.array): Probabilities of each prospect matrix, Shape = (Number of deals, Number of prospects in each deal)\n        N (int): Number of prospects\n        payout_lb (float): Lower Bound of Payout for simulation, Default = 0.0\n        payout_ub (float): Upper Bound of Payout for simulation, Default = 100.0\n        \u03b3 (np.array): Risk-aversion coefficients, Shape = (Number of different risk-aversion coefficients for sensitivity analysis), Default = 0.0 (Risk-neutral) [\u03b3 > 0: Risk-averse, \u03b3 < 0: Risk-seeking]\n\n    Returns:\n        np.array:\n            Certainty Equivalent values, Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    \"\"\"\n    \u03b3 = np.array([\u03b3]) if np.isscalar(\u03b3) else np.array(\u03b3)\n\n    # Case 1: Simulator - Both x and p arent provided\n    if p is None and x is None:\n\n        # Preferential probabilities for each prospect\n        p = np.random.dirichlet(np.ones(N), size=1)\n\n        # Payouts for each prospect\n        x = np.expand_dims(np.random.randint(payout_lb, payout_ub, size=N), axis=0)\n\n    # Case 2: Simulator - Only payouts provided\n    elif p is None:\n\n        # Payouts for each prospect\n        x = np.expand_dims(\n            np.random.randint(payout_lb, payout_ub, size=p.shape[-1]), axis=0\n        )\n\n    # Case 3: Simulator - Only probabilities provided\n    elif x is None:\n\n        # Preferential probabilities for each prospect\n        p = np.random.dirichlet(np.ones(x.shape[-1]), size=1)\n\n    # Case 4: Calculator - Both are provided\n    else:\n\n        pass\n\n    # Check that payoffs and probability assignments are the same shape\n    assert (\n        x.shape == p.shape\n    ), \"Payoffs `x` and Probabilities `p` must be the same shape=(Number of deals, Number of prospects in each deal).\"\n\n    # Calculates U-values Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals, Number of prospects in each deal)\n    u_values = u(x, \u03b3=\u03b3)\n\n    # Reshape p to match U-values shape\n    p_reshaped = np.array([p for _ in range(u_values.shape[0])])\n\n    # Expectation of U values Shape = (Number of Risk Aversion Coefficients \u03b3, Number of deals)\n    eu_values = eu(u=u_values, p=p_reshaped)\n\n    # Certainty equivalent value of deal\n    ce_values = u_inv(eu_values, \u03b3=\u03b3)\n\n    return ce_values";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="tornado-diagrams-for-strategies">
+<h2>1) Tornado Diagrams for Strategies<a class="headerlink" href="#tornado-diagrams-for-strategies" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">tornado_diagram</span><span class="p">(</span><span class="n">npv</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+
+    <span class="c1"># Max Swing</span>
+    <span class="n">max_swing</span> <span class="o">=</span> <span class="n">npv</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">npv</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Max Swing Squared</span>
+    <span class="n">max_swing_squared</span> <span class="o">=</span> <span class="n">max_swing</span> <span class="o">**</span> <span class="mi">2</span>
+
+    <span class="c1"># Normalized Max Swing Squared</span>
+    <span class="n">norm_max_swing_squared</span> <span class="o">=</span> <span class="n">max_swing_squared</span> <span class="o">/</span> <span class="nb">sum</span><span class="p">(</span><span class="n">max_swing_squared</span><span class="p">)</span>
+
+    <span class="c1"># Tornado diagram</span>
+    <span class="n">npv</span> <span class="o">=</span> <span class="n">npv</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">norm_max_swing_squared</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span>
+        <span class="n">npv</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">npv</span><span class="p">[</span><span class="s2">&quot;50%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">npv</span><span class="p">[</span><span class="s2">&quot;10%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+        <span class="mf">0.35</span><span class="p">,</span>
+        <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;10%&quot;</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="n">npv</span><span class="p">[</span><span class="s2">&quot;10%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span>
+        <span class="n">npv</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">npv</span><span class="p">[</span><span class="s2">&quot;90%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">-</span> <span class="n">npv</span><span class="p">[</span><span class="s2">&quot;50%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+        <span class="mf">0.35</span><span class="p">,</span>
+        <span class="n">align</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span>
+        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;90%&quot;</span><span class="p">,</span>
+        <span class="n">left</span><span class="o">=</span><span class="n">npv</span><span class="p">[</span><span class="s2">&quot;50%&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Uncertainties&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">npv</span><span class="p">,</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">max_swing</span><span class="p">,</span>
+                    <span class="n">max_swing_squared</span><span class="p">,</span>
+                    <span class="n">norm_max_swing_squared</span><span class="p">,</span>
+                <span class="p">],</span>
+                <span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;D&quot;</span><span class="p">,</span> <span class="s2">&quot;D^2&quot;</span><span class="p">,</span> <span class="s2">&quot;D^2 / sum&quot;</span><span class="p">],</span>
+                <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 845 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 61;
+                var nbb_unformatted_code = "def tornado_diagram(npv, name):\n\n    # Max Swing\n    max_swing = npv.max(axis=1) - npv.min(axis=1)\n\n    # Max Swing Squared\n    max_swing_squared = max_swing ** 2\n\n    # Normalized Max Swing Squared\n    norm_max_swing_squared = max_swing_squared / sum(max_swing_squared)\n\n    # Tornado diagram\n    npv = npv.reindex(norm_max_swing_squared.sort_values().index)\n\n    fig, ax = plt.subplots()\n\n    ax.barh(\n        npv.index,\n        npv[\"50%\"].values - npv[\"10%\"].values,\n        0.35,\n        align=\"center\",\n        label=\"10%\",\n        left=npv[\"10%\"].values,\n    )\n    ax.barh(\n        npv.index,\n        npv[\"90%\"].values - npv[\"50%\"].values,\n        0.35,\n        align=\"center\",\n        label=\"90%\",\n        left=npv[\"50%\"].values,\n    )\n\n    ax.set_ylabel(\"Uncertainties\")\n    ax.set_title(name)\n    ax.legend()\n\n    plt.show()\n\n    return pd.concat([\n        npv,\n        pd.concat(\n        [\n            max_swing,\n            max_swing_squared,\n            norm_max_swing_squared,\n        ],\n        keys=[\"D\", \"D^2\", \"D^2 / sum\"],\n        axis=1,\n    )], axis=1)";
+                var nbb_formatted_code = "def tornado_diagram(npv, name):\n\n    # Max Swing\n    max_swing = npv.max(axis=1) - npv.min(axis=1)\n\n    # Max Swing Squared\n    max_swing_squared = max_swing ** 2\n\n    # Normalized Max Swing Squared\n    norm_max_swing_squared = max_swing_squared / sum(max_swing_squared)\n\n    # Tornado diagram\n    npv = npv.reindex(norm_max_swing_squared.sort_values().index)\n\n    fig, ax = plt.subplots()\n\n    ax.barh(\n        npv.index,\n        npv[\"50%\"].values - npv[\"10%\"].values,\n        0.35,\n        align=\"center\",\n        label=\"10%\",\n        left=npv[\"10%\"].values,\n    )\n    ax.barh(\n        npv.index,\n        npv[\"90%\"].values - npv[\"50%\"].values,\n        0.35,\n        align=\"center\",\n        label=\"90%\",\n        left=npv[\"50%\"].values,\n    )\n\n    ax.set_ylabel(\"Uncertainties\")\n    ax.set_title(name)\n    ax.legend()\n\n    plt.show()\n\n    return pd.concat(\n        [\n            npv,\n            pd.concat(\n                [\n                    max_swing,\n                    max_swing_squared,\n                    norm_max_swing_squared,\n                ],\n                keys=[\"D\", \"D^2\", \"D^2 / sum\"],\n                axis=1,\n            ),\n        ],\n        axis=1,\n    )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 1: No Partnership / No Expansion</span>
+
+<span class="n">strategy1_npv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="mf">7.43</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">11.63</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">14.04</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">2.81</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">,</span> <span class="mf">22.47</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">16.85</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">,</span> <span class="mf">11.23</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">14.04</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">,</span> <span class="mf">14.04</span><span class="p">],</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Initial Demand - DA Corp. markets&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Growth rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Initial Demand - EnzyTech Multiple&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Unit Revenue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Production Cost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Plant Construction cost&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;10%&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="s2">&quot;90%&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">tornado_diagram</span><span class="p">(</span>
+    <span class="n">strategy1_npv</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Tornado Diagram: Strategy 1 - No Partnership / No Expansion&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_10_0.png" src="../../_images/final_10_0.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>10%</th>
+      <th>50%</th>
+      <th>90%</th>
+      <th>D</th>
+      <th>D^2</th>
+      <th>D^2 / sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Initial Demand - EnzyTech Multiple</th>
+      <td>14.04</td>
+      <td>14.04</td>
+      <td>14.04</td>
+      <td>0.00</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Plant Construction cost</th>
+      <td>14.04</td>
+      <td>14.04</td>
+      <td>14.04</td>
+      <td>0.00</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Growth rate</th>
+      <td>11.63</td>
+      <td>14.04</td>
+      <td>14.04</td>
+      <td>2.41</td>
+      <td>5.8081</td>
+      <td>0.012421</td>
+    </tr>
+    <tr>
+      <th>Production Cost</th>
+      <td>16.85</td>
+      <td>14.04</td>
+      <td>11.23</td>
+      <td>5.62</td>
+      <td>31.5844</td>
+      <td>0.067546</td>
+    </tr>
+    <tr>
+      <th>Initial Demand - DA Corp. markets</th>
+      <td>7.43</td>
+      <td>14.04</td>
+      <td>14.04</td>
+      <td>6.61</td>
+      <td>43.6921</td>
+      <td>0.093439</td>
+    </tr>
+    <tr>
+      <th>Unit Revenue</th>
+      <td>2.81</td>
+      <td>14.04</td>
+      <td>22.47</td>
+      <td>19.66</td>
+      <td>386.5156</td>
+      <td>0.826594</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 377 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 62;
+                var nbb_unformatted_code = "# Strategy 1: No Partnership / No Expansion\n\nstrategy1_npv = pd.DataFrame(\n    data=[\n        [7.43, 14.04, 14.04],\n        [11.63, 14.04, 14.04],\n        [14.04, 14.04, 14.04],\n        [2.81, 14.04, 22.47],\n        [16.85, 14.04, 11.23],\n        [14.04, 14.04, 14.04],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(\n    strategy1_npv, name=\"Tornado Diagram: Strategy 1 - No Partnership / No Expansion\"\n)";
+                var nbb_formatted_code = "# Strategy 1: No Partnership / No Expansion\n\nstrategy1_npv = pd.DataFrame(\n    data=[\n        [7.43, 14.04, 14.04],\n        [11.63, 14.04, 14.04],\n        [14.04, 14.04, 14.04],\n        [2.81, 14.04, 22.47],\n        [16.85, 14.04, 11.23],\n        [14.04, 14.04, 14.04],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(\n    strategy1_npv, name=\"Tornado Diagram: Strategy 1 - No Partnership / No Expansion\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 2: No Partnership / Expansion</span>
+
+<span class="n">strategy2_npv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="o">-</span><span class="mf">3.46</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">,</span> <span class="mf">27.93</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">1.19</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">,</span> <span class="mf">9.36</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">7.81</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">],</span>
+        <span class="p">[</span><span class="o">-</span><span class="mf">8.5</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">,</span> <span class="mf">18.6</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">11.44</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">,</span> <span class="mf">4.15</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">8.91</span><span class="p">,</span> <span class="mf">7.81</span><span class="p">,</span> <span class="mf">6.06</span><span class="p">],</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Initial Demand - DA Corp. markets&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Growth rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Initial Demand - EnzyTech Multiple&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Unit Revenue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Production Cost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Plant Construction cost&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;10%&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="s2">&quot;90%&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">tornado_diagram</span><span class="p">(</span>
+    <span class="n">strategy2_npv</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Tornado Diagram: Strategy 2 - No Partnership / Expansion&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_12_0.png" src="../../_images/final_12_0.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>10%</th>
+      <th>50%</th>
+      <th>90%</th>
+      <th>D</th>
+      <th>D^2</th>
+      <th>D^2 / sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Initial Demand - EnzyTech Multiple</th>
+      <td>7.81</td>
+      <td>7.81</td>
+      <td>7.81</td>
+      <td>0.00</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Plant Construction cost</th>
+      <td>8.91</td>
+      <td>7.81</td>
+      <td>6.06</td>
+      <td>2.85</td>
+      <td>8.1225</td>
+      <td>0.004396</td>
+    </tr>
+    <tr>
+      <th>Production Cost</th>
+      <td>11.44</td>
+      <td>7.81</td>
+      <td>4.15</td>
+      <td>7.29</td>
+      <td>53.1441</td>
+      <td>0.028761</td>
+    </tr>
+    <tr>
+      <th>Growth rate</th>
+      <td>1.19</td>
+      <td>7.81</td>
+      <td>9.36</td>
+      <td>8.17</td>
+      <td>66.7489</td>
+      <td>0.036124</td>
+    </tr>
+    <tr>
+      <th>Unit Revenue</th>
+      <td>-8.50</td>
+      <td>7.81</td>
+      <td>18.60</td>
+      <td>27.10</td>
+      <td>734.4100</td>
+      <td>0.397460</td>
+    </tr>
+    <tr>
+      <th>Initial Demand - DA Corp. markets</th>
+      <td>-3.46</td>
+      <td>7.81</td>
+      <td>27.93</td>
+      <td>31.39</td>
+      <td>985.3321</td>
+      <td>0.533258</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 363 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 63;
+                var nbb_unformatted_code = "# Strategy 2: No Partnership / Expansion\n\nstrategy2_npv = pd.DataFrame(\n    data=[\n        [-3.46, 7.81, 27.93],\n        [1.19, 7.81, 9.36],\n        [7.81, 7.81, 7.81],\n        [-8.5, 7.81, 18.6],\n        [11.44, 7.81, 4.15],\n        [8.91, 7.81, 6.06],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(\n    strategy2_npv, name=\"Tornado Diagram: Strategy 2 - No Partnership / Expansion\"\n)";
+                var nbb_formatted_code = "# Strategy 2: No Partnership / Expansion\n\nstrategy2_npv = pd.DataFrame(\n    data=[\n        [-3.46, 7.81, 27.93],\n        [1.19, 7.81, 9.36],\n        [7.81, 7.81, 7.81],\n        [-8.5, 7.81, 18.6],\n        [11.44, 7.81, 4.15],\n        [8.91, 7.81, 6.06],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(\n    strategy2_npv, name=\"Tornado Diagram: Strategy 2 - No Partnership / Expansion\"\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 3: Joint Venture</span>
+
+<span class="n">strategy3_npv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="mf">4.76</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mf">19.1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">7.44</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mf">12.9</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">9.67</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mf">13.38</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">2.38</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mf">19.03</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">14.28</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mf">9.52</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">11.9</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">,</span> <span class="mf">11.9</span><span class="p">],</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Initial Demand - DA Corp. markets&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Growth rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Initial Demand - EnzyTech Multiple&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Unit Revenue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Production Cost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Plant Construction cost&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;10%&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="s2">&quot;90%&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">tornado_diagram</span><span class="p">(</span><span class="n">strategy3_npv</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Tornado Diagram: Strategy 3 - Joint Venture&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_13_0.png" src="../../_images/final_13_0.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>10%</th>
+      <th>50%</th>
+      <th>90%</th>
+      <th>D</th>
+      <th>D^2</th>
+      <th>D^2 / sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Plant Construction cost</th>
+      <td>11.90</td>
+      <td>11.9</td>
+      <td>11.90</td>
+      <td>0.00</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Initial Demand - EnzyTech Multiple</th>
+      <td>9.67</td>
+      <td>11.9</td>
+      <td>13.38</td>
+      <td>3.71</td>
+      <td>13.7641</td>
+      <td>0.025067</td>
+    </tr>
+    <tr>
+      <th>Production Cost</th>
+      <td>14.28</td>
+      <td>11.9</td>
+      <td>9.52</td>
+      <td>4.76</td>
+      <td>22.6576</td>
+      <td>0.041264</td>
+    </tr>
+    <tr>
+      <th>Growth rate</th>
+      <td>7.44</td>
+      <td>11.9</td>
+      <td>12.90</td>
+      <td>5.46</td>
+      <td>29.8116</td>
+      <td>0.054293</td>
+    </tr>
+    <tr>
+      <th>Initial Demand - DA Corp. markets</th>
+      <td>4.76</td>
+      <td>11.9</td>
+      <td>19.10</td>
+      <td>14.34</td>
+      <td>205.6356</td>
+      <td>0.374502</td>
+    </tr>
+    <tr>
+      <th>Unit Revenue</th>
+      <td>2.38</td>
+      <td>11.9</td>
+      <td>19.03</td>
+      <td>16.65</td>
+      <td>277.2225</td>
+      <td>0.504875</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 363 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 64;
+                var nbb_unformatted_code = "# Strategy 3: Joint Venture\n\nstrategy3_npv = pd.DataFrame(\n    data=[\n        [4.76, 11.9, 19.1],\n        [7.44, 11.9, 12.9],\n        [9.67, 11.9, 13.38],\n        [2.38, 11.9, 19.03],\n        [14.28, 11.9, 9.52],\n        [11.9, 11.9, 11.9],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(strategy3_npv, name=\"Tornado Diagram: Strategy 3 - Joint Venture\")";
+                var nbb_formatted_code = "# Strategy 3: Joint Venture\n\nstrategy3_npv = pd.DataFrame(\n    data=[\n        [4.76, 11.9, 19.1],\n        [7.44, 11.9, 12.9],\n        [9.67, 11.9, 13.38],\n        [2.38, 11.9, 19.03],\n        [14.28, 11.9, 9.52],\n        [11.9, 11.9, 11.9],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(strategy3_npv, name=\"Tornado Diagram: Strategy 3 - Joint Venture\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 4: Royalty Partnership</span>
+
+<span class="n">strategy4_npv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span><span class="mf">2.05</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">,</span> <span class="mf">11.25</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">3.20</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.56</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">4.16</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.75</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">4.64</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.47</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">,</span> <span class="mf">5.12</span><span class="p">],</span>
+    <span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span>
+        <span class="s2">&quot;Initial Demand - DA Corp. markets&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Growth rate&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Initial Demand - EnzyTech Multiple&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Unit Revenue&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Production Cost&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Plant Construction cost&quot;</span><span class="p">,</span>
+    <span class="p">],</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;10%&quot;</span><span class="p">,</span> <span class="s2">&quot;50%&quot;</span><span class="p">,</span> <span class="s2">&quot;90%&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+
+<span class="n">tornado_diagram</span><span class="p">(</span><span class="n">strategy4_npv</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Tornado Diagram: Strategy 4 - Royalty Partnership&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_14_0.png" src="../../_images/final_14_0.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>10%</th>
+      <th>50%</th>
+      <th>90%</th>
+      <th>D</th>
+      <th>D^2</th>
+      <th>D^2 / sum</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Production Cost</th>
+      <td>5.12</td>
+      <td>5.12</td>
+      <td>5.12</td>
+      <td>0.00</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Plant Construction cost</th>
+      <td>5.12</td>
+      <td>5.12</td>
+      <td>5.12</td>
+      <td>0.00</td>
+      <td>0.0000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Unit Revenue</th>
+      <td>4.64</td>
+      <td>5.12</td>
+      <td>5.47</td>
+      <td>0.83</td>
+      <td>0.6889</td>
+      <td>0.007374</td>
+    </tr>
+    <tr>
+      <th>Initial Demand - EnzyTech Multiple</th>
+      <td>4.16</td>
+      <td>5.12</td>
+      <td>5.75</td>
+      <td>1.59</td>
+      <td>2.5281</td>
+      <td>0.027060</td>
+    </tr>
+    <tr>
+      <th>Growth rate</th>
+      <td>3.20</td>
+      <td>5.12</td>
+      <td>5.56</td>
+      <td>2.36</td>
+      <td>5.5696</td>
+      <td>0.059615</td>
+    </tr>
+    <tr>
+      <th>Initial Demand - DA Corp. markets</th>
+      <td>2.05</td>
+      <td>5.12</td>
+      <td>11.25</td>
+      <td>9.20</td>
+      <td>84.6400</td>
+      <td>0.905952</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 500 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 125;
+                var nbb_unformatted_code = "# Strategy 4: Royalty Partnership\n\nstrategy4_npv = pd.DataFrame(\n    data=[\n        [2.05, 5.12, 11.25],\n        [3.20, 5.12, 5.56],\n        [4.16, 5.12, 5.75],\n        [4.64, 5.12, 5.47],\n        [5.12, 5.12, 5.12],\n        [5.12, 5.12, 5.12],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(strategy4_npv, name=\"Tornado Diagram: Strategy 4 - Royalty Partnership\")";
+                var nbb_formatted_code = "# Strategy 4: Royalty Partnership\n\nstrategy4_npv = pd.DataFrame(\n    data=[\n        [2.05, 5.12, 11.25],\n        [3.20, 5.12, 5.56],\n        [4.16, 5.12, 5.75],\n        [4.64, 5.12, 5.47],\n        [5.12, 5.12, 5.12],\n        [5.12, 5.12, 5.12],\n    ],\n    index=[\n        \"Initial Demand - DA Corp. markets\",\n        \"Growth rate\",\n        \"Initial Demand - EnzyTech Multiple\",\n        \"Unit Revenue\",\n        \"Production Cost\",\n        \"Plant Construction cost\",\n    ],\n    columns=[\"10%\", \"50%\", \"90%\"],\n)\n\ntornado_diagram(strategy4_npv, name=\"Tornado Diagram: Strategy 4 - Royalty Partnership\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="sensitivity-analysis">
+<h2>2) Sensitivity Analysis<a class="headerlink" href="#sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">certainty_equivalent_sensitivity_to_risk_tolerance_analysis</span><span class="p">(</span><span class="n">npv</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;DA Corp. follows the delta-property and has a risk tolerance of $30 million.&quot;&quot;&quot;</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="n">γ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span> <span class="o">/</span> <span class="n">risk_tolerance</span> <span class="k">for</span> <span class="n">risk_tolerance</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">51</span><span class="p">)])</span>
+
+    <span class="k">for</span> <span class="n">uncertainty</span><span class="p">,</span> <span class="n">ce_values</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+        <span class="n">npv</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+        <span class="n">certainty_equivalent_values_calculator</span><span class="p">(</span>
+            <span class="n">u</span><span class="p">,</span>
+            <span class="n">u_inv</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">npv</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+            <span class="n">p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]]</span> <span class="o">*</span> <span class="n">npv</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+            <span class="n">N</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">payout_lb</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">payout_ub</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">γ</span><span class="o">=</span><span class="n">γ</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>
+    <span class="p">):</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">γ</span><span class="p">,</span> <span class="n">ce_values</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">uncertainty</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\gamma$&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;CE&quot;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">30</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Risk Tolerance = \$30 million&quot;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="n">certainty_equivalent_sensitivity_to_risk_tolerance_analysis</span><span class="p">(</span>
+    <span class="n">strategy1_npv</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Strategy 1 - No Partnership / No Expansion: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\gamma$&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_16_0.png" src="../../_images/final_16_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 435 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 95;
+                var nbb_unformatted_code = "def certainty_equivalent_sensitivity_to_risk_tolerance_analysis(npv, name):\n    \"\"\"DA Corp. follows the delta-property and has a risk tolerance of $30 million.\"\"\"\n    fig, ax = plt.subplots(1, 1)\n\n    \u03b3 = np.array([1 / risk_tolerance for risk_tolerance in np.linspace(10, 50, 51)])\n\n    for uncertainty, ce_values in zip(\n        npv.index,\n        certainty_equivalent_values_calculator(\n            u,\n            u_inv,\n            x=npv.to_numpy(),\n            p=np.array([[0.25, 0.5, 0.25]] * strategy1_npv.shape[0]),\n            N=None,\n            payout_lb=None,\n            payout_ub=None,\n            \u03b3=\u03b3,\n        ).T,\n    ):\n        ax.plot(\u03b3, ce_values, linestyle=\"--\", marker=\"o\", label=uncertainty)\n\n    ax.set_xlabel(r\"$\\gamma$\")\n    ax.set_ylabel(\"CE\")\n    ax.set_title(name)\n    plt.axvline(x=1 / 30, label=\"Risk Tolerance = \\$30 million\", c=\"r\")\n    plt.legend()\n    plt.show()\n\n\ncertainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy1_npv,\n    name=r\"Strategy 1 - No Partnership / No Expansion: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_formatted_code = "def certainty_equivalent_sensitivity_to_risk_tolerance_analysis(npv, name):\n    \"\"\"DA Corp. follows the delta-property and has a risk tolerance of $30 million.\"\"\"\n    fig, ax = plt.subplots(1, 1)\n\n    \u03b3 = np.array([1 / risk_tolerance for risk_tolerance in np.linspace(10, 50, 51)])\n\n    for uncertainty, ce_values in zip(\n        npv.index,\n        certainty_equivalent_values_calculator(\n            u,\n            u_inv,\n            x=npv.to_numpy(),\n            p=np.array([[0.25, 0.5, 0.25]] * strategy1_npv.shape[0]),\n            N=None,\n            payout_lb=None,\n            payout_ub=None,\n            \u03b3=\u03b3,\n        ).T,\n    ):\n        ax.plot(\u03b3, ce_values, linestyle=\"--\", marker=\"o\", label=uncertainty)\n\n    ax.set_xlabel(r\"$\\gamma$\")\n    ax.set_ylabel(\"CE\")\n    ax.set_title(name)\n    plt.axvline(x=1 / 30, label=\"Risk Tolerance = \\$30 million\", c=\"r\")\n    plt.legend()\n    plt.show()\n\n\ncertainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy1_npv,\n    name=r\"Strategy 1 - No Partnership / No Expansion: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">certainty_equivalent_sensitivity_to_risk_tolerance_analysis</span><span class="p">(</span>
+    <span class="n">strategy2_npv</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Strategy 2 - No Partnership / Expansion: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\gamma$&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_17_0.png" src="../../_images/final_17_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 574 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 96;
+                var nbb_unformatted_code = "certainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy2_npv,\n    name=r\"Strategy 2 - No Partnership / Expansion: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_formatted_code = "certainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy2_npv,\n    name=r\"Strategy 2 - No Partnership / Expansion: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">certainty_equivalent_sensitivity_to_risk_tolerance_analysis</span><span class="p">(</span>
+    <span class="n">strategy3_npv</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Strategy 3 - Joint Venture: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\gamma$&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_18_0.png" src="../../_images/final_18_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 442 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 97;
+                var nbb_unformatted_code = "certainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy3_npv,\n    name=r\"Strategy 3 - Joint Venture: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_formatted_code = "certainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy3_npv,\n    name=r\"Strategy 3 - Joint Venture: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">certainty_equivalent_sensitivity_to_risk_tolerance_analysis</span><span class="p">(</span>
+    <span class="n">strategy4_npv</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Strategy 4 - Royalty Partnership: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\gamma$&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/final_19_0.png" src="../../_images/final_19_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 480 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 126;
+                var nbb_unformatted_code = "certainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy4_npv,\n    name=r\"Strategy 4 - Royalty Partnership: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_formatted_code = "certainty_equivalent_sensitivity_to_risk_tolerance_analysis(\n    strategy4_npv,\n    name=r\"Strategy 4 - Royalty Partnership: Certainty Equivalent Values Vs. Risk Aversion Coefficient $\\gamma$\",\n)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="value-of-free-clairvoyance">
+<h2>3) Value of Free Clairvoyance<a class="headerlink" href="#value-of-free-clairvoyance" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">value_of_clairvoyance</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">u_inv</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Calculates the Value of Clairvoyance</span>
+<span class="sd">    = Value of Free Clairvoyance - Value of No Clairvoyance</span>
+<span class="sd">    AKA How much more value we get when we have access</span>
+<span class="sd">    to an oracle that can tell us the actual outcome of a</span>
+<span class="sd">    random event.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        u (function): U-curve function</span>
+<span class="sd">        u_inv (function): Inverse U-curve function</span>
+<span class="sd">        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)</span>
+<span class="sd">        p (np.array): Probabilities of each prospect matrix, Shape = (Number of deals, Number of prospects in each deal)</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        float:</span>
+<span class="sd">            Value of the Clairvoyance</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Check that payoffs and probability assignments are the same shape</span>
+    <span class="k">assert</span> <span class="p">(</span>
+        <span class="n">x</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">p</span><span class="o">.</span><span class="n">shape</span>
+    <span class="p">),</span> <span class="s2">&quot;Payoffs `x` and Probabilities `p` must be the same shape=(Number of deals, Number of prospects in each deal).&quot;</span>
+
+    <span class="c1"># Value of Free Clairvoyance</span>
+    <span class="n">vfc</span> <span class="o">=</span> <span class="n">certainty_equivalent_values_calculator</span><span class="p">(</span>
+        <span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">,</span>
+        <span class="n">u_inv</span><span class="o">=</span><span class="n">u_inv</span><span class="p">,</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)]),</span>
+        <span class="n">p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]]),</span>
+        <span class="n">γ</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">u</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">&quot;γ&quot;</span><span class="p">]]),</span>
+    <span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="c1"># Value of No Clairvoyance</span>
+    <span class="n">vnc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span>
+        <span class="n">certainty_equivalent_values_calculator</span><span class="p">(</span>
+            <span class="n">u</span><span class="o">=</span><span class="n">u</span><span class="p">,</span>
+            <span class="n">u_inv</span><span class="o">=</span><span class="n">u_inv</span><span class="p">,</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">,</span>
+            <span class="n">γ</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">u</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="s2">&quot;γ&quot;</span><span class="p">]]),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Value of Clairvoyance</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">vfc</span> <span class="o">-</span> <span class="n">vnc</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 621 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 142;
+                var nbb_unformatted_code = "def value_of_clairvoyance(u, u_inv, x, p):\n    \"\"\"Calculates the Value of Clairvoyance\n    = Value of Free Clairvoyance - Value of No Clairvoyance\n    AKA How much more value we get when we have access\n    to an oracle that can tell us the actual outcome of a\n    random event.\n\n    Args:\n        u (function): U-curve function\n        u_inv (function): Inverse U-curve function\n        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)\n        p (np.array): Probabilities of each prospect matrix, Shape = (Number of deals, Number of prospects in each deal)\n\n    Returns:\n        float:\n            Value of the Clairvoyance\n    \"\"\"\n\n    # Check that payoffs and probability assignments are the same shape\n    assert (\n        x.shape == p.shape\n    ), \"Payoffs `x` and Probabilities `p` must be the same shape=(Number of deals, Number of prospects in each deal).\"\n\n    # Value of Free Clairvoyance\n    vfc = certainty_equivalent_values_calculator(\n        u=u,\n        u_inv=u_inv,\n        x=np.array([x.max(axis=0)]),\n        p=np.array([p[np.argmax(x, axis=0), np.array(range(x.shape[1]))]]),\n        \u03b3=np.array([u.keywords[\"\u03b3\"]]),\n    )[0][0]\n\n    # Value of No Clairvoyance\n    vnc = np.max(\n        certainty_equivalent_values_calculator(\n            u=u,\n            u_inv=u_inv,\n            x=x,\n            p=p,\n            \u03b3=np.array([u.keywords[\"\u03b3\"]]),\n        )\n    )\n\n    # Value of Clairvoyance\n    return np.round(vfc - vnc, 2)";
+                var nbb_formatted_code = "def value_of_clairvoyance(u, u_inv, x, p):\n    \"\"\"Calculates the Value of Clairvoyance\n    = Value of Free Clairvoyance - Value of No Clairvoyance\n    AKA How much more value we get when we have access\n    to an oracle that can tell us the actual outcome of a\n    random event.\n\n    Args:\n        u (function): U-curve function\n        u_inv (function): Inverse U-curve function\n        x (np.array): Payoffs of prospects matrix, Shape = (Number of deals, Number of prospects in each deal)\n        p (np.array): Probabilities of each prospect matrix, Shape = (Number of deals, Number of prospects in each deal)\n\n    Returns:\n        float:\n            Value of the Clairvoyance\n    \"\"\"\n\n    # Check that payoffs and probability assignments are the same shape\n    assert (\n        x.shape == p.shape\n    ), \"Payoffs `x` and Probabilities `p` must be the same shape=(Number of deals, Number of prospects in each deal).\"\n\n    # Value of Free Clairvoyance\n    vfc = certainty_equivalent_values_calculator(\n        u=u,\n        u_inv=u_inv,\n        x=np.array([x.max(axis=0)]),\n        p=np.array([p[np.argmax(x, axis=0), np.array(range(x.shape[1]))]]),\n        \u03b3=np.array([u.keywords[\"\u03b3\"]]),\n    )[0][0]\n\n    # Value of No Clairvoyance\n    vnc = np.max(\n        certainty_equivalent_values_calculator(\n            u=u,\n            u_inv=u_inv,\n            x=x,\n            p=p,\n            \u03b3=np.array([u.keywords[\"\u03b3\"]]),\n        )\n    )\n\n    # Value of Clairvoyance\n    return np.round(vfc - vnc, 2)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">uncertainty_idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">):</span>
+    <span class="n">strategies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">strategy1_npv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">uncertainty_idx</span><span class="p">],</span>
+            <span class="n">strategy2_npv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">uncertainty_idx</span><span class="p">],</span>
+            <span class="n">strategy3_npv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">uncertainty_idx</span><span class="p">],</span>
+            <span class="n">strategy4_npv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">uncertainty_idx</span><span class="p">],</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">strategies</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Strategy </span><span class="si">{</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="n">strategy1_npv</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">uncertainty_idx</span><span class="p">]</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="s2">&quot;:&quot;</span><span class="p">,</span>
+        <span class="n">value_of_clairvoyance</span><span class="p">(</span>
+            <span class="n">u</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">u_inv</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">u_inv</span><span class="p">,</span> <span class="n">γ</span><span class="o">=</span><span class="mi">1</span> <span class="o">/</span> <span class="mi">30</span><span class="p">),</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">strategies</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="n">p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">]]</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="p">),</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Initial Demand - DA Corp. markets : 2.74
+Growth rate : 0.0
+Initial Demand - EnzyTech Multiple : 0.0
+Unit Revenue : 0.62
+Production Cost : 0.0
+Plant Construction cost : 0.0
+time: 16.2 ms
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 156;
+                var nbb_unformatted_code = "for uncertainty_idx in range(6):\n    strategies = pd.concat(\n        [\n            strategy1_npv.iloc[uncertainty_idx],\n            strategy2_npv.iloc[uncertainty_idx],\n            strategy3_npv.iloc[uncertainty_idx],\n            strategy4_npv.iloc[uncertainty_idx],\n        ],\n        axis=1,\n    )\n    strategies.columns = [f\"Strategy {idx+1}\" for idx in range(4)]\n\n    print(\n        strategy1_npv.iloc[uncertainty_idx].name,\n        \":\",\n        value_of_clairvoyance(\n            u=partial(u, \u03b3=1 / 30),\n            u_inv=partial(u_inv, \u03b3=1 / 30),\n            x=strategies.T.values,\n            p=np.array([[0.25, 0.5, 0.25]] * 4),\n        ),\n    )";
+                var nbb_formatted_code = "for uncertainty_idx in range(6):\n    strategies = pd.concat(\n        [\n            strategy1_npv.iloc[uncertainty_idx],\n            strategy2_npv.iloc[uncertainty_idx],\n            strategy3_npv.iloc[uncertainty_idx],\n            strategy4_npv.iloc[uncertainty_idx],\n        ],\n        axis=1,\n    )\n    strategies.columns = [f\"Strategy {idx+1}\" for idx in range(4)]\n\n    print(\n        strategy1_npv.iloc[uncertainty_idx].name,\n        \":\",\n        value_of_clairvoyance(\n            u=partial(u, \u03b3=1 / 30),\n            u_inv=partial(u_inv, \u03b3=1 / 30),\n            x=strategies.T.values,\n            p=np.array([[0.25, 0.5, 0.25]] * 4),\n        ),\n    )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-ml-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-ml-py",
+            path: "./course-work/ise-562"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-ml-py'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,1150 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paper Review 2: Carry &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-2.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Paper Review 3: Quality Minus Junk" href="paper-review-3.html" />
+    <link rel="prev" title="Paper Review 1: Value and Momentum Everywhere" href="paper-review-1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-2.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Paper Review 2: Carry" />
+<meta property="og:description" content="Paper Review 2: Carry  By: Chengyi (Jeff) Chen    \begin{align}     r_{t+1} &amp;= \underbrace{\text{Carry} + \mathbb{E}_t[\text{Price Appreciation}]}_{\mathbb{E}_t" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/paper-review-2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-carry-how-is-it-related-to-mathbb-e-t-r-t-1-and-how-do-we-measure-it-a-id-1-a">
+   1. What is Carry, How is it related to
+   <span class="math notranslate nohighlight">
+    \(\mathbb{E}_t[r_{t+1}]\)
+   </span>
+   , and how do we measure it?
+   <a id="1">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-what-is-carry">
+     A. What is Carry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-how-is-it-related-to-mathbb-e-t-r-t-1">
+     B. How is it related to
+     <span class="math notranslate nohighlight">
+      \(\mathbb{E}_t[r_{t+1}]\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-how-do-we-measure-it">
+     C. How do we measure it?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#currency-carry">
+       Currency Carry
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#global-equity-carry">
+       Global Equity Carry
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#commodity-carry">
+       Commodity Carry
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#global-fixed-income-carry">
+       Global Fixed Income Carry
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#summary-of-carry-measurements-across-asset-classes">
+       Summary of Carry Measurements across Asset Classes
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#carry-trade-strategy">
+       Carry Trade Strategy
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-and-returns-of-carry-strategies-globally-across-asset-classes-a-id-2-a">
+   2. Data and returns of carry strategies globally across asset classes
+   <a id="2">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-2-types-of-carry-signals">
+     A. 2 Types of Carry Signals
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-we-need-2-types-of-carry-signals">
+       Why we need 2 types of Carry Signals
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-findings">
+     B. Findings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-performance-of-diversified-carry-trade-portfolio">
+     C. Performance of Diversified Carry Trade Portfolio
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-risk-adjusted-performance-and-exposure-to-other-factors">
+     D. Risk-Adjusted Performance and Exposure to Other Factors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictability-of-carry-for-returns-static-and-dynamic-components-of-a-carry-trade-and-relationship-between-carry-and-mathbb-e-text-price-appreciation-a-id-3-a">
+   3. Predictability of carry for returns, static and dynamic components of a carry trade, and relationship between carry and
+   <span class="math notranslate nohighlight">
+    \(\mathbb{E}[\text{Price Appreciation}]\)
+   </span>
+   <a id="3">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#how-does-carry-relates-to-global-business-cycle-and-liquidity-risk-a-id-4-a">
+   4. How does carry relates to global business cycle and liquidity risk]
+   <a id="4">
+   </a>
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="paper-review-2-carry">
+<h1>Paper Review 2: Carry<a class="headerlink" href="#paper-review-2-carry" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="amsmath math notranslate nohighlight" id="equation-29bbbdef-a459-4a19-8a44-059ebd59e49f">
+<span class="eqno">(74)<a class="headerlink" href="#equation-29bbbdef-a459-4a19-8a44-059ebd59e49f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    r_{t+1} &amp;= \underbrace{\text{Carry} + \mathbb{E}_t[\text{Price Appreciation}]}_{\mathbb{E}_t[r_{t+1}]: \text{ Expected return in excess of }r_f} + \text{Unexpected Price Shock} 
+\end{align}\]</div>
+<p>Overall, Carry is defined in the paper as the portion of expected return of an asset assuming that current prices and market predictions of prices over time do not move - yield curve being constant for fixed income, forward curve being constant. It has shown to have extremely good risk-adjusted returns, especially in portfolios when we allocate equal volatility contribution from each asset class, long the high carry securities and short the low carry securities within each asset class. Simply by longing the high carry securities and shorting the low carry securities within each asset class at each mopnth-end produces great returns for equities, fixed-income, and currencies, but a different signal Carry1-12, the 12 month moving average of Carry, performs better for highly seasonal asset classes such as commodities. Carry also has very low exposure to the market, though it is highly exposed to macro-economic conditions.</p>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#1">What is Carry, How is it related to <span class="math notranslate nohighlight">\(\mathbb{E}_t[r_{t+1}]\)</span>, and how do we measure it?</a></p></li>
+<li><p><a class="reference external" href="#2">Data and returns of carry strategies globally across asset classes</a></p></li>
+<li><p><a class="reference external" href="#3">Predictability of carry for returns, static and dynamic components of a carry trade, and relationship between carry and <span class="math notranslate nohighlight">\(\mathbb{E}[\text{Price Appreciation}]\)</span></a></p></li>
+<li><p><a class="reference external" href="#4">How does carry relates to global business cycle and liquidity risk</a></p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="what-is-carry-how-is-it-related-to-mathbb-e-t-r-t-1-and-how-do-we-measure-it-a-id-1-a">
+<h2>1. What is Carry, How is it related to <span class="math notranslate nohighlight">\(\mathbb{E}_t[r_{t+1}]\)</span>, and how do we measure it?<a id="1"></a><a class="headerlink" href="#what-is-carry-how-is-it-related-to-mathbb-e-t-r-t-1-and-how-do-we-measure-it-a-id-1-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-what-is-carry">
+<h3>A. What is Carry<a class="headerlink" href="#a-what-is-carry" title="Permalink to this headline">¶</a></h3>
+<p>Definitions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4c0b89f-f35a-47c0-bab1-7573a4aa6d2e">
+<span class="eqno">(75)<a class="headerlink" href="#equation-e4c0b89f-f35a-47c0-bab1-7573a4aa6d2e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    S_t &amp;= \text{ Spot price of underlying security (e.g. how much AMZN is selling for &#64; time }t) \\ 
+    F_t &amp;= \text{ Price of Futures contract that expires &#64; time }t + 1 \\
+    r_{t+1} &amp;= \frac{F_{t+1} - F_t}{F_t} \text{ Return in excess of }r_f \text{ by purchasing 1 futures contract that expires &#64; time }t+1 \\
+    C_t  &amp;= \frac{F_{t+1} - F_t}{F_t} \\
+    &amp;= \frac{S_{t+1} - F_t}{F_t} \because \text{ Spot price converges with Futures price at the expiry of the futures contract} \\
+    &amp;= \frac{S_{t} - F_t}{F_t} \because \text{ We assume constant spot prices} \\
+    &amp;\therefore \text{ Carry is just the return in excess of }r_f  \text{ if we assume spot prices stay constant.} \\ 
+\end{align}\]</div>
+</div>
+<div class="section" id="b-how-is-it-related-to-mathbb-e-t-r-t-1">
+<h3>B. How is it related to <span class="math notranslate nohighlight">\(\mathbb{E}_t[r_{t+1}]\)</span><a class="headerlink" href="#b-how-is-it-related-to-mathbb-e-t-r-t-1" title="Permalink to this headline">¶</a></h3>
+<p>Decomposition of <span class="math notranslate nohighlight">\(r_{t+1}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dfb2bce7-7cef-4ada-be73-82190bf7a5c9">
+<span class="eqno">(76)<a class="headerlink" href="#equation-dfb2bce7-7cef-4ada-be73-82190bf7a5c9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    r_{t+1} &amp;= \underbrace{\mathbb{E}_t[r_{t+1}]}_{\text{Expected return in excess of }r_f} + \underbrace{u_{t+1}}_{\text{Unexpected price shock}} \\
+    &amp;= \underbrace{C_t}_{\text{Carry}} + \underbrace{\mathbb{E}_t\Big[\frac{\Delta S_{t+1}}{F_t}\Big]}_{\text{Expected price appreciation}} + u_{t+1} \\
+    &amp;= C_t + \mathbb{E}_t\Big[\frac{S_{t+1} - S_t}{F_t}\Big] + u_{t+1} \\
+    &amp;= C_t + \mathbb{E}_t\Big[\frac{S_{t+1} - S_t}{F_t}\Big] + \frac{S_{t+1} - \mathbb{E}_t[S_{t+1}]}{F_t} \\
+    &amp;= \frac{S_t - F_t}{F_t} + \mathbb{E}_t\Big[\frac{S_{t+1} - S_t}{F_t}\Big] + \frac{S_{t+1} - \mathbb{E}_t[S_{t+1}]}{F_t} \\
+    &amp;= \frac{S_t - F_t}{F_t} + \frac{\mathbb{E}_t[S_{t+1}] - S_t}{F_t} + \frac{S_{t+1} - \mathbb{E}_t[S_{t+1}]}{F_t} \\
+    &amp;= \frac{S_t - F_t + \mathbb{E}_t[S_{t+1}] - S_t + S_{t+1} - \mathbb{E}_t[S_{t+1}]}{F_t} \\
+    &amp;= \frac{S_{t+1} - F_t}{F_t} \\
+    &amp;= \frac{F_{t+1} - F_t}{F_t} \because \text{ Spot price converges with Futures price at the expiry of the futures contract} \\
+    &amp;= r_{t+1} \\
+\end{align}\]</div>
+<p>Notes:</p>
+<ol class="simple">
+<li><p>Carry <span class="math notranslate nohighlight">\(C_t\)</span> is deterministic, while the Expected price appreciation <span class="math notranslate nohighlight">\(\mathbb{E}_t\Big[\frac{\Delta S_{t+1}}{F_t}\Big]\)</span> is subject to error based on the type of asset pricing model (CAPM, APT) used to estimate it</p></li>
+<li><p>Carry <span class="math notranslate nohighlight">\(C_t\)</span> itself can also be used as a predictor for Expected price appreciation</p></li>
+</ol>
+</div>
+<div class="section" id="c-how-do-we-measure-it">
+<h3>C. How do we measure it?<a class="headerlink" href="#c-how-do-we-measure-it" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="currency-carry">
+<h4>Currency Carry<a class="headerlink" href="#currency-carry" title="Permalink to this headline">¶</a></h4>
+<p>Theoretical no-arbitrage price of currency forward contract <span class="math notranslate nohighlight">\(F_t\)</span> from spot exchange rate <span class="math notranslate nohighlight">\(S_t\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-4bfaf110-902b-453d-aeb1-f9c44f991ba8">
+<span class="eqno">(77)<a class="headerlink" href="#equation-4bfaf110-902b-453d-aeb1-f9c44f991ba8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \hat{F_t} &amp;= S_t\frac{1+r^f_t}{1+r^{f*}_t} \\
+    r^f_t &amp;= \text{ Local interest-rate / Risk-free rate &#64; time }t \\ 
+    r^{f*}_t &amp;= \text{ Foreign interest-rate / Risk-free rate &#64; time }t \\ 
+\end{align}\]</div>
+<p>Currency Carry is defined as the scaled interest-rate spread (interest rate in excess of the  local risk-free rate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9bb37a24-6b3f-4e8b-8e83-3991090c9214">
+<span class="eqno">(78)<a class="headerlink" href="#equation-9bb37a24-6b3f-4e8b-8e83-3991090c9214" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    C_t &amp;= \frac{S_t - F_t}{F_t} \\
+    &amp;= \underbrace{(r^{f*}_t - r^f_t)}_{\text{Interest rate spread}}\underbrace{\frac{1}{1+r^f_t}}_{\text{Scaling Factor}} \\
+\end{align}\]</div>
+<ul class="simple">
+<li><p>The scaling factor of <span class="math notranslate nohighlight">\((1+r^f_t)^{-1}\)</span> indicates that we’re buying <span class="math notranslate nohighlight">\((1+r^f_t)^{-1}\)</span> units of local currency today / 1 unit of foreign currency in the future.</p></li>
+</ul>
+</div>
+<div class="section" id="global-equity-carry">
+<h4>Global Equity Carry<a class="headerlink" href="#global-equity-carry" title="Permalink to this headline">¶</a></h4>
+<p>Theoretical no-arbitrage price of futures contract of equity</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d53df985-10c0-4a66-8e15-7ffafd84cbe6">
+<span class="eqno">(79)<a class="headerlink" href="#equation-d53df985-10c0-4a66-8e15-7ffafd84cbe6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \hat{F_t} &amp;= S_t(1+r^f_t) - \mathbb{E}^Q_t[D_{t+1}] \\
+    r^f_t &amp;= \text{ Local interest-rate / Risk-free rate &#64; time }t \\ 
+    \mathbb{E}^Q_t[D_{t+1}] &amp;= \text{ Expected Dividend payment computed under risk-neutral measure } Q \\ 
+\end{align}\]</div>
+<p>Global Equity Carry is defined as the scaled expected dividend yield minus risk-free rate:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-11adbc23-0b3d-4d53-bfcd-00ca0a84ed08">
+<span class="eqno">(80)<a class="headerlink" href="#equation-11adbc23-0b3d-4d53-bfcd-00ca0a84ed08" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    C_t &amp;= \frac{S_t - F_t}{F_t} \\
+    &amp;= \underbrace{\Big(\frac{\mathbb{E}^Q_t[D_{t+1}]}{S_t} - r^f_t\Big)}_{\text{Expected dividend yield minus risk-free rate}} \underbrace{\frac{S_t}{F_t}}_{\text{Scaling Factor}} \\
+\end{align}\]</div>
+<p>How Carry can also be a predictor of expected returns:</p>
+<p>Gordon Growth / Dividend Discount Model:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65d5c212-0753-4b8c-953c-4d3d7e42632b">
+<span class="eqno">(81)<a class="headerlink" href="#equation-65d5c212-0753-4b8c-953c-4d3d7e42632b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    S_t &amp;= \frac{\mathbb{E}^Q_t[D_{t+1}]}{\mathbb{E}_t[r_{t+1}] - g} \\
+    \mathbb{E}_t[r_{t+1}] &amp;= \underbrace{\Big[\frac{\mathbb{E}^Q_t[D_{t+1}]}{S_t}\Big]}_{\text{Expected dividend yield}} + \underbrace{g}_{\text{Constant dividend growth rate}} \\
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Hence, seeing that the expected return of a stock is a function of the expected dividend yield and dividend growth rate, carry (a function of expected dividend yield) will be positively correlated to expected returns of a stock.</p></li>
+</ul>
+</div>
+<div class="section" id="commodity-carry">
+<h4>Commodity Carry<a class="headerlink" href="#commodity-carry" title="Permalink to this headline">¶</a></h4>
+<p>Theoretical no-arbitrage price of commodity futures contract:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d7ef798-d7f0-452a-ab22-727ecc1f589c">
+<span class="eqno">(82)<a class="headerlink" href="#equation-3d7ef798-d7f0-452a-ab22-727ecc1f589c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    F^{T_i}_t &amp;= S_t (1 + (r^f_t - \delta)T_i) \\
+    \delta &amp;= \text{Convienience yield in excess of storage costs} \\ 
+\end{align}\]</div>
+<ul class="simple">
+<li><p>Because Commodity spot markets are highly illiquid, we don’t have much reliable data on spot prices, we compute the carry using the nearest to maturity futures price instead of the spot price</p>
+<ul>
+<li><p>Our assumption on calculating Carry transforms from assuming futures price maturing in <span class="math notranslate nohighlight">\(T\)</span> will converge to current spot price at maturity (<span class="math notranslate nohighlight">\(S_t = S_T\)</span>) to assuming futures price maturing in <span class="math notranslate nohighlight">\(T_2\)</span> will converge to the nearest to maturity futures’ price maturing in <span class="math notranslate nohighlight">\(T_1\)</span>, <span class="math notranslate nohighlight">\(T_2 &gt; T_1\)</span> instead (<span class="math notranslate nohighlight">\(F_{T_2} \rightarrow F_{T_1}\)</span> after <span class="math notranslate nohighlight">\(T_2 - T_1\)</span> periods).</p></li>
+<li><p>Essentially, it’s assuming that the forward / futures curve remains constant.</p></li>
+</ul>
+</li>
+</ul>
+<p>Commodity Carry is defined as the convienience yield of the commodity in excess of the risk-free rate <span class="math notranslate nohighlight">\(r_f\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7cc886a9-4938-4596-946f-07b99f180bd4">
+<span class="eqno">(83)<a class="headerlink" href="#equation-7cc886a9-4938-4596-946f-07b99f180bd4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    C_t &amp;= \frac{S_t - F_t}{F_t} \\
+    &amp;= \frac{F^1_t - F^2_t}{F^2_t(T_2 - T_1)} \because \text{ Change in assumptions due to illiquid spot market}\\
+    &amp;= \underbrace{(\delta - r^f_t)}_{\text{Convenience yield of the commodity in excess of the risk-free rate}}\frac{S_t}{F^2_t}
+\end{align}\]</div>
+</div>
+<div class="section" id="global-fixed-income-carry">
+<h4>Global Fixed Income Carry<a class="headerlink" href="#global-fixed-income-carry" title="Permalink to this headline">¶</a></h4>
+<p>Instead of defining carry with the assumption that bond prices stay constant, our new assumption for carry is that the yield curve / term structure of interest rates of the bonds that we are considering stay constant:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dc8d182b-f0ef-4be6-9a40-34660feb87f7">
+<span class="eqno">(84)<a class="headerlink" href="#equation-dc8d182b-f0ef-4be6-9a40-34660feb87f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    C_t &amp;= \frac{S_t - F_t}{F_t} \\
+    &amp;= \frac{\frac{1}{(1+y^{9Y11M}_t)^{9+11/12}}}{\frac{(1+r^f_t)}{(1+y^{10Y}_t)^{10}}} - 1 \\
+    &amp;\approx \underbrace{y^{10Y} - r^f_t}_{\text{Bond yield in excess of risk-free rate }r_f} \underbrace{- ModD(y^{10Y}_t - y^{9Y11M}_t))}_{\text{Roll down}} \\
+\end{align}\]</div>
+<ul class="simple">
+<li><p>When we keep the yield curve constant, the carry is the bond yield plus the “roll down,” which captures the price increase due to the fact that the bond rolls down the yield curve. As the bond rolls down the yield curve, the yield changes from <span class="math notranslate nohighlight">\(y^T_t\)</span> to <span class="math notranslate nohighlight">\(y^{T −1}_t\)</span> , resulting in a return which is minus the yield change times the modified duration.</p></li>
+</ul>
+</div>
+<div class="section" id="summary-of-carry-measurements-across-asset-classes">
+<h4>Summary of Carry Measurements across Asset Classes<a class="headerlink" href="#summary-of-carry-measurements-across-asset-classes" title="Permalink to this headline">¶</a></h4>
+<table style="width:100%">
+  <tr>
+    <th style="text-align:center">Asset Class</th>
+    <th style="text-align:center">Carry</th>
+    <th style="text-align:center">Formula</th>
+    <th style="text-align:center">Scaling Factor</th>
+  </tr>
+  <tr>
+    <td style="text-align:center">Currency</td>
+    <td style="text-align:center">Interest rate spread</td>
+    <td style="text-align:center">$r^{f*}_t - r^f_t$</td>
+    <td style="text-align:center">$\frac{1}{1+r^f_t}$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Equity</td>
+    <td style="text-align:center">Expected dividend yield minus risk-free rate</td>
+    <td style="text-align:center">$\frac{\mathbb{E}^Q_t[D_{t+1}]}{S_t} - r^f_t$</td>
+    <td style="text-align:center">$\frac{S_t}{F_t}$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Commodity</td>
+    <td style="text-align:center">Convenience yield of the commodity in excess of the risk-free rate</td>
+    <td style="text-align:center">$\delta - r^f_t$</td>
+    <td style="text-align:center">$\frac{S_t}{F^2_t}$</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Fixed Income</td>
+    <td style="text-align:center">Bond yield in excess of risk-free rate plus percentage change in bond price as yield changes</td>
+    <td style="text-align:center">$y^{10Y} - r^f_t - ModD(y^{10Y}_t - y^{9Y11M}_t))$</td>
+    <td style="text-align:center">1</td>
+  </tr>
+</table></div>
+<div class="section" id="carry-trade-strategy">
+<h4>Carry Trade Strategy<a class="headerlink" href="#carry-trade-strategy" title="Permalink to this headline">¶</a></h4>
+<p>After calculating the carry for each security in our investable universe, we will sort the securities by their carry, longing the top percent of securities with the highest carry and shorting the ones at the bottom percentile of the lowest carry:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-61e1c6e2-233a-4840-a97b-daae8a7ac1e0">
+<span class="eqno">(85)<a class="headerlink" href="#equation-61e1c6e2-233a-4840-a97b-daae8a7ac1e0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    C^{\text{carry trade}}_t &amp;= \sum_{w^i_t &gt; 0} w^i_tC^i_t - \sum_{w^i_t &lt; 0} \vert w^i_t \vert C^i_t \\
+    w^i_t &amp;= \underbrace{z_t\Big(\text{rank}(C^i_t) - \frac{N_t + 1}{2}\Big)}_{\text{Normalized weight of the extreme carry securities we're trading such that the sum of long and short postions are 1 and -1}}
+\end{align}\]</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-and-returns-of-carry-strategies-globally-across-asset-classes-a-id-2-a">
+<h2>2. Data and returns of carry strategies globally across asset classes<a id="2"></a><a class="headerlink" href="#data-and-returns-of-carry-strategies-globally-across-asset-classes-a-id-2-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-2-types-of-carry-signals">
+<h3>A. 2 Types of Carry Signals<a class="headerlink" href="#a-2-types-of-carry-signals" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Current Carry: Carry measured at each month-end and portfolio is rebalanced</p></li>
+<li><p>Carry1-12: MA of current carry over the past 12 month-ends (including most recent)</p></li>
+</ol>
+<div class="section" id="why-we-need-2-types-of-carry-signals">
+<h4>Why we need 2 types of Carry Signals<a class="headerlink" href="#why-we-need-2-types-of-carry-signals" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Carry1-12 accounts for seasonality especially across regions that have differing dividend calendars (affects equity asset class because we’re using a dividend discount model on the stocks that confer dividends to calculate carry)</p></li>
+</ul>
+<p>Reason 1: Equity Seasonality of Dividends</p>
+<ul class="simple">
+<li><p>Current Carry will long companies that are paying dividends in the period <span class="math notranslate nohighlight">\(t+1\)</span>, and also long equity indices of countries that are in dividend season</p></li>
+<li><p>Carry1-12 will long companies / country equity indices as long as they produce high overall dividend yields</p></li>
+</ul>
+<p>Reason 2: Commodity Seasonality</p>
+<ul class="simple">
+<li><p>Commodities like Oil have extremely noticeable seasonal patterns in the forward curve - periods of alternating contango and backwardation</p></li>
+<li><p>Carry1-12 smooths these patterns and longs commodities that have overall high convienience yields.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="b-findings">
+<h3>B. Findings<a class="headerlink" href="#b-findings" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Carry strategies have overall significant risk-adjusted returns and outperform passive investment strategies in each asset class</p></li>
+<li><p>Current carry portfolio performed better for equities, bonds, and currencies, while Carry1-12 performed better for commodities, probably due to the accounting for seasonality we mentioned.</p></li>
+<li><p>Strong negative skewness in currency carry trades (mode of returns is higher than the mean and median, meaning there are more than normal number of returns that are higher than the mean / median return)</p></li>
+<li><p>All carry portfolios show excess kurtosis (More than normal outlier returns)</p></li>
+</ul>
+</div>
+<div class="section" id="c-performance-of-diversified-carry-trade-portfolio">
+<h3>C. Performance of Diversified Carry Trade Portfolio<a class="headerlink" href="#c-performance-of-diversified-carry-trade-portfolio" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>After weighting each asset class by the inverse of its sample volatility (so that each carry strategy contributes an equal part of volatility) and combining the carry strategies into one <strong>diversified</strong> carry trade portfolio, the Sharpe ratio increased to 1.5, which is significantly higher than that of all the individual asset class current carry and carry1-12 strategies</p>
+<ul>
+<li><p>This suggests that carry strategies across asset classes are highly uncorrelated (Similar to how we diversified the portfolio using all markets in Value and Momentum “everywhere” paper because the returns are highly uncorrelated) and so diversification has large benefits</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="d-risk-adjusted-performance-and-exposure-to-other-factors">
+<h3>D. Risk-Adjusted Performance and Exposure to Other Factors<a class="headerlink" href="#d-risk-adjusted-performance-and-exposure-to-other-factors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>After regressing the Current Carry (CC) and Carry1-12 (C1-12) returns on different subsets of the factors below:</p>
+<ul>
+<li><p>Passive Long (Market Exposure factor)</p></li>
+<li><p>Value “everywhere” factors</p>
+<ol class="simple">
+<li><p>Global Individual Stocks: book-to-market ratio</p></li>
+<li><p>Global Equity Indices: previous month’s BE/ME ratio for the MSCI index of the country</p></li>
+<li><p>Currencies: negative of the 5-year return on the exchange rate, measured as the log of the average spot exchange rate from 4.5 to 5.5 years ago divided by the spot exchange rate today minus the log difference in the change in CPI in the foreign country relative to the U.S. over the same period (5-year change in purchasing power parity)</p></li>
+<li><p>Global Government Bonds:</p>
+<ol class="simple">
+<li><p>5-year change in the yields of 10-year bonds as our value measure, which is similar to the negative of the past 5-year return</p></li>
+<li><p>Real bond yield (yield on 10-year bonds minus the 5-year forecast in inflation)</p></li>
+<li><p>Term spread (yield on 10-year bonds minus the short rate)</p></li>
+</ol>
+</li>
+<li><p>Commodity Futures: log of the average spot price from 4.5 to 5.5 years ago, divided by the most recent spot price (the negative of the spot return over the last 5 years)</p></li>
+</ol>
+</li>
+<li><p>Momentum “everywhere” factors</p>
+<ol class="simple">
+<li><p>Global Individual Stocks: past 12-month cumulative raw return on the asset, skipped last month’s return to avoid 1-month reversal in stock returns (An anomaly ∵ investor’s overreaction to the past information and a correction of that reaction after a short time horizon)</p></li>
+<li><p>Global Equity Indices: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+<li><p>Currencies: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+<li><p>Global Government Bonds: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+<li><p>Commodity Futures: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+</ol>
+</li>
+<li><p>Time Series Momentum factor</p></li>
+<li><p>Funding Liquity</p></li>
+<li><p>Market Liquidity</p></li>
+</ul>
+</li>
+</ul>
+<p>The <span class="math notranslate nohighlight">\(\beta_{\text{Market}}\)</span> (Passive Long) as seen in CAPM is largely statistically insignificant, indicating that carry returns for both current carry and carry1-12 have very low exposure to the market, and also, the <span class="math notranslate nohighlight">\(\alpha\)</span>s are very high along with the Information Ratios which indicate high risk-adjusted returns.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="predictability-of-carry-for-returns-static-and-dynamic-components-of-a-carry-trade-and-relationship-between-carry-and-mathbb-e-text-price-appreciation-a-id-3-a">
+<h2>3. Predictability of carry for returns, static and dynamic components of a carry trade, and relationship between carry and <span class="math notranslate nohighlight">\(\mathbb{E}[\text{Price Appreciation}]\)</span><a id="3"></a><a class="headerlink" href="#predictability-of-carry-for-returns-static-and-dynamic-components-of-a-carry-trade-and-relationship-between-carry-and-mathbb-e-text-price-appreciation-a-id-3-a" title="Permalink to this headline">¶</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-a4afa961-ff30-4e40-9f99-7f53affad044">
+<span class="eqno">(86)<a class="headerlink" href="#equation-a4afa961-ff30-4e40-9f99-7f53affad044" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    r^i_{t+1} &amp;= a^i + b_t + cC^i_t + \epsilon^i_{t+1} \\
+    a^i &amp;= \text{ Asset-specific intercept} \\
+    b_t &amp;= \text{ Time-specific intercept} \\
+    c &amp;= \text{ Coefficient of carry} \\ 
+\end{align}\]</div>
+<table style="width:100%">
+  <tr>
+    <th style="text-align:center">$c$</th>
+    <th style="text-align:center">Interpretation</th>
+    <th style="text-align:center">Assets</th>
+  </tr>
+  <tr>
+    <td style="text-align:center">$0$</td>
+    <td style="text-align:center">Carry does not predict returns</td>
+    <td style="text-align:center">-</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">$1$</td>
+    <td style="text-align:center">Expected return moves one-for-one with carry</td>
+    <td style="text-align:center">Currencies</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">$(0, 1)$</td>
+    <td style="text-align:center">High carry is associated with a low expected price appreciation</td>
+    <td style="text-align:center">Commodities</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">$(1, \infty)$</td>
+    <td style="text-align:center">High carry is associated with a high expected price appreciation</td>
+    <td style="text-align:center">Equities and Fixed Income</td>
+  </tr>
+  <tr>
+    <td style="text-align:center">$(-\infty, 0)$</td>
+    <td style="text-align:center">Price appreciation/depreciation more than offsets the effect of the carry</td>
+    <td style="text-align:center">-</td>
+  </tr>
+</table><ul class="simple">
+<li><p>After performing panel regression with asset-specific and time-specific effects, it was found that carry is a strong predictor of expected returns</p></li>
+</ul>
+<p>How long does Carry predict Passive long Returns?</p>
+<ul class="simple">
+<li><p>Carry’s predictive power for returns are only valid for a year before vanishing</p></li>
+</ul>
+<p>Does the Carry of the Carry Trade Predict Returns?</p>
+<ul class="simple">
+<li><p>Carry of the carry trade does not predict the returns to the carry trade, except marginally in equities</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="how-does-carry-relates-to-global-business-cycle-and-liquidity-risk-a-id-4-a">
+<h2>4. How does carry relates to global business cycle and liquidity risk]<a id="4"></a><a class="headerlink" href="#how-does-carry-relates-to-global-business-cycle-and-liquidity-risk-a-id-4-a" title="Permalink to this headline">¶</a></h2>
+<p>Risk Exposure of Carry Strategies</p>
+<ul class="simple">
+<li><p>Carry Strategies are highly susceptible to macro-economic risks</p></li>
+<li><p>After defining Carry downturns as the maximum draw-down of the global carry strategy, we observe that for all strategies in <strong>all asset classes</strong>, carry returns for both the current carry and carry1-12 strategy are lower during periods of carry downturns</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="paper-review-1.html" title="previous page">Paper Review 1: Value and Momentum Everywhere</a>
+    <a class='right-next' id="next-link" href="paper-review-3.html" title="next page">Paper Review 3: Quality Minus Junk</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

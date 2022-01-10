@@ -1,0 +1,931 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paper Review 1: Value and Momentum Everywhere &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-1.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Paper Review 2: Carry" href="paper-review-2.html" />
+    <link rel="prev" title="Paper Reviews" href="paper-reviews.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-1.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Paper Review 1: Value and Momentum Everywhere" />
+<meta property="og:description" content="Paper Review 1: Value and Momentum Everywhere  By: Chengyi (Jeff) Chen  Asness, Moskowitz, Pedersen attempt to identify and examine the latent factors and corre" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/paper-review-1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-data-and-portfolio-construction">
+   I. Data and Portfolio Construction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-security-universe">
+     A. Security Universe
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-value-and-momentum-measures">
+     B. Value and momentum Measures
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ii-value-and-momentum-returns-and-comovement">
+   II. Value and Momentum Returns and Comovement
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-return-premia">
+     A. Return Premia
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-alternative-measures">
+     B. Alternative Measures
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-comovement-across-asset-classes">
+     C. Comovement across Asset Classes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iii-relation-to-macroeconomic-and-liquidity-risk">
+   III. Relation to Macroeconomic and Liquidity Risk
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-macroeconomic-risk-exposure">
+     A. Macroeconomic Risk Exposure
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-liquidity-risk-exposure">
+     B. Liquidity Risk Exposure
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iv-comovement-and-asset-pricing-tests">
+   IV. Comovement and Asset Pricing Tests
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-explaining-value-momentum-in-one-market-with-value-momentum-in-other-markets">
+     A. Explaining Value/Momentum in One Market with Value/Momentum in Other Markets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="paper-review-1-value-and-momentum-everywhere">
+<h1>Paper Review 1: Value and Momentum Everywhere<a class="headerlink" href="#paper-review-1-value-and-momentum-everywhere" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<p>Asness, Moskowitz, Pedersen attempt to identify and examine the latent factors and correlation structure behind factors used in value and momentum factors that produce significant risk premia across markets and asset classes. Furthermore, using a combination of both the value and momentum strategies within each market and asset class proved to have the highest sharpe ratios overall. They also discovered that even though value and momentum strategies produced positive returns, they are negatively correlated. They explained this phenomenon as a result of a link to funding liquidity risk, and not market liquidity risk. In Section 4 of the paper, they also performed a time-series regression of the returns of each of the 48 portfolios they have created out of their pool of asset classes across markets (ranked by value or momentum, weighted by beginning-of-month market capitalization for stocks and equal weights for non-stocks) on the market portfolio returns (MSCI Index), and equal-volatility-weighted across asset-class value and momentum factors. This global three-factor model explained that the returns to value and momentum across markets and asset classes much better than local U.S. factors can, suggesting that global value and momentum portfolios across markets and asset classes are closer to the efficient frontier than U.S. stock-only value and momentum portfolios, and therefore provide a more robust set of asset pricing factors that can be used more broadly. Overall, the primary takeaway from this paper is that using a combination of momentum and value factors, across a range of asset classes and markets, possibly adding in funding liquidity measures such as TED spreads could potentially create a low idiosyncratic risk, high alpha portfolio.</p>
+<hr class="docutils" />
+<div class="section" id="i-data-and-portfolio-construction">
+<h2>I. Data and Portfolio Construction<a class="headerlink" href="#i-data-and-portfolio-construction" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-security-universe">
+<h3>A. Security Universe<a class="headerlink" href="#a-security-universe" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Global Individual Stocks</p></li>
+<li><p>Global Equity Indices</p></li>
+<li><p>Currencies</p></li>
+<li><p>Global Government Bonds</p></li>
+<li><p>Commodity Futures</p></li>
+</ol>
+</div>
+<div class="section" id="b-value-and-momentum-measures">
+<h3>B. Value and momentum Measures<a class="headerlink" href="#b-value-and-momentum-measures" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Global Individual Stocks</p>
+<ul class="simple">
+<li><p>Value signal: book-to-market ratio</p></li>
+<li><p>Momentum signal: past 12-month cumulative raw return on the asset, skipped last month’s return to avoid <a class="reference external" href="https://quantpedia.com/strategies/short-term-reversal-in-stocks/">1-month reversal in stock returns</a> (An anomaly <span class="math notranslate nohighlight">\(\because\)</span> investor’s overreaction to the past information and a correction of that reaction after a short time horizon)</p></li>
+</ul>
+</li>
+<li><p>Global Equity Indices</p>
+<ul class="simple">
+<li><p>Value signal: previous month’s BE/ME ratio for the MSCI index of the country</p></li>
+<li><p>Momentum signal: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+</ul>
+</li>
+<li><p>Currencies</p>
+<ul class="simple">
+<li><p>Value signal: negative of the 5-year return on the exchange rate, measured as the log of the average spot exchange rate from 4.5 to 5.5 years ago divided by the spot exchange rate today minus the log difference in the change in CPI in the foreign country relative to the U.S. over the same period (5-year change in purchasing power parity)</p></li>
+<li><p>Momentum signal: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+</ul>
+</li>
+<li><p>Global Government Bonds</p>
+<ul class="simple">
+<li><p>Value signal:</p>
+<ol class="simple">
+<li><p>5-year change in the yields of 10-year bonds as our value measure, which is similar to the negative of the past 5-year return</p></li>
+<li><p>Real bond yield (yield on 10-year bonds minus the 5-year forecast in inflation)</p></li>
+<li><p>Term spread (yield on 10-year bonds minus the short rate)</p></li>
+</ol>
+</li>
+<li><p>Momentum signal: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+</ul>
+</li>
+<li><p>Commodity Futures</p>
+<ul class="simple">
+<li><p>Value signal: log of the average spot price from 4.5 to 5.5 years ago, divided by the most recent spot price (the negative of the spot return over the last 5 years)</p></li>
+<li><p>Momentum signal: past 12-month cumulative raw return on the asset, skipped last month’s return</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ii-value-and-momentum-returns-and-comovement">
+<h2>II. Value and Momentum Returns and Comovement<a class="headerlink" href="#ii-value-and-momentum-returns-and-comovement" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-return-premia">
+<h3>A. Return Premia<a class="headerlink" href="#a-return-premia" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Value strategies produce significant risk premia in all markets, especially in Japan</p></li>
+<li><p>A convex combination of the 2 positive return strategies (value and momentum) (investing 50% in each signal) that are strongly negatively correlated produces much better Sharpe ratios</p></li>
+</ul>
+</div>
+<div class="section" id="b-alternative-measures">
+<h3>B. Alternative Measures<a class="headerlink" href="#b-alternative-measures" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Using only the 5-year yield change as a value signal for bonds do not produce statistically significant risk premia, but using a composite average index of 3 signals stated above produces a much better Sharpe Ratio</p></li>
+</ul>
+</div>
+<div class="section" id="c-comovement-across-asset-classes">
+<h3>C. Comovement across Asset Classes<a class="headerlink" href="#c-comovement-across-asset-classes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The average correlation of stock’s value signal is positively correlated with other asset classes’ value signals, but negatively correlated with their momentum signals</p></li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="iii-relation-to-macroeconomic-and-liquidity-risk">
+<h2>III. Relation to Macroeconomic and Liquidity Risk<a class="headerlink" href="#iii-relation-to-macroeconomic-and-liquidity-risk" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-macroeconomic-risk-exposure">
+<h3>A. Macroeconomic Risk Exposure<a class="headerlink" href="#a-macroeconomic-risk-exposure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Global macroeconomic variables are generally not statistically significantly related to value and momentum strategy returns.</p></li>
+</ul>
+</div>
+<div class="section" id="b-liquidity-risk-exposure">
+<h3>B. Liquidity Risk Exposure<a class="headerlink" href="#b-liquidity-risk-exposure" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Measuring Funding and Market Liquidity Risk</p>
+<ul class="simple">
+<li><p>Funding liquidity risk variables:</p>
+<ol class="simple">
+<li><p>TED spread</p></li>
+<li><p>LIBOR-term repo</p></li>
+<li><p>Swap-T-bill</p></li>
+<li><p>Funding liquidity Principal Component</p></li>
+</ol>
+</li>
+<li><p>Market liquidity risk variables:</p>
+<ol class="simple">
+<li><p>On-the-run - off-the-run</p></li>
+<li><p>Pastor-Stambaugh</p></li>
+<li><p>Acharya-Pedersen</p></li>
+<li><p>Market Liquidity Principal Component</p></li>
+</ol>
+</li>
+<li><p>Liquidity Shocks:</p>
+<ul>
+<li><p>Residuals of an AR(2) of a global liquidity index (PCA weighted average of all market and funding liquidity variables across all markets)</p></li>
+</ul>
+</li>
+<li><p>Global measures is just average of all the liquidity risk measures weighted by the principal component of each country’s contribution to the correlation ma- trix of each liquidity measure across the four markets</p></li>
+</ul>
+</li>
+<li><p>Value and Momentum Returns and Liquidity Risk</p>
+<ul class="simple">
+<li><p>For both US and Global funding and liquidity shocks:</p>
+<ul>
+<li><p>Funding liquidity risk is consistently negatively related to value returns and significantly positively related to momentum returns</p>
+<ul>
+<li><p>i.e. Value performs poorly when funding liquidity rises, which occurs during times when borrowing is easier, while momentum performs well during these times</p></li>
+</ul>
+</li>
+<li><p>Market liquidity risk has little impact</p></li>
+</ul>
+</li>
+<li><p>However, the question remains as to why <strong>both</strong> value and momentum earn positive risk premia even though they have opposite signed loadings on liquidity risk</p>
+<ul>
+<li><p>Opposite signed loadings:</p>
+<ul>
+<li><p>When a liquidity shock (positive / negative) occurs, there is more (long / short) on the momentum assets, while value assets are less affected</p></li>
+</ul>
+</li>
+<li><p>Part of momentum returns can be attributed to compensation for liquidity risk exposure as momentum loads positively on liquidity shocks and liquidity risk carries a positive risk premium</p></li>
+<li><p>But value loads negatively on liquidity risk, which does not explain its positive return</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The Power of Averaging Across Markets</p>
+<ul class="simple">
+<li><p>Looking at the universal average return across markets and asset classes to value and momentum reveals more about its relation to liquidity risk rather than looking at the individual performance of each security by mitigating noise unrelated to momentum</p></li>
+<li><p>Similar to how diversification can reduce idiosyncratic risk</p></li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="iv-comovement-and-asset-pricing-tests">
+<h2>IV. Comovement and Asset Pricing Tests<a class="headerlink" href="#iv-comovement-and-asset-pricing-tests" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a-explaining-value-momentum-in-one-market-with-value-momentum-in-other-markets">
+<h3>A. Explaining Value/Momentum in One Market with Value/Momentum in Other Markets<a class="headerlink" href="#a-explaining-value-momentum-in-one-market-with-value-momentum-in-other-markets" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>For each portfolio (48 of them), linearly regress its returns on the market portfolio (MSCI World index) and each of the value and momentum factors in all other markets and asset classes</p></li>
+<li><p>Results: Value and momentum returns in one market are strongly related to value and momentum returns in other markets and asset classes</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="paper-reviews.html" title="previous page">Paper Reviews</a>
+    <a class='right-next' id="next-link" href="paper-review-2.html" title="next page">Paper Review 2: Carry</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

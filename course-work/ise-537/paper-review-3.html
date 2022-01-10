@@ -1,0 +1,1272 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paper Review 3: Quality Minus Junk &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-3.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Paper Review 4: Size Matters, if You Control Your Junk" href="paper-review-4.html" />
+    <link rel="prev" title="Paper Review 2: Carry" href="paper-review-2.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/paper-review-3.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Paper Review 3: Quality Minus Junk" />
+<meta property="og:description" content="Paper Review 3: Quality Minus Junk  By: Chengyi (Jeff) Chen  Table of Contents  Data, Methodology, and Quality Measures  Ex Ante Quality Forecasts Fundamentals " />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/paper-review-3.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-methodology-and-quality-measures-a-id-1-a">
+   1. Data, Methodology, and Quality Measures
+   <a id="1">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-sources">
+     Data Sources
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#long-sample">
+       Long Sample
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#broad-sample">
+       Broad Sample
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#quality-score">
+     Quality Score
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#portfolios">
+     Portfolios
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quality-sorted-portfolios">
+       Quality-sorted Portfolios
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#quality-minus-junk-factor-portfolio-qmj">
+       Quality-Minus-Junk factor portfolio (QMJ)
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ex-ante-quality-forecasts-fundamentals-a-id-2-a">
+   2. Ex Ante Quality Forecasts Fundamentals
+   <a id="2">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-price-of-quality-a-id-3-a">
+   3. The Price of Quality
+   <a id="3">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fama-macbeth-regressions">
+     Fama-Macbeth Regressions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-return-of-quality-stocks-a-id-4-a">
+   4. The Return of Quality Stocks
+   <a id="4">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-minus-junk-a-id-5-a">
+   5. Quality Minus Junk
+   <a id="5">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correlation-analysis-of-monthly-returns-of-qmj-profitability-safety-growth-payout-factors">
+     Correlation Analysis of monthly returns of
+     <span class="math notranslate nohighlight">
+      \(QMJ, Profitability, Safety, Growth, Payout\)
+     </span>
+     factors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factor-loadings-of-mkt-smb-hml-umd-factors-with-qmj-profitability-safety-growth-payout-factors">
+     Factor Loadings of
+     <span class="math notranslate nohighlight">
+      \(MKT, SMB, HML, UMD\)
+     </span>
+     factors with
+     <span class="math notranslate nohighlight">
+      \(QMJ, Profitability, Safety, Growth, Payout\)
+     </span>
+     factors
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#performance-of-the-qmj-factor-across-countries">
+     Performance of the QMJ factor across countries
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#performance-of-the-qmj-factor-over-time">
+     Performance of the QMJ factor over time
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#driver-of-large-and-significant-1-3-and-4-factor-abnormal-returns-in-qmj-portfolios-that-are-long-high-quality-stocks-and-short-junk-stocks">
+     Driver of large and significant 1- , 3- and 4-factor abnormal returns in QMJ portfolios that are long high quality stocks and short junk stocks
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-time-variation-of-the-price-of-quality-predicting-qmj-a-id-6-a">
+   6. The Time Variation of the Price of Quality: Predicting QMJ
+   <a id="6">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quality-at-a-reasonable-price-a-id-7-a">
+   7. Quality at a Reasonable Price
+   <a id="7">
+   </a>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#qmj-on-the-right-hand-side-of-a-factor-model-a-id-8-a">
+   8. QMJ on the Right-Hand-Side of a Factor Model
+   <a id="8">
+   </a>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regressing-each-non-market-factor-in-4-factor-model-smb-hml-umd-against-qmj-factor-and-the-other-factors">
+     Regressing each non-market factor in 4-factor model (
+     <span class="math notranslate nohighlight">
+      \(SMB, HML, UMD\)
+     </span>
+     ) against
+     <span class="math notranslate nohighlight">
+      \(QMJ\)
+     </span>
+     factor and the other factors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#smb">
+       <span class="math notranslate nohighlight">
+        \(SMB\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hml">
+       <span class="math notranslate nohighlight">
+        \(HML\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#umd">
+       <span class="math notranslate nohighlight">
+        \(UMD\)
+       </span>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="paper-review-3-quality-minus-junk">
+<h1>Paper Review 3: Quality Minus Junk<a class="headerlink" href="#paper-review-3-quality-minus-junk" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p><a class="reference external" href="#1">Data, Methodology, and Quality Measures</a></p></li>
+<li><p><a class="reference external" href="#2">Ex Ante Quality Forecasts Fundamentals</a></p></li>
+<li><p><a class="reference external" href="#3">The Price of Quality</a></p></li>
+<li><p><a class="reference external" href="#4">The Return of Quality Stocks</a></p></li>
+<li><p><a class="reference external" href="#5">Quality Minus Junk</a></p></li>
+<li><p><a class="reference external" href="#6">The Time Variation of the Price of Quality: Predicting QMJ</a></p></li>
+<li><p><a class="reference external" href="#7">Quality at a Reasonable Price</a></p></li>
+<li><p><a class="reference external" href="#8">QMJ on the Right-Hand-Side of a Factor Model</a></p></li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-methodology-and-quality-measures-a-id-1-a">
+<h2>1. Data, Methodology, and Quality Measures<a id="1"></a><a class="headerlink" href="#data-methodology-and-quality-measures-a-id-1-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-sources">
+<h3>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="long-sample">
+<h4>Long Sample<a class="headerlink" href="#long-sample" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>U.S. only stocks</p></li>
+<li><p>Jun 1956 - Dec 2012</p></li>
+</ul>
+</div>
+<div class="section" id="broad-sample">
+<h4>Broad Sample<a class="headerlink" href="#broad-sample" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>ALL available common stocks om 24 developed markets in the <a class="reference external" href="http://www.crsp.org/">CRSP</a> and <a class="reference external" href="https://www.spglobal.com/marketintelligence/en/solutions/xpressfeedtm">XpressFeed Global database</a></p></li>
+<li><p>Jan 1986 - Dec 2012</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="quality-score">
+<h3>Quality Score<a class="headerlink" href="#quality-score" title="Permalink to this headline">¶</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-eefab11c-6ad2-4943-84a2-7669784d3b02">
+<span class="eqno">(87)<a class="headerlink" href="#equation-eefab11c-6ad2-4943-84a2-7669784d3b02" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x &amp;: \text{variable of interest} \\
+    r &amp;: \text{vector of ranks}, r_i = rank(x_i) \\
+    \mu_r &amp;: \text{cross sectional mean} \\
+    \sigma_r &amp;: \text{cross sectional standard deviation } \\
+    z(x) &amp;= \frac{(r - \mu_r)}{\sigma_r} \\
+\end{align}\]</div>
+<table style="width:100%">
+  <tr>
+    <th style="text-align:center">Proxy</th>
+    <th style="text-align:center">Definition</th>
+    <th style="text-align:center">Formula</th>
+  </tr>
+  <tr>
+    <td style="text-align:center">Profitability</td>
+    <td style="text-align:center">Average of $z$-scores of profitability measures</td>
+    <td style="text-align:center">
+        \begin{array}
+            \\
+            z( \\
+            z_{\text{gross profits over assets (GPOA)}} \\
+                + z_{\text{return on equity (ROE)}} \\
+                + z_{\text{return on assets (ROA)}} \\
+                + z_{\text{cash flow over assets (CFOA)}} \\
+                + z_{\text{gross margin (GMAR)}} \\
+                + z_{\text{fraction of earnings composed of cash (i.e. low accruals, ACC)}} \\
+            ) \\
+        \end{array}
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Growth</td>
+    <td style="text-align:center">5-year prior growth in profitability</td>
+    <td style="text-align:center">
+        \begin{array}
+            \\
+            z( \\
+            z_{\Delta\text{gross profits over assets (GPOA)}} \\
+                + z_{\Delta\text{return on equity (ROE)}} \\
+                + z_{\Delta\text{return on assets (ROA)}} \\
+                + z_{\Delta\text{cash flow over assets (CFOA)}} \\
+                + z_{\Delta\text{gross margin (GMAR)}} \\
+                + z_{\Delta\text{fraction of earnings composed of cash (i.e. low accruals, ACC)}} \\
+            ) \\
+        \end{array}
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Safety</td>
+    <td style="text-align:center">Average of $z$-scores of safety measures</td>
+    <td style="text-align:center">
+        \begin{array}
+            \\
+            z( \\
+            z_{\text{CAPM }\beta\text{ (BAB)}} \\
+                + z_{\text{idiosyncratic volatility (IVOL)}} \\
+                + z_{\text{leverage (LEV)}} \\
+                + z_{\text{bankruptcy risk (O-score)}} \\
+                + z_{\text{bankruptcy risk (Z-score)}} \\
+                + z_{\text{ROE volatility (EVOL)}} \\
+            ) \\
+        \end{array}
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Payout</td>
+    <td style="text-align:center">Average of $z$-scores of payout measures</td>
+    <td style="text-align:center">
+        \begin{array}
+            \\
+            z( \\
+            z_{\text{equity net issuance (EISS)}} \\
+                + z_{\text{debt net issuance (DISS}} \\
+                + z_{\text{total net payout over profits (NPOP)}} \\
+            ) \\
+        \end{array}
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">Quality</td>
+    <td style="text-align:center">Average of $z$-scores of 4 proxies</td>
+    <td style="text-align:center">
+        \begin{array}
+            \\
+            z( \\
+            Profitability \\
+            + Growth \\
+            + Safety \\
+            + Payout \\
+            ) \\
+        \end{array}
+    </td>
+  </tr>
+</table></div>
+<div class="section" id="portfolios">
+<h3>Portfolios<a class="headerlink" href="#portfolios" title="Permalink to this headline">¶</a></h3>
+<p>NYSE Breakpoints:</p>
+<ul class="simple">
+<li><p>https://quant.stackexchange.com/questions/49651/what-is-nyse-breakpoint-as-used-by-fama-french</p></li>
+<li><p>http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/six_portfolios.html</p></li>
+<li><p>https://quant.stackexchange.com/questions/41729/fama-french-sorting</p></li>
+</ul>
+<div class="section" id="quality-sorted-portfolios">
+<h4>Quality-sorted Portfolios<a class="headerlink" href="#quality-sorted-portfolios" title="Permalink to this headline">¶</a></h4>
+<p>U.S. Long Sample</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">country_quality_sorted_portfolio</span><span class="p">(</span><span class="n">country</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns 1 value-weighted quality-sorted portfolio for the country</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 1. Sort each stock in the investable universe by quality score defined above</span>
+        <span class="c1"># 2. Partition sorted stocks into 10 portfolios based on NYSE breakpoints</span>
+        <span class="c1"># 3. Weigh each portfolio by value and combine into a single country portfolio</span>
+        <span class="c1"># 4. Rebalance at the end of each calendar month</span>
+</pre></div>
+</div>
+<p>Global Broad Sample</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">global_quality_sorted_portfolio</span><span class="p">(</span><span class="n">country</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns 1 country-total-(lagged)-market-cap-weighted portfolio</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 1. Get the quality-sorted portfolios for each country</span>
+        <span class="n">portfolios</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">broad_sample</span><span class="o">.</span><span class="n">countries</span><span class="p">:</span>
+            <span class="n">portfolios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">country_quality_sorted_portfolio</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+        <span class="c1"># 2. Weigh each country portfolio by the country’s total (lagged) market capitalization and combine into 1 global portfolio</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="quality-minus-junk-factor-portfolio-qmj">
+<h4>Quality-Minus-Junk factor portfolio (QMJ)<a class="headerlink" href="#quality-minus-junk-factor-portfolio-qmj" title="Permalink to this headline">¶</a></h4>
+<p>U.S. Long Sample</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">country_qmj_portfolio</span><span class="p">(</span><span class="n">country</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns 1 value-weighted quality-minus-junk factor portfolio for the country</span>
+<span class="sd">        </span>
+<span class="sd">        Resources: </span>
+<span class="sd">        - Kenneth French&#39;s website: http://mba.tuck.dartmouth.edu/pages/faculty/ken.french/Data_Library/six_portfolios.html</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 1. Partition stocks in each country into 2, Big and Small, using median NYSE Market equity as breakpoint for U.S. and 80th percentile of market equity for International stocks</span>
+        <span class="c1"># 2. Further partition each size partition into 3 groups sorted on quality (similar to the Fama-french sorting)</span>
+        <span class="c1"># 3. QMJ factor return is the avg return on the 2 high quality portfolios - avg return on the 2 low quality portfolios</span>
+        <span class="n">QMJ_return</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">small_quality</span> <span class="o">+</span> <span class="n">big_quality</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">small_junk</span> <span class="o">+</span> <span class="n">big_junk</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">QMJ_return</span>
+</pre></div>
+</div>
+<p>Global Broad Sample</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">global_qmj_portfolio</span><span class="p">(</span><span class="n">country</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Returns 1 country-total-(lagged)-market-cap-weighted portfolio</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># 1. Get the quality-minus-junk factor portfolios for each country</span>
+        <span class="n">portfolios</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">broad_sample</span><span class="o">.</span><span class="n">countries</span><span class="p">:</span>
+            <span class="n">portfolios</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">country_qmj_portfolio</span><span class="p">(</span><span class="n">country</span><span class="p">))</span>
+        <span class="c1"># 2. Weigh each country portfolio by the country’s total (lagged) market capitalization and combine into 1 global portfolio</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ex-ante-quality-forecasts-fundamentals-a-id-2-a">
+<h2>2. Ex Ante Quality Forecasts Fundamentals<a id="2"></a><a class="headerlink" href="#ex-ante-quality-forecasts-fundamentals-a-id-2-a" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Quality firms today remain high quality firms + 120Months</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-price-of-quality-a-id-3-a">
+<h2>3. The Price of Quality<a id="3"></a><a class="headerlink" href="#the-price-of-quality-a-id-3-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fama-macbeth-regressions">
+<h3>Fama-Macbeth Regressions<a class="headerlink" href="#fama-macbeth-regressions" title="Permalink to this headline">¶</a></h3>
+<div class="amsmath math notranslate nohighlight" id="equation-002a723a-be51-42b9-9fba-76001a088e90">
+<span class="eqno">(88)<a class="headerlink" href="#equation-002a723a-be51-42b9-9fba-76001a088e90" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    P^i_t &amp;: z_{\text{stock i's market-to-book (MB) ratio at time t}}
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Regress the Time Series of <span class="math notranslate nohighlight">\(P^i_t\)</span> against Time Series of <span class="math notranslate nohighlight">\(Quality^i_t\)</span> (defined in section 1) to get overall quality score exposure of each stock <span class="math notranslate nohighlight">\(i\)</span>’s market-to-book (MB) ratio.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-e64eb734-1344-4aa7-b343-d1b963cb1e8d">
+<span class="eqno">(89)<a class="headerlink" href="#equation-e64eb734-1344-4aa7-b343-d1b963cb1e8d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \hat{P^i_t} &amp;= a + bQuality^i_t + \epsilon^i_t \\
+    b &amp;: \text{if quality improves by one standard deviation, then the price-to-book increases by }b\text{ standard deviations} \\  
+\end{align}\]</div>
+<ol class="simple">
+<li><p>Regress <span class="math notranslate nohighlight">\(P^i_t\)</span> of all the stocks in the Portfolio &#64; time <span class="math notranslate nohighlight">\(t\)</span> against the overall quality score exposure of each stock <span class="math notranslate nohighlight">\(i\)</span>’s market-to-book (MB) ratio</p></li>
+</ol>
+<p>The fama-macbeth regressions are also run by regressing the time series of <span class="math notranslate nohighlight">\(P^i_t\)</span> on different combinations of:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Size\)</span>: z-score of the stock’s market equity (ME)</p></li>
+<li><p><span class="math notranslate nohighlight">\(Ret(t-12,t)\)</span>: stock’s return in the prior year</p></li>
+<li><p>Industry fixed effects</p></li>
+<li><p>Country fixed effects</p></li>
+</ul>
+<p>Price of Quality <span class="math notranslate nohighlight">\(b\)</span>’s Interpretation with the inclusion of industry / country fixed effects:</p>
+<ul class="simple">
+<li><p>if quality improves by one standard deviation above its country-industry mean, then the price-to-book increases by b standard deviations above its country-industry mean.)</p></li>
+</ul>
+<p>Summary:</p>
+<ul class="simple">
+<li><p>Price of quality is statistically significantly positive from both US and global samples across different combinations of country / industry fixed effects, and with and without the other covariates <span class="math notranslate nohighlight">\(Size\)</span>, and <span class="math notranslate nohighlight">\(Ret(t-12, t)\)</span></p></li>
+<li><p>Quality does not explain a large portion of the cross sectional variance in prices (low average <span class="math notranslate nohighlight">\(R^2\)</span>), meaning that there are other big forces driving the prices besides quality alone</p></li>
+<li><p>When regressing against separate components of the quality measurement, we find:</p>
+<ul>
+<li><p>Price of <span class="math notranslate nohighlight">\(Profitability\)</span> is <span class="math notranslate nohighlight">\(&gt; 0\)</span></p></li>
+<li><p>Price of <span class="math notranslate nohighlight">\(Growth\)</span> is <span class="math notranslate nohighlight">\(&gt; 0\)</span></p></li>
+<li><p>Price of <span class="math notranslate nohighlight">\(Safety\)</span> is <span class="math notranslate nohighlight">\(&lt; 0\)</span> in univariate regression, but <span class="math notranslate nohighlight">\(&gt; 0\)</span> when regressed with the other quality measure proxies</p>
+<ul>
+<li><p>Possibly explained by: If investors are constrained from leveraging, risky assets command higher prices (and lower returns) while safe assets have lower prices (and higher returns).</p></li>
+</ul>
+</li>
+<li><p>Price of <span class="math notranslate nohighlight">\(Payout\)</span> is <span class="math notranslate nohighlight">\(&lt; 0\)</span></p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-return-of-quality-stocks-a-id-4-a">
+<h2>4. The Return of Quality Stocks<a id="4"></a><a class="headerlink" href="#the-return-of-quality-stocks-a-id-4-a" title="Permalink to this headline">¶</a></h2>
+<p>Possible theories as to why Quality is limited in explaining Prices:</p>
+<ol class="simple">
+<li><p>Limited Market Efficiency</p>
+<ul class="simple">
+<li><p>Implication: High-quality stocks have high risk-adjusted returns than low-quality stocks as investors are underpricing high quality characteristics</p></li>
+<li><p>Most agreeable with the analysis</p></li>
+</ul>
+</li>
+<li><p>Market uses superior quality measures</p>
+<ul class="simple">
+<li><p>Implication: No relation between our measured quality and ex post returns or at least a greatly attenuated one</p></li>
+<li><p>Results clearly show that there is  a statistically significant relationship (<span class="math notranslate nohighlight">\(\beta\)</span> coefficient in regression) between quality and ex post returns as  excess returns increase almost monotonically in quality such that high-quality stocks outperform low-quality stocks (difference between the highest and lowest deciles and the associated t-statistic), disproving this theory.</p></li>
+</ul>
+</li>
+<li><p>Quality is linked to risk in a way not captured by our safety measure</p>
+<ul class="simple">
+<li><p>Implication: Univariate relation between quality and future returns which is reduced or eliminated by an effective risk model</p></li>
+<li><p>When we control for market risk and other factor exposures, the outperformance in the alpha of high-quality stocks is in fact even larger meaning that High-quality stocks have lower market exposures than junk stocks, disproving this theory.</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<hr class="docutils" />
+<div class="section" id="quality-minus-junk-a-id-5-a">
+<h2>5. Quality Minus Junk<a id="5"></a><a class="headerlink" href="#quality-minus-junk-a-id-5-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="correlation-analysis-of-monthly-returns-of-qmj-profitability-safety-growth-payout-factors">
+<h3>Correlation Analysis of monthly returns of <span class="math notranslate nohighlight">\(QMJ, Profitability, Safety, Growth, Payout\)</span> factors<a class="headerlink" href="#correlation-analysis-of-monthly-returns-of-qmj-profitability-safety-growth-payout-factors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Pairwise correlations mostly <span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
+<ul>
+<li><p>High magnitude in one proxy for quality is usually associated with a different proxy even though it didn’t necessarily have to be</p></li>
+</ul>
+</li>
+<li><p>Correlation between <span class="math notranslate nohighlight">\(Growth\)</span> factor and <span class="math notranslate nohighlight">\(Payout\)</span> factor <span class="math notranslate nohighlight">\(&lt; 0\)</span></p>
+<ul>
+<li><p>Higher payout is naturally associated with lower growth</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="factor-loadings-of-mkt-smb-hml-umd-factors-with-qmj-profitability-safety-growth-payout-factors">
+<h3>Factor Loadings of <span class="math notranslate nohighlight">\(MKT, SMB, HML, UMD\)</span> factors with <span class="math notranslate nohighlight">\(QMJ, Profitability, Safety, Growth, Payout\)</span> factors<a class="headerlink" href="#factor-loadings-of-mkt-smb-hml-umd-factors-with-qmj-profitability-safety-growth-payout-factors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>QMJ factor has a significantly negative market and size exposures</p>
+<ul>
+<li><p>QMJ is long low-beta and large stocks, while being short high-beta small ones</p></li>
+</ul>
+</li>
+<li><p>Profitability, safety, and growth factors have significantly negative HML loadings in the U.S. and global samples</p>
+<ul>
+<li><p>we expect that high-quality stocks have high prices while the value factor HML is long cheap stocks, we would expect a negative HML loading</p></li>
+</ul>
+</li>
+<li><p>The payout factor has a positive loading in the U.S. and global samples</p>
+<ul>
+<li><p>Positive payout loading could be driven by cheap stocks endogenously choosing a low payout.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="performance-of-the-qmj-factor-across-countries">
+<h3>Performance of the QMJ factor across countries<a class="headerlink" href="#performance-of-the-qmj-factor-across-countries" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>QMJ factor delivers positive returns and alphas in all but one of the 24 countries</p>
+<ul>
+<li><p>Negative in New Zealand, one of the smallest countries in market capitalization and number of stocks</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="performance-of-the-qmj-factor-over-time">
+<h3>Performance of the QMJ factor over time<a class="headerlink" href="#performance-of-the-qmj-factor-over-time" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>QMJ factor has consistently delivered positive excess returns and risk-adjusted returns over time</p></li>
+</ul>
+</div>
+<div class="section" id="driver-of-large-and-significant-1-3-and-4-factor-abnormal-returns-in-qmj-portfolios-that-are-long-high-quality-stocks-and-short-junk-stocks">
+<h3>Driver of large and significant 1- , 3- and 4-factor abnormal returns in QMJ portfolios that are long high quality stocks and short junk stocks<a class="headerlink" href="#driver-of-large-and-significant-1-3-and-4-factor-abnormal-returns-in-qmj-portfolios-that-are-long-high-quality-stocks-and-short-junk-stocks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Evidence points away from compensation for tail risk</p>
+<ul>
+<li><p>The strong return in extreme down markets is consistent with a flight to quality (or at least profitability), meaning that taking on tail risk during economic downturns is not plausible evidence that QMJ returns are driven by compensation for tail risk</p></li>
+<li><p>Hence, market mispricing might be more plausible a theory.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="the-time-variation-of-the-price-of-quality-predicting-qmj-a-id-6-a">
+<h2>6. The Time Variation of the Price of Quality: Predicting QMJ<a id="6"></a><a class="headerlink" href="#the-time-variation-of-the-price-of-quality-predicting-qmj-a-id-6-a" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Variation of the price of quality is not pure noise but, rather, reflects changes in the market pricing of quality characteristics, generating variation in QMJ returns.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="quality-at-a-reasonable-price-a-id-7-a">
+<h2>7. Quality at a Reasonable Price<a id="7"></a><a class="headerlink" href="#quality-at-a-reasonable-price-a-id-7-a" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fair price of quality is above the level paid by the market, meaning that quality is currently undervalued.</p></li>
+</ul>
+</div>
+<hr class="docutils" />
+<div class="section" id="qmj-on-the-right-hand-side-of-a-factor-model-a-id-8-a">
+<h2>8. QMJ on the Right-Hand-Side of a Factor Model<a id="8"></a><a class="headerlink" href="#qmj-on-the-right-hand-side-of-a-factor-model-a-id-8-a" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="regressing-each-non-market-factor-in-4-factor-model-smb-hml-umd-against-qmj-factor-and-the-other-factors">
+<h3>Regressing each non-market factor in 4-factor model (<span class="math notranslate nohighlight">\(SMB, HML, UMD\)</span>) against <span class="math notranslate nohighlight">\(QMJ\)</span> factor and the other factors<a class="headerlink" href="#regressing-each-non-market-factor-in-4-factor-model-smb-hml-umd-against-qmj-factor-and-the-other-factors" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="smb">
+<h4><span class="math notranslate nohighlight">\(SMB\)</span><a class="headerlink" href="#smb" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(SMB\)</span> has a very large negative exposure to <span class="math notranslate nohighlight">\(QMJ\)</span>.</p></li>
+</ul>
+</div>
+<div class="section" id="hml">
+<h4><span class="math notranslate nohighlight">\(HML\)</span><a class="headerlink" href="#hml" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(HML\)</span> has a negative loading on <span class="math notranslate nohighlight">\(QMJ\)</span></p>
+<ul>
+<li><p>Cheap stocks (with high book-to-market) are naturally lower quality than expensive stocks</p></li>
+<li><p>Implication: controlling for <span class="math notranslate nohighlight">\(QMJ\)</span> increases the alpha of <span class="math notranslate nohighlight">\(HML\)</span>, strengthening the value effect.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="umd">
+<h4><span class="math notranslate nohighlight">\(UMD\)</span><a class="headerlink" href="#umd" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(UMD\)</span> has positive loading on QMJ, which is significant in the global but not U.S. sample. Controlling for this exposure to quality lowers the alpha of UMD, but the momentum effect remains highly significant in both samples</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="paper-review-2.html" title="previous page">Paper Review 2: Carry</a>
+    <a class='right-next' id="next-link" href="paper-review-4.html" title="next page">Paper Review 4: Size Matters, if You Control Your Junk</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

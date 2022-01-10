@@ -1,0 +1,1258 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 7 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-530/hw7.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HW 8" href="hw8.html" />
+    <link rel="prev" title="HW 6" href="hw6.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-530/hw7.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HW 7" />
+<meta property="og:description" content="HW 7  ISE 530 Optimization for Analytics Homework VII: Duality theory. Due 11:59 PM Wednesday November 04, 2020  Describe a dual-based algorithm (not the dual s" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-530/hw7.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   11.13
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   11.31
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   11.32
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   11.36
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-7">
+<h1>HW 7<a class="headerlink" href="#hw-7" title="Permalink to this headline">¶</a></h1>
+<p>ISE 530 Optimization for Analytics Homework VII: Duality theory. Due 11:59 PM Wednesday November 04, 2020</p>
+<ul class="simple">
+<li><p>Describe a dual-based algorithm (not the dual simplex) for solving a linear program with two constraints:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-cfa75080-096b-49bf-99a9-0052a70ab4fa">
+<span class="eqno">(307)<a class="headerlink" href="#equation-cfa75080-096b-49bf-99a9-0052a70ab4fa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} 
+    &amp; \sum^n_{i=1} c_ix_i \\
+    \text{subject to } 
+    &amp; \sum^n_{i=1} a_i x_i \geq \alpha, (a_i\text{ and }\alpha\text{ are positive constants}) \\
+    &amp; \sum^n_{i=1}x_i = 1\text{ , and }x_i \geq 0\text{, for all }i = 1, \cdots n, \\
+\end{align}\]</div>
+<p>where it is given that <span class="math notranslate nohighlight">\(\sum^n_{i=1} a_i \geq n\alpha\)</span> (this ensures feasibility of the problem). The algorithm can be accomplished in several steps.</p>
+<p>Step 1. Letting <span class="math notranslate nohighlight">\(\lambda \geq 0\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> (un-restricted in sign) be the two dual variables of the respective constraints of (2), form the dual program of the given linear program.</p>
+<p>Step 2. The constraints of the dual program suggest that the optimizing <span class="math notranslate nohighlight">\(\lambda\)</span> can be uniquely determined from <span class="math notranslate nohighlight">\(\mu\)</span>. Substituting this expression into the objective function of the dual reduces the dual
+program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</span>-variable alone.</p>
+<p>Step 3. The resulting univariate dual program (in <span class="math notranslate nohighlight">\(\mu\)</span>) can be solved by a simple sorting procedure.</p>
+<p>Step 4. Use complementary slackness to recover a solution to the primal program.</p>
+<ul class="simple">
+<li><p>Extend the procedure in the above exercise to case where the objective function is replaced by <span class="math notranslate nohighlight">\(\sum^n_{i=1} c_i x^2_i\)</span> with the coefficients <span class="math notranslate nohighlight">\(c_i\)</span> being all positive. Apply the resulting procedure to the problem:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a21d3c0e-9458-42e2-97e5-0c69a549d978">
+<span class="eqno">(308)<a class="headerlink" href="#equation-a21d3c0e-9458-42e2-97e5-0c69a549d978" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} 
+    &amp; x^2_1 + x^2_2 \\
+    \text{subject to } 
+    &amp; 2x_1 + 3x_2 \geq 2 \\
+    &amp; x_1 + x_2 = 1\text{, and }x_i \geq 0. \\
+\end{align}\]</div>
+<p>Verify your solution graphically by considering the problem as a “nearest-point” problem.</p>
+<ul class="simple">
+<li><p>Do Exercise 11.13 in the Cottle-Thapa text. Apply this exercise to the case where each function <span class="math notranslate nohighlight">\(f_j(x_j) = c_jx_j + \frac{1}{2}x^2_j\)</span> and describe a simple procedure for solving the problem. [This exercise shares some similarities with the preceding two problems.]</p></li>
+<li><p>Do Exercises 11.31, 11.32, and 11.36 in the Cottle-Thapa text.</p></li>
+<li><p>Determine the minimum objective value and minimizers of the convex program:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-55fa5178-5b7b-4598-a0bf-09869a19864a">
+<span class="eqno">(309)<a class="headerlink" href="#equation-55fa5178-5b7b-4598-a0bf-09869a19864a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x, y}{\text{minimize }} 
+    &amp; e^{-y}
+    \text{ subject to } 
+    \sqrt{x^2 + y^2} - x \leq 0,
+\end{align}\]</div>
+<p>Show that the dual function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1acf9ea3-9e87-4e50-b051-e9ffb374d526">
+<span class="eqno">(310)<a class="headerlink" href="#equation-1acf9ea3-9e87-4e50-b051-e9ffb374d526" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    d(\mu) \overset{\Delta}{=} \underset{x, y}{\text{minimize }} 
+    &amp; e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big], \mu \geq 0
+\end{align}\]</div>
+<p>is identically equal to zero but this value is not attained, for any <span class="math notranslate nohighlight">\(\mu \geq 0\)</span>. This convex program has a positive gap in this generalized sense. Without worrying about the non-attainment issue of the dual function, what goes wrong with this example with reference to the general duality theory?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport operator\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sympy import Matrix\nfrom scipy import optimize";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\nfrom mpl_toolkits.mplot3d import Axes3D\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport operator\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom sympy import Matrix\nfrom scipy import optimize";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<ul class="simple">
+<li><p>Describe a dual-based algorithm (not the dual simplex) for solving a linear program with two constraints:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-20f8f246-7042-43f9-907a-76f16144197d">
+<span class="eqno">(311)<a class="headerlink" href="#equation-20f8f246-7042-43f9-907a-76f16144197d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} 
+    &amp; \sum^n_{i=1} c_ix_i \\
+    \text{subject to } 
+    &amp; \sum^n_{i=1} a_i x_i \geq \alpha, (a_i\text{ and }\alpha\text{ are positive constants}) \\
+    &amp; \sum^n_{i=1}x_i = 1\text{ , and }x_i \geq 0\text{, for all }i = 1, \cdots n, \\
+\end{align}\]</div>
+<p>where it is given that <span class="math notranslate nohighlight">\(\sum^n_{i=1} a_i \geq n\alpha\)</span> (this ensures feasibility of the problem). The algorithm can be accomplished in several steps.</p>
+<p>Step 1. Letting <span class="math notranslate nohighlight">\(\lambda \geq 0\)</span> and <span class="math notranslate nohighlight">\(\mu\)</span> (un-restricted in sign) be the two dual variables of the respective constraints of (2), form the dual program of the given linear program.</p>
+<p>Step 2. The constraints of the dual program suggest that the optimizing <span class="math notranslate nohighlight">\(\lambda\)</span> can be uniquely determined from <span class="math notranslate nohighlight">\(\mu\)</span>. Substituting this expression into the objective function of the dual reduces the dual
+program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</span>-variable alone.</p>
+<p>Step 3. The resulting univariate dual program (in <span class="math notranslate nohighlight">\(\mu\)</span>) can be solved by a simple sorting procedure.</p>
+<p>Step 4. Use complementary slackness to recover a solution to the primal program.</p>
+<ul class="simple">
+<li><p>Extend the procedure in the above exercise to case where the objective function is replaced by <span class="math notranslate nohighlight">\(\sum^n_{i=1} c_i x^2_i\)</span> with the coefficients <span class="math notranslate nohighlight">\(c_i\)</span> being all positive. Apply the resulting procedure to the problem:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-e12f2908-2986-49dc-b5b1-fb2a2181a6fd">
+<span class="eqno">(312)<a class="headerlink" href="#equation-e12f2908-2986-49dc-b5b1-fb2a2181a6fd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x}{\text{minimize }} 
+    &amp; x^2_1 + x^2_2 \\
+    \text{subject to } 
+    &amp; 2x_1 + 3x_2 \geq 2 \\
+    &amp; x_1 + x_2 = 1\text{, and }x_i \geq 0. \\
+\end{align}\]</div>
+<p>Verify your solution graphically by considering the problem as a “nearest-point” problem.</p>
+<p>Step 1 - Dual Program:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5101c431-dfdb-4229-92fd-c10568a01d83">
+<span class="eqno">(313)<a class="headerlink" href="#equation-5101c431-dfdb-4229-92fd-c10568a01d83" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\lambda, \mu}{\text{maximize }} 
+    &amp; 2\lambda + \mu \\
+    \text{subject to } 
+    &amp; 2\lambda + \mu \leq 1 \\
+    &amp; 3\lambda + \mu = 1\text{, and }\lambda \geq 0, \mu \text{ free}. \\
+\end{align}\]</div>
+<p>From constraint <span class="math notranslate nohighlight">\(3\lambda + \mu = 1\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-06b91e4f-d567-4496-bcab-09795a2cabef">
+<span class="eqno">(314)<a class="headerlink" href="#equation-06b91e4f-d567-4496-bcab-09795a2cabef" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \lambda = \frac{1 - \mu}{3} \\
+\end{align}\]</div>
+<p>Step 2 - Substituting <span class="math notranslate nohighlight">\(\lambda\)</span> into objective function, dual program becomes parameterized by <span class="math notranslate nohighlight">\(\mu\)</span> alone:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-85771def-39d3-4c14-95e9-96e79ecca0f4">
+<span class="eqno">(315)<a class="headerlink" href="#equation-85771def-39d3-4c14-95e9-96e79ecca0f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\mu}{\text{maximize }} 
+    &amp; 2\Big(\frac{1 - \mu}{3}\Big) + \mu \\
+    \text{subject to } 
+    &amp; 2\Big(\frac{1 - \mu}{3}\Big) + \mu \leq 1 \text{, and } \mu \text{ free}. \\
+\end{align}\]</div>
+<p>Step 3 - Set objective value to 1:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0342fabb-0f19-4143-9b9b-1794b9df8dcf">
+<span class="eqno">(316)<a class="headerlink" href="#equation-0342fabb-0f19-4143-9b9b-1794b9df8dcf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    2\Big(\frac{1 - \mu}{3}\Big) + \mu &amp;= 1 \\
+    \frac{2}{3} - \frac{2}{3}\mu + \mu &amp;= 1 \\
+    \frac{1}{3}\mu &amp;= \frac{1}{3} \\
+    \mu^* &amp;= 1, \lambda^* = 0 \\
+\end{align}\]</div>
+<p>Step 4 - Complementary Slackness:</p>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-88e16e40-e836-459d-9591-5e61bbae4b01">
+<span class="eqno">(317)<a class="headerlink" href="#equation-88e16e40-e836-459d-9591-5e61bbae4b01" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x_1, x_2, \lambda, \mu) &amp;= x^2_1 + x^2_2 - \lambda(2x_1 + 3x_2 - 2) - \mu(x_1 + x_2 - 1) \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0288f50e-2f3c-46e2-b9cd-43412176fb4b">
+<span class="eqno">(318)<a class="headerlink" href="#equation-0288f50e-2f3c-46e2-b9cd-43412176fb4b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^*_1 \frac{\partial \mathcal{L}(x_1, x_2, \lambda^*, \mu^*)}{\partial x_1} &amp;= 0 \\
+    x^*_1 (2x^*_1 - 1) &amp;= 0 \\
+    x^*_1 &amp;= 0.5 \\ 
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e62979b1-d602-47eb-acef-9a744b6e68b7">
+<span class="eqno">(319)<a class="headerlink" href="#equation-e62979b1-d602-47eb-acef-9a744b6e68b7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^*_2 \frac{\partial \mathcal{L}(x_1, x_2, \lambda^*, \mu^*)}{\partial x_2} &amp;= 0 \\
+    x^*_2 (2x^*_2 - 1) &amp;= 0 \\
+    x^*_2 &amp;= 0.5 \\ 
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct lines</span>
+<span class="n">x_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>  <span class="c1"># x_1 &gt;= 0</span>
+<span class="n">x_2_1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x_1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># constraint 1: 2𝑥1 + 3𝑥2 ≥ 2</span>
+<span class="n">x_2_2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x_1</span><span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">x_1</span>  <span class="c1"># constraint 2: 𝑥1 + 𝑥2 = 1</span>
+
+<span class="c1"># Make plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$2x_1 + 3x_2 \geq 2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_2</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$x_1 + x_2 = 1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_1$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x_2$&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fill feasible region</span>
+<span class="n">x_2_lb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">x_2_1</span><span class="p">(</span><span class="n">x_1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_1</span><span class="p">)))</span>
+<span class="n">x_2_ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">x_1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x_1</span><span class="p">,</span> <span class="n">x_2_lb</span><span class="p">,</span> <span class="n">x_2_ub</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="n">x_2_ub</span> <span class="o">&gt;</span> <span class="n">x_2_lb</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/hw7_11_0.png" src="../../_images/hw7_11_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time: 1.52 s
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "# Construct lines\nx_1 = np.linspace(0, 2, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: (2 - 2 * x_1) / 3  # constraint 1: 2\ud835\udc651 + 3\ud835\udc652 \u2265 2\nx_2_2 = lambda x_1: 1 - x_1  # constraint 2: \ud835\udc651 + \ud835\udc652 = 1\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$2x_1 + 3x_2 \\geq 2$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$x_1 + x_2 = 1$\")\nplt.xlim((0, 2))\nplt.ylim((0, 2))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\nx_2_lb = np.maximum(x_2_1(x_1), np.zeros(len(x_1)))\nx_2_ub = np.array([2] * len(x_1))\nplt.fill_between(x_1, x_2_lb, x_2_ub, where=x_2_ub > x_2_lb, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_formatted_code = "# Construct lines\nx_1 = np.linspace(0, 2, 2000)  # x_1 >= 0\nx_2_1 = lambda x_1: (2 - 2 * x_1) / 3  # constraint 1: 2\ud835\udc651 + 3\ud835\udc652 \u2265 2\nx_2_2 = lambda x_1: 1 - x_1  # constraint 2: \ud835\udc651 + \ud835\udc652 = 1\n\n# Make plot\nplt.plot(x_1, x_2_1(x_1), label=r\"$2x_1 + 3x_2 \\geq 2$\")\nplt.plot(x_1, x_2_2(x_1), label=r\"$x_1 + x_2 = 1$\")\nplt.xlim((0, 2))\nplt.ylim((0, 2))\nplt.xlabel(r\"$x_1$\")\nplt.ylabel(r\"$x_2$\")\n\n# Fill feasible region\nx_2_lb = np.maximum(x_2_1(x_1), np.zeros(len(x_1)))\nx_2_ub = np.array([2] * len(x_1))\nplt.fill_between(x_1, x_2_lb, x_2_ub, where=x_2_ub > x_2_lb, color=\"grey\", alpha=0.5)\nplt.grid(True)\nplt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.0)\nplt.show()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>The minimum squared euclidean norm satisfying the constraint of <span class="math notranslate nohighlight">\(x_1 + x_2 = 1\)</span> above (perpendicular to the <span class="math notranslate nohighlight">\(x_1 + x_2 = 1\)</span> hyperplane) is <span class="math notranslate nohighlight">\(x^*_1 = 0.5, x^*_2 = 0.5\)</span>, hence the solution we found via complementary slackness is verified optimal.</p>
+<hr class="docutils" />
+<div class="section" id="id1">
+<h2>11.13<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>A function <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \rightarrow \mathbb{R}\)</span> is said to be <em>separable</em> if it can be written as the sum of functions of a single real variable, that is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8e212ef7-c9a4-4384-a0de-02abcfad3b52">
+<span class="eqno">(320)<a class="headerlink" href="#equation-8e212ef7-c9a4-4384-a0de-02abcfad3b52" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    f(x_1, x_2, \cdots , x_n) &amp;= \sum^{n}_{j=1} f_j (x_j). \\
+\end{align}\]</div>
+<p>(a) Let <span class="math notranslate nohighlight">\(f\)</span> be a differentiable separable function and consider the nonlinear program</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b0f23f4c-6ec8-4326-8c54-db36c7e407ff">
+<span class="eqno">(321)<a class="headerlink" href="#equation-b0f23f4c-6ec8-4326-8c54-db36c7e407ff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp; f(x_1, x_2, \cdots , x_n) \\
+    \text{subject to } &amp; \sum^{n}_{j=1} x_j = \sigma \\
+    x_j \geq 0, j = 1, \cdots, n,
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is a positive scalar. Write the first-order conditions for a
+local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in this nonlinear program.</p>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1ed78aec-4b5c-4073-a18e-a3181c9fae82">
+<span class="eqno">(322)<a class="headerlink" href="#equation-1ed78aec-4b5c-4073-a18e-a3181c9fae82" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x, \mu) &amp;= \sum^{n}_{j=1} f_j (x_j) + \mu\Big(\sum^{n}_{j=1} x_j - \sigma\Big) \\
+\end{align}\]</div>
+<p>First Order conditions for a local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in this nonlinear program:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5236a8d3-6335-48ff-80f7-28aacc0dad75">
+<span class="eqno">(323)<a class="headerlink" href="#equation-5236a8d3-6335-48ff-80f7-28aacc0dad75" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \begin{bmatrix} f^\prime_1 (\bar{x}_1) \\ f^\prime_2 (\bar{x}_2) \\ \vdots \\ f^\prime_n (\bar{x}_n) \\ \end{bmatrix} &amp;= 0 \\
+\end{align}\]</div>
+<p><span class="math notranslate nohighlight">\(\mu\)</span> is free.</p>
+<p>(b) Recall that if <span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span>, the set <span class="math notranslate nohighlight">\(\{j : x_j \not= 0\}\)</span> is called the <em>support</em> of <span class="math notranslate nohighlight">\(x\)</span>, denoted by <span class="math notranslate nohighlight">\(\sup(x)\)</span>. Show that every feasible solution in part (a) has a nonempty support.</p>
+<p>Since we know that <span class="math notranslate nohighlight">\(\sigma\)</span> is a positive scalar, <span class="math notranslate nohighlight">\(x_j \geq 0\)</span>, and a feasible solution to part (a) must satisfy the constraint <span class="math notranslate nohighlight">\(\sum^{n}_{j=1} x_j = \sigma\)</span>, one of the <span class="math notranslate nohighlight">\(x_j\)</span>s <strong>MUST</strong> be positive, hence any feasible solution will have a nonempty support <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
+<p>(c) Show that there is a real number <span class="math notranslate nohighlight">\(\kappa\)</span> such that if <span class="math notranslate nohighlight">\(x^∗\)</span> is a local minimizer of the nonlinear program in part (a), then for all <span class="math notranslate nohighlight">\(j \in \sup(x^∗)\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-fe0770ee-8120-43ba-a2b7-bdf694cc5437">
+<span class="eqno">(324)<a class="headerlink" href="#equation-fe0770ee-8120-43ba-a2b7-bdf694cc5437" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \frac{\partial f_j (x^*_j)}{\partial x_j} &amp;= \kappa. \\
+\end{align}\]</div>
+<p>As shown in the first order conditions, the partial derivative (simply the derivative since the function is of just one variable), must be 0. Hence <span class="math notranslate nohighlight">\(\kappa = 0\)</span>.</p>
+<ul class="simple">
+<li><p>Do Exercise 11.13 in the Cottle-Thapa text. Apply this exercise to the case where each function <span class="math notranslate nohighlight">\(f_j(x_j) = c_jx_j + \frac{1}{2}x^2_j\)</span> and describe a simple procedure for solving the problem. [This exercise shares some similarities with the preceding two problems.]</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a4e5c41a-64f0-41ae-84aa-bfc113f611e3">
+<span class="eqno">(325)<a class="headerlink" href="#equation-a4e5c41a-64f0-41ae-84aa-bfc113f611e3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    f^\prime_j(x_j) = c_j + x_j \\
+\end{align}\]</div>
+<p>Since the gradients of each function <span class="math notranslate nohighlight">\(f_j(x_j)\)</span>, <span class="math notranslate nohighlight">\(f^\prime_j(x_j) = 0\)</span>, we can just set each <span class="math notranslate nohighlight">\(x_j = -c_j\)</span>. Since coefficient of <span class="math notranslate nohighlight">\(x^2_j\)</span> in <span class="math notranslate nohighlight">\(f_j(x_j)\)</span> is <span class="math notranslate nohighlight">\(&gt; 0\)</span>, the hessian of this univariate function is positive definite, hence function is strictly convex, and since our function for the optimization problem is a sum composition of striclty convex functions, it is also strictly convex, hence our solution will be the global minimizer.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>11.31<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Find all extremal values of <span class="math notranslate nohighlight">\(z\)</span>, and the corresponding values of <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>, using the method of Lagrange multipliers in the following two instances.</p>
+<p>(a)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8cfc33ad-3141-4b13-8378-f28d02a5604c">
+<span class="eqno">(326)<a class="headerlink" href="#equation-8cfc33ad-3141-4b13-8378-f28d02a5604c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1x_2 + 4 &amp;= z \\
+    x^2_1 + x^2_2 &amp;= 8. \\
+\end{align}\]</div>
+<p>Finding infimum of Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-87a96aa7-5c3e-4854-8538-4a674f58311c">
+<span class="eqno">(327)<a class="headerlink" href="#equation-87a96aa7-5c3e-4854-8538-4a674f58311c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x \mathcal{L}(x_1, x_2, \lambda) &amp;= 0 \\
+    \nabla_x \Big(x_1x_2 + 4 + \lambda(x^2_1 + x^2_2 - 8)\Big) &amp;= 0 \\
+    \begin{bmatrix} x_2 + 2\lambda x_1 \\ x_1 + 2\lambda x_2 \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
+    \newline \\
+    \text{Substituting }x_1 = -\frac{x_2}{2\lambda}, &amp; \\ 
+    -\frac{x_2}{2\lambda} + 2\lambda x_2 &amp;= 0 \\
+    2\lambda x_2 &amp;= \frac{x_2}{2\lambda} \\
+    4\lambda^2 x_2 &amp;= x_2 \\
+    \lambda &amp;= \pm\frac{1}{2} \\
+\end{align}\]</div>
+<p>Case I: <span class="math notranslate nohighlight">\(\lambda = \frac{1}{2} \rightarrow x_1 = -x_2\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-dc96d6c9-9650-49d0-8239-47fec63734cf">
+<span class="eqno">(328)<a class="headerlink" href="#equation-dc96d6c9-9650-49d0-8239-47fec63734cf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^2_1 + x^2_2 &amp;= 8 \\
+    (-x_2)^2 + x^2_2 &amp;= 8 \\
+    2x^2_2 &amp;= 8 \\
+    x^2_2 &amp;= 4 \\
+    x_2 &amp;= \pm2 \text{ and } x_1 = \mp2, z = 0 \\
+\end{align}\]</div>
+<p>Case II: <span class="math notranslate nohighlight">\(\lambda = -\frac{1}{2} \rightarrow x_1 = x_2\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-56e473d0-e674-4852-8864-a19094a96b43">
+<span class="eqno">(329)<a class="headerlink" href="#equation-56e473d0-e674-4852-8864-a19094a96b43" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^2_1 + x^2_2 &amp;= 8 \\
+    (-x_2)^2 + x^2_2 &amp;= 8 \\
+    2x^2_2 &amp;= 8 \\
+    x^2_2 &amp;= 4 \\
+    x_2 &amp;= \pm2 \text{ and } x_1 = \pm2, z = 8 \\
+\end{align}\]</div>
+<p>(b)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-df846f77-a949-46f7-82c2-6c7e59bd5f53">
+<span class="eqno">(330)<a class="headerlink" href="#equation-df846f77-a949-46f7-82c2-6c7e59bd5f53" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 + 2x_2 &amp;= z \\
+    x^2_1 + x^2_2 &amp;= 13. \\
+\end{align}\]</div>
+<p>Finding infimum of Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-625fbd47-912e-49fe-a1bd-5dcb400c3280">
+<span class="eqno">(331)<a class="headerlink" href="#equation-625fbd47-912e-49fe-a1bd-5dcb400c3280" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x \mathcal{L}(x_1, x_2, \lambda) &amp;= 0 \\
+    \nabla_x \Big(x_1 + 2x_2 + \lambda(x^2_1 + x^2_2 - 13)\Big) &amp;= 0 \\
+    \begin{bmatrix} 1 + 2\lambda x_1 \\ 2 + 2\lambda x_2 \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
+    x^* &amp;= -\frac{1}{\lambda}\begin{bmatrix} \frac{1}{2} \\ 1 \\ \end{bmatrix}
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-07435e8f-4bcb-4b96-9dc9-28214aae8913">
+<span class="eqno">(332)<a class="headerlink" href="#equation-07435e8f-4bcb-4b96-9dc9-28214aae8913" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^2_1 + x^2_2 &amp;= 13 \\
+    (-\frac{1}{2\lambda})^2 + (-\frac{1}{\lambda})^2 &amp;= 13 \\
+    \frac{1}{4\lambda^2} + \frac{1}{\lambda^2} &amp;= 13 \\
+    \frac{5}{4\lambda^2} &amp;= 13 \\
+    5 &amp;= 52\lambda^2 \\
+    \lambda &amp;= \pm\sqrt{\frac{5}{52}} \\
+\end{align}\]</div>
+<p>Case I: <span class="math notranslate nohighlight">\(\lambda = \sqrt{\frac{5}{52}} \rightarrow x^* = -\sqrt{\frac{52}{5}}\begin{bmatrix} \frac{1}{2} \\ 1 \\ \end{bmatrix}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-d01855d3-28d2-4930-a765-c70a8fcc81f1">
+<span class="eqno">(333)<a class="headerlink" href="#equation-d01855d3-28d2-4930-a765-c70a8fcc81f1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 &amp;= -\frac{1}{2}\sqrt{\frac{52}{5}} \\
+    x_2 &amp;= -\sqrt{\frac{52}{5}} \\
+    z &amp;= -\frac{5}{2}\sqrt{\frac{52}{5}} \\
+\end{align}\]</div>
+<p>Case II: <span class="math notranslate nohighlight">\(\lambda = -\sqrt{\frac{5}{52}} \rightarrow x^* = \sqrt{\frac{52}{5}}\begin{bmatrix} \frac{1}{2} \\ 1 \\ \end{bmatrix}\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-4d774b82-c40e-48d7-b9cc-4191c89e111b">
+<span class="eqno">(334)<a class="headerlink" href="#equation-4d774b82-c40e-48d7-b9cc-4191c89e111b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 &amp;= \frac{1}{2}\sqrt{\frac{52}{5}} \\
+    x_2 &amp;= \sqrt{\frac{52}{5}} \\
+    z &amp;= \frac{5}{2}\sqrt{\frac{52}{5}} \\
+\end{align}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id3">
+<h2>11.32<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following univariate optimization problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-47727fa7-afa9-47eb-a815-9066f2e47d94">
+<span class="eqno">(335)<a class="headerlink" href="#equation-47727fa7-afa9-47eb-a815-9066f2e47d94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \text{minimize } &amp; x^2 \\
+    \text{subject to } &amp; x^2 - 5x + 6 \leq 0. \\ 
+\end{align}\]</div>
+<p>(a) Form the Lagrangian.</p>
+<p>Lagrangian function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4eff9988-22fc-44dc-9108-8780ecf0a45a">
+<span class="eqno">(336)<a class="headerlink" href="#equation-4eff9988-22fc-44dc-9108-8780ecf0a45a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x, \lambda) &amp;= x^2 + \lambda(x^2 - 5x + 6) \\
+\end{align}\]</div>
+<p>(b) Find the dual of the problem.</p>
+<p>Lagrangian Dual Function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-33acf7c1-9dc6-4596-a6c6-7b26c924d8ef">
+<span class="eqno">(337)<a class="headerlink" href="#equation-33acf7c1-9dc6-4596-a6c6-7b26c924d8ef" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    g(\lambda) 
+    &amp;= \underset{x}{\text{inf}} \mathcal{L}(x, \lambda) \\
+    &amp;= \underset{x}{\text{inf}}\Big(x^2 + \lambda(x^2 - 5x + 6)\Big) \\
+\end{align}\]</div>
+<p>Dual Problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b1239b6d-ac93-41a9-9629-84ef2125c8e8">
+<span class="eqno">(338)<a class="headerlink" href="#equation-b1239b6d-ac93-41a9-9629-84ef2125c8e8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\lambda}{\text{maximize }} &amp; g(\lambda)  \\
+    \text{subject to } &amp; \lambda \geq 0. \\ 
+\end{align}\]</div>
+<p>Finding infimum of Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c2af3328-98b8-4650-b28e-b9ba11d9ee5a">
+<span class="eqno">(339)<a class="headerlink" href="#equation-c2af3328-98b8-4650-b28e-b9ba11d9ee5a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x \mathcal{L}(x, \lambda) &amp;= 0 \\
+    \nabla_x \Big( x^2 + \lambda(x^2 - 5x + 6) \Big) &amp;= 0 \\
+    2x + \lambda(2x - 5) &amp;= 0 \\
+    x^* &amp;= \frac{5\lambda}{(2 + 2\lambda)} \\
+\end{align}\]</div>
+<p>Lagrangian Dual Function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6b703344-1b00-4ff9-a3bb-3327315ee487">
+<span class="eqno">(340)<a class="headerlink" href="#equation-6b703344-1b00-4ff9-a3bb-3327315ee487" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    g(\lambda) 
+    &amp;= (x^*)^2 + \lambda((x^*)^2 - 5x^* + 6) \\
+    &amp;= \Big(\frac{5\lambda}{(2 + 2\lambda)}\Big)^2 + \lambda\Big(\Big(\frac{5\lambda}{(2 + 2\lambda)}\Big)^2 - 5\frac{5\lambda}{(2 + 2\lambda)} + 6\Big) \\
+    &amp;= \lambda\frac{24 + 23\lambda - \lambda^2}{(2 + 2\lambda)^2} \\
+\end{align}\]</div>
+<p>Substituting into Dual Problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fd6d819e-7fba-47f9-84a0-f4372bbde94c">
+<span class="eqno">(341)<a class="headerlink" href="#equation-fd6d819e-7fba-47f9-84a0-f4372bbde94c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{\lambda}{\text{maximize }} &amp; \lambda\frac{24 + 23\lambda - \lambda^2}{(2 + 2\lambda)^2} \\
+    \text{subject to } &amp; \lambda \geq 0. \\ 
+\end{align}\]</div>
+<p>Supremum of Dual function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-41e45c2b-51d9-4028-bed7-6c188b03810b">
+<span class="eqno">(342)<a class="headerlink" href="#equation-41e45c2b-51d9-4028-bed7-6c188b03810b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_\lambda g(\lambda) &amp;= 0 \\
+    \nabla_\lambda \lambda\frac{24 + 23\lambda - \lambda^2}{(2 + 2\lambda)^2} &amp;= 0 \\
+    \frac{-2(\lambda^3 + 3\lambda^2 - 22\lambda - 24)}{(2+2\lambda)^3} &amp;= 0 \\
+    \frac{-2(0.5\lambda^2 + \lambda - 12)(2+2\lambda)}{(2+2\lambda)^3} &amp;= 0 \\
+    \frac{-\lambda^2 - 2\lambda + 24}{(2+2\lambda)^2} &amp;= 0 \\
+    \frac{-(\lambda + 6)(\lambda - 4)}{(2+2\lambda)^2} &amp;= 0 \\
+\end{align}\]</div>
+<p>Case I: <span class="math notranslate nohighlight">\(\lambda^* = -6\)</span></p>
+<p>Rejected, since <span class="math notranslate nohighlight">\(\lambda \geq 0\)</span> constraint.</p>
+<p>Case II: <span class="math notranslate nohighlight">\(\lambda^* = 4\)</span></p>
+<p>Optimal Dual Objective value:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-79dde2ca-2fb7-463d-b27e-8165ba0144ca">
+<span class="eqno">(343)<a class="headerlink" href="#equation-79dde2ca-2fb7-463d-b27e-8165ba0144ca" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    g(\lambda^*) 
+    &amp;= \lambda^*\frac{24 + 23\lambda^* - (\lambda^*)^2}{(2 + 2\lambda^*)^2} \\
+    &amp;= 4\frac{24 + 23(4) - 4^2}{(2 + 2(4))^2} \\
+    &amp;= 4\frac{24 + 92 - 16}{(2 + 8)^2} \\
+    &amp;= 4\frac{100}{100} \\
+    &amp;= 4 \\
+\end{align}\]</div>
+<p>(c) Verify the Weak Duality Theorem for this problem.</p>
+<p>Primal Objective value:</p>
+<p>With <span class="math notranslate nohighlight">\(x^* = \frac{5\lambda}{(2 + 2\lambda)}\)</span> and <span class="math notranslate nohighlight">\(\lambda^* = 4\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6ee44459-e9ba-41a0-a114-fae594dde56d">
+<span class="eqno">(344)<a class="headerlink" href="#equation-6ee44459-e9ba-41a0-a114-fae594dde56d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    f(x^*) &amp;= \Big(\frac{5(4)}{(2 + 2(4))}\Big)^2 \\
+    &amp;= 4 \\
+\end{align}\]</div>
+<p>Since solution to primal (4) is <span class="math notranslate nohighlight">\(\geq\)</span> solution to dual (4), weak duality holds.</p>
+<p>(d) Does Strong Duality hold, or is there a duality gap?</p>
+<p>Since the duality gap is 0 as optimal objective value for both primal and dual problem is the same, Strong duality holds.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h2>11.36<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Use the Lagrangian dual process to show that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-19750d12-0a08-4470-89c6-d86a333358bb">
+<span class="eqno">(345)<a class="headerlink" href="#equation-19750d12-0a08-4470-89c6-d86a333358bb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    X &amp;= \{ x \in \mathbb{R}^3: x^2_1 + x^2_2 + x^2_3 \leq 1\text{ and }x_1 + x_2 + x_3 = 2 \}
+\end{align}\]</div>
+<p>is an empty set.</p>
+<p>Suppose the following maximization problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-95ba694a-e7a5-4444-bbe7-9f27c8040517">
+<span class="eqno">(346)<a class="headerlink" href="#equation-95ba694a-e7a5-4444-bbe7-9f27c8040517" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x_1,x_2,x_3}{\text{maximize }} &amp; x^2_1 + x^2_2 + x^2_3 \\
+    \text{subject to } &amp; x_1 + x_2 + x_3 = 2. \\ 
+\end{align}\]</div>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e87f5329-addd-4d20-be97-88f4eb17dbac">
+<span class="eqno">(347)<a class="headerlink" href="#equation-e87f5329-addd-4d20-be97-88f4eb17dbac" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x_1,x_2,x_3,\mu) &amp;= x^2_1 + x^2_2 + x^2_3 + \mu(x_1 + x_2 + x_3 - 2) \\
+\end{align}\]</div>
+<p>First order conditions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4879998d-6c79-479e-82f5-cf92ec4b6b28">
+<span class="eqno">(348)<a class="headerlink" href="#equation-4879998d-6c79-479e-82f5-cf92ec4b6b28" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_x\mathcal{L}(x_1,x_2,x_3,\mu) &amp;= 0 \\
+    2\begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3 \\
+    \end{bmatrix} 
+    + 2\mu\begin{bmatrix}
+        1 \\
+        1 \\
+        1 \\
+    \end{bmatrix} 
+    &amp;=
+    \begin{bmatrix}
+        0 \\
+        0 \\
+        0 \\
+    \end{bmatrix} \\
+    x^* &amp;= -\mu\begin{bmatrix}
+        1 \\
+        1 \\
+        1 \\
+    \end{bmatrix}
+\end{align}\]</div>
+<p>Primal Feasibility:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-51834a1f-8ef6-4928-aac6-b2ebc4183980">
+<span class="eqno">(349)<a class="headerlink" href="#equation-51834a1f-8ef6-4928-aac6-b2ebc4183980" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x_1 + x_2 + x_3 &amp;= 2 \\
+    -3\mu &amp;= 2 \\
+    \mu^* &amp;= -\frac{2}{3} \\
+\end{align}\]</div>
+<p>Hence,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ecbc833-f780-43fd-8117-5face60ba8e0">
+<span class="eqno">(350)<a class="headerlink" href="#equation-2ecbc833-f780-43fd-8117-5face60ba8e0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    x^* &amp;= \frac{2}{3}\begin{bmatrix} 1 \\ 1 \\ 1 \\ \end{bmatrix} \\
+\end{align}\]</div>
+<p>This makes the optimal objective value to the maximization problem: <span class="math notranslate nohighlight">\(3\Big(\frac{2}{3}\Big)^2 = \frac{4}{3}\)</span>. Hence, since maximium value is not <span class="math notranslate nohighlight">\(&gt; 1\)</span>, the intersection of the 2 constraints is an empty set. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Determine the minimum objective value and minimizers of the convex program:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-be69bf51-9cad-4a4f-bef4-29d0abd3d86f">
+<span class="eqno">(351)<a class="headerlink" href="#equation-be69bf51-9cad-4a4f-bef4-29d0abd3d86f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \underset{x, y}{\text{minimize }} 
+    &amp; e^{-y}
+    \text{ subject to } 
+    \sqrt{x^2 + y^2} - x \leq 0,
+\end{align}\]</div>
+<p>Show that the dual function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b600aafd-8713-4bea-b55e-4a41936357c8">
+<span class="eqno">(352)<a class="headerlink" href="#equation-b600aafd-8713-4bea-b55e-4a41936357c8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    d(\mu) \overset{\Delta}{=} \underset{x, y}{\text{minimize }} 
+    &amp; e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big], \mu \geq 0
+\end{align}\]</div>
+<p>is identically equal to zero but this value is not attained, for any <span class="math notranslate nohighlight">\(\mu \geq 0\)</span>. This convex program has a positive gap in this generalized sense. Without worrying about the non-attainment issue of the dual function, what goes wrong with this example with reference to the general duality theory?</p>
+<p>Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-826ed8db-2aad-466c-ab4c-256fb4782c2d">
+<span class="eqno">(353)<a class="headerlink" href="#equation-826ed8db-2aad-466c-ab4c-256fb4782c2d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \mathcal{L}(x, y, \lambda) &amp;= e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big] \\
+\end{align}\]</div>
+<p>Lagrangian Dual Function:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d7418057-71d1-4977-895b-268c88204c84">
+<span class="eqno">(354)<a class="headerlink" href="#equation-d7418057-71d1-4977-895b-268c88204c84" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    d(\mu) 
+    &amp;= \underset{x,y}{\text{inf}} \mathcal{L}(x, y, \mu) \\
+    &amp;= \underset{x,y}{\text{inf}}\Big(e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big]\Big) \\
+\end{align}\]</div>
+<p>Finding infimum of Lagrangian:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ac97e14d-450f-4522-b153-cabfa1fb0698">
+<span class="eqno">(355)<a class="headerlink" href="#equation-ac97e14d-450f-4522-b153-cabfa1fb0698" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \nabla_{x,y} \mathcal{L}(x,y, \lambda) &amp;= 0 \\
+    \nabla_{x,y} \Big(e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big]\Big) &amp;= 0 \\
+    \begin{bmatrix} 0.5\mu(x^2 + y^2)^{-0.5}(2x) -\mu \\ -e^{-y} + 0.5\mu(x^2 + y^2)^{-0.5}(2y) \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
+    \begin{bmatrix} \mu x (x^2 + y^2)^{-0.5} -\mu \\ -e^{-y} + \mu y (x^2 + y^2)^{-0.5} \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
+    \begin{bmatrix} \mu x \\ \mu y \\ \end{bmatrix} &amp;= \begin{bmatrix} \mu\sqrt{x^2 + y^2} \\ e^{-y}\sqrt{x^2 + y^2} \\ \end{bmatrix} \\
+    \newline \\
+    \text{From } \mu x = \mu\sqrt{x^2 + y^2}, &amp; \\
+    x &amp;= \sqrt{x^2 + y^2} \\
+    x^2 &amp;= x^2 + y^2 \\
+    y^2 &amp;= 0 \\
+    y &amp;= 0 \\
+    x &amp;= \text{Any value} \\ 
+\end{align}\]</div>
+<p>Hence, since <span class="math notranslate nohighlight">\(x\)</span> can take on any value and <span class="math notranslate nohighlight">\(y=0\)</span>, the dual function reduces to:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8350a4c6-02e6-4c43-adb3-fa7a581ef981">
+<span class="eqno">(356)<a class="headerlink" href="#equation-8350a4c6-02e6-4c43-adb3-fa7a581ef981" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    d(\mu) &amp;= 1 + (\mu - 1)x \\
+\end{align}\]</div>
+<p>If we choose <span class="math notranslate nohighlight">\(x \rightarrow -\infty\)</span>, <span class="math notranslate nohighlight">\(d(\mu) \rightarrow -\infty\)</span> and dual function is unbounded below.</p>
+<p>Under Weak Duality Thm, we know that the optimal dual value is a lower bound on the optimal primal value, but since our optimal dual value here is <span class="math notranslate nohighlight">\(-\infty\)</span>, duality theory is useless in helping us find the optimal primal value to the problem.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-530"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw6.html" title="previous page">HW 6</a>
+    <a class='right-next' id="next-link" href="hw8.html" title="next page">HW 8</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

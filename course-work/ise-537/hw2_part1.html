@@ -1,0 +1,2314 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HW 2 Part 1 &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/course-work/ise-537/hw2_part1.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HW 2 Part 2" href="hw2_part2.html" />
+    <link rel="prev" title="HW 1" href="hw1.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/course-work/ise-537/hw2_part1.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="HW 2 Part 1" />
+<meta property="og:description" content="HW 2 Part 1  By: Chengyi (Jeff) Chen  %load_ext nb_black %matplotlib inline  import matplotlib.pyplot as plt  plt.rcParams[&#34;figure.dpi&#34;] = 300 plt.rcParams[&#34;fig" />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine-Learning
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../machine-learning/00-intro.html">
+   Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
+     1. Linear Algebra [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
+     2. Probability Distributions [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
+     3. Linear Models for Regression [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
+     4. Linear Models for Classification [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
+     5. Neural Networks [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
+     6. Kernel Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
+     7. Sparse Kernel Machines [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
+     8. Graphical Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
+     9. Mixture Models and EM [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
+     10. Approximate Inference [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
+     11. Sampling Methods [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
+     12. Continuous Latent Variables [In Progress]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
+     13. Sequential Data [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
+     14. Combining Models [Empty]
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../machine-learning/15-bandits.html">
+     15. Bandits [In Progress]
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/course-work/ise-537/hw2_part1.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spy-and-us-dollar-index-monthly-returns">
+   SPY and US Dollar Index Monthly Returns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#s-p-500-equities-monthly-returns">
+   S&amp;P 500 Equities Monthly Returns
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-calculate-historical-factor-monthly-returns-for-the-following-factors-based-on-arbitrage-pricing-theory">
+   A - Calculate historical factor monthly returns for the following factors based on Arbitrage Pricing Theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fama-macbeth-two-step-regression">
+   Fama-Macbeth Two-step Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor">
+     Step 1 - Regress the Time Series of Returns of the Stock against Time Series of Factors to get Factor Exposures
+     <span class="math notranslate nohighlight">
+      \(\beta_{\text{factor}}\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#factor-exposures-of-each-stock-to-s-p-500-and-us-dollar">
+       Factor Exposures of each stock to S&amp;P 500 and US Dollar
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sector-factor-one-hot-encoding-drop-util-sector-column">
+       Sector factor one-hot encoding, drop UTIL sector column
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#size-factor-standardize-log-market-cap-by-sector">
+       Size factor - Standardize log(Market Cap) by sector
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock">
+     Step 2 - Regress Returns of all the Stock in the Portfolio @ time
+     <span class="math notranslate nohighlight">
+      \(t, t \in T\)
+     </span>
+     against Factor Exposures
+     <span class="math notranslate nohighlight">
+      \(\beta_{\text{factor}}\)
+     </span>
+     of each Stock
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#b-check-for-each-factor-their-historical-returns-are-significant-or-not-based-on-t-stat">
+   B - Check for each factor their historical returns are significant or not (based on T-stat)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c-using-the-last-month-in-the-back-test-i-e-12-31-2018-show">
+   C - Using the last month in the back-test, i.e., 12/31/2018, show
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#all-factor-portfolios-are-long-short-neutral-portfolio-i-e-the-total-weights-sum-to-0">
+     1. All factor portfolios are long-short neutral portfolio, i.e., the total weights sum to 0
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#for-any-factor-portfolio-it-has-unit-exposure-to-its-own-factor-but-zero-exposure-to-all-other-factors-in-the-model">
+     2. For any factor portfolio, it has unit exposure to its own factor, but zero exposure to all other factors in the model
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="hw-2-part-1">
+<h1>HW 2 Part 1<a class="headerlink" href="#hw-2-part-1" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> nb_black
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.dpi&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cvxpy</span> <span class="k">as</span> <span class="nn">cp</span>
+<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">statsmodels.graphics.gofplots</span> <span class="kn">import</span> <span class="n">qqplot</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/envs/ml/lib/python3.7/site-packages/statsmodels/tools/_testing.py:19: FutureWarning: pandas.util.testing is deprecated. Use the functions in the public API at pandas.testing instead.
+  import pandas.util.testing as tm
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 1;
+                var nbb_unformatted_code = "%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom collections import namedtuple\nfrom statsmodels.graphics.gofplots import qqplot\nfrom datetime import datetime, timedelta\nfrom tqdm import tqdm";
+                var nbb_formatted_code = "%load_ext nb_black\n%matplotlib inline\n\nimport matplotlib.pyplot as plt\n\nplt.rcParams[\"figure.dpi\"] = 300\nplt.rcParams[\"figure.figsize\"] = (16, 12)\n\nimport pandas as pd\nimport numpy as np\nimport cvxpy as cp\nimport scipy as sp\nfrom collections import namedtuple\nfrom statsmodels.graphics.gofplots import qqplot\nfrom datetime import datetime, timedelta\nfrom tqdm import tqdm";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="section" id="spy-and-us-dollar-index-monthly-returns">
+<h2>SPY and US Dollar Index Monthly Returns<a class="headerlink" href="#spy-and-us-dollar-index-monthly-returns" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spy_monthly_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;./data/HW2.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">spy_monthly_returns</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">spy_monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">spy_monthly_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>S&amp;P - 500 Index</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2001-07-31</th>
+      <td>-0.984416</td>
+    </tr>
+    <tr>
+      <th>2001-08-31</th>
+      <td>-6.260163</td>
+    </tr>
+    <tr>
+      <th>2001-09-30</th>
+      <td>-8.075231</td>
+    </tr>
+    <tr>
+      <th>2001-10-31</th>
+      <td>1.906875</td>
+    </tr>
+    <tr>
+      <th>2001-11-30</th>
+      <td>7.670629</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 2;
+                var nbb_unformatted_code = "spy_monthly_returns = pd.read_excel(\n    \"./data/HW2.xlsx\", sheet_name=2, usecols=[0, 1], header=[0], index_col=[0]\n)\nspy_monthly_returns.index = pd.to_datetime(spy_monthly_returns.index)\nspy_monthly_returns.head()";
+                var nbb_formatted_code = "spy_monthly_returns = pd.read_excel(\n    \"./data/HW2.xlsx\", sheet_name=2, usecols=[0, 1], header=[0], index_col=[0]\n)\nspy_monthly_returns.index = pd.to_datetime(spy_monthly_returns.index)\nspy_monthly_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">us_dollar_monthly_returns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span>
+    <span class="s2">&quot;./data/HW2.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">us_dollar_monthly_returns</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">us_dollar_monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">us_dollar_monthly_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>US Dollar Index</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2001-07-31</th>
+      <td>-1.916799</td>
+    </tr>
+    <tr>
+      <th>2001-08-31</th>
+      <td>-3.208739</td>
+    </tr>
+    <tr>
+      <th>2001-09-30</th>
+      <td>-0.008817</td>
+    </tr>
+    <tr>
+      <th>2001-10-31</th>
+      <td>1.278547</td>
+    </tr>
+    <tr>
+      <th>2001-11-30</th>
+      <td>1.105694</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "us_dollar_monthly_returns = pd.read_excel(\n    \"./data/HW2.xlsx\", sheet_name=2, usecols=[0, 2], header=[0], index_col=[0]\n)\nus_dollar_monthly_returns.index = pd.to_datetime(us_dollar_monthly_returns.index)\nus_dollar_monthly_returns.head()";
+                var nbb_formatted_code = "us_dollar_monthly_returns = pd.read_excel(\n    \"./data/HW2.xlsx\", sheet_name=2, usecols=[0, 2], header=[0], index_col=[0]\n)\nus_dollar_monthly_returns.index = pd.to_datetime(us_dollar_monthly_returns.index)\nus_dollar_monthly_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="s-p-500-equities-monthly-returns">
+<h2>S&amp;P 500 Equities Monthly Returns<a class="headerlink" href="#s-p-500-equities-monthly-returns" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">equity_monthly_returns</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;./data/HW2.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">4</span><span class="p">:]</span><span class="o">.</span><span class="n">T</span>
+<span class="p">)</span>
+<span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_frame</span><span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;./data/HW2.xlsx&quot;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="p">)</span>
+<span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+<span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th>NAME</th>
+      <th>3m Co</th>
+      <th>Abbott Labs</th>
+      <th>Abbvie Inc</th>
+      <th>Abiomed Inc</th>
+      <th>Accenture Plc Ireland</th>
+      <th>Activision Blizzard Inc</th>
+      <th>Adobe Sys Inc</th>
+      <th>Advance Auto Parts</th>
+      <th>Advanced Micro Devic</th>
+      <th>Aes Corp</th>
+      <th>...</th>
+      <th>Willis Towers Watson Pu</th>
+      <th>Wynn Resorts Ltd</th>
+      <th>Xcel Energy Inc</th>
+      <th>Xerox Corp</th>
+      <th>Xilinx Inc</th>
+      <th>Xylem Inc</th>
+      <th>Yum Brands Inc</th>
+      <th>Zimmer Hldgs Inc</th>
+      <th>Zions Bancorp</th>
+      <th>Zoetis Inc</th>
+    </tr>
+    <tr>
+      <th>TICKER</th>
+      <th>MMM</th>
+      <th>ABT</th>
+      <th>ABBV</th>
+      <th>ABMD</th>
+      <th>ACN</th>
+      <th>ATVI</th>
+      <th>ADBE</th>
+      <th>AAP</th>
+      <th>AMD</th>
+      <th>AES</th>
+      <th>...</th>
+      <th>WLTW</th>
+      <th>WYNN</th>
+      <th>XEL</th>
+      <th>XRX</th>
+      <th>XLNX</th>
+      <th>XYL</th>
+      <th>YUM</th>
+      <th>ZBH</th>
+      <th>ZION</th>
+      <th>ZTS</th>
+    </tr>
+    <tr>
+      <th>SECTOR</th>
+      <th>INDU</th>
+      <th>HLTH</th>
+      <th>HLTH</th>
+      <th>HLTH</th>
+      <th>INFT</th>
+      <th>TCOM</th>
+      <th>INFT</th>
+      <th>DSCR</th>
+      <th>INFT</th>
+      <th>UTIL</th>
+      <th>...</th>
+      <th>FINA</th>
+      <th>DSCR</th>
+      <th>UTIL</th>
+      <th>INFT</th>
+      <th>INFT</th>
+      <th>INDU</th>
+      <th>DSCR</th>
+      <th>HLTH</th>
+      <th>FINA</th>
+      <th>HLTH</th>
+    </tr>
+    <tr>
+      <th>Market Cap ($ Mil)</th>
+      <th>110949</th>
+      <th>127036</th>
+      <th>138674</th>
+      <th>14640</th>
+      <th>89887</th>
+      <th>35535</th>
+      <th>110435</th>
+      <th>11478</th>
+      <th>18449</th>
+      <th>9577</th>
+      <th>...</th>
+      <th>19733</th>
+      <th>10755</th>
+      <th>25326</th>
+      <th>4708</th>
+      <th>21552</th>
+      <th>11991</th>
+      <th>28707</th>
+      <th>21156</th>
+      <th>7830</th>
+      <th>41098</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2001-07-31</th>
+      <td>-1.945100</td>
+      <td>12.112976</td>
+      <td>NaN</td>
+      <td>-19.423240</td>
+      <td>NaN</td>
+      <td>-13.577718</td>
+      <td>-20.234087</td>
+      <td>NaN</td>
+      <td>-36.816609</td>
+      <td>-11.033682</td>
+      <td>...</td>
+      <td>-2.816904</td>
+      <td>NaN</td>
+      <td>-4.077114</td>
+      <td>-16.614480</td>
+      <td>-3.006790</td>
+      <td>NaN</td>
+      <td>4.214608</td>
+      <td>NaN</td>
+      <td>-0.932129</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2001-08-31</th>
+      <td>-6.446533</td>
+      <td>-7.258951</td>
+      <td>NaN</td>
+      <td>-1.315789</td>
+      <td>-0.401070</td>
+      <td>9.226306</td>
+      <td>-10.349165</td>
+      <td>NaN</td>
+      <td>-25.794085</td>
+      <td>-13.524804</td>
+      <td>...</td>
+      <td>9.043619</td>
+      <td>NaN</td>
+      <td>1.707327</td>
+      <td>15.288163</td>
+      <td>-2.400000</td>
+      <td>NaN</td>
+      <td>-6.842003</td>
+      <td>-4.895105</td>
+      <td>-1.698511</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2001-09-30</th>
+      <td>-5.475902</td>
+      <td>4.326061</td>
+      <td>NaN</td>
+      <td>-6.826667</td>
+      <td>-14.429530</td>
+      <td>-26.532794</td>
+      <td>-28.616782</td>
+      <td>NaN</td>
+      <td>-39.852399</td>
+      <td>-61.292271</td>
+      <td>...</td>
+      <td>24.348706</td>
+      <td>NaN</td>
+      <td>4.106134</td>
+      <td>-15.760939</td>
+      <td>-39.728484</td>
+      <td>NaN</td>
+      <td>-7.977550</td>
+      <td>2.022059</td>
+      <td>-6.287271</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2001-10-31</th>
+      <td>6.077282</td>
+      <td>2.599966</td>
+      <td>NaN</td>
+      <td>24.441900</td>
+      <td>37.803922</td>
+      <td>32.808711</td>
+      <td>10.091781</td>
+      <td>NaN</td>
+      <td>20.736196</td>
+      <td>8.034321</td>
+      <td>...</td>
+      <td>-0.427533</td>
+      <td>NaN</td>
+      <td>0.461629</td>
+      <td>-9.677419</td>
+      <td>29.281768</td>
+      <td>NaN</td>
+      <td>28.990256</td>
+      <td>11.387387</td>
+      <td>-10.696854</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2001-11-30</th>
+      <td>10.339559</td>
+      <td>3.812730</td>
+      <td>NaN</td>
+      <td>-12.741490</td>
+      <td>28.628344</td>
+      <td>3.113693</td>
+      <td>21.515301</td>
+      <td>NaN</td>
+      <td>37.804878</td>
+      <td>19.277978</td>
+      <td>...</td>
+      <td>1.674522</td>
+      <td>NaN</td>
+      <td>-3.429815</td>
+      <td>20.000215</td>
+      <td>18.704799</td>
+      <td>NaN</td>
+      <td>-6.206153</td>
+      <td>4.367519</td>
+      <td>1.164570</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 505 columns</p>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 4;
+                var nbb_unformatted_code = "equity_monthly_returns = (\n    pd.read_excel(\"./data/HW2.xlsx\", sheet_name=1, header=[1]).iloc[:, 4:].T\n)\nequity_monthly_returns.columns = pd.MultiIndex.from_frame(\n    pd.read_excel(\"./data/HW2.xlsx\", sheet_name=1, header=[1], usecols=[0, 1, 2, 3])\n)\nequity_monthly_returns.index = pd.to_datetime(equity_monthly_returns.index)\nequity_monthly_returns.head()";
+                var nbb_formatted_code = "equity_monthly_returns = (\n    pd.read_excel(\"./data/HW2.xlsx\", sheet_name=1, header=[1]).iloc[:, 4:].T\n)\nequity_monthly_returns.columns = pd.MultiIndex.from_frame(\n    pd.read_excel(\"./data/HW2.xlsx\", sheet_name=1, header=[1], usecols=[0, 1, 2, 3])\n)\nequity_monthly_returns.index = pd.to_datetime(equity_monthly_returns.index)\nequity_monthly_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="a-calculate-historical-factor-monthly-returns-for-the-following-factors-based-on-arbitrage-pricing-theory">
+<h2>A - Calculate historical factor monthly returns for the following factors based on Arbitrage Pricing Theory<a class="headerlink" href="#a-calculate-historical-factor-monthly-returns-for-the-following-factors-based-on-arbitrage-pricing-theory" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>Equity market factor. Using SP500 index return as equity market return proxy. (Data see SPX_DXY_MonthlyReturns)</p></li>
+<li><p>US Dollar factor. Using  DXY Index returns as proxy. (Data see SPX_DXY_MonthlyReturns)</p></li>
+<li><p>Sector factors. (Note: you should leave one sector out to make sure proper running of Fama Macbeth regression. Let’s leave out the sector of UTIL.)</p></li>
+<li><p>Size factor. At each month-end reconstitution date, we use the same company market cap data (column D on SP500Stocks) for simplicity. (Note: size exposure for a company should be sector neutral, i.e., the z-score of the log(mkt_cap) should be w.r.t. peer companies within the same sector.)</p></li>
+</ol>
+<p>OLS Closed Form Solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-07ad471e-9121-445f-9f28-5f983d2821f5">
+<span class="eqno">(69)<a class="headerlink" href="#equation-07ad471e-9121-445f-9f28-5f983d2821f5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \hat\beta &amp;= (X^TX)^{-1}X^Ty
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">intersect</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nb">set</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">β_hat</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">dropna</span><span class="p">:</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span> <span class="n">y</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+        <span class="n">common_index</span> <span class="o">=</span> <span class="n">intersect</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common_index</span><span class="p">],</span> <span class="n">y</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">common_index</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span>
+        <span class="o">@</span> <span class="n">y</span><span class="o">.</span><span class="n">values</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 5;
+                var nbb_unformatted_code = "intersect = lambda a, b: sorted(set(a) & set(b))\n\n\ndef \u03b2_hat(X, y, dropna=True):\n    if dropna:\n        X, y = X.dropna(), y.dropna()\n        common_index = intersect(X.index, y.index)\n        X, y = X.loc[common_index], y.loc[common_index]\n    else:\n        X, y = X.fillna(0.0), y.fillna(0.0)\n    return (\n        pd.DataFrame(np.linalg.inv(X.T @ X), columns=X.columns, index=X.columns)\n        @ X.T\n        @ y.values\n    )";
+                var nbb_formatted_code = "intersect = lambda a, b: sorted(set(a) & set(b))\n\n\ndef \u03b2_hat(X, y, dropna=True):\n    if dropna:\n        X, y = X.dropna(), y.dropna()\n        common_index = intersect(X.index, y.index)\n        X, y = X.loc[common_index], y.loc[common_index]\n    else:\n        X, y = X.fillna(0.0), y.fillna(0.0)\n    return (\n        pd.DataFrame(np.linalg.inv(X.T @ X), columns=X.columns, index=X.columns)\n        @ X.T\n        @ y.values\n    )";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="fama-macbeth-two-step-regression">
+<h2><a class="reference external" href="http://didattica.unibocconi.it/mypage/dwload.php?nomefile=fama-macbeth20141115121157.pdf">Fama-Macbeth Two-step Regression</a><a class="headerlink" href="#fama-macbeth-two-step-regression" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor">
+<h3>Step 1 - Regress the Time Series of Returns of the Stock against Time Series of Factors to get Factor Exposures <span class="math notranslate nohighlight">\(\beta_{\text{factor}}\)</span><a class="headerlink" href="#step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor" title="Permalink to this headline">¶</a></h3>
+<p>For <span class="math notranslate nohighlight">\(m\)</span> factors:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-804cc892-159c-48cc-a660-e281fe925fcb">
+<span class="eqno">(70)<a class="headerlink" href="#equation-804cc892-159c-48cc-a660-e281fe925fcb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    R_{\text{Stock A}} &amp;= \alpha + \beta_{F_1}F_1 + \beta_{F_2}F_2 + \cdots + \beta_{F_m}F_m + \epsilon
+\end{align}\]</div>
+<div class="section" id="factor-exposures-of-each-stock-to-s-p-500-and-us-dollar">
+<h4>Factor Exposures of each stock to S&amp;P 500 and US Dollar<a class="headerlink" href="#factor-exposures-of-each-stock-to-s-p-500-and-us-dollar" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">factor_exposures</span> <span class="o">=</span> <span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">equity</span><span class="p">:</span> <span class="n">β_hat</span><span class="p">(</span>
+        <span class="n">X</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">spy_monthly_returns</span><span class="p">,</span>
+                <span class="n">us_dollar_monthly_returns</span><span class="p">,</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;α&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">spy_monthly_returns</span><span class="o">.</span><span class="n">index</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">equity</span><span class="p">,</span>
+        <span class="n">dropna</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">factor_exposures</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">factor_exposures</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;S&amp;P - 500 Index&quot;</span><span class="p">:</span> <span class="s2">&quot;β (equity market factor exposure)&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;US Dollar Index&quot;</span><span class="p">:</span> <span class="s2">&quot;β (us dollar factor exposure)&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">factor_exposures</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>β (equity market factor exposure)</th>
+      <th>β (us dollar factor exposure)</th>
+      <th>α</th>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3m Co</th>
+      <td>0.897279</td>
+      <td>0.137059</td>
+      <td>0.411085</td>
+    </tr>
+    <tr>
+      <th>Abbott Labs</th>
+      <td>0.501031</td>
+      <td>-0.096830</td>
+      <td>0.635259</td>
+    </tr>
+    <tr>
+      <th>Abbvie Inc</th>
+      <td>1.450096</td>
+      <td>-0.556901</td>
+      <td>0.662926</td>
+    </tr>
+    <tr>
+      <th>Abiomed Inc</th>
+      <td>1.263956</td>
+      <td>0.059849</td>
+      <td>1.770226</td>
+    </tr>
+    <tr>
+      <th>Accenture Plc Ireland</th>
+      <td>1.152855</td>
+      <td>0.193686</td>
+      <td>0.772685</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 6;
+                var nbb_unformatted_code = "factor_exposures = equity_monthly_returns.apply(\n    lambda equity: \u03b2_hat(\n        X=pd.concat(\n            [\n                spy_monthly_returns,\n                us_dollar_monthly_returns,\n                pd.Series(1, name=\"\u03b1\", index=spy_monthly_returns.index),\n            ],\n            axis=1,\n        ),\n        y=equity,\n        dropna=True,\n    ),\n    axis=0,\n).T\nfactor_exposures.reset_index(level=[1, 2, 3], drop=True, inplace=True)\nfactor_exposures.rename(\n    {\n        \"S&P - 500 Index\": \"\u03b2 (equity market factor exposure)\",\n        \"US Dollar Index\": \"\u03b2 (us dollar factor exposure)\",\n    },\n    axis=1,\n    inplace=True,\n)\nfactor_exposures.head()";
+                var nbb_formatted_code = "factor_exposures = equity_monthly_returns.apply(\n    lambda equity: \u03b2_hat(\n        X=pd.concat(\n            [\n                spy_monthly_returns,\n                us_dollar_monthly_returns,\n                pd.Series(1, name=\"\u03b1\", index=spy_monthly_returns.index),\n            ],\n            axis=1,\n        ),\n        y=equity,\n        dropna=True,\n    ),\n    axis=0,\n).T\nfactor_exposures.reset_index(level=[1, 2, 3], drop=True, inplace=True)\nfactor_exposures.rename(\n    {\n        \"S&P - 500 Index\": \"\u03b2 (equity market factor exposure)\",\n        \"US Dollar Index\": \"\u03b2 (us dollar factor exposure)\",\n    },\n    axis=1,\n    inplace=True,\n)\nfactor_exposures.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="sector-factor-one-hot-encoding-drop-util-sector-column">
+<h4>Sector factor one-hot encoding, drop UTIL sector column<a class="headerlink" href="#sector-factor-one-hot-encoding-drop-util-sector-column" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sector_factor</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;NAME&quot;</span><span class="p">)),</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;SECTOR&quot;</span><span class="p">)),</span>
+    <span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">sector_factor</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;NAME&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">sector_factor</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">sector_factor</span><span class="p">)</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;SECTOR_UTIL&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">sector_factor</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SECTOR_DSCR</th>
+      <th>SECTOR_ENER</th>
+      <th>SECTOR_FINA</th>
+      <th>SECTOR_HLTH</th>
+      <th>SECTOR_INDU</th>
+      <th>SECTOR_INFT</th>
+      <th>SECTOR_MATS</th>
+      <th>SECTOR_REAL</th>
+      <th>SECTOR_STPL</th>
+      <th>SECTOR_TCOM</th>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3m Co</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Abbott Labs</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Abbvie Inc</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Abiomed Inc</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Accenture Plc Ireland</th>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 7;
+                var nbb_unformatted_code = "sector_factor = pd.concat(\n    [\n        pd.Series(equity_monthly_returns.columns.get_level_values(\"NAME\")),\n        pd.Series(equity_monthly_returns.columns.get_level_values(\"SECTOR\")),\n    ],\n    axis=1,\n)\nsector_factor.set_index(\"NAME\", inplace=True)\nsector_factor = pd.get_dummies(sector_factor).drop([\"SECTOR_UTIL\"], axis=1)\nsector_factor.head()";
+                var nbb_formatted_code = "sector_factor = pd.concat(\n    [\n        pd.Series(equity_monthly_returns.columns.get_level_values(\"NAME\")),\n        pd.Series(equity_monthly_returns.columns.get_level_values(\"SECTOR\")),\n    ],\n    axis=1,\n)\nsector_factor.set_index(\"NAME\", inplace=True)\nsector_factor = pd.get_dummies(sector_factor).drop([\"SECTOR_UTIL\"], axis=1)\nsector_factor.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="size-factor-standardize-log-market-cap-by-sector">
+<h4>Size factor - Standardize log(Market Cap) by sector<a class="headerlink" href="#size-factor-standardize-log-market-cap-by-sector" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size_factor</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;NAME&quot;</span><span class="p">)),</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;SECTOR&quot;</span><span class="p">)),</span>
+            <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+                <span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;Market Cap ($ Mil)&quot;</span><span class="p">)</span>
+            <span class="p">),</span>
+        <span class="p">],</span>
+        <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;SECTOR&quot;</span><span class="p">)[</span><span class="s2">&quot;Market Cap ($ Mil)&quot;</span><span class="p">]</span>
+    <span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">())</span>
+    <span class="o">.</span><span class="n">to_frame</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="n">size_factor</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="s2">&quot;NAME&quot;</span><span class="p">)</span>
+<span class="n">size_factor</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="p">{</span><span class="s2">&quot;Market Cap ($ Mil)&quot;</span><span class="p">:</span> <span class="s2">&quot;β (size factor exposure)&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+<span class="n">size_factor</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>β (size factor exposure)</th>
+    </tr>
+    <tr>
+      <th>NAME</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3m Co</th>
+      <td>1.977538</td>
+    </tr>
+    <tr>
+      <th>Abbott Labs</th>
+      <td>1.350510</td>
+    </tr>
+    <tr>
+      <th>Abbvie Inc</th>
+      <td>1.436935</td>
+    </tr>
+    <tr>
+      <th>Abiomed Inc</th>
+      <td>-0.779869</td>
+    </tr>
+    <tr>
+      <th>Accenture Plc Ireland</th>
+      <td>1.038986</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 8;
+                var nbb_unformatted_code = "size_factor = (\n    pd.concat(\n        [\n            pd.Series(equity_monthly_returns.columns.get_level_values(\"NAME\")),\n            pd.Series(equity_monthly_returns.columns.get_level_values(\"SECTOR\")),\n            pd.Series(\n                equity_monthly_returns.columns.get_level_values(\"Market Cap ($ Mil)\")\n            ),\n        ],\n        axis=1,\n    )\n    .groupby(\"SECTOR\")[\"Market Cap ($ Mil)\"]\n    .transform(lambda x: (np.log(x) - np.log(x).mean()) / np.log(x).std())\n    .to_frame()\n)\nsize_factor.index = equity_monthly_returns.columns.get_level_values(\"NAME\")\nsize_factor.rename(\n    {\"Market Cap ($ Mil)\": \"\u03b2 (size factor exposure)\"}, axis=1, inplace=True\n)\nsize_factor.head()";
+                var nbb_formatted_code = "size_factor = (\n    pd.concat(\n        [\n            pd.Series(equity_monthly_returns.columns.get_level_values(\"NAME\")),\n            pd.Series(equity_monthly_returns.columns.get_level_values(\"SECTOR\")),\n            pd.Series(\n                equity_monthly_returns.columns.get_level_values(\"Market Cap ($ Mil)\")\n            ),\n        ],\n        axis=1,\n    )\n    .groupby(\"SECTOR\")[\"Market Cap ($ Mil)\"]\n    .transform(lambda x: (np.log(x) - np.log(x).mean()) / np.log(x).std())\n    .to_frame()\n)\nsize_factor.index = equity_monthly_returns.columns.get_level_values(\"NAME\")\nsize_factor.rename(\n    {\"Market Cap ($ Mil)\": \"\u03b2 (size factor exposure)\"}, axis=1, inplace=True\n)\nsize_factor.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+<div class="section" id="step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock">
+<h3>Step 2 - Regress Returns of all the Stock in the Portfolio &#64; time <span class="math notranslate nohighlight">\(t, t \in T\)</span> against Factor Exposures <span class="math notranslate nohighlight">\(\beta_{\text{factor}}\)</span> of each Stock<a class="headerlink" href="#step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock" title="Permalink to this headline">¶</a></h3>
+<p>For <span class="math notranslate nohighlight">\(t \in T\)</span> timesteps:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ff839a92-ccad-4bea-bb30-34b87d9be930">
+<span class="eqno">(71)<a class="headerlink" href="#equation-ff839a92-ccad-4bea-bb30-34b87d9be930" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    R_{\text{Stock }i, t} &amp;= \gamma_{t, F_0} + \gamma_{t, F_1}\hat{\beta_{F_1}} + \gamma_{t, F_2}\hat{\beta_{F_2}} + \cdots + \gamma_{t, F_m}\hat{\beta_{F_m}} + \epsilon
+\end{align}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">γ_pure_factor_monthly_returns</span> <span class="o">=</span> <span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">returns</span><span class="p">:</span> <span class="n">β_hat</span><span class="p">(</span>
+        <span class="n">X</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="n">factor_exposures</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;α&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                <span class="n">sector_factor</span><span class="p">,</span>
+                <span class="n">size_factor</span><span class="p">,</span>
+                <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">size_factor</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;γ_residual&quot;</span><span class="p">),</span>
+            <span class="p">],</span>
+            <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="p">),</span>
+        <span class="n">y</span><span class="o">=</span><span class="n">returns</span><span class="p">,</span>
+        <span class="n">dropna</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">γ_pure_factor_monthly_returns</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>β (equity market factor exposure)</th>
+      <th>β (us dollar factor exposure)</th>
+      <th>SECTOR_DSCR</th>
+      <th>SECTOR_ENER</th>
+      <th>SECTOR_FINA</th>
+      <th>SECTOR_HLTH</th>
+      <th>SECTOR_INDU</th>
+      <th>SECTOR_INFT</th>
+      <th>SECTOR_MATS</th>
+      <th>SECTOR_REAL</th>
+      <th>SECTOR_STPL</th>
+      <th>SECTOR_TCOM</th>
+      <th>β (size factor exposure)</th>
+      <th>γ_residual</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2001-07-31</th>
+      <td>-5.081906</td>
+      <td>0.546521</td>
+      <td>9.689164</td>
+      <td>4.497985</td>
+      <td>6.003830</td>
+      <td>3.868261</td>
+      <td>7.997561</td>
+      <td>5.971431</td>
+      <td>7.795002</td>
+      <td>3.298414</td>
+      <td>5.834931</td>
+      <td>4.522445</td>
+      <td>-0.666501</td>
+      <td>-0.172946</td>
+    </tr>
+    <tr>
+      <th>2001-08-31</th>
+      <td>-5.351213</td>
+      <td>-2.530621</td>
+      <td>-0.865683</td>
+      <td>-1.974351</td>
+      <td>-0.172676</td>
+      <td>0.152704</td>
+      <td>0.283117</td>
+      <td>-0.786473</td>
+      <td>2.069103</td>
+      <td>2.237107</td>
+      <td>0.399686</td>
+      <td>-0.210663</td>
+      <td>-0.887846</td>
+      <td>3.563947</td>
+    </tr>
+    <tr>
+      <th>2001-09-30</th>
+      <td>-16.448408</td>
+      <td>-4.242000</td>
+      <td>6.115425</td>
+      <td>5.129572</td>
+      <td>15.719172</td>
+      <td>7.981975</td>
+      <td>9.199334</td>
+      <td>8.180248</td>
+      <td>9.807025</td>
+      <td>11.983056</td>
+      <td>5.616929</td>
+      <td>8.494224</td>
+      <td>-0.404314</td>
+      <td>0.634008</td>
+    </tr>
+    <tr>
+      <th>2001-10-31</th>
+      <td>7.730491</td>
+      <td>4.661245</td>
+      <td>-0.237472</td>
+      <td>5.161065</td>
+      <td>-8.600545</td>
+      <td>2.401637</td>
+      <td>-3.667805</td>
+      <td>5.580222</td>
+      <td>-2.020707</td>
+      <td>-6.257782</td>
+      <td>-0.408720</td>
+      <td>0.168053</td>
+      <td>-0.612423</td>
+      <td>-2.110206</td>
+    </tr>
+    <tr>
+      <th>2001-11-30</th>
+      <td>9.140003</td>
+      <td>4.696506</td>
+      <td>3.084856</td>
+      <td>-7.999442</td>
+      <td>-0.934668</td>
+      <td>0.446165</td>
+      <td>1.300240</td>
+      <td>2.209795</td>
+      <td>3.643307</td>
+      <td>-0.218926</td>
+      <td>2.664973</td>
+      <td>-1.297612</td>
+      <td>1.092705</td>
+      <td>-3.667960</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 9;
+                var nbb_unformatted_code = "\u03b3_pure_factor_monthly_returns = equity_monthly_returns.apply(\n    lambda returns: \u03b2_hat(\n        X=pd.concat(\n            [\n                factor_exposures.drop([\"\u03b1\"], axis=1),\n                sector_factor,\n                size_factor,\n                pd.Series(1, index=size_factor.index, name=\"\u03b3_residual\"),\n            ],\n            axis=1,\n        ),\n        y=returns,\n        dropna=False,\n    ),\n    axis=1,\n)\n\u03b3_pure_factor_monthly_returns.head()";
+                var nbb_formatted_code = "\u03b3_pure_factor_monthly_returns = equity_monthly_returns.apply(\n    lambda returns: \u03b2_hat(\n        X=pd.concat(\n            [\n                factor_exposures.drop([\"\u03b1\"], axis=1),\n                sector_factor,\n                size_factor,\n                pd.Series(1, index=size_factor.index, name=\"\u03b3_residual\"),\n            ],\n            axis=1,\n        ),\n        y=returns,\n        dropna=False,\n    ),\n    axis=1,\n)\n\u03b3_pure_factor_monthly_returns.head()";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="b-check-for-each-factor-their-historical-returns-are-significant-or-not-based-on-t-stat">
+<h2>B - Check for each factor their historical returns are significant or not (based on T-stat)<a class="headerlink" href="#b-check-for-each-factor-their-historical-returns-are-significant-or-not-based-on-t-stat" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">γ_pure_factor_monthly_returns</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">γ_pure_factor_risk_premium</span> <span class="o">=</span> <span class="n">γ_pure_factor_monthly_returns</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">γ_pure_factor_standard_error</span> <span class="o">=</span> <span class="n">γ_pure_factor_monthly_returns</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+
+<span class="n">t_statistic</span> <span class="o">=</span> <span class="n">γ_pure_factor_risk_premium</span> <span class="o">/</span> <span class="n">γ_pure_factor_standard_error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 10;
+                var nbb_unformatted_code = "T = \u03b3_pure_factor_monthly_returns.shape[0]\n\n\u03b3_pure_factor_risk_premium = \u03b3_pure_factor_monthly_returns.mean(axis=0)\n\n\u03b3_pure_factor_standard_error = \u03b3_pure_factor_monthly_returns.std(axis=0) / np.sqrt(T)\n\nt_statistic = \u03b3_pure_factor_risk_premium / \u03b3_pure_factor_standard_error";
+                var nbb_formatted_code = "T = \u03b3_pure_factor_monthly_returns.shape[0]\n\n\u03b3_pure_factor_risk_premium = \u03b3_pure_factor_monthly_returns.mean(axis=0)\n\n\u03b3_pure_factor_standard_error = \u03b3_pure_factor_monthly_returns.std(axis=0) / np.sqrt(T)\n\nt_statistic = \u03b3_pure_factor_risk_premium / \u03b3_pure_factor_standard_error";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One-sample t-test, df = n - 1</span>
+<span class="n">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">t_statistic</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">T</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 11;
+                var nbb_unformatted_code = "# One-sample t-test, df = n - 1\np = 1 - sp.stats.t.cdf(t_statistic, df=T - 1)";
+                var nbb_formatted_code = "# One-sample t-test, df = n - 1\np = 1 - sp.stats.t.cdf(t_statistic, df=T - 1)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">α</span> <span class="o">=</span> <span class="mf">0.95</span>  <span class="c1"># Confidence level</span>
+<span class="k">for</span> <span class="n">pure_factor</span><span class="p">,</span> <span class="n">p_val</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">γ_pure_factor_risk_premium</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">p</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">p_val</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">α</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pure_factor</span><span class="si">}</span><span class="s2"> monthly risk premium is statistically significant.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pure_factor</span><span class="si">}</span><span class="s2"> monthly risk premium is not statistically significant.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>β (equity market factor exposure) monthly risk premium is not statistically significant.
+β (us dollar factor exposure) monthly risk premium is not statistically significant.
+SECTOR_DSCR monthly risk premium is not statistically significant.
+SECTOR_ENER monthly risk premium is not statistically significant.
+SECTOR_FINA monthly risk premium is not statistically significant.
+SECTOR_HLTH monthly risk premium is not statistically significant.
+SECTOR_INDU monthly risk premium is not statistically significant.
+SECTOR_INFT monthly risk premium is not statistically significant.
+SECTOR_MATS monthly risk premium is not statistically significant.
+SECTOR_REAL monthly risk premium is not statistically significant.
+SECTOR_STPL monthly risk premium is not statistically significant.
+SECTOR_TCOM monthly risk premium is not statistically significant.
+β (size factor exposure) monthly risk premium is statistically significant.
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 12;
+                var nbb_unformatted_code = "\u03b1 = 0.95 # Confidence level\nfor pure_factor, p_val in zip(\u03b3_pure_factor_risk_premium.index[:-1], p[:-1]):\n    if p_val < 1 - \u03b1:\n        print(f\"{pure_factor} monthly risk premium is statistically significant.\")\n    else:\n        print(f\"{pure_factor} monthly risk premium is not statistically significant.\")";
+                var nbb_formatted_code = "\u03b1 = 0.95  # Confidence level\nfor pure_factor, p_val in zip(\u03b3_pure_factor_risk_premium.index[:-1], p[:-1]):\n    if p_val < 1 - \u03b1:\n        print(f\"{pure_factor} monthly risk premium is statistically significant.\")\n    else:\n        print(f\"{pure_factor} monthly risk premium is not statistically significant.\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="c-using-the-last-month-in-the-back-test-i-e-12-31-2018-show">
+<h2>C - Using the last month in the back-test, i.e., 12/31/2018, show<a class="headerlink" href="#c-using-the-last-month-in-the-back-test-i-e-12-31-2018-show" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="all-factor-portfolios-are-long-short-neutral-portfolio-i-e-the-total-weights-sum-to-0">
+<h3>1. All factor portfolios are long-short neutral portfolio, i.e., the total weights sum to 0<a class="headerlink" href="#all-factor-portfolios-are-long-short-neutral-portfolio-i-e-the-total-weights-sum-to-0" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">factor_exposures</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;α&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="n">sector_factor</span><span class="p">,</span>
+        <span class="n">size_factor</span><span class="p">,</span>
+        <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">size_factor</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;γ_residual&quot;</span><span class="p">),</span>
+    <span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">equity_monthly_returns</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;2018-12-31&quot;</span><span class="p">]</span>
+<span class="n">pure_factor_portfolio_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">X</span><span class="p">)</span> <span class="o">@</span> <span class="n">X</span><span class="o">.</span><span class="n">T</span>
+<span class="n">pure_factor_portfolio_weights</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 13;
+                var nbb_unformatted_code = "X = pd.concat(\n    [\n        factor_exposures.drop([\"\u03b1\"], axis=1),\n        sector_factor,\n        size_factor,\n        pd.Series(1, index=size_factor.index, name=\"\u03b3_residual\"),\n    ],\n    axis=1,\n)\ny = equity_monthly_returns.loc[\"2018-12-31\"]\npure_factor_portfolio_weights = np.linalg.inv(X.T @ X) @ X.T\npure_factor_portfolio_weights.index = X.columns";
+                var nbb_formatted_code = "X = pd.concat(\n    [\n        factor_exposures.drop([\"\u03b1\"], axis=1),\n        sector_factor,\n        size_factor,\n        pd.Series(1, index=size_factor.index, name=\"\u03b3_residual\"),\n    ],\n    axis=1,\n)\ny = equity_monthly_returns.loc[\"2018-12-31\"]\npure_factor_portfolio_weights = np.linalg.inv(X.T @ X) @ X.T\npure_factor_portfolio_weights.index = X.columns";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<p>Check that the allocation of portfolio weights for each stock sums to 0 for all pure factor portfolios</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exclude γ_residual</span>
+<span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">pure_factor_portfolio_weights</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 14;
+                var nbb_unformatted_code = "# Exclude \u03b3_residual\nnp.allclose(pure_factor_portfolio_weights.sum(axis=1)[:-1], 0)";
+                var nbb_formatted_code = "# Exclude \u03b3_residual\nnp.allclose(pure_factor_portfolio_weights.sum(axis=1)[:-1], 0)";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+<div class="section" id="for-any-factor-portfolio-it-has-unit-exposure-to-its-own-factor-but-zero-exposure-to-all-other-factors-in-the-model">
+<h3>2. For any factor portfolio, it has unit exposure to its own factor, but zero exposure to all other factors in the model<a class="headerlink" href="#for-any-factor-portfolio-it-has-unit-exposure-to-its-own-factor-but-zero-exposure-to-all-other-factors-in-the-model" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pure_factor</span> <span class="ow">in</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+    <span class="n">stock_exposures_to_pure_factors</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">pure_factor</span><span class="p">]</span>
+    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;|| &quot;</span> <span class="o">+</span> <span class="n">pure_factor</span> <span class="o">+</span> <span class="s2">&quot; ||&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=&quot;</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">))</span>
+    <span class="k">for</span> <span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span>
+        <span class="n">pure_factor_portfolio_weights_for_one_factor</span><span class="p">,</span>
+    <span class="p">)</span> <span class="ow">in</span> <span class="n">pure_factor_portfolio_weights</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="k">if</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+                <span class="n">stock_exposures_to_pure_factors</span><span class="o">.</span><span class="n">T</span>
+                <span class="o">@</span> <span class="n">pure_factor_portfolio_weights_for_one_factor</span><span class="p">,</span>
+                <span class="mi">1</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="ow">and</span> <span class="n">name</span> <span class="o">==</span> <span class="n">pure_factor</span>
+        <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pure_factor</span><span class="si">}</span><span class="s2"> has unit exposure to its own factor </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> - factor portfolio weights * stock exposure to factor == 1&quot;</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span>
+                <span class="n">stock_exposures_to_pure_factors</span><span class="o">.</span><span class="n">T</span>
+                <span class="o">@</span> <span class="n">pure_factor_portfolio_weights_for_one_factor</span><span class="p">,</span>
+                <span class="mi">0</span><span class="p">,</span>
+            <span class="p">)</span>
+            <span class="ow">and</span> <span class="n">name</span> <span class="o">!=</span> <span class="n">pure_factor</span>
+        <span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">pure_factor</span><span class="si">}</span><span class="s2"> has 0 exposure to </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> factor - factor portfolio weights * stock exposure to factor == 1&quot;</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Something&#39;s wrong&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=======================================
+|| β (equity market factor exposure) ||
+=======================================
+β (equity market factor exposure) has unit exposure to its own factor β (equity market factor exposure) - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+β (equity market factor exposure) has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+===================================
+|| β (us dollar factor exposure) ||
+===================================
+β (us dollar factor exposure) has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has unit exposure to its own factor β (us dollar factor exposure) - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+β (us dollar factor exposure) has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_DSCR ||
+=================
+SECTOR_DSCR has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has unit exposure to its own factor SECTOR_DSCR - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_DSCR has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_ENER ||
+=================
+SECTOR_ENER has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has unit exposure to its own factor SECTOR_ENER - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_ENER has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_FINA ||
+=================
+SECTOR_FINA has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has unit exposure to its own factor SECTOR_FINA - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_FINA has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_HLTH ||
+=================
+SECTOR_HLTH has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has unit exposure to its own factor SECTOR_HLTH - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_HLTH has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_INDU ||
+=================
+SECTOR_INDU has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has unit exposure to its own factor SECTOR_INDU - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INDU has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_INFT ||
+=================
+SECTOR_INFT has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has unit exposure to its own factor SECTOR_INFT - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_INFT has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_MATS ||
+=================
+SECTOR_MATS has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has unit exposure to its own factor SECTOR_MATS - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_MATS has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_REAL ||
+=================
+SECTOR_REAL has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has unit exposure to its own factor SECTOR_REAL - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_REAL has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_STPL ||
+=================
+SECTOR_STPL has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has unit exposure to its own factor SECTOR_STPL - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_STPL has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+=================
+|| SECTOR_TCOM ||
+=================
+SECTOR_TCOM has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has unit exposure to its own factor SECTOR_TCOM - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to β (size factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+SECTOR_TCOM has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+
+
+==============================
+|| β (size factor exposure) ||
+==============================
+β (size factor exposure) has 0 exposure to β (equity market factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to β (us dollar factor exposure) factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_DSCR factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_ENER factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_FINA factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_HLTH factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_INDU factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_INFT factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_MATS factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_REAL factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_STPL factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to SECTOR_TCOM factor - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has unit exposure to its own factor β (size factor exposure) - factor portfolio weights * stock exposure to factor == 1
+β (size factor exposure) has 0 exposure to γ_residual factor - factor portfolio weights * stock exposure to factor == 1
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 15;
+                var nbb_unformatted_code = "for pure_factor in X.columns[:-1]:\n    stock_exposures_to_pure_factors = X[pure_factor]\n    title = \"|| \" + pure_factor + \" ||\"\n    print(\"=\" * len(title))\n    print(title)\n    print(\"=\" * len(title))\n    for (\n        name,\n        pure_factor_portfolio_weights_for_one_factor,\n    ) in pure_factor_portfolio_weights.iterrows():\n        if (\n            np.allclose(\n                stock_exposures_to_pure_factors.T\n                @ pure_factor_portfolio_weights_for_one_factor,\n                1,\n            )\n            and name == pure_factor\n        ):\n            print(\n                f\"{pure_factor} has unit exposure to its own factor {name} - factor portfolio weights * stock exposure to factor == 1\"\n            )\n        elif (\n            np.allclose(\n                stock_exposures_to_pure_factors.T\n                @ pure_factor_portfolio_weights_for_one_factor,\n                0,\n            )\n            and name != pure_factor\n        ):\n            print(\n                f\"{pure_factor} has 0 exposure to {name} factor - factor portfolio weights * stock exposure to factor == 1\"\n            )\n        else:\n            print(\"Something's wrong\")\n    print(\"\\n\")";
+                var nbb_formatted_code = "for pure_factor in X.columns[:-1]:\n    stock_exposures_to_pure_factors = X[pure_factor]\n    title = \"|| \" + pure_factor + \" ||\"\n    print(\"=\" * len(title))\n    print(title)\n    print(\"=\" * len(title))\n    for (\n        name,\n        pure_factor_portfolio_weights_for_one_factor,\n    ) in pure_factor_portfolio_weights.iterrows():\n        if (\n            np.allclose(\n                stock_exposures_to_pure_factors.T\n                @ pure_factor_portfolio_weights_for_one_factor,\n                1,\n            )\n            and name == pure_factor\n        ):\n            print(\n                f\"{pure_factor} has unit exposure to its own factor {name} - factor portfolio weights * stock exposure to factor == 1\"\n            )\n        elif (\n            np.allclose(\n                stock_exposures_to_pure_factors.T\n                @ pure_factor_portfolio_weights_for_one_factor,\n                0,\n            )\n            and name != pure_factor\n        ):\n            print(\n                f\"{pure_factor} has 0 exposure to {name} factor - factor portfolio weights * stock exposure to factor == 1\"\n            )\n        else:\n            print(\"Something's wrong\")\n    print(\"\\n\")";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./course-work/ise-537"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="hw1.html" title="previous page">HW 1</a>
+    <a class='right-next' id="next-link" href="hw2_part2.html" title="next page">HW 2 Part 2</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
