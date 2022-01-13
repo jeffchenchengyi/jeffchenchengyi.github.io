@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>\(\Psi \Phi\) &#8212; ΨΦ</title>
+    <title>Chengyi (Jeff) Chen’s Data Science Blog \(\Psi \Phi\): Pursuit to discover Unknown Unknowns &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -71,8 +71,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/intro.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="\Psi \Phi" />
-<meta property="og:description" content="\Psi \Phi    Hi, I’m Jeff and \Psi \Phi (pronounced “sci-fi”) is my technical blog dedicated to connecting seemingly disparate data science concepts.  Contents " />
+<meta property="og:title"       content="Chengyi (Jeff) Chen’s Data Science Blog \Psi \Phi: Pursuit to discover Unknown Unknowns" />
+<meta property="og:description" content="Chengyi (Jeff) Chen’s Data Science Blog \Psi \Phi: Pursuit to discover Unknown Unknowns    Hi, I’m Jeff and \Psi \Phi (pronounced “sci-fi”) is my technical blog" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -109,7 +109,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="machine-learning/00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -190,6 +190,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -657,8 +689,8 @@
         
               <div>
                 
-  <div class="section" id="psi-phi">
-<h1><span class="math notranslate nohighlight">\(\Psi \Phi\)</span><a class="headerlink" href="#psi-phi" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="chengyi-jeff-chen-s-data-science-blog-psi-phi-pursuit-to-discover-unknown-unknowns">
+<h1>Chengyi (Jeff) Chen’s Data Science Blog <span class="math notranslate nohighlight">\(\Psi \Phi\)</span>: Pursuit to discover Unknown Unknowns<a class="headerlink" href="#chengyi-jeff-chen-s-data-science-blog-psi-phi-pursuit-to-discover-unknown-unknowns" title="Permalink to this headline">¶</a></h1>
 <div class="figure align-default" id="chengyi-jeff-chen">
 <img alt="_images/header.jpg" src="_images/header.jpg" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Hi, I’m Jeff and <span class="math notranslate nohighlight">\(\Psi \Phi\)</span> (pronounced “sci-fi”) is my technical blog dedicated to connecting seemingly disparate data science concepts.</span><a class="headerlink" href="#chengyi-jeff-chen" title="Permalink to this image">¶</a></p>
@@ -678,6 +710,8 @@
 <p class="admonition-title">No Free Lunch Theorem</p>
 <p>If you’re not familiar with the NFL Theorem, it basically states that there isn’t a single “best” machine-learning / optimization algorithm for any problem. We often here of how most ML practitioners have a favourite algorithm that they turn to, almost like a silver bullet, for any given machine learning problem such as tree-based ensembling models like XGBoost or LightGBM. After building ML systems for trading strategies at <a class="reference external" href="https://www.plutusmazu.com/">Plutus Mazu</a>, I’ve become truly humbled by the implications of this theorem. A tree-based ensembling model might work exceptionally well on a large dataset, but with very little data, the most regularized tree-based ensembling model still fails catastrophically during cross-validation as compared to a simple unscaled, KNN for example. Speaking of which, I think this theorem also generalizes to data preprocessing techniques as I’ve seen that applying scaling for example, is not necessarily always beneficial, especially when you’re using an algorithm that computes the distance between features of samples such as KNN, KMeans, …</p>
 <p>Because of this, my priors on AutoML have shifted much more positively. Well, then what’s the point of hiring a data scientist then? From my knowledge so far, I think that AutoML systems have yet to become “smarter”. There’s an unimaginably huge search space of models to be used in the machine learning pipeline – which missing data imputer? which dimensionality reduction technique? which scaler to use? which feature selection algorithm? which machine learning algorithm?… There’s probably a way to “bayesianify” (use bayesian optimization to search over ML models) the AutoML process once we figure out a way to measure similarily across ML techniques on different types of datasets.</p>
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -724,7 +758,7 @@
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>

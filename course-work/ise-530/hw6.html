@@ -110,7 +110,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../machine-learning/00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -191,6 +191,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -636,8 +668,8 @@
 <ul class="simple">
 <li><p>Find the minimum norm solution of the linear system:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-14736af6-914a-4579-a8c7-39da79448565">
-<span class="eqno">(259)<a class="headerlink" href="#equation-14736af6-914a-4579-a8c7-39da79448565" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55f2c5d5-07d3-472a-8624-b49261947b8d">
+<span class="eqno">(261)<a class="headerlink" href="#equation-55f2c5d5-07d3-472a-8624-b49261947b8d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 + x_2 + 5x_3 − 7x_4 &amp;= 1 \\
     x_1 − 3x_2 − x_3 + x_4 &amp;= 2 \\
 \end{align}\]</div>
@@ -645,8 +677,8 @@
 <ul class="simple">
 <li><p>Consider the quadratic program in three variables:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6deb6dad-4937-4bb1-a6b5-bc4b983c5cbb">
-<span class="eqno">(260)<a class="headerlink" href="#equation-6deb6dad-4937-4bb1-a6b5-bc4b983c5cbb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-20b3ced2-d5e4-4ad3-8d13-fa653d119935">
+<span class="eqno">(262)<a class="headerlink" href="#equation-20b3ced2-d5e4-4ad3-8d13-fa653d119935" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x_1,x_2,x_3}{\text{minimize }} &amp; 2x^2_1 + x_1x_2 + 2x^2_2 + x^2_3 + 2x_2x_3 \\
     \text{subject to } 
     &amp;0.8x_1 + 0.4x_2 + 0.6x_3 \geq 0.5 \\
@@ -660,8 +692,8 @@
 <li><p>Do Exercises 12.8 and 12.10.</p></li>
 <li><p>Consider the problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-e13b4c7d-399e-4d33-b39b-e79cd5ec5ace">
-<span class="eqno">(261)<a class="headerlink" href="#equation-e13b4c7d-399e-4d33-b39b-e79cd5ec5ace" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ccb596c8-f7ee-42ba-85c0-ebe352a182c2">
+<span class="eqno">(263)<a class="headerlink" href="#equation-ccb596c8-f7ee-42ba-85c0-ebe352a182c2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp; 2x_1x_2 + x_2x_3 + x_1x_3 \\
     \text{subject to } &amp; 3x_1 + 3x_2 + 2x_3 = 3. \\
 \end{align}\]</div>
@@ -669,8 +701,8 @@
 <ul class="simple">
 <li><p>Consider the nonnegatively constrained problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-0bc77c02-48a1-4743-94eb-e570de12e7cf">
-<span class="eqno">(262)<a class="headerlink" href="#equation-0bc77c02-48a1-4743-94eb-e570de12e7cf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-99df2bd2-8d70-47af-91d3-057c07ed6444">
+<span class="eqno">(264)<a class="headerlink" href="#equation-99df2bd2-8d70-47af-91d3-057c07ed6444" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x \geq 0}{\text{minimize }} &amp; \frac{4}{3}{[x^2_1 - x_1x_2 + x^2_2]}^{3/4} + x^2_3 - 2x_1x_3 + x^2_1. \\
 \end{align}\]</div>
 <p>(a) Write the KKT conditions for the problem? Are they necessary?</p>
@@ -727,15 +759,15 @@ time: 6.91 ms
 <ul class="simple">
 <li><p>Find the minimum norm solution of the linear system:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-11d7d5ed-bfd8-4c14-aa84-ad644888ef61">
-<span class="eqno">(263)<a class="headerlink" href="#equation-11d7d5ed-bfd8-4c14-aa84-ad644888ef61" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b0d42da8-3156-47e0-be67-4ead2ee42769">
+<span class="eqno">(265)<a class="headerlink" href="#equation-b0d42da8-3156-47e0-be67-4ead2ee42769" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 + x_2 + 5x_3 − 7x_4 &amp;= 1 \\
     x_1 − 3x_2 − x_3 + x_4 &amp;= 2 \\
 \end{align}\]</div>
 <p>by first formulating a quadratic program to minimize the sum of squares of the variables subject to the two equations. Solve the resulting program by introducing Lagrangian multipliers of the constraints and solving the resulting optimality conditions. Verify your solution by expressing the variables <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> in terms of <span class="math notranslate nohighlight">\(x_3\)</span> and <span class="math notranslate nohighlight">\(x_4\)</span>, ending up with a quadratic minimization problem in two variables and no constraints whose solution can be readily obtained.</p>
 <p>Quadratic Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7728a9e1-6a05-4f07-8795-601a406f46bf">
-<span class="eqno">(264)<a class="headerlink" href="#equation-7728a9e1-6a05-4f07-8795-601a406f46bf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-53aec63e-1920-443c-bc8d-51225f1b5ce9">
+<span class="eqno">(266)<a class="headerlink" href="#equation-53aec63e-1920-443c-bc8d-51225f1b5ce9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp; {\vert \vert x \vert \vert} \\
     \text{subject to } 
     &amp;Ax = b \\
@@ -772,21 +804,21 @@ time: 6.91 ms
             </script></div>
 </div>
 <p>Solution via Lagrange Multipliers (By LCQ constraint qualification):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a454878c-5f14-432f-b0d4-b78ddd39a86f">
-<span class="eqno">(265)<a class="headerlink" href="#equation-a454878c-5f14-432f-b0d4-b78ddd39a86f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-12eab93a-693a-43d4-8c24-329315e74954">
+<span class="eqno">(267)<a class="headerlink" href="#equation-12eab93a-693a-43d4-8c24-329315e74954" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, \lambda) &amp;= x^\top x - (Ax - b)^\top\lambda \\
 \end{align}\]</div>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be81545b-bd1f-40af-9d68-253a6a0e13b1">
-<span class="eqno">(266)<a class="headerlink" href="#equation-be81545b-bd1f-40af-9d68-253a6a0e13b1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c7b3ffd0-22c7-4e74-bd36-e562d3600e3c">
+<span class="eqno">(268)<a class="headerlink" href="#equation-c7b3ffd0-22c7-4e74-bd36-e562d3600e3c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x\mathcal{L}(x, \lambda) &amp;= 0 \\
     \nabla_x x^\top x - (Ax - b)^\top\lambda &amp;= 0 \\
     2x - A^\top\lambda &amp;= 0 \\
     x^* &amp;= \frac{1}{2} A^\top \lambda \\
 \end{align}\]</div>
 <p>Primal feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0fc3ca38-589a-4e93-9040-5ffa599612cf">
-<span class="eqno">(267)<a class="headerlink" href="#equation-0fc3ca38-589a-4e93-9040-5ffa599612cf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-47bd366b-e8a2-4497-84a2-ddfaf843f853">
+<span class="eqno">(269)<a class="headerlink" href="#equation-47bd366b-e8a2-4497-84a2-ddfaf843f853" title="Permalink to this equation">¶</a></span>\[\begin{align}
     Ax &amp;= b \\
     \text{Substituting }x=x^*, A(\frac{1}{2} A^\top \lambda) &amp;= b \\
     \frac{1}{2} AA^\top \lambda &amp;= b \\
@@ -824,8 +856,8 @@ time: 6.91 ms
             </script></div>
 </div>
 <p>Substituting <span class="math notranslate nohighlight">\(\lambda=\lambda^*\)</span> into <span class="math notranslate nohighlight">\(x^* = \frac{1}{2} A^\top \lambda\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23475fb8-1b9c-4d11-90ab-d70acd5c9848">
-<span class="eqno">(268)<a class="headerlink" href="#equation-23475fb8-1b9c-4d11-90ab-d70acd5c9848" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f71a1c3b-0b25-4df9-b8d3-85f31305aae5">
+<span class="eqno">(270)<a class="headerlink" href="#equation-f71a1c3b-0b25-4df9-b8d3-85f31305aae5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^* &amp;= \frac{1}{2} A^\top \lambda^* \\
     &amp;= A^\top {(AA^\top)}^{-1}b \\
 \end{align}\]</div>
@@ -893,14 +925,14 @@ time: 6.91 ms
             </script></div>
 </div>
 <p>After Gaussian Elimination, we choose <span class="math notranslate nohighlight">\(x_3\)</span> and <span class="math notranslate nohighlight">\(x_4\)</span> as the free variables, and <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> as the leading variables:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc54c8a7-307a-4896-83dd-82c377a7f343">
-<span class="eqno">(269)<a class="headerlink" href="#equation-fc54c8a7-307a-4896-83dd-82c377a7f343" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dd7c2773-2c16-4d84-afd2-6a3bc7aea820">
+<span class="eqno">(271)<a class="headerlink" href="#equation-dd7c2773-2c16-4d84-afd2-6a3bc7aea820" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 &amp;= -\frac{7}{2}x_3 + 5x_4 + \frac{5}{4} \\
     x_2 &amp;= -\frac{3}{2}x_3 + 2x_4 - \frac{1}{4} \\
 \end{align}\]</div>
 <p>Hence, our generic solution is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-719ad16a-06a5-4264-b8f1-a8214997f0be">
-<span class="eqno">(270)<a class="headerlink" href="#equation-719ad16a-06a5-4264-b8f1-a8214997f0be" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-610e292b-bb20-4066-8f5f-c3ddeabfc32c">
+<span class="eqno">(272)<a class="headerlink" href="#equation-610e292b-bb20-4066-8f5f-c3ddeabfc32c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         x_1 \\
         x_2 \\
@@ -933,8 +965,8 @@ time: 6.91 ms
     \end{bmatrix}
 \end{align}\]</div>
 <p>Our problem transforms from a minimum norm problem to a least squares problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38924a1d-b254-43b9-becf-3dbeb96f175e">
-<span class="eqno">(271)<a class="headerlink" href="#equation-38924a1d-b254-43b9-becf-3dbeb96f175e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-52a906e7-7ee5-4961-84b3-20d048b3432e">
+<span class="eqno">(273)<a class="headerlink" href="#equation-52a906e7-7ee5-4961-84b3-20d048b3432e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x_3, x_4 \in \mathbb{R}^2}{\text{minimize }} &amp; 
     \Bigg\vert\Bigg\vert
     \begin{bmatrix}
@@ -958,8 +990,8 @@ time: 6.91 ms
     \\
 \end{align}\]</div>
 <p>Linear least squares problem, where <span class="math notranslate nohighlight">\(X\)</span> is the data matrix, <span class="math notranslate nohighlight">\(\beta\)</span> are the coefficients, and <span class="math notranslate nohighlight">\(y\)</span> is the response variable:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38d96577-c580-48f3-87c7-2c6f50fca2a6">
-<span class="eqno">(272)<a class="headerlink" href="#equation-38d96577-c580-48f3-87c7-2c6f50fca2a6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6a6aef97-f0c3-40e0-8580-a3c82b048883">
+<span class="eqno">(274)<a class="headerlink" href="#equation-6a6aef97-f0c3-40e0-8580-a3c82b048883" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\beta}{\text{minimize }} &amp; 
     \vert\vert
         X\beta - y
@@ -967,8 +999,8 @@ time: 6.91 ms
     \\
 \end{align}\]</div>
 <p>Solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3d7ab80-49e1-4ff3-8bca-4a9b3366f1d2">
-<span class="eqno">(273)<a class="headerlink" href="#equation-b3d7ab80-49e1-4ff3-8bca-4a9b3366f1d2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6ded3307-166c-4675-a493-45cfa9de8aba">
+<span class="eqno">(275)<a class="headerlink" href="#equation-6ded3307-166c-4675-a493-45cfa9de8aba" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \beta^* &amp;= {(X^\top X)}^{-1}X^\top y
 \end{align}\]</div>
 <p>Hence, solution to our problem is:</p>
@@ -1083,8 +1115,8 @@ time: 8.78 ms
 <ul class="simple">
 <li><p>Consider the quadratic program in three variables:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d2eedc10-a4b9-425e-a16d-502bef2da3d1">
-<span class="eqno">(274)<a class="headerlink" href="#equation-d2eedc10-a4b9-425e-a16d-502bef2da3d1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1a646a34-4508-46c3-9763-1db2e9a1e8a7">
+<span class="eqno">(276)<a class="headerlink" href="#equation-1a646a34-4508-46c3-9763-1db2e9a1e8a7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x_1,x_2,x_3}{\text{minimize }} &amp; 2x^2_1 + x_1x_2 + 2x^2_2 + x^2_3 + 2x_2x_3 \\
     \text{subject to } 
     &amp;0.8x_1 + 0.4x_2 + 0.6x_3 \geq 0.5 \\
@@ -1092,15 +1124,15 @@ time: 8.78 ms
 \end{align}\]</div>
 <p>(a) Show that the objective function is strictly convex.</p>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4d2ce64b-1bc5-4da3-b880-7ace7f1ed05d">
-<span class="eqno">(275)<a class="headerlink" href="#equation-4d2ce64b-1bc5-4da3-b880-7ace7f1ed05d" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-ba1a0245-30b9-45ab-a730-1838befa8623">
+<span class="eqno">(277)<a class="headerlink" href="#equation-ba1a0245-30b9-45ab-a730-1838befa8623" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
     4x_1 + x_2 \\
     x_1 + 4x_2 + 2x_3 \\
     2x_2 + 2x_3 \\
 \end{bmatrix}\]</div>
 <p>Hessian <span class="math notranslate nohighlight">\(H\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84dd03fc-a74d-478f-a2cb-1509bd004738">
-<span class="eqno">(276)<a class="headerlink" href="#equation-84dd03fc-a74d-478f-a2cb-1509bd004738" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-98743cb6-8ba0-46d5-8cd0-01ac70efc048">
+<span class="eqno">(278)<a class="headerlink" href="#equation-98743cb6-8ba0-46d5-8cd0-01ac70efc048" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
     4 &amp; 1 &amp; 0 \\
     1 &amp; 4 &amp; 2 \\
     0 &amp; 2 &amp; 2 \\
@@ -1138,27 +1170,27 @@ time: 8.78 ms
 <p>Since all the eigenvalues of the Hessian are strictly <span class="math notranslate nohighlight">\(&gt; 0\)</span>, our Hessian is positive definite, and our objective function is strictly convex. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 <p>(b) Write down the optimality conditions for the problem. Are they necessary and sufficient for optimality?</p>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4313be08-6436-4b7a-9852-45e0f2c9e8bf">
-<span class="eqno">(277)<a class="headerlink" href="#equation-4313be08-6436-4b7a-9852-45e0f2c9e8bf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3a9b731e-1515-4119-9266-ec6e245b4257">
+<span class="eqno">(279)<a class="headerlink" href="#equation-3a9b731e-1515-4119-9266-ec6e245b4257" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, \mu, \lambda) &amp;= \frac{1}{2}x^\top H x - \lambda(x_1+x_2+x_3-1) - \mu(0.8x_1+0.4x_2+0.6x_3-0.5) \\
 \end{align}\]</div>
 <p>KKT Conditions:</p>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40d2ea38-764c-486c-98ba-bb854258dc18">
-<span class="eqno">(278)<a class="headerlink" href="#equation-40d2ea38-764c-486c-98ba-bb854258dc18" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-36ff15ed-532e-4002-868b-0a663a0e0b2c">
+<span class="eqno">(280)<a class="headerlink" href="#equation-36ff15ed-532e-4002-868b-0a663a0e0b2c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x\mathcal{L}(x, \lambda, \mu) &amp;= 0 \\
     Hx^* - \lambda\begin{bmatrix} 1 \\ 1 \\ 1 \\ \end{bmatrix} - \mu\begin{bmatrix} 0.8 \\ 0.4 \\ 0.6 \\ \end{bmatrix} &amp;= 0 \\
     \begin{bmatrix} 4x_1 + x_2 - \lambda - 0.8\mu \\ x_1 + 4x_2 + 2x_3 - \lambda - 0.4\mu \\ 2x_2 + 2x_3 - \lambda - 0.6\mu \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ 0 \\ \end{bmatrix} \\
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7833fbf6-d456-452d-a90c-23e996c08c6b">
-<span class="eqno">(279)<a class="headerlink" href="#equation-7833fbf6-d456-452d-a90c-23e996c08c6b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1791194f-36e7-4b24-9875-a6b4567a1a5d">
+<span class="eqno">(281)<a class="headerlink" href="#equation-1791194f-36e7-4b24-9875-a6b4567a1a5d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1+x_2+x_3 &amp;= 1 \\
     0.8x_1+0.4x_2+0.6x_3 &amp;= 0.5 \\
 \end{align}\]</div>
 <p>Dual Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66164665-b8da-4618-a075-865e38e5983c">
-<span class="eqno">(280)<a class="headerlink" href="#equation-66164665-b8da-4618-a075-865e38e5983c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-35a24a5c-e950-44c2-b131-a6c365e2fe8c">
+<span class="eqno">(282)<a class="headerlink" href="#equation-35a24a5c-e950-44c2-b131-a6c365e2fe8c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda \text{ free} \\ 
     \mu \geq 0
 \end{align}\]</div>
@@ -1494,8 +1526,8 @@ time: 174 ms
 <li><p>Do Exercise 11.9. Enumerate all possibilities of the complementary slackness conditions to find an optimal solution of the problem.</p></li>
 </ul>
 <p>Write down the KKT conditions for the following quadratic program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65897a5b-4042-4a7e-b694-59b1a6ab0cb4">
-<span class="eqno">(281)<a class="headerlink" href="#equation-65897a5b-4042-4a7e-b694-59b1a6ab0cb4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07fb4b9b-23ec-4fb2-9183-e1b8a307be37">
+<span class="eqno">(283)<a class="headerlink" href="#equation-07fb4b9b-23ec-4fb2-9183-e1b8a307be37" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp; x^2_1 +x^2_2 +x^2_3 −x_1x_2 −x_2x_3 −3x_1 −2x_2 +x_3 \\
     \text{subject to } &amp; x_1 \geq 0, x_2 \geq 0, x_3 \geq 0.
 \end{align}\]</div>
@@ -1538,8 +1570,8 @@ time: 174 ms
             </script></div>
 </div>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee332d2c-cd5c-4e2d-a542-dd11c65c1b06">
-<span class="eqno">(282)<a class="headerlink" href="#equation-ee332d2c-cd5c-4e2d-a542-dd11c65c1b06" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bc74d80f-9a36-48d8-977d-4fcd732540f1">
+<span class="eqno">(284)<a class="headerlink" href="#equation-bc74d80f-9a36-48d8-977d-4fcd732540f1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         2x_1 - x_2 - 3 \\
         -x_1 + 2x_2 - 2 \\
@@ -1549,15 +1581,15 @@ time: 174 ms
     Hx + \begin{bmatrix} -3 \\ -2 \\ 1 \\ \end{bmatrix}
 \end{align}\]</div>
 <p>Hessian <span class="math notranslate nohighlight">\(H\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-452974f3-2704-444f-a943-fdffe6242a46">
-<span class="eqno">(283)<a class="headerlink" href="#equation-452974f3-2704-444f-a943-fdffe6242a46" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-84f8a682-453e-466a-97aa-d13f5b52e6ee">
+<span class="eqno">(285)<a class="headerlink" href="#equation-84f8a682-453e-466a-97aa-d13f5b52e6ee" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
     2 &amp; -1 &amp; 0 \\
     -1 &amp; 2 &amp; 0 \\
     0 &amp; -1 &amp; 2 \\
 \end{bmatrix}\]</div>
 <p>Quadratic Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5476aa58-87fa-4e7a-b8db-346d8f3e69dd">
-<span class="eqno">(284)<a class="headerlink" href="#equation-5476aa58-87fa-4e7a-b8db-346d8f3e69dd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-589d8ae6-a5ae-4911-a635-9d854bba875b">
+<span class="eqno">(286)<a class="headerlink" href="#equation-589d8ae6-a5ae-4911-a635-9d854bba875b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp; \frac{1}{2} x^\top H x + c^\top x \\
     \text{subject to } &amp; x_1 \geq 0, x_2 \geq 0, x_3 \geq 0. \\
     \newline \\
@@ -1566,20 +1598,20 @@ time: 174 ms
     \\
 \end{align}\]</div>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cacf5ec0-6c52-4a38-a1cd-8894de0023df">
-<span class="eqno">(285)<a class="headerlink" href="#equation-cacf5ec0-6c52-4a38-a1cd-8894de0023df" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-05d5e61d-14ae-458c-bca3-51c50dd53216">
+<span class="eqno">(287)<a class="headerlink" href="#equation-05d5e61d-14ae-458c-bca3-51c50dd53216" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x) &amp;= \frac{1}{2}x^\top H x + c^\top x \\
 \end{align}\]</div>
 <p>KKT Conditions for optimal <span class="math notranslate nohighlight">\(x = x^*\)</span>:</p>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed3ae25e-7ee0-47a7-8459-bbffc7bf14c3">
-<span class="eqno">(286)<a class="headerlink" href="#equation-ed3ae25e-7ee0-47a7-8459-bbffc7bf14c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-03022fc9-dc9a-4cec-be79-0d2c99b7be84">
+<span class="eqno">(288)<a class="headerlink" href="#equation-03022fc9-dc9a-4cec-be79-0d2c99b7be84" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x\mathcal{L}(x) &amp;= 0 \\
     Hx^* + c &amp;= 0 \\
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25c6a16f-2bb1-482b-a209-0d3024a177da">
-<span class="eqno">(287)<a class="headerlink" href="#equation-25c6a16f-2bb1-482b-a209-0d3024a177da" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bba3ad31-adec-4c4e-bd6c-822c93336e34">
+<span class="eqno">(289)<a class="headerlink" href="#equation-bba3ad31-adec-4c4e-bd6c-822c93336e34" title="Permalink to this equation">¶</a></span>\[\begin{align}
    x^* &amp;\geq 0 \\
 \end{align}\]</div>
 <p>Complementary Slackness:</p>
@@ -1736,14 +1768,14 @@ time: 174 ms
 </ul>
 <p>12.8</p>
 <p>Minimize the function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c5bdfc3-2ca3-49a0-92b4-89b28dd90665">
-<span class="eqno">(288)<a class="headerlink" href="#equation-8c5bdfc3-2ca3-49a0-92b4-89b28dd90665" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9c594c54-7027-407c-ab9f-41a6decf45f4">
+<span class="eqno">(290)<a class="headerlink" href="#equation-9c594c54-7027-407c-ab9f-41a6decf45f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f (x_1, x_2) &amp;= x_1 − x_2 − x^2_1 + x^2_2 \\
 \end{align}\]</div>
 <p>subject to the constraints given in Examples 12.12 and 12.13.</p>
 <p>Example 12.12 &amp; 12.13 constraints:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cb85560-0608-4a53-b5a1-dac1648de1f8">
-<span class="eqno">(289)<a class="headerlink" href="#equation-1cb85560-0608-4a53-b5a1-dac1648de1f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ea62773e-0e8c-4da9-823e-9ac11821748c">
+<span class="eqno">(291)<a class="headerlink" href="#equation-ea62773e-0e8c-4da9-823e-9ac11821748c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp; x_1 − x_2 − x^2_1 + x^2_2 \\
     \text{subject to } &amp; −x_1 − x_2 \geq −2 \\
     &amp; x_1 − 2x_2 \geq −2 \\
@@ -1751,8 +1783,8 @@ time: 174 ms
     &amp; x_2 \geq 0 \\
 \end{align}\]</div>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9895a57-c9fc-4ea0-b037-847d7802ccc0">
-<span class="eqno">(290)<a class="headerlink" href="#equation-f9895a57-c9fc-4ea0-b037-847d7802ccc0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c1ee7c71-97a0-415d-b8b9-fd598f0d378c">
+<span class="eqno">(292)<a class="headerlink" href="#equation-c1ee7c71-97a0-415d-b8b9-fd598f0d378c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         1 - 2x_1 \\
         -1 + 2x_2 \\
@@ -1761,14 +1793,14 @@ time: 174 ms
     Hx + \begin{bmatrix} 1 \\ -1 \\ \end{bmatrix}
 \end{align}\]</div>
 <p>Hessian <span class="math notranslate nohighlight">\(H\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68c1f1ff-e43c-498a-9204-7c905992b112">
-<span class="eqno">(291)<a class="headerlink" href="#equation-68c1f1ff-e43c-498a-9204-7c905992b112" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-ccb6d195-b05d-408c-989e-23a6d56b2e47">
+<span class="eqno">(293)<a class="headerlink" href="#equation-ccb6d195-b05d-408c-989e-23a6d56b2e47" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
     -2 &amp; 0 \\
     0 &amp; 2 \\
 \end{bmatrix}\]</div>
 <p>Quadratic Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1cdda0ce-b1e5-463b-bd76-61917cb27f06">
-<span class="eqno">(292)<a class="headerlink" href="#equation-1cdda0ce-b1e5-463b-bd76-61917cb27f06" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0e9fce0a-0c42-4414-b510-21ff38cd334c">
+<span class="eqno">(294)<a class="headerlink" href="#equation-0e9fce0a-0c42-4414-b510-21ff38cd334c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp; \frac{1}{2} x^\top H x + c^\top x \\
     \text{subject to } &amp; Ex \geq f \\
     \newline \\
@@ -1779,25 +1811,25 @@ time: 174 ms
     \\
 \end{align}\]</div>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e61a545-7f82-426d-988a-d4b859eabf10">
-<span class="eqno">(293)<a class="headerlink" href="#equation-3e61a545-7f82-426d-988a-d4b859eabf10" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4741da0-85c7-487a-b58e-ec921e9c52a6">
+<span class="eqno">(295)<a class="headerlink" href="#equation-e4741da0-85c7-487a-b58e-ec921e9c52a6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, \mu) &amp;= \frac{1}{2}x^\top H x + c^\top x - (Ex - f)\mu \\
 \end{align}\]</div>
 <p>KKT Conditions for optimal <span class="math notranslate nohighlight">\(x = x^*\)</span>:</p>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-509f25a5-371f-407f-ad8e-c9f230ae4eed">
-<span class="eqno">(294)<a class="headerlink" href="#equation-509f25a5-371f-407f-ad8e-c9f230ae4eed" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fcb19100-eb33-4f80-b4c0-cf3060f11dba">
+<span class="eqno">(296)<a class="headerlink" href="#equation-fcb19100-eb33-4f80-b4c0-cf3060f11dba" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x\mathcal{L}(x, \mu) &amp;= 0 \\
     Hx^* + c - E^\top \mu &amp;= 0 \\
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b67a16b-f35b-4e13-be27-282db2d9f077">
-<span class="eqno">(295)<a class="headerlink" href="#equation-0b67a16b-f35b-4e13-be27-282db2d9f077" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0b3d4135-9412-4081-aeca-93ecfc08d395">
+<span class="eqno">(297)<a class="headerlink" href="#equation-0b3d4135-9412-4081-aeca-93ecfc08d395" title="Permalink to this equation">¶</a></span>\[\begin{align}
     Ex^* - f &amp;\geq 0 \\
 \end{align}\]</div>
 <p>Dual Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e523808-2a85-4c3c-b093-1b3c9b847e81">
-<span class="eqno">(296)<a class="headerlink" href="#equation-8e523808-2a85-4c3c-b093-1b3c9b847e81" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cf577a47-7299-4d23-b7bf-fc1d7687c70f">
+<span class="eqno">(298)<a class="headerlink" href="#equation-cf577a47-7299-4d23-b7bf-fc1d7687c70f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu \geq 0
 \end{align}\]</div>
 <p>Complementary Slackness:</p>
@@ -1904,8 +1936,8 @@ time: 174 ms
 <p>KKT conditions are fulfilled and so solution is optimal.</p>
 <p>12.10</p>
 <p>(Based on an example by P.B. Zwart [202].) Consider the quadratic program</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42d9e861-19c8-4fa3-a2b7-3aef81f97ded">
-<span class="eqno">(297)<a class="headerlink" href="#equation-42d9e861-19c8-4fa3-a2b7-3aef81f97ded" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ea2343f-639c-4f35-b181-390861204fdb">
+<span class="eqno">(299)<a class="headerlink" href="#equation-4ea2343f-639c-4f35-b181-390861204fdb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{maximize } &amp; Q(x) = 2x^2_1 + x_1x_2 + 2x_2 \\
     \text{subject to } &amp; 1.5x_1 + x_2 \leq 1.4 \\
     &amp; x_1 + x_2 \leq 1 \\
@@ -2001,8 +2033,8 @@ time: 174 ms
 </div>
 <p>(b) Is the point <span class="math notranslate nohighlight">\(\bar{x} = (0, 1)\)</span> a local maximum for this problem? Justify your answer.</p>
 <p>Hessian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e379d8be-004e-449f-b55e-3bcda5523c69">
-<span class="eqno">(298)<a class="headerlink" href="#equation-e379d8be-004e-449f-b55e-3bcda5523c69" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-8c736033-4bba-490c-a780-723dc3184191">
+<span class="eqno">(300)<a class="headerlink" href="#equation-8c736033-4bba-490c-a780-723dc3184191" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
     4 &amp; 1 \\
     1 &amp; 0 \\
 \end{bmatrix}\]</div>
@@ -2040,8 +2072,8 @@ time: 174 ms
 <ul class="simple">
 <li><p>Consider the problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-287ed74e-4f0c-43a5-a8a3-2326e1785cf8">
-<span class="eqno">(299)<a class="headerlink" href="#equation-287ed74e-4f0c-43a5-a8a3-2326e1785cf8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33e0c097-bac0-411b-9104-3772672f5870">
+<span class="eqno">(301)<a class="headerlink" href="#equation-33e0c097-bac0-411b-9104-3772672f5870" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp; 2x_1x_2 + x_2x_3 + x_1x_3 \\
     \text{subject to } &amp; 3x_1 + 3x_2 + 2x_3 = 3. \\
 \end{align}\]</div>
@@ -2085,20 +2117,20 @@ time: 174 ms
 </div>
 <p>KKT Conditions:</p>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de331b6b-3080-4a7f-8a61-1ef36a42ece1">
-<span class="eqno">(300)<a class="headerlink" href="#equation-de331b6b-3080-4a7f-8a61-1ef36a42ece1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f48e3f6-c96c-4243-bd47-92b6ce5e420c">
+<span class="eqno">(302)<a class="headerlink" href="#equation-7f48e3f6-c96c-4243-bd47-92b6ce5e420c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     2x_2 + x_3 + 3\lambda &amp;= 0 \\
     2x_1 + x_3 + 3\lambda &amp;= 0 \\
     x_2 + x_1 + 2\lambda &amp;= 0 \\
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba94231c-3857-4dcf-a3d5-126d7ecc1e6c">
-<span class="eqno">(301)<a class="headerlink" href="#equation-ba94231c-3857-4dcf-a3d5-126d7ecc1e6c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c2c735fd-50ab-4bf6-b7d1-5b5087ebfb4f">
+<span class="eqno">(303)<a class="headerlink" href="#equation-c2c735fd-50ab-4bf6-b7d1-5b5087ebfb4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     3x_1 + 3x_2 + 2x_3 &amp;= 3 \\
 \end{align}\]</div>
 <p>Dual Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e9f0c2a-34c5-4e5b-8550-65d24154ee01">
-<span class="eqno">(302)<a class="headerlink" href="#equation-9e9f0c2a-34c5-4e5b-8550-65d24154ee01" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2c6579d2-28c5-42d1-8ec7-e6ad222cec58">
+<span class="eqno">(304)<a class="headerlink" href="#equation-2c6579d2-28c5-42d1-8ec7-e6ad222cec58" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda \text{ free.} \\
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -2138,8 +2170,8 @@ time: 174 ms
             </script></div>
 </div>
 <p>Hessian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e4930bb-237d-4038-9815-2807c20c637f">
-<span class="eqno">(303)<a class="headerlink" href="#equation-4e4930bb-237d-4038-9815-2807c20c637f" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-91863077-16eb-4be6-96b6-9ac4f884efb7">
+<span class="eqno">(305)<a class="headerlink" href="#equation-91863077-16eb-4be6-96b6-9ac4f884efb7" title="Permalink to this equation">¶</a></span>\[\begin{bmatrix}
     0 &amp; 2 &amp; 1 \\
     2 &amp; 0 &amp; 1 \\
     1 &amp; 1 &amp; 0 \\
@@ -2179,8 +2211,8 @@ time: 174 ms
 <ul class="simple">
 <li><p>Consider the nonnegatively constrained problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-83c5cc3d-ab69-4183-9af0-f3cfae4f1c8b">
-<span class="eqno">(304)<a class="headerlink" href="#equation-83c5cc3d-ab69-4183-9af0-f3cfae4f1c8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0c81a768-58b8-45ef-81e3-efe15663febf">
+<span class="eqno">(306)<a class="headerlink" href="#equation-0c81a768-58b8-45ef-81e3-efe15663febf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x \geq 0}{\text{minimize }} &amp; \frac{4}{3}{[x^2_1 - x_1x_2 + x^2_2]}^{3/4} + x^2_3 - 2x_1x_3 + x^2_1. \\
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -2238,15 +2270,15 @@ time: 174 ms
 <p>(a) Write the KKT conditions for the problem? Are they necessary?</p>
 <p>KKT Conditions:</p>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1fc5cf7-384e-404c-b90e-3de2ad476625">
-<span class="eqno">(305)<a class="headerlink" href="#equation-e1fc5cf7-384e-404c-b90e-3de2ad476625" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-47cce171-a99e-45fe-a149-ce1e20153177">
+<span class="eqno">(307)<a class="headerlink" href="#equation-47cce171-a99e-45fe-a149-ce1e20153177" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {[x^2_1 - x_1x_2 + x^2_2]}^{-1/4}[2x_1-x_2] - 2x_3 + 2x_1 &amp;= 0 \\
     {[x^2_1 - x_1x_2 + x^2_2]}^{-1/4}[-x_1+2x_2] &amp;= 0 \\
     2x_3 - 2x_1 &amp;= 0 \\
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-869ca1f7-b0fa-4a10-856d-3a8c66034eb9">
-<span class="eqno">(306)<a class="headerlink" href="#equation-869ca1f7-b0fa-4a10-856d-3a8c66034eb9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c82809eb-0234-4c6c-81b7-de5604bd3d5f">
+<span class="eqno">(308)<a class="headerlink" href="#equation-c82809eb-0234-4c6c-81b7-de5604bd3d5f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1, x_2, x_3 \geq 0 \\
 \end{align}\]</div>
 <p>Complementary Slackness:</p>
@@ -2372,7 +2404,7 @@ d: [-0.5 -0.5  1. ]
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>

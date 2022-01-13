@@ -110,7 +110,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
@@ -191,6 +191,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -873,8 +905,8 @@
 </ol>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-e7579458-7901-4b9e-8db6-f6783b0dbb07">
-<span class="eqno">(14)<a class="headerlink" href="#equation-e7579458-7901-4b9e-8db6-f6783b0dbb07" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d0de859c-43f0-4b99-bca0-b360a69cbeac">
+<span class="eqno">(14)<a class="headerlink" href="#equation-d0de859c-43f0-4b99-bca0-b360a69cbeac" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \boldsymbol {\theta_{\rm{max}}} &amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log p(\mathcal{X} \mid \boldsymbol{\theta }) \\
     &amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \\
 \end{align}\]</div>
@@ -885,8 +917,8 @@
 </ol>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-9adeaa0b-fb30-487b-9449-7042af2b8853">
-<span class="eqno">(15)<a class="headerlink" href="#equation-9adeaa0b-fb30-487b-9449-7042af2b8853" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-343671d4-2f1e-4f58-9b4c-1d524f20d216">
+<span class="eqno">(15)<a class="headerlink" href="#equation-343671d4-2f1e-4f58-9b4c-1d524f20d216" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;= \frac{p(\mathcal{X}, \mathcal{Z} \mid \boldsymbol {\theta_{\rm{max}} })}{
 \sum_{z \in \mathcal{Z}} p(\mathcal{X}, \mathcal{Z} = z \mid \boldsymbol {\theta_{\rm{max}} })} \\
 \end{align}\]</div>
@@ -895,21 +927,21 @@
 <p>Notice that <span class="math notranslate nohighlight">\(\sum_{z \in \mathcal{Z}}\)</span> is a general summation to encompass all types of marginalization possible, i.e. can be a multidimensional summation <span class="math notranslate nohighlight">\(\sum_{z_1 \in Z_1}\sum_{z_2 \in Z_2}\cdots\sum_{z_M \in Z_M}\)</span> or integral(s) if <span class="math notranslate nohighlight">\(z\)</span> is continuous or even a mix of summation and integration over different latent variables of interest.</p>
 </div>
 <p>However, this <span class="math notranslate nohighlight">\(p(\mathcal{X} \mid \boldsymbol{\theta }) = \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\,d\mathcal{Z}\)</span> is often intractable (e.g. if <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>  is a sequence of events, so that the number of values grows exponentially with the sequence length, the exact calculation of the sum will be extremely difficult). Let’s instead try to find a lower bound for it by expanding it <span class="bibtex" id="id4">[SVIPartI61:online]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7eb16bf9-2e7b-4657-ad05-6227102b52aa">
-<span class="eqno">(16)<a class="headerlink" href="#equation-7eb16bf9-2e7b-4657-ad05-6227102b52aa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1f384c08-dd54-442c-9c41-6f7ef3ed91de">
+<span class="eqno">(16)<a class="headerlink" href="#equation-1f384c08-dd54-442c-9c41-6f7ef3ed91de" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \log p(\mathcal{X} \mid \boldsymbol{\theta }) 
     &amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \\
 \end{align}\]</div>
 <p>Using ideas from importance sampling, assume we have another variational distribution [approximate posterior distribution to <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{X}}, {\bf \theta})\)</span>)], <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi})\)</span>, where <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi}) &gt; 0\)</span> whenever <span class="math notranslate nohighlight">\(p({\mathcal{Z}}) = \sum_{x \in \mathcal{X}} p({\mathcal{X}} = x, {\mathcal{Z}} \mid {\bf \theta}) &gt; 0\)</span>, and we rewite:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9d34614-c868-4a74-bf5e-4fd2da1956d5">
-<span class="eqno">(17)<a class="headerlink" href="#equation-d9d34614-c868-4a74-bf5e-4fd2da1956d5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff74b795-9ec4-4e3e-a270-9aa6be01bfa2">
+<span class="eqno">(17)<a class="headerlink" href="#equation-ff74b795-9ec4-4e3e-a270-9aa6be01bfa2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \log p(\mathcal{X} \mid \boldsymbol{\theta }) 
     &amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \\
     &amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \\
 \end{align}\]</div>
 <p>By Jensen’s Inequality, given concave function <span class="math notranslate nohighlight">\(f(X)\)</span> (e.g. <span class="math notranslate nohighlight">\(\log\)</span>), <span class="math notranslate nohighlight">\(f\operatorname {E}\left[X\right] \geq \operatorname {E}\left[f(X)\right]\)</span> <span class="bibtex" id="id5">[Variatio28:online]</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37a28590-968f-4b3b-a21a-4ce77f8fb8b4">
-<span class="eqno">(18)<a class="headerlink" href="#equation-37a28590-968f-4b3b-a21a-4ce77f8fb8b4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e1e737c3-f614-4e09-a9ad-2c92ce4313f3">
+<span class="eqno">(18)<a class="headerlink" href="#equation-e1e737c3-f614-4e09-a9ad-2c92ce4313f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \log p(\mathcal{X} \mid \boldsymbol{\theta }) 
     &amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \\
     &amp;\geq \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log\left(\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})}\right)\right] \\
@@ -919,8 +951,8 @@
 \end{align}\]</div>
 <p>Hence, we get an <em><strong>Evidence Lower Bound (ELBO)</strong></em> (also known as the <em><strong>Negative Variational Free Energy</strong></em>) on the <span class="math notranslate nohighlight">\(\log\)</span> Evidence. Instead of an inequality, we can get an exact equality of the form below by deriving the ELBO from rearranging the KL Divergence from our variational distribution (approximate posterior of latent variables) <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi})\)</span> to our actual posterior over latent variables <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})\)</span>:</p>
 <p>Derivation from <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8fd7608-48d8-409c-87e4-a315f1ad1d7e">
-<span class="eqno">(19)<a class="headerlink" href="#equation-a8fd7608-48d8-409c-87e4-a315f1ad1d7e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0a73ba0d-c345-4d84-b99a-22319071c070">
+<span class="eqno">(19)<a class="headerlink" href="#equation-0a73ba0d-c345-4d84-b99a-22319071c070" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))
     &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log\left(\frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})}\right)\right] \\
     &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})\right] \\
@@ -928,8 +960,8 @@
     &amp;= -\left[\operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] + \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\right] + \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \\
     &amp;= -\mathcal{L}(q({\mathcal{Z} = z}\mid {\bf \phi})) + \log p({\mathcal{x}} \mid {\bf \theta}) \because \text{Expectation is over latent variables }{\mathcal{Z} = z}\text{, which is independent of }{\mathcal{x}} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b487f2e2-b609-4302-a376-970d8c5d4f9f">
-<span class="eqno">(20)<a class="headerlink" href="#equation-b487f2e2-b609-4302-a376-970d8c5d4f9f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-458ac85c-fad2-46a1-8104-e4abbec24fe0">
+<span class="eqno">(20)<a class="headerlink" href="#equation-458ac85c-fad2-46a1-8104-e4abbec24fe0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \therefore \log p({\mathcal{x}} \mid {\bf \theta}) 
     &amp;= \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) + {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) \\
 \end{align}\]</div>
@@ -940,8 +972,8 @@
 </ol>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-f72d75d1-3939-4d8a-a6f2-ec1e8407ff99">
-<span class="eqno">(21)<a class="headerlink" href="#equation-f72d75d1-3939-4d8a-a6f2-ec1e8407ff99" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-75f59dd5-4830-4215-ab01-c4c52f2bd2a0">
+<span class="eqno">(21)<a class="headerlink" href="#equation-75f59dd5-4830-4215-ab01-c4c52f2bd2a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {\bf\theta_{\rm{max}}} &amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log p(\mathcal{X} \mid \boldsymbol{\theta }) \\
     {\bf\theta_{\rm{max}}}, {\bf\phi_{\rm{max}}} &amp;\approx \underset{{\bf \theta}, {\bf \phi}}{\operatorname{argmax}} \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) \\
     &amp;= \underset{{\bf \theta}, {\bf \phi}}{\operatorname{argmax}} \operatorname {E}_{q({\mathcal{Z}} = z \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]  \\
@@ -953,8 +985,8 @@
 </ol>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-68df0807-8d38-40d6-af32-872b8395b243">
-<span class="eqno">(22)<a class="headerlink" href="#equation-68df0807-8d38-40d6-af32-872b8395b243" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1d67cd59-05fb-4feb-bd6a-608faf956ad2">
+<span class="eqno">(22)<a class="headerlink" href="#equation-1d67cd59-05fb-4feb-bd6a-608faf956ad2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;\approx q({\mathcal{Z}} \mid {\bf \phi}) \\
 \end{align}\]</div>
 <p><strong>Technique 1: Expectation-Maximization</strong></p>
@@ -969,8 +1001,8 @@
 </ul>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-3cc4b12a-8324-4f80-97c7-9e166bb672a1">
-<span class="eqno">(23)<a class="headerlink" href="#equation-3cc4b12a-8324-4f80-97c7-9e166bb672a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ee17fbb9-de11-4624-818e-2c5b8e6ba7f6">
+<span class="eqno">(23)<a class="headerlink" href="#equation-ee17fbb9-de11-4624-818e-2c5b8e6ba7f6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}) &amp;= \operatorname {E} _{p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})}\left[\log L({\boldsymbol {\theta }};\mathcal{X} ,\mathcal{Z} = z )\right]\, \\
     &amp;= \operatorname {E} _{p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})}\left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \right]\, \\
     &amp;= \sum_{z \in \mathcal{Z}} p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)}) \log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \\
@@ -982,8 +1014,8 @@
 </ol>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-cebafbbf-a02b-4107-8344-2421e96efcf5">
-<span class="eqno">(24)<a class="headerlink" href="#equation-cebafbbf-a02b-4107-8344-2421e96efcf5" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+<div class="amsmath math notranslate nohighlight" id="equation-2f19a0c8-d7b5-496b-8318-acd41e900f78">
+<span class="eqno">(24)<a class="headerlink" href="#equation-2f19a0c8-d7b5-496b-8318-acd41e900f78" title="Permalink to this equation">¶</a></span>\[\begin{align} 
     {\boldsymbol {\theta }}^{(t+1)} &amp;= {\underset {\boldsymbol {\theta }}{\operatorname {arg\,max} }}\ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\,
 \end{align}\]</div>
 <p>Example 01 - Gaussian Mixture Model <span class="bibtex" id="id8">[Expectat31:online]</span></p>
@@ -1025,14 +1057,14 @@
 </li>
 </ul>
 <p><strong>E-step</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e828825-8a6a-4fe2-874f-98a78e9dd78f">
-<span class="eqno">(25)<a class="headerlink" href="#equation-2e828825-8a6a-4fe2-874f-98a78e9dd78f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-454d70a5-ed6e-4b8a-b02a-91e271668e42">
+<span class="eqno">(25)<a class="headerlink" href="#equation-454d70a5-ed6e-4b8a-b02a-91e271668e42" title="Permalink to this equation">¶</a></span>\[\begin{align}
     
 \end{align}\]</div>
 <p><strong>Technique 2: Markov Chain Monte Carlo</strong></p>
 <p><strong>Technique 3: Mean-field Approximation Variational Inference</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e4bee06-e6b2-4f37-bf3c-f11736d29e16">
-<span class="eqno">(26)<a class="headerlink" href="#equation-6e4bee06-e6b2-4f37-bf3c-f11736d29e16" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0deba70e-9002-4365-887e-aef3809199a5">
+<span class="eqno">(26)<a class="headerlink" href="#equation-0deba70e-9002-4365-887e-aef3809199a5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {\rm ELBO} &amp;\equiv \mathbb{E}_{q({\bf z} \mid {\bf \phi})} \left [
 \log p({\bf x}, {\bf z} \mid {\bf \theta}) - \log q({\bf z} \mid {\bf \phi})
 \right]
@@ -1041,8 +1073,8 @@
 <p><strong>Example 02 - Latent Dirichlet Allocation Topic Model</strong></p>
 <p><strong>Example 03 - Hidden Markov Model</strong></p>
 <p><strong>Technique 4: Black-box Variational Inference</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2fa1147a-a5ad-4491-afa2-a2d1e527890d">
-<span class="eqno">(27)<a class="headerlink" href="#equation-2fa1147a-a5ad-4491-afa2-a2d1e527890d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f75ed34c-9bd0-4d4c-9181-2324f28bc5e8">
+<span class="eqno">(27)<a class="headerlink" href="#equation-f75ed34c-9bd0-4d4c-9181-2324f28bc5e8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {\rm ELBO} &amp;\equiv \mathbb{E}_{q({\bf z} \mid {\bf \phi})} \left [
 \log p({\bf x}, {\bf z} \mid {\bf \theta}) - \log q({\bf z} \mid {\bf \phi})
 \right]
@@ -1093,7 +1125,7 @@
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>

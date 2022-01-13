@@ -110,7 +110,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../machine-learning/00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -191,6 +191,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -665,8 +697,8 @@
 <ul class="simple">
 <li><p>Describe a dual-based algorithm (not the dual simplex) for solving a linear program with two constraints:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-81bad8dd-9c8e-4ab6-8bfb-d1bc61879360">
-<span class="eqno">(307)<a class="headerlink" href="#equation-81bad8dd-9c8e-4ab6-8bfb-d1bc61879360" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7ee3c667-274c-41c8-b015-b1d45f74ea8f">
+<span class="eqno">(309)<a class="headerlink" href="#equation-7ee3c667-274c-41c8-b015-b1d45f74ea8f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} 
     &amp; \sum^n_{i=1} c_ix_i \\
     \text{subject to } 
@@ -682,8 +714,8 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 <ul class="simple">
 <li><p>Extend the procedure in the above exercise to case where the objective function is replaced by <span class="math notranslate nohighlight">\(\sum^n_{i=1} c_i x^2_i\)</span> with the coefficients <span class="math notranslate nohighlight">\(c_i\)</span> being all positive. Apply the resulting procedure to the problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-96c559fc-6376-4c19-9fe5-3eb623170112">
-<span class="eqno">(308)<a class="headerlink" href="#equation-96c559fc-6376-4c19-9fe5-3eb623170112" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bd8e9099-66bf-4047-8590-ca2608dd6e2c">
+<span class="eqno">(310)<a class="headerlink" href="#equation-bd8e9099-66bf-4047-8590-ca2608dd6e2c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} 
     &amp; x^2_1 + x^2_2 \\
     \text{subject to } 
@@ -696,16 +728,16 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 <li><p>Do Exercises 11.31, 11.32, and 11.36 in the Cottle-Thapa text.</p></li>
 <li><p>Determine the minimum objective value and minimizers of the convex program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6e8afcbb-a08a-457a-9ae4-249ad274eb60">
-<span class="eqno">(309)<a class="headerlink" href="#equation-6e8afcbb-a08a-457a-9ae4-249ad274eb60" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2fe22246-f34b-497d-887a-4292d10ea1f4">
+<span class="eqno">(311)<a class="headerlink" href="#equation-2fe22246-f34b-497d-887a-4292d10ea1f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x, y}{\text{minimize }} 
     &amp; e^{-y}
     \text{ subject to } 
     \sqrt{x^2 + y^2} - x \leq 0,
 \end{align}\]</div>
 <p>Show that the dual function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df943d87-8f3d-41a9-801e-e5eb93069c1c">
-<span class="eqno">(310)<a class="headerlink" href="#equation-df943d87-8f3d-41a9-801e-e5eb93069c1c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e98e71ce-1e10-4ed6-8e14-9f235373bfbb">
+<span class="eqno">(312)<a class="headerlink" href="#equation-e98e71ce-1e10-4ed6-8e14-9f235373bfbb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\mu) \overset{\Delta}{=} \underset{x, y}{\text{minimize }} 
     &amp; e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big], \mu \geq 0
 \end{align}\]</div>
@@ -753,8 +785,8 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 <ul class="simple">
 <li><p>Describe a dual-based algorithm (not the dual simplex) for solving a linear program with two constraints:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-aa20ac4c-968e-482a-9c30-32a3db22ff28">
-<span class="eqno">(311)<a class="headerlink" href="#equation-aa20ac4c-968e-482a-9c30-32a3db22ff28" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5f02766d-7a3f-4b41-9173-c46657d37c85">
+<span class="eqno">(313)<a class="headerlink" href="#equation-5f02766d-7a3f-4b41-9173-c46657d37c85" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} 
     &amp; \sum^n_{i=1} c_ix_i \\
     \text{subject to } 
@@ -770,8 +802,8 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 <ul class="simple">
 <li><p>Extend the procedure in the above exercise to case where the objective function is replaced by <span class="math notranslate nohighlight">\(\sum^n_{i=1} c_i x^2_i\)</span> with the coefficients <span class="math notranslate nohighlight">\(c_i\)</span> being all positive. Apply the resulting procedure to the problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-57f7705b-82f7-4dff-9afd-d65179be5c3e">
-<span class="eqno">(312)<a class="headerlink" href="#equation-57f7705b-82f7-4dff-9afd-d65179be5c3e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-945d3eef-c78a-4aee-a8e3-638d2c836bec">
+<span class="eqno">(314)<a class="headerlink" href="#equation-945d3eef-c78a-4aee-a8e3-638d2c836bec" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} 
     &amp; x^2_1 + x^2_2 \\
     \text{subject to } 
@@ -780,8 +812,8 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 \end{align}\]</div>
 <p>Verify your solution graphically by considering the problem as a “nearest-point” problem.</p>
 <p>Step 1 - Dual Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-61bf3f30-4513-4897-838b-a4511354cef9">
-<span class="eqno">(313)<a class="headerlink" href="#equation-61bf3f30-4513-4897-838b-a4511354cef9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-13515f04-86d2-4045-997d-fec87f334dab">
+<span class="eqno">(315)<a class="headerlink" href="#equation-13515f04-86d2-4045-997d-fec87f334dab" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\lambda, \mu}{\text{maximize }} 
     &amp; 2\lambda + \mu \\
     \text{subject to } 
@@ -789,21 +821,21 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
     &amp; 3\lambda + \mu = 1\text{, and }\lambda \geq 0, \mu \text{ free}. \\
 \end{align}\]</div>
 <p>From constraint <span class="math notranslate nohighlight">\(3\lambda + \mu = 1\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5145e57d-f1b6-4a4f-9d85-63a43004bb76">
-<span class="eqno">(314)<a class="headerlink" href="#equation-5145e57d-f1b6-4a4f-9d85-63a43004bb76" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c002a862-5272-4621-807c-6504a96e6ac6">
+<span class="eqno">(316)<a class="headerlink" href="#equation-c002a862-5272-4621-807c-6504a96e6ac6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \lambda = \frac{1 - \mu}{3} \\
 \end{align}\]</div>
 <p>Step 2 - Substituting <span class="math notranslate nohighlight">\(\lambda\)</span> into objective function, dual program becomes parameterized by <span class="math notranslate nohighlight">\(\mu\)</span> alone:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b9ec243-dc72-4749-9b21-e29006b7a365">
-<span class="eqno">(315)<a class="headerlink" href="#equation-4b9ec243-dc72-4749-9b21-e29006b7a365" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f166a69c-5888-48f8-83e9-73c310187442">
+<span class="eqno">(317)<a class="headerlink" href="#equation-f166a69c-5888-48f8-83e9-73c310187442" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\mu}{\text{maximize }} 
     &amp; 2\Big(\frac{1 - \mu}{3}\Big) + \mu \\
     \text{subject to } 
     &amp; 2\Big(\frac{1 - \mu}{3}\Big) + \mu \leq 1 \text{, and } \mu \text{ free}. \\
 \end{align}\]</div>
 <p>Step 3 - Set objective value to 1:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-33b827ac-24a4-4452-ba06-432880096b92">
-<span class="eqno">(316)<a class="headerlink" href="#equation-33b827ac-24a4-4452-ba06-432880096b92" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b97072c6-27e0-47e8-bd24-63bb5c7e2f3c">
+<span class="eqno">(318)<a class="headerlink" href="#equation-b97072c6-27e0-47e8-bd24-63bb5c7e2f3c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     2\Big(\frac{1 - \mu}{3}\Big) + \mu &amp;= 1 \\
     \frac{2}{3} - \frac{2}{3}\mu + \mu &amp;= 1 \\
     \frac{1}{3}\mu &amp;= \frac{1}{3} \\
@@ -811,18 +843,18 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 \end{align}\]</div>
 <p>Step 4 - Complementary Slackness:</p>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6fa28dcb-92d0-4da6-b623-2f452821becb">
-<span class="eqno">(317)<a class="headerlink" href="#equation-6fa28dcb-92d0-4da6-b623-2f452821becb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e9d9efea-98dd-4eeb-b588-33ac2edaa15b">
+<span class="eqno">(319)<a class="headerlink" href="#equation-e9d9efea-98dd-4eeb-b588-33ac2edaa15b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x_1, x_2, \lambda, \mu) &amp;= x^2_1 + x^2_2 - \lambda(2x_1 + 3x_2 - 2) - \mu(x_1 + x_2 - 1) \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7ebb229f-3785-4ce5-b021-90e00b1850f2">
-<span class="eqno">(318)<a class="headerlink" href="#equation-7ebb229f-3785-4ce5-b021-90e00b1850f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6a64ad34-06f7-4c6e-bf2a-b05055534501">
+<span class="eqno">(320)<a class="headerlink" href="#equation-6a64ad34-06f7-4c6e-bf2a-b05055534501" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^*_1 \frac{\partial \mathcal{L}(x_1, x_2, \lambda^*, \mu^*)}{\partial x_1} &amp;= 0 \\
     x^*_1 (2x^*_1 - 1) &amp;= 0 \\
     x^*_1 &amp;= 0.5 \\ 
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-80fae4bb-f6c6-494e-91c2-4d3c0bbef910">
-<span class="eqno">(319)<a class="headerlink" href="#equation-80fae4bb-f6c6-494e-91c2-4d3c0bbef910" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca905a04-c279-4dc6-ab38-e621dad17b04">
+<span class="eqno">(321)<a class="headerlink" href="#equation-ca905a04-c279-4dc6-ab38-e621dad17b04" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^*_2 \frac{\partial \mathcal{L}(x_1, x_2, \lambda^*, \mu^*)}{\partial x_2} &amp;= 0 \\
     x^*_2 (2x^*_2 - 1) &amp;= 0 \\
     x^*_2 &amp;= 0.5 \\ 
@@ -879,13 +911,13 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 <div class="section" id="id1">
 <h2>11.13<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>A function <span class="math notranslate nohighlight">\(f: \mathbb{R}^n \rightarrow \mathbb{R}\)</span> is said to be <em>separable</em> if it can be written as the sum of functions of a single real variable, that is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e7f56c24-68bd-4463-a9ae-6b5be7d6c263">
-<span class="eqno">(320)<a class="headerlink" href="#equation-e7f56c24-68bd-4463-a9ae-6b5be7d6c263" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4c6127c9-068d-4933-9b69-08ba684b64a8">
+<span class="eqno">(322)<a class="headerlink" href="#equation-4c6127c9-068d-4933-9b69-08ba684b64a8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f(x_1, x_2, \cdots , x_n) &amp;= \sum^{n}_{j=1} f_j (x_j). \\
 \end{align}\]</div>
 <p>(a) Let <span class="math notranslate nohighlight">\(f\)</span> be a differentiable separable function and consider the nonlinear program</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f704f66d-11e5-49f1-bc07-2770fbfb0305">
-<span class="eqno">(321)<a class="headerlink" href="#equation-f704f66d-11e5-49f1-bc07-2770fbfb0305" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-441f1270-83d4-4c0a-b2f9-c3ad0642eef2">
+<span class="eqno">(323)<a class="headerlink" href="#equation-441f1270-83d4-4c0a-b2f9-c3ad0642eef2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp; f(x_1, x_2, \cdots , x_n) \\
     \text{subject to } &amp; \sum^{n}_{j=1} x_j = \sigma \\
     x_j \geq 0, j = 1, \cdots, n,
@@ -893,29 +925,29 @@ program to a problem in the <span class="math notranslate nohighlight">\(\mu\)</
 <p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is a positive scalar. Write the first-order conditions for a
 local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in this nonlinear program.</p>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ae3c15c-69ff-4d69-9e7c-7437f919bea4">
-<span class="eqno">(322)<a class="headerlink" href="#equation-5ae3c15c-69ff-4d69-9e7c-7437f919bea4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7318e9f9-659d-4ac8-95a9-a6ddd3d08793">
+<span class="eqno">(324)<a class="headerlink" href="#equation-7318e9f9-659d-4ac8-95a9-a6ddd3d08793" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, \mu) &amp;= \sum^{n}_{j=1} f_j (x_j) + \mu\Big(\sum^{n}_{j=1} x_j - \sigma\Big) \\
 \end{align}\]</div>
 <p>First Order conditions for a local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in this nonlinear program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9666b5f-497b-441b-abb2-6b4ec4bfa235">
-<span class="eqno">(323)<a class="headerlink" href="#equation-b9666b5f-497b-441b-abb2-6b4ec4bfa235" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7f2a72d9-e9e0-4ccf-bcb8-541b9d7ef869">
+<span class="eqno">(325)<a class="headerlink" href="#equation-7f2a72d9-e9e0-4ccf-bcb8-541b9d7ef869" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix} f^\prime_1 (\bar{x}_1) \\ f^\prime_2 (\bar{x}_2) \\ \vdots \\ f^\prime_n (\bar{x}_n) \\ \end{bmatrix} &amp;= 0 \\
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(\mu\)</span> is free.</p>
 <p>(b) Recall that if <span class="math notranslate nohighlight">\(x \in \mathbb{R}^n\)</span>, the set <span class="math notranslate nohighlight">\(\{j : x_j \not= 0\}\)</span> is called the <em>support</em> of <span class="math notranslate nohighlight">\(x\)</span>, denoted by <span class="math notranslate nohighlight">\(\sup(x)\)</span>. Show that every feasible solution in part (a) has a nonempty support.</p>
 <p>Since we know that <span class="math notranslate nohighlight">\(\sigma\)</span> is a positive scalar, <span class="math notranslate nohighlight">\(x_j \geq 0\)</span>, and a feasible solution to part (a) must satisfy the constraint <span class="math notranslate nohighlight">\(\sum^{n}_{j=1} x_j = \sigma\)</span>, one of the <span class="math notranslate nohighlight">\(x_j\)</span>s <strong>MUST</strong> be positive, hence any feasible solution will have a nonempty support <span class="math notranslate nohighlight">\(\blacksquare\)</span>.</p>
 <p>(c) Show that there is a real number <span class="math notranslate nohighlight">\(\kappa\)</span> such that if <span class="math notranslate nohighlight">\(x^∗\)</span> is a local minimizer of the nonlinear program in part (a), then for all <span class="math notranslate nohighlight">\(j \in \sup(x^∗)\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f011dd13-73ba-4665-8075-985d4150562a">
-<span class="eqno">(324)<a class="headerlink" href="#equation-f011dd13-73ba-4665-8075-985d4150562a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8e187abf-d87f-460b-bdce-677c23e19049">
+<span class="eqno">(326)<a class="headerlink" href="#equation-8e187abf-d87f-460b-bdce-677c23e19049" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{\partial f_j (x^*_j)}{\partial x_j} &amp;= \kappa. \\
 \end{align}\]</div>
 <p>As shown in the first order conditions, the partial derivative (simply the derivative since the function is of just one variable), must be 0. Hence <span class="math notranslate nohighlight">\(\kappa = 0\)</span>.</p>
 <ul class="simple">
 <li><p>Do Exercise 11.13 in the Cottle-Thapa text. Apply this exercise to the case where each function <span class="math notranslate nohighlight">\(f_j(x_j) = c_jx_j + \frac{1}{2}x^2_j\)</span> and describe a simple procedure for solving the problem. [This exercise shares some similarities with the preceding two problems.]</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-54ee510f-299c-4c25-bd13-324ac89fadd2">
-<span class="eqno">(325)<a class="headerlink" href="#equation-54ee510f-299c-4c25-bd13-324ac89fadd2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-873199e7-eaff-43fc-a6e7-2d58cb66910b">
+<span class="eqno">(327)<a class="headerlink" href="#equation-873199e7-eaff-43fc-a6e7-2d58cb66910b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f^\prime_j(x_j) = c_j + x_j \\
 \end{align}\]</div>
 <p>Since the gradients of each function <span class="math notranslate nohighlight">\(f_j(x_j)\)</span>, <span class="math notranslate nohighlight">\(f^\prime_j(x_j) = 0\)</span>, we can just set each <span class="math notranslate nohighlight">\(x_j = -c_j\)</span>. Since coefficient of <span class="math notranslate nohighlight">\(x^2_j\)</span> in <span class="math notranslate nohighlight">\(f_j(x_j)\)</span> is <span class="math notranslate nohighlight">\(&gt; 0\)</span>, the hessian of this univariate function is positive definite, hence function is strictly convex, and since our function for the optimization problem is a sum composition of striclty convex functions, it is also strictly convex, hence our solution will be the global minimizer.</p>
@@ -925,14 +957,14 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
 <h2>11.31<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Find all extremal values of <span class="math notranslate nohighlight">\(z\)</span>, and the corresponding values of <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span>, using the method of Lagrange multipliers in the following two instances.</p>
 <p>(a)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-430960ef-4f72-4844-bcb7-deb8a5d28a99">
-<span class="eqno">(326)<a class="headerlink" href="#equation-430960ef-4f72-4844-bcb7-deb8a5d28a99" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d907eb3-c969-464c-9c17-8f2ce24409cc">
+<span class="eqno">(328)<a class="headerlink" href="#equation-7d907eb3-c969-464c-9c17-8f2ce24409cc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1x_2 + 4 &amp;= z \\
     x^2_1 + x^2_2 &amp;= 8. \\
 \end{align}\]</div>
 <p>Finding infimum of Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f95db6f-475d-4141-8437-3172257a9def">
-<span class="eqno">(327)<a class="headerlink" href="#equation-3f95db6f-475d-4141-8437-3172257a9def" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dbfc106d-d8a7-49cd-b930-67410376b9b9">
+<span class="eqno">(329)<a class="headerlink" href="#equation-dbfc106d-d8a7-49cd-b930-67410376b9b9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x_1, x_2, \lambda) &amp;= 0 \\
     \nabla_x \Big(x_1x_2 + 4 + \lambda(x^2_1 + x^2_2 - 8)\Big) &amp;= 0 \\
     \begin{bmatrix} x_2 + 2\lambda x_1 \\ x_1 + 2\lambda x_2 \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
@@ -944,8 +976,8 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
     \lambda &amp;= \pm\frac{1}{2} \\
 \end{align}\]</div>
 <p>Case I: <span class="math notranslate nohighlight">\(\lambda = \frac{1}{2} \rightarrow x_1 = -x_2\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-a697e996-8e1d-45bc-93a1-51e3a7cba26f">
-<span class="eqno">(328)<a class="headerlink" href="#equation-a697e996-8e1d-45bc-93a1-51e3a7cba26f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dd2934a7-08a6-4c9f-9504-a6d1e871b450">
+<span class="eqno">(330)<a class="headerlink" href="#equation-dd2934a7-08a6-4c9f-9504-a6d1e871b450" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^2_1 + x^2_2 &amp;= 8 \\
     (-x_2)^2 + x^2_2 &amp;= 8 \\
     2x^2_2 &amp;= 8 \\
@@ -953,8 +985,8 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
     x_2 &amp;= \pm2 \text{ and } x_1 = \mp2, z = 0 \\
 \end{align}\]</div>
 <p>Case II: <span class="math notranslate nohighlight">\(\lambda = -\frac{1}{2} \rightarrow x_1 = x_2\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-ba15f173-ef23-4cc0-8081-5015b2c663d1">
-<span class="eqno">(329)<a class="headerlink" href="#equation-ba15f173-ef23-4cc0-8081-5015b2c663d1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ed7719dd-97dc-4c9a-8c98-3d9782d1f18e">
+<span class="eqno">(331)<a class="headerlink" href="#equation-ed7719dd-97dc-4c9a-8c98-3d9782d1f18e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^2_1 + x^2_2 &amp;= 8 \\
     (-x_2)^2 + x^2_2 &amp;= 8 \\
     2x^2_2 &amp;= 8 \\
@@ -962,22 +994,22 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
     x_2 &amp;= \pm2 \text{ and } x_1 = \pm2, z = 8 \\
 \end{align}\]</div>
 <p>(b)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50cab5bc-fc9a-4ca1-be97-8752333f4e5e">
-<span class="eqno">(330)<a class="headerlink" href="#equation-50cab5bc-fc9a-4ca1-be97-8752333f4e5e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d373f260-410d-414d-91f2-f195c78285b3">
+<span class="eqno">(332)<a class="headerlink" href="#equation-d373f260-410d-414d-91f2-f195c78285b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 + 2x_2 &amp;= z \\
     x^2_1 + x^2_2 &amp;= 13. \\
 \end{align}\]</div>
 <p>Finding infimum of Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2410f57b-4aa2-420b-9457-dc4e1c8b8fcd">
-<span class="eqno">(331)<a class="headerlink" href="#equation-2410f57b-4aa2-420b-9457-dc4e1c8b8fcd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-059b1d26-1617-439c-9ff9-4f297d1273fb">
+<span class="eqno">(333)<a class="headerlink" href="#equation-059b1d26-1617-439c-9ff9-4f297d1273fb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x_1, x_2, \lambda) &amp;= 0 \\
     \nabla_x \Big(x_1 + 2x_2 + \lambda(x^2_1 + x^2_2 - 13)\Big) &amp;= 0 \\
     \begin{bmatrix} 1 + 2\lambda x_1 \\ 2 + 2\lambda x_2 \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
     x^* &amp;= -\frac{1}{\lambda}\begin{bmatrix} \frac{1}{2} \\ 1 \\ \end{bmatrix}
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b6fca03-af61-4dc7-9cd9-57a587697f9c">
-<span class="eqno">(332)<a class="headerlink" href="#equation-0b6fca03-af61-4dc7-9cd9-57a587697f9c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-60fa62f4-1ce3-4514-bed6-24e328ebd53e">
+<span class="eqno">(334)<a class="headerlink" href="#equation-60fa62f4-1ce3-4514-bed6-24e328ebd53e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^2_1 + x^2_2 &amp;= 13 \\
     (-\frac{1}{2\lambda})^2 + (-\frac{1}{\lambda})^2 &amp;= 13 \\
     \frac{1}{4\lambda^2} + \frac{1}{\lambda^2} &amp;= 13 \\
@@ -986,15 +1018,15 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
     \lambda &amp;= \pm\sqrt{\frac{5}{52}} \\
 \end{align}\]</div>
 <p>Case I: <span class="math notranslate nohighlight">\(\lambda = \sqrt{\frac{5}{52}} \rightarrow x^* = -\sqrt{\frac{52}{5}}\begin{bmatrix} \frac{1}{2} \\ 1 \\ \end{bmatrix}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-8185ba32-6910-4231-a7f6-9f8df34a1c50">
-<span class="eqno">(333)<a class="headerlink" href="#equation-8185ba32-6910-4231-a7f6-9f8df34a1c50" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e79eeb60-ab7e-4da8-860e-d3d1aaacd6d9">
+<span class="eqno">(335)<a class="headerlink" href="#equation-e79eeb60-ab7e-4da8-860e-d3d1aaacd6d9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 &amp;= -\frac{1}{2}\sqrt{\frac{52}{5}} \\
     x_2 &amp;= -\sqrt{\frac{52}{5}} \\
     z &amp;= -\frac{5}{2}\sqrt{\frac{52}{5}} \\
 \end{align}\]</div>
 <p>Case II: <span class="math notranslate nohighlight">\(\lambda = -\sqrt{\frac{5}{52}} \rightarrow x^* = \sqrt{\frac{52}{5}}\begin{bmatrix} \frac{1}{2} \\ 1 \\ \end{bmatrix}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf921938-800c-4785-a68c-1abee3183125">
-<span class="eqno">(334)<a class="headerlink" href="#equation-cf921938-800c-4785-a68c-1abee3183125" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4f93359c-dcfe-43fa-8adf-c5600da5e0d3">
+<span class="eqno">(336)<a class="headerlink" href="#equation-4f93359c-dcfe-43fa-8adf-c5600da5e0d3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 &amp;= \frac{1}{2}\sqrt{\frac{52}{5}} \\
     x_2 &amp;= \sqrt{\frac{52}{5}} \\
     z &amp;= \frac{5}{2}\sqrt{\frac{52}{5}} \\
@@ -1004,56 +1036,56 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
 <div class="section" id="id3">
 <h2>11.32<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following univariate optimization problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1f3869a-23d1-45ec-8367-b2be5d3de467">
-<span class="eqno">(335)<a class="headerlink" href="#equation-e1f3869a-23d1-45ec-8367-b2be5d3de467" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1da81f1f-24b2-4507-af7a-437df454ffdb">
+<span class="eqno">(337)<a class="headerlink" href="#equation-1da81f1f-24b2-4507-af7a-437df454ffdb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp; x^2 \\
     \text{subject to } &amp; x^2 - 5x + 6 \leq 0. \\ 
 \end{align}\]</div>
 <p>(a) Form the Lagrangian.</p>
 <p>Lagrangian function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e44eb4b-69a6-430b-84e4-e74b4b1b6a1e">
-<span class="eqno">(336)<a class="headerlink" href="#equation-2e44eb4b-69a6-430b-84e4-e74b4b1b6a1e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-44301fd7-5a0e-411a-aa7e-b0346b20f2d5">
+<span class="eqno">(338)<a class="headerlink" href="#equation-44301fd7-5a0e-411a-aa7e-b0346b20f2d5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, \lambda) &amp;= x^2 + \lambda(x^2 - 5x + 6) \\
 \end{align}\]</div>
 <p>(b) Find the dual of the problem.</p>
 <p>Lagrangian Dual Function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-15d47ecc-1520-410f-81a3-8aedd1b6780f">
-<span class="eqno">(337)<a class="headerlink" href="#equation-15d47ecc-1520-410f-81a3-8aedd1b6780f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fbca22d0-e48e-4a83-8ed4-b10dadfe06f5">
+<span class="eqno">(339)<a class="headerlink" href="#equation-fbca22d0-e48e-4a83-8ed4-b10dadfe06f5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     g(\lambda) 
     &amp;= \underset{x}{\text{inf}} \mathcal{L}(x, \lambda) \\
     &amp;= \underset{x}{\text{inf}}\Big(x^2 + \lambda(x^2 - 5x + 6)\Big) \\
 \end{align}\]</div>
 <p>Dual Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08509251-084b-4720-8e75-eaed3e31187f">
-<span class="eqno">(338)<a class="headerlink" href="#equation-08509251-084b-4720-8e75-eaed3e31187f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0ec4c7d5-cc12-4101-9b7a-b60b5e2db4c4">
+<span class="eqno">(340)<a class="headerlink" href="#equation-0ec4c7d5-cc12-4101-9b7a-b60b5e2db4c4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\lambda}{\text{maximize }} &amp; g(\lambda)  \\
     \text{subject to } &amp; \lambda \geq 0. \\ 
 \end{align}\]</div>
 <p>Finding infimum of Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c0bc5f5-a965-4329-a8f6-df57a9e22541">
-<span class="eqno">(339)<a class="headerlink" href="#equation-2c0bc5f5-a965-4329-a8f6-df57a9e22541" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e59982e9-9c0f-4b1a-904b-d0ee39d67d93">
+<span class="eqno">(341)<a class="headerlink" href="#equation-e59982e9-9c0f-4b1a-904b-d0ee39d67d93" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x, \lambda) &amp;= 0 \\
     \nabla_x \Big( x^2 + \lambda(x^2 - 5x + 6) \Big) &amp;= 0 \\
     2x + \lambda(2x - 5) &amp;= 0 \\
     x^* &amp;= \frac{5\lambda}{(2 + 2\lambda)} \\
 \end{align}\]</div>
 <p>Lagrangian Dual Function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c67abc71-97ed-431d-9853-4063ce7cf65d">
-<span class="eqno">(340)<a class="headerlink" href="#equation-c67abc71-97ed-431d-9853-4063ce7cf65d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7aed4e67-2bd1-49eb-ab53-ddfe3f49854d">
+<span class="eqno">(342)<a class="headerlink" href="#equation-7aed4e67-2bd1-49eb-ab53-ddfe3f49854d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     g(\lambda) 
     &amp;= (x^*)^2 + \lambda((x^*)^2 - 5x^* + 6) \\
     &amp;= \Big(\frac{5\lambda}{(2 + 2\lambda)}\Big)^2 + \lambda\Big(\Big(\frac{5\lambda}{(2 + 2\lambda)}\Big)^2 - 5\frac{5\lambda}{(2 + 2\lambda)} + 6\Big) \\
     &amp;= \lambda\frac{24 + 23\lambda - \lambda^2}{(2 + 2\lambda)^2} \\
 \end{align}\]</div>
 <p>Substituting into Dual Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b6d8ce6f-7fb3-4d7c-8f9c-bfc8d09994e2">
-<span class="eqno">(341)<a class="headerlink" href="#equation-b6d8ce6f-7fb3-4d7c-8f9c-bfc8d09994e2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1030fdcd-b200-41d4-8b7c-6498b60e2b3a">
+<span class="eqno">(343)<a class="headerlink" href="#equation-1030fdcd-b200-41d4-8b7c-6498b60e2b3a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\lambda}{\text{maximize }} &amp; \lambda\frac{24 + 23\lambda - \lambda^2}{(2 + 2\lambda)^2} \\
     \text{subject to } &amp; \lambda \geq 0. \\ 
 \end{align}\]</div>
 <p>Supremum of Dual function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3df2e383-c484-4833-9bd6-83292c9f9907">
-<span class="eqno">(342)<a class="headerlink" href="#equation-3df2e383-c484-4833-9bd6-83292c9f9907" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d6fd865-815f-4351-92ca-a173d0b4adcf">
+<span class="eqno">(344)<a class="headerlink" href="#equation-7d6fd865-815f-4351-92ca-a173d0b4adcf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_\lambda g(\lambda) &amp;= 0 \\
     \nabla_\lambda \lambda\frac{24 + 23\lambda - \lambda^2}{(2 + 2\lambda)^2} &amp;= 0 \\
     \frac{-2(\lambda^3 + 3\lambda^2 - 22\lambda - 24)}{(2+2\lambda)^3} &amp;= 0 \\
@@ -1065,8 +1097,8 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
 <p>Rejected, since <span class="math notranslate nohighlight">\(\lambda \geq 0\)</span> constraint.</p>
 <p>Case II: <span class="math notranslate nohighlight">\(\lambda^* = 4\)</span></p>
 <p>Optimal Dual Objective value:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db9557be-74e2-4272-ae7d-ba8ebbe505d7">
-<span class="eqno">(343)<a class="headerlink" href="#equation-db9557be-74e2-4272-ae7d-ba8ebbe505d7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7aabce4c-3053-4287-be75-7a80fb361e3f">
+<span class="eqno">(345)<a class="headerlink" href="#equation-7aabce4c-3053-4287-be75-7a80fb361e3f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     g(\lambda^*) 
     &amp;= \lambda^*\frac{24 + 23\lambda^* - (\lambda^*)^2}{(2 + 2\lambda^*)^2} \\
     &amp;= 4\frac{24 + 23(4) - 4^2}{(2 + 2(4))^2} \\
@@ -1077,8 +1109,8 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
 <p>(c) Verify the Weak Duality Theorem for this problem.</p>
 <p>Primal Objective value:</p>
 <p>With <span class="math notranslate nohighlight">\(x^* = \frac{5\lambda}{(2 + 2\lambda)}\)</span> and <span class="math notranslate nohighlight">\(\lambda^* = 4\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2ce33ae-1ac3-407e-afc0-6a0db925d996">
-<span class="eqno">(344)<a class="headerlink" href="#equation-a2ce33ae-1ac3-407e-afc0-6a0db925d996" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-53ce71e3-320d-4c95-a1e3-6a12cc0d92d9">
+<span class="eqno">(346)<a class="headerlink" href="#equation-53ce71e3-320d-4c95-a1e3-6a12cc0d92d9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f(x^*) &amp;= \Big(\frac{5(4)}{(2 + 2(4))}\Big)^2 \\
     &amp;= 4 \\
 \end{align}\]</div>
@@ -1090,25 +1122,25 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
 <div class="section" id="id4">
 <h2>11.36<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>Use the Lagrangian dual process to show that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68f52205-917e-4b24-9065-2c9b56289fc0">
-<span class="eqno">(345)<a class="headerlink" href="#equation-68f52205-917e-4b24-9065-2c9b56289fc0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5512fd8b-570e-4da7-86ed-23af40942fe9">
+<span class="eqno">(347)<a class="headerlink" href="#equation-5512fd8b-570e-4da7-86ed-23af40942fe9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     X &amp;= \{ x \in \mathbb{R}^3: x^2_1 + x^2_2 + x^2_3 \leq 1\text{ and }x_1 + x_2 + x_3 = 2 \}
 \end{align}\]</div>
 <p>is an empty set.</p>
 <p>Suppose the following maximization problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-093f7e21-b1f4-4bbe-8cbe-9356b0296fb7">
-<span class="eqno">(346)<a class="headerlink" href="#equation-093f7e21-b1f4-4bbe-8cbe-9356b0296fb7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d329089f-5f58-4627-9c76-f1b46967a4af">
+<span class="eqno">(348)<a class="headerlink" href="#equation-d329089f-5f58-4627-9c76-f1b46967a4af" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x_1,x_2,x_3}{\text{maximize }} &amp; x^2_1 + x^2_2 + x^2_3 \\
     \text{subject to } &amp; x_1 + x_2 + x_3 = 2. \\ 
 \end{align}\]</div>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1fae884-13ee-427b-90e0-201aeb884d94">
-<span class="eqno">(347)<a class="headerlink" href="#equation-e1fae884-13ee-427b-90e0-201aeb884d94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c6df5c0c-1611-4dbc-ad37-b02b4ea077b9">
+<span class="eqno">(349)<a class="headerlink" href="#equation-c6df5c0c-1611-4dbc-ad37-b02b4ea077b9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x_1,x_2,x_3,\mu) &amp;= x^2_1 + x^2_2 + x^2_3 + \mu(x_1 + x_2 + x_3 - 2) \\
 \end{align}\]</div>
 <p>First order conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1b936ea-99df-4ac6-876b-bad0172c5550">
-<span class="eqno">(348)<a class="headerlink" href="#equation-c1b936ea-99df-4ac6-876b-bad0172c5550" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-785e3fa1-7702-49d6-a523-eb07b92ba264">
+<span class="eqno">(350)<a class="headerlink" href="#equation-785e3fa1-7702-49d6-a523-eb07b92ba264" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x\mathcal{L}(x_1,x_2,x_3,\mu) &amp;= 0 \\
     2\begin{bmatrix}
         x_1 \\
@@ -1133,15 +1165,15 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
     \end{bmatrix}
 \end{align}\]</div>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-15691286-4275-48b2-9f24-c918c21cba76">
-<span class="eqno">(349)<a class="headerlink" href="#equation-15691286-4275-48b2-9f24-c918c21cba76" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2c44adab-41f8-4689-b959-7b2a000da71b">
+<span class="eqno">(351)<a class="headerlink" href="#equation-2c44adab-41f8-4689-b959-7b2a000da71b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_1 + x_2 + x_3 &amp;= 2 \\
     -3\mu &amp;= 2 \\
     \mu^* &amp;= -\frac{2}{3} \\
 \end{align}\]</div>
 <p>Hence,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d71d01d-0900-4a9a-93a5-136070d23539">
-<span class="eqno">(350)<a class="headerlink" href="#equation-8d71d01d-0900-4a9a-93a5-136070d23539" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0b8720b5-4413-4a5d-a861-a75e3b8397fc">
+<span class="eqno">(352)<a class="headerlink" href="#equation-0b8720b5-4413-4a5d-a861-a75e3b8397fc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^* &amp;= \frac{2}{3}\begin{bmatrix} 1 \\ 1 \\ 1 \\ \end{bmatrix} \\
 \end{align}\]</div>
 <p>This makes the optimal objective value to the maximization problem: <span class="math notranslate nohighlight">\(3\Big(\frac{2}{3}\Big)^2 = \frac{4}{3}\)</span>. Hence, since maximium value is not <span class="math notranslate nohighlight">\(&gt; 1\)</span>, the intersection of the 2 constraints is an empty set. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
@@ -1149,35 +1181,35 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
 <ul class="simple">
 <li><p>Determine the minimum objective value and minimizers of the convex program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d0afb8d3-cf51-49d2-8908-2d6358a5b620">
-<span class="eqno">(351)<a class="headerlink" href="#equation-d0afb8d3-cf51-49d2-8908-2d6358a5b620" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e7a5d7be-6197-4162-8142-95bed9f383f9">
+<span class="eqno">(353)<a class="headerlink" href="#equation-e7a5d7be-6197-4162-8142-95bed9f383f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x, y}{\text{minimize }} 
     &amp; e^{-y}
     \text{ subject to } 
     \sqrt{x^2 + y^2} - x \leq 0,
 \end{align}\]</div>
 <p>Show that the dual function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0f0b0021-98c1-469f-b312-f26d4aaa512d">
-<span class="eqno">(352)<a class="headerlink" href="#equation-0f0b0021-98c1-469f-b312-f26d4aaa512d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d106b6e-6789-4a5c-8ae1-c2143d7fe6e7">
+<span class="eqno">(354)<a class="headerlink" href="#equation-0d106b6e-6789-4a5c-8ae1-c2143d7fe6e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\mu) \overset{\Delta}{=} \underset{x, y}{\text{minimize }} 
     &amp; e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big], \mu \geq 0
 \end{align}\]</div>
 <p>is identically equal to zero but this value is not attained, for any <span class="math notranslate nohighlight">\(\mu \geq 0\)</span>. This convex program has a positive gap in this generalized sense. Without worrying about the non-attainment issue of the dual function, what goes wrong with this example with reference to the general duality theory?</p>
 <p>Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f253e43c-60f4-4651-a7ed-69998c594ab3">
-<span class="eqno">(353)<a class="headerlink" href="#equation-f253e43c-60f4-4651-a7ed-69998c594ab3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-986e1d2b-9d11-4efd-adf5-03786de3353c">
+<span class="eqno">(355)<a class="headerlink" href="#equation-986e1d2b-9d11-4efd-adf5-03786de3353c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, y, \lambda) &amp;= e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big] \\
 \end{align}\]</div>
 <p>Lagrangian Dual Function:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f8f93d4-0040-4c8b-8ea9-02db1d023e9d">
-<span class="eqno">(354)<a class="headerlink" href="#equation-7f8f93d4-0040-4c8b-8ea9-02db1d023e9d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-06ef07e0-02b4-49cc-9cea-e9b7d8b03d34">
+<span class="eqno">(356)<a class="headerlink" href="#equation-06ef07e0-02b4-49cc-9cea-e9b7d8b03d34" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\mu) 
     &amp;= \underset{x,y}{\text{inf}} \mathcal{L}(x, y, \mu) \\
     &amp;= \underset{x,y}{\text{inf}}\Big(e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big]\Big) \\
 \end{align}\]</div>
 <p>Finding infimum of Lagrangian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-751a1234-0606-4372-9ee4-f83c8c1be621">
-<span class="eqno">(355)<a class="headerlink" href="#equation-751a1234-0606-4372-9ee4-f83c8c1be621" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07ada0db-4a39-405c-815c-83daf95e885e">
+<span class="eqno">(357)<a class="headerlink" href="#equation-07ada0db-4a39-405c-815c-83daf95e885e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_{x,y} \mathcal{L}(x,y, \lambda) &amp;= 0 \\
     \nabla_{x,y} \Big(e^{-y} + \mu \Big[ \sqrt{x^2 + y^2} - x \Big]\Big) &amp;= 0 \\
     \begin{bmatrix} 0.5\mu(x^2 + y^2)^{-0.5}(2x) -\mu \\ -e^{-y} + 0.5\mu(x^2 + y^2)^{-0.5}(2y) \\ \end{bmatrix} &amp;= \begin{bmatrix} 0 \\ 0 \\ \end{bmatrix} \\
@@ -1192,8 +1224,8 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
     x &amp;= \text{Any value} \\ 
 \end{align}\]</div>
 <p>Hence, since <span class="math notranslate nohighlight">\(x\)</span> can take on any value and <span class="math notranslate nohighlight">\(y=0\)</span>, the dual function reduces to:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35429677-810c-4b2e-a698-7f7de9be2ade">
-<span class="eqno">(356)<a class="headerlink" href="#equation-35429677-810c-4b2e-a698-7f7de9be2ade" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-37d5a2cc-7ed5-4a99-ab6e-fe4240b7a9db">
+<span class="eqno">(358)<a class="headerlink" href="#equation-37d5a2cc-7ed5-4a99-ab6e-fe4240b7a9db" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\mu) &amp;= 1 + (\mu - 1)x \\
 \end{align}\]</div>
 <p>If we choose <span class="math notranslate nohighlight">\(x \rightarrow -\infty\)</span>, <span class="math notranslate nohighlight">\(d(\mu) \rightarrow -\infty\)</span> and dual function is unbounded below.</p>
@@ -1239,7 +1271,7 @@ local minimizer <span class="math notranslate nohighlight">\(\bar{x}\)</span> in
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>

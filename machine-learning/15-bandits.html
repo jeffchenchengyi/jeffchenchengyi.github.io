@@ -62,7 +62,7 @@
     <link rel="shortcut icon" href="../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ISE-565: Decision Analysis" href="../course-work/ise-562/intro.html" />
+    <link rel="next" title="Machine Learning InFrequently Asked Questions" href="../personal-projects/notes/ml-ifaqs.html" />
     <link rel="prev" title="14. Combining Models [Empty]" href="14-combining-models.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -110,7 +110,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
@@ -191,6 +191,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -997,8 +1029,8 @@
 </div>
 <div class="section" id="concentration-inequality-hoeffding-inequality">
 <h3>15.2.5 Concentration Inequality: Hoeffding Inequality<a class="headerlink" href="#concentration-inequality-hoeffding-inequality" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-e3706b62-55aa-4fa9-9ad7-1a4215292b78">
-<span class="eqno">(29)<a class="headerlink" href="#equation-e3706b62-55aa-4fa9-9ad7-1a4215292b78" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ebcb73ba-62b9-4493-8996-5038893c4f7f">
+<span class="eqno">(29)<a class="headerlink" href="#equation-ebcb73ba-62b9-4493-8996-5038893c4f7f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {
         \left\vert
             \hat{V}_{\text{IPS}}{(\pi)} 
@@ -1009,24 +1041,24 @@
     \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}} \\
 \end{align}\]</div>
 <p>Hoeffding’s Inequality: Let <span class="math notranslate nohighlight">\(X_1, ..., X_n\)</span> be independent random variables strictly bounded by the interval <span class="math notranslate nohighlight">\([a_i, b_i]\)</span>, <span class="math notranslate nohighlight">\(a_i \leq X_i \leq b_i\)</span>. We define the empirical mean of these variables by <span class="math notranslate nohighlight">\(\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span>, such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9bf10bcf-5ef6-4b32-9658-a5db10a6f89a">
-<span class="eqno">(30)<a class="headerlink" href="#equation-9bf10bcf-5ef6-4b32-9658-a5db10a6f89a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-12f9cb8b-7d91-465c-9621-ed33f341e06e">
+<span class="eqno">(30)<a class="headerlink" href="#equation-12f9cb8b-7d91-465c-9621-ed33f341e06e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert \geq \epsilon) \leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \end{align}\]</div>
 <p>From Hoeffding’s Inequality:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ea04574-1c3c-4020-8472-4ec04582af60">
-<span class="eqno">(31)<a class="headerlink" href="#equation-6ea04574-1c3c-4020-8472-4ec04582af60" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-db759eae-b198-4e6f-82bf-1243d3f35129">
+<span class="eqno">(31)<a class="headerlink" href="#equation-db759eae-b198-4e6f-82bf-1243d3f35129" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert \geq \epsilon) &amp;\leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 1 - P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) &amp;\leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-5ce6a402-a541-419a-95bf-bcc56d64cea7">
-<span class="eqno">(32)<a class="headerlink" href="#equation-5ce6a402-a541-419a-95bf-bcc56d64cea7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e48e9d2a-b8e9-4c2b-bbb4-fc3519d7643e">
+<span class="eqno">(32)<a class="headerlink" href="#equation-e48e9d2a-b8e9-4c2b-bbb4-fc3519d7643e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:1}
 P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) \geq \underbrace{1 - 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)}}_{1-\delta}
 \end{equation}\]</div>
 <p>Finding <span class="math notranslate nohighlight">\(\epsilon\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dc4a428e-8521-48b8-9697-0bcf74101020">
-<span class="eqno">(33)<a class="headerlink" href="#equation-dc4a428e-8521-48b8-9697-0bcf74101020" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0ece3d1d-a137-4f8f-a2b7-7451eef18ec5">
+<span class="eqno">(33)<a class="headerlink" href="#equation-0ece3d1d-a137-4f8f-a2b7-7451eef18ec5" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \therefore 1-\delta &amp;= 1 - 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \delta &amp;= 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \ln{\delta} &amp;= \ln{2} - \frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2} \\
@@ -1035,8 +1067,8 @@ P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) \geq \unde
 \epsilon &amp;= \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}} \\
 \end{align}\]</div>
 <p>Substituting <span class="math notranslate nohighlight">\(\epsilon\)</span> into Equation 1, we get our Hoeffding Bound Confidence Intervals:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-27368c70-be19-41c9-8d05-2d4df86b8f55">
-<span class="eqno">(34)<a class="headerlink" href="#equation-27368c70-be19-41c9-8d05-2d4df86b8f55" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-744acb1e-2d80-4ce4-8e67-4acc15876df2">
+<span class="eqno">(34)<a class="headerlink" href="#equation-744acb1e-2d80-4ce4-8e67-4acc15876df2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P\Bigg(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}&lt; \bar{X} - \mathbb{E}[\bar{X}] &lt; \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(\bar{X}-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}&lt; \mathbb{E}[\bar{X}] &lt; \bar{X}+\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta
@@ -1049,8 +1081,8 @@ P\Bigg(\bar{X}-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\de
 <li><p><span class="math notranslate nohighlight">\(b_i: w_{max}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(a_i: 0\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-3bc73aea-fab1-44ae-9841-3b15f14c09df">
-<span class="eqno">(35)<a class="headerlink" href="#equation-3bc73aea-fab1-44ae-9841-3b15f14c09df" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f9c142f9-fa67-4fa4-837e-c4b93dbaded4">
+<span class="eqno">(35)<a class="headerlink" href="#equation-f9c142f9-fa67-4fa4-837e-c4b93dbaded4" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P\Bigg(\hat{V_{\text{IPS}}}(\pi)-\sqrt{\frac{\sum_{i=1}^{n}{(w_{max} - 0)}^2}{2n^2} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+\sqrt{\frac{\sum_{i=1}^{n}{(w_{max} - 0)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(\hat{V_{\text{IPS}}}(\pi)-\sqrt{\frac{nw^2_{max}}{2n^2} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+\sqrt{\frac{nw^2_{max}}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta
@@ -1081,8 +1113,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
 </div>
 <div class="section" id="concentration-inequality-bernstein-inequality">
 <h3>15.2.6 Concentration Inequality: Bernstein Inequality<a class="headerlink" href="#concentration-inequality-bernstein-inequality" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-6b935be2-ad0c-45c5-b6e4-075f1d677a5a">
-<span class="eqno">(36)<a class="headerlink" href="#equation-6b935be2-ad0c-45c5-b6e4-075f1d677a5a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3b699bd3-7d6c-4572-a516-a0c9500670c8">
+<span class="eqno">(36)<a class="headerlink" href="#equation-3b699bd3-7d6c-4572-a516-a0c9500670c8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {
         \left\vert
             \hat{V}_{\text{IPS}}{(\pi)} 
@@ -1097,8 +1129,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
     } \\
 \end{align}\]</div>
 <p>Bernstein Inequality: Suppose <span class="math notranslate nohighlight">\(X_1, \cdots, X_n\)</span> are <span class="math notranslate nohighlight">\(i.i.d.\)</span> with 0 mean, variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> and <span class="math notranslate nohighlight">\(\vert X_i \vert \leq M\)</span> almost surely,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1286e9be-d9ab-40ee-a4fa-382b0152a7d8">
-<span class="eqno">(37)<a class="headerlink" href="#equation-1286e9be-d9ab-40ee-a4fa-382b0152a7d8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-90bcca2f-1acd-4a12-8025-40ecfce66dbd">
+<span class="eqno">(37)<a class="headerlink" href="#equation-90bcca2f-1acd-4a12-8025-40ecfce66dbd" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P\Bigg({
         \left\vert
             \frac{1}{n}\sum^{n}_{i=1} X_i
@@ -1111,8 +1143,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
     }\Bigg) \geq 1 - \delta
 \end{align}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(V_{\text{IPS}}(\pi)\)</span> is an unbiased estimator of <span class="math notranslate nohighlight">\(V(\pi)\)</span>, <span class="math notranslate nohighlight">\(\hat{V}_{\text{IPS}}{(\pi)} - {V}(\pi)\)</span> has 0 mean, and variance of <span class="math notranslate nohighlight">\(Var[\hat{V}_{\text{IPS}}(\pi)]\)</span>, and setting <span class="math notranslate nohighlight">\(M: w_{max}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edab7e64-b8b9-46ed-918c-340a66d191ed">
-<span class="eqno">(38)<a class="headerlink" href="#equation-edab7e64-b8b9-46ed-918c-340a66d191ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4db9ea63-fcf0-45ac-974a-5baf68bf4513">
+<span class="eqno">(38)<a class="headerlink" href="#equation-4db9ea63-fcf0-45ac-974a-5baf68bf4513" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P\Bigg({
         \left\vert
             \hat{V}_{\text{IPS}}{(\pi)} 
@@ -1126,8 +1158,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
         + \frac{2{\hat{w}_{max}}}{3n}{\text{log} \frac{2}{\delta}}
     }\Bigg) \geq 1-\delta
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-fedd2644-e123-4a74-aa58-f19a881a0f36">
-<span class="eqno">(39)<a class="headerlink" href="#equation-fedd2644-e123-4a74-aa58-f19a881a0f36" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2e45409c-14e9-4cd0-90c9-dca01f5a23f1">
+<span class="eqno">(39)<a class="headerlink" href="#equation-2e45409c-14e9-4cd0-90c9-dca01f5a23f1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P\Bigg(\hat{V}_{\text{IPS}}{(\pi)} 
     -
     \Bigg({
@@ -1258,7 +1290,7 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="14-combining-models.html" title="previous page">14. Combining Models [Empty]</a>
-    <a class='right-next' id="next-link" href="../course-work/ise-562/intro.html" title="next page">ISE-565: Decision Analysis</a>
+    <a class='right-next' id="next-link" href="../personal-projects/notes/ml-ifaqs.html" title="next page">Machine Learning <em>In</em>Frequently Asked Questions</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -1267,7 +1299,7 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>

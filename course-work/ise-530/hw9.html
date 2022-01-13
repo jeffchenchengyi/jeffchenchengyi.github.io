@@ -110,7 +110,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../machine-learning/00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -191,6 +191,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -650,8 +682,8 @@ the budget constraint. Formulate this problem as a binary integer program and so
 <ol class="simple">
 <li></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-2c1f03fa-8fa0-4d83-b12d-32e6698bd97f">
-<span class="eqno">(421)<a class="headerlink" href="#equation-2c1f03fa-8fa0-4d83-b12d-32e6698bd97f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dd4b6044-20df-443a-9e7d-e04db96d5c74">
+<span class="eqno">(423)<a class="headerlink" href="#equation-dd4b6044-20df-443a-9e7d-e04db96d5c74" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x \geq 0 \text{ integer }}{\text{maximize }}\qquad&amp;2x_1 + x_2 \\
     \text{subject to }\qquad&amp;x_1 + x_2 \leq 5 \\
     &amp;x_2 - x_1 \leq 0 \\
@@ -660,8 +692,8 @@ the budget constraint. Formulate this problem as a binary integer program and so
 <ol class="simple">
 <li></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-92dcc140-05c7-4af7-9912-e051304334d4">
-<span class="eqno">(422)<a class="headerlink" href="#equation-92dcc140-05c7-4af7-9912-e051304334d4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fef8f14e-44f1-4ebe-8066-cce5d0a1882a">
+<span class="eqno">(424)<a class="headerlink" href="#equation-fef8f14e-44f1-4ebe-8066-cce5d0a1882a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x \geq 0 \text{ integer }}{\text{maximize }}\qquad&amp;2x_1 + x_2 + 4x_3 + 5x_4 \\
     \text{subject to }\qquad&amp;x_1 + 3x_2 + 2x_3 + 5x_4 \leq 10 \\
     \text{and }\qquad&amp;3x_1 - x_2 - 5x_3 + 10x_4 \leq -4. \\
@@ -669,8 +701,8 @@ the budget constraint. Formulate this problem as a binary integer program and so
 <ul class="simple">
 <li><p>Consider the integer programming problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-58ba915b-4caf-4ee3-af9a-22cd93de9f7c">
-<span class="eqno">(423)<a class="headerlink" href="#equation-58ba915b-4caf-4ee3-af9a-22cd93de9f7c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b4b15054-dd10-4bc7-9ac4-6dfaf88d9ad9">
+<span class="eqno">(425)<a class="headerlink" href="#equation-b4b15054-dd10-4bc7-9ac4-6dfaf88d9ad9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize }}\qquad&amp;x_1 + x_2 \\
     \text{subject to }\qquad&amp;-3x_1 + 4x_2 \leq 4 \\
     &amp;3x_1 + 2x_2 \leq 11 \\
@@ -687,8 +719,8 @@ the budget constraint. Formulate this problem as a binary integer program and so
 <ul class="simple">
 <li><p>Consider the integer program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-edb92322-596c-46c1-a966-fdaa5499e0c5">
-<span class="eqno">(424)<a class="headerlink" href="#equation-edb92322-596c-46c1-a966-fdaa5499e0c5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ccd068ac-3130-4eb9-977c-9474d014bb0a">
+<span class="eqno">(426)<a class="headerlink" href="#equation-ccd068ac-3130-4eb9-977c-9474d014bb0a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize }}\qquad&amp;x_1 + 2x_2 \\
     \text{subject to }\qquad&amp;x_1 + x_2 \leq 5 \\
     &amp;x_1 - 3x_2 \leq -4 \\
@@ -752,8 +784,8 @@ the budget constraint. Formulate this problem as a binary integer program and so
 </ul>
 </li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-7341461d-2e5b-400f-b0b7-8df841b897d2">
-<span class="eqno">(425)<a class="headerlink" href="#equation-7341461d-2e5b-400f-b0b7-8df841b897d2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ec4b3fbc-9959-4c75-80e5-31ff26a4b1f7">
+<span class="eqno">(427)<a class="headerlink" href="#equation-ec4b3fbc-9959-4c75-80e5-31ff26a4b1f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{s_i \in \{0, 1\}\,\,\forall\,\,i \in 1,\cdots,10}{\text{maximize }}\qquad&amp;p_{1}s_{1} + p_{2}s_{2} + p_{3}s_{3} + p_{4}s_{4} + p_{5}s_{5} + p_{6}s_{6} + p_{7}s_{7} + p_{8}s_{8} + p_{9}s_{9} + p_{10}s_{10} \\
     \text{subject to }\qquad
     &amp;s_{1} + s_{2} + s_{3} + s_{4} + s_{5} + s_{6} + s_{7} + s_{8} + s_{9} + s_{10} \leq 5 \\
@@ -768,8 +800,8 @@ of \\\)</span>5,000 and has a net present value of \<span class="math notranslat
 present value of \$4,000. These are all “take it or leave it” opportunities and you are not allowed to invest partially in any of the projects. The objective is to maximize the total value given
 the budget constraint. Formulate this problem as a binary integer program and solve it by the branch-and-bound technique.</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-33dce23a-743b-4ba9-b5ee-15b62dbd2ed9">
-<span class="eqno">(426)<a class="headerlink" href="#equation-33dce23a-743b-4ba9-b5ee-15b62dbd2ed9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e310e390-3cc8-461b-8123-ed717041af06">
+<span class="eqno">(428)<a class="headerlink" href="#equation-e310e390-3cc8-461b-8123-ed717041af06" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x_i \in \{0, 1\}\,\,\forall\,\,i \in 1,\cdots,4}{\text{maximize }}\qquad&amp;11x_{1} + 8x_{2} + 6x_{3} + 4x_{4} \\
     \text{subject to }\qquad
     &amp;7x_{1} + 5x_{2} + 4x_{3} + 3x_{4} \leq 14 \\
@@ -1099,8 +1131,8 @@ time: 10.4 ms
 <ol class="simple">
 <li></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-2c33ebaf-09c1-4620-b19e-214f572fb367">
-<span class="eqno">(427)<a class="headerlink" href="#equation-2c33ebaf-09c1-4620-b19e-214f572fb367" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-877e1f82-73f6-43ef-a7bf-337a672ce7f8">
+<span class="eqno">(429)<a class="headerlink" href="#equation-877e1f82-73f6-43ef-a7bf-337a672ce7f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x \geq 0 \text{ integer }}{\text{maximize }}\qquad&amp;2x_1 + x_2 \\
     \text{subject to }\qquad&amp;x_1 + x_2 \leq 5 \\
     &amp;x_2 - x_1 \leq 0 \\
@@ -1194,8 +1226,8 @@ time: 9.45 ms
 <ol class="simple">
 <li></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-82291caf-a085-4068-9506-0d2ac3c6d64f">
-<span class="eqno">(428)<a class="headerlink" href="#equation-82291caf-a085-4068-9506-0d2ac3c6d64f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-01be467c-60f9-4cc1-9613-f5930ad2b790">
+<span class="eqno">(430)<a class="headerlink" href="#equation-01be467c-60f9-4cc1-9613-f5930ad2b790" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x \geq 0 \text{ integer }}{\text{maximize }}\qquad&amp;2x_1 + x_2 + 4x_3 + 5x_4 \\
     \text{subject to }\qquad&amp;x_1 + 3x_2 + 2x_3 + 5x_4 \leq 10 \\
     \text{and }\qquad&amp;3x_1 - x_2 - 5x_3 + 10x_4 \leq -4. \\
@@ -1289,8 +1321,8 @@ time: 9.07 ms
 <ul class="simple">
 <li><p>Consider the integer programming problem:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-2aae885b-2b95-4c78-8b7b-0c2c44302bba">
-<span class="eqno">(429)<a class="headerlink" href="#equation-2aae885b-2b95-4c78-8b7b-0c2c44302bba" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-183451b7-34cf-42e3-b4ae-f45d0390e410">
+<span class="eqno">(431)<a class="headerlink" href="#equation-183451b7-34cf-42e3-b4ae-f45d0390e410" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize }}\qquad&amp;x_1 + x_2 \\
     \text{subject to }\qquad&amp;-3x_1 + 4x_2 \leq 4 \\
     &amp;3x_1 + 2x_2 \leq 11 \\
@@ -1537,8 +1569,8 @@ time: 447 µs
             </script></div>
 </div>
 <p>(c) Construct a Gomory cutting plane using the optimal linear programming solution.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b345baed-dd44-4be0-ace7-e0e4e8766ea7">
-<span class="eqno">(430)<a class="headerlink" href="#equation-b345baed-dd44-4be0-ace7-e0e4e8766ea7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca8fa5d4-1969-4463-812b-bdbf679bf7ff">
+<span class="eqno">(432)<a class="headerlink" href="#equation-ca8fa5d4-1969-4463-812b-bdbf679bf7ff" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize }}\qquad&amp;x_1 + x_2 \\
     \text{subject to }\qquad&amp;-3x_1 + 4x_2 \leq 4 \\
     &amp;3x_1 + 2x_2 \leq 11 \\
@@ -1751,8 +1783,8 @@ time: 10.1 ms
             </script></div>
 </div>
 <p>Optimal Solution Simplex Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aba472aa-caae-4235-967b-25eb59e9564b">
-<span class="eqno">(431)<a class="headerlink" href="#equation-aba472aa-caae-4235-967b-25eb59e9564b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1f6c91f0-51d8-43de-8861-b4ff3ed00c08">
+<span class="eqno">(433)<a class="headerlink" href="#equation-1f6c91f0-51d8-43de-8861-b4ff3ed00c08" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     z \\ 
@@ -1771,14 +1803,14 @@ time: 10.1 ms
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>From the 2nd row:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-148daedf-82eb-4e50-814c-a48ab4e392cb">
-<span class="eqno">(432)<a class="headerlink" href="#equation-148daedf-82eb-4e50-814c-a48ab4e392cb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6ec0abe0-6229-4f7a-a5c2-065f7dc529ae">
+<span class="eqno">(434)<a class="headerlink" href="#equation-6ec0abe0-6229-4f7a-a5c2-065f7dc529ae" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_2 + 0.16666667s_1 + 0.16666667s_2 &amp;= 2.5 \\
     0.16666667s_1 + 0.16666667s_2 + 0.5 &amp;= 3 - x_2 \\
 \end{align}\]</div>
 <p>LHS is always <span class="math notranslate nohighlight">\(\geq 0\)</span> since <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span> are non-negative, hence, we add a new constraint (Gomory Cutting plane):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5d2b326-50e3-4e45-9a03-f9113fc2faa3">
-<span class="eqno">(433)<a class="headerlink" href="#equation-e5d2b326-50e3-4e45-9a03-f9113fc2faa3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f242ced5-362a-494e-a435-3c3a0616c3b6">
+<span class="eqno">(435)<a class="headerlink" href="#equation-f242ced5-362a-494e-a435-3c3a0616c3b6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     0.16666667s_1 + 0.16666667s_2 &amp;\geq 0.5 \\
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -1877,8 +1909,8 @@ time: 11.6 ms
             </script></div>
 </div>
 <p>(e) Suppose you relax the first constraint. What is the optimal value <span class="math notranslate nohighlight">\(Z_{\text{dual}}\)</span> of the Lagrangian dual?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1171bad-1092-4079-b639-4769fee6629a">
-<span class="eqno">(434)<a class="headerlink" href="#equation-f1171bad-1092-4079-b639-4769fee6629a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7e48a671-8ddd-4c69-ba6b-0e8b2d060099">
+<span class="eqno">(436)<a class="headerlink" href="#equation-7e48a671-8ddd-4c69-ba6b-0e8b2d060099" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\lambda) = \underset{x}{\text{minimize }}\qquad&amp;-x_1 - x_2 + \lambda(-3x_1 + 4x_2 - 4) \\
     \text{subject to }\qquad&amp;3x_1 + 2x_2 - 11 \leq 0 \\
     &amp;2x_1 - x_2 - 5 \leq 0 \\
@@ -2030,8 +2062,8 @@ time: 364 µs
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-9e595e7c-705d-407d-81d2-8d0cf58aa770">
-<span class="eqno">(435)<a class="headerlink" href="#equation-9e595e7c-705d-407d-81d2-8d0cf58aa770" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5abab4a3-8929-4ad1-bb58-6d028c5900d2">
+<span class="eqno">(437)<a class="headerlink" href="#equation-5abab4a3-8929-4ad1-bb58-6d028c5900d2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\lambda) &amp;= \underset{x\in\hat{X}}{\text{minimize }} -x_1 - x_2 + \lambda(-3x_1 + 4x_2 - 4) \\
     &amp;= \min\{ 
     -4\lambda,
@@ -2101,8 +2133,8 @@ time: 36.8 ms
             </script></div>
 </div>
 <p>(f) Repeat part (e) by relaxing the third constraint.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42d991e2-a343-4675-bfdd-6034cc0600e1">
-<span class="eqno">(436)<a class="headerlink" href="#equation-42d991e2-a343-4675-bfdd-6034cc0600e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5ed449c7-5806-4a28-95ad-4aed11cb657b">
+<span class="eqno">(438)<a class="headerlink" href="#equation-5ed449c7-5806-4a28-95ad-4aed11cb657b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\lambda) = \underset{x}{\text{minimize }}\qquad&amp;-x_1 - x_2 + \lambda(2x_1 - x_2 - 5) \\
     \text{subject to }\qquad&amp;-3x_1 + 4x_2 - 4 \leq 0 \\
     &amp;3x_1 + 2x_2 - 11 \leq 0 \\
@@ -2240,8 +2272,8 @@ time: 367 µs
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-26bc27b2-8ff5-4e0f-ae82-1af051e7fc97">
-<span class="eqno">(437)<a class="headerlink" href="#equation-26bc27b2-8ff5-4e0f-ae82-1af051e7fc97" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-783082c9-eddc-432f-a9e0-b5a0b6214ca6">
+<span class="eqno">(439)<a class="headerlink" href="#equation-783082c9-eddc-432f-a9e0-b5a0b6214ca6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\lambda) &amp;= \underset{x\in\hat{X}}{\text{minimize }} -x_1 - x_2 + \lambda(-3x_1 + 4x_2 - 4) \\
     &amp;= \min\{ -5\lambda, -6\lambda - 1, -3\lambda - 1, -4\lambda - 2, -λ - 2, -2\lambda - 3, -3\lambda - 4, λ - 3, -4 \}\\
 \end{align}\]</div>
@@ -2298,8 +2330,8 @@ time: 24.9 ms
 <ul class="simple">
 <li><p>Consider the integer program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-7de314d4-e0b4-497d-b986-effa22e4e342">
-<span class="eqno">(438)<a class="headerlink" href="#equation-7de314d4-e0b4-497d-b986-effa22e4e342" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5ed5cff-ceaf-4891-a25f-288f5693d968">
+<span class="eqno">(440)<a class="headerlink" href="#equation-e5ed5cff-ceaf-4891-a25f-288f5693d968" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize }}\qquad&amp;x_1 + 2x_2 \\
     \text{subject to }\qquad&amp;x_1 + x_2 \leq 5 \\
     &amp;x_1 - 3x_2 \leq -4 \\
@@ -2539,8 +2571,8 @@ time: 8.31 ms
 </div>
 <p>The Linear Program gives the same solution as the Integer Linear Program because the optimal solution exists on the vertex of the convex hull of the linear program and is also integral.</p>
 <p>(c) Solve by Lagrangian relaxation of the first constraint.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f31b92c3-30a5-49c2-b74f-b695f04f7250">
-<span class="eqno">(439)<a class="headerlink" href="#equation-f31b92c3-30a5-49c2-b74f-b695f04f7250" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7bc1494d-52c4-4fa7-93cd-1702c9c35362">
+<span class="eqno">(441)<a class="headerlink" href="#equation-7bc1494d-52c4-4fa7-93cd-1702c9c35362" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\lambda) = \underset{x}{\text{minimize }}\qquad&amp;-x_1 - 2x_2 + \lambda(x_1 + x_2 - 5)\\
     \text{subject to }\qquad&amp;x_1 - 3x_2 + 4 \leq 0 \\
     &amp;-x_1 + 1 \leq 0 \\
@@ -2688,8 +2720,8 @@ time: 409 µs
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-b2d98dff-4c93-4714-bbdc-85b77afc6178">
-<span class="eqno">(440)<a class="headerlink" href="#equation-b2d98dff-4c93-4714-bbdc-85b77afc6178" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1324a42b-f137-435d-8923-2da308ed1759">
+<span class="eqno">(442)<a class="headerlink" href="#equation-1324a42b-f137-435d-8923-2da308ed1759" title="Permalink to this equation">¶</a></span>\[\begin{align}
     d(\lambda) &amp;= \underset{x\in\hat{X}}{\text{minimize }} -x_1 - x_2 + \lambda(-3x_1 + 4x_2 - 4) \\
     &amp;= \min\{ 
     -2\lambda - 5,
@@ -2848,7 +2880,7 @@ time: 40.9 ms
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>

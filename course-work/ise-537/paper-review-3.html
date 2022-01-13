@@ -110,7 +110,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../machine-learning/00-intro.html">
-   Machine Learning
+   Pattern Recognition and Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -191,6 +191,38 @@
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Notes &amp; Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
+   Bayesian Machine Learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../personal-projects/projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
  </li>
 </ul>
 <p class="caption collapsible-parent">
@@ -863,8 +895,8 @@
 </div>
 <div class="section" id="quality-score">
 <h3>Quality Score<a class="headerlink" href="#quality-score" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-ba7be777-402f-4ed5-b0de-d152a229ab63">
-<span class="eqno">(87)<a class="headerlink" href="#equation-ba7be777-402f-4ed5-b0de-d152a229ab63" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2646ecbd-aae5-4637-be56-252266acee52">
+<span class="eqno">(89)<a class="headerlink" href="#equation-2646ecbd-aae5-4637-be56-252266acee52" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x &amp;: \text{variable of interest} \\
     r &amp;: \text{vector of ranks}, r_i = rank(x_i) \\
     \mu_r &amp;: \text{cross sectional mean} \\
@@ -1033,15 +1065,15 @@
 <h2>3. The Price of Quality<a id="3"></a><a class="headerlink" href="#the-price-of-quality-a-id-3-a" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="fama-macbeth-regressions">
 <h3>Fama-Macbeth Regressions<a class="headerlink" href="#fama-macbeth-regressions" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-76b7125d-84c4-4ec0-84f5-1836f2e61368">
-<span class="eqno">(88)<a class="headerlink" href="#equation-76b7125d-84c4-4ec0-84f5-1836f2e61368" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c0e69c76-842d-4bb6-b3af-e0c403906615">
+<span class="eqno">(90)<a class="headerlink" href="#equation-c0e69c76-842d-4bb6-b3af-e0c403906615" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P^i_t &amp;: z_{\text{stock i's market-to-book (MB) ratio at time t}}
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Regress the Time Series of <span class="math notranslate nohighlight">\(P^i_t\)</span> against Time Series of <span class="math notranslate nohighlight">\(Quality^i_t\)</span> (defined in section 1) to get overall quality score exposure of each stock <span class="math notranslate nohighlight">\(i\)</span>’s market-to-book (MB) ratio.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-c8f78b35-99b6-4e2b-8101-6a3b015e48b6">
-<span class="eqno">(89)<a class="headerlink" href="#equation-c8f78b35-99b6-4e2b-8101-6a3b015e48b6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72ebb814-99a9-4fca-a2ea-298abfe55042">
+<span class="eqno">(91)<a class="headerlink" href="#equation-72ebb814-99a9-4fca-a2ea-298abfe55042" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \hat{P^i_t} &amp;= a + bQuality^i_t + \epsilon^i_t \\
     b &amp;: \text{if quality improves by one standard deviation, then the price-to-book increases by }b\text{ standard deviations} \\  
 \end{align}\]</div>
@@ -1253,7 +1285,7 @@
         
           By Chengyi (Jeff) Chen<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2022.<br/>
       </p>
     </div>
   </footer>
