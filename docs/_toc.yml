@@ -3,7 +3,7 @@
 - part: Machine-Learning
   chapters:
   - file: machine-learning/00-intro
-    title: Machine Learning
+    title: Pattern Recognition and Machine Learning
     sections:
       - file: machine-learning/01-linear-algebra
       - file: machine-learning/02-probability-distributions
@@ -20,6 +20,19 @@
       - file: machine-learning/13-sequential-data
       - file: machine-learning/14-combining-models
       - file: machine-learning/15-bandits
+
+- part: Personal Notes & Projects
+  chapters:
+  - file: personal-projects/notes/ml-ifaqs
+    title: Infrequently Asked Questions in ML
+  - file: personal-projects/notes/bayesian-machine-learning
+    title: Bayesian Machine Learning
+  - file: personal-projects/notes/uplift-modelling-and-contextual-bandits
+    title: Uplift Modelling and Contextual Bandits
+  - file: personal-projects/projects/bayesian-contextual-bandits
+    title: Bayesian Contextual Bandits
+  - file: personal-projects/projects/wtte-rnn-pyro
+    title: Weibull Time To Event Recurrent Neural Net in Pyro
 
 - part: Featured Course Work & Extra-curriculars
   chapters:
