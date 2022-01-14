@@ -203,8 +203,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
-   Bayesian Machine Learning
+  <a class="reference internal" href="../../personal-projects/notes/probabilistic-machine-learning.html">
+   Probabilistic Machine Learning
   </a>
  </li>
  <li class="toctree-l1">
@@ -1099,13 +1099,13 @@ ipdb&gt; quit
 <div class="section" id="deterministic-model">
 <h2>1) Deterministic Model<a class="headerlink" href="#deterministic-model" title="Permalink to this headline">¶</a></h2>
 <p>Master Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca76eba4-f06b-4e97-9302-74132f81c4c5">
-<span class="eqno">()<a class="headerlink" href="#equation-ca76eba4-f06b-4e97-9302-74132f81c4c5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33268e7b-4aa1-4fb6-aab0-25b569a4881f">
+<span class="eqno">()<a class="headerlink" href="#equation-33268e7b-4aa1-4fb6-aab0-25b569a4881f" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{S \geq 0}{\min} \mu &amp; \\
 \end{align}\]</div>
 <p>Sub Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bd54cbc5-4c1d-441f-b75b-905f1799e884">
-<span class="eqno">()<a class="headerlink" href="#equation-bd54cbc5-4c1d-441f-b75b-905f1799e884" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3bbc1282-30b7-4292-9296-ed83c217b10c">
+<span class="eqno">()<a class="headerlink" href="#equation-3bbc1282-30b7-4292-9296-ed83c217b10c" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{F}{\min} h(S=S^* = \underset{S \geq 0}{\arg\min}\,\mu, d=\tilde{d}) &amp;= \underset{F}{\min} \sum^N_{i=1} h_i F_{B_i E_i} + \sum^N_{i=1} \sum^N_{j=1} c_{ij} F_{B_i M_j} + \sum^N_i p_i F_{RM_i} \\
   \text{subject to } &amp;S_i = F_{B_i M_i} + \sum^N_{j =1 \\ i \not= 1} F_{B_i M_j} + F_{B_i E_i}\qquad i = 1, \cdots , N, \\
   &amp;F_{B_i M_i} + \sum^N_{j = 1 \\ j \not= i} F_{B_j M_i} + F_{RM_i} = {d}_i\qquad i = 1, \cdots , N, \\

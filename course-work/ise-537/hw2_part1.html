@@ -205,8 +205,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
-   Bayesian Machine Learning
+  <a class="reference internal" href="../../personal-projects/notes/probabilistic-machine-learning.html">
+   Probabilistic Machine Learning
   </a>
  </li>
  <li class="toctree-l1">
@@ -1227,8 +1227,8 @@
 <li><p>Size factor. At each month-end reconstitution date, we use the same company market cap data (column D on SP500Stocks) for simplicity. (Note: size exposure for a company should be sector neutral, i.e., the z-score of the log(mkt_cap) should be w.r.t. peer companies within the same sector.)</p></li>
 </ol>
 <p>OLS Closed Form Solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3ce9fb4-0ca6-48b8-ae2f-025569f0c63b">
-<span class="eqno">(71)<a class="headerlink" href="#equation-b3ce9fb4-0ca6-48b8-ae2f-025569f0c63b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-63337bff-5032-4906-92eb-421f7153fdaf">
+<span class="eqno">(72)<a class="headerlink" href="#equation-63337bff-5032-4906-92eb-421f7153fdaf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \hat\beta &amp;= (X^TX)^{-1}X^Ty
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -1275,8 +1275,8 @@
 <div class="section" id="step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor">
 <h3>Step 1 - Regress the Time Series of Returns of the Stock against Time Series of Factors to get Factor Exposures <span class="math notranslate nohighlight">\(\beta_{\text{factor}}\)</span><a class="headerlink" href="#step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math notranslate nohighlight">\(m\)</span> factors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0efa91f8-c212-4ee2-a273-16811bfcc1f9">
-<span class="eqno">(72)<a class="headerlink" href="#equation-0efa91f8-c212-4ee2-a273-16811bfcc1f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5b41289d-b5db-4c2c-8694-da17159e04e1">
+<span class="eqno">(73)<a class="headerlink" href="#equation-5b41289d-b5db-4c2c-8694-da17159e04e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{\text{Stock A}} &amp;= \alpha + \beta_{F_1}F_1 + \beta_{F_2}F_2 + \cdots + \beta_{F_m}F_m + \epsilon
 \end{align}\]</div>
 <div class="section" id="factor-exposures-of-each-stock-to-s-p-500-and-us-dollar">
@@ -1637,8 +1637,8 @@
 <div class="section" id="step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock">
 <h3>Step 2 - Regress Returns of all the Stock in the Portfolio &#64; time <span class="math notranslate nohighlight">\(t, t \in T\)</span> against Factor Exposures <span class="math notranslate nohighlight">\(\beta_{\text{factor}}\)</span> of each Stock<a class="headerlink" href="#step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math notranslate nohighlight">\(t \in T\)</span> timesteps:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-344fa224-b805-4cf7-91a7-daf453813297">
-<span class="eqno">(73)<a class="headerlink" href="#equation-344fa224-b805-4cf7-91a7-daf453813297" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-76a35488-72cc-4d1a-9d1d-2a64190f5291">
+<span class="eqno">(74)<a class="headerlink" href="#equation-76a35488-72cc-4d1a-9d1d-2a64190f5291" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{\text{Stock }i, t} &amp;= \gamma_{t, F_0} + \gamma_{t, F_1}\hat{\beta_{F_1}} + \gamma_{t, F_2}\hat{\beta_{F_2}} + \cdots + \gamma_{t, F_m}\hat{\beta_{F_m}} + \epsilon
 \end{align}\]</div>
 <div class="cell docutils container">

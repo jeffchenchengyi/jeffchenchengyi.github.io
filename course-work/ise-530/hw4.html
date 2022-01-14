@@ -205,8 +205,8 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/bayesian-machine-learning.html">
-   Bayesian Machine Learning
+  <a class="reference internal" href="../../personal-projects/notes/probabilistic-machine-learning.html">
+   Probabilistic Machine Learning
   </a>
  </li>
  <li class="toctree-l1">
@@ -774,21 +774,21 @@
 <li><p>Compute and solve the equation of the linear regression line corresponding to the univariate input-output data <span class="math notranslate nohighlight">\((x, y)\)</span> given by <span class="math notranslate nohighlight">\(\{(−2, 12),(−1, 11),(0, 8),(1, 5),(2, 2),(3, −3)\}\)</span>. Plot these points and the computed line in the <span class="math notranslate nohighlight">\((x, y)\)</span>-plane.</p></li>
 <li><p>Suppose that the (univariate) variable y is known to be a quadratic function of the variable <span class="math notranslate nohighlight">\(x\)</span>; that is,</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-6a3d58c0-d775-4ce3-a2ef-f363b1ef77dc">
-<span class="eqno">(226)<a class="headerlink" href="#equation-6a3d58c0-d775-4ce3-a2ef-f363b1ef77dc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-47154ef6-963c-443a-a45a-d1d997a9b2a1">
+<span class="eqno">(227)<a class="headerlink" href="#equation-47154ef6-963c-443a-a45a-d1d997a9b2a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y = ax^2 +bx + c,
 \end{align}\]</div>
 <p>where the coefficients <span class="math notranslate nohighlight">\(a, b, c\)</span> are obtained by conducting an experiment in which values <span class="math notranslate nohighlight">\(y_1, \cdots, y_n\)</span> of the variable <span class="math notranslate nohighlight">\(y\)</span> are measured for corresponding values <span class="math notranslate nohighlight">\(x_1, \cdots, x_n\)</span> of the variable <span class="math notranslate nohighlight">\(x\)</span>. Find the best least-squares fit of the quadratic polynomial using the data:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e03fbbb6-884f-4b45-9a32-a1e092797f3a">
-<span class="eqno">(227)<a class="headerlink" href="#equation-e03fbbb6-884f-4b45-9a32-a1e092797f3a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-798a9a08-6325-485a-816b-1130ee892c2b">
+<span class="eqno">(228)<a class="headerlink" href="#equation-798a9a08-6325-485a-816b-1130ee892c2b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\{ (−2, −5),(−1, −1),(0, 4),(1, 7),(2, 6),(3, 5),(4, −1) \}.
 \end{align}\]</div>
 <p>Plot these points and the computed quadratic curve in the <span class="math notranslate nohighlight">\((x, y)\)</span>-plane.</p>
 <ul class="simple">
 <li><p>Show that the matrix</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a57e2b6d-10c8-44e1-80ef-ac3075892ee9">
-<span class="eqno">(228)<a class="headerlink" href="#equation-a57e2b6d-10c8-44e1-80ef-ac3075892ee9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-01d9ad7e-2ae4-4be6-9118-13d8011fa7b3">
+<span class="eqno">(229)<a class="headerlink" href="#equation-01d9ad7e-2ae4-4be6-9118-13d8011fa7b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         x^4 &amp; x^3 &amp; x^2 \\
         x^3 &amp; x^2 &amp; x \\
@@ -1299,23 +1299,23 @@ New root candidate: 5.3369119835274486
 <div class="section" id="id2">
 <h3>9.20<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Consider the function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d22a4e96-d9ef-4717-93d4-8b2c5b593b07">
-<span class="eqno">(229)<a class="headerlink" href="#equation-d22a4e96-d9ef-4717-93d4-8b2c5b593b07" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b994e8e-7350-45e6-b4f6-fb3d9e4651dc">
+<span class="eqno">(230)<a class="headerlink" href="#equation-7b994e8e-7350-45e6-b4f6-fb3d9e4651dc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f(x_1, x_2) &amp;= ax^2_1 + bx^2_2 + cx_1 + dx_2,
 \end{align}\]</div>
 <p>with <span class="math notranslate nohighlight">\(a &gt; 0\)</span> and <span class="math notranslate nohighlight">\(b &lt; 0\)</span>.</p>
 <p>(a) Show that <span class="math notranslate nohighlight">\(f(x_1, x_2)\)</span> has only one stationary point.</p>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8b50719-7f66-406b-8a39-c09a7162ab93">
-<span class="eqno">(230)<a class="headerlink" href="#equation-a8b50719-7f66-406b-8a39-c09a7162ab93" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5e04b870-2990-46fe-9931-0bff73da1867">
+<span class="eqno">(231)<a class="headerlink" href="#equation-5e04b870-2990-46fe-9931-0bff73da1867" title="Permalink to this equation">¶</a></span>\[\begin{align}
     g(x_1, x_2) &amp;= \begin{bmatrix}
         2ax_1 + c \\
         2bx_2 + d
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>First-order Stationarity condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c3d47b6-c207-40c2-9d9b-5a946d31dedf">
-<span class="eqno">(231)<a class="headerlink" href="#equation-5c3d47b6-c207-40c2-9d9b-5a946d31dedf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8cc7c80a-9583-4325-bfc7-dc64c721f2d3">
+<span class="eqno">(232)<a class="headerlink" href="#equation-8cc7c80a-9583-4325-bfc7-dc64c721f2d3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     g(x_1, x_2) &amp;= 0 \\
     \begin{bmatrix}
         2ax_1 + c \\
@@ -1340,8 +1340,8 @@ New root candidate: 5.3369119835274486
 <p>Hence, for fixed constants <span class="math notranslate nohighlight">\(a, b, c, d\)</span>, there is only one stationary point given by the formula above. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 <p>(b) Show that this stationary point is neither a minimizer nor maximizer for <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <p>Hessian Matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-738ad174-510a-402a-9a68-b525fbd1abb6">
-<span class="eqno">(232)<a class="headerlink" href="#equation-738ad174-510a-402a-9a68-b525fbd1abb6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-af08ed0f-c070-44e3-b002-ac320a808b7c">
+<span class="eqno">(233)<a class="headerlink" href="#equation-af08ed0f-c070-44e3-b002-ac320a808b7c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     G(x) &amp;= \begin{bmatrix}
         2a &amp; 0 \\
         0 &amp; 2b \\
@@ -1399,8 +1399,8 @@ New root candidate: 5.3369119835274486
 <h3>9.21<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>(Based on Exercise 4 in Fletcher [68, p. 30].) The function <span class="math notranslate nohighlight">\(f(x_1, x_2) = x^5_1 +(x^2_1 − x_2)^2\)</span> has only one stationary point (i.e., solution of <span class="math notranslate nohighlight">\(\nabla f(x_1, x_2) = 0\)</span>). Find it and show that it is neither a local maximizer nor a local minimizer.</p>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-086d94d4-2b4f-4e6f-ad83-9bf5864c2d92">
-<span class="eqno">(233)<a class="headerlink" href="#equation-086d94d4-2b4f-4e6f-ad83-9bf5864c2d92" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a3c5a3b1-7bb3-48de-99a7-032709f2bcf8">
+<span class="eqno">(234)<a class="headerlink" href="#equation-a3c5a3b1-7bb3-48de-99a7-032709f2bcf8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla f(x_1, x_2) 
     &amp;= 
     \begin{bmatrix}
@@ -1409,8 +1409,8 @@ New root candidate: 5.3369119835274486
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>First-order Stationarity condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7326ed6b-02f8-4921-b2b0-9edacc89cfbe">
-<span class="eqno">(234)<a class="headerlink" href="#equation-7326ed6b-02f8-4921-b2b0-9edacc89cfbe" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-794949db-ac02-4547-8e14-cbd66a98494a">
+<span class="eqno">(235)<a class="headerlink" href="#equation-794949db-ac02-4547-8e14-cbd66a98494a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla f(x_1, x_2) 
     &amp;= 0 \\
     \begin{bmatrix}
@@ -1436,8 +1436,8 @@ New root candidate: 5.3369119835274486
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>Hessian Matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f9cc329-a33f-4bc2-922e-9bd300b47dcc">
-<span class="eqno">(235)<a class="headerlink" href="#equation-1f9cc329-a33f-4bc2-922e-9bd300b47dcc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-88e85a65-e17c-40d4-8b32-68158206134a">
+<span class="eqno">(236)<a class="headerlink" href="#equation-88e85a65-e17c-40d4-8b32-68158206134a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla^2 f(x_1, x_2) 
     &amp;= 
     \begin{bmatrix}
@@ -1446,8 +1446,8 @@ New root candidate: 5.3369119835274486
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>At the stationary point:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ab9cfaf-b16a-4a82-ad86-fc86626fde67">
-<span class="eqno">(236)<a class="headerlink" href="#equation-0ab9cfaf-b16a-4a82-ad86-fc86626fde67" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-55a21117-815d-44a7-822e-0e692051e6b5">
+<span class="eqno">(237)<a class="headerlink" href="#equation-55a21117-815d-44a7-822e-0e692051e6b5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla^2 f(x_1, x_2) 
     &amp;= 
     \begin{bmatrix}
@@ -1502,13 +1502,13 @@ New root candidate: 5.3369119835274486
 <div class="section" id="id4">
 <h3>9.22<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Find a global minimum of the function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df3ba383-8647-4e99-96df-d7364e9b8b73">
-<span class="eqno">(237)<a class="headerlink" href="#equation-df3ba383-8647-4e99-96df-d7364e9b8b73" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0833e036-7e9c-4ef7-9d19-13bc5cf1cda5">
+<span class="eqno">(238)<a class="headerlink" href="#equation-0833e036-7e9c-4ef7-9d19-13bc5cf1cda5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f(x_1,x_2,x_3) &amp;= 6x^2_1 + 4x^2_2 + 2x^2_3 + 2x_1x_2 + 2x_1x_3 + 2x_2x_3 − 11x_1 − 12x_2 − 9x_3.
 \end{align}\]</div>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0ba2ecb-0d10-4ca2-aa95-e7f43691756e">
-<span class="eqno">(238)<a class="headerlink" href="#equation-b0ba2ecb-0d10-4ca2-aa95-e7f43691756e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ecdbe2f5-a8c5-4980-89f2-a08ca82d2f15">
+<span class="eqno">(239)<a class="headerlink" href="#equation-ecdbe2f5-a8c5-4980-89f2-a08ca82d2f15" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla f(x_1, x_2, x_3) 
     &amp;= 
     \begin{bmatrix}
@@ -1518,8 +1518,8 @@ New root candidate: 5.3369119835274486
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>First-order Stationarity condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7540ff30-016f-4043-b75d-447941cf30b3">
-<span class="eqno">(239)<a class="headerlink" href="#equation-7540ff30-016f-4043-b75d-447941cf30b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-860b63d2-57c3-49dc-991d-9900880a8c87">
+<span class="eqno">(240)<a class="headerlink" href="#equation-860b63d2-57c3-49dc-991d-9900880a8c87" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla f(x_1, x_2, x_3)
     &amp;= 0 \\
     \begin{bmatrix}
@@ -1580,8 +1580,8 @@ New root candidate: 5.3369119835274486
     \end{bmatrix}
 \end{align}\]</div>
 <p>Hessian Matrix:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40fd8b2b-fd8e-4e31-a316-53b315265662">
-<span class="eqno">(240)<a class="headerlink" href="#equation-40fd8b2b-fd8e-4e31-a316-53b315265662" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-db5e67f8-cc7d-4e01-8e9a-fd9dcdbc4bba">
+<span class="eqno">(241)<a class="headerlink" href="#equation-db5e67f8-cc7d-4e01-8e9a-fd9dcdbc4bba" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla^2 f(x_1, x_2, x_3) 
     &amp;= 
     \begin{bmatrix}
@@ -1683,8 +1683,8 @@ New root candidate: 5.3369119835274486
 <div class="section" id="id5">
 <h3>10.5<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Define the function</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d419dade-8ba0-4725-808f-20b8b161335f">
-<span class="eqno">(241)<a class="headerlink" href="#equation-d419dade-8ba0-4725-808f-20b8b161335f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bdf7bf2b-adc4-4c80-9102-2a9b33c77895">
+<span class="eqno">(242)<a class="headerlink" href="#equation-bdf7bf2b-adc4-4c80-9102-2a9b33c77895" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f_c(x) &amp;= cx^2_1 + x^2_2.
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -3012,8 +3012,8 @@ Iteration: 0 - x_0 = [10. 10.], p_k = [-10. -10.], α_k = 1, hessian = [[200   0
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-deedea78-2131-45bd-88bd-fa6dedddf906">
-<span class="eqno">(242)<a class="headerlink" href="#equation-deedea78-2131-45bd-88bd-fa6dedddf906" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f35abc85-c0ee-4993-8197-8dfe54a6f3cc">
+<span class="eqno">(243)<a class="headerlink" href="#equation-f35abc85-c0ee-4993-8197-8dfe54a6f3cc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     f^{\prime}(x) &amp;= 4/3x^{1/3} \\
     f^{\prime\prime}(x) &amp;= 4/9x^{-2/3} \\
 \end{align}\]</div>
@@ -3021,8 +3021,8 @@ Iteration: 0 - x_0 = [10. 10.], p_k = [-10. -10.], α_k = 1, hessian = [[200   0
 <p>Proof by Contradiction:</p>
 <p>Assuming unit steplength <span class="math notranslate nohighlight">\(\alpha_k = 1\)</span>, and suppose <span class="math notranslate nohighlight">\(x_0 \not= 0\)</span> (<span class="math notranslate nohighlight">\(x_0 &gt; 0\)</span> actually, since <span class="math notranslate nohighlight">\(f(x)\)</span> is undefined for <span class="math notranslate nohighlight">\(x &lt; 0\)</span>),</p>
 <p>Newton’s Method coordinate update step:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0ebfc9e8-a5c6-4301-a244-7a3b3fa993f8">
-<span class="eqno">(243)<a class="headerlink" href="#equation-0ebfc9e8-a5c6-4301-a244-7a3b3fa993f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-51d4f14f-f683-48b5-afb4-117e1a8ff1b3">
+<span class="eqno">(244)<a class="headerlink" href="#equation-51d4f14f-f683-48b5-afb4-117e1a8ff1b3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x_{k+1} &amp;= x_k + \alpha_k p_k \\
     &amp;= x_k + p_k \\
     &amp;= x_k - \frac{f\prime(x_k)}{f^{\prime\prime}(x_k)} \\
@@ -3030,8 +3030,8 @@ Iteration: 0 - x_0 = [10. 10.], p_k = [-10. -10.], α_k = 1, hessian = [[200   0
     &amp;= x_k -16/27 x^{-1/3}_k \\
 \end{align}\]</div>
 <p>Assuming <span class="math notranslate nohighlight">\(\underset{k \rightarrow \infty}{\lim}x_k = L\)</span> (we converge to an optimal value),</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d7fce5d5-43c6-4269-ace3-a0585dd171c6">
-<span class="eqno">(244)<a class="headerlink" href="#equation-d7fce5d5-43c6-4269-ace3-a0585dd171c6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aafe7251-4bd1-40a9-ab7f-a67d6f4712a9">
+<span class="eqno">(245)<a class="headerlink" href="#equation-aafe7251-4bd1-40a9-ab7f-a67d6f4712a9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     L &amp;= L -\frac{16}{27L^{1/3}} \\
     0 &amp;= -\frac{16}{27L^{1/3}} \\
 \end{align}\]</div>
@@ -3082,8 +3082,8 @@ Iteration: 0 - x_0 = [10. 10.], p_k = [-10. -10.], α_k = 1, hessian = [[200   0
             </script></div>
 </div>
 <p>Gradient Vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b57e076e-ffcb-4094-b06d-b260aad678ef">
-<span class="eqno">(245)<a class="headerlink" href="#equation-b57e076e-ffcb-4094-b06d-b260aad678ef" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0c12cf2a-7cda-4f3e-846e-34e55d09ca1b">
+<span class="eqno">(246)<a class="headerlink" href="#equation-0c12cf2a-7cda-4f3e-846e-34e55d09ca1b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla f(x_1, x_2) 
     &amp;=
     \begin{bmatrix}
@@ -3092,8 +3092,8 @@ Iteration: 0 - x_0 = [10. 10.], p_k = [-10. -10.], α_k = 1, hessian = [[200   0
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>Hessian:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-24d0605c-e47e-4e99-bd93-8215e6b2abae">
-<span class="eqno">(246)<a class="headerlink" href="#equation-24d0605c-e47e-4e99-bd93-8215e6b2abae" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e8c65d52-c8dd-4e2f-909a-d14b1911d3bd">
+<span class="eqno">(247)<a class="headerlink" href="#equation-e8c65d52-c8dd-4e2f-909a-d14b1911d3bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla f(x_1, x_2) 
     &amp;=
     \begin{bmatrix}
@@ -3323,13 +3323,13 @@ time: 76.4 ms
 <h3>3.<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>Compute and solve the equation of the linear regression line corresponding to the univariate input-output data <span class="math notranslate nohighlight">\((x, y)\)</span> given by <span class="math notranslate nohighlight">\(\{(−2, 12),(−1, 11),(0, 8),(1, 5),(2, 2),(3, −3)\}\)</span>. Plot these points and the computed line in the <span class="math notranslate nohighlight">\((x, y)\)</span>-plane.</p>
 <p>Least-Squares / Linear Regression Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3d04941-e433-4d1e-87ac-b94ccfae6207">
-<span class="eqno">(247)<a class="headerlink" href="#equation-f3d04941-e433-4d1e-87ac-b94ccfae6207" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a9e83cf1-755f-47dc-b069-6bc5fea69aaf">
+<span class="eqno">(248)<a class="headerlink" href="#equation-a9e83cf1-755f-47dc-b069-6bc5fea69aaf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\beta}{\text{minimize }} &amp;\frac{1}{2N}\Big(y - X\beta\Big)^2 \\
 \end{align}\]</div>
 <p>Gradient Vector First-order Optimality Condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ff735ca-25c9-4a93-8e5f-8905f3d14202">
-<span class="eqno">(248)<a class="headerlink" href="#equation-5ff735ca-25c9-4a93-8e5f-8905f3d14202" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-119b3603-8a14-4493-85fe-dafb9a34eeca">
+<span class="eqno">(249)<a class="headerlink" href="#equation-119b3603-8a14-4493-85fe-dafb9a34eeca" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_\beta\frac{1}{2N}\Big(y - X\beta\Big)^2
     &amp;= 
     0 \\
@@ -3344,8 +3344,8 @@ time: 76.4 ms
     (X^\top X)^{-1}X^\top y \\
 \end{align}\]</div>
 <p>Hessian Second Order Sufficient Condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-350d0648-3bd4-41d8-9be9-c3c127e0f44f">
-<span class="eqno">(249)<a class="headerlink" href="#equation-350d0648-3bd4-41d8-9be9-c3c127e0f44f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c4f0d476-cedd-42d8-bfa8-c4fd6dc6727a">
+<span class="eqno">(250)<a class="headerlink" href="#equation-c4f0d476-cedd-42d8-bfa8-c4fd6dc6727a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\nabla^2_\beta\frac{1}{2N}\Big(y - X\beta\Big)^2 \\
     &amp;\nabla_\beta\frac{1}{N}\Bigg(-X^\top\Big(y - X\beta\Big)\Bigg) \\
     &amp;\frac{1}{N}\Bigg(-X^\top y + X^\top X\beta\Big)\Bigg) \\
@@ -3353,8 +3353,8 @@ time: 76.4 ms
 \end{align}\]</div>
 <p>The Hessian is positive semi-definite proof:</p>
 <p>For any vector <span class="math notranslate nohighlight">\(z: z \in \mathbb{R}^n\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-184a2a8b-3f6e-4b2b-9b54-8de63e6c4474">
-<span class="eqno">(250)<a class="headerlink" href="#equation-184a2a8b-3f6e-4b2b-9b54-8de63e6c4474" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6219c065-34fb-4291-8a84-24a214ae34f9">
+<span class="eqno">(251)<a class="headerlink" href="#equation-6219c065-34fb-4291-8a84-24a214ae34f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     z X^\top Xz &amp;= {\vert\vert Xz \vert\vert}^2_2 \\
     &amp;\geq 0 \blacksquare
 \end{align}\]</div>
@@ -3408,13 +3408,13 @@ time: 76.4 ms
 <div class="section" id="id9">
 <h3>4.<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <p>Suppose that the (univariate) variable <span class="math notranslate nohighlight">\(y\)</span> is known to be a quadratic function of the variable <span class="math notranslate nohighlight">\(x\)</span>; that is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4c539d9-1a19-4115-bd4f-859ffbfe806e">
-<span class="eqno">(251)<a class="headerlink" href="#equation-a4c539d9-1a19-4115-bd4f-859ffbfe806e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f796f0cd-c8a2-48c7-8c4f-4e751bd4cbf9">
+<span class="eqno">(252)<a class="headerlink" href="#equation-f796f0cd-c8a2-48c7-8c4f-4e751bd4cbf9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y = ax^2 +bx + c,
 \end{align}\]</div>
 <p>where the coefficients <span class="math notranslate nohighlight">\(a, b, c\)</span> are obtained by conducting an experiment in which values <span class="math notranslate nohighlight">\(y_1, \cdots, y_n\)</span> of the variable <span class="math notranslate nohighlight">\(y\)</span> are measured for corresponding values <span class="math notranslate nohighlight">\(x_1, \cdots, x_n\)</span> of the variable <span class="math notranslate nohighlight">\(x\)</span>. Find the best least-squares fit of the quadratic polynomial using the data:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8b829c6b-2ca0-491f-a8ab-87d24854e916">
-<span class="eqno">(252)<a class="headerlink" href="#equation-8b829c6b-2ca0-491f-a8ab-87d24854e916" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b45d5820-637e-4261-ad23-c8c3b1311a74">
+<span class="eqno">(253)<a class="headerlink" href="#equation-b45d5820-637e-4261-ad23-c8c3b1311a74" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\{ (−2, −5),(−1, −1),(0, 4),(1, 7),(2, 6),(3, 5),(4, −1) \}.
 \end{align}\]</div>
 <p>Plot these points and the computed quadratic curve in the <span class="math notranslate nohighlight">\((x, y)\)</span>-plane.</p>
@@ -3479,8 +3479,8 @@ time: 76.4 ms
 <div class="section" id="id10">
 <h3>5<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
 <p>Show that the matrix</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c6be5a4e-1155-4cb0-8590-1165af93233c">
-<span class="eqno">(253)<a class="headerlink" href="#equation-c6be5a4e-1155-4cb0-8590-1165af93233c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e180d8e6-170a-4144-afd2-5e7d682c3547">
+<span class="eqno">(254)<a class="headerlink" href="#equation-e180d8e6-170a-4144-afd2-5e7d682c3547" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         x^4 &amp; x^3 &amp; x^2 \\
         x^3 &amp; x^2 &amp; x \\
@@ -3490,8 +3490,8 @@ time: 76.4 ms
 <p>is positive semidefinite but not positive definite for all values of the scalar <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Proof:</p>
 <p>Since <span class="math notranslate nohighlight">\(x\)</span> is a scalar, divide 1st row by <span class="math notranslate nohighlight">\(x^2\)</span>, and 2nd row by <span class="math notranslate nohighlight">\(x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2e2f3f5-8c1e-4509-91c3-176aa938edbe">
-<span class="eqno">(254)<a class="headerlink" href="#equation-a2e2f3f5-8c1e-4509-91c3-176aa938edbe" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c773265b-8e52-42a1-8608-261f7b565044">
+<span class="eqno">(255)<a class="headerlink" href="#equation-c773265b-8e52-42a1-8608-261f7b565044" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         x^2 &amp; x &amp; 1 \\
         x^2 &amp; x &amp; 1 \\
@@ -3499,8 +3499,8 @@ time: 76.4 ms
     \end{bmatrix}
 \end{align}\]</div>
 <p>Subtract 1st row from 2nd and last row:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3d236620-2499-4819-b156-876d285f7661">
-<span class="eqno">(255)<a class="headerlink" href="#equation-3d236620-2499-4819-b156-876d285f7661" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7aded59f-e0dd-45f8-b5bd-699fbb052960">
+<span class="eqno">(256)<a class="headerlink" href="#equation-7aded59f-e0dd-45f8-b5bd-699fbb052960" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         x^2 &amp; x &amp; 1 \\
         0 &amp; 0 &amp; 0 \\

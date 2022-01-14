@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bayesian Machine Learning &#8212; ΨΦ</title>
+    <title>Probabilistic Machine Learning &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -58,7 +58,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://jeffchenchengyi.github.io/personal-projects/notes/bayesian-machine-learning.html" />
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/personal-projects/notes/probabilistic-machine-learning.html" />
     <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -70,10 +70,10 @@
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://jeffchenchengyi.github.io/personal-projects/notes/bayesian-machine-learning.html" />
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/personal-projects/notes/probabilistic-machine-learning.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Bayesian Machine Learning" />
-<meta property="og:description" content="Bayesian Machine Learning  By: Chengyi (Jeff) Chen    Introduction  The purpose of these sets of notes is to connect ideas crossing the realms of frequentist, b" />
+<meta property="og:title"       content="Probabilistic Machine Learning" />
+<meta property="og:description" content="Probabilistic Machine Learning  By: Chengyi (Jeff) Chen    Introduction  The purpose of these sets of notes is to connect ideas crossing the realms of frequenti" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -206,7 +206,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Bayesian Machine Learning
+   Probabilistic Machine Learning
   </a>
  </li>
  <li class="toctree-l1">
@@ -617,7 +617,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/personal-projects/notes/bayesian-machine-learning.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/personal-projects/notes/probabilistic-machine-learning.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -687,11 +687,6 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bibliography">
-   Bibliography
-  </a>
- </li>
 </ul>
 
         </nav>
@@ -703,21 +698,40 @@
         
               <div>
                 
-  <div class="section" id="bayesian-machine-learning">
-<h1>Bayesian Machine Learning<a class="headerlink" href="#bayesian-machine-learning" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="probabilistic-machine-learning">
+<h1>Probabilistic Machine Learning<a class="headerlink" href="#probabilistic-machine-learning" title="Permalink to this headline">¶</a></h1>
 <p>By: Chengyi (Jeff) Chen</p>
 <hr class="docutils" />
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>The purpose of these sets of notes is to connect ideas crossing the realms of frequentist, bayesian statistics / machine learning vernacular. Starting from first principles, we ask: “What are we even trying to do in machine learning?” Before we distinguish between supervised, unsupervised, semi-supervised learning, here’s the general ML setting:</p>
-<p>Given: A set of observed training data <span class="math notranslate nohighlight">\(D = \{ \mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3, \ldots \mathbf{x}_N \}\)</span> as independent samples generated from a true data distribution <span class="math notranslate nohighlight">\(f(\mathbf{x})\)</span></p>
+<p>The purpose of these sets of notes is to connect ideas crossing the realms of frequentist, bayesian, probabilistic machine learning vernacular. I’m in no way an expert of the philosophical and practical differences between the the frequentist vs. bayesian perspective nor am I close to being good at mathematics – here’s just what I’ve gathered from my readings, subject to my own interpretation. Throughout, I’ll be drawing ideas from computer programming as well. Starting from first principles, we ask: “What are we even trying to do in machine learning?” Before we distinguish between supervised, unsupervised, semi-supervised learning, here’s the general ML setting:</p>
+<p>Given: A matrix of observed training data <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}} = \{ \mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3, \ldots \mathbf{x}_N \}\)</span> as independent samples generated from a true data distribution <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathcal{X}\)</span> (the set of observed data values).</p>
+<p>Objective: Learn a probabilistic model <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span> from <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> to approximate <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathcal{Z}\)</span> are a set of latent / unobserved random variables, as we make no assumptions on whether the observable dataset contains all information about the system. This probabilistic model is often called the <strong>complete data likelihood</strong>. <span class="math notranslate nohighlight">\(p(\mathcal{X} ; \Theta = \theta) = \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathbf{z}\)</span> is then called the <strong>incomplete data likelihood</strong> / <strong>evidence</strong> / <strong>marginal likelihood</strong> (because we marginalized out <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> to keep only <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>. <span class="math notranslate nohighlight">\(\Theta = \theta\)</span> are fixed parameters (“<span class="math notranslate nohighlight">\(;\)</span>” is used instead of “<span class="math notranslate nohighlight">\(\vert\)</span>” in the conditioning of <span class="math notranslate nohighlight">\(\theta\)</span> to indicate that it is a “frequentist” fixed parameter and not a “bayesian” random variable). Furthermore, it’s called a likelihood function because it is a function over the <span class="math notranslate nohighlight">\(\theta = \Theta\)</span>, the thing we’re conditioning on, instead of <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> (fixed because its the data provided) and <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> (unobserved).</p>
+<p><a class="reference external" href="https://slideplayer.com/slide/9502040/">Formulation</a>: To learn the <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span>, we can start by trying to minimize a sort of “distance” between the probabilitic model that we’re building and the true complete data distribution. Because we can only observe <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, we will minimize the distance between our incomplete data likelihood <span class="math notranslate nohighlight">\(p(\mathcal{X} ; \Theta = \theta)\)</span> (instead of the complete data likelihood <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span>) and the true data distribution <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>. A common “distance” measure used is the <a class="reference external" href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL Divergence</a> (“distance” because KL Divergence is asymmetric, does not satisfy triangle inequality, <span class="math notranslate nohighlight">\(D_{KL}(P \vert\vert Q) \not= D_{KL}(Q \vert\vert P)\)</span>). <span class="math notranslate nohighlight">\(D_{KL}(f(\mathcal{X}) \vert \vert p(\mathcal{X};\Theta=\theta))\)</span> measures how well <a class="reference external" href="https://stats.stackexchange.com/questions/111445/analysis-of-kullback-leibler-divergence"><span class="math notranslate nohighlight">\(p\)</span> approximates <span class="math notranslate nohighlight">\(f\)</span></a>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a687b4b9-9a73-4c77-8441-9b85fd8dd386">
+<span class="eqno">(41)<a class="headerlink" href="#equation-a687b4b9-9a73-4c77-8441-9b85fd8dd386" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \theta^* 
+    &amp;= \arg\underset{\theta \in \Theta}{\min} D_{KL}(f \vert \vert p) \\
+    &amp;= \arg\underset{\theta \in \Theta}{\min}\int_{\mathbf{x} \in \mathcal{X}, \mathbf{z} \in \mathcal{Z}} f(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z}) \log \frac{f(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z})}{p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z} ; \Theta = \theta)} d\mathbf{x}d\mathbf{z} \\
+    &amp;= \arg\underset{\theta \in \Theta}{\min}\mathbb{E}_{\mathbf{x}, \mathbf{z} \sim f} [\log f(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z})] - \mathbb{E}_{\mathbf{x}, \mathbf{z} \sim f} [\log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z} ; \Theta = \theta)] \\
+    &amp;= \arg\underset{\theta \in \Theta}{\min}-\mathbb{H}[f(\mathcal{X}, \mathcal{Z})] - \mathbb{E}_{\mathbf{x}, \mathbf{z} \sim f} [\log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z} ; \Theta = \theta)] \\
+    &amp;= \arg\underset{\theta \in \Theta}{\max} \mathbb{E}_{\mathbf{x}, \mathbf{z} \sim f} [\log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z} ; \Theta = \theta)] \\
+    &amp;\approx \arg\underset{\theta \in \Theta}{\max} \frac{1}{N}\sum_{\mathbf{x} \in \mathbf{X}_{\text{train}}} \log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z} ; \Theta = \theta) \\
+    &amp;= \arg\underset{\theta \in \Theta}{\max} \frac{1}{N}\sum_{\mathbf{x} \in \mathbf{X}_{\text{train}}} \int_{\mathbf{z} \in \mathcal{Z}} \log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z} ; \Theta = \theta) d\mathbf{z} \\
+\end{align}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mathematical Notation</p>
+<p>The math notation of my content, including the ones in this post follow the conventions in Christopher M. Bishop’s Pattern Recognition and Machine Learning. In addition, I use caligraphic capitalized roman and capitalized greek symbols like <span class="math notranslate nohighlight">\(\mathcal{X}, \mathcal{Y}, \mathcal{Z}, \Omega, \Psi, \Xi, \ldots\)</span> to represent <strong>BOTH</strong> a set of values that the random variables can take as well as the argument of a function in python (e.g. <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">p($\Theta$=$\theta$)</span></code>).</p>
+</div>
+<p>https://pyro.ai/examples/intro_long.html#Background:-inference,-learning-and-evaluation</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="mle-vs-map-vs-full-bayesian">
 <h2>MLE Vs. MAP Vs. Full Bayesian<a class="headerlink" href="#mle-vs-map-vs-full-bayesian" title="Permalink to this headline">¶</a></h2>
 <p>Objective:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4032afb7-7396-41be-a6f6-f544660dcd8d">
-<span class="eqno">(41)<a class="headerlink" href="#equation-4032afb7-7396-41be-a6f6-f544660dcd8d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6e6f8eb0-6882-4c96-a97f-319cbd2ae127">
+<span class="eqno">(42)<a class="headerlink" href="#equation-6e6f8eb0-6882-4c96-a97f-319cbd2ae127" title="Permalink to this equation">¶</a></span>\[\begin{align}
     
 \end{align}\]</div>
 <p>Specifically in <a class="reference external" href="https://pyro.ai/examples/mle_map.html">Pyro</a>, to get MLE estimates of <span class="math notranslate nohighlight">\(\theta\)</span>, simply declare <span class="math notranslate nohighlight">\(\theta\)</span> as a fixed parameter using <code class="docutils literal notranslate"><span class="pre">.param</span></code> in the <code class="docutils literal notranslate"><span class="pre">model</span></code> and have an empty <code class="docutils literal notranslate"><span class="pre">guide</span></code> (variational distribution). To get MAP estimates instead, declare <span class="math notranslate nohighlight">\(\theta\)</span> just like a regular latent random variable by <code class="docutils literal notranslate"><span class="pre">.sample</span></code> in the <code class="docutils literal notranslate"><span class="pre">model</span></code>, but in the <code class="docutils literal notranslate"><span class="pre">guide</span></code>, declare <span class="math notranslate nohighlight">\(\theta\)</span> as being drawn from a dirac delta function.</p>
@@ -736,11 +750,6 @@
 <div class="section" id="prediction-intervals">
 <h3>Prediction Intervals<a class="headerlink" href="#prediction-intervals" title="Permalink to this headline">¶</a></h3>
 </div>
-</div>
-<hr class="docutils" />
-<div class="section" id="bibliography">
-<h2>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h2>
-<p>[1] Stat 231 Lecture 3: MLE, Bayes Learning, and Maximum Entropy - https://slideplayer.com/slide/9502040/</p>
 </div>
 </div>
 
