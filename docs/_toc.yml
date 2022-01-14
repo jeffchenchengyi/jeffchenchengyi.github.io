@@ -25,8 +25,8 @@
   chapters:
   - file: personal-projects/notes/ml-ifaqs
     title: Infrequently Asked Questions in ML
-  - file: personal-projects/notes/bayesian-machine-learning
-    title: Bayesian Machine Learning
+  - file: personal-projects/notes/probabilistic-machine-learning
+    title: Probabilistic Machine Learning
   - file: personal-projects/notes/uplift-modelling-and-contextual-bandits
     title: Uplift Modelling and Contextual Bandits
   - file: personal-projects/projects/bayesian-contextual-bandits
