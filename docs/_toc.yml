@@ -1,37 +1,22 @@
 - file: intro
 
-- part: Machine-Learning
+- part: Machine Learning Notes
   chapters:
-  - file: machine-learning/00-intro
-    title: Pattern Recognition and Machine Learning
-    sections:
-      - file: machine-learning/01-linear-algebra
-      - file: machine-learning/02-probability-distributions
-      - file: machine-learning/03-linear-models-for-regression
-      - file: machine-learning/04-linear-models-for-classification
-      - file: machine-learning/05-neural-networks
-      - file: machine-learning/06-kernel-methods
-      - file: machine-learning/07-sparse-kernel-machines
-      - file: machine-learning/08-graphical-models
-      - file: machine-learning/09-mixture-models-and-em
-      - file: machine-learning/10-approximate-inference
-      - file: machine-learning/11-sampling-methods
-      - file: machine-learning/12-continuous-latent-variables
-      - file: machine-learning/13-sequential-data
-      - file: machine-learning/14-combining-models
-      - file: machine-learning/15-bandits
-
-- part: Personal Notes & Projects
-  chapters:
-  - file: personal-projects/notes/ml-ifaqs
+  - file: notes/ml-ifaqs
     title: Infrequently Asked Questions in ML
-  - file: personal-projects/notes/probabilistic-machine-learning
-    title: Probabilistic Machine Learning
-  - file: personal-projects/notes/uplift-modelling-and-contextual-bandits
+  - file: notes/uplift-modelling-and-contextual-bandits
     title: Uplift Modelling and Contextual Bandits
-  - file: personal-projects/projects/bayesian-contextual-bandits
+  - file: notes/probabilistic-machine-learning/00-objective
+    title: Probabilistic Machine Learning
+    sections:
+      - file: notes/probabilistic-machine-learning/01-frequentist-bayesian
+      - file: notes/probabilistic-machine-learning/02-finding-the-posterior
+    
+- part: Personal Projects
+  chapters:
+  - file: projects/bayesian-contextual-bandits
     title: Bayesian Contextual Bandits
-  - file: personal-projects/projects/wtte-rnn-pyro
+  - file: projects/wtte-rnn-pyro
     title: Weibull Time To Event Recurrent Neural Net in Pyro
 
 - part: Featured Course Work & Extra-curriculars
