@@ -671,8 +671,8 @@
 <p>Is <span class="math notranslate nohighlight">\(X^\top X\)</span> always <span class="math notranslate nohighlight">\(\succeq 0\)</span>? Yes, and <span class="math notranslate nohighlight">\(X^\top X \succ 0\)</span> when <span class="math notranslate nohighlight">\(X\)</span> has linearly independent column vectors (invertible)</p>
 <p>Proof:</p>
 <p>Suppose <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{m \times n}\)</span> matrix and <span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span> vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ac66cf3-262a-4bfe-a981-040a70be82f7">
-<span class="eqno">()<a class="headerlink" href="#equation-4ac66cf3-262a-4bfe-a981-040a70be82f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9ee0833-ea3e-48bd-b852-125bc55a8303">
+<span class="eqno">()<a class="headerlink" href="#equation-b9ee0833-ea3e-48bd-b852-125bc55a8303" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y^\top X^\top X y &amp;= {\left( \underbrace{Xy}_{z} \right)}^\top \underbrace{Xy}_{z} \\
     &amp;= z^\top z \begin{cases}
         &amp;= 0 \text{ if } y \in N(X) \left(y\text{ is in the nullspace of } X \right) \\
@@ -686,8 +686,8 @@
 <p>Is <span class="math notranslate nohighlight">\(X^\top A X\)</span> always <span class="math notranslate nohighlight">\(\succeq 0\)</span>? Given that <span class="math notranslate nohighlight">\(A \succ 0\)</span>, yes. <span class="math notranslate nohighlight">\(X^\top A X \succ 0\)</span> if <span class="math notranslate nohighlight">\(X\)</span> has linearly independent column vectors (invertible), and <span class="math notranslate nohighlight">\(X^\top A X \succeq 0\)</span> is <span class="math notranslate nohighlight">\(X\)</span> has linearly dependent column vectors.</p>
 <p>Proof:</p>
 <p>Suppose <span class="math notranslate nohighlight">\(X \in \mathbb{R}^{m \times n}\)</span> matrix, <span class="math notranslate nohighlight">\(A \in \mathbb{R}^{m \times m} \succ 0\)</span> matrix, and <span class="math notranslate nohighlight">\(y \in \mathbb{R}^n\)</span> vector:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39098be7-43e6-463a-8c65-20d430746af0">
-<span class="eqno">()<a class="headerlink" href="#equation-39098be7-43e6-463a-8c65-20d430746af0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-40bd1af8-97a8-4888-9972-c113803d02c5">
+<span class="eqno">()<a class="headerlink" href="#equation-40bd1af8-97a8-4888-9972-c113803d02c5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y^\top X^\top A X y &amp;= {\left( \underbrace{Xy}_{z} \right)}^\top A \underbrace{Xy}_{z} \\
     &amp;= z^\top A z \begin{cases}
         &amp;= 0 \text{ if } y \in N(X) \left(y\text{ is in the nullspace of } X \right) \\
@@ -699,8 +699,8 @@
 </div>
 <div class="section" id="quadratic-form-minimization">
 <h3>1.4.1. Quadratic Form Minimization<a class="headerlink" href="#quadratic-form-minimization" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-959cb540-0069-4cd3-bb9c-4218aa6f6575">
-<span class="eqno">()<a class="headerlink" href="#equation-959cb540-0069-4cd3-bb9c-4218aa6f6575" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a1ccfe75-b8fe-4320-8c38-1854fb3fd3af">
+<span class="eqno">()<a class="headerlink" href="#equation-a1ccfe75-b8fe-4320-8c38-1854fb3fd3af" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \min
 \end{align}\]</div>
 </div>
@@ -714,8 +714,8 @@
 <p>Let <span class="math notranslate nohighlight">\(V\)</span> be a subspace in <span class="math notranslate nohighlight">\(\mathbb{R}^{n}\)</span></p>
 <p>Let <span class="math notranslate nohighlight">\(B = \left\{\vec{b}_1, \vec{b}_2, \cdots, \vec{b}_k\right\}\)</span> is a basis for <span class="math notranslate nohighlight">\(V\)</span>, and <span class="math notranslate nohighlight">\(\therefore \forall \vec{a} \in V \Rightarrow \vec{a} = y_1\vec{b}_1 + y_2\vec{b}_2 + \cdots + y_k\vec{b}_k\)</span></p>
 <p>Let <span class="math notranslate nohighlight">\(A\)</span> be the matrix of the basis vectors of <span class="math notranslate nohighlight">\(B\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92b8bbd4-6fc3-4e01-a9fc-87568d837c70">
-<span class="eqno">()<a class="headerlink" href="#equation-92b8bbd4-6fc3-4e01-a9fc-87568d837c70" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-24f2d84d-7377-4b51-90d5-267e4ad3c0f2">
+<span class="eqno">()<a class="headerlink" href="#equation-24f2d84d-7377-4b51-90d5-267e4ad3c0f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     A\vec{y} &amp;=
     \begin{bmatrix}
         \vert &amp; \vert &amp; &amp; \vert \\
@@ -733,14 +733,14 @@
 \end{align}\]</div>
 <p>A projection of an arbitrary vector <span class="math notranslate nohighlight">\(\vec{x} \in \mathbb{R}^{n}\)</span> into the subspace of <span class="math notranslate nohighlight">\(V\)</span> is denoted as <span class="math notranslate nohighlight">\({Proj}_{V}{\vec{x}} \in V\)</span>.</p>
 <p>Since any vector in the subspace of <span class="math notranslate nohighlight">\(V\)</span> can be formulated as a linear combination of the basis vectors, we get</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3bdb23fe-51e2-4a6e-9124-018f32faa3d1">
-<span class="eqno">()<a class="headerlink" href="#equation-3bdb23fe-51e2-4a6e-9124-018f32faa3d1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-341c5467-1105-4855-8c21-d266c788a74d">
+<span class="eqno">()<a class="headerlink" href="#equation-341c5467-1105-4855-8c21-d266c788a74d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {Proj}_{V}{\vec{x}} &amp;= A\vec{y} \\
 \end{align}\]</div>
 <p>We also know that <span class="math notranslate nohighlight">\(\vec{x} = \underbrace{{Proj}_{V}{\vec{x}}}_{\in V} + \underbrace{{Proj}_{V^\complement}{\vec{x}}}_{\in V^\complement}\)</span>.</p>
 <p>Furthermore, since <span class="math notranslate nohighlight">\(V\)</span> is the same as the column space of <span class="math notranslate nohighlight">\(A\)</span>, the matrix basis vectors that spans <span class="math notranslate nohighlight">\(V\)</span>, the complement of <span class="math notranslate nohighlight">\(V\)</span> is actually the nullspace of <span class="math notranslate nohighlight">\(A^\top\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-380ee755-6361-45dd-a1a0-4593411c3dac">
-<span class="eqno">()<a class="headerlink" href="#equation-380ee755-6361-45dd-a1a0-4593411c3dac" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-07b1f295-c3fb-4ba8-b938-cd41858b4b65">
+<span class="eqno">()<a class="headerlink" href="#equation-07b1f295-c3fb-4ba8-b938-cd41858b4b65" title="Permalink to this equation">¶</a></span>\[\begin{align}
     C(A) &amp;= V \\
     V^\complement &amp;= {(C(A))}^\complement = N(A^\top) \\
 \end{align}\]</div>
@@ -753,15 +753,15 @@
 <p>If a matrix <span class="math notranslate nohighlight">\(A\)</span> has linearly independent columns (invertible via Invertible Matrix Theorem), then <span class="math notranslate nohighlight">\(A^\top A\)</span> is always invertible <span class="bibtex" id="id5">[linearal7:online]</span>.</p>
 <p>Proof:</p>
 <p>By Invertible Matrix Theorem,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f412e81e-7995-4994-be11-e3ec1b7fd522">
-<span class="eqno">()<a class="headerlink" href="#equation-f412e81e-7995-4994-be11-e3ec1b7fd522" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-18339599-745b-4192-97db-c1b55bdbfeca">
+<span class="eqno">()<a class="headerlink" href="#equation-18339599-745b-4192-97db-c1b55bdbfeca" title="Permalink to this equation">¶</a></span>\[\begin{align}
     A\vec{x} &amp;= 0 \Rightarrow \vec{x} = 0 \\
     \therefore N(A^\top) &amp;= \vec{0}, A^\top A\vec{x} = 0 \iff \vec{x} = \vec{0} \\
 \end{align}\]</div>
 </div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-5399f07e-8669-436d-be7b-73d6975ab4f2">
-<span class="eqno">()<a class="headerlink" href="#equation-5399f07e-8669-436d-be7b-73d6975ab4f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-454a8c6b-8f11-4968-928e-a79494d354ce">
+<span class="eqno">()<a class="headerlink" href="#equation-454a8c6b-8f11-4968-928e-a79494d354ce" title="Permalink to this equation">¶</a></span>\[\begin{align}
     A^\top \left({Proj}_{V^\complement}{\vec{x}}\right) &amp;= 0 \\
     A^\top \left(\vec{x} - {Proj}_{V}{\vec{x}}\right) &amp;= 0 \\
     A^\top \vec{x} - A^\top {Proj}_{V}{\vec{x}} &amp;= 0 \\
@@ -769,14 +769,14 @@
     A^\top \vec{x} &amp;= A^\top A\vec{y} \\
     \vec{y} &amp;= \underbrace{{(A^\top A)}^{-1}}_{\text{Invertible } \because A \text{ has linearly independent columns}} A^\top \vec{x} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-15530923-46bf-4ab8-9751-c213b5fb1838">
-<span class="eqno">()<a class="headerlink" href="#equation-15530923-46bf-4ab8-9751-c213b5fb1838" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dad5cbb3-6ffe-4fa4-b161-324bb7e7354e">
+<span class="eqno">()<a class="headerlink" href="#equation-dad5cbb3-6ffe-4fa4-b161-324bb7e7354e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {Proj}_{V}{\vec{x}} &amp;= A {(A^\top A)}^{-1} A^\top \vec{x} \\
 \end{align}\]</div>
 <p>Hence, we see that projections onto a subspace is a linear transformation.</p>
 <p>Notice also, that if <span class="math notranslate nohighlight">\(A\)</span> was instead a vector <span class="math notranslate nohighlight">\(\vec{w} \in \mathbb{R}^{n}\)</span>, our formula in <code class="xref eq docutils literal notranslate"><span class="pre">13</span></code> reduces to the normal vector projection formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ddf38a44-7365-4267-b1fb-834163cf9c64">
-<span class="eqno">()<a class="headerlink" href="#equation-ddf38a44-7365-4267-b1fb-834163cf9c64" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d204cbac-aa75-4b92-b4ba-16b67fe1cf4b">
+<span class="eqno">()<a class="headerlink" href="#equation-d204cbac-aa75-4b92-b4ba-16b67fe1cf4b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {Proj}_{\vec{w}}{\vec{x}} 
     &amp;= \vec{w} \underbrace{{(\vec{w}^\top \vec{w})}^{-1}}_{\text{Scalar}} \underbrace{\vec{w}^\top \vec{x}}_{\text{Scalar}} \\
     &amp;= \frac{\vec{w}^\top \vec{x}}{{\lVert \vec{w} \rVert}^2}\vec{w} \\
@@ -788,19 +788,19 @@
 <h4>1.5.2.1 Geometric Interpretation of Ordinary Least Squares Regression<a class="headerlink" href="#geometric-interpretation-of-ordinary-least-squares-regression" title="Permalink to this headline">¶</a></h4>
 <p><span class="bibtex" id="id6">[2Leastsq52:online]</span><span class="bibtex" id="id7">[ Ordinary7:online]</span></p>
 <p>Given a dataset <span class="math notranslate nohighlight">\(\mathbf{X} = \left\{\mathbf{x}_{n} \vert \mathbf{x}_{n} \in \mathbb{R}^{D}, n \in 1, \cdots N \right\}\)</span> and response variables <span class="math notranslate nohighlight">\(\mathbf{y} = \left(y_1, \cdots, y_N\right)\)</span>, we model the following:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-984bd050-9021-46ac-a455-ccc4174b0b2d">
-<span class="eqno">()<a class="headerlink" href="#equation-984bd050-9021-46ac-a455-ccc4174b0b2d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bb9f3b35-8a99-4599-8ed7-c7a5e1fbcf6e">
+<span class="eqno">()<a class="headerlink" href="#equation-bb9f3b35-8a99-4599-8ed7-c7a5e1fbcf6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathbf{y} &amp;= \mathbf{X}\beta + \epsilon \\
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\beta\)</span> is a vector of coefficients of each feature / covariate / predictor / column in the data matrix <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span> is a vector of unobserved error random variables which explain the <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> outside of <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>.</p>
 <p>Notice that in a perfect world, where <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is the only source of variation in <span class="math notranslate nohighlight">\(\mathbf{y}\)</span>, the linear regression / OLS model reduces to a regular inhomogeneous system of linear equations:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9ef569c-7d2e-464a-b938-4c7c1a50040d">
-<span class="eqno">()<a class="headerlink" href="#equation-b9ef569c-7d2e-464a-b938-4c7c1a50040d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-93088924-4968-42a9-91db-cbd30dc28862">
+<span class="eqno">()<a class="headerlink" href="#equation-93088924-4968-42a9-91db-cbd30dc28862" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathbf{y} &amp;= \mathbf{X}\beta \\
 \end{align}\]</div>
 <p>However, <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> is often not a complete set of predictors for <span class="math notranslate nohighlight">\(\mathbf{y}\)</span> and hence, we will most definitely get <span class="math notranslate nohighlight">\(\epsilon\)</span>. We can however, try to minimize <span class="math notranslate nohighlight">\(\epsilon\)</span> by finding a best fit <span class="math notranslate nohighlight">\(\beta\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38874a78-6acf-4b88-b414-9f0da40c3578">
-<span class="eqno">()<a class="headerlink" href="#equation-38874a78-6acf-4b88-b414-9f0da40c3578" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-35c20c4d-f81d-425a-821b-51a4f24fcde2">
+<span class="eqno">()<a class="headerlink" href="#equation-35c20c4d-f81d-425a-821b-51a4f24fcde2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \hat{\beta} &amp;= \arg\underset{\beta}{\min} {\lVert \mathbf{y} - \mathbf{X} \beta \rVert}_{2} \\ 
 \end{align}\]</div>
 </div>

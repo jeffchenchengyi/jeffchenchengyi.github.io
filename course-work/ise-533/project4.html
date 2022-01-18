@@ -1024,13 +1024,13 @@ ipdb&gt; quit
 <div class="section" id="deterministic-model">
 <h2>1) Deterministic Model<a class="headerlink" href="#deterministic-model" title="Permalink to this headline">¶</a></h2>
 <p>Master Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e8ce0d1-9b44-4ba1-849f-026b39079f1c">
-<span class="eqno">()<a class="headerlink" href="#equation-4e8ce0d1-9b44-4ba1-849f-026b39079f1c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-679d2b44-dd5f-4ea9-b9a4-91ba1643603f">
+<span class="eqno">()<a class="headerlink" href="#equation-679d2b44-dd5f-4ea9-b9a4-91ba1643603f" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{S \geq 0}{\min} \mu &amp; \\
 \end{align}\]</div>
 <p>Sub Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0db5530-22a0-42b7-a16c-1af82853a6fa">
-<span class="eqno">()<a class="headerlink" href="#equation-b0db5530-22a0-42b7-a16c-1af82853a6fa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aedf74f4-2260-48fb-abcd-00e0e5005d81">
+<span class="eqno">()<a class="headerlink" href="#equation-aedf74f4-2260-48fb-abcd-00e0e5005d81" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{F}{\min} h(S=S^* = \underset{S \geq 0}{\arg\min}\,\mu, d=\tilde{d}) &amp;= \underset{F}{\min} \sum^N_{i=1} h_i F_{B_i E_i} + \sum^N_{i=1} \sum^N_{j=1} c_{ij} F_{B_i M_j} + \sum^N_i p_i F_{RM_i} \\
   \text{subject to } &amp;S_i = F_{B_i M_i} + \sum^N_{j =1 \\ i \not= 1} F_{B_i M_j} + F_{B_i E_i}\qquad i = 1, \cdots , N, \\
   &amp;F_{B_i M_i} + \sum^N_{j = 1 \\ j \not= i} F_{B_j M_i} + F_{RM_i} = {d}_i\qquad i = 1, \cdots , N, \\

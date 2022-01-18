@@ -745,8 +745,8 @@
     }_{\text{Constraints}}
 \end{equation*}\]</div>
 <p><strong>(b) Identify the matrix <span class="math notranslate nohighlight">\(B = [A_{\bullet3} A_{\bullet2} A_{\bullet4}]\)</span> and verify that it is a basis in <span class="math notranslate nohighlight">\(A\)</span>.</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-c431f094-7419-4b61-affe-c4b9a6751e35">
-<span class="eqno">(93)<a class="headerlink" href="#equation-c431f094-7419-4b61-affe-c4b9a6751e35" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b3cee112-47cf-4e49-8e2b-96678c17691e">
+<span class="eqno">(93)<a class="headerlink" href="#equation-b3cee112-47cf-4e49-8e2b-96678c17691e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     B &amp;= 
     \begin{pmatrix}
     5 &amp; -1 &amp; 2 \\
@@ -828,8 +828,8 @@
     x_5 \\
     \end{pmatrix}
 \end{equation*}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d15e4033-7904-4749-993b-753b5aaeef82">
-<span class="eqno">(94)<a class="headerlink" href="#equation-d15e4033-7904-4749-993b-753b5aaeef82" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c5567587-2b9c-428a-8aae-2bc5d027be84">
+<span class="eqno">(94)<a class="headerlink" href="#equation-c5567587-2b9c-428a-8aae-2bc5d027be84" title="Permalink to this equation">¶</a></span>\[\begin{align}
     Ax &amp;= [B N]
     \begin{bmatrix}
     x_B \\
@@ -841,8 +841,8 @@
 \end{align}\]</div>
 <p>(Personal Note: If A was the detached coefficient matrix representing constraints, The corresponding basic solution with matrix <span class="math notranslate nohighlight">\(B\)</span> is a basic solution when we set <span class="math notranslate nohighlight">\(x_N = 0\)</span> and solve for <span class="math notranslate nohighlight">\(x_B\)</span>, and is a basic <strong>feasible</strong> solution iff <span class="math notranslate nohighlight">\(x_B = B^{-1}b \geq 0\)</span>.)</p>
 <p>Hence, basic solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea30608b-2682-44ee-bc8e-1fbd853b7def">
-<span class="eqno">(95)<a class="headerlink" href="#equation-ea30608b-2682-44ee-bc8e-1fbd853b7def" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-78ed3d8a-afea-44f4-b037-f2f7c40c0b92">
+<span class="eqno">(95)<a class="headerlink" href="#equation-78ed3d8a-afea-44f4-b037-f2f7c40c0b92" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         x_B \\
         x_N \\
@@ -913,8 +913,8 @@
 <div class="section" id="id2">
 <h3>3.4<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>Consider the LP</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18942b53-c6bb-4c9c-a320-928254112c4a">
-<span class="eqno">(96)<a class="headerlink" href="#equation-18942b53-c6bb-4c9c-a320-928254112c4a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9a7dc9fb-b56f-48a9-ac4e-878276a700fc">
+<span class="eqno">(96)<a class="headerlink" href="#equation-9a7dc9fb-b56f-48a9-ac4e-878276a700fc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{maximize } &amp;x_1 + 2x_2 \\
     \text{subject to } 
     &amp;x_1 + x_2 \leq 4 \\
@@ -1028,8 +1028,8 @@ The optimal solution is: x = [1.0, 3.0]
 </ul>
 <p><strong>(c) Solve the problem using the Simplex Algorithm.</strong></p>
 <p>Standard Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d608e3cb-d2c4-4d4e-87b5-9d00f323a008">
-<span class="eqno">(97)<a class="headerlink" href="#equation-d608e3cb-d2c4-4d4e-87b5-9d00f323a008" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0c285f02-9c50-4483-aaff-051c5e06abb6">
+<span class="eqno">(97)<a class="headerlink" href="#equation-0c285f02-9c50-4483-aaff-051c5e06abb6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;z = -x_1 - 2x_2 \\
     \text{subject to } 
     &amp;x_1 + x_2 + s_1 = 4 \\
@@ -1037,8 +1037,8 @@ The optimal solution is: x = [1.0, 3.0]
     &amp;\text{and } x_1, x_2, s_1, s_2 \geq 0 \\
 \end{align}\]</div>
 <p>From the Canonical Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-befbc0dd-d28b-467f-b925-a3c7070e7a7e">
-<span class="eqno">(98)<a class="headerlink" href="#equation-befbc0dd-d28b-467f-b925-a3c7070e7a7e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0fd7b1d7-1d2b-4f59-8d98-11e5d879d3e1">
+<span class="eqno">(98)<a class="headerlink" href="#equation-0fd7b1d7-1d2b-4f59-8d98-11e5d879d3e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     z \\ 
@@ -1054,8 +1054,8 @@ The optimal solution is: x = [1.0, 3.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-f32fa19a-9261-4f15-b71d-98603ea9bb51">
-<span class="eqno">(99)<a class="headerlink" href="#equation-f32fa19a-9261-4f15-b71d-98603ea9bb51" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5fcaf381-167a-4d49-92ab-4ecc921f07d5">
+<span class="eqno">(99)<a class="headerlink" href="#equation-5fcaf381-167a-4d49-92ab-4ecc921f07d5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_2\,\because \text{argmin}\Big(\frac{4}{1}, \frac{2}{1}\Big) = s_2
     \rightarrow&amp;
     \begin{array}{c}
@@ -1073,8 +1073,8 @@ The optimal solution is: x = [1.0, 3.0]
     \end{array}
     \end{bmatrix}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-61cedc90-1ce1-45cc-a5c4-8d100318d76f">
-<span class="eqno">(100)<a class="headerlink" href="#equation-61cedc90-1ce1-45cc-a5c4-8d100318d76f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2c8c88d3-8e63-4e8a-a5d2-322cbe992ec4">
+<span class="eqno">(100)<a class="headerlink" href="#equation-2c8c88d3-8e63-4e8a-a5d2-322cbe992ec4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_1\,\because \text{argmin}\Big(\frac{2}{2}\Big) = s_1
     \rightarrow&amp;
     \begin{array}{c}
@@ -1097,8 +1097,8 @@ The optimal solution is: x = [1.0, 3.0]
 <div class="section" id="id3">
 <h3>3.5<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Consider the LP</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d0cb76c-c208-4648-b055-6a58802e1a94">
-<span class="eqno">(101)<a class="headerlink" href="#equation-8d0cb76c-c208-4648-b055-6a58802e1a94" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b7b4780a-d0d2-42ec-ba9a-37a6e36b3c86">
+<span class="eqno">(101)<a class="headerlink" href="#equation-b7b4780a-d0d2-42ec-ba9a-37a6e36b3c86" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{maximize } &amp;x_1 + x_2 \\
     \text{subject to } 
     &amp;x_1 + x_2 \geq 2 \\
@@ -1159,8 +1159,8 @@ The optimal solution is: x = [1.0, 3.0]
 </ul>
 <p><strong>(c) Solve the LP by the Simplex Algorithm and show that the algorithm stops with the objective function being unbounded over the feasible region.</strong></p>
 <p>Standard Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a6e4ba4-bac8-40b2-a92c-b92fc0d24667">
-<span class="eqno">(102)<a class="headerlink" href="#equation-6a6e4ba4-bac8-40b2-a92c-b92fc0d24667" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b7b8157b-2721-4625-b4ad-1bfb4cb1334c">
+<span class="eqno">(102)<a class="headerlink" href="#equation-b7b8157b-2721-4625-b4ad-1bfb4cb1334c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;-x_1 - x_2 \\
     \text{subject to } 
     &amp;x_1 + x_2 - s_1 + y_1 = 2 \\
@@ -1168,8 +1168,8 @@ The optimal solution is: x = [1.0, 3.0]
     &amp;\text{and } x_1, x_2, s_1, s_2, y_1 \geq 0 \\
 \end{align}\]</div>
 <p>From Phase I Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60757837-c8bc-4104-870d-22543e1f426b">
-<span class="eqno">(103)<a class="headerlink" href="#equation-60757837-c8bc-4104-870d-22543e1f426b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d859fba-216d-4b9a-ace4-d250239ee496">
+<span class="eqno">(103)<a class="headerlink" href="#equation-2d859fba-216d-4b9a-ace4-d250239ee496" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     w \\
@@ -1187,8 +1187,8 @@ The optimal solution is: x = [1.0, 3.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-460a605e-6cf8-48c7-b804-59a4b3071c00">
-<span class="eqno">(104)<a class="headerlink" href="#equation-460a605e-6cf8-48c7-b804-59a4b3071c00" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-add38a2c-eefb-4e5b-877f-b151177c2272">
+<span class="eqno">(104)<a class="headerlink" href="#equation-add38a2c-eefb-4e5b-877f-b151177c2272" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Add 2nd last row to 1st row}
     \rightarrow&amp;
     \begin{array}{c}
@@ -1208,8 +1208,8 @@ The optimal solution is: x = [1.0, 3.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8db223dc-670c-4eab-bbac-f825913c0e2e">
-<span class="eqno">(105)<a class="headerlink" href="#equation-8db223dc-670c-4eab-bbac-f825913c0e2e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0be37240-d913-4d89-8ea2-b155a754833f">
+<span class="eqno">(105)<a class="headerlink" href="#equation-0be37240-d913-4d89-8ea2-b155a754833f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{2}{1}\Big) = y_1
     \rightarrow&amp;
     \begin{array}{c}
@@ -1231,8 +1231,8 @@ The optimal solution is: x = [1.0, 3.0]
 \end{align}\]</div>
 <p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1\)</span> column can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, s_1, s_2) = (2, 0, 0, 4)\)</span> of the original system that has been found by the Phase I Procedure.</p>
 <p>Phase II: Normal Simplex Method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c252bc4-8267-48c3-9e23-8f1af8696c0d">
-<span class="eqno">(106)<a class="headerlink" href="#equation-1c252bc4-8267-48c3-9e23-8f1af8696c0d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-64c97b71-2e2b-426f-9340-200868829ae0">
+<span class="eqno">(106)<a class="headerlink" href="#equation-64c97b71-2e2b-426f-9340-200868829ae0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     z \\ 
@@ -1251,8 +1251,8 @@ The optimal solution is: x = [1.0, 3.0]
 <p><span class="math notranslate nohighlight">\(\therefore\)</span> Since, we will choose the entering variable as <span class="math notranslate nohighlight">\(s_1\)</span>, but the column of <span class="math notranslate nohighlight">\(s_1\)</span> has no positive entries, the linear program is unbounded.</p>
 <p><strong>(d) Modify the first inequality constraint to be x1 + x2 ≤ 2 and show that there are infinite optimal solutions.</strong></p>
 <p>Standard Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6333b6af-fbed-4a7a-9f8c-10fb93889584">
-<span class="eqno">(107)<a class="headerlink" href="#equation-6333b6af-fbed-4a7a-9f8c-10fb93889584" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-15c20f61-0de0-45ec-a46a-3f47a1be85f2">
+<span class="eqno">(107)<a class="headerlink" href="#equation-15c20f61-0de0-45ec-a46a-3f47a1be85f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;-x_1 - x_2 \\
     \text{subject to } 
     &amp;x_1 + x_2 + s_1 = 2 \\
@@ -1260,8 +1260,8 @@ The optimal solution is: x = [1.0, 3.0]
     &amp;\text{and } x_1, x_2, s_1, s_2 \geq 0 \\
 \end{align}\]</div>
 <p>Canonical Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f087b56-d8ea-4301-834d-db2cd8bd5186">
-<span class="eqno">(108)<a class="headerlink" href="#equation-3f087b56-d8ea-4301-834d-db2cd8bd5186" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6cd0b514-5efb-485b-afbc-2867d5668b05">
+<span class="eqno">(108)<a class="headerlink" href="#equation-6cd0b514-5efb-485b-afbc-2867d5668b05" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     z \\ 
@@ -1277,8 +1277,8 @@ The optimal solution is: x = [1.0, 3.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-13c4eb2d-cb37-4df2-959f-aa107fcda5b1">
-<span class="eqno">(109)<a class="headerlink" href="#equation-13c4eb2d-cb37-4df2-959f-aa107fcda5b1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2abbfc03-58ab-41a9-98db-ff9643680d07">
+<span class="eqno">(109)<a class="headerlink" href="#equation-2abbfc03-58ab-41a9-98db-ff9643680d07" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_1\,\because \text{argmin}\Big(\frac{2}{1}\Big) = s_1
     \rightarrow&amp;
     \begin{array}{c}
@@ -1356,8 +1356,8 @@ The optimal solution is: x = [1.0, 1.0]
 <div class="section" id="a">
 <h3>4.1(a)<a class="headerlink" href="#a" title="Permalink to this headline">¶</a></h3>
 <p>Use Phase I and Phase II of the Simplex Algorithm to solve the linear program</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f989361-d467-4650-b546-0e6d22b6ac7f">
-<span class="eqno">(110)<a class="headerlink" href="#equation-8f989361-d467-4650-b546-0e6d22b6ac7f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ff19f3a7-36e9-4031-84a8-b11f516ffa1d">
+<span class="eqno">(110)<a class="headerlink" href="#equation-ff19f3a7-36e9-4031-84a8-b11f516ffa1d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;3x_1 - 2x_2 - 3x_3 \\
     \text{subject to } 
     &amp;x_1 + 2x_2 - 3x_3 = 4 \\
@@ -1366,8 +1366,8 @@ The optimal solution is: x = [1.0, 1.0]
 \end{align}\]</div>
 <p>Do the computations “by hand.”</p>
 <p>From Phase I Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-520360cc-061e-49d7-9d37-d227a187f2e3">
-<span class="eqno">(111)<a class="headerlink" href="#equation-520360cc-061e-49d7-9d37-d227a187f2e3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-863cf7fc-7794-4818-b522-0c7c9c21a142">
+<span class="eqno">(111)<a class="headerlink" href="#equation-863cf7fc-7794-4818-b522-0c7c9c21a142" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     w \\
@@ -1385,8 +1385,8 @@ The optimal solution is: x = [1.0, 1.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-621c5774-20bb-460f-bd1c-d8b3f89d0015">
-<span class="eqno">(112)<a class="headerlink" href="#equation-621c5774-20bb-460f-bd1c-d8b3f89d0015" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6c333cf5-80a6-4923-8c63-6504705e1ef2">
+<span class="eqno">(112)<a class="headerlink" href="#equation-6c333cf5-80a6-4923-8c63-6504705e1ef2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Add last 2 rows to 1st row}
     \rightarrow&amp;
     \begin{array}{c}
@@ -1406,8 +1406,8 @@ The optimal solution is: x = [1.0, 1.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8b24e8e6-16ec-4f08-932b-24e02813ab09">
-<span class="eqno">(113)<a class="headerlink" href="#equation-8b24e8e6-16ec-4f08-932b-24e02813ab09" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-16dd22da-5b90-4f53-a8a7-39b3ee0be8af">
+<span class="eqno">(113)<a class="headerlink" href="#equation-16dd22da-5b90-4f53-a8a7-39b3ee0be8af" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{4}{2}, \frac{7}{3}\Big) = y_1
     \rightarrow&amp;
     \begin{array}{c}
@@ -1427,8 +1427,8 @@ The optimal solution is: x = [1.0, 1.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6987375b-49e4-44df-878f-68721737871e">
-<span class="eqno">(114)<a class="headerlink" href="#equation-6987375b-49e4-44df-878f-68721737871e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0125d4cb-0510-46b6-9cab-c97295fa09df">
+<span class="eqno">(114)<a class="headerlink" href="#equation-0125d4cb-0510-46b6-9cab-c97295fa09df" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_3\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_2\,\because \text{argmin}\Big(\frac{1}{11/2}\Big) = y_2
     \rightarrow&amp;
     \begin{array}{c}
@@ -1450,8 +1450,8 @@ The optimal solution is: x = [1.0, 1.0]
 \end{align}\]</div>
 <p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1, y_2\)</span> columns can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, x_3) = (0, \frac{25}{11}, \frac{2}{11})\)</span> of the original system that has been found by the Phase I Procedure.</p>
 <p>Phase II: Normal Simplex Tableau</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31e75ac8-ed99-4ccd-afba-4bfe4098aa25">
-<span class="eqno">(115)<a class="headerlink" href="#equation-31e75ac8-ed99-4ccd-afba-4bfe4098aa25" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f9aebb0a-1476-4dcb-b723-a7f9fb20fe4f">
+<span class="eqno">(115)<a class="headerlink" href="#equation-f9aebb0a-1476-4dcb-b723-a7f9fb20fe4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     z \\ 
@@ -1523,8 +1523,8 @@ The optimal solution is: x = [0.0, 2.27, 0.18]
 <div class="section" id="id4">
 <h3>4.11<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>Solve the following linear program by the Simplex Method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a612aa79-1b1a-4bf1-9112-60611c2ac634">
-<span class="eqno">(116)<a class="headerlink" href="#equation-a612aa79-1b1a-4bf1-9112-60611c2ac634" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5e64daa-60f8-4eee-b4cc-be26f680f9ed">
+<span class="eqno">(116)<a class="headerlink" href="#equation-e5e64daa-60f8-4eee-b4cc-be26f680f9ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;-4x_1 - 8x_2 + 2x_3 + 4x_4 \\
     \text{subject to } 
     &amp;2x_1 + x_2 + x_3 - 2x_4 \leq 12 \\
@@ -1533,8 +1533,8 @@ The optimal solution is: x = [0.0, 2.27, 0.18]
     &amp;\text{and } x_j \geq 0, j = 1,2,3,4 \\
 \end{align}\]</div>
 <p>Standard Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0506a5c-ba2a-4ef0-82de-7f020b27e820">
-<span class="eqno">(117)<a class="headerlink" href="#equation-b0506a5c-ba2a-4ef0-82de-7f020b27e820" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bc6d4005-2552-4b6c-b312-41266501150e">
+<span class="eqno">(117)<a class="headerlink" href="#equation-bc6d4005-2552-4b6c-b312-41266501150e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;-4x_1 - 8x_2 + 2x_3 + 4x_4 \\
     \text{subject to } 
     &amp;2x_1 + x_2 + x_3 - 2x_4 + s_1 = 12 \\
@@ -1543,8 +1543,8 @@ The optimal solution is: x = [0.0, 2.27, 0.18]
     &amp;\text{and } x_j \geq 0, j = 1,2,3,4, s_i \geq 0, i = 1,2,3 \\
 \end{align}\]</div>
 <p>From the Canonical Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb7a07f4-7021-4b46-8246-aef51ad0cc30">
-<span class="eqno">(118)<a class="headerlink" href="#equation-bb7a07f4-7021-4b46-8246-aef51ad0cc30" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1193e8e9-71fd-4409-85ea-5c42a2a6d522">
+<span class="eqno">(118)<a class="headerlink" href="#equation-1193e8e9-71fd-4409-85ea-5c42a2a6d522" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     z \\ 
@@ -1562,8 +1562,8 @@ The optimal solution is: x = [0.0, 2.27, 0.18]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-79ffb3b5-d799-4b5a-ae0c-03868429f757">
-<span class="eqno">(119)<a class="headerlink" href="#equation-79ffb3b5-d799-4b5a-ae0c-03868429f757" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c8ac30ee-c274-4aed-bb9f-8bace2bf77a4">
+<span class="eqno">(119)<a class="headerlink" href="#equation-c8ac30ee-c274-4aed-bb9f-8bace2bf77a4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_2\,\because \text{argmin}\Big(\frac{12}{1}, \frac{8}{2}, \frac{10}{1}\Big) = s_2
     \rightarrow&amp;
     \begin{array}{c}
@@ -1583,8 +1583,8 @@ The optimal solution is: x = [0.0, 2.27, 0.18]
     \end{array}
     \end{bmatrix}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-623c74b7-77f0-4774-a21c-75c7e56190dd">
-<span class="eqno">(120)<a class="headerlink" href="#equation-623c74b7-77f0-4774-a21c-75c7e56190dd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-feb71e15-a0c4-43d2-afac-7910b522422d">
+<span class="eqno">(120)<a class="headerlink" href="#equation-feb71e15-a0c4-43d2-afac-7910b522422d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_3\,\because \text{Largest non-basic},\,\text{Leaving Variable: }s_3\,\because \text{argmin}\Big(\frac{8}{2}, \frac{6}{3}\Big) = s_3
     \rightarrow&amp;
     \begin{array}{c}
@@ -1660,8 +1660,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
 <div class="section" id="id5">
 <h3>4.12<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <p>Solve the following linear program by the Simplex Method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f1d07aa-f389-49e6-9a84-3122ca137c7f">
-<span class="eqno">(121)<a class="headerlink" href="#equation-5f1d07aa-f389-49e6-9a84-3122ca137c7f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a76a38d4-1695-47c7-8104-b2cbde49b0fe">
+<span class="eqno">(121)<a class="headerlink" href="#equation-a76a38d4-1695-47c7-8104-b2cbde49b0fe" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;x_1 + 4x_2 + 6x_3 \\
     \text{subject to } 
     &amp;−2x_1 +4x_2 + x_3 \geq 8 \\
@@ -1670,8 +1670,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     &amp;\text{and } x_j \geq 0, j = 1,2,3 \\
 \end{align}\]</div>
 <p>Standard Form with Slack and Artificial Variables:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f28e793-be63-4cce-8a98-a994a62299bc">
-<span class="eqno">(122)<a class="headerlink" href="#equation-8f28e793-be63-4cce-8a98-a994a62299bc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e103f1d7-cd03-4f3d-95f4-89811d59b1d1">
+<span class="eqno">(122)<a class="headerlink" href="#equation-e103f1d7-cd03-4f3d-95f4-89811d59b1d1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;x_1 + 4x_2 + 6x_3 \\
     \text{subject to } 
     &amp;−2x_1 +4x_2 + x_3 - s_1 + y_1 = 8 \\
@@ -1680,8 +1680,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     &amp;\text{and } x_j \geq 0, j = 1,2,3, s_i \geq 0, i = 1,2,3, y_k \geq 0, k = 1,2,3 \\
 \end{align}\]</div>
 <p>From the Phase I Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93c8799c-c931-4375-9fe3-d928ba29af44">
-<span class="eqno">(123)<a class="headerlink" href="#equation-93c8799c-c931-4375-9fe3-d928ba29af44" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-370ae8b1-6f8d-4eeb-8314-ea186ca1cdba">
+<span class="eqno">(123)<a class="headerlink" href="#equation-370ae8b1-6f8d-4eeb-8314-ea186ca1cdba" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     w \\
@@ -1701,8 +1701,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ae050d87-555d-4f70-9f7d-468f47c9d496">
-<span class="eqno">(124)<a class="headerlink" href="#equation-ae050d87-555d-4f70-9f7d-468f47c9d496" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5b8da7aa-9bf7-4a4f-837b-749d430441e2">
+<span class="eqno">(124)<a class="headerlink" href="#equation-5b8da7aa-9bf7-4a4f-837b-749d430441e2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Add last 3 rows to 1st row}
     \rightarrow&amp;
     \begin{array}{c}
@@ -1724,8 +1724,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-59e05a7a-7ac2-45cf-a5da-2c189aa08a35">
-<span class="eqno">(125)<a class="headerlink" href="#equation-59e05a7a-7ac2-45cf-a5da-2c189aa08a35" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-00645afe-7c70-452e-8d7a-3f1c637e9d4f">
+<span class="eqno">(125)<a class="headerlink" href="#equation-00645afe-7c70-452e-8d7a-3f1c637e9d4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{8}{4}, \frac{12}{4}\Big) = y_1
     \rightarrow&amp;
     \begin{array}{c}
@@ -1747,8 +1747,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8e0b71f5-2d0f-4c70-bc1b-394bb1e44742">
-<span class="eqno">(126)<a class="headerlink" href="#equation-8e0b71f5-2d0f-4c70-bc1b-394bb1e44742" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33bdb55b-5d2c-4c90-aca8-58510bd64ac8">
+<span class="eqno">(126)<a class="headerlink" href="#equation-33bdb55b-5d2c-4c90-aca8-58510bd64ac8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_2\,\because \text{argmin}\Big(\frac{4}{3}, \frac{16}{2}\Big) = y_2
     \rightarrow&amp;
     \begin{array}{c}
@@ -1770,8 +1770,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-26127b03-d306-4f28-a1bf-1b809602eab5">
-<span class="eqno">(127)<a class="headerlink" href="#equation-26127b03-d306-4f28-a1bf-1b809602eab5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9eff2ca1-ee71-443d-9232-689054a516bb">
+<span class="eqno">(127)<a class="headerlink" href="#equation-9eff2ca1-ee71-443d-9232-689054a516bb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_3\,\because \text{Largest non-basic},\,\text{Leaving Variable: }x_1\,\because \text{argmin}\Big(\frac{8/3}{5/12}, \frac{4/3}{1/3}, \frac{40/3}{4/3}\Big) = x_1
     \rightarrow&amp;
     \begin{array}{c}
@@ -1793,8 +1793,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-fefd3b76-3da9-4d04-9cbe-c5094e77e2a5">
-<span class="eqno">(128)<a class="headerlink" href="#equation-fefd3b76-3da9-4d04-9cbe-c5094e77e2a5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-150bbdd0-0762-4bf2-b440-725ecf0e4f42">
+<span class="eqno">(128)<a class="headerlink" href="#equation-150bbdd0-0762-4bf2-b440-725ecf0e4f42" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }s_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_3\,\because \text{argmin}\Big(\frac{1}{1/4}, \frac{8}{2}\Big) = y_3
     \rightarrow&amp;
     \begin{array}{c}
@@ -1818,8 +1818,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
 \end{align}\]</div>
 <p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1, y_2, y_3\)</span> columns can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, x_3, s_1, s_2, s_3) = (0, 0, 8, 0, 4, 0)\)</span> of the original system that has been found by the Phase I Procedure.</p>
 <p>Phase II: Normal Simplex Tableau</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55ccc7ab-710a-46d3-98b9-8e5514097db6">
-<span class="eqno">(129)<a class="headerlink" href="#equation-55ccc7ab-710a-46d3-98b9-8e5514097db6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4dfc41f2-018e-4949-afa2-8329402ef17b">
+<span class="eqno">(129)<a class="headerlink" href="#equation-4dfc41f2-018e-4949-afa2-8329402ef17b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{array}{c}
     \\
     z \\ 
@@ -1837,8 +1837,8 @@ The optimal solution is: x = [-0.0, 6.0, 2.0, -0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-0a04e7c8-2c14-4abd-8f69-18de2e2930eb">
-<span class="eqno">(130)<a class="headerlink" href="#equation-0a04e7c8-2c14-4abd-8f69-18de2e2930eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d14481c8-0632-4757-997b-e9e6b38c0587">
+<span class="eqno">(130)<a class="headerlink" href="#equation-d14481c8-0632-4757-997b-e9e6b38c0587" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }x_3\,\because \text{argmin}\Big(\frac{8}{1}\Big) = x_3
     \rightarrow&amp;
     \begin{array}{c}
@@ -1914,8 +1914,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
 <div class="section" id="id6">
 <h3>4.14<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
 <p>Solve the following linear program by the Revised Simplex Method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-93cd3e27-a2d2-4f0e-826d-100bc3478187">
-<span class="eqno">(131)<a class="headerlink" href="#equation-93cd3e27-a2d2-4f0e-826d-100bc3478187" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-42c29e70-d5ea-4f45-be91-8c65d3c2ebef">
+<span class="eqno">(131)<a class="headerlink" href="#equation-42c29e70-d5ea-4f45-be91-8c65d3c2ebef" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;3x_1 + x_2 + 4x_3 + 2x_4 \\
     \text{subject to } 
     &amp;x_1 +x_2 −2x_3 + x_4 =10 \\
@@ -1923,8 +1923,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
     &amp;\text{and } x_j \geq 0, j = 1,2,3,4 \\
 \end{align}\]</div>
 <p>Standard Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-134826a2-ce21-4e0e-8f9d-1d9640a1c911">
-<span class="eqno">(132)<a class="headerlink" href="#equation-134826a2-ce21-4e0e-8f9d-1d9640a1c911" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cff2e205-5869-4d9e-95de-c6b9c11f5850">
+<span class="eqno">(132)<a class="headerlink" href="#equation-cff2e205-5869-4d9e-95de-c6b9c11f5850" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;3x_1 + x_2 + 4x_3 + 2x_4 \\
     \text{subject to } 
     &amp;x_1 +x_2 −2x_3 + x_4 =10 \\
@@ -1932,8 +1932,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
     &amp;\text{and } x_j \geq 0, j = 1,2,3,4, s_1 \geq 0 \\
 \end{align}\]</div>
 <p>Phase I Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d0cb09d-3863-429e-bb2c-d021c506305d">
-<span class="eqno">(133)<a class="headerlink" href="#equation-8d0cb09d-3863-429e-bb2c-d021c506305d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4f7426ff-3835-4141-902f-8dd60588508a">
+<span class="eqno">(133)<a class="headerlink" href="#equation-4f7426ff-3835-4141-902f-8dd60588508a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     w \\
@@ -1951,8 +1951,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b2ca33e2-7927-4f37-a4b4-4f257958877b">
-<span class="eqno">(134)<a class="headerlink" href="#equation-b2ca33e2-7927-4f37-a4b4-4f257958877b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-38e8dd5a-c674-4e37-a2f9-a10520864837">
+<span class="eqno">(134)<a class="headerlink" href="#equation-38e8dd5a-c674-4e37-a2f9-a10520864837" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Add last 3 rows to 1st row}
     \rightarrow&amp;
     \begin{array}{c}
@@ -1972,8 +1972,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6b4d1a55-2dd2-445a-b08b-efe1f6618580">
-<span class="eqno">(135)<a class="headerlink" href="#equation-6b4d1a55-2dd2-445a-b08b-efe1f6618580" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d68b652-8565-4d6d-9199-3962a551ff3f">
+<span class="eqno">(135)<a class="headerlink" href="#equation-7d68b652-8565-4d6d-9199-3962a551ff3f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_1\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_2\,\because \text{argmin}\Big(\frac{10}{1}, \frac{20}{4}\Big) = y_2
     \rightarrow&amp;
     \begin{array}{c}
@@ -1993,8 +1993,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
     \end{array}
     \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-89d942ee-3154-45fa-9a8f-fd9edd642675">
-<span class="eqno">(136)<a class="headerlink" href="#equation-89d942ee-3154-45fa-9a8f-fd9edd642675" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-68be4ee0-e108-4c97-9b71-71759674cf89">
+<span class="eqno">(136)<a class="headerlink" href="#equation-68be4ee0-e108-4c97-9b71-71759674cf89" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Entering Variable: }x_2\,\because \text{Largest non-basic},\,\text{Leaving Variable: }y_1\,\because \text{argmin}\Big(\frac{5}{3/4}, \frac{5}{1/4}\Big) = y_2
     \rightarrow&amp;
     \begin{array}{c}
@@ -2015,8 +2015,8 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>This tableau reveals that w, the value of the artificial objective function, has been reduced to zero. Now, in the computation, the 1st row and the <span class="math notranslate nohighlight">\(y_1, y_2\)</span> columns can be ignored (or deleted from the tableau). We can also pick out the basic feasible solution <span class="math notranslate nohighlight">\((x_1, x_2, x_3, x_4, s_1) = (10/3, 20/3, 0, 0, 0, 0)\)</span> of the original system that has been found by the Phase I Procedure.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e332c318-37f4-4dd0-b45b-a2809e8c7c1a">
-<span class="eqno">(137)<a class="headerlink" href="#equation-e332c318-37f4-4dd0-b45b-a2809e8c7c1a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e05d736b-265e-44af-8a5b-05b55a57c76a">
+<span class="eqno">(137)<a class="headerlink" href="#equation-e05d736b-265e-44af-8a5b-05b55a57c76a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{array}{c}
     \\
     z \\ 
@@ -2051,49 +2051,49 @@ The optimal solution is: x = [8.0, 6.0, 0.0]
 </ol>
 <p>Iteration 1:</p>
 <p>1A.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f038c2d-4882-4328-9d37-cff739cafc3f">
-<span class="eqno">(138)<a class="headerlink" href="#equation-3f038c2d-4882-4328-9d37-cff739cafc3f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-78e8ad91-86cb-4e30-925a-1ecf53e468f1">
+<span class="eqno">(138)<a class="headerlink" href="#equation-78e8ad91-86cb-4e30-925a-1ecf53e468f1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     y &amp;= {B^\top}^{-1}c_B \\
     &amp;= {\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \\ \end{bmatrix}^\top}^{-1} \begin{bmatrix}0 \\ 0\\ \end{bmatrix} \\
     &amp;= \begin{bmatrix}0 \\ 0\\ \end{bmatrix} \\
 \end{align}\]</div>
 <p>1B.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa2b1049-19d1-49e1-9dd6-7a023fc5b4fc">
-<span class="eqno">(139)<a class="headerlink" href="#equation-aa2b1049-19d1-49e1-9dd6-7a023fc5b4fc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1adec380-9172-4347-ae56-3bd9ce30a4c4">
+<span class="eqno">(139)<a class="headerlink" href="#equation-1adec380-9172-4347-ae56-3bd9ce30a4c4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     z_j &amp;= y^\top A_{\bullet j} \\
     &amp;= \begin{bmatrix}0 \\ 0\\ \end{bmatrix}^\top \begin{bmatrix} -10/3 &amp; 1/3 &amp; 1/3 \\ 4/3 &amp; 2/3 &amp; -1/3 \\ \end{bmatrix} \\
     &amp;= \begin{bmatrix}0 &amp; 0 &amp; 0 \\ \end{bmatrix} \\
 \end{align}\]</div>
 <p>1C.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-53b66d40-1a14-44df-8abb-8f3ad271cf74">
-<span class="eqno">(140)<a class="headerlink" href="#equation-53b66d40-1a14-44df-8abb-8f3ad271cf74" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-413a0bfd-84a1-4dc9-ba8b-664aca715edd">
+<span class="eqno">(140)<a class="headerlink" href="#equation-413a0bfd-84a1-4dc9-ba8b-664aca715edd" title="Permalink to this equation">¶</a></span>\[\begin{align}
     z_s - c_s &amp;= \text{max}_{j\in N}{\{z_j - c_j\}} \\
     &amp;= \text{max}_{j\in N}{\{0+10/3=10/3, 0-1/3=-1/3, 0-4/3=-4/3\}} \\
     s &amp;= 3
 \end{align}\]</div>
 <p>2A.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1882b45f-d0cc-4998-9bd7-df61429888ee">
-<span class="eqno">(141)<a class="headerlink" href="#equation-1882b45f-d0cc-4998-9bd7-df61429888ee" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d3869744-600e-4455-9f36-9e58c4827fc6">
+<span class="eqno">(141)<a class="headerlink" href="#equation-d3869744-600e-4455-9f36-9e58c4827fc6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \bar{A}_{\bullet s=3} &amp;= B^{-1}A_{\bullet s=3} \\
     &amp;= {\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \\ \end{bmatrix}}^{-1} \begin{bmatrix}-10/3 \\ 4/3\\ \end{bmatrix} \\
     &amp;= \begin{bmatrix}4/3 \\ -10/3\\ \end{bmatrix} \\
 \end{align}\]</div>
 <p>2B.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-792a96c0-d348-4c6f-92ae-3ab991a29342">
-<span class="eqno">(142)<a class="headerlink" href="#equation-792a96c0-d348-4c6f-92ae-3ab991a29342" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3b562e1f-4dc8-45c6-8848-ea2a12dceabb">
+<span class="eqno">(142)<a class="headerlink" href="#equation-3b562e1f-4dc8-45c6-8848-ea2a12dceabb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{\bar{b}_r}{\bar{a}_{r3}} &amp;= \text{min}\Big\{\frac{20/3}{4/3} \Big\} = 5 \\
     r &amp;= 2 \\
 \end{align}\]</div>
 <ol class="simple">
 <li></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-e9229740-d6c2-453f-8a69-356a22b4e65d">
-<span class="eqno">(143)<a class="headerlink" href="#equation-e9229740-d6c2-453f-8a69-356a22b4e65d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8be26c8e-bc1e-4b09-aa85-0b84cbd68f09">
+<span class="eqno">(143)<a class="headerlink" href="#equation-8be26c8e-bc1e-4b09-aa85-0b84cbd68f09" title="Permalink to this equation">¶</a></span>\[\begin{align}
     B &amp;= \begin{bmatrix} -10/3 &amp; 1 \\ 4/3 &amp; 0 \\ \end{bmatrix} \\
     x_B &amp;= B^{-1}b = \begin{bmatrix} -10/3 &amp; 1 \\ 4/3 &amp; 0 \\ \end{bmatrix}^{-1} \begin{bmatrix}20/3 \\ 10/3 \\ \end{bmatrix} = \begin{bmatrix}5/2 \\ 15 \\ \end{bmatrix} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-454d6913-70bf-49e7-9818-9532ff295b8b">
-<span class="eqno">(144)<a class="headerlink" href="#equation-454d6913-70bf-49e7-9818-9532ff295b8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-33051034-a641-43d1-9896-afcb6ffc9ca6">
+<span class="eqno">(144)<a class="headerlink" href="#equation-33051034-a641-43d1-9896-afcb6ffc9ca6" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \vdots
 \end{align}\]</div>
 <p>When all reduced cost coefficients are <span class="math notranslate nohighlight">\(\leq 0\)</span>, BFS is optimal, hence solution is <span class="math notranslate nohighlight">\((x_1, x_2, x_3, x_4) = (0, 5, 0, 5)\)</span></p>
@@ -2156,8 +2156,8 @@ The optimal solution is: x = [0.0, 5.0, 0.0, 5.0]
 <img alt="../../_images/hw2-4_18.png" src="../../_images/hw2-4_18.png" />
 <p>CT Gift Shop has an excellent credit history and can take out loans to help cover the shortfalls. On July 1, the gift shop can take out a 6-month loan with a 10% interest rate for the period that is to be paid back at the end of December. The gift shop can also take out a 1-month loan at the start of each month at an interest rate of 2% per month. Formulate CT Gift Shop’s cashflow problem as an LP so to minimize the amount of interest paid. Solve the LP by the Simplex Method.</p>
 <p>Linear Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0795fb92-2411-4409-9349-94531e8077da">
-<span class="eqno">(145)<a class="headerlink" href="#equation-0795fb92-2411-4409-9349-94531e8077da" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9377a959-bff0-439c-9b32-c323ff033a4c">
+<span class="eqno">(145)<a class="headerlink" href="#equation-9377a959-bff0-439c-9b32-c323ff033a4c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;\begin{bmatrix}0.02 &amp; 0.02 &amp; 0.02 &amp; 0.02 &amp; 0.02 &amp; 0.02 &amp; 0.10\end{bmatrix} \cdot \begin{bmatrix}x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \\ x_6 \\ x_7\\ \end{bmatrix} \\
     &amp;\text{subject to } \\
     &amp;2000 + x_1 + x_7 \geq 6000 \\
@@ -2171,8 +2171,8 @@ The optimal solution is: x = [0.0, 5.0, 0.0, 5.0]
 \end{align}\]</div>
 <p><span class="math notranslate nohighlight">\(x_1, \cdots x_6\)</span> represent the 1-month loan amounts and <span class="math notranslate nohighlight">\(x_7\)</span> represents the 6-month loan amount.</p>
 <p>Standard Form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e5322b2-3805-4303-acba-c77baf36ff78">
-<span class="eqno">(146)<a class="headerlink" href="#equation-7e5322b2-3805-4303-acba-c77baf36ff78" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-dbc7b686-3389-4e99-a5ac-ecfc55bd1b73">
+<span class="eqno">(146)<a class="headerlink" href="#equation-dbc7b686-3389-4e99-a5ac-ecfc55bd1b73" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;0.02x_1 + 0.02x_2 + 0.02x_3 + 0.02x_4 + 0.02x_5 + 0.02x_6 + 0.1x_7 \\
     \text{subject to } 
     &amp;x_1 + x_7 - s_1 = 4000 \\
@@ -2185,8 +2185,8 @@ The optimal solution is: x = [0.0, 5.0, 0.0, 5.0]
     &amp;\text{and } x_j \geq 0, j = 1,\cdots7, s_i \geq 0, i = 1, \cdots 5 \\
 \end{align}\]</div>
 <p>Standard Form with artificial variables:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-997bf903-750f-4f0a-8d7d-93eb369cdabb">
-<span class="eqno">(147)<a class="headerlink" href="#equation-997bf903-750f-4f0a-8d7d-93eb369cdabb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32aca67f-6fbb-4955-976a-343326bb7ebb">
+<span class="eqno">(147)<a class="headerlink" href="#equation-32aca67f-6fbb-4955-976a-343326bb7ebb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;0.02x_1 + 0.02x_2 + 0.02x_3 + 0.02x_4 + 0.02x_5 + 0.02x_6 + 0.1x_7 \\
     \text{subject to } 
     &amp;x_1 + x_7 - s_1 + y_1 = 4000 \\
@@ -2199,8 +2199,8 @@ The optimal solution is: x = [0.0, 5.0, 0.0, 5.0]
     &amp;\text{and } x_j \geq 0, j = 1,\cdots7, s_i \geq 0, i = 1, \cdots, 5, y_k \geq 0, k = 1, \cdots, 7 \\
 \end{align}\]</div>
 <p>Phase I Tableau:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1f6b76a-0e70-42e8-bfb8-f642d93685d4">
-<span class="eqno">(148)<a class="headerlink" href="#equation-c1f6b76a-0e70-42e8-bfb8-f642d93685d4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d06a8d9c-8dca-4b25-8a02-f9623f94df9c">
+<span class="eqno">(148)<a class="headerlink" href="#equation-d06a8d9c-8dca-4b25-8a02-f9623f94df9c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;\begin{array}{c}
     \\
     w \\
@@ -2228,8 +2228,8 @@ The optimal solution is: x = [0.0, 5.0, 0.0, 5.0]
 <div class="section" id="extra">
 <h2>Extra<a class="headerlink" href="#extra" title="Permalink to this headline">¶</a></h2>
 <p><strong>Formulate a linear program for the planar absolute-value regression problem given the 5 points: (-1,-2), (0,0), (1,1), (2,3), and (3,0). Write an AMPL code for the resulting linear program and solve it by a solver.</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-34e543f9-f189-4c16-aadd-4eac50f4c5f2">
-<span class="eqno">(149)<a class="headerlink" href="#equation-34e543f9-f189-4c16-aadd-4eac50f4c5f2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1ef77032-772f-4cdd-9716-66afc965ee6e">
+<span class="eqno">(149)<a class="headerlink" href="#equation-1ef77032-772f-4cdd-9716-66afc965ee6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{w, \alpha, t}{\text{minimize }} &amp;\frac{1}{N}\sum_{i=1}^N (t^+_i + t^-_i) \\
     \text{subject to } 
     &amp;t^+_i - t^-_i + wx_i + \alpha = y_i, i = 1, \cdots, N \\
@@ -2356,22 +2356,22 @@ y = 1.4x -0.4
 </div>
 <p><strong>Use the same 5 points and same objective as above to determine a planar isotone (i.e, nondecreasing) curve that best fits the given points. Do the same with a convex curve instead. Solve both linear programs using AMPL.</strong></p>
 <p>Isotonic Regression QP (Minimize Squared errors):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da9ae868-699a-411e-b96f-8d53e3b4b6a0">
-<span class="eqno">(150)<a class="headerlink" href="#equation-da9ae868-699a-411e-b96f-8d53e3b4b6a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8900fd74-4581-477a-aa45-2930af0befdc">
+<span class="eqno">(150)<a class="headerlink" href="#equation-8900fd74-4581-477a-aa45-2930af0befdc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{w, \alpha}{\text{minimize }} &amp;\sum_{i=1}^N w_i{(x_i - \alpha_i)}^2 \\
     \text{subject to } 
     &amp;x_i \leq x_{i+1}, i = 1, \cdots, N-1 \\
 \end{align}\]</div>
 <p>Isotonic Regression (Minimize Absolute errors):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-05ddc2c2-95bf-4bb4-afb4-d22695c35b10">
-<span class="eqno">(151)<a class="headerlink" href="#equation-05ddc2c2-95bf-4bb4-afb4-d22695c35b10" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-80b545fc-1aca-4d10-8ce0-65e9cafdf519">
+<span class="eqno">(151)<a class="headerlink" href="#equation-80b545fc-1aca-4d10-8ce0-65e9cafdf519" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N \vert y_i - \hat{y}_i \vert \\
     \text{subject to } 
     &amp;\hat{y}_i &lt;= \hat{y}_{i+1} , i = 1, \cdots, N-1 \\
 \end{align}\]</div>
 <p>LP Formulation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e1d6a27-b4ae-42ec-8b92-9ee046efd02c">
-<span class="eqno">(152)<a class="headerlink" href="#equation-2e1d6a27-b4ae-42ec-8b92-9ee046efd02c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca594494-44a6-4db2-8c62-148a9f40adf8">
+<span class="eqno">(152)<a class="headerlink" href="#equation-ca594494-44a6-4db2-8c62-148a9f40adf8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N (t^+_i - t^-_i) \\
     \text{subject to } 
     &amp;t^+_i - t^-_i + \hat{y}_i = y_i \\
@@ -2464,15 +2464,15 @@ y = [-2.   -0.    1.    1.48  1.48]
             </script></div>
 </div>
 <p>Convex Regression:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38328446-4369-4fac-90a8-27552b2f91a0">
-<span class="eqno">(153)<a class="headerlink" href="#equation-38328446-4369-4fac-90a8-27552b2f91a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6068edcf-6ccc-413d-ba5e-a967a1f86fdb">
+<span class="eqno">(153)<a class="headerlink" href="#equation-6068edcf-6ccc-413d-ba5e-a967a1f86fdb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N \vert y_i - \hat{y}_i \vert \\
     \text{subject to } 
     &amp; \frac{hat{y}_{i+1} - \hat{y}_i}{x_{i+1} - x_{i}} &lt;= \frac{hat{y}_{i+2} - \hat{y}_{i+1}}{x_{i+2} - x_{i+1}} , i = 1, \cdots, N-2 \\
 \end{align}\]</div>
 <p>LP Formulation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b8ae3ab5-b1aa-40be-bd44-3fed8fc9df91">
-<span class="eqno">(154)<a class="headerlink" href="#equation-b8ae3ab5-b1aa-40be-bd44-3fed8fc9df91" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-56334332-bf2d-4f22-9af2-f11d4f938dd1">
+<span class="eqno">(154)<a class="headerlink" href="#equation-56334332-bf2d-4f22-9af2-f11d4f938dd1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N (t^+_i - t^-_i) \\
     \text{subject to } 
     &amp;t^+_i - t^-_i + \hat{y}_i = y_i \\
@@ -2480,8 +2480,8 @@ y = [-2.   -0.    1.    1.48  1.48]
     &amp;\text{and } t^+_i, t^-_i \geq 0 \\
 \end{align}\]</div>
 <p>Change fractional constraints by clearing denominator:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b9b18b3-c42e-435b-8ab9-63cab048f48c">
-<span class="eqno">(155)<a class="headerlink" href="#equation-4b9b18b3-c42e-435b-8ab9-63cab048f48c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cef1635c-66be-4577-9fc6-41feb0857dae">
+<span class="eqno">(155)<a class="headerlink" href="#equation-cef1635c-66be-4577-9fc6-41feb0857dae" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{\hat{y}_i}{\text{minimize }} &amp;\sum_{i=1}^N (t^+_i - t^-_i) \\
     \text{subject to } 
     &amp;t^+_i - t^-_i + \hat{y}_i = y_i \\
