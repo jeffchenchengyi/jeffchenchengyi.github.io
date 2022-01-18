@@ -1,0 +1,1063 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Probabilistic Machine Learning &#8212; ΨΦ</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/default.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/tabs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://jeffchenchengyi.github.io/notes/probabilistic-machine-learning/00-objective.html" />
+    <link rel="shortcut icon" href="../../_static/jeffchenchengyi2019.jpg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Frequentist Vs. Bayesian Methods" href="01-frequentist-bayesian.html" />
+    <link rel="prev" title="Uplift Modelling and Contextual Bandits" href="../uplift-modelling-and-contextual-bandits.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://jeffchenchengyi.github.io/notes/probabilistic-machine-learning/00-objective.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Probabilistic Machine Learning" />
+<meta property="og:description" content="Probabilistic Machine Learning  By: Chengyi (Jeff) Chen  %load_ext autotime %load_ext nb_black  import torch import pyro import pyro.distributions as dist  The " />
+<meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/jeffchenchengyi2019.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">ΨΦ</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <p class="caption collapsible-parent">
+ <span class="caption-text">
+  Machine Learning Notes
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
+   Probabilistic Machine Learning
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-frequentist-bayesian.html">
+     Frequentist Vs. Bayesian Methods
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Personal Projects
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/bayesian-contextual-bandits.html">
+   Bayesian Contextual Bandits
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../projects/wtte-rnn-pyro.html">
+   Weibull Time To Event Recurrent Neural Net in Pyro
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Featured Course Work &amp; Extra-curriculars
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../course-work/ise-562/intro.html">
+   ISE-562 Decision Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-562/lab_assignment.html">
+     Certain Equivalents and Sensitivity Analysis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-562/midterm.html">
+     Mid Term Part (2): Individual Assignment: Tornado Diagrams and Bidding
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../course-work/ise-533/intro.html">
+   ISE-533 Integrative Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-533/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-533/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-533/project1.html">
+     Project 1: Group Restaurants Choice
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-533/project2.html">
+     Project 2: Multi-location Transshipment Problem
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../course-work/ise-537/intro.html">
+   ISE-537 Financial Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/hw2_part1.html">
+     HW 2 Part 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/hw2_part2.html">
+     HW 2 Part 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../course-work/ise-537/market-observations.html">
+     Market Observations
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/market-observations-week-1.html">
+       MO 1: TSLA Absurd P/E Ratio
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/market-observations-week-2.html">
+       MO 2: The NASDAQ Whale
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/market-observations-week-3.html">
+       MO 4: Dovish till 2024
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/market-observations-week-4.html">
+       MO 4: The Future of EV batteries
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/market-observations-week-5.html">
+       MO 5: Palantir
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../course-work/ise-537/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/paper-review-1.html">
+       Paper Review 1: Value and Momentum Everywhere
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/paper-review-2.html">
+       Paper Review 2: Carry
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/paper-review-3.html">
+       Paper Review 3: Quality Minus Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/paper-review-4.html">
+       Paper Review 4: Size Matters, if You Control Your Junk
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/ise-537/paper-review-5.html">
+       Paper Review 5: The Low-Risk Anomaly: A Decomposition into Micro and Macro Effects
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/project1.html">
+     Project 1: Momentum Strategies
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/project2.html">
+     Project 2: Carry
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-537/notes.html">
+     Notes
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../course-work/ise-530/intro.html">
+   ISE-530 Optimization Analytics
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw1.html">
+     HW 1
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw2.html">
+     HW 2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw3.html">
+     HW 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw4.html">
+     HW 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw5.html">
+     HW 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw6.html">
+     HW 6
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw7.html">
+     HW 7
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw8.html">
+     HW 8
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/hw9.html">
+     HW 9
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/midterm.html">
+     Midterm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/final.html">
+     Final
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../course-work/ise-530/notes.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../course-work/csci-499/intro.html">
+   CSCI-499 AI for Social Good
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../course-work/csci-499/paper-reviews.html">
+     Paper Reviews
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-1.html">
+       Paper Review 1
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-2.html">
+       Paper Review 2
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-3.html">
+       Paper Review 3
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-4.html">
+       Paper Review 4
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-5.html">
+       Paper Review 5
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-6.html">
+       Paper Review 6
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-7.html">
+       Paper Review 7
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../course-work/csci-499/paper-review-8.html">
+       Paper Review 8
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://docs.google.com/presentation/d/1MqA1jPrUw2UUTnQBGHqH-_Y3FCcOgsUGoCG1LNnCvZY/edit?usp=sharing">
+     Paper Review Presentation
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/lucashu1/education-deserts">
+     Education Deserts Research
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../course-work/cais%2B%2B/intro.html">
+   CAIS++
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/pelillian/varro">
+     Evolving FPGAs for Accelerated MachineLearning on Bare Metal
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/usc-caisplusplus/SLAB">
+     OCR Research on Google Street View Panoramics
+     <i class="fas fa-external-link-alt">
+     </i>
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course-work/udacity/exploring-house-prices-singapore-part-3-crispdm.html">
+   Udacity Data Scientist Nanodegree - Exploring House Prices in Singapore
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://graduation.udacity.com/confirm/2LGCCKNA">
+   Udacity Data Scientist Nanodegree Certificate
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+   Chengyi (Jeff) Chen's Resume
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
+   GitHub Repo
+   <i class="fas fa-external-link-alt">
+   </i>
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/notes/probabilistic-machine-learning/00-objective.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#setup">
+     Setup
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#objective">
+     Objective
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objective-1">
+       Objective 1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#objective-2">
+       Objective 2
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-likelihood-estimation">
+   Maximum Likelihood Estimation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-find-the-best-p-mathcal-x-mathcal-z-theta-theta">
+     How to find the best
+     <span class="math notranslate nohighlight">
+      \(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)
+     </span>
+     ?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-is-mle-a-frequentist-inference-technique">
+     Why is MLE a “frequentist” inference technique?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#can-we-simply-find-the-theta-that-maximizes-p-mathcal-x-mathbf-x-text-train-theta-theta">
+     Can we simply find the
+     <span class="math notranslate nohighlight">
+      \(\theta\)
+     </span>
+     that maximizes
+     <span class="math notranslate nohighlight">
+      \(p(\mathcal{X}=\mathbf{X}_{\text{train}} ; \Theta = \theta)\)
+     </span>
+     ?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#full-bayesian-inference">
+   Full Bayesian Inference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#searching-for-the-elbo">
+     Searching for the ELBO
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-elbo-part-1-expectation-maximization">
+     Finding the ELBO Part 1: Expectation-Maximization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-elbo-part-2-markov-chain-monte-carlo">
+     Finding the ELBO Part 2: Markov Chain Monte Carlo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-elbo-part-3-mean-field-approximate-variational-inference">
+     Finding the ELBO Part 3: Mean-Field Approximate Variational Inference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#finding-the-elbo-part-4-black-box-stochastic-variational-inference">
+     Finding the ELBO Part 4: Black-Box Stochastic Variational Inference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-a-posteriori">
+   Maximum A Posteriori
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Full Bayesian Inference
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-uncertainty">
+     Parameter Uncertainty
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prediction-intervals">
+     Prediction Intervals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#empircal-bayes">
+   Empircal Bayes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hierarchical-bayes">
+     Hierarchical Bayes
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="probabilistic-machine-learning">
+<h1>Probabilistic Machine Learning<a class="headerlink" href="#probabilistic-machine-learning" title="Permalink to this headline">¶</a></h1>
+<p>By: Chengyi (Jeff) Chen</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autotime
+<span class="o">%</span><span class="k">load_ext</span> nb_black
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">pyro</span>
+<span class="kn">import</span> <span class="nn">pyro.distributions</span> <span class="k">as</span> <span class="nn">dist</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The autotime extension is already loaded. To reload it, use:
+  %reload_ext autotime
+The nb_black extension is already loaded. To reload it, use:
+  %reload_ext nb_black
+time: 897 µs
+</pre></div>
+</div>
+<script type="application/javascript">
+            setTimeout(function() {
+                var nbb_cell_id = 3;
+                var nbb_unformatted_code = "%load_ext autotime\n%load_ext nb_black\n\nimport torch\nimport pyro\nimport pyro.distributions as dist";
+                var nbb_formatted_code = "%load_ext autotime\n%load_ext nb_black\n\nimport torch\nimport pyro\nimport pyro.distributions as dist";
+                var nbb_cells = Jupyter.notebook.get_cells();
+                for (var i = 0; i < nbb_cells.length; ++i) {
+                    if (nbb_cells[i].input_prompt_number == nbb_cell_id) {
+                        if (nbb_cells[i].get_text() == nbb_unformatted_code) {
+                             nbb_cells[i].set_text(nbb_formatted_code);
+                        }
+                        break;
+                    }
+                }
+            }, 500);
+            </script></div>
+</div>
+<hr class="docutils" />
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The purpose of these sets of notes is to connect ideas crossing the realms of frequentist, bayesian, probabilistic machine learning vernacular, e.g. how 1. frequentist maximum likelihood estimation is related to 2. partial bayesian maximum a posteriori and 3. full bayesian inference. I’m in no way an expert of the philosophical and practical differences between the the frequentist vs. bayesian perspective nor am I close to being good at mathematics – here’s just what I’ve gathered from my readings, subject to my own interpretation. Throughout, I’ll be drawing ideas from computer programming as well, specifically notes on <a class="reference external" href="http://pyro.ai/examples/intro_long.html">Uber’s Pyro PPL</a>. Starting from first principles, we ask: <strong>“What are we even trying to do in machine learning?”</strong></p>
+<div class="section" id="setup">
+<h3>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h3>
+<p>Before we distinguish between supervised, unsupervised, semi-supervised learning, here’s the general probabilistic machine learning setting:</p>
+<p>We are given a matrix of observed training data <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}} = \{ \mathbf{x}_1, \mathbf{x}_2, \mathbf{x}_3, \ldots \mathbf{x}_N \}\)</span> as independent samples generated from a true data distribution <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{x} \in \mathcal{X}\)</span> (the set of observed data values).</p>
+</div>
+<div class="section" id="objective">
+<h3>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h3>
+<p>We specify a probabilistic model of the form / factorization structure</p>
+<div class="amsmath math notranslate nohighlight" id="equation-161e6541-d682-4360-9ce5-a430751af27a">
+<span class="eqno">(13)<a class="headerlink" href="#equation-161e6541-d682-4360-9ce5-a430751af27a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta) &amp;= p(\mathcal{X} \vert \mathcal{Z} ; \Theta = \theta) p(\mathcal{Z} ; \Theta = \theta) \\
+\end{align}\]</div>
+<p>to learn <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> to approximate <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathcal{Z}\)</span> are a set of latent / unobserved random variables, as we make no assumptions on whether the observable dataset <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> contains all information about the system. This probabilistic model is often called the <strong>complete data likelihood</strong>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6c3cd816-f553-46a3-9e25-5f9c905a6a05">
+<span class="eqno">(14)<a class="headerlink" href="#equation-6c3cd816-f553-46a3-9e25-5f9c905a6a05" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{X} ; \Theta = \theta) \\
+\end{align}\]</div>
+<p>is then called the <strong>incomplete data likelihood</strong> / <strong>evidence</strong> / <strong>marginal likelihood</strong> (because we marginalized out <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> to keep only <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>. <span class="math notranslate nohighlight">\(\Theta = \theta\)</span> are fixed parameters (“<span class="math notranslate nohighlight">\(;\)</span>” is used instead of “<span class="math notranslate nohighlight">\(\vert\)</span>” in the conditioning of <span class="math notranslate nohighlight">\(\theta\)</span> to indicate that it is a “frequentist” fixed parameter and not a “bayesian” random variable). Furthermore, it’s called a likelihood function because it is a function over the <span class="math notranslate nohighlight">\(\theta = \Theta\)</span>, the thing we’re conditioning on, instead of <span class="math notranslate nohighlight">\(\mathcal{X}\)</span> (fixed because its the data provided) and <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> (unobserved).</p>
+<p>Learning such a probabilistic model has <a class="reference external" href="https://pyro.ai/examples/intro_long.html#Background:-inference,-learning-and-evaluation">2 primary objectives</a>:</p>
+<div class="section" id="objective-1">
+<h4>Objective 1<a class="headerlink" href="#objective-1" title="Permalink to this headline">¶</a></h4>
+<p>Draw conclusions about the posterior distribution of our latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f08c2678-83d6-4e27-97af-941327dadedc">
+<span class="eqno">(15)<a class="headerlink" href="#equation-f08c2678-83d6-4e27-97af-941327dadedc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{Z} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta) 
+    &amp;= \frac{p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z}; \Theta = \theta)}{\int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathbf{z}} \\
+\end{align}\]</div>
+</div>
+<div class="section" id="objective-2">
+<h4>Objective 2<a class="headerlink" href="#objective-2" title="Permalink to this headline">¶</a></h4>
+<p>Make predictions for new data, which we can do with the posterior predictive distribution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b09a203c-c3ab-439a-aeca-b1926a735f61">
+<span class="eqno">(16)<a class="headerlink" href="#equation-b09a203c-c3ab-439a-aeca-b1926a735f61" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{X} = \mathbf{X}_{\text{test}} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta) &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{test}} \vert \mathcal{Z} = \mathbf{z}; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta)  d\mathbf{z} \\
+\end{align}\]</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="maximum-likelihood-estimation">
+<h2>Maximum Likelihood Estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="how-to-find-the-best-p-mathcal-x-mathcal-z-theta-theta">
+<h3>How to find the best <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span>?<a class="headerlink" href="#how-to-find-the-best-p-mathcal-x-mathcal-z-theta-theta" title="Permalink to this headline">¶</a></h3>
+<p>To learn the <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span>, we need to first design a <strong>measure of success</strong> – how useful our model is / how accurate are we modelling the real life true data distribution. Because we can only observe <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, let’s define a “distance” measure between our incomplete data likelihood <span class="math notranslate nohighlight">\(p(\mathcal{X} ; \Theta = \theta)\)</span> (instead of complete data likelihood because we can’t observe it) and the true data distribution <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>. The smaller the “distance” between our 2 distributions the better our model approximates the true data generating process. A common “distance” measure between probability distributions is the <a class="reference external" href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL Divergence</a> (“distance” because KL Divergence is asymmetric, does not satisfy triangle inequality, <span class="math notranslate nohighlight">\(D_{KL}(P \vert\vert Q) \not= D_{KL}(Q \vert\vert P)\)</span>). <span class="math notranslate nohighlight">\(D_{KL}(f(\mathcal{X}) \vert \vert p(\mathcal{X};\Theta=\theta))\)</span> measures how well <a class="reference external" href="https://stats.stackexchange.com/questions/111445/analysis-of-kullback-leibler-divergence"><span class="math notranslate nohighlight">\(p\)</span> approximates <span class="math notranslate nohighlight">\(f\)</span></a>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-991e53aa-d5c3-42f4-8c22-b04f72d1687e">
+<span class="eqno">(17)<a class="headerlink" href="#equation-991e53aa-d5c3-42f4-8c22-b04f72d1687e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \theta^* 
+    &amp;= \arg\underset{\theta \in \Theta}{\min} D_{KL}(f \vert \vert p) \\
+    &amp;= \arg\underset{\theta \in \Theta}{\min}\int_{\mathbf{x} \in \mathcal{X}} f(\mathcal{X}=\mathbf{x}) \log \frac{f(\mathcal{X}=\mathbf{x})}{p(\mathcal{X}=\mathbf{x} ; \Theta = \theta)} d\mathbf{x} \\
+    &amp;= \arg\underset{\theta \in \Theta}{\min}\mathbb{E}_{\mathbf{x} \sim f} [\log f(\mathcal{X}=\mathbf{x})] - \mathbb{E}_{\mathbf{x} \sim f} [\log p(\mathcal{X}=\mathbf{x} ; \Theta = \theta)] \\
+    &amp;= \arg\underset{\theta \in \Theta}{\min}-\mathbb{H}[f(\mathcal{X})] - \mathbb{E}_{\mathbf{x} \sim f} [\log p(\mathcal{X}=\mathbf{x} ; \Theta = \theta)] \\
+    &amp;= \arg\underset{\theta \in \Theta}{\max} \mathbb{E}_{\mathbf{x} \sim f} [\log p(\mathcal{X}=\mathbf{x} ; \Theta = \theta)] \\
+    &amp;\approx \arg\underset{\theta \in \Theta}{\max} \lim_{N \rightarrow \infty} \frac{1}{N}\sum_{\mathbf{x}_i \in \mathbf{X}_{\text{train}}} \log p(\mathcal{X}=\mathbf{x}_i ; \Theta = \theta) \because \text{law of large numbers} \\
+    &amp;= \arg\underset{\theta \in \Theta}{\max} \prod_{\mathbf{x}_i \in \mathbf{X}_{\text{train}}} p(\mathcal{X}=\mathbf{x}_i ; \Theta = \theta) \because \log\text{ is a monotonic increasing function} \\
+    &amp;= \arg\underset{\theta \in \Theta}{\max} p(\mathcal{X}=\mathbf{X}_{\text{train}} ; \Theta = \theta) \because \text{i.i.d. data assumption} \\
+    &amp;= \theta_{\text{MLE}}
+\end{align}\]</div>
+<p>We have thus arrived at <a class="reference external" href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">Maximum Likelihood Estimation</a> of parameters (you can read more about this derivation method <a class="reference external" href="https://slideplayer.com/slide/9502040/">here</a> and <a class="reference external" href="https://jaketae.github.io/study/kl-mle/">here</a>), a pointwise estimate of the parameters that maximizes the incomplete data likelihood (or complete data likelihood when we have no latent variables in the model).</p>
+</div>
+<div class="section" id="why-is-mle-a-frequentist-inference-technique">
+<h3>Why is MLE a “frequentist” inference technique?<a class="headerlink" href="#why-is-mle-a-frequentist-inference-technique" title="Permalink to this headline">¶</a></h3>
+<p>The primary reason for why this technique is coined a “frequentist” method is because of the assumption that <span class="math notranslate nohighlight">\(\Theta = \theta\)</span> is a fixed parameter that needs to be estimated, while bayesians believe that <span class="math notranslate nohighlight">\(\Theta = \theta\)</span> should be a random variable, and hence, have a probability distribution that describes its behavior <span class="math notranslate nohighlight">\(p(\Theta)\)</span>, calling it our <strong>prior</strong>. In probabilistic programming / machine learning however, we don’t have to worry about these conflicting paradigms. To “convert” <span class="math notranslate nohighlight">\(\Theta\)</span> into a random variable instead, we just need to move <span class="math notranslate nohighlight">\(\Theta\)</span> into <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> and as long as we have a way to model <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, more specifically <span class="math notranslate nohighlight">\(p(\mathcal{Z} \vert \mathcal{X} ; \Theta = \theta)\)</span>, the <strong>posterior</strong> distribution of our latent variables, we are good.</p>
+</div>
+<div class="section" id="can-we-simply-find-the-theta-that-maximizes-p-mathcal-x-mathbf-x-text-train-theta-theta">
+<h3>Can we simply find the <span class="math notranslate nohighlight">\(\theta\)</span> that maximizes <span class="math notranslate nohighlight">\(p(\mathcal{X}=\mathbf{X}_{\text{train}} ; \Theta = \theta)\)</span>?<a class="headerlink" href="#can-we-simply-find-the-theta-that-maximizes-p-mathcal-x-mathbf-x-text-train-theta-theta" title="Permalink to this headline">¶</a></h3>
+<p>Unfortunately, because our model is specified with the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, we can’t directly maximize <span class="math notranslate nohighlight">\(p(\mathcal{X}=\mathbf{X}_{\text{train}} ; \Theta = \theta)\)</span>. We’ll have to marginalize out the latent variables first as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-64f8c1a7-cc8a-461f-afbf-65cadc8fedc3">
+<span class="eqno">(18)<a class="headerlink" href="#equation-64f8c1a7-cc8a-461f-afbf-65cadc8fedc3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{X} = \mathbf{X}_{\text{train}} ; \Theta = \theta) 
+    &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathbf{z} \\
+    &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}} \vert \mathcal{Z} = \mathbf{z} ; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} ; \Theta = \theta) d\mathbf{z} \\
+\end{align}\]</div>
+<p>and hence, Maximum Likelihood Estimation becomes:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9506d9be-5139-4e58-aa4a-87c0a3f9a879">
+<span class="eqno">(19)<a class="headerlink" href="#equation-9506d9be-5139-4e58-aa4a-87c0a3f9a879" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \theta^* 
+    &amp;= \arg\underset{\theta \in \Theta}{\max} \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}} \vert \mathcal{Z} = \mathbf{z} ; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} ; \Theta = \theta) d\mathbf{z} \\
+\end{align}\]</div>
+<p>However, this marginalization is often intractable (e.g. if <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span> is a sequence of events, so that the number of values grows exponentially with the sequence length, the exact calculation of the integral will be extremely difficult). Let’s instead try to find a lower bound for it by expanding it.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="full-bayesian-inference">
+<h2>Full Bayesian Inference<a class="headerlink" href="#full-bayesian-inference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="searching-for-the-elbo">
+<h3>Searching for the ELBO<a class="headerlink" href="#searching-for-the-elbo" title="Permalink to this headline">¶</a></h3>
+<p>Using ideas from importance sampling, assume we have another variational distribution [approximate posterior distribution to <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{X}} ; \Theta = \theta)\)</span>], <span class="math notranslate nohighlight">\(q(\mathcal{Z} ; \Phi = \phi)\)</span>, where <span class="math notranslate nohighlight">\(q(\mathcal{Z} ; \Phi = \phi) &gt; 0\)</span> whenever <span class="math notranslate nohighlight">\(p({\mathcal{Z}}) = \int_{\mathbf{x} \in \mathcal{X}} p({\mathcal{X}} = x, {\mathcal{Z}} \mid {\bf \theta}) &gt; 0\)</span>, and we rewite:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f8640cfa-b2ca-41fb-accd-5f151175d468">
+<span class="eqno">(20)<a class="headerlink" href="#equation-f8640cfa-b2ca-41fb-accd-5f151175d468" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \log p(\mathcal{X} \mid \boldsymbol{\theta }) 
+    &amp;= \log \sum_{z \in \mathcal{Z}} p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \\
+    &amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \\
+\end{align}\]</div>
+<p>By Jensen’s Inequality, given concave function <span class="math notranslate nohighlight">\(f(X)\)</span> (e.g. <span class="math notranslate nohighlight">\(\log\)</span>), <span class="math notranslate nohighlight">\(f\operatorname {E}\left[X\right] \geq \operatorname {E}\left[f(X)\right]\)</span> <span class="bibtex" id="id1">[Variatio28:online]</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1c44115a-611d-48b2-af60-afde61596cd7">
+<span class="eqno">(21)<a class="headerlink" href="#equation-1c44115a-611d-48b2-af60-afde61596cd7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \log p(\mathcal{X} \mid \boldsymbol{\theta }) 
+    &amp;= \log \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})} \right] \\
+    &amp;\geq \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log\left(\frac{p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})}{q({\mathcal{Z} = z} \mid {\bf \phi})}\right)\right] \\
+    &amp;= \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) - \log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \\
+    &amp;= \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] \\
+    &amp;= \underbrace{\underbrace{\operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right]}_{\text{Expected Complete-data Log Likelihood}} + \underbrace{\operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]}_{\text{Entropy of Variational Dist.}}}_{\text{ELBO / Negative Variational Free Energy } \mathcal{L}(q({\mathcal{Z}}\mid {\bf \phi}))} \\
+\end{align}\]</div>
+<p>Hence, we get an <em><strong>Evidence Lower Bound (ELBO)</strong></em> (also known as the <em><strong>Negative Variational Free Energy</strong></em>) on the <span class="math notranslate nohighlight">\(\log\)</span> Evidence. Instead of an inequality, we can get an exact equality of the form below by deriving the ELBO from rearranging the KL Divergence from our variational distribution (approximate posterior of latent variables) <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi})\)</span> to our actual posterior over latent variables <span class="math notranslate nohighlight">\(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})\)</span>:</p>
+<p>Derivation from <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d56917a9-f983-4572-8fe7-8a3fe628d339">
+<span class="eqno">(22)<a class="headerlink" href="#equation-d56917a9-f983-4572-8fe7-8a3fe628d339" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))
+    &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log\left(\frac{q({\mathcal{Z} = z} \mid {\bf \phi})}{p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})}\right)\right] \\
+    &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z} \mid {\mathcal{x}}, {\bf \theta})\right] \\
+    &amp;= \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log q({\mathcal{Z} = z} \mid {\bf \phi})\right] - \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{Z} = z}, {\mathcal{x}} \mid {\bf \theta})\right] + \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \\
+    &amp;= -\left[\operatorname {E}_{q({\mathcal{Z} = z} \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] + \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\right] + \operatorname{E}_{q({\mathcal{Z} = z} \mid {\bf \phi})}\left[\log p({\mathcal{x}} \mid {\bf \theta})\right] \\
+    &amp;= -\mathcal{L}(q({\mathcal{Z} = z}\mid {\bf \phi})) + \log p({\mathcal{x}} \mid {\bf \theta}) \because \text{Expectation is over latent variables }{\mathcal{Z} = z}\text{, which is independent of }{\mathcal{x}} \\
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0344e2ae-a03b-4f8e-b306-020504c714bb">
+<span class="eqno">(23)<a class="headerlink" href="#equation-0344e2ae-a03b-4f8e-b306-020504c714bb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    \therefore \log p({\mathcal{x}} \mid {\bf \theta}) 
+    &amp;= \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) + {\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) \\
+\end{align}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\log p({\mathcal{x}} \mid {\bf \theta})\)</span> is a constant, maximizing our ELBO / Negative Variational Free Energy will be equivalent to minimizing the <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta}))\)</span> (0 when <span class="math notranslate nohighlight">\(q({\mathcal{Z}} \mid {\bf \phi}) = p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})\)</span>), making our variational approximation as close as possible to the actual posterior over latents. After this procedure, our 2 tasks will look like:</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Find the MLE (<span class="math notranslate nohighlight">\({\bf\theta}, {\bf\phi}\)</span> are parameters) / MAP (<span class="math notranslate nohighlight">\({\bf\theta}, {\bf\phi}\)</span> are random variables) estimates of the model parameters <span class="math notranslate nohighlight">\({\bf \theta_{\rm{max}}}, {\bf \phi_{\rm{max}}}\)</span> by maximizing the ELBO:</p></li>
+</ol>
+</li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-ed8c1d3c-13f8-4b80-aa29-56e16f35903d">
+<span class="eqno">(24)<a class="headerlink" href="#equation-ed8c1d3c-13f8-4b80-aa29-56e16f35903d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    {\bf\theta_{\rm{max}}} &amp;= \underset{\boldsymbol {\theta}}{\operatorname{argmax}} \log p(\mathcal{X} \mid \boldsymbol{\theta }) \\
+    {\bf\theta_{\rm{max}}}, {\bf\phi_{\rm{max}}} &amp;\approx \underset{{\bf \theta}, {\bf \phi}}{\operatorname{argmax}} \mathcal{L}(q({\mathcal{Z}} \mid {\bf \phi})) \\
+    &amp;= \underset{{\bf \theta}, {\bf \phi}}{\operatorname{argmax}} \operatorname {E}_{q({\mathcal{Z}} = z \mid {\bf \phi})} \left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }})\right] - \operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]  \\
+\end{align}\]</div>
+<p>In maximizing the ELBO, the first term, Expected Complete-data Log Likelihood, encourages the MLE / MAP estimates of the model parameters to be</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Find the posterior over the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} })\)</span> <span class="bibtex" id="id2">[SVIPartI61:online]</span>:</p></li>
+</ol>
+</li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-b570a414-160a-4352-9282-29fb0a4a76d8">
+<span class="eqno">(25)<a class="headerlink" href="#equation-b570a414-160a-4352-9282-29fb0a4a76d8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{\rm{max}} }) &amp;\approx q({\mathcal{Z}} \mid {\bf \phi}) \\
+\end{align}\]</div>
+</div>
+<div class="section" id="finding-the-elbo-part-1-expectation-maximization">
+<h3>Finding the ELBO Part 1: Expectation-Maximization<a class="headerlink" href="#finding-the-elbo-part-1-expectation-maximization" title="Permalink to this headline">¶</a></h3>
+<p>The EM algorithm seeks to find the MLE of the evidence / marginal likelihood / incomplete-data likelihood by iteratively applying these two steps <span class="bibtex" id="id3">[Expectat45:online]</span>:</p>
+<ul>
+<li><ol class="simple">
+<li><p>Expectation step (E step): Set the approximate posterior / variational distribution <span class="math notranslate nohighlight">\(q({\mathcal{Z}}\mid {\bf \phi}) = p(\mathcal{Z} \mid \mathcal{X}, \boldsymbol {\theta_{t} })\)</span>, where <span class="math notranslate nohighlight">\(\bf \theta_{t}\)</span> are the previous M-step estimates of <span class="math notranslate nohighlight">\(\bf \theta\)</span>, this way the <span class="math notranslate nohighlight">\({\rm KL}(q({\mathcal{Z}} \mid {\bf \phi}) \mid\mid p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta})) = 0\)</span> and <span class="math notranslate nohighlight">\(\log p({\mathcal{x}} \mid {\bf \theta}) = \mathcal{L}(p({\mathcal{Z}} \mid {\mathcal{x}}, {\bf \theta_{t}}))\)</span>. Our objective is then to</p></li>
+</ol>
+<ul class="simple">
+<li><p>A. Calculate the posterior over latent variables <span class="math notranslate nohighlight">\(p(\mathcal{Z} \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})\)</span> and</p></li>
+<li><p>B. Calculate <span class="math notranslate nohighlight">\(Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\)</span> (Expected Complete data Log Likelihood):</p></li>
+</ul>
+</li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-a4b9c55a-bfc1-45ec-a94e-24768d053e87">
+<span class="eqno">(26)<a class="headerlink" href="#equation-a4b9c55a-bfc1-45ec-a94e-24768d053e87" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)}) &amp;= \operatorname {E} _{p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})}\left[\log L({\boldsymbol {\theta }};\mathcal{X} ,\mathcal{Z} = z )\right]\, \\
+    &amp;= \operatorname {E} _{p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)})}\left[\log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \right]\, \\
+    &amp;= \sum_{z \in \mathcal{Z}} p(\mathcal{Z} = z \mid \mathcal{X} ,{\boldsymbol {\theta }}^{(t)}) \log p(\mathcal{X} ,\mathcal{Z} = z \mid {\boldsymbol {\theta }}) \\
+\end{align}\]</div>
+<p>Notice that the only thing that is missing from <span class="math notranslate nohighlight">\(Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\)</span> compared to the ELBO is the entropy of the approximate posterior distribution <span class="math notranslate nohighlight">\(\operatorname{H}\left[\log q({\mathcal{Z}} \mid {\bf \phi})\right]\)</span>.</p>
+<ul class="simple">
+<li><ol class="simple">
+<li><p>Maximization step (M step): Find the parameters that maximize <span class="math notranslate nohighlight">\( Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\)</span>:</p></li>
+</ol>
+</li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-3e4a4387-903b-466c-a9e8-86a222aff91d">
+<span class="eqno">(27)<a class="headerlink" href="#equation-3e4a4387-903b-466c-a9e8-86a222aff91d" title="Permalink to this equation">¶</a></span>\[\begin{align} 
+    {\boldsymbol {\theta }}^{(t+1)} &amp;= {\underset {\boldsymbol {\theta }}{\operatorname {arg\,max} }}\ Q({\boldsymbol {\theta }}\mid {\boldsymbol {\theta }}^{(t)})\,
+\end{align}\]</div>
+</div>
+<div class="section" id="finding-the-elbo-part-2-markov-chain-monte-carlo">
+<h3>Finding the ELBO Part 2: Markov Chain Monte Carlo<a class="headerlink" href="#finding-the-elbo-part-2-markov-chain-monte-carlo" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="finding-the-elbo-part-3-mean-field-approximate-variational-inference">
+<h3>Finding the ELBO Part 3: Mean-Field Approximate Variational Inference<a class="headerlink" href="#finding-the-elbo-part-3-mean-field-approximate-variational-inference" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="finding-the-elbo-part-4-black-box-stochastic-variational-inference">
+<h3>Finding the ELBO Part 4: Black-Box Stochastic Variational Inference<a class="headerlink" href="#finding-the-elbo-part-4-black-box-stochastic-variational-inference" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="maximum-a-posteriori">
+<h2>Maximum A Posteriori<a class="headerlink" href="#maximum-a-posteriori" title="Permalink to this headline">¶</a></h2>
+<p>Before continuing, realize that because</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fd1d336a-5c35-4f07-8c58-401250e782ef">
+<span class="eqno">(28)<a class="headerlink" href="#equation-fd1d336a-5c35-4f07-8c58-401250e782ef" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta) &amp;= p(\mathcal{Z} \vert \mathcal{X}; \Theta = \theta) p(\mathcal{X} ; \Theta = \theta)
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-49211f84-faac-4836-aac6-0b9449cf4909">
+<span class="eqno">(29)<a class="headerlink" href="#equation-49211f84-faac-4836-aac6-0b9449cf4909" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    p(\mathcal{Z} \vert \mathcal{X}; \Theta = \theta) &amp;= \frac{}{}
+\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-42fc1ab6-a0ea-46be-a8c0-d6e973268193">
+<span class="eqno">(30)<a class="headerlink" href="#equation-42fc1ab6-a0ea-46be-a8c0-d6e973268193" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    &amp;= \arg\underset{\theta \in \Theta}{\max} \frac{1}{N}\sum_{\mathbf{x} \in \mathbf{x}_{\text{train}}} \int_{\mathbf{z} \in \mathcal{Z}} \log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z}; \Theta = \theta) d\mathbf{z} \\
+\end{align}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Mathematical Notation</p>
+<p>The math notation of my content, including the ones in this post follow the conventions in Christopher M. Bishop’s Pattern Recognition and Machine Learning. In addition, I use caligraphic capitalized roman and capitalized greek symbols like <span class="math notranslate nohighlight">\(\mathcal{X}, \mathcal{Y}, \mathcal{Z}, \Omega, \Psi, \Xi, \ldots\)</span> to represent <strong>BOTH</strong> a set of values that the random variables can take as well as the argument of a function in python (e.g. <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">p(Θ=θ)</span></code>).</p>
+</div>
+<p>https://pyro.ai/examples/intro_long.html#Background:-inference,-learning-and-evaluation</p>
+<p>Objective:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ee569c6-5e68-4f9f-995e-5d3dbe29d63a">
+<span class="eqno">(31)<a class="headerlink" href="#equation-8ee569c6-5e68-4f9f-995e-5d3dbe29d63a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+    
+\end{align}\]</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id4">
+<h2>Full Bayesian Inference<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>We’re now ready to discuss how MLE is performed in probabilistic machine learning. The key difference between</p>
+<p>Specifically in <a class="reference external" href="https://pyro.ai/examples/mle_map.html">Pyro</a>, to get MLE estimates of <span class="math notranslate nohighlight">\(\theta\)</span>, simply declare <span class="math notranslate nohighlight">\(\theta\)</span> as a fixed parameter using <code class="docutils literal notranslate"><span class="pre">.param</span></code> in the <code class="docutils literal notranslate"><span class="pre">model</span></code> and have an empty <code class="docutils literal notranslate"><span class="pre">guide</span></code> (variational distribution). To get MAP estimates instead, declare <span class="math notranslate nohighlight">\(\theta\)</span> just like a regular latent random variable by <code class="docutils literal notranslate"><span class="pre">.sample</span></code> in the <code class="docutils literal notranslate"><span class="pre">model</span></code>, but in the <code class="docutils literal notranslate"><span class="pre">guide</span></code>, declare <span class="math notranslate nohighlight">\(\theta\)</span> as being drawn from a dirac delta function.</p>
+<div class="section" id="parameter-uncertainty">
+<h3>Parameter Uncertainty<a class="headerlink" href="#parameter-uncertainty" title="Permalink to this headline">¶</a></h3>
+<p>Frequentist: Uncertainty is estimated with confidence intervals</p>
+<p>Bayesian: Uncertainty is estimated with credible intervals</p>
+</div>
+<div class="section" id="prediction-intervals">
+<h3>Prediction Intervals<a class="headerlink" href="#prediction-intervals" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="empircal-bayes">
+<h2>Empircal Bayes<a class="headerlink" href="#empircal-bayes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hierarchical-bayes">
+<h3>Hierarchical Bayes<a class="headerlink" href="#hierarchical-bayes" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-ml-py"
+        },
+        kernelOptions: {
+            kernelName: "conda-env-ml-py",
+            path: "./notes/probabilistic-machine-learning"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-ml-py'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../uplift-modelling-and-contextual-bandits.html" title="previous page">Uplift Modelling and Contextual Bandits</a>
+    <a class='right-next' id="next-link" href="01-frequentist-bayesian.html" title="next page">Frequentist Vs. Bayesian Methods</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chengyi (Jeff) Chen<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>

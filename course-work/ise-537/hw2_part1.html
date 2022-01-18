@@ -104,88 +104,28 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Machine-Learning
+  Machine Learning Notes
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../machine-learning/00-intro.html">
-   Pattern Recognition and Machine Learning
+  <a class="reference internal" href="../../notes/probabilistic-machine-learning/00-objective.html">
+   Probabilistic Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
-     1. Linear Algebra [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
-     2. Probability Distributions [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
-     3. Linear Models for Regression [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
-     4. Linear Models for Classification [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
-     5. Neural Networks [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
-     6. Kernel Methods [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
-     7. Sparse Kernel Machines [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
-     8. Graphical Models [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
-     9. Mixture Models and EM [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
-     10. Approximate Inference [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
-     11. Sampling Methods [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
-     12. Continuous Latent Variables [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
-     13. Sequential Data [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
-     14. Combining Models [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/15-bandits.html">
-     15. Bandits [In Progress]
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/01-frequentist-bayesian.html">
+     Frequentist Vs. Bayesian Methods
     </a>
    </li>
   </ul>
@@ -195,32 +135,17 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Personal Notes &amp; Projects
+  Personal Projects
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/ml-ifaqs.html">
-   Infrequently Asked Questions in ML
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/probabilistic-machine-learning.html">
-   Probabilistic Machine Learning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
-   Uplift Modelling and Contextual Bandits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/projects/bayesian-contextual-bandits.html">
+  <a class="reference internal" href="../../projects/bayesian-contextual-bandits.html">
    Bayesian Contextual Bandits
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/projects/wtte-rnn-pyro.html">
+  <a class="reference internal" href="../../projects/wtte-rnn-pyro.html">
    Weibull Time To Event Recurrent Neural Net in Pyro
   </a>
  </li>
@@ -1227,8 +1152,8 @@
 <li><p>Size factor. At each month-end reconstitution date, we use the same company market cap data (column D on SP500Stocks) for simplicity. (Note: size exposure for a company should be sector neutral, i.e., the z-score of the log(mkt_cap) should be w.r.t. peer companies within the same sector.)</p></li>
 </ol>
 <p>OLS Closed Form Solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-63337bff-5032-4906-92eb-421f7153fdaf">
-<span class="eqno">(72)<a class="headerlink" href="#equation-63337bff-5032-4906-92eb-421f7153fdaf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab257a8f-1857-4f99-ac6a-a258ffba6e0a">
+<span class="eqno">(61)<a class="headerlink" href="#equation-ab257a8f-1857-4f99-ac6a-a258ffba6e0a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \hat\beta &amp;= (X^TX)^{-1}X^Ty
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -1275,8 +1200,8 @@
 <div class="section" id="step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor">
 <h3>Step 1 - Regress the Time Series of Returns of the Stock against Time Series of Factors to get Factor Exposures <span class="math notranslate nohighlight">\(\beta_{\text{factor}}\)</span><a class="headerlink" href="#step-1-regress-the-time-series-of-returns-of-the-stock-against-time-series-of-factors-to-get-factor-exposures-beta-text-factor" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math notranslate nohighlight">\(m\)</span> factors:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5b41289d-b5db-4c2c-8694-da17159e04e1">
-<span class="eqno">(73)<a class="headerlink" href="#equation-5b41289d-b5db-4c2c-8694-da17159e04e1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-76a444a5-d7fb-4568-a4e5-ca3288a6faa7">
+<span class="eqno">(62)<a class="headerlink" href="#equation-76a444a5-d7fb-4568-a4e5-ca3288a6faa7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{\text{Stock A}} &amp;= \alpha + \beta_{F_1}F_1 + \beta_{F_2}F_2 + \cdots + \beta_{F_m}F_m + \epsilon
 \end{align}\]</div>
 <div class="section" id="factor-exposures-of-each-stock-to-s-p-500-and-us-dollar">
@@ -1637,8 +1562,8 @@
 <div class="section" id="step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock">
 <h3>Step 2 - Regress Returns of all the Stock in the Portfolio &#64; time <span class="math notranslate nohighlight">\(t, t \in T\)</span> against Factor Exposures <span class="math notranslate nohighlight">\(\beta_{\text{factor}}\)</span> of each Stock<a class="headerlink" href="#step-2-regress-returns-of-all-the-stock-in-the-portfolio-time-t-t-in-t-against-factor-exposures-beta-text-factor-of-each-stock" title="Permalink to this headline">¶</a></h3>
 <p>For <span class="math notranslate nohighlight">\(t \in T\)</span> timesteps:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-76a35488-72cc-4d1a-9d1d-2a64190f5291">
-<span class="eqno">(74)<a class="headerlink" href="#equation-76a35488-72cc-4d1a-9d1d-2a64190f5291" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c9249f34-3e50-4a25-925e-c881b13f52ad">
+<span class="eqno">(63)<a class="headerlink" href="#equation-c9249f34-3e50-4a25-925e-c881b13f52ad" title="Permalink to this equation">¶</a></span>\[\begin{align}
     R_{\text{Stock }i, t} &amp;= \gamma_{t, F_0} + \gamma_{t, F_1}\hat{\beta_{F_1}} + \gamma_{t, F_2}\hat{\beta_{F_2}} + \cdots + \gamma_{t, F_m}\hat{\beta_{F_m}} + \epsilon
 \end{align}\]</div>
 <div class="cell docutils container">

@@ -104,88 +104,28 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <p class="caption collapsible-parent">
  <span class="caption-text">
-  Machine-Learning
+  Machine Learning Notes
  </span>
 </p>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notes/ml-ifaqs.html">
+   Infrequently Asked Questions in ML
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../notes/uplift-modelling-and-contextual-bandits.html">
+   Uplift Modelling and Contextual Bandits
+  </a>
+ </li>
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../machine-learning/00-intro.html">
-   Pattern Recognition and Machine Learning
+  <a class="reference internal" href="../../notes/probabilistic-machine-learning/00-objective.html">
+   Probabilistic Machine Learning
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/01-linear-algebra.html">
-     1. Linear Algebra [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/02-probability-distributions.html">
-     2. Probability Distributions [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/03-linear-models-for-regression.html">
-     3. Linear Models for Regression [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/04-linear-models-for-classification.html">
-     4. Linear Models for Classification [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/05-neural-networks.html">
-     5. Neural Networks [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/06-kernel-methods.html">
-     6. Kernel Methods [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/07-sparse-kernel-machines.html">
-     7. Sparse Kernel Machines [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/08-graphical-models.html">
-     8. Graphical Models [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/09-mixture-models-and-em.html">
-     9. Mixture Models and EM [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/10-approximate-inference.html">
-     10. Approximate Inference [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/11-sampling-methods.html">
-     11. Sampling Methods [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/12-continuous-latent-variables.html">
-     12. Continuous Latent Variables [In Progress]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/13-sequential-data.html">
-     13. Sequential Data [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/14-combining-models.html">
-     14. Combining Models [Empty]
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../machine-learning/15-bandits.html">
-     15. Bandits [In Progress]
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/01-frequentist-bayesian.html">
+     Frequentist Vs. Bayesian Methods
     </a>
    </li>
   </ul>
@@ -195,32 +135,17 @@
 </ul>
 <p class="caption collapsible-parent">
  <span class="caption-text">
-  Personal Notes &amp; Projects
+  Personal Projects
  </span>
 </p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/ml-ifaqs.html">
-   Infrequently Asked Questions in ML
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/probabilistic-machine-learning.html">
-   Probabilistic Machine Learning
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/notes/uplift-modelling-and-contextual-bandits.html">
-   Uplift Modelling and Contextual Bandits
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/projects/bayesian-contextual-bandits.html">
+  <a class="reference internal" href="../../projects/bayesian-contextual-bandits.html">
    Bayesian Contextual Bandits
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../../personal-projects/projects/wtte-rnn-pyro.html">
+  <a class="reference internal" href="../../projects/wtte-rnn-pyro.html">
    Weibull Time To Event Recurrent Neural Net in Pyro
   </a>
  </li>
@@ -3598,8 +3523,8 @@ if (IPython.notebook.kernel != null) {
 <p>Let <span class="math notranslate nohighlight">\(u(x, \gamma) = e^{-x\gamma} \)</span> and <span class="math notranslate nohighlight">\(u^{-1}(u, \gamma) = x = -\frac{1}{\gamma}\ln u\)</span> be the <span class="math notranslate nohighlight">\(u\)</span>-value function and it’s inverse.</p>
 <p>Let <span class="math notranslate nohighlight">\(N, M\)</span> be the number of prospects in deal <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> respectively.</p>
 <p>Let <span class="math notranslate nohighlight">\(p^{(A)} \in \mathbb{R}^N: \mathbb{1}^\top  p^{(A)} = 1\)</span> and <span class="math notranslate nohighlight">\(p^{(B)} \in \mathbb{R}^M: \mathbb{1}^\top  p^{(B)} = 1\)</span> be the vector of probabilities of getting different prospects <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, for deals <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> respectively:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-78be227e-79b1-474c-8445-7eddaf0783e0">
-<span class="eqno">(43)<a class="headerlink" href="#equation-78be227e-79b1-474c-8445-7eddaf0783e0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-38dfa940-9790-4b33-85a8-606099cfc3e7">
+<span class="eqno">(32)<a class="headerlink" href="#equation-38dfa940-9790-4b33-85a8-606099cfc3e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u(a, \gamma)^\top  p^{(A)} &amp;= u(b, \gamma)^\top p^{(B)} \\
     b_j &amp;= u^{-1}\left(\frac{1}{p^{(B)}_j}\left[u(a, \gamma)^\top  p^{(A)} - \sum^M_{i, i \not= j} u(b_i, \gamma)p^{(B)}_i\right], \gamma\right) \\
 \end{align}\]</div>
@@ -6435,8 +6360,8 @@ if (IPython.notebook.kernel != null) {
 <div class="section" id="large-monetary-prospects-using-an-exponential-u-curve">
 <h2>5) Large Monetary Prospects Using an Exponential U-Curve<a class="headerlink" href="#large-monetary-prospects-using-an-exponential-u-curve" title="Permalink to this headline">¶</a></h2>
 <p>In the deal below, assume <span class="math notranslate nohighlight">\(p = 0.5\)</span> and a decision maker with an exponential u-curve and a risk-aversion coefficient <span class="math notranslate nohighlight">\(\gamma = 0.001\)</span>. I.e. the equation for the u-curve is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-84d056a3-1d35-4cc4-97df-1b9807e9a8a2">
-<span class="eqno">(44)<a class="headerlink" href="#equation-84d056a3-1d35-4cc4-97df-1b9807e9a8a2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-254a2f3c-6a95-4116-8ceb-d76714b4d39d">
+<span class="eqno">(33)<a class="headerlink" href="#equation-254a2f3c-6a95-4116-8ceb-d76714b4d39d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u(x) &amp;= a + b{e}^{-\gamma x} ,b \not= 0. \\
 \end{align}\]</div>
 <p>Plot the certain equivalent of the deal vs. <span class="math notranslate nohighlight">\(X\)</span> for the range where <span class="math notranslate nohighlight">\(X=\$0\)</span> to <span class="math notranslate nohighlight">\(X=\$10,000\)</span> in increments of <span class="math notranslate nohighlight">\({\$500}\)</span>.</p>
@@ -7290,16 +7215,16 @@ if (IPython.notebook.kernel != null) {
 <a class="reference internal image-reference" href="../../_images/lab_assignment_q6.png"><img alt="../../_images/lab_assignment_q6.png" src="../../_images/lab_assignment_q6.png" style="width: 60%;" /></a>
 <p>a) Kim’s risk Odd for <span class="math notranslate nohighlight">\(\$50\)</span> are <span class="math notranslate nohighlight">\(r_{50} = 2 :1\)</span>. What is her risk tolerance?</p>
 <p>Assuming that Kim satisfies the <span class="math notranslate nohighlight">\(\Delta\)</span> property,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b0b8e2f9-131a-4664-97eb-af762237d9cd">
-<span class="eqno">(45)<a class="headerlink" href="#equation-b0b8e2f9-131a-4664-97eb-af762237d9cd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-40067e38-f7f1-4c5f-84f7-d116c5f2151e">
+<span class="eqno">(34)<a class="headerlink" href="#equation-40067e38-f7f1-4c5f-84f7-d116c5f2151e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     r_{50} &amp;= \frac{2}{1} \\
     r &amp;= {\left(\frac{2}{1}\right)}^{\frac{1}{50}} \\
     \text{Risk Tolerance } \rho &amp;= \frac{1}{\ln (r)} \\
     &amp;= \frac{50}{\ln (2)} \\
 \end{align}\]</div>
 <p>Also, we can find her risk tolerance by comparing the forms of the exponential <span class="math notranslate nohighlight">\(U\)</span>-curves:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d63ca58a-e56b-4c31-a4a3-9831605c0206">
-<span class="eqno">(46)<a class="headerlink" href="#equation-d63ca58a-e56b-4c31-a4a3-9831605c0206" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9dc75723-3877-4c88-8dc2-b9bccc79a77e">
+<span class="eqno">(35)<a class="headerlink" href="#equation-9dc75723-3877-4c88-8dc2-b9bccc79a77e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     a + br^{-x} &amp;= a + be^{-\frac{x}{\rho}} \\
     \frac{4}{3} - \frac{4}{3} {\left(\frac{1}{2}\right)}^{\frac{x}{50}} &amp;= \frac{4}{3} - \frac{4}{3}e^{-\frac{x}{\rho}} \\
     {2}^{-\frac{x}{50}} &amp;= e^{-\frac{x}{\rho}} \\
@@ -7308,8 +7233,8 @@ if (IPython.notebook.kernel != null) {
 \end{align}\]</div>
 <p>b) Build a spreadsheet to calculate the Value of Clairvoyance for each person.</p>
 <p>Assuming a person satisfies the <span class="math notranslate nohighlight">\(\Delta\)</span> property,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9cf96a7b-50af-438e-bcea-49fcf471c82c">
-<span class="eqno">(47)<a class="headerlink" href="#equation-9cf96a7b-50af-438e-bcea-49fcf471c82c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a00c60f4-c93b-4bb8-ad1d-3d1902fc298e">
+<span class="eqno">(36)<a class="headerlink" href="#equation-a00c60f4-c93b-4bb8-ad1d-3d1902fc298e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Value of Clairvoyance} &amp;= \text{Value of Free Clairvoyance} - \text{Value of No Clairvoyance} \\   
 \end{align}\]</div>
 <div class="cell docutils container">
