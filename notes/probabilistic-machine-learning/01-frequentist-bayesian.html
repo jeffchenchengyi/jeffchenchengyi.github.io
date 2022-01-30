@@ -709,8 +709,8 @@
 <div class="section" id="how-to-find-the-best-p-mathcal-x-mathcal-z-theta-theta">
 <h3>How to find the best <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span>?<a class="headerlink" href="#how-to-find-the-best-p-mathcal-x-mathcal-z-theta-theta" title="Permalink to this headline">¶</a></h3>
 <p>To learn the <span class="math notranslate nohighlight">\(p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta)\)</span>, we need to first design a <strong>measure of success</strong> – how useful our model is / how accurate are we modelling the real life true data distribution. Because we can only observe <span class="math notranslate nohighlight">\(\mathcal{X}\)</span>, let’s define a “distance” measure between our incomplete data likelihood <span class="math notranslate nohighlight">\(p(\mathcal{X} ; \Theta = \theta)\)</span> (instead of complete data likelihood because we can’t observe it) and the true data distribution <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>. The smaller the “distance” between our 2 distributions the better our model approximates the true data generating process. A common “distance” measure between probability distributions is the <a class="reference external" href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">KL Divergence</a> (“distance” because KL Divergence is asymmetric, does not satisfy triangle inequality, <span class="math notranslate nohighlight">\(D_{KL}(P \vert\vert Q) \not= D_{KL}(Q \vert\vert P)\)</span>). <span class="math notranslate nohighlight">\(D_{KL}(f(\mathcal{X}) \vert \vert p(\mathcal{X};\Theta=\theta))\)</span> measures how well <a class="reference external" href="https://stats.stackexchange.com/questions/111445/analysis-of-kullback-leibler-divergence"><span class="math notranslate nohighlight">\(p\)</span> approximates <span class="math notranslate nohighlight">\(f\)</span></a>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7189f2f9-986f-421e-ae66-9ac819b30907">
-<span class="eqno">(17)<a class="headerlink" href="#equation-7189f2f9-986f-421e-ae66-9ac819b30907" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9ebee8cc-5638-4b25-8a30-31a17221c150">
+<span class="eqno">(17)<a class="headerlink" href="#equation-9ebee8cc-5638-4b25-8a30-31a17221c150" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \theta^* 
     &amp;= \arg\underset{\theta \in \Theta}{\min} D_{KL}(f \vert \vert p) \\
     &amp;= \arg\underset{\theta \in \Theta}{\min}\int_{\mathbf{x} \in \mathcal{X}} f(\mathcal{X}=\mathbf{x}) \log \frac{f(\mathcal{X}=\mathbf{x})}{p(\mathcal{X}=\mathbf{x} ; \Theta = \theta)} d\mathbf{x} \\
@@ -734,15 +734,15 @@
 <div class="section" id="can-we-simply-find-the-theta-that-maximizes-p-mathcal-x-mathbf-x-text-train-theta-theta">
 <h3>Can we simply find the <span class="math notranslate nohighlight">\(\theta\)</span> that maximizes <span class="math notranslate nohighlight">\(p(\mathcal{X}=\mathbf{X}_{\text{train}} ; \Theta = \theta)\)</span>?<a class="headerlink" href="#can-we-simply-find-the-theta-that-maximizes-p-mathcal-x-mathbf-x-text-train-theta-theta" title="Permalink to this headline">¶</a></h3>
 <p>Unfortunately, because our model is specified with the latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>, we can’t directly maximize <span class="math notranslate nohighlight">\(p(\mathcal{X}=\mathbf{X}_{\text{train}} ; \Theta = \theta)\)</span>. We’ll have to marginalize out the latent variables first as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c90901a3-26c2-4fca-81ba-c9566188c509">
-<span class="eqno">(18)<a class="headerlink" href="#equation-c90901a3-26c2-4fca-81ba-c9566188c509" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7ae5f107-f0f2-48a8-ad76-1252801237a8">
+<span class="eqno">(18)<a class="headerlink" href="#equation-7ae5f107-f0f2-48a8-ad76-1252801237a8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X} = \mathbf{X}_{\text{train}} ; \Theta = \theta) 
     &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathbf{z} \\
     &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}} \vert \mathcal{Z} = \mathbf{z} ; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} ; \Theta = \theta) d\mathbf{z} \\
 \end{align}\]</div>
 <p>and hence, Maximum Likelihood Estimation becomes:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa197023-f34f-4b9c-bdcc-769b9c15f767">
-<span class="eqno">(19)<a class="headerlink" href="#equation-aa197023-f34f-4b9c-bdcc-769b9c15f767" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-40cc9b30-0f07-4cdd-8baf-8e5994ed6b2a">
+<span class="eqno">(19)<a class="headerlink" href="#equation-40cc9b30-0f07-4cdd-8baf-8e5994ed6b2a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \theta^* 
     &amp;= \arg\underset{\theta \in \Theta}{\max} \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}} \vert \mathcal{Z} = \mathbf{z} ; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} ; \Theta = \theta) d\mathbf{z} \\
 \end{align}\]</div>
@@ -755,16 +755,16 @@
 <div class="section" id="derivation-1-computationally-inconvienient-to-calculate-the-full-posterior-p-mathcal-theta-vert-mathcal-x-mathbf-x-text-train">
 <h3>Derivation 1: Computationally Inconvienient to calculate the full Posterior <span class="math notranslate nohighlight">\(p(\mathcal{\Theta} \vert \mathcal{X} = \mathbf{X}_{\text{train}})\)</span><a class="headerlink" href="#derivation-1-computationally-inconvienient-to-calculate-the-full-posterior-p-mathcal-theta-vert-mathcal-x-mathbf-x-text-train" title="Permalink to this headline">¶</a></h3>
 <p>Before continuing, realize that because</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1b5007d-62c9-40c6-8860-e2aff8fcb910">
-<span class="eqno">(20)<a class="headerlink" href="#equation-b1b5007d-62c9-40c6-8860-e2aff8fcb910" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-42be26d6-c941-43bd-af1c-d8cb60321175">
+<span class="eqno">(20)<a class="headerlink" href="#equation-42be26d6-c941-43bd-af1c-d8cb60321175" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta) &amp;= p(\mathcal{Z} \vert \mathcal{X}; \Theta = \theta) p(\mathcal{X} ; \Theta = \theta)
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-857e34cd-2266-4b6f-815a-b5c84357c203">
-<span class="eqno">(21)<a class="headerlink" href="#equation-857e34cd-2266-4b6f-815a-b5c84357c203" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f856fbc9-b19c-43d8-bda2-981212b0f683">
+<span class="eqno">(21)<a class="headerlink" href="#equation-f856fbc9-b19c-43d8-bda2-981212b0f683" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{Z} \vert \mathcal{X}; \Theta = \theta) &amp;= \frac{}{}
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-15784c33-5b43-444f-858b-409b0c8c994e">
-<span class="eqno">(22)<a class="headerlink" href="#equation-15784c33-5b43-444f-858b-409b0c8c994e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fba73ca7-e9c0-4885-9f6f-37189112e7a1">
+<span class="eqno">(22)<a class="headerlink" href="#equation-fba73ca7-e9c0-4885-9f6f-37189112e7a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp;= \arg\underset{\theta \in \Theta}{\max} \frac{1}{N}\sum_{\mathbf{x} \in \mathbf{x}_{\text{train}}} \int_{\mathbf{z} \in \mathcal{Z}} \log p(\mathcal{X}=\mathbf{x}, \mathcal{Z}=\mathbf{z}; \Theta = \theta) d\mathbf{z} \\
 \end{align}\]</div>
 <div class="admonition note">
@@ -774,8 +774,8 @@
 </div>
 <p>https://pyro.ai/examples/intro_long.html#Background:-inference,-learning-and-evaluation</p>
 <p>Objective:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6dae3762-4a6e-4ada-9189-859da85b1751">
-<span class="eqno">(23)<a class="headerlink" href="#equation-6dae3762-4a6e-4ada-9189-859da85b1751" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fcded3f3-8d31-45ca-9582-3790f14d997b">
+<span class="eqno">(23)<a class="headerlink" href="#equation-fcded3f3-8d31-45ca-9582-3790f14d997b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     
 \end{align}\]</div>
 </div>

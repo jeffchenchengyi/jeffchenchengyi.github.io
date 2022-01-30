@@ -654,8 +654,8 @@
 <div class="section" id="model">
 <h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
 <p>We specify a probabilistic model of the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb49bcf8-a6e9-4d28-af95-fdc46f85439d">
-<span class="eqno">(13)<a class="headerlink" href="#equation-bb49bcf8-a6e9-4d28-af95-fdc46f85439d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f2aa957e-7ce1-4735-8f6b-15d8d66cb293">
+<span class="eqno">(13)<a class="headerlink" href="#equation-f2aa957e-7ce1-4735-8f6b-15d8d66cb293" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta) \\
 \end{align}\]</div>
 <p>to learn <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> to approximate <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathcal{Z}\)</span> are a set of latent / unobserved random variables, as we make no assumptions on whether the observable dataset <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> contains all information about the system. This joint probability over both the observed data and latent random variables as a function of the parameters <span class="math notranslate nohighlight">\(\Theta\)</span> is often called the <strong>complete data <a class="reference external" href="https://en.wikipedia.org/wiki/Likelihood_function">likelihood</a></strong> and is usually factorized into conditional dependencies by representing the joint probability as a <a class="reference external" href="https://en.wikipedia.org/wiki/Graphical_model">directed graphical model</a>, e.g. a Gaussian <a class="reference external" href="https://en.wikipedia.org/wiki/Mixture_model">Mixture Model</a>:</p>
@@ -663,8 +663,8 @@
 <img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bayesian-gaussian-mixture.svg/600px-Bayesian-gaussian-mixture.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bayesian-gaussian-mixture.svg/600px-Bayesian-gaussian-mixture.svg.png" />
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Gaussian Mixture Model Directed Graphical Model</span><a class="headerlink" href="#gaussian-mixture-model" title="Permalink to this image">¶</a></p>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-c10fd2ce-570e-41db-8ea4-5c16dab65bc5">
-<span class="eqno">(14)<a class="headerlink" href="#equation-c10fd2ce-570e-41db-8ea4-5c16dab65bc5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-448177e7-cfaf-46d0-8839-fea0a77fffe7">
+<span class="eqno">(14)<a class="headerlink" href="#equation-448177e7-cfaf-46d0-8839-fea0a77fffe7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X} ; \Theta = \theta) 
     &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathcal{Z} \\
 \end{align}\]</div>
@@ -677,8 +677,8 @@
 <div class="section" id="objective-1">
 <h3>Objective 1<a class="headerlink" href="#objective-1" title="Permalink to this headline">¶</a></h3>
 <p>Draw conclusions about the posterior distribution of our latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-17ced498-d095-4b43-b1f6-4a613b863740">
-<span class="eqno">(15)<a class="headerlink" href="#equation-17ced498-d095-4b43-b1f6-4a613b863740" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc3d4fd8-d249-4e55-b5fa-3b7e6596134a">
+<span class="eqno">(15)<a class="headerlink" href="#equation-cc3d4fd8-d249-4e55-b5fa-3b7e6596134a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{Z} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta) 
     &amp;= \frac{p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z}; \Theta = \theta)}{\int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathbf{z}} \\
 \end{align}\]</div>
@@ -686,8 +686,8 @@
 <div class="section" id="objective-2">
 <h3>Objective 2<a class="headerlink" href="#objective-2" title="Permalink to this headline">¶</a></h3>
 <p>Make predictions for new data, which we can do with the posterior predictive distribution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35acff19-31b3-4063-ad09-52eb6972fdf6">
-<span class="eqno">(16)<a class="headerlink" href="#equation-35acff19-31b3-4063-ad09-52eb6972fdf6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-42295225-86f8-4fd2-b41c-959ea71275bb">
+<span class="eqno">(16)<a class="headerlink" href="#equation-42295225-86f8-4fd2-b41c-959ea71275bb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X} = \mathbf{X}_{\text{test}} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta) &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{test}} \vert \mathcal{Z} = \mathbf{z}; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta)  d\mathbf{z} \\
 \end{align}\]</div>
 <div class="toctree-wrapper compound">
