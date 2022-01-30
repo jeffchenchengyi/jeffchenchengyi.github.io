@@ -501,15 +501,15 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+  <a class="reference external" href="https://drive.google.com/file/d/1DQ7wcOU5jEdVMOMbm2xdZ8k7rF1if2yT/view?usp=sharing">
    Chengyi (Jeff) Chen's Resume
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
-   GitHub Repo
+  <a class="reference external" href="https://github.com/jeffchenchengyi/">
+   GitHub
    <i class="fas fa-external-link-alt">
    </i>
   </a>
@@ -654,8 +654,8 @@
 <div class="section" id="model">
 <h2>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h2>
 <p>We specify a probabilistic model of the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2aa957e-7ce1-4735-8f6b-15d8d66cb293">
-<span class="eqno">(13)<a class="headerlink" href="#equation-f2aa957e-7ce1-4735-8f6b-15d8d66cb293" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-261156fb-2d37-44b5-995f-0e90ba34c750">
+<span class="eqno">(13)<a class="headerlink" href="#equation-261156fb-2d37-44b5-995f-0e90ba34c750" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X}, \mathcal{Z} ; \Theta = \theta) \\
 \end{align}\]</div>
 <p>to learn <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> to approximate <span class="math notranslate nohighlight">\(f(\mathcal{X})\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{z} \in \mathcal{Z}\)</span> are a set of latent / unobserved random variables, as we make no assumptions on whether the observable dataset <span class="math notranslate nohighlight">\(\mathbf{X}_{\text{train}}\)</span> contains all information about the system. This joint probability over both the observed data and latent random variables as a function of the parameters <span class="math notranslate nohighlight">\(\Theta\)</span> is often called the <strong>complete data <a class="reference external" href="https://en.wikipedia.org/wiki/Likelihood_function">likelihood</a></strong> and is usually factorized into conditional dependencies by representing the joint probability as a <a class="reference external" href="https://en.wikipedia.org/wiki/Graphical_model">directed graphical model</a>, e.g. a Gaussian <a class="reference external" href="https://en.wikipedia.org/wiki/Mixture_model">Mixture Model</a>:</p>
@@ -663,8 +663,8 @@
 <img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bayesian-gaussian-mixture.svg/600px-Bayesian-gaussian-mixture.svg.png" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bayesian-gaussian-mixture.svg/600px-Bayesian-gaussian-mixture.svg.png" />
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Gaussian Mixture Model Directed Graphical Model</span><a class="headerlink" href="#gaussian-mixture-model" title="Permalink to this image">¶</a></p>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-448177e7-cfaf-46d0-8839-fea0a77fffe7">
-<span class="eqno">(14)<a class="headerlink" href="#equation-448177e7-cfaf-46d0-8839-fea0a77fffe7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-41484f9f-e245-49c0-ab96-0f2ba157f6f5">
+<span class="eqno">(14)<a class="headerlink" href="#equation-41484f9f-e245-49c0-ab96-0f2ba157f6f5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X} ; \Theta = \theta) 
     &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathcal{Z} \\
 \end{align}\]</div>
@@ -677,8 +677,8 @@
 <div class="section" id="objective-1">
 <h3>Objective 1<a class="headerlink" href="#objective-1" title="Permalink to this headline">¶</a></h3>
 <p>Draw conclusions about the posterior distribution of our latent variables <span class="math notranslate nohighlight">\(\mathcal{Z}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc3d4fd8-d249-4e55-b5fa-3b7e6596134a">
-<span class="eqno">(15)<a class="headerlink" href="#equation-cc3d4fd8-d249-4e55-b5fa-3b7e6596134a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a06e69ad-e811-4d29-994d-859a96099077">
+<span class="eqno">(15)<a class="headerlink" href="#equation-a06e69ad-e811-4d29-994d-859a96099077" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{Z} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta) 
     &amp;= \frac{p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z}; \Theta = \theta)}{\int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{train}}, \mathcal{Z} = \mathbf{z}; \Theta = \theta) d\mathbf{z}} \\
 \end{align}\]</div>
@@ -686,8 +686,8 @@
 <div class="section" id="objective-2">
 <h3>Objective 2<a class="headerlink" href="#objective-2" title="Permalink to this headline">¶</a></h3>
 <p>Make predictions for new data, which we can do with the posterior predictive distribution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42295225-86f8-4fd2-b41c-959ea71275bb">
-<span class="eqno">(16)<a class="headerlink" href="#equation-42295225-86f8-4fd2-b41c-959ea71275bb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ec4823c4-9ddd-4d04-b328-b24a20ffceaa">
+<span class="eqno">(16)<a class="headerlink" href="#equation-ec4823c4-9ddd-4d04-b328-b24a20ffceaa" title="Permalink to this equation">¶</a></span>\[\begin{align}
     p(\mathcal{X} = \mathbf{X}_{\text{test}} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta) &amp;= \int_{\mathbf{z} \in \mathcal{Z}} p(\mathcal{X} = \mathbf{X}_{\text{test}} \vert \mathcal{Z} = \mathbf{z}; \Theta = \theta) p(\mathcal{Z} = \mathbf{z} \vert \mathcal{X} = \mathbf{X}_{\text{train}}; \Theta = \theta)  d\mathbf{z} \\
 \end{align}\]</div>
 <div class="toctree-wrapper compound">

@@ -501,15 +501,15 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://drive.google.com/file/d/13GaYnn520MGQtO4PfYjP4W6KFqyyI10T/view?usp=sharing">
+  <a class="reference external" href="https://drive.google.com/file/d/1DQ7wcOU5jEdVMOMbm2xdZ8k7rF1if2yT/view?usp=sharing">
    Chengyi (Jeff) Chen's Resume
    <i class="fas fa-external-link-alt">
    </i>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference external" href="https://github.com/jeffchenchengyi/jeffchenchengyi.github.io">
-   GitHub Repo
+  <a class="reference external" href="https://github.com/jeffchenchengyi/">
+   GitHub
    <i class="fas fa-external-link-alt">
    </i>
   </a>
@@ -1649,8 +1649,8 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <h3>1.1. General Two-Stage Stochastic Program<a class="headerlink" href="#general-two-stage-stochastic-program" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="first-stage-stochastic-program">
 <h4>1.1.1 First Stage Stochastic Program<a class="headerlink" href="#first-stage-stochastic-program" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-40c158fe-a9cf-46bb-92d3-14ff669c6521">
-<span class="eqno">(38)<a class="headerlink" href="#equation-40c158fe-a9cf-46bb-92d3-14ff669c6521" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fcf7580c-0213-40c0-a074-226cd7f340b4">
+<span class="eqno">(38)<a class="headerlink" href="#equation-fcf7580c-0213-40c0-a074-226cd7f340b4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \min_{x\in X} &amp; \{ g(x)= f(x) + E_{\tilde{s}\sim S}[h(x, s=\tilde{s})]\}
 \end{align}\]</div>
 <p>, where <span class="math notranslate nohighlight">\(h(x, s=\tilde{s})\)</span> is the optimal value of the second-stage problem given a specific scenario <span class="math notranslate nohighlight">\(\tilde{s}\)</span>. <span class="math notranslate nohighlight">\(x \in X\)</span> is our first-stage decision variable vector, <span class="math notranslate nohighlight">\(S\)</span> is a probability distribution of the scenario variables that we’re sampling from.</p>
@@ -1658,8 +1658,8 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <div class="section" id="second-stage-stochastic-program">
 <h4>1.1.2 Second Stage Stochastic Program<a class="headerlink" href="#second-stage-stochastic-program" title="Permalink to this headline">¶</a></h4>
 <p>For a specific <span class="math notranslate nohighlight">\(\tilde{x}\)</span> and <span class="math notranslate nohighlight">\(\tilde{s}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d88234ff-7afa-4cb0-b11d-c26262efe795">
-<span class="eqno">(39)<a class="headerlink" href="#equation-d88234ff-7afa-4cb0-b11d-c26262efe795" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b6cc70d9-c95d-4ab3-9a68-08e0566499ad">
+<span class="eqno">(39)<a class="headerlink" href="#equation-b6cc70d9-c95d-4ab3-9a68-08e0566499ad" title="Permalink to this equation">¶</a></span>\[\begin{align}
     h(x=\tilde{x}, s=\tilde{s}) = \min_{y} &amp; \{ d(s, y) \,\vert\,C(s, x) +D(s, y) = \xi(s)\}  \\
 \end{align}\]</div>
 <p>, where <span class="math notranslate nohighlight">\(C, D, \xi\)</span> are functions given a specific scenario <span class="math notranslate nohighlight">\(\tilde{s}\)</span>. <span class="math notranslate nohighlight">\(y\)</span> is our second-stage decision variable vector.</p>
@@ -1671,8 +1671,8 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <p>The stochastic linear program below is just a specific instance of the general program above, with very minor changes - e.g. functions of first-stage / second-stage decision variables are no longer general functions, but rather vectors / matrices because of constraints must be linear for a linear program.</p>
 <div class="section" id="first-stage-stochastic-linear-program">
 <h4>1.2.1 First Stage Stochastic Linear Program<a class="headerlink" href="#first-stage-stochastic-linear-program" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-dd8a874c-98a1-4391-9a56-6a8d8ba72384">
-<span class="eqno">(40)<a class="headerlink" href="#equation-dd8a874c-98a1-4391-9a56-6a8d8ba72384" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8b18cd58-6eeb-4b13-9898-73309ec91157">
+<span class="eqno">(40)<a class="headerlink" href="#equation-8b18cd58-6eeb-4b13-9898-73309ec91157" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \min\limits_{x\in \mathbb{R}^n} &amp; f(x)= c^\top x + E_{\tilde{s}\sim S}[h(x, s=\tilde{s})] &amp; \\
     \text{subject to} 
     &amp; Ax = b &amp;\\
@@ -1683,8 +1683,8 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <div class="section" id="second-stage-stochastic-linear-program">
 <h4>1.2.2 Second Stage Stochastic Linear Program<a class="headerlink" href="#second-stage-stochastic-linear-program" title="Permalink to this headline">¶</a></h4>
 <p>For a specific <span class="math notranslate nohighlight">\(\tilde{x}\)</span> and <span class="math notranslate nohighlight">\(\tilde{s}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ddb08ae0-e32e-451b-9576-02e338172d44">
-<span class="eqno">(41)<a class="headerlink" href="#equation-ddb08ae0-e32e-451b-9576-02e338172d44" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a6b9ff06-2c53-4014-9a05-730cdf8192bd">
+<span class="eqno">(41)<a class="headerlink" href="#equation-a6b9ff06-2c53-4014-9a05-730cdf8192bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
     h(x=\tilde{x}, s=\tilde{s}) = \min\limits_{y\in \mathbb{R}^m}\,&amp; d(s)^T y \\
     \text{subject to }\,&amp; C(s)x + D(s)y = \xi(s) \\
     &amp;y \geq 0
@@ -1698,8 +1698,8 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <p>What happens if we can’t get / don’t want to sample from a continuous distribution for the scenarios? (What if <span class="math notranslate nohighlight">\(S\)</span> is discrete instead of continuous?). Nothing much changes other than how we calculate the expectation of the second-stage objective values.</p>
 <div class="section" id="first-stage-stochastic-linear-program-with-discretized-scenario-distribution">
 <h4>1.3.1 First Stage Stochastic Linear Program with Discretized Scenario Distribution<a class="headerlink" href="#first-stage-stochastic-linear-program-with-discretized-scenario-distribution" title="Permalink to this headline">¶</a></h4>
-<div class="amsmath math notranslate nohighlight" id="equation-bde49896-b82a-4d52-b781-1ec092a13d8b">
-<span class="eqno">(42)<a class="headerlink" href="#equation-bde49896-b82a-4d52-b781-1ec092a13d8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2fd28ef4-9855-4681-8dc1-c15dd7af09ed">
+<span class="eqno">(42)<a class="headerlink" href="#equation-2fd28ef4-9855-4681-8dc1-c15dd7af09ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \min\limits_{x\in \mathbb{R}^n}\,&amp; f(x)= c^\top x + \underbrace{\sum_{s = \tilde{s}} p(s = \tilde{s}) h(x, s = \tilde{s})}_{E_{\tilde{s}\sim S}[h(x, s=\tilde{s})]} \\
     \text{subject to }\,
     &amp; Ax = b \\
@@ -1710,8 +1710,8 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <div class="section" id="second-stage-stochastic-linear-program-with-discretized-scenario-distribution">
 <h4>1.3.2 Second Stage Stochastic Linear Program with Discretized Scenario Distribution<a class="headerlink" href="#second-stage-stochastic-linear-program-with-discretized-scenario-distribution" title="Permalink to this headline">¶</a></h4>
 <p>For a specific <span class="math notranslate nohighlight">\(\tilde{x}\)</span> and <span class="math notranslate nohighlight">\(\tilde{s}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ee1ebee-2735-4b66-8321-c352df2d92c9">
-<span class="eqno">(43)<a class="headerlink" href="#equation-9ee1ebee-2735-4b66-8321-c352df2d92c9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bf431504-6016-4bc7-b316-88f263b129f1">
+<span class="eqno">(43)<a class="headerlink" href="#equation-bf431504-6016-4bc7-b316-88f263b129f1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     h(x=\tilde{x}, s=\tilde{s}) = \min\limits_{y\in \mathbb{R}^m}\,&amp; d(s)^T y \\
     \text{subject to} &amp; \, C(s)x + D(s)y = \xi(s) \text{, where }C(s), D(s), \xi(s) \\
     &amp; y \geq 0 \\
@@ -1725,23 +1725,23 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <h2>2. Method: Stochastic Gradient Descent<a class="headerlink" href="#method-stochastic-gradient-descent" title="Permalink to this headline">¶</a></h2>
 <p>To keep things simple, we will work on using stochastic gradient descent on a stochastic linear program with s discretized scenario distribution.</p>
 <p>First, we recall the general key update formula in gradient descent (adjusting parameter <span class="math notranslate nohighlight">\(w_i\)</span> in negative direction of gradient of objective <span class="math notranslate nohighlight">\(f\)</span>):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-be11d2c9-56b5-4cc5-ac7c-b9efbf738a81">
-<span class="eqno">(44)<a class="headerlink" href="#equation-be11d2c9-56b5-4cc5-ac7c-b9efbf738a81" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e9798d9b-391c-4b27-9a9d-7a982f5af469">
+<span class="eqno">(44)<a class="headerlink" href="#equation-e9798d9b-391c-4b27-9a9d-7a982f5af469" title="Permalink to this equation">¶</a></span>\[\begin{align}
     &amp; w_i \leftarrow w_i + \alpha \frac{\partial f}{\partial w_i}\,\forall i = 0, \cdots , \text{Number of parameters} \\
 \end{align}\]</div>
 <p>Let’s recall the Lagrangian for the first stage problem :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-567e7a87-99c6-4faa-80d4-94c6dc833410">
-<span class="eqno">(45)<a class="headerlink" href="#equation-567e7a87-99c6-4faa-80d4-94c6dc833410" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc540c86-0997-40ca-ac39-f6bea98c247b">
+<span class="eqno">(45)<a class="headerlink" href="#equation-cc540c86-0997-40ca-ac39-f6bea98c247b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x) = c^\top x + E_{\tilde{s}\sim S}[h(x, s=\tilde{s})] - \mu
 \end{align}\]</div>
 <p>Assume we have solved the second stage problem, and have retrieved optimal primal variables <span class="math notranslate nohighlight">\(y^*\)</span> and dual variables <span class="math notranslate nohighlight">\(\pi^*\)</span> (equality constraints) and <span class="math notranslate nohighlight">\(\lambda^*\)</span> (inequality constraints), then recall the Lagrangian of <span class="math notranslate nohighlight">\(h(x=\tilde{x}, s=\tilde{s})\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1c454840-5d12-4d6b-bd9d-c9573715ca0c">
-<span class="eqno">(46)<a class="headerlink" href="#equation-1c454840-5d12-4d6b-bd9d-c9573715ca0c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-abae8a62-47ae-4e23-ad6d-07a02435fd04">
+<span class="eqno">(46)<a class="headerlink" href="#equation-abae8a62-47ae-4e23-ad6d-07a02435fd04" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \mathcal{L}(x) &amp;= d(s)^\top y^* - \pi^* \left(C(s)x + D(s)y^* - \xi(s) \right) - \lambda^* y^* \\
 \end{align}\]</div>
 <p>To perform gradient descent on our obejctive function <span class="math notranslate nohighlight">\(f(x)\)</span>, we need to find its gradient / subgradient w.r.t. <span class="math notranslate nohighlight">\(x\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-868285a1-70bf-445d-920f-e3f5312f0894">
-<span class="eqno">(47)<a class="headerlink" href="#equation-868285a1-70bf-445d-920f-e3f5312f0894" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d140395c-14af-42cd-9711-7af3c61c450a">
+<span class="eqno">(47)<a class="headerlink" href="#equation-d140395c-14af-42cd-9711-7af3c61c450a" title="Permalink to this equation">¶</a></span>\[\begin{align}
   f(x) &amp;= c^\top x + \sum_s p_s h_s(x) \\
   \frac{df}{dx} &amp;= c + \frac{d \left(\sum_s p_s h_s(x)\right)}{dx} \\
   &amp;= c + \sum_s p_s\frac{d\left(h_s(x)\right)}{dx} \\
@@ -1750,33 +1750,33 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
   &amp;= c - \sum_s p_s (\pi^\top_s C_s) \\
 \end{align}\]</div>
 <p>Stochastic Gradient Descent:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b434d19c-6f87-47e4-8bc0-e463f37d513a">
-<span class="eqno">(48)<a class="headerlink" href="#equation-b434d19c-6f87-47e4-8bc0-e463f37d513a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d0aad7b5-b34e-4b33-b15f-a28da300e73b">
+<span class="eqno">(48)<a class="headerlink" href="#equation-d0aad7b5-b34e-4b33-b15f-a28da300e73b" title="Permalink to this equation">¶</a></span>\[\begin{align}
   x &amp;= x + \alpha \frac{df}{dx} \\
   &amp;= x + \alpha \left( c - \sum_s p_s (\pi^\top_s C_s) \right) \\
 \end{align}\]</div>
 <p>Orthogonal Projection onto <a class="reference external" href="https://en.wikipedia.org/wiki/Convex_polytope">intersection of half-spaces (Convex Polytope)</a></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b7c0f0c1-93b3-4052-860f-ce14079b7d79">
-<span class="eqno">(49)<a class="headerlink" href="#equation-b7c0f0c1-93b3-4052-860f-ce14079b7d79" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d8a87abc-c9f0-4c92-99ad-0ecc4306c611">
+<span class="eqno">(49)<a class="headerlink" href="#equation-d8a87abc-c9f0-4c92-99ad-0ecc4306c611" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \arg \min_{x \geq 0} &amp; \frac{1}{2} {\lVert x - y \rVert}_{2}^{2} \\
     \text{subject to } &amp; Ax \leq b
 \end{align}\]</div>
 <p>Lagrangian</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29baad24-3cff-457b-b59d-a74d0c658098">
-<span class="eqno">(50)<a class="headerlink" href="#equation-29baad24-3cff-457b-b59d-a74d0c658098" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b92dc082-3332-43f2-a673-68dc7991b37f">
+<span class="eqno">(50)<a class="headerlink" href="#equation-b92dc082-3332-43f2-a673-68dc7991b37f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(x, \lambda) &amp;= \frac{1}{2} {\lVert x - y \rVert}_{2}^{2} + \lambda \left(Ax  - b \right) \\
 \end{align}\]</div>
 <p>Lagrange Dual</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1725cb76-7773-4dcd-a10f-cb3b041b67b8">
-<span class="eqno">(51)<a class="headerlink" href="#equation-1725cb76-7773-4dcd-a10f-cb3b041b67b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-448683fe-db60-4a73-a4d4-e29243227554">
+<span class="eqno">(51)<a class="headerlink" href="#equation-448683fe-db60-4a73-a4d4-e29243227554" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mathcal{L}(\lambda) 
     &amp;= \inf_{x \geq 0} \mathcal{L}(x, \lambda) \\ 
     &amp;= \inf_{x \geq 0} \frac{1}{2} {\lVert x - y \rVert}_{2}^{2} + \lambda \left(Ax  - b \right) \\
 \end{align}\]</div>
 <p>KKT Conditions</p>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4dde53a3-2f7d-477e-a668-0a85550820f4">
-<span class="eqno">(52)<a class="headerlink" href="#equation-4dde53a3-2f7d-477e-a668-0a85550820f4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6a721ce4-765e-4d88-8609-a0a5e64919b4">
+<span class="eqno">(52)<a class="headerlink" href="#equation-6a721ce4-765e-4d88-8609-a0a5e64919b4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x, \lambda) &amp;= 0 \\
     \nabla_x \frac{1}{2} {\left( x - y \right) }^\top \left( x - y \right) + \lambda \left(Ax  - b \right) &amp;= 0 \\
     \left( x - y \right) + \lambda A &amp;= 0 \\
@@ -1967,13 +1967,13 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <div class="section" id="l-shaped-bender-s-method">
 <h2>3. L-Shaped / Bender’s Method<a class="headerlink" href="#l-shaped-bender-s-method" title="Permalink to this headline">¶</a></h2>
 <p>Master Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-801fe274-05dc-4dcc-9a14-af9bbf4f5fd2">
-<span class="eqno">(53)<a class="headerlink" href="#equation-801fe274-05dc-4dcc-9a14-af9bbf4f5fd2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-633c1a26-fbe0-4fc4-889b-a7c7edf45389">
+<span class="eqno">(53)<a class="headerlink" href="#equation-633c1a26-fbe0-4fc4-889b-a7c7edf45389" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{S \geq 0}{\min} \mu &amp; \\
 \end{align}\]</div>
 <p>Sub Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b165ed8d-fb98-4b59-852f-27c24277fa10">
-<span class="eqno">(54)<a class="headerlink" href="#equation-b165ed8d-fb98-4b59-852f-27c24277fa10" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5c122083-3d0b-458f-ab62-a5ccc5cd0543">
+<span class="eqno">(54)<a class="headerlink" href="#equation-5c122083-3d0b-458f-ab62-a5ccc5cd0543" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{F}{\min} h(S=S^* = \underset{S \geq 0}{\arg\min}\,\mu, d=\tilde{d}) &amp;= \underset{F}{\min} \sum^N_{i=1} h_i F_{B_i E_i} + \sum^N_{i=1} \sum^N_{j=1} c_{ij} F_{B_i M_j} + \sum^N_i p_i F_{RM_i} \\
   \text{subject to } &amp;S_i = F_{B_i M_i} + \sum^N_{j =1 \\ i \not= 1} F_{B_i M_j} + F_{B_i E_i}\qquad i = 1, \cdots , N, \\
   &amp;F_{B_i M_i} + \sum^N_{j = 1 \\ j \not= i} F_{B_j M_i} + F_{RM_i} = {d}_i\qquad i = 1, \cdots , N, \\
@@ -1983,15 +1983,15 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
   &amp;j = 1, \cdots , N.
 \end{align}\]</div>
 <p>Sp:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25cb30d6-95c6-4d8d-89b8-defa4cd02c22">
-<span class="eqno">(55)<a class="headerlink" href="#equation-25cb30d6-95c6-4d8d-89b8-defa4cd02c22" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ce9a290c-1616-4313-a63e-6eee02c12844">
+<span class="eqno">(55)<a class="headerlink" href="#equation-ce9a290c-1616-4313-a63e-6eee02c12844" title="Permalink to this equation">¶</a></span>\[\begin{align}
   h_s(x) &amp;= \underset{y_s}{\min} d^\top y_s \\
   \text{subject to } Dy_s &amp;= \xi_s - C_s x \\
   y_s &amp;\geq 0 \\
 \end{align}\]</div>
 <p>Dual Sp:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26338c49-9e0e-4826-80d3-660ba06ac567">
-<span class="eqno">(56)<a class="headerlink" href="#equation-26338c49-9e0e-4826-80d3-660ba06ac567" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3cb7c030-17f4-49b0-b66b-df8a4dc06707">
+<span class="eqno">(56)<a class="headerlink" href="#equation-3cb7c030-17f4-49b0-b66b-df8a4dc06707" title="Permalink to this equation">¶</a></span>\[\begin{align}
   \underset{\pi_s, \lambda_s}{\max} &amp; \left[\xi_s - C_s x\right]^\top \left(\pi_s, \lambda_s\right) \\
   \text{subject to } &amp; \pi_s \text{ free} \\
   &amp; \lambda_s \geq 0 \\
@@ -2119,16 +2119,16 @@ Requirement already satisfied: qdldl in /opt/anaconda3/envs/jeff/lib/python3.7/s
 <div class="section" id="id1">
 <h4>4.1.1 First Stage Stochastic Linear Program<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p>In the first stage problem, we want to figure out what the optimal order-up-to quantity <span class="math notranslate nohighlight">\(S\)</span> is. We formulate the first stage LP as follows, minimizing the expected (stochastic demand) transshipment cost with the order-up-to quantities <span class="math notranslate nohighlight">\(S\)</span> as our primal variables:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fb2d0dd7-a23e-4c66-a924-e2f1ac03b21c">
-<span class="eqno">(57)<a class="headerlink" href="#equation-fb2d0dd7-a23e-4c66-a924-e2f1ac03b21c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4110bb3d-fcc9-4c91-b3b7-06738876fbfa">
+<span class="eqno">(57)<a class="headerlink" href="#equation-4110bb3d-fcc9-4c91-b3b7-06738876fbfa" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \underset{S \geq 0}{\min}\,&amp; \mathbb{E}_{\tilde{d} \sim D}\left[h(S, d = \tilde{d})\right] \qquad \text{, where }D\text{ is the demand distribution} \\
 \end{align}\]</div>
 </div>
 <div class="section" id="id2">
 <h4>4.1.2 Second Stage Stochastic Linear Program<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>In our second stage problem, given a specific order-up-to quantity <span class="math notranslate nohighlight">\(\tilde{S}\)</span>, and a fixed demand <span class="math notranslate nohighlight">\(\tilde{d}\)</span>, we want to solve the following constrained linear program over the primal variables <span class="math notranslate nohighlight">\(F\)</span> (flow to and from each node), minimziing the transshipment cost for the specific instance of <span class="math notranslate nohighlight">\(\tilde{S}\)</span> and <span class="math notranslate nohighlight">\(\tilde{d}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7dbecfcd-536c-4e46-9efd-576ecd8f10da">
-<span class="eqno">(58)<a class="headerlink" href="#equation-7dbecfcd-536c-4e46-9efd-576ecd8f10da" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e499579a-1f0f-47d3-8cea-5881754a6939">
+<span class="eqno">(58)<a class="headerlink" href="#equation-e499579a-1f0f-47d3-8cea-5881754a6939" title="Permalink to this equation">¶</a></span>\[\begin{align}
     h(S = \tilde{S}, d=\tilde{d}) = \underset{F}{\min} &amp;\sum^N_{i=1} h_i F_{B_i E_i} + \sum^N_{i=1} \sum^N_{j=1} c_{ij} F_{B_i M_j} + \sum^N_i p_i F_{RM_i} \\
   \text{subject to } &amp; S_i = F_{B_i M_i} + \sum^N_{j =1 \\ i \not= 1} F_{B_i M_j} + F_{B_i E_i} \,\,\,\, i = 1, \cdots , N, \\
   &amp;F_{B_i M_i} + \sum^N_{j = 1 \\ j \not= i} F_{B_j M_i} + F_{RM_i} = {d}_i \,\,\,\, i = 1, \cdots , N, \\
