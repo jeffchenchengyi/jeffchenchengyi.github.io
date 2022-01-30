@@ -128,6 +128,14 @@
      Frequentist Vs. Bayesian Methods
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/02-finding-the-posterior.html">
+     Finding the Posterior of Latent Variables
+     <span class="math notranslate nohighlight">
+      \(\mathcal{Z}\)
+     </span>
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -593,8 +601,8 @@
 <ul class="simple">
 <li><p>This is derived from Exercise 11.19 in Cottle-Thapa. Define the functions <span class="math notranslate nohighlight">\(s(t)\)</span> and <span class="math notranslate nohighlight">\(c(t)\)</span> of the real variable <span class="math notranslate nohighlight">\(t\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-33546f12-29c9-4a94-b2d3-6d33e69a74a9">
-<span class="eqno">(349)<a class="headerlink" href="#equation-33546f12-29c9-4a94-b2d3-6d33e69a74a9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-49dc7972-352c-4ddf-9e91-2ab6279d5e5a">
+<span class="eqno">(349)<a class="headerlink" href="#equation-49dc7972-352c-4ddf-9e91-2ab6279d5e5a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     s(t) = 
     \begin{cases}
         t^4 \sin\frac{1}{t} &amp;\text{ if } t \not= 0 \\
@@ -610,8 +618,8 @@
     \end{cases}
 \end{align}\]</div>
 <p>Consider the nonlinear program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8b601058-2a0e-4b7d-8513-ddec37e624e2">
-<span class="eqno">(350)<a class="headerlink" href="#equation-8b601058-2a0e-4b7d-8513-ddec37e624e2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1d5a2b2a-185a-41b0-b9d8-e7546c1f6bd0">
+<span class="eqno">(350)<a class="headerlink" href="#equation-1d5a2b2a-185a-41b0-b9d8-e7546c1f6bd0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;x_2 \\
     \text{subject to } 
     &amp;c_1(x_1, x_2) = s(x_1) − x_2 + x^2_1 \geq 0 \\
@@ -619,8 +627,8 @@
     \text{and } &amp;c_3(x_1, x_2) = 1 − x^2_1 \geq 0. \\
 \end{align}\]</div>
 <p>Write down the KKT conditions for the problem and show that they reduce to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6d6ec7c4-1f3e-4792-8f05-4799a98ea320">
-<span class="eqno">(351)<a class="headerlink" href="#equation-6d6ec7c4-1f3e-4792-8f05-4799a98ea320" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d0c5f17-9620-4f2b-aa04-9b3b0ae202dc">
+<span class="eqno">(351)<a class="headerlink" href="#equation-7d0c5f17-9620-4f2b-aa04-9b3b0ae202dc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u_1 \geq 0, u2 \geq 0,
     \,\,\,\,
     &amp;\text{ and } 
@@ -631,8 +639,8 @@
 <ul class="simple">
 <li><p>This is derived from Exercise 11.20 in Cottle-Thapa. Write down the Karush-Kuhn-Tucker conditions of the nonlinear program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-12d8ea92-5bbd-4b11-b530-bf122f6a4db5">
-<span class="eqno">(352)<a class="headerlink" href="#equation-12d8ea92-5bbd-4b11-b530-bf122f6a4db5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-14dc58cb-083c-4598-8206-5b96dae0139e">
+<span class="eqno">(352)<a class="headerlink" href="#equation-14dc58cb-083c-4598-8206-5b96dae0139e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;40 x_1 x_2 + 20 x_2 x_3 \\
     \text{subject to } 
     &amp; -\frac{1}{x_1\sqrt{x_2}} - \frac{3}{x_2x^{2/3}_3} + 5 \geq 0 \\
@@ -643,8 +651,8 @@
 <li><p>Do parts (a), (b), and (c) in Exercise 11.21 in Cottle-Thapa.</p></li>
 <li><p>Consider the nonlinear program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-87fb77ec-8cb9-48bb-9fbb-3dcf7c2e4ca5">
-<span class="eqno">(353)<a class="headerlink" href="#equation-87fb77ec-8cb9-48bb-9fbb-3dcf7c2e4ca5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7c0bd469-968a-4e6c-95ee-9d42eea14be8">
+<span class="eqno">(353)<a class="headerlink" href="#equation-7c0bd469-968a-4e6c-95ee-9d42eea14be8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;-x_1 - x_2 - x_1x_2 + \frac{1}{2}x^2_1 + x^2_2 \\
     \text{subject to } 
     &amp; x_1 + x^2_2 \leq 3 \\
@@ -657,8 +665,8 @@
 <li><p>Consider a simple set in the plane consisting of points <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span> satisfying <span class="math notranslate nohighlight">\(ab = 0\)</span>. Show that the linear independence constraint qualification cannot hold at any feasible point in the set.</p></li>
 <li><p>Apply the Karush-Kuhn-Tucker conditions to locate the unique of the following convex program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-d855d49d-edde-4710-8901-1be6c621ffbc">
-<span class="eqno">(354)<a class="headerlink" href="#equation-d855d49d-edde-4710-8901-1be6c621ffbc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5817a519-15e7-4014-8891-aff29904b154">
+<span class="eqno">(354)<a class="headerlink" href="#equation-5817a519-15e7-4014-8891-aff29904b154" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;x^2_1 + x^2_2 - 4x_1 - 4x_2 \\
     \text{subject to } 
     &amp; x^2_1 - x_2 \leq 0 \text{ and } x_1 + x_2 \leq 2. \\
@@ -667,8 +675,8 @@
 <ul class="simple">
 <li><p>Consider the following nonlinear program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-a633c1d4-bac2-4bee-beb8-2e3d749a63cc">
-<span class="eqno">(355)<a class="headerlink" href="#equation-a633c1d4-bac2-4bee-beb8-2e3d749a63cc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4bcc0c95-aa7c-41ec-b3fd-fc8b4407b639">
+<span class="eqno">(355)<a class="headerlink" href="#equation-4bcc0c95-aa7c-41ec-b3fd-fc8b4407b639" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;e^{x^2_1 - x_2} \\
     \text{subject to } 
     &amp; e^{x_1} - e^{x_2} \leq 20 \text{ and } x_1 \geq 0. \\
@@ -718,8 +726,8 @@
 <ul class="simple">
 <li><p>This is derived from Exercise 11.19 in Cottle-Thapa. Define the functions <span class="math notranslate nohighlight">\(s(t)\)</span> and <span class="math notranslate nohighlight">\(c(t)\)</span> of the real variable <span class="math notranslate nohighlight">\(t\)</span>:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-c220676d-ef07-42bc-a448-af2edf5d14e8">
-<span class="eqno">(356)<a class="headerlink" href="#equation-c220676d-ef07-42bc-a448-af2edf5d14e8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-978ad732-3db9-4283-8a88-419bcec204c4">
+<span class="eqno">(356)<a class="headerlink" href="#equation-978ad732-3db9-4283-8a88-419bcec204c4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     s(t) = 
     \begin{cases}
         t^4 \sin\frac{1}{t} &amp;\text{ if } t \not= 0 \\
@@ -735,8 +743,8 @@
     \end{cases}
 \end{align}\]</div>
 <p>Consider the nonlinear program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e835617-6e65-42d5-912e-4efd33d3c02b">
-<span class="eqno">(357)<a class="headerlink" href="#equation-7e835617-6e65-42d5-912e-4efd33d3c02b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-05966bee-4e07-4e52-bcd5-c4df95858aa4">
+<span class="eqno">(357)<a class="headerlink" href="#equation-05966bee-4e07-4e52-bcd5-c4df95858aa4" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;x_2 \\
     \text{subject to } 
     &amp;c_1(x_1, x_2) = s(x_1) − x_2 + x^2_1 \geq 0 \\
@@ -744,8 +752,8 @@
     \text{and } &amp;c_3(x_1, x_2) = 1 − x^2_1 \geq 0. \\
 \end{align}\]</div>
 <p>Write down the KKT conditions for the problem and show that they reduce to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b77759ff-cd70-453a-8417-7585241e0008">
-<span class="eqno">(358)<a class="headerlink" href="#equation-b77759ff-cd70-453a-8417-7585241e0008" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c87f5d7-8fde-4833-afe2-e667802e4e3e">
+<span class="eqno">(358)<a class="headerlink" href="#equation-8c87f5d7-8fde-4833-afe2-e667802e4e3e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u_1 \geq 0, u_2 \geq 0,
     \,\,\,\,
     &amp;\text{ and } 
@@ -753,8 +761,8 @@
     1 + u_1 − u_2 = 0.
 \end{align}\]</div>
 <p>From a solution of the latter simplified conditions, construct a solution of the given problem?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f2bfc62-7b22-4092-b002-53ee2cb4154a">
-<span class="eqno">(359)<a class="headerlink" href="#equation-7f2bfc62-7b22-4092-b002-53ee2cb4154a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7d407255-d777-4d3c-94aa-24e676a2cf74">
+<span class="eqno">(359)<a class="headerlink" href="#equation-7d407255-d777-4d3c-94aa-24e676a2cf74" title="Permalink to this equation">¶</a></span>\[\begin{align}
     s^\prime(t) = 
     \begin{cases}
         4t^3 \sin\frac{1}{t} - t^2 \cos\frac{1}{t} &amp;\text{ if } t \not= 0 \\
@@ -773,8 +781,8 @@
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-a7a01de0-6a31-4032-b6da-11925a0d9045">
-<span class="eqno">(360)<a class="headerlink" href="#equation-a7a01de0-6a31-4032-b6da-11925a0d9045" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8da7a855-b725-4196-a5a0-9be6c363d135">
+<span class="eqno">(360)<a class="headerlink" href="#equation-8da7a855-b725-4196-a5a0-9be6c363d135" title="Permalink to this equation">¶</a></span>\[\begin{align}
     s(x^*_1) − x^*_2 + {(x^*_1)}^2 &amp;\geq 0 \\
     x^*_2 − {x^*_1}^2 − c(x^*_1) &amp;\geq 0 \\
     1 − {x^*_1}^2 &amp;\geq 0 \\
@@ -782,8 +790,8 @@
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-2c45caf9-f983-414e-9499-55488d114c64">
-<span class="eqno">(361)<a class="headerlink" href="#equation-2c45caf9-f983-414e-9499-55488d114c64" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c285d6be-013f-4f65-be26-14b7e0a8c61a">
+<span class="eqno">(361)<a class="headerlink" href="#equation-c285d6be-013f-4f65-be26-14b7e0a8c61a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0 \\
     \mu^*_3 &amp;\geq 0 \\
@@ -791,8 +799,8 @@
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-15f23d0f-b01e-49d5-b2ca-0acbb00f0935">
-<span class="eqno">(362)<a class="headerlink" href="#equation-15f23d0f-b01e-49d5-b2ca-0acbb00f0935" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-04e9132d-9819-4c6d-8eea-ae77b7ba705d">
+<span class="eqno">(362)<a class="headerlink" href="#equation-04e9132d-9819-4c6d-8eea-ae77b7ba705d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(s(x^*_1) − x^*_2 + {(x^*_1)}^2) &amp;= 0 \\
     \mu^*_2(x^*_2 − {x^*_1}^2 − c(x^*_1)) &amp;= 0 \\
     \mu^*_3(1 − {x^*_1}^2) &amp;= 0 \\
@@ -800,8 +808,8 @@
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-42ce226c-4229-44ad-940a-44911bb01e56">
-<span class="eqno">(363)<a class="headerlink" href="#equation-42ce226c-4229-44ad-940a-44911bb01e56" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ac0bc346-fd60-485e-b4ad-3288dff2ebc1">
+<span class="eqno">(363)<a class="headerlink" href="#equation-ac0bc346-fd60-485e-b4ad-3288dff2ebc1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*_1, x^*_2, \mu^*_1, \mu^*_2, \mu^*_3) &amp;= 0 \\
     \nabla_x \Big[x_2 - \mu^*_1(s(x^*_1) − x^*_2 + {(x^*_1)}^2) - \mu^*_2(x^*_2 − {x^*_1}^2 − c(x^*_1)) - \mu^*_3(1 − {x^*_1}^2) \Big] &amp;= 0 \\
     \begin{bmatrix}
@@ -811,8 +819,8 @@
     &amp;= 0 \\
 \end{align}\]</div>
 <p>At Optimal solution <span class="math notranslate nohighlight">\(x^*_1 = 0, x^*_2 = 0\)</span>, our KKT conditions reduce to :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00222170-8998-4abb-8376-e6f770aec0b7">
-<span class="eqno">(364)<a class="headerlink" href="#equation-00222170-8998-4abb-8376-e6f770aec0b7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8f237b90-1bf4-46ca-a790-90b8dfb5109a">
+<span class="eqno">(364)<a class="headerlink" href="#equation-8f237b90-1bf4-46ca-a790-90b8dfb5109a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     u_1 \geq 0, u_2 \geq 0,
     \,\,\,\,
     &amp;\text{ and } 
@@ -824,8 +832,8 @@
 <ul class="simple">
 <li><p>This is derived from Exercise 11.20 in Cottle-Thapa. Write down the Karush-Kuhn-Tucker conditions of the nonlinear program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-01cf280f-3bf6-418c-9ff4-743a8d8704ba">
-<span class="eqno">(365)<a class="headerlink" href="#equation-01cf280f-3bf6-418c-9ff4-743a8d8704ba" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c80b1502-184d-4b3e-88d2-8e6bb6535963">
+<span class="eqno">(365)<a class="headerlink" href="#equation-c80b1502-184d-4b3e-88d2-8e6bb6535963" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;40 x_1 x_2 + 20 x_2 x_3 \\
     \text{subject to } 
     &amp; -\frac{1}{x_1\sqrt{x_2}} - \frac{3}{x_2x^{2/3}_3} + 5 \geq 0 \\
@@ -836,8 +844,8 @@
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-fa6b0e4b-798f-4999-9b22-c40fe6c20b81">
-<span class="eqno">(366)<a class="headerlink" href="#equation-fa6b0e4b-798f-4999-9b22-c40fe6c20b81" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4b4922a6-8951-4e28-a2f1-2b8e766a4869">
+<span class="eqno">(366)<a class="headerlink" href="#equation-4b4922a6-8951-4e28-a2f1-2b8e766a4869" title="Permalink to this equation">¶</a></span>\[\begin{align}
     -\frac{1}{x^*_1\sqrt{x^*_2}} - \frac{3}{x^*_2{x^*_3}^{2/3}} + 5 &amp;\geq 0 \\
     x^*_1 - 1 &amp;\geq 0 \\
     x^*_2 - 1 &amp;\geq 0 \\
@@ -846,8 +854,8 @@
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-c29b5a78-884d-4445-80d0-35d39456b0e6">
-<span class="eqno">(367)<a class="headerlink" href="#equation-c29b5a78-884d-4445-80d0-35d39456b0e6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-de136c86-1b60-4073-ace0-b5e7b7716f4f">
+<span class="eqno">(367)<a class="headerlink" href="#equation-de136c86-1b60-4073-ace0-b5e7b7716f4f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0 \\
     \mu^*_3 &amp;\geq 0 \\
@@ -856,8 +864,8 @@
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-a7403527-5266-4c4d-835f-2b2c511f03f3">
-<span class="eqno">(368)<a class="headerlink" href="#equation-a7403527-5266-4c4d-835f-2b2c511f03f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-46960dd2-2e3f-4364-a006-44ad5a8f42ee">
+<span class="eqno">(368)<a class="headerlink" href="#equation-46960dd2-2e3f-4364-a006-44ad5a8f42ee" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(-{x^*_1}^{-1} {x^*_2}^{-0.5} -3{x^*_2}^{-1}{x^*_3}^{-2/3} + 5) &amp;= 0 \\
     \mu^*_2(x^*_1 - 1) &amp;= 0 \\
     \mu^*_3(x^*_2 - 1) &amp;= 0 \\
@@ -866,8 +874,8 @@
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-12f40b9d-575d-4b14-90a0-d948abf4a23c">
-<span class="eqno">(369)<a class="headerlink" href="#equation-12f40b9d-575d-4b14-90a0-d948abf4a23c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-510e3047-fc72-4ba0-8d0b-636171a4ecd9">
+<span class="eqno">(369)<a class="headerlink" href="#equation-510e3047-fc72-4ba0-8d0b-636171a4ecd9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_{x} \mathcal{L}(x^*_1, x^*_2, x^*_3, \mu^*_1, \mu^*_2, \mu^*_3, \mu^*_4)
     &amp;= 0 \\
     \nabla_{x} 40 x^*_1 x^*_2 + 20 x^*_2 x^*_3
@@ -888,16 +896,16 @@
     \mu^*_4 &amp;= 20x^*_2 -2\mu^*_1 {x^*_2}^{-1} {x^*_3}^{-5/3} \\
 \end{align}\]</div>
 <p>Substituting Stationarity conditions into complementary slackness:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-75b38ee4-ea62-4cda-9053-e393a4af801c">
-<span class="eqno">(370)<a class="headerlink" href="#equation-75b38ee4-ea62-4cda-9053-e393a4af801c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7a4e4a07-263e-45bf-8455-7ed003c86946">
+<span class="eqno">(370)<a class="headerlink" href="#equation-7a4e4a07-263e-45bf-8455-7ed003c86946" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(-{x^*_1}^{-1} {x^*_2}^{-0.5} -3{x^*_2}^{-1}{x^*_3}^{-2/3} + 5) &amp;= 0 \\
     (40x^*_2 - \mu^*_1{x^*_1}^{-2}{x^*_2}^{-0.5})(x^*_1 - 1) &amp;= 0 \\
     (40x^*_1 + 20x^*_3 -0.5\mu^*_1{x^*_1}^{-1}{x^*_2}^{-1.5} -3{x^*_2}^{-2}{x^*_3}^{-2/3})(x^*_2 - 1) &amp;= 0 \\
     (20x^*_2 -2\mu^*_1 {x^*_2}^{-1} {x^*_3}^{-5/3})(x^*_3 - 1) &amp;= 0 \\
 \end{align}\]</div>
 <p>Case I: <span class="math notranslate nohighlight">\(\mu^*_1 = 0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f43e225e-96b1-48c3-8206-8db82ec15953">
-<span class="eqno">(371)<a class="headerlink" href="#equation-f43e225e-96b1-48c3-8206-8db82ec15953" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9f9de568-3bf1-40df-8ab7-7a8373a9c984">
+<span class="eqno">(371)<a class="headerlink" href="#equation-9f9de568-3bf1-40df-8ab7-7a8373a9c984" title="Permalink to this equation">¶</a></span>\[\begin{align}
     40x^*_2(x^*_1 - 1) &amp;= 0 \\
     (40x^*_1 + 20x^*_3 - 3{x^*_2}^{-2}{x^*_3}^{-2/3})(x^*_2 - 1) &amp;= 0 \\
     20x^*_2(x^*_3 - 1) &amp;= 0 \\
@@ -908,8 +916,8 @@
 <li><p>Do parts (a), (b), and (c) in Exercise 11.21 in Cottle-Thapa.</p></li>
 </ul>
 <p>Consider the optimization problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bfc2be9d-e0c5-4578-a4a7-23afb137412e">
-<span class="eqno">(372)<a class="headerlink" href="#equation-bfc2be9d-e0c5-4578-a4a7-23afb137412e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8590f32e-d6a2-4a40-8a34-56d9113ca5cf">
+<span class="eqno">(372)<a class="headerlink" href="#equation-8590f32e-d6a2-4a40-8a34-56d9113ca5cf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{maximize } &amp;x_1 \\
     \text{subject to } 
     &amp; (x_1 - 1)^3 + x_2 \leq 0 \\
@@ -918,8 +926,8 @@
 \end{align}\]</div>
 <p>(a) Find an optimal solution for this problem. Is it unique?</p>
 <p>Convert to minimization problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-104b4600-8695-4614-9a10-3500b094ffb7">
-<span class="eqno">(373)<a class="headerlink" href="#equation-104b4600-8695-4614-9a10-3500b094ffb7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d3b48c78-d9ef-4369-bd42-76d8520d69df">
+<span class="eqno">(373)<a class="headerlink" href="#equation-d3b48c78-d9ef-4369-bd42-76d8520d69df" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;-x_1 \\
     \text{subject to } 
     &amp; (x_1 - 1)^3 + x_2 \leq 0 \\
@@ -930,8 +938,8 @@
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-54848e72-db83-4c46-9d62-5dc80d133105">
-<span class="eqno">(374)<a class="headerlink" href="#equation-54848e72-db83-4c46-9d62-5dc80d133105" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-62f07cc2-33b3-46a4-b508-c45ff41a8382">
+<span class="eqno">(374)<a class="headerlink" href="#equation-62f07cc2-33b3-46a4-b508-c45ff41a8382" title="Permalink to this equation">¶</a></span>\[\begin{align}
     (x^*_1 - 1)^3 + x^*_2 &amp;\leq 0 \\
     x^*_1 &amp;\leq 0 \\
     x^*_2 &amp;\leq 0 \\
@@ -939,8 +947,8 @@
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-008538d2-dc37-42f1-9f95-c0b5b5ada80b">
-<span class="eqno">(375)<a class="headerlink" href="#equation-008538d2-dc37-42f1-9f95-c0b5b5ada80b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-facec9d4-ce1a-455b-859d-b24c71a5a8e9">
+<span class="eqno">(375)<a class="headerlink" href="#equation-facec9d4-ce1a-455b-859d-b24c71a5a8e9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0 \\
     \mu^*_3 &amp;\geq 0 \\
@@ -948,8 +956,8 @@
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-bede2b90-c70e-439b-b54a-5fc8529574b6">
-<span class="eqno">(376)<a class="headerlink" href="#equation-bede2b90-c70e-439b-b54a-5fc8529574b6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-718f600a-b55f-4c9f-a292-8dfaeb5e265a">
+<span class="eqno">(376)<a class="headerlink" href="#equation-718f600a-b55f-4c9f-a292-8dfaeb5e265a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1((x^*_1 - 1)^3 + x^*_2) &amp;= 0 \\
     \mu^*_2(x^*_1) &amp;= 0 \\
     \mu^*_3(x^*_2) &amp;= 0 \\
@@ -957,8 +965,8 @@
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-8f3a8ea6-a383-4771-8279-f4f01812fc6b">
-<span class="eqno">(377)<a class="headerlink" href="#equation-8f3a8ea6-a383-4771-8279-f4f01812fc6b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eeaa4867-ce47-428a-92b1-895b89e1f52e">
+<span class="eqno">(377)<a class="headerlink" href="#equation-eeaa4867-ce47-428a-92b1-895b89e1f52e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*_1, x^*_2, \mu^*_1, \mu^*_2, \mu^*_3) &amp;= 0 \\
     \nabla_x \Big[ -x^*_1 + \mu^*_1((x^*_1 - 1)^3 + x^*_2) + \mu^*_2(x^*_1) + \mu^*_3(x^*_2) \Big] &amp;= 0 \\
     \begin{bmatrix}
@@ -968,8 +976,8 @@
     &amp;= 0 \\
 \end{align}\]</div>
 <p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = 1 - 3\mu^*_1(x^*_1 - 1)^2\)</span> and <span class="math notranslate nohighlight">\(\mu^*_3 = \mu^*_1\)</span> into the complementary slackness conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-058c1787-6720-41a6-886d-c0ad633be690">
-<span class="eqno">(378)<a class="headerlink" href="#equation-058c1787-6720-41a6-886d-c0ad633be690" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-004df20d-002e-4c56-a380-140db543464f">
+<span class="eqno">(378)<a class="headerlink" href="#equation-004df20d-002e-4c56-a380-140db543464f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1((x^*_1 - 1)^3 + x^*_2) &amp;= 0 \\
     (1 - 3\mu^*_1(x^*_1 - 1)^2)(x^*_1) &amp;= 0 \\
     \mu^*_1(x^*_2) &amp;= 0 \\
@@ -978,15 +986,15 @@
     (1 - 3\mu^*_1(x^*_1 - 1)^2)(x^*_1) &amp;= 0 \\
 \end{align}\]</div>
 <p>Case I: <span class="math notranslate nohighlight">\(x^*_1 = 1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2d8cba7-8d93-4e04-b570-67d5e3198ef5">
-<span class="eqno">(379)<a class="headerlink" href="#equation-b2d8cba7-8d93-4e04-b570-67d5e3198ef5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3045a247-ea74-481c-bd7f-0279fd3d08cc">
+<span class="eqno">(379)<a class="headerlink" href="#equation-3045a247-ea74-481c-bd7f-0279fd3d08cc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     (1 - 3\mu^*_1(1 - 1)^2)(1) &amp;= 0 \\
     1 &amp;= 0 \\
 \end{align}\]</div>
 <p>Hence, this case is not possible and <span class="math notranslate nohighlight">\(x^*_1 \not= 1\)</span></p>
 <p>Case II: <span class="math notranslate nohighlight">\(\mu^*_1 = 0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-87bad34c-16f4-4723-a34a-da9c244c8922">
-<span class="eqno">(380)<a class="headerlink" href="#equation-87bad34c-16f4-4723-a34a-da9c244c8922" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab14ed97-8cad-48b9-8d3d-f9c492613736">
+<span class="eqno">(380)<a class="headerlink" href="#equation-ab14ed97-8cad-48b9-8d3d-f9c492613736" title="Permalink to this equation">¶</a></span>\[\begin{align}
     (1 - 3(0)(x^*_1 - 1)^2)(x^*_1) &amp;= 0 \\
     \therefore x^*_1 &amp;= 0 \\
     x^*_2 &amp;= 0 \because \mu^*_1((x^*_1 - 1)^3 + x^*_2) = 0 \\
@@ -998,8 +1006,8 @@
 <p><span class="math notranslate nohighlight">\(\Big\{x=\begin{bmatrix}x_1 \\x_2 \end{bmatrix}: \begin{bmatrix}x_1 \\x_2\end{bmatrix} \leq 0 \Big\}\)</span></p>
 <p>(c) Is the Slater condition satisfied in this case?</p>
 <p>Concavity of Constraints for Maximization problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-363788ae-f761-4a4b-9ddb-07d2dbc2a9ea">
-<span class="eqno">(381)<a class="headerlink" href="#equation-363788ae-f761-4a4b-9ddb-07d2dbc2a9ea" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-00bed2a8-48d3-40df-a9cc-d671b805d902">
+<span class="eqno">(381)<a class="headerlink" href="#equation-00bed2a8-48d3-40df-a9cc-d671b805d902" title="Permalink to this equation">¶</a></span>\[\begin{align}
     (x_1 - 1)^3 + x_2 &amp;\leq 0 \text{ is concave }\because \begin{bmatrix} 6(x_1 - 1) &amp; 0 \\ 0 &amp; 0 \end{bmatrix} \preccurlyeq 0 \text{ when } x_1 \leq 0 \\
     x_1 &amp;\leq 0 \text{ is affine }\\
     x_2 &amp;\leq 0 \text{ is affine }\\
@@ -1009,8 +1017,8 @@
 <ul class="simple">
 <li><p>Consider the nonlinear program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-55628861-efa7-4033-8bdf-09bf72f41ff4">
-<span class="eqno">(382)<a class="headerlink" href="#equation-55628861-efa7-4033-8bdf-09bf72f41ff4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e9a523f9-6742-425f-b1c5-5ac32a354af6">
+<span class="eqno">(382)<a class="headerlink" href="#equation-e9a523f9-6742-425f-b1c5-5ac32a354af6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;-x_1 - x_2 - x_1x_2 + \frac{1}{2}x^2_1 + x^2_2 \\
     \text{subject to } 
     &amp; x_1 + x^2_2 \leq 3 \\
@@ -1024,8 +1032,8 @@
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-9036f0bd-c493-4b2a-9c40-59794c7b65e4">
-<span class="eqno">(383)<a class="headerlink" href="#equation-9036f0bd-c493-4b2a-9c40-59794c7b65e4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ac8d0ef-1e9a-4bb7-bb9f-d61205281be0">
+<span class="eqno">(383)<a class="headerlink" href="#equation-4ac8d0ef-1e9a-4bb7-bb9f-d61205281be0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^*_1 + {x^*_2}^2 - 3 &amp;\leq 0 \\
     {x^*_1}^2 - x^*_2 - 3 &amp;= 0 \\
     -x^*_1 &amp;\leq 0 \\
@@ -1034,8 +1042,8 @@
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-7cd5a51d-2842-4c8f-b12d-2298f1693244">
-<span class="eqno">(384)<a class="headerlink" href="#equation-7cd5a51d-2842-4c8f-b12d-2298f1693244" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-89ccefb8-2c92-475d-92ce-055d9c1e82a0">
+<span class="eqno">(384)<a class="headerlink" href="#equation-89ccefb8-2c92-475d-92ce-055d9c1e82a0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \lambda^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0 \\
@@ -1044,8 +1052,8 @@
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f59ce4af-518b-4a91-adc5-da682313266b">
-<span class="eqno">(385)<a class="headerlink" href="#equation-f59ce4af-518b-4a91-adc5-da682313266b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b4bd3bdb-0a4f-4020-b90d-cbf04ba193bc">
+<span class="eqno">(385)<a class="headerlink" href="#equation-b4bd3bdb-0a4f-4020-b90d-cbf04ba193bc" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 (x^*_1 + {x^*_2}^2 - 3) &amp;= 0 \\
     \mu^*_2 (-x^*_1) &amp;= 0 \\
     \mu^*_3 (-x^*_2) &amp;= 0 \\
@@ -1053,8 +1061,8 @@
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-e32641cd-583e-4e67-8ec4-d5488107b626">
-<span class="eqno">(386)<a class="headerlink" href="#equation-e32641cd-583e-4e67-8ec4-d5488107b626" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-83cb564a-9325-43ca-9e07-bdf42968467b">
+<span class="eqno">(386)<a class="headerlink" href="#equation-83cb564a-9325-43ca-9e07-bdf42968467b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*_1, x^*_2, \mu^*_1, \lambda^*_1, \mu^*_2, \mu^*_3) &amp;= 0 \\
     \nabla_x \Big[ -x^*_1 - x^*_2 - x^*_1x^*_2 + \frac{1}{2}{x^*_1}^2 + {x^*_2}^2 + \mu^*_1 (x^*_1 + {x^*_2}^2 - 3) + \lambda^*_1 ({x^*_1}^2 - x^*_2 - 3) + \mu^*_2 (-x^*_1) + \mu^*_3 (-x^*_2) \Big] &amp;= 0 \\
     \begin{bmatrix}
@@ -1064,8 +1072,8 @@
     &amp;= 0 \\
 \end{align}\]</div>
 <p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = -1 -x^*_2 + x^*_1 + \mu^*_1 + 2\lambda^*_1 x^*_1\)</span> and <span class="math notranslate nohighlight">\(\mu^*_3 = -1 -x^*_1 + 2x^*_2 + 2\mu^*_1x^*_2 - \lambda^*_1\)</span> into the complementary slackness conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bb873758-c3bb-4e31-9a2f-b7d535cf0c06">
-<span class="eqno">(387)<a class="headerlink" href="#equation-bb873758-c3bb-4e31-9a2f-b7d535cf0c06" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-191d8db0-5174-4dd6-abb3-9b1839ee9314">
+<span class="eqno">(387)<a class="headerlink" href="#equation-191d8db0-5174-4dd6-abb3-9b1839ee9314" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 (x^*_1 + {x^*_2}^2 - 3) &amp;= 0 \\
     (-1 -x^*_2 + x^*_1 + \mu^*_1 + 2\lambda^*_1 x^*_1) (-x^*_1) &amp;= 0 \\
     (-1 -x^*_1 + 2x^*_2 + 2\mu^*_1x^*_2 - \lambda^*_1) (-x^*_2) &amp;= 0 \\
@@ -1078,23 +1086,23 @@
 <li><p>Show that the linear independence constraint qualification holds at the point <span class="math notranslate nohighlight">\((2, 1)\)</span>. Does this point satisfy the KKT conditions?</p></li>
 </ul>
 <p>Gradients of Constraints:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eb8d931a-e978-45d5-a26c-57dd259bd52a">
-<span class="eqno">(388)<a class="headerlink" href="#equation-eb8d931a-e978-45d5-a26c-57dd259bd52a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-925d1ddc-4ab3-4d97-a3dc-a9674a4532ac">
+<span class="eqno">(388)<a class="headerlink" href="#equation-925d1ddc-4ab3-4d97-a3dc-a9674a4532ac" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x c_1(x_1, x_2) &amp;= \nabla_x (x_1 + {x_2}^2 - 3) = \begin{bmatrix} 1 \\ 2x_2 \end{bmatrix} \\
     \nabla_x c_2(x_1, x_2) &amp;= \nabla_x ({x_1}^2 - x_2 - 3) = \begin{bmatrix} 2x_1 \\ -1 \end{bmatrix} \\
     \nabla_x c_3(x_1, x_2) &amp;= \nabla_x (-x_1) = \begin{bmatrix} -1 \\ 0 \end{bmatrix} \\
     \nabla_x c_4(x_1, x_2) &amp;= \nabla_x (-x_2) = \begin{bmatrix} 0 \\ -1 \end{bmatrix} \\
 \end{align}\]</div>
 <p>At <span class="math notranslate nohighlight">\(x_1 = 2\)</span> and <span class="math notranslate nohighlight">\(x_2 = 1\)</span>, the following are the gradients of the active constraints:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ee43ccf-4c33-4c8c-af7f-39b262b2b26e">
-<span class="eqno">(389)<a class="headerlink" href="#equation-3ee43ccf-4c33-4c8c-af7f-39b262b2b26e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0cb7988c-93af-417e-ae65-05f99f453bda">
+<span class="eqno">(389)<a class="headerlink" href="#equation-0cb7988c-93af-417e-ae65-05f99f453bda" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x c_1(x_1, x_2) &amp;= \begin{bmatrix} 1 \\ 2 \end{bmatrix} \\
     \nabla_x c_2(x_1, x_2) &amp;= \begin{bmatrix} 4 \\ -1 \end{bmatrix} \\
 \end{align}\]</div>
 <p>We see that the active constraints are linearly indepdendent, hence, Linear Independence Constraint Qualifications (LICQ) holds. <span class="math notranslate nohighlight">\(\blacksquare\)</span></p>
 <p>Plugging in <span class="math notranslate nohighlight">\(x_1 = 2\)</span> and <span class="math notranslate nohighlight">\(x_2 = 1\)</span> into the KKT Stationarity conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-96334a40-ae84-4255-908a-3b4f6a1bf2c5">
-<span class="eqno">(390)<a class="headerlink" href="#equation-96334a40-ae84-4255-908a-3b4f6a1bf2c5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-db016400-a7c0-41e3-ad4b-140619fce78d">
+<span class="eqno">(390)<a class="headerlink" href="#equation-db016400-a7c0-41e3-ad4b-140619fce78d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         \mu^*_2 \\
         \mu^*_3 \\
@@ -1106,8 +1114,8 @@
     \end{bmatrix} \\
 \end{align}\]</div>
 <p>Substituting into the Complementary slackness conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-51ac5f27-a293-4540-9a30-f2c12c224216">
-<span class="eqno">(391)<a class="headerlink" href="#equation-51ac5f27-a293-4540-9a30-f2c12c224216" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4cf502e5-7404-4332-9b54-a5810471ad6f">
+<span class="eqno">(391)<a class="headerlink" href="#equation-4cf502e5-7404-4332-9b54-a5810471ad6f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     (\mu^*_1 + 4\lambda^*_1) (-2) &amp;= 0 \\
     (-1 + 2\mu^*_1 - \lambda^*_1) (-1) &amp;= 0 \\
     &amp;\vdots \\
@@ -1126,16 +1134,16 @@
 </ul>
 <p>If <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span> and <span class="math notranslate nohighlight">\(ab = 0\)</span>, it must mean that either <span class="math notranslate nohighlight">\(a=0\)</span> or <span class="math notranslate nohighlight">\(b=0\)</span> (cannot be both as it will be infeasible).</p>
 <p>Gradients of Constraints:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c4ed442-abc6-49de-95c6-a07b6186d236">
-<span class="eqno">(392)<a class="headerlink" href="#equation-7c4ed442-abc6-49de-95c6-a07b6186d236" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-990e7c1e-661d-4998-bce6-a856ba7cb448">
+<span class="eqno">(392)<a class="headerlink" href="#equation-990e7c1e-661d-4998-bce6-a856ba7cb448" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x c_1(x_1, x_2) &amp;= \nabla_x (x_1 + {x_2}^2 - 3) = \begin{bmatrix} 1 \\ 2x_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 2b \end{bmatrix} \\
     \nabla_x c_2(x_1, x_2) &amp;= \nabla_x ({x_1}^2 - x_2 - 3) = \begin{bmatrix} 2x_1 \\ -1 \end{bmatrix} = \begin{bmatrix} 2a \\ -1 \end{bmatrix} \\
     \nabla_x c_3(x_1, x_2) &amp;= \nabla_x (-x_1) = \begin{bmatrix} -1 \\ 0 \end{bmatrix} \\
     \nabla_x c_4(x_1, x_2) &amp;= \nabla_x (-x_2) = \begin{bmatrix} 0 \\ -1 \end{bmatrix} \\
 \end{align}\]</div>
 <p>For <span class="math notranslate nohighlight">\((a, b)\)</span> to be feasible, we need:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34e41623-5508-4319-9443-245a157218ae">
-<span class="eqno">(393)<a class="headerlink" href="#equation-34e41623-5508-4319-9443-245a157218ae" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-109f8620-2a1f-41e7-ab3e-a00913c4a40d">
+<span class="eqno">(393)<a class="headerlink" href="#equation-109f8620-2a1f-41e7-ab3e-a00913c4a40d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     a + b^2 - 3 &amp;\leq 0 \\
     a^2 - b - 3 &amp;= 0 \\
     -a &amp;\leq 0 \\
@@ -1143,8 +1151,8 @@
 \end{align}\]</div>
 <p>If only <span class="math notranslate nohighlight">\(a = 0 \rightarrow b = -3\)</span>, violates our assumption that <span class="math notranslate nohighlight">\((a, b) \geq 0\)</span>.</p>
 <p>If only <span class="math notranslate nohighlight">\(b = 0 \rightarrow a = \sqrt{3}\)</span>. However, this will mean the gradient of the active constraints will be:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-304c8c7c-263c-4e0a-bc32-2cd6018effb9">
-<span class="eqno">(394)<a class="headerlink" href="#equation-304c8c7c-263c-4e0a-bc32-2cd6018effb9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-92b0098c-bc85-4f0f-94f6-16f76d4a79dd">
+<span class="eqno">(394)<a class="headerlink" href="#equation-92b0098c-bc85-4f0f-94f6-16f76d4a79dd" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix} 2\sqrt{3} \\ -1 \\ \end{bmatrix} \\
     \begin{bmatrix} 0 \\ -1 \\ \end{bmatrix} \\
 \end{align}\]</div>
@@ -1154,8 +1162,8 @@
 <ul class="simple">
 <li><p>Apply the Karush-Kuhn-Tucker conditions to locate the unique of the following convex program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-285a9a7b-1b4a-45f7-9cd4-75880eb0e143">
-<span class="eqno">(395)<a class="headerlink" href="#equation-285a9a7b-1b4a-45f7-9cd4-75880eb0e143" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2f29032a-f6f8-478d-a151-88b87b52f337">
+<span class="eqno">(395)<a class="headerlink" href="#equation-2f29032a-f6f8-478d-a151-88b87b52f337" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;x^2_1 + x^2_2 - 4x_1 - 4x_2 \\
     \text{subject to } 
     &amp; x^2_1 - x_2 \leq 0 \text{ and } x_1 + x_2 \leq 2. \\
@@ -1164,32 +1172,32 @@
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-a83a471c-b917-484e-a680-8846561bfe7e">
-<span class="eqno">(396)<a class="headerlink" href="#equation-a83a471c-b917-484e-a680-8846561bfe7e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b00244c7-e43c-4ae3-a110-fa27d5b69468">
+<span class="eqno">(396)<a class="headerlink" href="#equation-b00244c7-e43c-4ae3-a110-fa27d5b69468" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {x^*_1}^2 - x^*_2 \leq 0 \\
     x^*_1 + x^*_2 - 2 \leq 0 \\
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-4b2eb965-dbfd-4697-8706-f9b01fe3a9b9">
-<span class="eqno">(397)<a class="headerlink" href="#equation-4b2eb965-dbfd-4697-8706-f9b01fe3a9b9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8bac8dc0-8f88-44cb-a5db-af5cb8a9c96a">
+<span class="eqno">(397)<a class="headerlink" href="#equation-8bac8dc0-8f88-44cb-a5db-af5cb8a9c96a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0 \\
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-667ca2f3-4a54-43dc-88cd-2a52473613a8">
-<span class="eqno">(398)<a class="headerlink" href="#equation-667ca2f3-4a54-43dc-88cd-2a52473613a8" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f5f14d1f-b25b-4bae-81b1-cae6c4a4430e">
+<span class="eqno">(398)<a class="headerlink" href="#equation-f5f14d1f-b25b-4bae-81b1-cae6c4a4430e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 ({x^*_1}^2 - x^*_2) &amp;= 0 \\
     \mu^*_2 (x^*_1 + x^*_2 - 2) &amp;= 0 \\
 \end{align}\]</div>
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-e18376ae-8c97-4780-9ec1-10a3137279d6">
-<span class="eqno">(399)<a class="headerlink" href="#equation-e18376ae-8c97-4780-9ec1-10a3137279d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-44f95259-f0b2-40be-8847-c3073db3cb0a">
+<span class="eqno">(399)<a class="headerlink" href="#equation-44f95259-f0b2-40be-8847-c3073db3cb0a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*_1, x^*_2, \mu^*_1, \mu^*_2) &amp;= 0 \\
     \nabla_x \Big[ {x^*_1}^2 + {x^*_2}^2 - 4x^*_1 - 4x^*_2 + \mu^*_1 ({x^*_1}^2 - x^*_2) + \mu^*_2 (x^*_1 + x^*_2 - 2) \Big] &amp;= 0 \\
     \begin{bmatrix}
@@ -1199,21 +1207,21 @@
     &amp;= 0 \\
 \end{align}\]</div>
 <p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = -2x^*_2 + 4 + \mu^*_1\)</span> into <span class="math notranslate nohighlight">\(2x^*_1 - 4 + 2\mu^*_1 x^*_1 + \mu^*_2 = 0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92633d89-aeaa-47a5-8471-0cd521d4a901">
-<span class="eqno">(400)<a class="headerlink" href="#equation-92633d89-aeaa-47a5-8471-0cd521d4a901" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a10acd47-f6a3-4132-81c9-47f9d972edcf">
+<span class="eqno">(400)<a class="headerlink" href="#equation-a10acd47-f6a3-4132-81c9-47f9d972edcf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     2x^*_1 - 4 + 2\mu^*_1 x^*_1 - 2x^*_2 + 4 + \mu^*_1 &amp;= 0 \\
     \mu^*_1(2x^*_1 + 1) &amp;= -2x^*_1 + 2x^*_2 \\
     \mu^*_1 &amp;= \frac{-2x^*_1 + 2x^*_2}{2x^*_1 + 1} \,\,--\,\,(1) \\
 \end{align}\]</div>
 <p>Substituting <span class="math notranslate nohighlight">\(\mu^*_2 = -2x^*_2 + 4 + \mu^*_1\)</span> into the second complementary slackness condition <span class="math notranslate nohighlight">\(\mu^*_2 (x^*_1 + x^*_2 - 2) = 0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc5e1218-824b-4614-99d0-5747f824a03e">
-<span class="eqno">(401)<a class="headerlink" href="#equation-fc5e1218-824b-4614-99d0-5747f824a03e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a513953e-f4be-4749-a87b-b441b3d09160">
+<span class="eqno">(401)<a class="headerlink" href="#equation-a513953e-f4be-4749-a87b-b441b3d09160" title="Permalink to this equation">¶</a></span>\[\begin{align}
     (-2x^*_2 + 4 + \mu^*_1)(x^*_1 + x^*_2 - 2) &amp;= 0 \\
 \end{align}\]</div>
 <p>Case I: <span class="math notranslate nohighlight">\(\mu^*_2 = 0 \rightarrow -2x^*_2 + 4 + \mu^*_1 = 0\)</span>, <span class="math notranslate nohighlight">\(\therefore \mu^*_1 = 2x^*_2 - 4 \,\,--\,\,(2)\)</span></p>
 <p>Substituting into first complementary slackness condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6dce599f-385a-4cc9-bc69-85e69db35ba4">
-<span class="eqno">(402)<a class="headerlink" href="#equation-6dce599f-385a-4cc9-bc69-85e69db35ba4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ec1dbf3-752e-44f5-8276-0e2227234b01">
+<span class="eqno">(402)<a class="headerlink" href="#equation-4ec1dbf3-752e-44f5-8276-0e2227234b01" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 ({x^*_1}^2 - x^*_2) &amp;= 0 \\
     (2x^*_2 - 4) ({x^*_1}^2 - x^*_2) &amp;= 0 \\
     2x^*_2({x^*_1}^2 - x^*_2) - 4({x^*_1}^2 - x^*_2) &amp;= 0 \\
@@ -1223,8 +1231,8 @@
     {x^*_1}^2 &amp;= x^*_2 \\
 \end{align}\]</div>
 <p>(1) = (2):</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5d263b3-faac-48f4-be3b-c0687d93aece">
-<span class="eqno">(403)<a class="headerlink" href="#equation-f5d263b3-faac-48f4-be3b-c0687d93aece" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc93c8c5-5c6c-46e7-93b3-6c094f863cf7">
+<span class="eqno">(403)<a class="headerlink" href="#equation-cc93c8c5-5c6c-46e7-93b3-6c094f863cf7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     2x^*_2 - 4 &amp;= \frac{-2x^*_1 + 2x^*_2}{2x^*_1 + 1} \\
     2(x^*_2 - 2)(2x^*_1 + 1) &amp;= -2x^*_1 + 2x^*_2 \\
     2({x^*_1}^2 - 2)(2x^*_1 + 1) &amp;= -2x^*_1 + 2{x^*_1}^2 \\
@@ -1308,8 +1316,8 @@ time: 1.36 ms
 <p>However, since <span class="math notranslate nohighlight">\(x_1 + x_2 \leq 2\)</span> is violated, this solution is rejected.</p>
 <p>Case II: <span class="math notranslate nohighlight">\(x^*_1 = -x^*_2 + 2 \,\,--\,\,(3)\)</span></p>
 <p>Substituting <span class="math notranslate nohighlight">\((3)\)</span> into <span class="math notranslate nohighlight">\((1)\)</span>: <span class="math notranslate nohighlight">\(\mu^*_1 = \frac{-2(-x^*_2 + 2) + 2x^*_2}{2(-x^*_2 + 2) + 1}\)</span> and into first complementary slackness condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2823b8cc-c9b7-445f-a8b9-7d96d1a3f20c">
-<span class="eqno">(404)<a class="headerlink" href="#equation-2823b8cc-c9b7-445f-a8b9-7d96d1a3f20c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2e2b9fe6-1317-4405-b2f8-ab874be7026f">
+<span class="eqno">(404)<a class="headerlink" href="#equation-2e2b9fe6-1317-4405-b2f8-ab874be7026f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \frac{-2(-x^*_2 + 2) + 2x^*_2}{2(-x^*_2 + 2) + 1} ({(-x^*_2 + 2)}^2 - x^*_2) &amp;= 0 \\
     \frac{2x^*_2 - 4 + 2x^*_2}{-2x^*_2 + 4 + 1} ({x^*_2}^2 - 4x^*_2 + 4 - x^*_2) &amp;= 0 \\
     \frac{4x^*_2({x^*_2}^2 - 5x^*_2 + 4) - 4({x^*_2}^2 - 5x^*_2 + 4)}{-2x^*_2 + 5} &amp;= 0 \\
@@ -1319,8 +1327,8 @@ time: 1.36 ms
 \end{align}\]</div>
 <p>Optimal Solution: <span class="math notranslate nohighlight">\(x^*_1 = 1, x^*_2 = 1, \mu^*_1=0, \mu^*_2 = 2 \because \mu^*_2 = -2x^*_2 + 4 + \mu^*_1\)</span></p>
 <p>Verify your solution geometrically by showing that the problem is equivalent to a closest-point problem, i.e., finding a point in the feasible region that is closest to a given point outside of the region.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-41895204-8309-4636-830e-49d11f4d1279">
-<span class="eqno">(405)<a class="headerlink" href="#equation-41895204-8309-4636-830e-49d11f4d1279" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aef83636-e09b-4225-bb88-5cf2c0cc1a6d">
+<span class="eqno">(405)<a class="headerlink" href="#equation-aef83636-e09b-4225-bb88-5cf2c0cc1a6d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;x^2_1 + x^2_2 - 4x_1 - 4x_2 \\
     \text{subject to } 
     &amp; x^2_1 - x_2 \leq 0 \text{ and } x_1 + x_2 \leq 2. \\
@@ -1390,16 +1398,16 @@ time: 1.36 ms
 <ul class="simple">
 <li><p>Consider the following nonlinear program:</p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-e51a3777-1407-481a-a5f1-a2b38ba25130">
-<span class="eqno">(406)<a class="headerlink" href="#equation-e51a3777-1407-481a-a5f1-a2b38ba25130" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2219217e-cb19-4af7-b945-b8233634be02">
+<span class="eqno">(406)<a class="headerlink" href="#equation-2219217e-cb19-4af7-b945-b8233634be02" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;e^{x^2_1 - x_2} \\
     \text{subject to } 
     &amp; e^{x_1} - e^{x_2} \leq 20 \text{ and } x_1 \geq 0. \\
 \end{align}\]</div>
 <p>Is the objective function convex? Argue that the constraints satisfy the Slater constraint qualification. Further argue that at an optimal solution of the problem, we must have <span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} = 20\)</span>. Use the latter fact to show that the problem is equivalent to a problem in the <span class="math notranslate nohighlight">\(x_1\)</span>-variable only. Solve the problem. Verify that the solution you obtain satisfies the Karush-Kuhn-Tucker conditions of the original problem in the <span class="math notranslate nohighlight">\((x_1, x_2)\)</span>-variables.</p>
 <p>Hessian of <span class="math notranslate nohighlight">\({x_1}^2 - x_2\)</span> is positive semi-definite, hence convex:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2380313-29c2-42ad-b715-17cb9ade3f29">
-<span class="eqno">(407)<a class="headerlink" href="#equation-a2380313-29c2-42ad-b715-17cb9ade3f29" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0c9b76c9-14cd-4789-bbfd-ee53e203efdb">
+<span class="eqno">(407)<a class="headerlink" href="#equation-0c9b76c9-14cd-4789-bbfd-ee53e203efdb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         2 &amp; 0 \\
         0 &amp; 0 \\
@@ -1409,8 +1417,8 @@ time: 1.36 ms
 <p><span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} - 20 \leq 0\)</span> is stricly convex since exponential of affine / convex functions are strictly convex, summation is a convex operation, meaning that the constraint is convex, the other constraint <span class="math notranslate nohighlight">\(-x_1 \leq 0\)</span> is simply affine.</p>
 <p>Purely by observation, we know beforehand that the infimum of <span class="math notranslate nohighlight">\(e^{-x}\)</span> is <span class="math notranslate nohighlight">\(0\)</span>. We can clearly see that since <span class="math notranslate nohighlight">\(x_2\)</span> is free, by setting <span class="math notranslate nohighlight">\(x_1 = 0\)</span>, and <span class="math notranslate nohighlight">\(x_2 = \infty\)</span>, we achieve the infimum of our objective function while satisfying the constraints.</p>
 <p>By using the equality constraint <span class="math notranslate nohighlight">\(e^{x_1} - e^{x_2} = 20 \rightarrow x_2 = \ln{(e^{x_1} - 20)}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-37dc355f-d70e-4bc9-8c10-6f29b894078d">
-<span class="eqno">(408)<a class="headerlink" href="#equation-37dc355f-d70e-4bc9-8c10-6f29b894078d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca169782-4a4d-4bec-a5bc-22dda8f3cdb7">
+<span class="eqno">(408)<a class="headerlink" href="#equation-ca169782-4a4d-4bec-a5bc-22dda8f3cdb7" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{minimize }} &amp;-e^{x^2_1}\ln{(e^{x_1} - 20)} \\
     \text{subject to } &amp;x_1 \geq 0. \\
 \end{align}\]</div>
@@ -1489,26 +1497,26 @@ time: 1.36 ms
 </div>
 <p>KKT Conditions &#64; optimal <span class="math notranslate nohighlight">\((x^*_1, x^*_2, \mu^*_1, \mu^*_2)\)</span>:</p>
 <p>Primal Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de191201-3a9d-4a3a-be96-1e8cd33be166">
-<span class="eqno">(409)<a class="headerlink" href="#equation-de191201-3a9d-4a3a-be96-1e8cd33be166" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e362f710-b09e-42e1-9a08-673d2b0cb260">
+<span class="eqno">(409)<a class="headerlink" href="#equation-e362f710-b09e-42e1-9a08-673d2b0cb260" title="Permalink to this equation">¶</a></span>\[\begin{align}
     e^{x^*_1} - e^{x^*_2} - 20 &amp;\leq 0 \\
     -x^*_1 &amp;\leq 0
 \end{align}\]</div>
 <p>Dual Feasibility:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ddf8106-ef01-43ad-a711-09f2b132c3af">
-<span class="eqno">(410)<a class="headerlink" href="#equation-3ddf8106-ef01-43ad-a711-09f2b132c3af" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b6db5041-23f8-44af-b588-21f987f9d76e">
+<span class="eqno">(410)<a class="headerlink" href="#equation-b6db5041-23f8-44af-b588-21f987f9d76e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0
 \end{align}\]</div>
 <p>Complementary Slackness:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edf602d1-49f0-4920-aece-7a2308c2dbed">
-<span class="eqno">(411)<a class="headerlink" href="#equation-edf602d1-49f0-4920-aece-7a2308c2dbed" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2276fedc-0308-49ad-933c-66184e7f365d">
+<span class="eqno">(411)<a class="headerlink" href="#equation-2276fedc-0308-49ad-933c-66184e7f365d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(e^{x^*_1} - e^{x^*_2} - 20) &amp;= 0 \\
     \mu^*_2(-x^*_1) &amp;= 0
 \end{align}\]</div>
 <p>Stationarity:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eeb7943b-bfb5-46f9-9445-508743aa8662">
-<span class="eqno">(412)<a class="headerlink" href="#equation-eeb7943b-bfb5-46f9-9445-508743aa8662" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-36c6710a-1232-4c0f-a203-01f5bbf2a51d">
+<span class="eqno">(412)<a class="headerlink" href="#equation-36c6710a-1232-4c0f-a203-01f5bbf2a51d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*_1, x^*_2, \mu^*_1, \mu^*_2) &amp;= 0 \\
     \nabla_x \Big[ e^{{x^*_1}^2 - x^*_2} + \mu^*_1(e^{x^*_1} - e^{x^*_2} - 20) + \mu^*_2(-x^*_1) \Big] &amp;= 0 \\
     \begin{bmatrix}

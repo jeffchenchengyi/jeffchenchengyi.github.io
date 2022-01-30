@@ -128,6 +128,14 @@
      Frequentist Vs. Bayesian Methods
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/02-finding-the-posterior.html">
+     Finding the Posterior of Latent Variables
+     <span class="math notranslate nohighlight">
+      \(\mathcal{Z}\)
+     </span>
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -1799,8 +1807,8 @@ But right now, we need to figure out the weight vector based on Risk Parity.</p>
             </script></div>
 </div>
 <p>Risk-Parity Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9eb427a-b151-49cb-b60d-19d97c27e6a1">
-<span class="eqno">(65)<a class="headerlink" href="#equation-e9eb427a-b151-49cb-b60d-19d97c27e6a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6d3d3764-c633-4f7b-80bf-957fb665ea1e">
+<span class="eqno">(65)<a class="headerlink" href="#equation-6d3d3764-c633-4f7b-80bf-957fb665ea1e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{w}{\text{minimize }} &amp;{(\mathbb{CR} - b\sigma(w))}^\top {(\mathbb{CR} - b\sigma(w))} \\
     \text{subject to } &amp;w^\top \mathbb{1} = 1 \text{ and } 0 \leq w \leq 1 \\ 
     \text{where } &amp;b_i = \frac{1}{n}\qquad\forall i \in 1, \cdots, n, \\

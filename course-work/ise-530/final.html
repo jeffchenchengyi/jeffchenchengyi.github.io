@@ -128,6 +128,14 @@
      Frequentist Vs. Bayesian Methods
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/02-finding-the-posterior.html">
+     Finding the Posterior of Latent Variables
+     <span class="math notranslate nohighlight">
+      \(\mathcal{Z}\)
+     </span>
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -676,8 +684,8 @@
 <p>Answer each question below with either a T(rue) or F(alse). For each statement, a correct answer gets 1 point, a wrong answer gets 0 point; there is no partial credit. (10 points)</p>
 <p>(a) A basic solution of the constraints <span class="math notranslate nohighlight">\([ Ax = b, x \geq 0 ]\)</span> must be feasible. [True]</p>
 <p>(b) The univariate function <span class="math notranslate nohighlight">\(e^{t^2}\)</span> convex. [True]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-383ec190-d65d-41e3-89e5-5c6bc4c6a898">
-<span class="eqno">(435)<a class="headerlink" href="#equation-383ec190-d65d-41e3-89e5-5c6bc4c6a898" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-be4e45ff-ea8c-43be-844f-d07d702bb226">
+<span class="eqno">(435)<a class="headerlink" href="#equation-be4e45ff-ea8c-43be-844f-d07d702bb226" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_t e^{t^2} &amp;= 2t e^{t^2} \\
     \nabla^2_t e^{t^2} &amp;= 2 + 4t^2 e^{t^2} \\
 \end{align}\]</div>
@@ -720,8 +728,8 @@
 <p>(f) The difference of two convex functions is convex. [False]</p>
 <p>Negative of convex function is concave. Sum is a convex operation. Hence it is a convex sum between a convex and concave function, we can’t conclude that the resulting function is convex.</p>
 <p>(g) The bivariate function <span class="math notranslate nohighlight">\(f(t_1, t_2) = \frac{1}{2}t^2_1 - t_1t_2 + t^2_2\)</span> has a unique global minimizer. [True]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec23a6a0-f0b7-48e4-b6b1-19a84290032e">
-<span class="eqno">(436)<a class="headerlink" href="#equation-ec23a6a0-f0b7-48e4-b6b1-19a84290032e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2f79df8d-9d4f-47e3-9448-92457331928c">
+<span class="eqno">(436)<a class="headerlink" href="#equation-2f79df8d-9d4f-47e3-9448-92457331928c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_t f(t_1, t_2) &amp;= \begin{bmatrix} t_1 - t_2 \\ -t_1 + 2t_2 \end{bmatrix} \\
     \nabla^2_t f(t_1, t_2) &amp;= \begin{bmatrix} 1 &amp; -1 \\ -1 &amp; 2 \\ \end{bmatrix} \\
 \end{align}\]</div>
@@ -757,8 +765,8 @@
             </script></div>
 </div>
 <p>(h) At the point <span class="math notranslate nohighlight">\((1, 1)\)</span>, the active constraints among <span class="math notranslate nohighlight">\(x^2_1 + 2 x_2 \leq 3, x_2 \geq 1\)</span>, and <span class="math notranslate nohighlight">\(x_1 + x_2 = 2\)</span> have linearly independent gradients. [False]</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a46f7c6-b91e-4f8c-bd6b-fe3e50e26afd">
-<span class="eqno">(437)<a class="headerlink" href="#equation-5a46f7c6-b91e-4f8c-bd6b-fe3e50e26afd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fe1d7162-fb9a-4ba5-b817-7f2bcbe38562">
+<span class="eqno">(437)<a class="headerlink" href="#equation-fe1d7162-fb9a-4ba5-b817-7f2bcbe38562" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x (x^2_1 + 2 x_2 \leq 3) &amp;= \begin{bmatrix} 2x_1 \\ 2 \end{bmatrix} \\
     \nabla_x (x_2 \geq 1) &amp;= \begin{bmatrix} 0 \\ -1 \end{bmatrix} \\
     \nabla_x (x_1 + x_2 = 2) &amp;= \begin{bmatrix} 1 \\ 1 \end{bmatrix} \\
@@ -772,21 +780,21 @@
 <div class="section" id="question-2">
 <h2>Question 2.<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
 <p>Find the global minimizer of the problem: (10 points)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9694192e-641b-4b6c-8a66-5915d9db9544">
-<span class="eqno">(438)<a class="headerlink" href="#equation-9694192e-641b-4b6c-8a66-5915d9db9544" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-87c7ea19-4d56-48eb-bcab-15ab624aba0b">
+<span class="eqno">(438)<a class="headerlink" href="#equation-87c7ea19-4d56-48eb-bcab-15ab624aba0b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x, y}{\text{minimize}}\qquad&amp; x^2 + 2xy + y^2 - \log(2+x^2+y^2) \\
     \text{subject to}\qquad&amp;x,y \leq - 1 \text{ and } x+y = -4  \\
 \end{align}\]</div>
 <p>Verify that the solution you obtain satisfies the Karush-Kuhn-Tucker conditions by identifying the constraint multipliers. [Hint: there is an easy way to obtain the minimizer that requires no
 calculation.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-488990f8-cc3d-4949-ab99-f9d7870c7ff6">
-<span class="eqno">(439)<a class="headerlink" href="#equation-488990f8-cc3d-4949-ab99-f9d7870c7ff6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cfef2c78-ad76-4a09-9f8b-b6f5665ca972">
+<span class="eqno">(439)<a class="headerlink" href="#equation-cfef2c78-ad76-4a09-9f8b-b6f5665ca972" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x, y}{\text{minimize}}\qquad&amp; {(x + y)}^2 - \log(2+{(x + y)}^2 - 2xy) \\
     \text{subject to}\qquad&amp;x,y \leq - 1 \text{ and } x+y = -4  \\
 \end{align}\]</div>
 <p>Substituting the <span class="math notranslate nohighlight">\(x+y = -4\)</span> constraint:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-564f3e51-e1d6-4723-badb-70a435cf7d75">
-<span class="eqno">(440)<a class="headerlink" href="#equation-564f3e51-e1d6-4723-badb-70a435cf7d75" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2732526a-27d2-461a-b047-85ada2264691">
+<span class="eqno">(440)<a class="headerlink" href="#equation-2732526a-27d2-461a-b047-85ada2264691" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x, y}{\text{minimize}}\qquad&amp; 16 - \log(18 - 2xy) \\
     \text{subject to}\qquad&amp;x,y \leq - 1 \text{ and } x+y = -4  \\
 \end{align}\]</div>
@@ -795,8 +803,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b951d11e-fac4-45b0-ae54-ca978bb7d9e4">
-<span class="eqno">(441)<a class="headerlink" href="#equation-b951d11e-fac4-45b0-ae54-ca978bb7d9e4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5c9a0276-0c82-4d1c-a074-09ffc608f2a3">
+<span class="eqno">(441)<a class="headerlink" href="#equation-5c9a0276-0c82-4d1c-a074-09ffc608f2a3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     x^* + 1 &amp;\leq 0 \\
     y^* + 1 &amp;\leq 0 \\
     x^* + y^* + 4 &amp;= 0 \\
@@ -804,8 +812,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-7afc1554-782f-4332-960d-204001b6fa3a">
-<span class="eqno">(442)<a class="headerlink" href="#equation-7afc1554-782f-4332-960d-204001b6fa3a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-185ab1ab-1de0-4ef1-bc38-54370ae145ea">
+<span class="eqno">(442)<a class="headerlink" href="#equation-185ab1ab-1de0-4ef1-bc38-54370ae145ea" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\geq 0 \\
     \mu^*_3 &amp;\text{ free}  \\
@@ -813,8 +821,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-81e28cf1-b378-437c-8347-0c419395e153">
-<span class="eqno">(443)<a class="headerlink" href="#equation-81e28cf1-b378-437c-8347-0c419395e153" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-45de81fa-58b7-485f-822d-512640c15415">
+<span class="eqno">(443)<a class="headerlink" href="#equation-45de81fa-58b7-485f-822d-512640c15415" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(x^* + 1) &amp;= 0 \\
     \mu^*_2(y^* + 1) &amp;= 0 \\
     \mu^*_3(x^* + y^* + 4) &amp;= 0 \\
@@ -822,8 +830,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-40867579-b2fd-48f9-bd28-7a8046b54227">
-<span class="eqno">(444)<a class="headerlink" href="#equation-40867579-b2fd-48f9-bd28-7a8046b54227" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b98902a5-f6b7-4572-b049-2621cba48fa0">
+<span class="eqno">(444)<a class="headerlink" href="#equation-b98902a5-f6b7-4572-b049-2621cba48fa0" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*, y^*, \mu^*_1, \mu^*_2, \mu^*_3) &amp;= 0 \\
     \nabla_x \Big[ {x^*}^2 + 2x^*y^* + {y^*}^2 - \log(2+{x^*}^2+{y^*}^2) + \mu^*_1(x^* + 1) + \mu^*_2(y^* + 1) + \mu^*_3(x^* + y^* + 4) \Big] &amp;= 0 \\
     \begin{bmatrix}
@@ -833,8 +841,8 @@ calculation.</p>
     &amp;= 0 \\
 \end{align}\]</div>
 <p>Since we know <span class="math notranslate nohighlight">\(x^* = -1, y^* = -3\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-85952803-fd0c-4e86-bb2d-2016aae1abbd">
-<span class="eqno">(445)<a class="headerlink" href="#equation-85952803-fd0c-4e86-bb2d-2016aae1abbd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c6f74522-7cb5-449f-894c-834b972583b1">
+<span class="eqno">(445)<a class="headerlink" href="#equation-c6f74522-7cb5-449f-894c-834b972583b1" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         -2 - 6 + \frac{1}{6} + \mu^*_1 + \mu^*_3 \\
         -2 - 6 + \frac{1}{2} + \mu^*_2 + \mu^*_3 \\
@@ -848,15 +856,15 @@ calculation.</p>
 <div class="section" id="question-3">
 <h2>Question 3.<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
 <p>The knapsack problem: (10 points)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-980e37df-b150-486c-8c32-dca8bcff6ac5">
-<span class="eqno">(446)<a class="headerlink" href="#equation-980e37df-b150-486c-8c32-dca8bcff6ac5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-78664a91-7f3f-4d5b-8049-234c0d25e7e8">
+<span class="eqno">(446)<a class="headerlink" href="#equation-78664a91-7f3f-4d5b-8049-234c0d25e7e8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize}}\qquad&amp; 8x_1 + 11x_2 + 6x_3 + 4x_4 \\
     \text{subject to}\qquad&amp; 6.7x_1 + 10x_2 + 5.5x_3 + 3.4x_4 \leq 19 \\
     \text{and }\qquad &amp;x_j = 0\text{ or }1\text{, for all }j = 1\text{  through }4. \\
 \end{align}\]</div>
 <p>has an equivalent nonlinear programming formulation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-abc39b0b-0de3-49a7-915a-72d89b080b91">
-<span class="eqno">(447)<a class="headerlink" href="#equation-abc39b0b-0de3-49a7-915a-72d89b080b91" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6d665008-927a-4444-a506-f0a22d85f758">
+<span class="eqno">(447)<a class="headerlink" href="#equation-6d665008-927a-4444-a506-f0a22d85f758" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize}}\qquad&amp; 8x_1 + 11x_2 + 6x_3 + 4x_4 \\
     \text{subject to}\qquad&amp; 6.7x_1 + 10x_2 + 5.5x_3 + 3.4x_4 \leq 19 \\
     \text{and}\qquad&amp; x_j(1-x_j)=0, 0\leq x_j \leq 1\text{ for all }j = 1,\text{  through }4. \\
@@ -866,8 +874,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Primal Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-d16aba1b-41b6-4ed9-8ecd-49813e5a76d5">
-<span class="eqno">(448)<a class="headerlink" href="#equation-d16aba1b-41b6-4ed9-8ecd-49813e5a76d5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bd7702d4-d72d-4d88-8cc5-a997e22e6692">
+<span class="eqno">(448)<a class="headerlink" href="#equation-bd7702d4-d72d-4d88-8cc5-a997e22e6692" title="Permalink to this equation">¶</a></span>\[\begin{align}
     6.7x^*_1 + 10x^*_2 + 5.5x^*_3 + 3.4x^*_4 - 19 &amp;\leq 0 \\
     x^*_1(1 - x^*_1) &amp;= 0 \\
     x^*_2(1 - x^*_2) &amp;= 0 \\
@@ -885,8 +893,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Dual Feasibility</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-7df31c91-12f9-4ddc-8070-f2520bfefc3d">
-<span class="eqno">(449)<a class="headerlink" href="#equation-7df31c91-12f9-4ddc-8070-f2520bfefc3d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-70a7fcaf-ec75-4355-bcb8-e9b35b03f1b9">
+<span class="eqno">(449)<a class="headerlink" href="#equation-70a7fcaf-ec75-4355-bcb8-e9b35b03f1b9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1 &amp;\geq 0 \\
     \mu^*_2 &amp;\text{ free}  \\
     \mu^*_3 &amp;\text{ free}  \\
@@ -904,8 +912,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-5ddf44ac-c5df-4f45-9801-229adf01ba25">
-<span class="eqno">(450)<a class="headerlink" href="#equation-5ddf44ac-c5df-4f45-9801-229adf01ba25" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b7b08b0c-15a7-4492-9d05-e6994c3e300d">
+<span class="eqno">(450)<a class="headerlink" href="#equation-b7b08b0c-15a7-4492-9d05-e6994c3e300d" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(6.7x^*_1 + 10x^*_2 + 5.5x^*_3 + 3.4x^*_4 - 19) &amp;= 0 \\
     \mu^*_2(x^*_1(1 - x^*_1) &amp;= 0 \\
     \mu^*_3(x^*_2(1 - x^*_2) &amp;= 0 \\
@@ -923,8 +931,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-599b286a-1802-4336-97ab-0c7addfd1503">
-<span class="eqno">(451)<a class="headerlink" href="#equation-599b286a-1802-4336-97ab-0c7addfd1503" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d4fae021-2333-47e7-9c2b-15b2bc55b2d6">
+<span class="eqno">(451)<a class="headerlink" href="#equation-d4fae021-2333-47e7-9c2b-15b2bc55b2d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \nabla_x \mathcal{L}(x^*_1, x^*_2, x^*_3, x^*_4, \mu^*_1, \mu^*_2, \mu^*_3, \mu^*_4, \mu^*_5, \mu^*_6, \mu^*_7, \mu^*_8, \mu^*_9, \mu^*_{10}, \mu^*_{11}, \mu^*_{12}, \mu^*_{13}) &amp;= 0 \\
     \nabla_x \Big[ -8x^*_1 - 11x^*_2 - 6x^*_3 - 4x^*_4 + \mu^*_1(6.7x^*_1 + 10x^*_2 + 5.5x^*_3 + 3.4x^*_4 - 19) + \mu^*_2(x^*_1(1 - x^*_1) + \cdots + \mu^*_{13}(x^*_4 - 1) \Big] &amp;= 0 \\
     \begin{bmatrix}
@@ -940,8 +948,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Complementary Slackness</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-75806bd4-6822-4502-b475-bb377d8cbd7b">
-<span class="eqno">(452)<a class="headerlink" href="#equation-75806bd4-6822-4502-b475-bb377d8cbd7b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e6ff99db-30c3-450e-95be-5c3fbd311a4b">
+<span class="eqno">(452)<a class="headerlink" href="#equation-e6ff99db-30c3-450e-95be-5c3fbd311a4b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \mu^*_1(10 + 5.5 + 3.4 - 19) = -0.1\mu^*_1 &amp;= 0 \\
     \mu^*_2(0) &amp;= 0 \\
     \mu^*_3(0) &amp;= 0 \\
@@ -960,8 +968,8 @@ calculation.</p>
 <ol class="simple">
 <li><p>Stationarity</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-c189bab9-90fe-45ff-a5c8-31874769fbbb">
-<span class="eqno">(453)<a class="headerlink" href="#equation-c189bab9-90fe-45ff-a5c8-31874769fbbb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d00231de-f5c5-4aad-bd26-73add9ad81de">
+<span class="eqno">(453)<a class="headerlink" href="#equation-d00231de-f5c5-4aad-bd26-73add9ad81de" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         -8 + \mu^*_2 - \mu^*_6 \\
         -11 + \mu^*_3 - 2\mu^*_3 + \mu^*_{11} \\
@@ -980,8 +988,8 @@ calculation.</p>
 <div class="section" id="question-4">
 <h2>Question 4.<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
 <p>Solve the knapsack problem in Question 3 by the branch-and-bound method. (10 points)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5629dcf-eb5c-44d9-b14f-52596d811154">
-<span class="eqno">(454)<a class="headerlink" href="#equation-b5629dcf-eb5c-44d9-b14f-52596d811154" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-353b858d-c0ae-405a-9e96-b2231ed817f9">
+<span class="eqno">(454)<a class="headerlink" href="#equation-353b858d-c0ae-405a-9e96-b2231ed817f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize}}\qquad&amp; 8x_1 + 11x_2 + 6x_3 + 4x_4 \\
     \text{subject to}\qquad&amp; 6.7x_1 + 10x_2 + 5.5x_3 + 3.4x_4 \leq 19 \\
     \text{and }\qquad &amp;0 \leq x_j \leq 1 \text{ and integer for all }j = 1\text{  through }4. \\
@@ -1226,8 +1234,8 @@ calculation.</p>
 <div class="section" id="id1">
 <h2>Question 4.<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Solve the knapsack problem in Question 3 by the branch-and-bound method. (10 points)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8784ae7-7290-46a3-b4b6-701795450b5a">
-<span class="eqno">(455)<a class="headerlink" href="#equation-a8784ae7-7290-46a3-b4b6-701795450b5a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0d40190a-cac8-4b80-a9ef-3355e8d1fa85">
+<span class="eqno">(455)<a class="headerlink" href="#equation-0d40190a-cac8-4b80-a9ef-3355e8d1fa85" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x}{\text{maximize}}\qquad&amp; 8x_1 + 11x_2 + 6x_3 + 4x_4 \\
     \text{subject to}\qquad&amp; 6.7x_1 + 10x_2 + 5.5x_3 + 3.4x_4 \leq 19 \\
     \text{and }\qquad &amp;0 \leq x_j \leq 1 \text{ and integer for all }j = 1\text{  through }4. \\

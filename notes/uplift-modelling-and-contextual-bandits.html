@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uplift Modelling and Contextual Bandits &#8212; ΨΦ</title>
+    <title>Uplift Modelling and Contextual Bandits [In Progress] &#8212; ΨΦ</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -72,8 +72,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://jeffchenchengyi.github.io/notes/uplift-modelling-and-contextual-bandits.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Uplift Modelling and Contextual Bandits" />
-<meta property="og:description" content="Uplift Modelling and Contextual Bandits  By: Chengyi (Jeff) Chen  %load_ext autotime %load_ext nb_black  import causalml import obp  &lt;script type=&#34;application/j" />
+<meta property="og:title"       content="Uplift Modelling and Contextual Bandits [In Progress]" />
+<meta property="og:description" content="Uplift Modelling and Contextual Bandits [In Progress]  By: Chengyi (Jeff) Chen  %load_ext autotime %load_ext nb_black  import causalml import obp  &lt;script type=" />
 <meta property="og:image"       content="https://jeffchenchengyi.github.io/_static/jeffchenchengyi2019.jpg" />
 
 <meta name="twitter:card" content="summary" />
@@ -126,6 +126,14 @@
    <li class="toctree-l2">
     <a class="reference internal" href="probabilistic-machine-learning/01-frequentist-bayesian.html">
      Frequentist Vs. Bayesian Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="probabilistic-machine-learning/02-finding-the-posterior.html">
+     Finding the Posterior of Latent Variables
+     <span class="math notranslate nohighlight">
+      \(\mathcal{Z}\)
+     </span>
     </a>
    </li>
   </ul>
@@ -606,78 +614,21 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#single-armed-bandit">
-       1. Single-armed Bandit
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#multi-armed-bandit">
-       2. Multi-armed Bandit
+       1. Multi-armed Bandit
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#contextual-bandit">
-       3. Contextual Bandit
+       2. Contextual Bandit
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#full-reinforcement-learning">
-       4. Full Reinforcement Learning
+       3. Full Reinforcement Learning
       </a>
      </li>
     </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#off-policy-estimators">
-   15.1. Off-Policy Estimators
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#replay-method-rm">
-     15.1.1 Replay Method (RM)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#direct-method-dm">
-     15.1.2 Direct Method (DM)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inverse-probability-weighting-ipw">
-     15.1.3 Inverse Probability Weighting (IPW)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#self-normalized-inverse-probability-weighting-snipw">
-     15.1.4 Self-Normalized Inverse Probability Weighting (SNIPW)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#doubly-robust-dr">
-     15.1.5 Doubly Robust (DR)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#switch-estimators">
-     15.1.6 Switch Estimators
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-robust-doubly-robust-mrdr">
-     15.1.7 More Robust Doubly Robust (MRDR)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#doubly-robust-with-optimistic-shrinkage-dros">
-     15.1.8 Doubly Robust with Optimistic Shrinkage (DRos)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#double-machine-learning-dml">
-     15.1.9 Double Machine Learning (DML)
-    </a>
    </li>
   </ul>
  </li>
@@ -807,8 +758,8 @@
         
               <div>
                 
-  <div class="section" id="uplift-modelling-and-contextual-bandits">
-<h1>Uplift Modelling and Contextual Bandits<a class="headerlink" href="#uplift-modelling-and-contextual-bandits" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="uplift-modelling-and-contextual-bandits-in-progress">
+<h1>Uplift Modelling and Contextual Bandits [In Progress]<a class="headerlink" href="#uplift-modelling-and-contextual-bandits-in-progress" title="Permalink to this headline">¶</a></h1>
 <p>By: Chengyi (Jeff) Chen</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -841,7 +792,7 @@
 <hr class="docutils" />
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
-<p>Having worked with uplift modelling at Shopee and contextual bandits at Gojek, I’ve come to realize huge similarities between the way these two seemingly disparate problems are modelled. In the following post, I’ll do my best to reconcile the relationship between these two modelling approaches and show how uplift modelling is simply a subclass of contextual bandits. I’ll be going through uplift modelling with the help of Uber’s <a class="reference external" href="https://causalml.readthedocs.io/en/latest/index.html">Causal ML</a> package and contextual bandits with <a class="reference external" href="https://zr-obp.readthedocs.io/en/latest/index.html">Open Bandit Pipeline</a>. In particular, I’m interested in comparing the different algorithms used for</p>
+<p>Having worked with uplift modelling at Shopee and contextual bandits at Gojek, I’ve come to realize huge similarities between the way these two seemingly disparate problems are modelled. In the following post, I’ll do my best to reconcile the relationship between these two modelling approaches and show how uplift modelling is simply a subclass of contextual bandits. I’ll be going through uplift modelling with the help of Uber’s <a class="reference external" href="https://causalml.readthedocs.io/en/latest/index.html">Causal ML</a> package and contextual bandits with <a class="reference external" href="https://zr-obp.readthedocs.io/en/latest/index.html">Open Bandit Pipeline</a>. In particular, I’m interested in comparing the different algorithms used for off-policy evaluation</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="preliminaries">
@@ -851,50 +802,16 @@
 </div>
 <div class="section" id="what-are-contextual-bandits">
 <h3>What are contextual bandits?<a class="headerlink" href="#what-are-contextual-bandits" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="single-armed-bandit">
-<h4>1. Single-armed Bandit<a class="headerlink" href="#single-armed-bandit" title="Permalink to this headline">¶</a></h4>
-</div>
 <div class="section" id="multi-armed-bandit">
-<h4>2. Multi-armed Bandit<a class="headerlink" href="#multi-armed-bandit" title="Permalink to this headline">¶</a></h4>
+<h4>1. <a class="reference external" href="https://en.wikipedia.org/wiki/Multi-armed_bandit">Multi-armed Bandit</a><a class="headerlink" href="#multi-armed-bandit" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="contextual-bandit">
-<h4>3. Contextual Bandit<a class="headerlink" href="#contextual-bandit" title="Permalink to this headline">¶</a></h4>
+<h4>2. Contextual Bandit<a class="headerlink" href="#contextual-bandit" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="full-reinforcement-learning">
-<h4>4. Full Reinforcement Learning<a class="headerlink" href="#full-reinforcement-learning" title="Permalink to this headline">¶</a></h4>
+<h4>3. Full Reinforcement Learning<a class="headerlink" href="#full-reinforcement-learning" title="Permalink to this headline">¶</a></h4>
 <p>https://stats.stackexchange.com/questions/89396/multi-armed-bandit-algorithms-vs-uplift-modeling</p>
 </div>
-</div>
-</div>
-<hr class="docutils" />
-<div class="section" id="off-policy-estimators">
-<h2>15.1. Off-Policy Estimators<a class="headerlink" href="#off-policy-estimators" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="replay-method-rm">
-<h3>15.1.1 Replay Method (RM)<a class="headerlink" href="#replay-method-rm" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="direct-method-dm">
-<h3>15.1.2 Direct Method (DM)<a class="headerlink" href="#direct-method-dm" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="inverse-probability-weighting-ipw">
-<h3>15.1.3 Inverse Probability Weighting (IPW)<a class="headerlink" href="#inverse-probability-weighting-ipw" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="self-normalized-inverse-probability-weighting-snipw">
-<h3>15.1.4 Self-Normalized Inverse Probability Weighting (SNIPW)<a class="headerlink" href="#self-normalized-inverse-probability-weighting-snipw" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="doubly-robust-dr">
-<h3>15.1.5 Doubly Robust (DR)<a class="headerlink" href="#doubly-robust-dr" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="switch-estimators">
-<h3>15.1.6 Switch Estimators<a class="headerlink" href="#switch-estimators" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="more-robust-doubly-robust-mrdr">
-<h3>15.1.7 More Robust Doubly Robust (MRDR)<a class="headerlink" href="#more-robust-doubly-robust-mrdr" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="doubly-robust-with-optimistic-shrinkage-dros">
-<h3>15.1.8 Doubly Robust with Optimistic Shrinkage (DRos)<a class="headerlink" href="#doubly-robust-with-optimistic-shrinkage-dros" title="Permalink to this headline">¶</a></h3>
-</div>
-<div class="section" id="double-machine-learning-dml">
-<h3>15.1.9 Double Machine Learning (DML)<a class="headerlink" href="#double-machine-learning-dml" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <hr class="docutils" />
@@ -1000,8 +917,8 @@
 </div>
 <div class="section" id="concentration-inequality-hoeffding-inequality">
 <h3>15.2.5 Concentration Inequality: Hoeffding Inequality<a class="headerlink" href="#concentration-inequality-hoeffding-inequality" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-69d568fb-b873-47eb-b8a3-2c8ed627c8f7">
-<span class="eqno">(2)<a class="headerlink" href="#equation-69d568fb-b873-47eb-b8a3-2c8ed627c8f7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6d3bc9fe-db6f-4de3-97f1-67e624745715">
+<span class="eqno">(2)<a class="headerlink" href="#equation-6d3bc9fe-db6f-4de3-97f1-67e624745715" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {
         \left\vert
             \hat{V}_{\text{IPS}}{(\pi)} 
@@ -1012,24 +929,24 @@
     \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}} \\
 \end{align}\]</div>
 <p>Hoeffding’s Inequality: Let <span class="math notranslate nohighlight">\(X_1, ..., X_n\)</span> be independent random variables strictly bounded by the interval <span class="math notranslate nohighlight">\([a_i, b_i]\)</span>, <span class="math notranslate nohighlight">\(a_i \leq X_i \leq b_i\)</span>. We define the empirical mean of these variables by <span class="math notranslate nohighlight">\(\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i\)</span>, such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0feb194e-a404-4880-b005-1ae4a9a4ddcf">
-<span class="eqno">(3)<a class="headerlink" href="#equation-0feb194e-a404-4880-b005-1ae4a9a4ddcf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9deefea0-4d12-445e-a2ef-5c40fb950cb0">
+<span class="eqno">(3)<a class="headerlink" href="#equation-9deefea0-4d12-445e-a2ef-5c40fb950cb0" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert \geq \epsilon) \leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \end{align}\]</div>
 <p>From Hoeffding’s Inequality:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6a5a374-7646-40d5-b68a-dfc3decc2dbd">
-<span class="eqno">(4)<a class="headerlink" href="#equation-f6a5a374-7646-40d5-b68a-dfc3decc2dbd" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-98486214-6030-48b4-a44d-daf2bd413c89">
+<span class="eqno">(4)<a class="headerlink" href="#equation-98486214-6030-48b4-a44d-daf2bd413c89" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert \geq \epsilon) &amp;\leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 1 - P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) &amp;\leq 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1d82f946-9adf-4a74-bd10-2aa4473f466d">
-<span class="eqno">(5)<a class="headerlink" href="#equation-1d82f946-9adf-4a74-bd10-2aa4473f466d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-63333539-5c76-4256-ae4f-962b5efe2a4a">
+<span class="eqno">(5)<a class="headerlink" href="#equation-63333539-5c76-4256-ae4f-962b5efe2a4a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \label{eq:1}
 P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) \geq \underbrace{1 - 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)}}_{1-\delta}
 \end{equation}\]</div>
 <p>Finding <span class="math notranslate nohighlight">\(\epsilon\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1077b5b2-8eb9-4f81-bda0-63a040008a29">
-<span class="eqno">(6)<a class="headerlink" href="#equation-1077b5b2-8eb9-4f81-bda0-63a040008a29" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-36b22794-9f98-42ab-9110-ae9b9823fc0d">
+<span class="eqno">(6)<a class="headerlink" href="#equation-36b22794-9f98-42ab-9110-ae9b9823fc0d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \therefore 1-\delta &amp;= 1 - 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \delta &amp;= 2{e}^{\Big(-\frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2}\Big)} \\
 \ln{\delta} &amp;= \ln{2} - \frac{2n^2\epsilon^2}{\sum_{i=1}^{n}{(b_i - a_i)}^2} \\
@@ -1038,8 +955,8 @@ P(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \epsilon) \geq \unde
 \epsilon &amp;= \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}} \\
 \end{align}\]</div>
 <p>Substituting <span class="math notranslate nohighlight">\(\epsilon\)</span> into Equation 1, we get our Hoeffding Bound Confidence Intervals:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-695cd7bd-5f50-4e52-af53-939e1d57571d">
-<span class="eqno">(7)<a class="headerlink" href="#equation-695cd7bd-5f50-4e52-af53-939e1d57571d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-815634e8-912f-4a30-9871-11cc96dde462">
+<span class="eqno">(7)<a class="headerlink" href="#equation-815634e8-912f-4a30-9871-11cc96dde462" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P\Bigg(\left\vert \bar{X} - \mathbb{E}[\bar{X}] \right\vert &lt; \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}&lt; \bar{X} - \mathbb{E}[\bar{X}] &lt; \sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(\bar{X}-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}&lt; \mathbb{E}[\bar{X}] &lt; \bar{X}+\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta
@@ -1052,8 +969,8 @@ P\Bigg(\bar{X}-\sqrt{\frac{\sum_{i=1}^{n}{(b_i - a_i)}^2}{2n^2} \ln{\frac{2}{\de
 <li><p><span class="math notranslate nohighlight">\(b_i: w_{max}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(a_i: 0\)</span></p></li>
 </ul>
-<div class="amsmath math notranslate nohighlight" id="equation-986d21e6-6704-4f87-ad32-8e33a5aea9be">
-<span class="eqno">(8)<a class="headerlink" href="#equation-986d21e6-6704-4f87-ad32-8e33a5aea9be" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4f5624c9-d89c-493e-8978-6e741fe137f3">
+<span class="eqno">(8)<a class="headerlink" href="#equation-4f5624c9-d89c-493e-8978-6e741fe137f3" title="Permalink to this equation">¶</a></span>\[\begin{align}
 P\Bigg(\hat{V_{\text{IPS}}}(\pi)-\sqrt{\frac{\sum_{i=1}^{n}{(w_{max} - 0)}^2}{2n^2} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+\sqrt{\frac{\sum_{i=1}^{n}{(w_{max} - 0)}^2}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(\hat{V_{\text{IPS}}}(\pi)-\sqrt{\frac{nw^2_{max}}{2n^2} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+\sqrt{\frac{nw^2_{max}}{2n^2} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta \\
 P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}} &lt; V(\pi) &lt; \hat{V_{\text{IPS}}}(\pi)+w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}}\Bigg) &amp;\geq 1-\delta
@@ -1084,8 +1001,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
 </div>
 <div class="section" id="concentration-inequality-bernstein-inequality">
 <h3>15.2.6 Concentration Inequality: Bernstein Inequality<a class="headerlink" href="#concentration-inequality-bernstein-inequality" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-b32d67e2-95fc-47c2-a0d4-927324f8b09a">
-<span class="eqno">(9)<a class="headerlink" href="#equation-b32d67e2-95fc-47c2-a0d4-927324f8b09a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c5142395-3c1d-4587-b8f7-84e47f6fcda2">
+<span class="eqno">(9)<a class="headerlink" href="#equation-c5142395-3c1d-4587-b8f7-84e47f6fcda2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     {
         \left\vert
             \hat{V}_{\text{IPS}}{(\pi)} 
@@ -1100,8 +1017,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
     } \\
 \end{align}\]</div>
 <p>Bernstein Inequality: Suppose <span class="math notranslate nohighlight">\(X_1, \cdots, X_n\)</span> are <span class="math notranslate nohighlight">\(i.i.d.\)</span> with 0 mean, variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> and <span class="math notranslate nohighlight">\(\vert X_i \vert \leq M\)</span> almost surely,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4068d002-6356-4393-8043-ee0bc7ebf900">
-<span class="eqno">(10)<a class="headerlink" href="#equation-4068d002-6356-4393-8043-ee0bc7ebf900" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-abb55c81-0687-4434-ae0e-651bbec8090c">
+<span class="eqno">(10)<a class="headerlink" href="#equation-abb55c81-0687-4434-ae0e-651bbec8090c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P\Bigg({
         \left\vert
             \frac{1}{n}\sum^{n}_{i=1} X_i
@@ -1114,8 +1031,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
     }\Bigg) \geq 1 - \delta
 \end{align}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(V_{\text{IPS}}(\pi)\)</span> is an unbiased estimator of <span class="math notranslate nohighlight">\(V(\pi)\)</span>, <span class="math notranslate nohighlight">\(\hat{V}_{\text{IPS}}{(\pi)} - {V}(\pi)\)</span> has 0 mean, and variance of <span class="math notranslate nohighlight">\(Var[\hat{V}_{\text{IPS}}(\pi)]\)</span>, and setting <span class="math notranslate nohighlight">\(M: w_{max}\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e2f5f38e-951d-4102-a6dc-372a58653137">
-<span class="eqno">(11)<a class="headerlink" href="#equation-e2f5f38e-951d-4102-a6dc-372a58653137" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e103ab05-b91a-4c64-9006-98589eec2215">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e103ab05-b91a-4c64-9006-98589eec2215" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P\Bigg({
         \left\vert
             \hat{V}_{\text{IPS}}{(\pi)} 
@@ -1129,8 +1046,8 @@ P\Bigg(\hat{V_{\text{IPS}}}(\pi)-w_{max}\sqrt{\frac{1}{2n} \ln{\frac{2}{\delta}}
         + \frac{2{\hat{w}_{max}}}{3n}{\text{log} \frac{2}{\delta}}
     }\Bigg) \geq 1-\delta
 \end{align}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-28004f6f-5aee-48e0-8c9f-aad9436651d6">
-<span class="eqno">(12)<a class="headerlink" href="#equation-28004f6f-5aee-48e0-8c9f-aad9436651d6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72793dfb-7c2b-433f-8125-606dfd3f4249">
+<span class="eqno">(12)<a class="headerlink" href="#equation-72793dfb-7c2b-433f-8125-606dfd3f4249" title="Permalink to this equation">¶</a></span>\[\begin{align}
     P\Bigg(\hat{V}_{\text{IPS}}{(\pi)} 
     -
     \Bigg({

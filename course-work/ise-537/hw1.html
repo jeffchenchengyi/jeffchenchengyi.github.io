@@ -128,6 +128,14 @@
      Frequentist Vs. Bayesian Methods
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/02-finding-the-posterior.html">
+     Finding the Posterior of Latent Variables
+     <span class="math notranslate nohighlight">
+      \(\mathcal{Z}\)
+     </span>
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -1793,8 +1801,8 @@ C) CVaR-95% for daily return: -2.79%
 </div>
 <div class="section" id="run-an-optimization-to-locate-the-minimum-variance-portfolio-on-the-new-frontier">
 <h3>1. Run an optimization to locate the minimum-variance portfolio on the new frontier.<a class="headerlink" href="#run-an-optimization-to-locate-the-minimum-variance-portfolio-on-the-new-frontier" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-f41778ea-276f-4530-a445-7e8687dbb7ad">
-<span class="eqno">(59)<a class="headerlink" href="#equation-f41778ea-276f-4530-a445-7e8687dbb7ad" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-86b9c57e-5d5b-4f36-8707-e53fa377dc39">
+<span class="eqno">(59)<a class="headerlink" href="#equation-86b9c57e-5d5b-4f36-8707-e53fa377dc39" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;w^\top \Sigma w \\
     \text{subject to } 
     &amp;w^\top \mathbb{1} = 1 \\
@@ -1875,8 +1883,8 @@ The optimal portfolio weights:
 </div>
 <div class="section" id="a-run-optimizations-to-locate-two-other-efficient-portfolios-different-than-the-minimum-variance-portfolio">
 <h3>2A. Run optimizations to locate two other efficient portfolios different than the minimum-variance portfolio<a class="headerlink" href="#a-run-optimizations-to-locate-two-other-efficient-portfolios-different-than-the-minimum-variance-portfolio" title="Permalink to this headline">¶</a></h3>
-<div class="amsmath math notranslate nohighlight" id="equation-0f4c3376-f2df-4356-80b0-3ca3be5946aa">
-<span class="eqno">(60)<a class="headerlink" href="#equation-0f4c3376-f2df-4356-80b0-3ca3be5946aa" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-72a2cb0d-10fe-43de-a6ca-a3fde6ed441a">
+<span class="eqno">(60)<a class="headerlink" href="#equation-72a2cb0d-10fe-43de-a6ca-a3fde6ed441a" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{maximize } &amp;w^\top \mu \\
     \text{subject to } 
     &amp;w^\top \Sigma w \leq \sigma^2 \\

@@ -128,6 +128,14 @@
      Frequentist Vs. Bayesian Methods
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/probabilistic-machine-learning/02-finding-the-posterior.html">
+     Finding the Posterior of Latent Variables
+     <span class="math notranslate nohighlight">
+      \(\mathcal{Z}\)
+     </span>
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -757,8 +765,8 @@ The optimal solution is: x = [4.0]
             </script></div>
 </div>
 <p><strong>(a) The optimal solution to the linear program (without the integer restrictions) is x = 1.6, y = 1.8. Show that rounding this solution leads to an infeasible solution.</strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b734c2a-f1da-4808-8d01-21a999b14ebc">
-<span class="eqno">(83)<a class="headerlink" href="#equation-1b734c2a-f1da-4808-8d01-21a999b14ebc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-17f213ba-bd8d-4b4c-8898-4dc94ec04417">
+<span class="eqno">(83)<a class="headerlink" href="#equation-17f213ba-bd8d-4b4c-8898-4dc94ec04417" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Constraint }1: 3(x=\lceil{1.6}\rceil) + 4(y=\lceil{1.8}\rceil) = 14 \not\leq 12
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -789,8 +797,8 @@ The optimal solution is: x = [4.0]
             </script></div>
 </div>
 <p>Constraint 1 is violated and hence, solution is infeasible.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e24ec7f-2687-4c73-907f-7b85d785f87f">
-<span class="eqno">(84)<a class="headerlink" href="#equation-3e24ec7f-2687-4c73-907f-7b85d785f87f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9b88b76-438a-4af7-90bf-b2e91d6702c3">
+<span class="eqno">(84)<a class="headerlink" href="#equation-b9b88b76-438a-4af7-90bf-b2e91d6702c3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Constraint }2: -1(x=\lceil{1.6}\rceil) + 2(y=\lceil{1.8}\rceil) = 2 \leq 2
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -976,8 +984,8 @@ The optimal solution is: x = [1.0]
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-da42f163-a10c-4e82-b182-1ba0d14351de">
-<span class="eqno">(85)<a class="headerlink" href="#equation-da42f163-a10c-4e82-b182-1ba0d14351de" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4878d745-490b-4d49-982d-bcd3145a9049">
+<span class="eqno">(85)<a class="headerlink" href="#equation-4878d745-490b-4d49-982d-bcd3145a9049" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Constraint }1: 3(x=\lceil{0.8}\rceil) + 4(y=\lfloor{1.4}\rfloor) = 7 \leq 8
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -1007,8 +1015,8 @@ The optimal solution is: x = [1.0]
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-b68fa228-31df-4e0a-b727-e7a7175307a1">
-<span class="eqno">(86)<a class="headerlink" href="#equation-b68fa228-31df-4e0a-b727-e7a7175307a1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f6225d1d-5230-4f83-9003-dabe7e113462">
+<span class="eqno">(86)<a class="headerlink" href="#equation-f6225d1d-5230-4f83-9003-dabe7e113462" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{Constraint }2: -1(x=\lceil{0.8}\rceil) + 2(y=\lfloor{1.4}\rfloor) = 1 \leq 2
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -1426,8 +1434,8 @@ do this based on the data below</p>
     }_{\text{Coefficients for Objective function}}
 \end{equation*}\]</div>
 <p>Linear Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c304e39-952c-48a9-a6e1-d28e42af4fdf">
-<span class="eqno">(87)<a class="headerlink" href="#equation-5c304e39-952c-48a9-a6e1-d28e42af4fdf" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a7e30dbf-1949-40aa-81fa-718075f3de45">
+<span class="eqno">(87)<a class="headerlink" href="#equation-a7e30dbf-1949-40aa-81fa-718075f3de45" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;\mathbf{c}^\top \mathbf{x} \\
     \text{subject to } &amp;A\mathbf{x} \geq \mathbf{b} \\
     &amp;\text{and } \mathbf{x} \geq 0\\
@@ -1539,8 +1547,8 @@ rates for these loans, are as follows:</p>
     }_{\text{Coefficients for Objective function}}
 \end{equation*}\]</div>
 <p>Linear Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-740395c9-57e7-4400-bfaf-2a0fd4fa9e3d">
-<span class="eqno">(88)<a class="headerlink" href="#equation-740395c9-57e7-4400-bfaf-2a0fd4fa9e3d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-73ac1d2d-6c15-444a-9ea8-6235dbf37945">
+<span class="eqno">(88)<a class="headerlink" href="#equation-73ac1d2d-6c15-444a-9ea8-6235dbf37945" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{maximize } &amp;\mathbf{c}^\top \mathbf{x} \\
     \text{subject to } &amp;\mathbf{1}^\top\mathbf{x} \leq 400,000,000 \\
     &amp;\begin{pmatrix} -0.7 &amp; 0.3 &amp; -0.7 &amp; 0 &amp; 0 \end{pmatrix} \cdot \mathbf{x} \geq 0 \\
@@ -1699,8 +1707,8 @@ is given in the following table:</p>
     }_{\text{Coefficients for Objective function (Costs / batch)}}
 \end{equation*}\]</div>
 <p>Linear Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89620c5b-b4a0-4be2-a200-41dcf8d6c786">
-<span class="eqno">(89)<a class="headerlink" href="#equation-89620c5b-b4a0-4be2-a200-41dcf8d6c786" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b7d707bc-2586-4e5e-b86d-8f8d6eb83b9e">
+<span class="eqno">(89)<a class="headerlink" href="#equation-b7d707bc-2586-4e5e-b86d-8f8d6eb83b9e" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;\mathbf{c}^\top \mathbf{x} \\
     \text{subject to } &amp;A\mathbf{x} \geq \mathbf{b} \\
     &amp;\text{and } \mathbf{x} \geq 0\\
@@ -2046,8 +2054,8 @@ The optimal solution is: x = [9.0, 31.0]
 <p>Write down the linear program for the associated Chebyshev problem.
 (You need not convert the LP to standard form for this exercise.)</p>
 <p>Linear Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7b91e79-2853-4dd0-b8f7-57c0ee2125a6">
-<span class="eqno">(90)<a class="headerlink" href="#equation-f7b91e79-2853-4dd0-b8f7-57c0ee2125a6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aa7a07d3-836c-4932-a892-11de592b29f5">
+<span class="eqno">(90)<a class="headerlink" href="#equation-aa7a07d3-836c-4932-a892-11de592b29f5" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x_1, x_2, x_3, t}{\text{minimize }} &amp;t \\
     \text{subject to } 
     &amp;t - (14.92x_1-19.89x_2+10.66x_3-985.62) \geq 0 \\
@@ -2147,8 +2155,8 @@ The optimal solution is: x = [85.22, 2.26, -32.09]
 <p>In the text it is asserted that for any <span class="math notranslate nohighlight">\((b_1, b_2, b_3)\)</span> the vectors <span class="math notranslate nohighlight">\((1, 1, 1), (0, 1, 1), (0, 0, 1),\)</span> and <span class="math notranslate nohighlight">\((b_1, b_2, b_3)\)</span> are linearly dependent.</p>
 <p>Denote these vectors by <span class="math notranslate nohighlight">\(v^1, v^2, v^3, v^4,\)</span> respectively, and find a set of scalar coefficients <span class="math notranslate nohighlight">\(\alpha_1, \alpha_2, \alpha_3, \alpha_4\)</span> such that <span class="math notranslate nohighlight">\(\alpha_1v^1 + \alpha_2v^2 + \alpha_3v^3 + \alpha_4v^4 = 0\)</span>.</p>
 <p>How many such sets of coefficients are there in this case?</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4dd144fc-7ee0-4f86-85ae-f81f0922852a">
-<span class="eqno">(91)<a class="headerlink" href="#equation-4dd144fc-7ee0-4f86-85ae-f81f0922852a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb3165da-1513-4159-9ef3-96def73921d3">
+<span class="eqno">(91)<a class="headerlink" href="#equation-eb3165da-1513-4159-9ef3-96def73921d3" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \begin{bmatrix}
         \vert &amp; \vert &amp; \vert &amp; \vert \\
         v^1 &amp; v^2 &amp; v^3 &amp; v^4 \\
@@ -2362,8 +2370,8 @@ The optimal solution is: x = [4.0, 0.0]
     }_{\text{Coefficients for Objective function}}
 \end{equation*}\]</div>
 <p>Linear Program:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4cd3338-f98f-4864-b117-3d097cb8280a">
-<span class="eqno">(92)<a class="headerlink" href="#equation-a4cd3338-f98f-4864-b117-3d097cb8280a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7235da1c-5f2b-4dc8-8264-8eab7dad96bf">
+<span class="eqno">(92)<a class="headerlink" href="#equation-7235da1c-5f2b-4dc8-8264-8eab7dad96bf" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \text{minimize } &amp;\mathbf{c}^\top \mathbf{x} \\
     \text{subject to } &amp;A\mathbf{x} = \mathbf{b} \\
     &amp;\text{and } \mathbf{x} \geq 0\\
