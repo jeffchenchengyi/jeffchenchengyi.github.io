@@ -728,8 +728,8 @@
   <div class="section" id="paper-review-2-carry">
 <h1>Paper Review 2: Carry<a class="headerlink" href="#paper-review-2-carry" title="Permalink to this headline">¶</a></h1>
 <p>By: Chengyi (Jeff) Chen</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df78699b-4ede-43f7-a42e-37aaf9d70249">
-<span class="eqno">(66)<a class="headerlink" href="#equation-df78699b-4ede-43f7-a42e-37aaf9d70249" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f0e2ec5a-eba1-4bfd-a8bb-3150baa7514f">
+<span class="eqno">(66)<a class="headerlink" href="#equation-f0e2ec5a-eba1-4bfd-a8bb-3150baa7514f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     r_{t+1} &amp;= \underbrace{\text{Carry} + \mathbb{E}_t[\text{Price Appreciation}]}_{\mathbb{E}_t[r_{t+1}]: \text{ Expected return in excess of }r_f} + \text{Unexpected Price Shock} 
 \end{align}\]</div>
 <p>Overall, Carry is defined in the paper as the portion of expected return of an asset assuming that current prices and market predictions of prices over time do not move - yield curve being constant for fixed income, forward curve being constant. It has shown to have extremely good risk-adjusted returns, especially in portfolios when we allocate equal volatility contribution from each asset class, long the high carry securities and short the low carry securities within each asset class. Simply by longing the high carry securities and shorting the low carry securities within each asset class at each mopnth-end produces great returns for equities, fixed-income, and currencies, but a different signal Carry1-12, the 12 month moving average of Carry, performs better for highly seasonal asset classes such as commodities. Carry also has very low exposure to the market, though it is highly exposed to macro-economic conditions.</p>
@@ -748,8 +748,8 @@
 <div class="section" id="a-what-is-carry">
 <h3>A. What is Carry<a class="headerlink" href="#a-what-is-carry" title="Permalink to this headline">¶</a></h3>
 <p>Definitions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c6ff3854-5844-47fa-9ef3-d922e5eb31f0">
-<span class="eqno">(67)<a class="headerlink" href="#equation-c6ff3854-5844-47fa-9ef3-d922e5eb31f0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d054b01b-205a-4efe-bb21-dfecd95a9300">
+<span class="eqno">(67)<a class="headerlink" href="#equation-d054b01b-205a-4efe-bb21-dfecd95a9300" title="Permalink to this equation">¶</a></span>\[\begin{align}
     S_t &amp;= \text{ Spot price of underlying security (e.g. how much AMZN is selling for &#64; time }t) \\ 
     F_t &amp;= \text{ Price of Futures contract that expires &#64; time }t + 1 \\
     r_{t+1} &amp;= \frac{F_{t+1} - F_t}{F_t} \text{ Return in excess of }r_f \text{ by purchasing 1 futures contract that expires &#64; time }t+1 \\
@@ -762,8 +762,8 @@
 <div class="section" id="b-how-is-it-related-to-mathbb-e-t-r-t-1">
 <h3>B. How is it related to <span class="math notranslate nohighlight">\(\mathbb{E}_t[r_{t+1}]\)</span><a class="headerlink" href="#b-how-is-it-related-to-mathbb-e-t-r-t-1" title="Permalink to this headline">¶</a></h3>
 <p>Decomposition of <span class="math notranslate nohighlight">\(r_{t+1}\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91179a32-4277-4ea9-9ce4-99c0248a04ed">
-<span class="eqno">(68)<a class="headerlink" href="#equation-91179a32-4277-4ea9-9ce4-99c0248a04ed" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bd50d750-326d-453c-a10c-65cbcd993f3f">
+<span class="eqno">(68)<a class="headerlink" href="#equation-bd50d750-326d-453c-a10c-65cbcd993f3f" title="Permalink to this equation">¶</a></span>\[\begin{align}
     r_{t+1} &amp;= \underbrace{\mathbb{E}_t[r_{t+1}]}_{\text{Expected return in excess of }r_f} + \underbrace{u_{t+1}}_{\text{Unexpected price shock}} \\
     &amp;= \underbrace{C_t}_{\text{Carry}} + \underbrace{\mathbb{E}_t\Big[\frac{\Delta S_{t+1}}{F_t}\Big]}_{\text{Expected price appreciation}} + u_{t+1} \\
     &amp;= C_t + \mathbb{E}_t\Big[\frac{S_{t+1} - S_t}{F_t}\Big] + u_{t+1} \\
@@ -786,15 +786,15 @@
 <div class="section" id="currency-carry">
 <h4>Currency Carry<a class="headerlink" href="#currency-carry" title="Permalink to this headline">¶</a></h4>
 <p>Theoretical no-arbitrage price of currency forward contract <span class="math notranslate nohighlight">\(F_t\)</span> from spot exchange rate <span class="math notranslate nohighlight">\(S_t\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-38c93e39-dd80-4214-9180-36e92d1532c0">
-<span class="eqno">(69)<a class="headerlink" href="#equation-38c93e39-dd80-4214-9180-36e92d1532c0" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-26e23931-cebb-444c-be3d-a11d4875b7fe">
+<span class="eqno">(69)<a class="headerlink" href="#equation-26e23931-cebb-444c-be3d-a11d4875b7fe" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \hat{F_t} &amp;= S_t\frac{1+r^f_t}{1+r^{f*}_t} \\
     r^f_t &amp;= \text{ Local interest-rate / Risk-free rate &#64; time }t \\ 
     r^{f*}_t &amp;= \text{ Foreign interest-rate / Risk-free rate &#64; time }t \\ 
 \end{align}\]</div>
 <p>Currency Carry is defined as the scaled interest-rate spread (interest rate in excess of the  local risk-free rate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-004c6f8b-1506-4022-9625-351dd051230a">
-<span class="eqno">(70)<a class="headerlink" href="#equation-004c6f8b-1506-4022-9625-351dd051230a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9d63d8c8-9ee2-4106-b3e3-75a2e9c97cb2">
+<span class="eqno">(70)<a class="headerlink" href="#equation-9d63d8c8-9ee2-4106-b3e3-75a2e9c97cb2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     C_t &amp;= \frac{S_t - F_t}{F_t} \\
     &amp;= \underbrace{(r^{f*}_t - r^f_t)}_{\text{Interest rate spread}}\underbrace{\frac{1}{1+r^f_t}}_{\text{Scaling Factor}} \\
 \end{align}\]</div>
@@ -805,22 +805,22 @@
 <div class="section" id="global-equity-carry">
 <h4>Global Equity Carry<a class="headerlink" href="#global-equity-carry" title="Permalink to this headline">¶</a></h4>
 <p>Theoretical no-arbitrage price of futures contract of equity</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ace5d825-fc66-4921-900d-f37959451572">
-<span class="eqno">(71)<a class="headerlink" href="#equation-ace5d825-fc66-4921-900d-f37959451572" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9df17f66-ad7b-495d-be98-47a5815c585c">
+<span class="eqno">(71)<a class="headerlink" href="#equation-9df17f66-ad7b-495d-be98-47a5815c585c" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \hat{F_t} &amp;= S_t(1+r^f_t) - \mathbb{E}^Q_t[D_{t+1}] \\
     r^f_t &amp;= \text{ Local interest-rate / Risk-free rate &#64; time }t \\ 
     \mathbb{E}^Q_t[D_{t+1}] &amp;= \text{ Expected Dividend payment computed under risk-neutral measure } Q \\ 
 \end{align}\]</div>
 <p>Global Equity Carry is defined as the scaled expected dividend yield minus risk-free rate:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2844a472-585c-41ba-bd43-884aefdae137">
-<span class="eqno">(72)<a class="headerlink" href="#equation-2844a472-585c-41ba-bd43-884aefdae137" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b563179c-9c41-481a-842f-6a0e92991feb">
+<span class="eqno">(72)<a class="headerlink" href="#equation-b563179c-9c41-481a-842f-6a0e92991feb" title="Permalink to this equation">¶</a></span>\[\begin{align}
     C_t &amp;= \frac{S_t - F_t}{F_t} \\
     &amp;= \underbrace{\Big(\frac{\mathbb{E}^Q_t[D_{t+1}]}{S_t} - r^f_t\Big)}_{\text{Expected dividend yield minus risk-free rate}} \underbrace{\frac{S_t}{F_t}}_{\text{Scaling Factor}} \\
 \end{align}\]</div>
 <p>How Carry can also be a predictor of expected returns:</p>
 <p>Gordon Growth / Dividend Discount Model:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89a4c084-dfec-4ad0-89d1-aa7c4228c251">
-<span class="eqno">(73)<a class="headerlink" href="#equation-89a4c084-dfec-4ad0-89d1-aa7c4228c251" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32e77577-e974-40ea-b487-3b73836e1630">
+<span class="eqno">(73)<a class="headerlink" href="#equation-32e77577-e974-40ea-b487-3b73836e1630" title="Permalink to this equation">¶</a></span>\[\begin{align}
     S_t &amp;= \frac{\mathbb{E}^Q_t[D_{t+1}]}{\mathbb{E}_t[r_{t+1}] - g} \\
     \mathbb{E}_t[r_{t+1}] &amp;= \underbrace{\Big[\frac{\mathbb{E}^Q_t[D_{t+1}]}{S_t}\Big]}_{\text{Expected dividend yield}} + \underbrace{g}_{\text{Constant dividend growth rate}} \\
 \end{align}\]</div>
@@ -831,8 +831,8 @@
 <div class="section" id="commodity-carry">
 <h4>Commodity Carry<a class="headerlink" href="#commodity-carry" title="Permalink to this headline">¶</a></h4>
 <p>Theoretical no-arbitrage price of commodity futures contract:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18332722-2af6-491c-a703-84f6cd0db26b">
-<span class="eqno">(74)<a class="headerlink" href="#equation-18332722-2af6-491c-a703-84f6cd0db26b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-82b7b1f8-cc0e-4d70-b057-5b2d2d0cba06">
+<span class="eqno">(74)<a class="headerlink" href="#equation-82b7b1f8-cc0e-4d70-b057-5b2d2d0cba06" title="Permalink to this equation">¶</a></span>\[\begin{align}
     F^{T_i}_t &amp;= S_t (1 + (r^f_t - \delta)T_i) \\
     \delta &amp;= \text{Convienience yield in excess of storage costs} \\ 
 \end{align}\]</div>
@@ -845,8 +845,8 @@
 </li>
 </ul>
 <p>Commodity Carry is defined as the convienience yield of the commodity in excess of the risk-free rate <span class="math notranslate nohighlight">\(r_f\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7321c6d4-3c7e-4d57-9c5c-ad0717e477f9">
-<span class="eqno">(75)<a class="headerlink" href="#equation-7321c6d4-3c7e-4d57-9c5c-ad0717e477f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6d6bb349-dbc7-4ef2-a7bf-b8abfd915458">
+<span class="eqno">(75)<a class="headerlink" href="#equation-6d6bb349-dbc7-4ef2-a7bf-b8abfd915458" title="Permalink to this equation">¶</a></span>\[\begin{align}
     C_t &amp;= \frac{S_t - F_t}{F_t} \\
     &amp;= \frac{F^1_t - F^2_t}{F^2_t(T_2 - T_1)} \because \text{ Change in assumptions due to illiquid spot market}\\
     &amp;= \underbrace{(\delta - r^f_t)}_{\text{Convenience yield of the commodity in excess of the risk-free rate}}\frac{S_t}{F^2_t}
@@ -855,8 +855,8 @@
 <div class="section" id="global-fixed-income-carry">
 <h4>Global Fixed Income Carry<a class="headerlink" href="#global-fixed-income-carry" title="Permalink to this headline">¶</a></h4>
 <p>Instead of defining carry with the assumption that bond prices stay constant, our new assumption for carry is that the yield curve / term structure of interest rates of the bonds that we are considering stay constant:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2c84ac1b-268e-41ef-b921-381720719070">
-<span class="eqno">(76)<a class="headerlink" href="#equation-2c84ac1b-268e-41ef-b921-381720719070" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3a227a82-592e-43c8-9f77-3df73bcd663b">
+<span class="eqno">(76)<a class="headerlink" href="#equation-3a227a82-592e-43c8-9f77-3df73bcd663b" title="Permalink to this equation">¶</a></span>\[\begin{align}
     C_t &amp;= \frac{S_t - F_t}{F_t} \\
     &amp;= \frac{\frac{1}{(1+y^{9Y11M}_t)^{9+11/12}}}{\frac{(1+r^f_t)}{(1+y^{10Y}_t)^{10}}} - 1 \\
     &amp;\approx \underbrace{y^{10Y} - r^f_t}_{\text{Bond yield in excess of risk-free rate }r_f} \underbrace{- ModD(y^{10Y}_t - y^{9Y11M}_t))}_{\text{Roll down}} \\
@@ -902,8 +902,8 @@
 <div class="section" id="carry-trade-strategy">
 <h4>Carry Trade Strategy<a class="headerlink" href="#carry-trade-strategy" title="Permalink to this headline">¶</a></h4>
 <p>After calculating the carry for each security in our investable universe, we will sort the securities by their carry, longing the top percent of securities with the highest carry and shorting the ones at the bottom percentile of the lowest carry:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-019ea353-79bb-442c-9ff0-dbaab45ce029">
-<span class="eqno">(77)<a class="headerlink" href="#equation-019ea353-79bb-442c-9ff0-dbaab45ce029" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c3b5be3c-b6c0-4fa8-a211-2f1cd9c4d9b8">
+<span class="eqno">(77)<a class="headerlink" href="#equation-c3b5be3c-b6c0-4fa8-a211-2f1cd9c4d9b8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     C^{\text{carry trade}}_t &amp;= \sum_{w^i_t &gt; 0} w^i_tC^i_t - \sum_{w^i_t &lt; 0} \vert w^i_t \vert C^i_t \\
     w^i_t &amp;= \underbrace{z_t\Big(\text{rank}(C^i_t) - \frac{N_t + 1}{2}\Big)}_{\text{Normalized weight of the extreme carry securities we're trading such that the sum of long and short postions are 1 and -1}}
 \end{align}\]</div>
@@ -997,8 +997,8 @@
 <hr class="docutils" />
 <div class="section" id="predictability-of-carry-for-returns-static-and-dynamic-components-of-a-carry-trade-and-relationship-between-carry-and-mathbb-e-text-price-appreciation-a-id-3-a">
 <h2>3. Predictability of carry for returns, static and dynamic components of a carry trade, and relationship between carry and <span class="math notranslate nohighlight">\(\mathbb{E}[\text{Price Appreciation}]\)</span><a id="3"></a><a class="headerlink" href="#predictability-of-carry-for-returns-static-and-dynamic-components-of-a-carry-trade-and-relationship-between-carry-and-mathbb-e-text-price-appreciation-a-id-3-a" title="Permalink to this headline">¶</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-9c8a0bc5-f407-45f1-bae2-4f877b6ecb41">
-<span class="eqno">(78)<a class="headerlink" href="#equation-9c8a0bc5-f407-45f1-bae2-4f877b6ecb41" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3c5f775c-5834-4389-8be0-6e97a022e278">
+<span class="eqno">(78)<a class="headerlink" href="#equation-3c5f775c-5834-4389-8be0-6e97a022e278" title="Permalink to this equation">¶</a></span>\[\begin{align}
     r^i_{t+1} &amp;= a^i + b_t + cC^i_t + \epsilon^i_{t+1} \\
     a^i &amp;= \text{ Asset-specific intercept} \\
     b_t &amp;= \text{ Time-specific intercept} \\

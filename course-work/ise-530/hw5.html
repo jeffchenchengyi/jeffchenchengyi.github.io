@@ -614,8 +614,8 @@
 <p>ISE 530 Optimization for Analytics Homework V: An AMPL exercise. Due 11:59 PM Wednesday October 21, 2020.</p>
 <p>The spreadsheet of crime dataset has 50 rows (number of data points) and 7 columns. The first two columns are the observed crime rates to be predicted from the features in the last 5 columns. Formulate a least-squares regression problem with a regularizer term as the following quadratic program with the columns of the matrix A being the five features from the dataset and y is the 50-dimensional vector of observed crime rates from the first column:</p>
 <p>Tikhonov-regularized LASSO Regression with <span class="math notranslate nohighlight">\(\lambda = 1\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3deb7567-bd1f-477e-bd8c-daddd982cd5f">
-<span class="eqno">(246)<a class="headerlink" href="#equation-3deb7567-bd1f-477e-bd8c-daddd982cd5f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ca454b0f-93fb-47f0-a08c-76202ad6e801">
+<span class="eqno">(246)<a class="headerlink" href="#equation-ca454b0f-93fb-47f0-a08c-76202ad6e801" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x\in\mathcal{R}^n}{\text{minimize }} &amp;\frac{1}{2}(y-Ax)^\top (y-Ax) + \sum^n_{i=1} \vert x_i \vert \\
 \end{align}\]</div>
 <p>So the second column the dataset is not used. Solve the problem using AMPL.</p>
@@ -745,8 +745,8 @@
             }, 500);
             </script></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-375709b4-6420-4c59-9b21-ffeef4c8dbce">
-<span class="eqno">(247)<a class="headerlink" href="#equation-375709b4-6420-4c59-9b21-ffeef4c8dbce" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-61ea5b84-b6db-429d-9fbb-9681fd9dbff2">
+<span class="eqno">(247)<a class="headerlink" href="#equation-61ea5b84-b6db-429d-9fbb-9681fd9dbff2" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x\in\mathcal{R}^n}{\text{minimize }} &amp;\frac{1}{2}(y-Ax)^\top (y-Ax) + \sum^n_{i=1} \vert x_i \vert \\
 \end{align}\]</div>
 <div class="cell docutils container">
@@ -800,19 +800,19 @@ time: 19.6 ms
 <div class="section" id="tikhonov-regularized-lasso-regression-to-quadratic-program">
 <h2>Tikhonov-regularized Lasso Regression to Quadratic Program<a class="headerlink" href="#tikhonov-regularized-lasso-regression-to-quadratic-program" title="Permalink to this headline">¶</a></h2>
 <p>From:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d6f64d25-9cc4-4083-a9e5-67dc7f81bf03">
-<span class="eqno">(248)<a class="headerlink" href="#equation-d6f64d25-9cc4-4083-a9e5-67dc7f81bf03" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-832b402a-6fc6-416a-88ce-b9f1aca8a1f8">
+<span class="eqno">(248)<a class="headerlink" href="#equation-832b402a-6fc6-416a-88ce-b9f1aca8a1f8" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x\in\mathcal{R}^n}{\text{minimize }} &amp;\frac{1}{2}(y-Ax)^\top (y-Ax) + \sum^n_{i=1} \vert x_i \vert \\
 \end{align}\]</div>
 <p>Let’s set <span class="math notranslate nohighlight">\(x = x^+ - x^-\)</span>, and so <span class="math notranslate nohighlight">\(\vert x \vert = x^+ + x^-\)</span>, for <span class="math notranslate nohighlight">\(x^{\pm} \geq 0\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee8325f1-580f-4c2d-8403-1e7973db4b41">
-<span class="eqno">(249)<a class="headerlink" href="#equation-ee8325f1-580f-4c2d-8403-1e7973db4b41" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-feb76411-6d97-4b5e-8b07-7adae632aa20">
+<span class="eqno">(249)<a class="headerlink" href="#equation-feb76411-6d97-4b5e-8b07-7adae632aa20" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x^\pm \in \mathcal{R}^n}{\text{minimize }} &amp;\frac{1}{2}(y-A(x^+ - x^-))^\top (y-A(x^+ - x^-)) + \sum^n_{i=1} (x^+_i + x^-_i) \\
     \text{subject to } &amp;x^\pm \geq 0 \\ 
 \end{align}\]</div>
 <p>Expanding:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5aaa8d5-a2ec-4d9a-8c22-b31b7020749a">
-<span class="eqno">(250)<a class="headerlink" href="#equation-b5aaa8d5-a2ec-4d9a-8c22-b31b7020749a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fbe58e5e-f278-4601-8ed3-17b5ebee20bd">
+<span class="eqno">(250)<a class="headerlink" href="#equation-fbe58e5e-f278-4601-8ed3-17b5ebee20bd" title="Permalink to this equation">¶</a></span>\[\begin{align}
     \underset{x^\pm \in \mathcal{R}^n}{\text{minimize }} &amp;\frac{1}{2}(y^\top-A^\top(x^+ - x^-)^\top)(y-A(x^+ - x^-)) + \sum^n_{i=1} (x^+_i + x^-_i) \\
     \text{subject to } &amp;x^\pm \geq 0 \\ 
     \newline \\
